@@ -18,3 +18,6 @@
 2012-05-09 20:52:56,498 [9908] INFO  File Starting page load
 2012-05-09 20:55:09,407 [9908] INFO  File Starting page load
 2012-05-09 20:59:50,367 [6812] INFO  File Starting page load
+2012-05-10 09:27:11,400 [9324] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'FROM'.
+2012-05-10 11:49:41,988 [8484] ERROR File LinQConnection getDataTableIncorrect syntax near ')'.
+2012-05-10 11:56:29,290 [9348] ERROR File LinQConnection getDataTableIncorrect syntax near ')'.

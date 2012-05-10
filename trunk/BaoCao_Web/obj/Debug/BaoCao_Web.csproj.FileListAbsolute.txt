@@ -1,7 +1,7 @@
 E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\BaoCao_Web.dll
 E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\BaoCao_Web.pdb
+E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\AjaxControlToolkit.dll
+E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\log4net.dll
 E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\obj\Debug\ResolveAssemblyReference.cache
 E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\obj\Debug\BaoCao_Web.dll
 E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\obj\Debug\BaoCao_Web.pdb
-E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\log4net.dll
-E:\DATA\TAN HOA\PROJECT\BAOCAO\BaoCao_Web\bin\AjaxControlToolkit.dll

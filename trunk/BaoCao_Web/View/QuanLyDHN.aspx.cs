@@ -13,12 +13,19 @@ namespace BaoCao_Web.View
         {
             MaintainScrollPositionOnPostBack = true;
             if("DTTDK".Equals(Request.Params["type"]+"")){
+              
+                this.Panel1.Controls.Clear();
                 Control control = LoadControl("tabDHN/tabThongKeDHN.ascx");
                 this.Panel1.Controls.Add(control);
+                title.Text = "THỐNG KÊ ĐỒNG HỒ NƯỚC";
             }
-            else if ("TDBT".Equals(Request.Params["type"] + ""))
+            else if ("TDSL".Equals(Request.Params["type"] + ""))
             {
-                
+               
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabTheoDoiSanLuong.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI SẢN LƯỢNG";
             }
             
         }

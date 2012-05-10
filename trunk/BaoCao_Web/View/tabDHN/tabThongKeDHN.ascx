@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tabThongKeDHN.ascx.cs" Inherits="BaoCao_Web.View.tabDHN.tabThongKeDHN" %>
 <div class="block block_left events" style="width: 160px;">
- 	<h3>THỐNG KÊ CỞ ĐHN </h3>
+ 	<h3>THEO CỞ ĐHN </h3>
 	<div class="block_content">
         <asp:GridView ID="DONGHONUOC" runat="server" AutoGenerateColumns="False" 
             BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
@@ -34,7 +34,7 @@
             <SortedDescendingHeaderStyle BackColor="#7E0000" />
         </asp:GridView>
  	</div>
-    <h3> NĂM GẮN ĐHN </h3>
+    <h3>THEO NĂM LẮP ĐẶT </h3>
     <div class="block_content">
         <asp:GridView ID="NAMGAN" runat="server" AutoGenerateColumns="False" 
             BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 

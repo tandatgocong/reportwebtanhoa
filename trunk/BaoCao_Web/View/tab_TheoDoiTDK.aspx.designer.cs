@@ -76,22 +76,40 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.TextBox denngay;
         
         /// <summary>
-        /// Button1 control.
+        /// btXemBangKe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btXemBangKe;
         
         /// <summary>
-        /// GridView1 control.
+        /// dataTongBK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView dataTongBK;
+        
+        /// <summary>
+        /// danhsachtrongai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView danhsachtrongai;
+        
+        /// <summary>
+        /// tongBangKe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView tongBangKe;
         
         /// <summary>
         /// CalendarExtender1 control.

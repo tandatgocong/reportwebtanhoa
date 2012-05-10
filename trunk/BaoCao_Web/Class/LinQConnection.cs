@@ -11,7 +11,7 @@ namespace BaoCao_Web.Class
 {
     public static class LinQConnection
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
+        static log4net.ILog log = log4net.LogManager.GetLogger("File");
 
         public static int ExecuteCommand(string sql)
         {

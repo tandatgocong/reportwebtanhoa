@@ -13,7 +13,7 @@ namespace BaoCao_Web.Class
 
     public static class OledbConnection
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(OledbConnection).Name);
+        static log4net.ILog log = log4net.LogManager.GetLogger("File");
       //  static string connectionSting = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFileLyLichDHN"].ConnectionString;
         
         public static int ExecuteCommand(string connectionSting, string sql)

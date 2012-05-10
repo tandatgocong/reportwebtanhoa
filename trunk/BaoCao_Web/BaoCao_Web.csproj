@@ -301,13 +301,17 @@
     <Content Include="Image\button_bg.png" />
     <Content Include="Image\Capture.JPG" />
     <Content Include="Image\delete2.ico" />
+    <Content Include="Image\down.png" />
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\foot.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\menu_bg.png" />
     <Content Include="Image\news_list_bg.gif" />
+    <Content Include="Image\nochange.png" />
+    <Content Include="Image\table_list_bghead.png" />
     <Content Include="Image\Untitled.png" />
+    <Content Include="Image\up.png" />
     <Content Include="Image\XOA.png" />
     <Content Include="JavaScript\headmenu.css" />
     <Content Include="JavaScript\headmenu.js" />
@@ -327,10 +331,12 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\QuanLyDHN.aspx" />
     <Content Include="View\QuanLyHoSoKhachHang.aspx" />
-    <Content Include="View\tabDHN\tabTheoDoiBaoThay.ascx" />
+    <Content Include="View\tabDHN\tabTheoDoiSanLuong.ascx" />
     <Content Include="View\tabDHN\tabThongKeDHN.ascx" />
     <Content Include="View\tab_TheoDoiTDK.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -339,9 +345,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\C_BaoCaoSanLuong.cs" />
     <Compile Include="Class\C_DHN.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="DataBase\DocSo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -400,12 +412,12 @@
     <Compile Include="View\QuanLyHoSoKhachHang.aspx.designer.cs">
       <DependentUpon>QuanLyHoSoKhachHang.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\tabDHN\tabTheoDoiBaoThay.ascx.cs">
-      <DependentUpon>tabTheoDoiBaoThay.ascx</DependentUpon>
+    <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.cs">
+      <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\tabDHN\tabTheoDoiBaoThay.ascx.designer.cs">
-      <DependentUpon>tabTheoDoiBaoThay.ascx</DependentUpon>
+    <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.designer.cs">
+      <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabThongKeDHN.ascx.cs">
       <DependentUpon>tabThongKeDHN.ascx</DependentUpon>
@@ -424,11 +436,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="StyleSheet\images\" />
     <Folder Include="View\tabHSKH\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ckeditor\.htaccess" />
+    <None Include="DataBase\DocSo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataBase\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
@@ -444,6 +460,11 @@
   <ItemGroup>
     <None Include="DataBase\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\DocSo.dbml.layout">
+      <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

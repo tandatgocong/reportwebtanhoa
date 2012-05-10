@@ -36,7 +36,16 @@ namespace BaoCao_Web.View.tabDHN
 
                 lblTotalPrice.Text = String.Format("{0:0,0}", totalPrice);
 
-            } 
+            }
+            if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
+            {
+
+                // when mouse is over the row, save original color to new attribute, and change it to highlight color
+                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
+
+                // when mouse leaves the row, change the bg color to its original value  
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
+            }
         }
         decimal totalPrice2 = 0M;
         protected void NAMGAN_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -56,7 +65,16 @@ namespace BaoCao_Web.View.tabDHN
 
                 lblTotalPrice.Text = String.Format("{0:0,0}", totalPrice2);
 
-            } 
+            }
+            if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
+            {
+
+                // when mouse is over the row, save original color to new attribute, and change it to highlight color
+                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
+
+                // when mouse leaves the row, change the bg color to its original value  
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
+            }
         }
     }
 }
