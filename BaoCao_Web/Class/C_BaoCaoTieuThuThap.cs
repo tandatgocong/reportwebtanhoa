@@ -7,7 +7,7 @@ using System.Data;
 
 namespace BaoCao_Web.Class
 {
-    public class C_BaoCaoSanLuong
+    public class C_BaoCaoTieuThuThap
     {
         static log4net.ILog log = log4net.LogManager.GetLogger("File");
         static TanHoaDataContext db = new TanHoaDataContext();
@@ -46,7 +46,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -70,7 +70,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -94,7 +94,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -166,7 +166,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT MAQUAN,MAPHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT MAQUAN,MAPHUONG, COUNT(case when ds.TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (ds.TIEUTHU>=1  AND ds.TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , DocSo_PHT.dbo.KHACHHANG kh ";
             sql += " WHERE ds.DANHBA=kh.DANHBA AND MAQUAN IS NOT NULL AND ds.KY=" + ky;
             sql += " GROUP BY MAQUAN,MAPHUONG ";
@@ -190,7 +190,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT MAQUAN,MAPHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT MAQUAN,MAPHUONG, COUNT(case when ds.TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (ds.TIEUTHU>=1  AND ds.TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , DocSo_PHT.dbo.KHACHHANG kh ";
             sql += " WHERE ds.DANHBA=kh.DANHBA AND MAQUAN IS NOT NULL AND ds.KY=" + ky;
             sql += " GROUP BY MAQUAN,MAPHUONG ";
@@ -235,7 +235,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += "(";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
@@ -260,7 +260,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
@@ -284,7 +284,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
@@ -355,7 +355,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM	W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT MAQUAN,MAPHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT MAQUAN,MAPHUONG, COUNT(case when ds.TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (ds.TIEUTHU>=1  AND ds.TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , DocSo_PHT.dbo.KHACHHANG kh ";
             sql += " WHERE ds.DANHBA=kh.DANHBA AND MAQUAN IS NOT NULL AND ds.KY=" + ky + " AND ds.DOT =" + dot;
             sql += " GROUP BY MAQUAN,MAPHUONG ";
@@ -379,7 +379,7 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT MAQUAN,MAPHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            sql += " SELECT MAQUAN,MAPHUONG, COUNT(case when ds.TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (ds.TIEUTHU>=1  AND ds.TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , DocSo_PHT.dbo.KHACHHANG kh ";
             sql += " WHERE ds.DANHBA=kh.DANHBA AND MAQUAN IS NOT NULL AND ds.KY=" + ky + " AND ds.DOT =" + dot;
             sql += " GROUP BY MAQUAN,MAPHUONG ";

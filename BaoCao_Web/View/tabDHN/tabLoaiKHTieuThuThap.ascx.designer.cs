@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.tabDHN {
     
     
-    public partial class tabTheoDoiSanLuong {
+    public partial class tabLoaiKHTieuThuThap {
         
         /// <summary>
         /// Label13 control.
@@ -110,14 +110,5 @@ namespace BaoCao_Web.View.tabDHN {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// sanLuongTo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView sanLuongTo;
     }
 }

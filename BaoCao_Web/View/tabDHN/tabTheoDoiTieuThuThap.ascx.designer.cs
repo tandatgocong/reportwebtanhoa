@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.tabDHN {
     
     
-    public partial class tabTheoDoiSanLuong {
+    public partial class tabTheoDoiTieuThuThap {
         
         /// <summary>
         /// Label13 control.

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BaoCao_Web.View.tabDHN
 {
-    public partial class tabTheoDoiSanLuong : System.Web.UI.UserControl
+    public partial class tabTheoDoiTieuThuThap : System.Web.UI.UserControl
     {
         protected void Page_Load(object senderdouble, EventArgs e)
         {
@@ -35,52 +35,51 @@ namespace BaoCao_Web.View.tabDHN
             if ("1".Equals(bcTheo.SelectedValue + ""))
             {
                 Panel1.Width = 1195;
-
                 lbTieuDe.Text = "TỔ ĐỌC SỐ";
-                Class.C_BaoCaoSanLuong.RESET_BAOCAO_SANLUONG();
+                Class.C_BaoCaoTieuThuThap.RESET_BAOCAO_SANLUONG();
                 if ("00".Equals(dotds))
                 {
                     // ky hien tai
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(nam_.ToString(), ky_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(nam_.ToString(), ky_);
                     // ky truoc
                     if (ky_ == 1)
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC((nam_ - 1) + "", 12);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC((nam_ - 1) + "", 12);
                     }
                     else
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC(nam_.ToString(), ky_ - 1);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC(nam_.ToString(), ky_ - 1);
                     }
 
                     // nam truoc
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC((nam_ - 1) + "", ky_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC((nam_ - 1) + "", ky_);
 
                     // CAP NHAT SO LIEU 
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
                     // so lieu
-                    sanLuongTo.DataSource = Class.C_BaoCaoSanLuong.get_BAOCAO_SANLUONG();
+                    sanLuongTo.DataSource = Class.C_BaoCaoTieuThuThap.get_BAOCAO_SANLUONG();
                     sanLuongTo.DataBind();
                 }
                 else
                 {
                     // ky hien tai
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT(nam_.ToString(), ky_, dot_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT(nam_.ToString(), ky_, dot_);
                     // ky truoc
                     if (ky_ == 1)
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT((nam_ - 1) + "", 12, dot_);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT((nam_ - 1) + "", 12, dot_);
                     }
                     else
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT(nam_.ToString(), ky_ - 1, dot_);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT(nam_.ToString(), ky_ - 1, dot_);
                     }
 
                     // nam truoc
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT((nam_ - 1) + "", ky_, dot_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT((nam_ - 1) + "", ky_, dot_);
 
                     // CAP NHAT SO LIEU 
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
-                    sanLuongTo.DataSource = Class.C_BaoCaoSanLuong.get_BAOCAO_SANLUONG();
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
+                    sanLuongTo.DataSource = Class.C_BaoCaoTieuThuThap.get_BAOCAO_SANLUONG();
                     sanLuongTo.DataBind();
                 }
             }
@@ -91,46 +90,46 @@ namespace BaoCao_Web.View.tabDHN
                 if ("00".Equals(dotds))
                 {
                     // ky hien tai
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(nam_.ToString(), ky_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(nam_.ToString(), ky_);
                     // ky truoc
                     if (ky_ == 1)
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY((nam_ - 1) + "", 12);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY((nam_ - 1) + "", 12);
                     }
                     else
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(nam_.ToString(), ky_ - 1);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(nam_.ToString(), ky_ - 1);
                     }
 
                     // nam truoc
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY((nam_ - 1) + "", ky_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY((nam_ - 1) + "", ky_);
 
                     // CAP NHAT SO LIEU 
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
                     // so lieu
-                    sanLuongTo.DataSource = Class.C_BaoCaoSanLuong.get_BAOCAO_SANLUONG_MAY();
+                    sanLuongTo.DataSource = Class.C_BaoCaoTieuThuThap.get_BAOCAO_SANLUONG_MAY();
                     sanLuongTo.DataBind();
                 }
                 else
                 {
                     // ky hien tai
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY_DOT(nam_.ToString(), ky_, dot_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY_DOT(nam_.ToString(), ky_, dot_);
                     // ky truoc
                     if (ky_ == 1)
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT((nam_ - 1) + "", 12, dot_);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT((nam_ - 1) + "", 12, dot_);
                     }
                     else
                     {
-                        Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT(nam_.ToString(), ky_ - 1, dot_);
+                        Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT(nam_.ToString(), ky_ - 1, dot_);
                     }
 
                     // nam truoc
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY_DOT((nam_ - 1) + "", ky_, dot_);
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY_DOT((nam_ - 1) + "", ky_, dot_);
 
                     // CAP NHAT SO LIEU 
-                    Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
-                    sanLuongTo.DataSource = Class.C_BaoCaoSanLuong.get_BAOCAO_SANLUONG_MAY();
+                    Class.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
+                    sanLuongTo.DataSource = Class.C_BaoCaoTieuThuThap.get_BAOCAO_SANLUONG_MAY();
                     sanLuongTo.DataBind();
                 }
             }

@@ -20,13 +20,35 @@ namespace BaoCao_Web.View
                 title.Text = "THỐNG KÊ ĐỒNG HỒ NƯỚC";
             }
             else if ("TDSL".Equals(Request.Params["type"] + ""))
-            {
-               
+            { 
                 this.Panel1.Controls.Clear();
                 Control control = LoadControl("tabDHN/tabTheoDoiSanLuong.ascx");
                 this.Panel1.Controls.Add(control);
                 title.Text = "THEO DÕI SẢN LƯỢNG";
             }
+            else if ("TDTT".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabTheoDoiTieuThuThap.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI SỐ LƯỢNG KHÁCH HÀNG TIÊU THỤ THẤP ";
+            }
+            else if ("TTT".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabLoaiKHTieuThuThap.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI SẢN LƯỢNG THEO LOẠI KHÁCH HÀNG ";
+            }
+            else if ("CODE".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabCodeDocSo.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI CODE ĐỌC SỐ ";
+            }
+
+            
             
         }
     }
