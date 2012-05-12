@@ -99,16 +99,16 @@
                   <a id="menu6" href="QuanLyDHN.aspx?page=DHN&type=TDSL" >THEO DÕI SẢN LƯỢNG</a>
                 </td> 
             </tr> 
-            <tr> 
+          <tr> 
              <td> 
                 <a id="menu7" href="QuanLyDHN.aspx?page=DHN&type=TDTT" >THEO DÕI TIÊU THỤ THẤP</a>
              </td> 
             </tr> 
-            <tr> 
+            <!--  <tr> 
                 <td> 
                     <a id="menu8" href="QuanLyDHN.aspx?page=DHN&type=TTT" >LOẠI KH TIÊU THỤ THẤP</a>
                 </td> 
-             </tr> 
+             </tr> -->
              <tr> 
                 <td> 
                     <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>

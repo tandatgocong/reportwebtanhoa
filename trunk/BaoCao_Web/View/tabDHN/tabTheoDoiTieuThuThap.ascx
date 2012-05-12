@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tabTheoDoiSanLuong.ascx.cs" Inherits="BaoCao_Web.View.tabDHN.tabTheoDoiSanLuong" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tabTheoDoiTieuThuThap.ascx.cs" Inherits="BaoCao_Web.View.tabDHN.tabTheoDoiTieuThuThap" %>
 <link href="../../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .style2
@@ -136,30 +136,30 @@
                  <tr class="head1">
                   
                     <td class="style9">
-                        ĐHN</td>
+                        TT = 0 m<sup>3</sup></td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        TT = 1->4 m<sup>3</sup></td>
                   <td class="style9">
-                        ĐHN</td>
+                        TT = 0 m<sup>3</sup></td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        TT = 1->4 m<sup>3</sup></td>
                     <td class="style9">
-                        ĐHN</td>
+                        TT = 0 m<sup>3</sup></td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        TT = 1->4 m<sup>3</sup></td>
                     <td class="style9">
-                        ĐHN</td>
+                        TT = 0 m<sup>3</sup></td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        TT = 1->4 m<sup>3</sup></td>
                     <td class="style9">
-                        ĐHN</td>
+                        TT = 0 m<sup>3</sup></td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        TT = 1->4 m<sup>3</sup></td>
                 </tr>
               </tbody>
             </table>
         <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="312px" 
-                Width="1193px" BorderWidth="0px">
+                Width="1213px" BorderWidth="0px">
             <asp:GridView ID="sanLuongTo" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#CC9966" 
     BorderWidth="1px" CellPadding="4" 

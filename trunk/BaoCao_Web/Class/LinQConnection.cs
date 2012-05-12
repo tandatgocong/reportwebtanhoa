@@ -22,7 +22,7 @@ namespace BaoCao_Web.Class
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                result = Convert.ToInt32(cmd.ExecuteScalar());
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
                 conn.Close();
                 db.Connection.Close();
                 db.SubmitChanges();
@@ -84,5 +84,18 @@ namespace BaoCao_Web.Class
             }
             return null;
         }
+        
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+
+            //conn.Open();
+            //SqlCommand cmd = new SqlCommand("DELETEDATABG", conn);
+            //cmd.CommandType = CommandType.StoredProcedure;
+
+            //SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
+            //inparm.Direction = ParameterDirection.Input;
+            //inparm.Value = shs;
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
     }
 }

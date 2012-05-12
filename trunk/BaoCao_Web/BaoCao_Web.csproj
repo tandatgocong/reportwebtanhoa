@@ -331,6 +331,9 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\QuanLyDHN.aspx" />
     <Content Include="View\QuanLyHoSoKhachHang.aspx" />
+    <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
+    <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
+    <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiSanLuong.ascx" />
     <Content Include="View\tabDHN\tabThongKeDHN.ascx" />
     <Content Include="View\tab_TheoDoiTDK.aspx" />
@@ -345,6 +348,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\C_BaoCaoCodeDS.cs" />
+    <Compile Include="Class\C_BaoCaoTieuThuThap.cs" />
     <Compile Include="Class\C_BaoCaoSanLuong.cs" />
     <Compile Include="Class\C_DHN.cs" />
     <Compile Include="Class\LinQConnection.cs" />
@@ -411,6 +416,27 @@
     </Compile>
     <Compile Include="View\QuanLyHoSoKhachHang.aspx.designer.cs">
       <DependentUpon>QuanLyHoSoKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabCodeDocSo.ascx.cs">
+      <DependentUpon>tabCodeDocSo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabCodeDocSo.ascx.designer.cs">
+      <DependentUpon>tabCodeDocSo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx.cs">
+      <DependentUpon>tabLoaiKHTieuThuThap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx.designer.cs">
+      <DependentUpon>tabLoaiKHTieuThuThap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.cs">
+      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.designer.cs">
+      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.cs">
       <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
