@@ -40,8 +40,8 @@ namespace BaoCao_Web.Class
             sql += ",COUNT(case when (HCT_TRONGAI ='False' OR HCT_TRONGAI IS NULL) AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS HOANTAT ";
             sql += ",COUNT(case when HCT_TRONGAI ='True' AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS TRONGAI ";
             sql += ", COUNT(case when CONVERT(DATETIME,DHN_NGAYBAOTHAY,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) ";
-            sql += "-(COUNT(case when (HCT_TRONGAI ='False' OR HCT_TRONGAI IS NULL) AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) ";
-            sql += " +COUNT(case when HCT_TRONGAI ='True' AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end)) AS CHUAGAN ";
+            sql += "-(COUNT(case when (HCT_TRONGAI ='False' OR HCT_NGAYGAN IS NOT NULL) AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) ";
+            sql += " +COUNT(case when HCT_TRONGAI ='True'  AND  CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end)) AS CHUAGAN ";
             sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL ";
 
             return LinQConnection.getDataTable(sql);
