@@ -331,6 +331,8 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\QuanLyDHN.aspx" />
     <Content Include="View\QuanLyHoSoKhachHang.aspx" />
+    <Content Include="View\tabBieuDo\tab_BieuDoSanLuong.ascx" />
+    <Content Include="View\tabBieuDo\tb_BienDongDHN.ascx" />
     <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
     <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
@@ -351,6 +353,7 @@
     <Compile Include="Class\C_BaoCaoCodeDS.cs" />
     <Compile Include="Class\C_BaoCaoTieuThuThap.cs" />
     <Compile Include="Class\C_BaoCaoSanLuong.cs" />
+    <Compile Include="Class\C_Chart.cs" />
     <Compile Include="Class\C_DHN.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
@@ -416,6 +419,20 @@
     </Compile>
     <Compile Include="View\QuanLyHoSoKhachHang.aspx.designer.cs">
       <DependentUpon>QuanLyHoSoKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabBieuDo\tab_BieuDoSanLuong.ascx.cs">
+      <DependentUpon>tab_BieuDoSanLuong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabBieuDo\tab_BieuDoSanLuong.ascx.designer.cs">
+      <DependentUpon>tab_BieuDoSanLuong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabBieuDo\tb_BienDongDHN.ascx.cs">
+      <DependentUpon>tb_BienDongDHN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabBieuDo\tb_BienDongDHN.ascx.designer.cs">
+      <DependentUpon>tb_BienDongDHN.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabCodeDocSo.ascx.cs">
       <DependentUpon>tabCodeDocSo.ascx</DependentUpon>

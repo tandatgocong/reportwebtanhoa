@@ -145,18 +145,18 @@
              </tr>              
       
     <% }
-       else if ("HSKH".Equals(Request.Params["page"] + ""))
+       else if ("BDBC".Equals(Request.Params["page"] + ""))
        { %>
     
    
            <tr> 
                 <td> 
-                  <a id="A6" href="Home.aspx?page=MBN" >MÁY BƠM NƯỚC</a>
+                  <a id="A6" href="BieuDoBaoCao.aspx?page=BDBC&type=BDDHN" >BIẾN ĐỘNG ĐHN</a>
                 </td> 
            </tr> 
            <tr> 
                 <td> 
-                  <a id="A7" href="Home.aspx?page=MB" >LOẠI SẢN PHẦM 1</a>
+                  <a id="A7" href="BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG" >LOẠI SẢN PHẦM 1</a>
                 </td> 
             </tr> 
             <tr> 

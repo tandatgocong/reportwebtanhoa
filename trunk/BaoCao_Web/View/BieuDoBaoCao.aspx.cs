@@ -11,7 +11,43 @@ namespace BaoCao_Web.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           MaintainScrollPositionOnPostBack = true;
+           if ("BDDHN".Equals(Request.Params["type"] + ""))
+           {
+              
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabBieuDo/tb_BienDongDHN.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "BIỂU ĐỒ BIẾN ĐỘNG ĐỒNG HỒ NƯỚC";
+            }
+           else if ("BDSLUONG".Equals(Request.Params["type"] + ""))
+            { 
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabBieuDo/tab_BieuDoSanLuong.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "BIỂU ĐỒ SẢN LƯỢNG";
+            }
+            else if ("TDTT".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabTheoDoiTieuThuThap.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI SỐ LƯỢNG KHÁCH HÀNG TIÊU THỤ THẤP ";
+            }
+            else if ("TTT".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabLoaiKHTieuThuThap.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI SẢN LƯỢNG THEO LOẠI KHÁCH HÀNG ";
+            }
+            else if ("CODE".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabCodeDocSo.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI CODE ĐỌC SỐ ";
+            }  
         }
     }
 }

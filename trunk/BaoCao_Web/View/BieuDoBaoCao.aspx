@@ -9,7 +9,10 @@
            window.document.getElementById("BDBC").className = "current_link";
     </script>
 <div class="Pages_content">
-<div class="title_page"><asp:Label ID="title" runat="server" Text="BIỂU ĐỒ BÁO CÁO "></asp:Label>
-</div>
+<div class="title_page"><asp:Label ID="title" runat="server" Text=""></asp:Label></div>
+ <asp:Panel ID="Panel1" runat="server" Height="94%" ScrollBars="Auto" 
+        Width="99%" CssClass="panel" >
 
+
+    </asp:Panel>
 </asp:Content>
