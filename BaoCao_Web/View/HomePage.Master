@@ -22,7 +22,7 @@
  	 <div>
  		<ul class="menuhead">
  			<li id="mnHome" class="current"><a class="current_link" id="HOME" href="http://capnuoctanhoa.com.vn"><span>TRANG CHỦ</span></a></li>
- 			<li id="mnGioithieu" class="top"><a href="QuanLyDHN.aspx?page=DHN" id="DHN" class="top_link"><span>QUẢN LÝ ĐỒNG HỒ NƯỚC</span>
+ 			<li id="mnGioithieu" class="top"><a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" id="DHN" class="top_link"><span>QUẢN LÝ ĐỒNG HỒ NƯỚC</span>
     		<!--[if gte IE 7]><!--></a><!--<![endif]-->
     		<!--[if lte IE 6]><table><tr><td><![endif]   			
                 <ul class="sub_gioithieu">
@@ -42,7 +42,7 @@
     			</ul>-->
     		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
   			</li>
-  			<li id="mnTuyendung" class="top"><a href="BieuDoBaoCao.aspx?page=BDBC"  id="BDBC" class="top_link"><span>BIỂU ĐỒ BÁO CÁO</span></a>
+  			<li id="mnTuyendung" class="top"><a href="BieuDoBaoCao.aspx?page=BDBC&type=BDDHN"  id="BDBC" class="top_link"><span>BIỂU ĐỒ BÁO CÁO</span></a>
             </li>
             <li id="mnLienHe" class="top"><a href="http://office.capnuoctanhoa.com.vn"  id="LH" class="top_link"><span>Portal Office</span>
             <!--[if gte IE 7]><!--></a><!--<![endif]-->
@@ -120,10 +120,10 @@
        {%>    
            <tr> 
                 <td> 
-                  <a id="A1" href="Home.aspx?page=MBN" >NHẬN ĐƠN KHÁCH HÀNG</a>
+                  <a id="A1" href="QuanLyHoSoKhachHang.aspx?page=HSKH" >NHẬN ĐƠN KHÁCH HÀNG</a>
                 </td> 
            </tr> 
-           <tr> 
+         <!--  <tr> 
                 <td> 
                   <a id="A2" href="Home.aspx?page=MB" >LOẠI SẢN PHẦM 1</a>
                 </td> 
@@ -142,7 +142,7 @@
                 <td> 
                     <a id="A5" href="Home.aspx?page=PK" >LOẠI SẢN PHẦM 4</a>
                 </td> 
-             </tr>              
+             </tr>  -->            
       
     <% }
        else if ("BDBC".Equals(Request.Params["page"] + ""))
@@ -156,24 +156,15 @@
            </tr> 
            <tr> 
                 <td> 
-                  <a id="A7" href="BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG" >LOẠI SẢN PHẦM 1</a>
+                  <a id="A7" href="BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG" >BIẾN ĐỘNG SẢN LƯỢNG</a>
                 </td> 
             </tr> 
             <tr> 
                 <td> 
-                  <a id="A8" href="Home.aspx?page=MC" >LOẠI SẢN PHẦM 2</a>
+                  <a id="A8" href="BieuDoBaoCao.aspx?page=BDBC&type=BDDTHU" >BIẾN ĐỘNG DOANH THU</a>
                 </td> 
             </tr> 
             <tr> 
-             <td> 
-                <a id="A9" href="Home.aspx?page=DT" >LOẠI SẢN PHẦM 3</a>
-             </td> 
-            </tr> 
-            <tr> 
-                <td> 
-                    <a id="A10" href="Home.aspx?page=PK" >LOẠI SẢN PHẦM 4</a>
-                </td> 
-             </tr>              
             
     <%} %>
               

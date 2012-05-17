@@ -9,83 +9,8 @@ using System.Configuration;
 
 namespace BaoCao_Web.View.tabBieuDo
 {
-    public partial class tab_BieuDoSanLuong : System.Web.UI.UserControl
+    public partial class tab_BieuDoDoanhThu : System.Web.UI.UserControl
     {
-        public void NamHienTai_DHN(string nam)
-        {
-            string title = "['THÁNG'";
-            string thang01 = "['01'";
-            string thang02 = "['02'";
-            string thang03 = "['03'";
-            string thang04 = "['04'";
-            string thang05 = "['05'";
-            string thang06 = "['06'";
-            string thang07 = "['07'";
-            string thang08 = "['08'";
-            string thang09 = "['09'";
-            string thang10 = "['10'";
-            string thang11 = "['11'";
-            string thang12 = "['12'";
-
-
-            DataTable table = Class.C_Chart.getBienDongSanLuong("'" + nam + "'");
-            DataTable tableTB = Class.C_Chart.getSanLuongTrungBinh("'" + nam + "'");
-            GridView1.DataSource = table;
-            GridView1.DataBind();
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                title += ", '" + table.Rows[i]["NAM"].ToString() + "'";
-                thang01 += ", " + table.Rows[i]["THANG01"].ToString() + "";
-                thang02 += ", " + table.Rows[i]["THANG02"].ToString() + "";
-                thang03 += ", " + table.Rows[i]["THANG03"].ToString() + "";
-                thang04 += ", " + table.Rows[i]["THANG04"].ToString() + "";
-                thang05 += ", " + table.Rows[i]["THANG05"].ToString() + "";
-                thang06 += ", " + table.Rows[i]["THANG06"].ToString() + "";
-                thang07 += ", " + table.Rows[i]["THANG07"].ToString() + "";
-                thang08 += ", " + table.Rows[i]["THANG08"].ToString() + "";
-                thang09 += ", " + table.Rows[i]["THANG09"].ToString() + "";
-                thang10 += ", " + table.Rows[i]["THANG10"].ToString() + "";
-                thang11 += ", " + table.Rows[i]["THANG11"].ToString() + "";
-                thang12 += ", " + table.Rows[i]["THANG12"].ToString() + "";
-            }
-            string binhquan = "";
-            for (int i = 0; i < tableTB.Rows.Count; i++)
-            {
-                title += ", 'Dự Đoán'";
-                thang01 += ", " + tableTB.Rows[i]["THANG01"].ToString() + "";
-                thang02 += ", " + tableTB.Rows[i]["THANG02"].ToString() + "";
-                thang03 += ", " + tableTB.Rows[i]["THANG03"].ToString() + "";
-                thang04 += ", " + tableTB.Rows[i]["THANG04"].ToString() + "";
-                thang05 += ", " + tableTB.Rows[i]["THANG05"].ToString() + "";
-                thang06 += ", " + tableTB.Rows[i]["THANG06"].ToString() + "";
-                thang07 += ", " + tableTB.Rows[i]["THANG07"].ToString() + "";
-                thang08 += ", " + tableTB.Rows[i]["THANG08"].ToString() + "";
-                thang09 += ", " + tableTB.Rows[i]["THANG09"].ToString() + "";
-                thang10 += ", " + tableTB.Rows[i]["THANG10"].ToString() + "";
-                thang11 += ", " + tableTB.Rows[i]["THANG11"].ToString() + "";
-                thang12 += ", " + tableTB.Rows[i]["THANG12"].ToString() + "";
-                binhquan = tableTB.Rows[i]["CHITIEU"].ToString();
-            }
-            title += ", 'Chỉ Tiêu '";
-            thang01 += ", " + binhquan + "";
-            thang02 += ", " + binhquan + "";
-            thang03 += ", " + binhquan + "";
-            thang04 += ", " + binhquan + "";
-            thang05 += ", " + binhquan + "";
-            thang06 += ", " + binhquan + "";
-            thang07 += ", " + binhquan + "";
-            thang08 += ", " + binhquan + "";
-            thang09 += ", " + binhquan + "";
-            thang10 += ", " + binhquan + "";
-            thang11 += ", " + binhquan + "";
-            thang12 += ", " + binhquan + ""; 
-
-
-            string script = title + "]," + thang01 + "]," + thang02 + "]," + thang03 + "]," + thang04 + "]," + thang05 + "]," + thang06 + "]," + thang07 + "]," + thang08 + "],";
-            script += thang09 + "]," + thang10 + "]," + thang11 + "]," + thang12 + "]";
-            Session["sanluong"] = script;
-        
-        }
 
         public void TungNam(string nam)
         {
@@ -104,8 +29,7 @@ namespace BaoCao_Web.View.tabBieuDo
             string thang12 = "['12'";
 
 
-            DataTable table = Class.C_Chart.getBienDongSanLuong("'" + nam + "'");
-            DataTable tableTB = Class.C_Chart.getSanLuongTrungBinh("'" + nam + "'");
+            DataTable table = Class.C_Chart.getBienDongDoanhThu("'" + nam + "'");
             GridView1.DataSource = table;
             GridView1.DataBind();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -124,38 +48,6 @@ namespace BaoCao_Web.View.tabBieuDo
                 thang11 += ", " + table.Rows[i]["THANG11"].ToString() + "";
                 thang12 += ", " + table.Rows[i]["THANG12"].ToString() + "";
             }
-            string binhquan = "";
-            for (int i = 0; i < tableTB.Rows.Count; i++)
-            {
-                //title += ", 'Dự Đoán'";
-                //thang01 += ", " + tableTB.Rows[i]["THANG01"].ToString() + "";
-                //thang02 += ", " + tableTB.Rows[i]["THANG02"].ToString() + "";
-                //thang03 += ", " + tableTB.Rows[i]["THANG03"].ToString() + "";
-                //thang04 += ", " + tableTB.Rows[i]["THANG04"].ToString() + "";
-                //thang05 += ", " + tableTB.Rows[i]["THANG05"].ToString() + "";
-                //thang06 += ", " + tableTB.Rows[i]["THANG06"].ToString() + "";
-                //thang07 += ", " + tableTB.Rows[i]["THANG07"].ToString() + "";
-                //thang08 += ", " + tableTB.Rows[i]["THANG08"].ToString() + "";
-                //thang09 += ", " + tableTB.Rows[i]["THANG09"].ToString() + "";
-                //thang10 += ", " + tableTB.Rows[i]["THANG10"].ToString() + "";
-                //thang11 += ", " + tableTB.Rows[i]["THANG11"].ToString() + "";
-                //thang12 += ", " + tableTB.Rows[i]["THANG12"].ToString() + "";
-                binhquan = tableTB.Rows[i]["CHITIEU"].ToString();
-            }
-            title += ", 'Chỉ Tiêu '";
-            thang01 += ", " + binhquan + "";
-            thang02 += ", " + binhquan + "";
-            thang03 += ", " + binhquan + "";
-            thang04 += ", " + binhquan + "";
-            thang05 += ", " + binhquan + "";
-            thang06 += ", " + binhquan + "";
-            thang07 += ", " + binhquan + "";
-            thang08 += ", " + binhquan + "";
-            thang09 += ", " + binhquan + "";
-            thang10 += ", " + binhquan + "";
-            thang11 += ", " + binhquan + "";
-            thang12 += ", " + binhquan + "";
-
 
             string script = title + "]," + thang01 + "]," + thang02 + "]," + thang03 + "]," + thang04 + "]," + thang05 + "]," + thang06 + "]," + thang07 + "]," + thang08 + "],";
             script += thang09 + "]," + thang10 + "]," + thang11 + "]," + thang12 + "]";
@@ -163,7 +55,8 @@ namespace BaoCao_Web.View.tabBieuDo
 
         }
 
-        public void SoSanhTungNam() {
+        public void SoSanhTungNam()
+        {
             string _cacnam = "'" + cacnam.Text.Replace(",", "','").Replace(" ", "");
             _cacnam = _cacnam + "'";
 
@@ -194,7 +87,7 @@ namespace BaoCao_Web.View.tabBieuDo
             double _thang11 = 0;
             double _thang12 = 0;
 
-            DataTable table = Class.C_Chart.getBienDongSanLuong(_cacnam);
+            DataTable table = Class.C_Chart.getBienDongDoanhThu(_cacnam);
             GridView1.DataSource = table;
             GridView1.DataBind();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -239,7 +132,7 @@ namespace BaoCao_Web.View.tabBieuDo
             thang09 += ", " + Math.Round(_thang09 / (table.Rows.Count), 2) + "";
             thang10 += ", " + Math.Round(_thang10 / (table.Rows.Count), 2) + "";
             thang11 += ", " + Math.Round(_thang11 / (table.Rows.Count), 2) + "";
-            thang12 += ", " + Math.Round(_thang12 / (table.Rows.Count), 2) + ""; 
+            thang12 += ", " + Math.Round(_thang12 / (table.Rows.Count), 2) + "";
 
 
             string script = title + "]," + thang01 + "]," + thang02 + "]," + thang03 + "]," + thang04 + "]," + thang05 + "]," + thang06 + "]," + thang07 + "]," + thang08 + "],";
@@ -250,17 +143,8 @@ namespace BaoCao_Web.View.tabBieuDo
         protected void Page_Load(object sender, EventArgs e)
         {
             cacnam.Text = DateTime.Now.Year.ToString();
-            if ("1".Equals(config))
-            {
-                NamHienTai_DHN(DateTime.Now.Year.ToString());
-            }
-            else
-            {
-                TungNam(DateTime.Now.Year.ToString());
-            }
-            //SoSanhTungNam();
-            
-           // NamHienTai_DHN();
+            TungNam(DateTime.Now.Year.ToString());
+
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,16 +156,10 @@ namespace BaoCao_Web.View.tabBieuDo
         {
             if (RadioButtonList1.SelectedIndex == 0)
             {
-                if ("1".Equals(config))
-                {
-                    NamHienTai_DHN(cacnam.Text);
-                }
-                else
-                {
-                    TungNam(cacnam.Text);
-                }
+                TungNam(cacnam.Text);
             }
-            else {
+            else
+            {
                 SoSanhTungNam();
             }
         }

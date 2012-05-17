@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tab_BieuDoSanLuong.ascx.cs" Inherits="BaoCao_Web.View.tabBieuDo.tab_BieuDoSanLuong" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tab_BieuDoDoanhThu.ascx.cs" Inherits="BaoCao_Web.View.tabBieuDo.tab_BieuDoDoanhThu" %>
 <html>
   <head>
       <link href="../../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
@@ -12,8 +12,7 @@
          <%=Session["sanluong"] %>
         ]);
 
-            var options = {
-                title: 'ĐVT:  m3',
+            var options = {                
                  width: 930,
                  height: 430
             };
