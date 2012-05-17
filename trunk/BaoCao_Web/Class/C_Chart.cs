@@ -17,7 +17,16 @@ namespace BaoCao_Web.Class
         public static DataTable getBienDongSanLuong(string nam) {
             return LinQConnection.getDataTable("SELECT * FROM CHART_SANLUONG WHERE NAM IN (" + nam + ") ORDER BY NAM ASC");
         }
-       
+        public static DataTable getSanLuongTrungBinh(string nam)
+        {
+            return LinQConnection.getDataTable("SELECT * FROM CHART_SANLUONG_TRUNGBINH WHERE NAM IN (" + nam + ") ORDER BY NAM ASC");
+        }
+
+        public static DataTable getBienDongDoanhThu(string nam)
+        {
+            return LinQConnection.getDataTable("SELECT * FROM CHART_DOANHTHU WHERE NAM IN (" + nam + ") ORDER BY NAM ASC");
+        }
+         
         
     }
 }

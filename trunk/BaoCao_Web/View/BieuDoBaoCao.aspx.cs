@@ -27,12 +27,12 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Add(control);
                 title.Text = "BIỂU ĐỒ SẢN LƯỢNG";
             }
-            else if ("TDTT".Equals(Request.Params["type"] + ""))
+           else if ("BDDTHU".Equals(Request.Params["type"] + ""))
             {
                 this.Panel1.Controls.Clear();
-                Control control = LoadControl("tabDHN/tabTheoDoiTieuThuThap.ascx");
+                Control control = LoadControl("tabBieuDo/tab_BieuDoDoanhThu.ascx");
                 this.Panel1.Controls.Add(control);
-                title.Text = "THEO DÕI SỐ LƯỢNG KHÁCH HÀNG TIÊU THỤ THẤP ";
+                title.Text = "BIỂU ĐỒ DOANH THU ";
             }
             else if ("TTT".Equals(Request.Params["type"] + ""))
             {

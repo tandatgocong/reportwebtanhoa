@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.tabBieuDo {
     
     
-    public partial class tab_BieuDoSanLuong {
+    public partial class tab_BieuDoDoanhThu {
         
         /// <summary>
         /// RadioButtonList1 control.

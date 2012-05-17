@@ -93,6 +93,9 @@ namespace BaoCao_Web.DataBase
     partial void InsertCHART_SANLUONG(CHART_SANLUONG instance);
     partial void UpdateCHART_SANLUONG(CHART_SANLUONG instance);
     partial void DeleteCHART_SANLUONG(CHART_SANLUONG instance);
+    partial void InsertCHART_SANLUONG_TRUNGBINH(CHART_SANLUONG_TRUNGBINH instance);
+    partial void UpdateCHART_SANLUONG_TRUNGBINH(CHART_SANLUONG_TRUNGBINH instance);
+    partial void DeleteCHART_SANLUONG_TRUNGBINH(CHART_SANLUONG_TRUNGBINH instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -410,6 +413,14 @@ namespace BaoCao_Web.DataBase
 			get
 			{
 				return this.GetTable<CHART_SANLUONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CHART_SANLUONG_TRUNGBINH> CHART_SANLUONG_TRUNGBINHs
+		{
+			get
+			{
+				return this.GetTable<CHART_SANLUONG_TRUNGBINH>();
 			}
 		}
 	}
@@ -15206,6 +15217,380 @@ namespace BaoCao_Web.DataBase
 					this._THANG12 = value;
 					this.SendPropertyChanged("THANG12");
 					this.OnTHANG12Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHART_SANLUONG_TRUNGBINH")]
+	public partial class CHART_SANLUONG_TRUNGBINH : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _NAM;
+		
+		private System.Nullable<int> _THANG01;
+		
+		private System.Nullable<int> _THANG02;
+		
+		private System.Nullable<int> _THANG03;
+		
+		private System.Nullable<int> _THANG04;
+		
+		private System.Nullable<int> _THANG05;
+		
+		private System.Nullable<int> _THANG06;
+		
+		private System.Nullable<int> _THANG07;
+		
+		private System.Nullable<int> _THANG08;
+		
+		private System.Nullable<int> _THANG09;
+		
+		private System.Nullable<int> _THANG10;
+		
+		private System.Nullable<int> _THANG11;
+		
+		private System.Nullable<int> _THANG12;
+		
+		private System.Nullable<int> _CHITIEU;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNAMChanging(int value);
+    partial void OnNAMChanged();
+    partial void OnTHANG01Changing(System.Nullable<int> value);
+    partial void OnTHANG01Changed();
+    partial void OnTHANG02Changing(System.Nullable<int> value);
+    partial void OnTHANG02Changed();
+    partial void OnTHANG03Changing(System.Nullable<int> value);
+    partial void OnTHANG03Changed();
+    partial void OnTHANG04Changing(System.Nullable<int> value);
+    partial void OnTHANG04Changed();
+    partial void OnTHANG05Changing(System.Nullable<int> value);
+    partial void OnTHANG05Changed();
+    partial void OnTHANG06Changing(System.Nullable<int> value);
+    partial void OnTHANG06Changed();
+    partial void OnTHANG07Changing(System.Nullable<int> value);
+    partial void OnTHANG07Changed();
+    partial void OnTHANG08Changing(System.Nullable<int> value);
+    partial void OnTHANG08Changed();
+    partial void OnTHANG09Changing(System.Nullable<int> value);
+    partial void OnTHANG09Changed();
+    partial void OnTHANG10Changing(System.Nullable<int> value);
+    partial void OnTHANG10Changed();
+    partial void OnTHANG11Changing(System.Nullable<int> value);
+    partial void OnTHANG11Changed();
+    partial void OnTHANG12Changing(System.Nullable<int> value);
+    partial void OnTHANG12Changed();
+    partial void OnCHITIEUChanging(System.Nullable<int> value);
+    partial void OnCHITIEUChanged();
+    #endregion
+		
+		public CHART_SANLUONG_TRUNGBINH()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAM", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int NAM
+		{
+			get
+			{
+				return this._NAM;
+			}
+			set
+			{
+				if ((this._NAM != value))
+				{
+					this.OnNAMChanging(value);
+					this.SendPropertyChanging();
+					this._NAM = value;
+					this.SendPropertyChanged("NAM");
+					this.OnNAMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG01", DbType="Int")]
+		public System.Nullable<int> THANG01
+		{
+			get
+			{
+				return this._THANG01;
+			}
+			set
+			{
+				if ((this._THANG01 != value))
+				{
+					this.OnTHANG01Changing(value);
+					this.SendPropertyChanging();
+					this._THANG01 = value;
+					this.SendPropertyChanged("THANG01");
+					this.OnTHANG01Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG02", DbType="Int")]
+		public System.Nullable<int> THANG02
+		{
+			get
+			{
+				return this._THANG02;
+			}
+			set
+			{
+				if ((this._THANG02 != value))
+				{
+					this.OnTHANG02Changing(value);
+					this.SendPropertyChanging();
+					this._THANG02 = value;
+					this.SendPropertyChanged("THANG02");
+					this.OnTHANG02Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG03", DbType="Int")]
+		public System.Nullable<int> THANG03
+		{
+			get
+			{
+				return this._THANG03;
+			}
+			set
+			{
+				if ((this._THANG03 != value))
+				{
+					this.OnTHANG03Changing(value);
+					this.SendPropertyChanging();
+					this._THANG03 = value;
+					this.SendPropertyChanged("THANG03");
+					this.OnTHANG03Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG04", DbType="Int")]
+		public System.Nullable<int> THANG04
+		{
+			get
+			{
+				return this._THANG04;
+			}
+			set
+			{
+				if ((this._THANG04 != value))
+				{
+					this.OnTHANG04Changing(value);
+					this.SendPropertyChanging();
+					this._THANG04 = value;
+					this.SendPropertyChanged("THANG04");
+					this.OnTHANG04Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG05", DbType="Int")]
+		public System.Nullable<int> THANG05
+		{
+			get
+			{
+				return this._THANG05;
+			}
+			set
+			{
+				if ((this._THANG05 != value))
+				{
+					this.OnTHANG05Changing(value);
+					this.SendPropertyChanging();
+					this._THANG05 = value;
+					this.SendPropertyChanged("THANG05");
+					this.OnTHANG05Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG06", DbType="Int")]
+		public System.Nullable<int> THANG06
+		{
+			get
+			{
+				return this._THANG06;
+			}
+			set
+			{
+				if ((this._THANG06 != value))
+				{
+					this.OnTHANG06Changing(value);
+					this.SendPropertyChanging();
+					this._THANG06 = value;
+					this.SendPropertyChanged("THANG06");
+					this.OnTHANG06Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG07", DbType="Int")]
+		public System.Nullable<int> THANG07
+		{
+			get
+			{
+				return this._THANG07;
+			}
+			set
+			{
+				if ((this._THANG07 != value))
+				{
+					this.OnTHANG07Changing(value);
+					this.SendPropertyChanging();
+					this._THANG07 = value;
+					this.SendPropertyChanged("THANG07");
+					this.OnTHANG07Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG08", DbType="Int")]
+		public System.Nullable<int> THANG08
+		{
+			get
+			{
+				return this._THANG08;
+			}
+			set
+			{
+				if ((this._THANG08 != value))
+				{
+					this.OnTHANG08Changing(value);
+					this.SendPropertyChanging();
+					this._THANG08 = value;
+					this.SendPropertyChanged("THANG08");
+					this.OnTHANG08Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG09", DbType="Int")]
+		public System.Nullable<int> THANG09
+		{
+			get
+			{
+				return this._THANG09;
+			}
+			set
+			{
+				if ((this._THANG09 != value))
+				{
+					this.OnTHANG09Changing(value);
+					this.SendPropertyChanging();
+					this._THANG09 = value;
+					this.SendPropertyChanged("THANG09");
+					this.OnTHANG09Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG10", DbType="Int")]
+		public System.Nullable<int> THANG10
+		{
+			get
+			{
+				return this._THANG10;
+			}
+			set
+			{
+				if ((this._THANG10 != value))
+				{
+					this.OnTHANG10Changing(value);
+					this.SendPropertyChanging();
+					this._THANG10 = value;
+					this.SendPropertyChanged("THANG10");
+					this.OnTHANG10Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG11", DbType="Int")]
+		public System.Nullable<int> THANG11
+		{
+			get
+			{
+				return this._THANG11;
+			}
+			set
+			{
+				if ((this._THANG11 != value))
+				{
+					this.OnTHANG11Changing(value);
+					this.SendPropertyChanging();
+					this._THANG11 = value;
+					this.SendPropertyChanged("THANG11");
+					this.OnTHANG11Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG12", DbType="Int")]
+		public System.Nullable<int> THANG12
+		{
+			get
+			{
+				return this._THANG12;
+			}
+			set
+			{
+				if ((this._THANG12 != value))
+				{
+					this.OnTHANG12Changing(value);
+					this.SendPropertyChanging();
+					this._THANG12 = value;
+					this.SendPropertyChanged("THANG12");
+					this.OnTHANG12Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHITIEU", DbType="Int")]
+		public System.Nullable<int> CHITIEU
+		{
+			get
+			{
+				return this._CHITIEU;
+			}
+			set
+			{
+				if ((this._CHITIEU != value))
+				{
+					this.OnCHITIEUChanging(value);
+					this.SendPropertyChanging();
+					this._CHITIEU = value;
+					this.SendPropertyChanged("CHITIEU");
+					this.OnCHITIEUChanged();
 				}
 			}
 		}

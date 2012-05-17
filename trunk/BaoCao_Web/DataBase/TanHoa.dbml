@@ -795,4 +795,22 @@
       <Column Name="THANG12" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CHART_SANLUONG_TRUNGBINH" Member="CHART_SANLUONG_TRUNGBINHs">
+    <Type Name="CHART_SANLUONG_TRUNGBINH">
+      <Column Name="NAM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="THANG01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG09" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANG12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHITIEU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
