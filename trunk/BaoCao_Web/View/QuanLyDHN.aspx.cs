@@ -47,6 +47,13 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Add(control);
                 title.Text = "THEO DÕI CODE ĐỌC SỐ ";
             }
+            else if ("CS".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabBienDocCS.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "THEO DÕI KẾT QUẢ BIÊN ĐỌC CHỈ SỐ NƯỚC ";
+            }
 
             
             
