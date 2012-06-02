@@ -334,6 +334,7 @@
     <Content Include="View\tabBieuDo\tab_BieuDoDoanhThu.ascx" />
     <Content Include="View\tabBieuDo\tab_BieuDoSanLuong.ascx" />
     <Content Include="View\tabBieuDo\tb_BienDongDHN.ascx" />
+    <Content Include="View\tabDHN\tabBienDocCS.ascx" />
     <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
     <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
@@ -441,6 +442,13 @@
     </Compile>
     <Compile Include="View\tabBieuDo\tb_BienDongDHN.ascx.designer.cs">
       <DependentUpon>tb_BienDongDHN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabBienDocCS.ascx.cs">
+      <DependentUpon>tabBienDocCS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabBienDocCS.ascx.designer.cs">
+      <DependentUpon>tabBienDocCS.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabCodeDocSo.ascx.cs">
       <DependentUpon>tabCodeDocSo.ascx</DependentUpon>

@@ -114,6 +114,11 @@
                     <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>
                 </td> 
              </tr> 
+              <tr> 
+                <td> 
+                    <a id="A2" href="QuanLyDHN.aspx?page=DHN&type=CS" >KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
+                </td> 
+             </tr> 
     
     <%}
        else if ("HSKH".Equals(Request.Params["page"] + ""))

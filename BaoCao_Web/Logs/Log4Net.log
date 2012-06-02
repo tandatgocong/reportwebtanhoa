@@ -3,3 +3,12 @@
 2012-05-11 16:35:48,650 [8932] INFO  File --------------------------------------------------------
 2012-05-11 16:35:49,027 [8932] INFO  File --------------------------------------------------------
 2012-05-17 14:22:11,571 [1716] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '2011,2010' to data type int.
+2012-05-20 19:39:49,898 [10160] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-05-20 19:39:49,953 [10160] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-05-20 19:39:49,977 [10160] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-06-01 13:20:05,757 [4092] INFO  File --------------------------------------------------------
+2012-06-01 13:20:22,758 [4092] INFO  File --------------------------------------------------------
+2012-06-01 13:24:32,345 [4092] INFO  File --------------------------------------------------------
+2012-06-01 13:24:37,816 [4092] INFO  File --------------------------------------------------------
+2012-06-01 13:24:51,215 [6740] INFO  File --------------------------------------------------------
+2012-06-01 13:24:51,439 [6740] INFO  File --------------------------------------------------------
