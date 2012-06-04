@@ -113,6 +113,11 @@
                 <td> 
                     <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>
                 </td> 
+             </tr>
+             <tr> 
+                <td> 
+                    <a id="A3" href="QuanLyDHN.aspx?page=DHN&type=CTCODE" >PHÂN TÍCH CODE ĐỌC SỐ</a>
+                </td> 
              </tr> 
               <tr> 
                 <td> 

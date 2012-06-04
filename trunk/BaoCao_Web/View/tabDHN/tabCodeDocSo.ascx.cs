@@ -41,15 +41,15 @@ namespace BaoCao_Web.View.tabDHN
                 if ("00".Equals(dotds))
                 {
                     // ky hien tai
-                    Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(nam_.ToString(), ky_);
+                    Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL(nam_.ToString(), ky_);
                     // ky truoc
                     if (ky_ == 1)
                     {
-                        Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC((nam_ - 1) + "", 12);
+                        Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL((nam_ - 1) + "", 12);
                     }
                     else
                     {
-                        Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(nam_.ToString(), ky_ - 1);
+                        Class.C_BaoCaoCodeDS.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL(nam_.ToString(), ky_ - 1);
                     }
 
                     bcCode.DataSource = Class.C_BaoCaoCodeDS.get_BAOCAO_CODE();

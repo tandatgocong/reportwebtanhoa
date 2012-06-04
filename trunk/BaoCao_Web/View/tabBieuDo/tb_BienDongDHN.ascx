@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tb_BienDongDHN.ascx.cs" Inherits="BaoCao_Web.View.tabBieuDo.tb_BienDongDHN" %>
 <html>
   <head>
+  <p />
+  <p />
+  <br />
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
         google.load("visualization", "1", { packages: ["columnchart"] });

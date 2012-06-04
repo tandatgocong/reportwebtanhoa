@@ -47,6 +47,13 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Add(control);
                 title.Text = "THEO DÕI CODE ĐỌC SỐ ";
             }
+            else if ("CTCODE".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tab_ChiTietCode.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "PHÂN TÍCH CODE ĐỌC SỐ ";
+            }
             else if ("CS".Equals(Request.Params["type"] + ""))
             {
                 this.Panel1.Controls.Clear();

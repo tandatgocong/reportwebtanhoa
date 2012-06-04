@@ -323,5 +323,225 @@ namespace BaoCao_Web.Class
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT " + ex.Message);
             }
         }
+
+
+        // CODE DETAIL 
+
+        public static void RESET_CODE_DS_DETAIL()
+        {
+            LinQConnection.ExecuteCommand("UPDATE W_BAOCAO_CODE_DETAIL   SET KN_60 = 0 ,KN_61 = 0 ,KN_62 = 0 ,KN_63 = 0 ,KN_64 = 0 ,KN_65 = 0 ,KN_66 = 0 ,KN_54 = 0 ,KN_58 = 0 ,KN_F1 = 0 ,KN_F2 = 0 ,KN_F3 = 0 ,KN_F5 = 0 ,KT_60 = 0 ,KT_61 = 0 ,KT_62 = 0 ,KT_63 = 0 ,KT_64 = 0 ,KT_65 = 0 ,KT_66 = 0 ,KT_54 = 0 ,KT_58 = 0 ,KT_F1 = 0 ,KT_F2 = 0 ,KT_F3 = 0 ,KT_F5 = 0 ,KN_67 = 0 ,KN_68 = 0 ,KT_67 = 0 ,KT_68 = 0");
+        }
+        public static DataTable get_BAOCAO_CODE_DETAIL()
+        {
+            return LinQConnection.getDataTable("SELECT * FROM W_BAOCAO_CODE_DETAIL ");
+        }
+
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL(string nam, int ky)
+        {
+            string sql = "UPDATE W_BAOCAO_CODE_DETAIL SET  ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_60 = t2.KN_60, W_BAOCAO_CODE_DETAIL.KN_61= t2.KN_61,  ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_62 = t2.KN_62, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_63 = t2.KN_63, W_BAOCAO_CODE_DETAIL.KN_64= t2.KN_64, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_65 = t2.KN_65, W_BAOCAO_CODE_DETAIL.KN_66= t2.KN_66, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_67 = t2.KN_67, W_BAOCAO_CODE_DETAIL.KN_68= t2.KN_68, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_54 = t2.KN_54, W_BAOCAO_CODE_DETAIL.KN_58= t2.KN_58, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_F1 = t2.KN_F1, W_BAOCAO_CODE_DETAIL.KN_F2= t2.KN_F2, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
+            sql += "   FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
+            sql += "   ( ";
+            sql += "   SELECT TODS,";
+            sql += "   COUNT(case when CODE='60' then 1 else null end) AS KN_60,";
+            sql += "   COUNT(case when CODE='61' then 1 else null end) AS KN_61,";
+            sql += "   COUNT(case when CODE='62' then 1 else null end) AS KN_62,";
+            sql += "   COUNT(case when CODE='63' then 1 else null end) AS KN_63,";
+            sql += "   COUNT(case when CODE='64' then 1 else null end) AS KN_64,";
+            sql += "   COUNT(case when CODE='65' then 1 else null end) AS KN_65,";
+            sql += "   COUNT(case when CODE='66' then 1 else null end) AS KN_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KN_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KN_68,";
+            sql += "   COUNT(case when CODE='54' then 1 else null end) AS KN_54,";
+            sql += "   COUNT(case when CODE='58' then 1 else null end) AS KN_58,";
+            sql += "   COUNT(case when CODE='F1' then 1 else null end) AS KN_F1,";
+            sql += "    COUNT(case when CODE='F2' then 1 else null end) AS KN_F2,";
+            sql += "   COUNT(case when CODE='F3' then 1 else null end) AS KN_F3,";
+            sql += "   COUNT(case when CODE='F5' then 1 else null end) AS KN_F5";
+            sql += "   FROM DocSo_PHT.dbo.DS" + nam;
+            sql += "   WHERE  KY=" + ky;
+            sql += "   GROUP BY TODS ";
+            sql += "   ) as t2 ";
+            sql += "  ON	W_BAOCAO_CODE_DETAIL.TODS = t2.TODS";
+
+            try
+            {
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL " + ex.Message);
+            }
+        }
+
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL(string nam, int ky)
+        {
+            string sql = "UPDATE W_BAOCAO_CODE_DETAIL SET  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_60 = t2.KT_60, W_BAOCAO_CODE_DETAIL.KT_61= t2.KT_61,  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_62 = t2.KT_62,  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_63 = t2.KT_63, W_BAOCAO_CODE_DETAIL.KT_64= t2.KT_64, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_65 = t2.KT_65, W_BAOCAO_CODE_DETAIL.KT_66= t2.KT_66, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_67 = t2.KT_67, W_BAOCAO_CODE_DETAIL.KT_68= t2.KT_68, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_54 = t2.KT_54, W_BAOCAO_CODE_DETAIL.KT_58= t2.KT_58, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_F1 = t2.KT_F1, W_BAOCAO_CODE_DETAIL.KT_F2= t2.KT_F2, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
+            sql += " FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
+            sql += " ( ";
+            sql += " SELECT TODS, ";
+            sql += " COUNT(case when CODE='60' then 1 else null end) AS KT_60, ";
+            sql += " COUNT(case when CODE='61' then 1 else null end) AS KT_61,";
+            sql += " COUNT(case when CODE='62' then 1 else null end) AS KT_62,";
+            sql += " COUNT(case when CODE='63' then 1 else null end) AS KT_63,";
+            sql += " COUNT(case when CODE='64' then 1 else null end) AS KT_64,";
+            sql += " COUNT(case when CODE='65' then 1 else null end) AS KT_65,";
+            sql += " COUNT(case when CODE='66' then 1 else null end) AS KT_66,";
+            sql += " COUNT(case when CODE='67' then 1 else null end) AS KT_67,";
+            sql += " COUNT(case when CODE='68' then 1 else null end) AS KT_68,";
+            sql += " COUNT(case when CODE='54' then 1 else null end) AS KT_54,";
+            sql += " COUNT(case when CODE='58' then 1 else null end) AS KT_58,";
+            sql += " COUNT(case when CODE='F1' then 1 else null end) AS KT_F1,";
+            sql += " COUNT(case when CODE='F2' then 1 else null end) AS KT_F2,";
+            sql += "COUNT(case when CODE='F3' then 1 else null end) AS KT_F3,";
+            sql += "    COUNT(case when CODE='F5' then 1 else null end) AS KT_F5";
+            sql += "   FROM DocSo_PHT.dbo.DS" + nam;
+            sql += "   WHERE  KY=" + ky;
+            sql += "   GROUP BY TODS ";
+            sql += "    ) as t2 ";
+            sql += "  ON	W_BAOCAO_CODE_DETAIL.TODS = t2.TODS";
+
+            try
+            {
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL " + ex.Message);
+            }
+        }
+
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL_DOT(string nam, int ky, int dot)
+        {
+            string sql = "UPDATE W_BAOCAO_CODE_DETAIL SET  ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_60 = t2.KN_60, W_BAOCAO_CODE_DETAIL.KN_61= t2.KN_61,  ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_62 = t2.KN_62, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_63 = t2.KN_63, W_BAOCAO_CODE_DETAIL.KN_64= t2.KN_64, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_65 = t2.KN_65, W_BAOCAO_CODE_DETAIL.KN_66= t2.KN_66, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_67 = t2.KN_67, W_BAOCAO_CODE_DETAIL.KN_68= t2.KN_68, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_54 = t2.KN_54, W_BAOCAO_CODE_DETAIL.KN_58= t2.KN_58, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_F1 = t2.KN_F1, W_BAOCAO_CODE_DETAIL.KN_F2= t2.KN_F2, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
+            sql += "   FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
+            sql += "   ( ";
+            sql += "   SELECT TODS,";
+            sql += "   COUNT(case when CODE='60' then 1 else null end) AS KN_60,";
+            sql += "   COUNT(case when CODE='61' then 1 else null end) AS KN_61,";
+            sql += "   COUNT(case when CODE='62' then 1 else null end) AS KN_62,";
+            sql += "   COUNT(case when CODE='63' then 1 else null end) AS KN_63,";
+            sql += "   COUNT(case when CODE='64' then 1 else null end) AS KN_64,";
+            sql += "   COUNT(case when CODE='65' then 1 else null end) AS KN_65,";
+            sql += "   COUNT(case when CODE='66' then 1 else null end) AS KN_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KN_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KN_68,";
+            sql += "   COUNT(case when CODE='54' then 1 else null end) AS KN_54,";
+            sql += "   COUNT(case when CODE='58' then 1 else null end) AS KN_58,";
+            sql += "   COUNT(case when CODE='F1' then 1 else null end) AS KN_F1,";
+            sql += "    COUNT(case when CODE='F2' then 1 else null end) AS KN_F2,";
+            sql += "   COUNT(case when CODE='F3' then 1 else null end) AS KN_F3,";
+            sql += "   COUNT(case when CODE='F5' then 1 else null end) AS KN_F5";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += "   GROUP BY TODS ";
+            sql += "   ) as t2 ";
+            sql += "  ON	W_BAOCAO_CODE_DETAIL.TODS = t2.TODS";
+
+            try
+            {
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL_DOT " + ex.Message);
+            }
+        }
+
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT(string nam, int ky, int dot)
+        {
+            string sql = "UPDATE W_BAOCAO_CODE_DETAIL SET  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_60 = t2.KT_60, W_BAOCAO_CODE_DETAIL.KT_61= t2.KT_61,  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_62 = t2.KT_62,  ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_63 = t2.KT_63, W_BAOCAO_CODE_DETAIL.KT_64= t2.KT_64, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_65 = t2.KT_65, W_BAOCAO_CODE_DETAIL.KT_66= t2.KT_66, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_67 = t2.KT_67, W_BAOCAO_CODE_DETAIL.KT_68= t2.KT_68, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_54 = t2.KT_54, W_BAOCAO_CODE_DETAIL.KT_58= t2.KT_58, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_F1 = t2.KT_F1, W_BAOCAO_CODE_DETAIL.KT_F2= t2.KT_F2, ";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
+            sql += " FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
+            sql += " ( ";
+            sql += " SELECT TODS, ";
+            sql += " COUNT(case when CODE='60' then 1 else null end) AS KT_60, ";
+            sql += " COUNT(case when CODE='61' then 1 else null end) AS KT_61,";
+            sql += "  COUNT(case when CODE='62' then 1 else null end) AS KT_62,";
+            sql += "   COUNT(case when CODE='63' then 1 else null end) AS KT_63,";
+            sql += "  COUNT(case when CODE='64' then 1 else null end) AS KT_64,";
+            sql += "    COUNT(case when CODE='65' then 1 else null end) AS KT_65,";
+            sql += "   COUNT(case when CODE='66' then 1 else null end) AS KT_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KT_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KT_68,";
+            sql += "   COUNT(case when CODE='54' then 1 else null end) AS KT_54,";
+            sql += "    COUNT(case when CODE='58' then 1 else null end) AS KT_58,";
+            sql += "    COUNT(case when CODE='F1' then 1 else null end) AS KT_F1,";
+            sql += "    COUNT(case when CODE='F2' then 1 else null end) AS KT_F2,";
+            sql += "   COUNT(case when CODE='F3' then 1 else null end) AS KT_F3,";
+            sql += "    COUNT(case when CODE='F5' then 1 else null end) AS KT_F5";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += "   GROUP BY TODS ";
+            sql += "    ) as t2 ";
+            sql += "  ON	W_BAOCAO_CODE_DETAIL.TODS = t2.TODS";
+
+            try
+            {
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT  " + ex.Message);
+            }
+        }
+
+        public static DataTable getTable(string nam, int ky, string code)
+        {
+
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN (" + code + ") ";
+            sql += " ORDER BY DANHBO ASC";
+            return Class.LinQConnection.getDataTable(sql);
+
+        }
+
+        public static DataTable getTable(string nam, int ky, int dot,string code)
+        {
+
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN (" + code + ") ";
+            sql += " ORDER BY DANHBO ASC";
+            return Class.LinQConnection.getDataTable(sql);
+
+        }
+
+
     }
 }
