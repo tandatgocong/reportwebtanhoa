@@ -21,13 +21,11 @@
     }
     .style6
     {
-         width: 119px;
+         width: 37px;
         height: 26px;
     }
     .style7
     {
-         width: 100px;
-        height: 26px;
     }
     .style9
     {
@@ -36,9 +34,24 @@
         text-align:right;
         margin-right:10px;
     }
+    .style10
+    {
+        width: 194px;
+    }
+    .style11
+    {
+        width: 70px;
+    }
+    .style12
+    {
+        width: 97px;
+        height: 28px;
+        text-align: right;
+        margin-right: 10px;
+    }
     </style>
 
-<div class="block block_left events" style="width: 1200px; float:left;">
+<div class="block block_left events" style="width: 1000px; float:left;">
         <table style="font-size:14px; font-family: Times New Roman;">
             <tr>
                 <td class="style2"> 
@@ -111,49 +124,123 @@
             <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:15px;" class="table_list" >
               <tbody>
                   <tr class="head" >
-                    <td class="style6" rowspan="2"><asp:Label ID="lbTieuDe" runat="server" Text="TỔ ĐỌC SỐ"></asp:Label> 
-                        </td>
-                    <td class="style7" colspan="2">
-                        <b>KỲ TRƯỚC</b></td>
+                    <td class="style6" rowspan="2" >SỐ STT</td>
+                    <td class="style10" rowspan="2" >
+                        HỌ TÊN&nbsp;</td>
                      
-                    <td class="style7" colspan="2">
-                       <b>KỲ NÀY</b></td>
-                     <td class="style7" colspan="2">
-                       <b>TĂNG/GIẢM</b></td>
+                    <td class="style11" rowspan="2" >
+                       <b>MÁY<br />
+&nbsp;ĐỌC SỐ</b></td>
+                     <td class="style7" colspan="6" >
+                         KẾT QUẢ BIÊN ĐỌC&nbsp;</td>
                  
-                     <td class="style7" colspan="2">
-                       <b>CÙNG KỲ NĂM TRƯỚC</b></td>
-                     <td class="style7" colspan="2">
-                       <b>TĂNG GIẢM</b></td>
-                   
                 </tr>
                  <tr class="head1">
                   
                     <td class="style9">
-                        ĐHN</td>
-                    <td class="style9">
-                        SẢN LƯỢNG</td>
-                  <td class="style9">
-                        ĐHN</td>
+                        SỐ LƯỢNG ĐHN</td>
                     <td class="style9">
                         SẢN LƯỢNG</td>
                     <td class="style9">
-                        ĐHN</td>
+                        KHÔNG GHI ĐƯỢC CHỈ SỐ</td>
                     <td class="style9">
-                        SẢN LƯỢNG</td>
+                        NHÀ
+                        <br />
+                        XÂY ĐỰNG</td>
                     <td class="style9">
-                        ĐHN</td>
-                    <td class="style9">
-                        SẢN LƯỢNG</td>
-                    <td class="style9">
-                        ĐHN</td>
-                    <td class="style9">
-                        SẢN LƯỢNG</td>
+                        CHỈ SỐ TĂNG BẤT THƯỜNG</td>
+                    <td class="style12">
+                        CHỈ SỐ GIẢM BẤT THƯỜNG</td>
                 </tr>
               </tbody>
             </table>
-        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="312px" 
-                Width="1193px" BorderWidth="0px">
+        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="390px" 
+                Width="1193px" BorderWidth="0px" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" 
+                CellPadding="4" onrowdatabound="GridView1_RowDataBound" ShowFooter="True" 
+                ShowHeader="False" Width="994px" Font-Size="Medium">
+                <Columns>
+                    <asp:BoundField DataField="STT" HeaderText="STT">
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="38px" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FULLNAME" HeaderText="FULLNAME">
+                    <ItemStyle VerticalAlign="Middle" Width="195px" />
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="MAYDS">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("MAYDS","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("MAYDS","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="70px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="SOLUONGDHN">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("SOLUONGDHN","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("SOLUONGDHN","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="SANLUONG">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("SANLUONG","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("SANLUONG","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="KHONGGHI">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("KHONGGHI","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("KHONGGHI","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="NHAXD">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("NHAXD","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("NHAXD","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="TANG">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("TANG","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("TANG","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="GIAM">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("GIAM","{0:0,0}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("GIAM","{0:0,0}") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                    </asp:TemplateField>
+                </Columns>
+                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                <RowStyle BackColor="White" ForeColor="#003399" />
+                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                <SortedDescendingHeaderStyle BackColor="#002876" />
+            </asp:GridView>
         </asp:Panel>
    </div>
  </div>

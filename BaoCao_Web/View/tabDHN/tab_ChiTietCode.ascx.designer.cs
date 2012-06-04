@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.tabDHN {
     
     
-    public partial class tabBienDocCS {
+    public partial class tab_ChiTietCode {
         
         /// <summary>
         /// Label1 control.
@@ -74,6 +74,24 @@ namespace BaoCao_Web.View.tabDHN {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btXemBangKe;
+        
+        /// <summary>
+        /// Label17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label17;
+        
+        /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// Panel1 control.

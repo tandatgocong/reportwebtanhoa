@@ -164,7 +164,7 @@
               
               </tbody>
             </table>
-            <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="354px" 
+            <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" 
                 Width="2340px" BorderWidth="0px">
                 <asp:GridView ID="thongkedhn" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 

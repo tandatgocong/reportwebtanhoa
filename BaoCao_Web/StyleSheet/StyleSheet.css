@@ -61,7 +61,7 @@ div.Pages_content{
 	width: 813px;
 	margin: 0;
 	padding: 0;
-	height:525px;
+	height:600px;
 	background: #FFF url(../../Image/news_list_bg.gif) repeat-x top;
 	border: 1px #E0E0E0 solid;
 }
@@ -504,12 +504,15 @@ div.contain_table{
 .table_list tr.head td{
 	background: #FFF url(../Image/table_list_bghead.png) repeat-x;
 	border-bottom: 1px #99cc99 solid;
-	font:normal 14px Times New Roman;
 	color: #006633;
 	font-weight: bold;
 	text-align: center;
 	padding: 2px 5px;
-	height: 25px;
+	font-style: normal;
+    font-variant: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: "Times New Roman";
 }
 
 
@@ -535,7 +538,7 @@ div.contain_table{
 .table_list td{
 	border-right:1px solid #EAEAEA;
 	padding-right:3px;padding-left:5px;
-	height: 22px; #height: 20px;
+	#height: 20px;
 }
 
 .table_list .nobor{

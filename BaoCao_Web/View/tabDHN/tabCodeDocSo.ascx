@@ -122,7 +122,7 @@
                      <td class="style7" colspan="9">
                          <strong>KỲ NÀY</strong></td>
                    
-                     <td class="style7" colspan="9" style="background-color:#FFB6C1;">
+                     <td class="style7" colspan="9" style="background-color:#FFB6C1;"">
                          <strong>KỲ TRƯỚC</strong></td>
                    
                 </tr>
