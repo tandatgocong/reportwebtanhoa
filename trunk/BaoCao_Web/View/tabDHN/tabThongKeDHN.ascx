@@ -169,12 +169,17 @@
                 <asp:GridView ID="thongkedhn" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="4" ForeColor="Black" GridLines="Vertical" ShowFooter="True" 
-                    onrowdatabound="thongkedhn_RowDataBound" ShowHeader="False">
+                    onrowdatabound="thongkedhn_RowDataBound" ShowHeader="False" Width="2327px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="TENDONGHO" >
-                        <ItemStyle Width="100px" />
-                        </asp:BoundField>
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                                    CommandName="Select" Text='<%# Bind("TENDONGHO") %>'></asp:LinkButton>
+                            </ItemTemplate>
+                            <ItemStyle Width="100px" />
+                        </asp:TemplateField>
+                      
                         <asp:TemplateField HeaderText="15">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("CO15","{0:0,0}") %>'></asp:TextBox>
