@@ -21,7 +21,7 @@
     }
     .style6
     {
-         width: 119px;
+         width: 109px;
         height: 26px;
     }
     .style7
@@ -167,7 +167,7 @@
                 </tr>
               </tbody>
             </table>
-        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="312px" 
+        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="390px" 
                 Width="1745px" BorderWidth="0px">
             <asp:GridView ID="bcCode" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#CC9966" 

@@ -13,6 +13,24 @@ namespace BaoCao_Web.View.tabDHN {
     public partial class tabThongKeDHN {
         
         /// <summary>
+        /// cbKy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbKy;
+        
+        /// <summary>
+        /// lbSoDHN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbSoDHN;
+        
+        /// <summary>
         /// DONGHONUOC control.
         /// </summary>
         /// <remarks>
