@@ -21,17 +21,55 @@ namespace BaoCao_Web.Class
             return LinQConnection.getDataTable(sql);
         }
 
-        public static DataTable getNamGanDHN()
+        public static DataTable getNamGanDHN(string ky, string nam)
         {
             string sql = "SELECT  YEAR(NGAYTHAY) as NGAYTHAY ,COUNT(*) AS SODH ";
-            sql += " FROM TB_DULIEUKHACHHANG WHERE NGAYTHAY IS NOT NULL ";
+            sql += " FROM TB_DULIEUKHACHHANG WHERE NGAYTHAY IS NOT NULL AND KY<= " + ky + " AND NAM <= " + nam;
             sql += " GROUP BY YEAR(NGAYTHAY) ";
             sql += " ORDER BY YEAR(NGAYTHAY) ASC";
             return LinQConnection.getDataTable(sql);
         }
-        public static DataTable getThongKeDHN()
+
+        public static int TongSoDHN(string ky, string nam)
         {
-            string sql = " SELECT * FROM  V_THONGKEDHN";
+            string sql = "SELECT * ";
+            sql += " FROM TB_DULIEUKHACHHANG WHERE KY<= " + ky + " AND NAM <= " + nam;            
+            return LinQConnection.getDataTable(sql).Rows.Count;
+        }
+        public static DataTable getThongKeDHN(int ky, int nam)
+        {
+            
+            string sql = " SELECT hdh.TENDONGHO,";
+			sql += " 	COUNT(CASE WHEN CODH=15 THEN 1 ELSE NULL END) AS CO15,";
+			sql += " 	COUNT(CASE WHEN CODH=20 THEN 1 ELSE NULL END) AS CO20,";
+			sql += " 	COUNT(CASE WHEN CODH=25 THEN 1 ELSE NULL END) AS CO25,";
+			sql += " 	COUNT(CASE WHEN CODH=40 THEN 1 ELSE NULL END) AS CO40,";
+			sql += " 	COUNT(CASE WHEN CODH=50 THEN 1 ELSE NULL END) AS CO50,";
+			sql += " 	COUNT(CASE WHEN (CODH=75 OR  CODH= 80) THEN 1 ELSE NULL END) AS CO80,";
+			sql += " 	COUNT(CASE WHEN CODH=100 THEN 1 ELSE NULL END) AS CO100,";
+			sql += " 	COUNT(CASE WHEN CODH=150 THEN 1 ELSE NULL END) AS CO150,";
+			sql += " 	COUNT(CASE WHEN CODH=200 THEN 1 ELSE NULL END) AS CO200,";
+			sql += " 	COUNT(CASE WHEN CODH=15 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO15,";
+			sql += " 	COUNT(CASE WHEN CODH=20 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO20,";
+			sql += " 	COUNT(CASE WHEN CODH=25 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO25,";
+			sql += " 	COUNT(CASE WHEN CODH=40 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO40,";
+			sql += " 	COUNT(CASE WHEN CODH=50 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO50,";
+			sql += " 	COUNT(CASE WHEN (CODH=75 OR  CODH= 80) AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5)  THEN 1 ELSE NULL END) AS NHOCO80,";
+			sql += " 	COUNT(CASE WHEN CODH=100 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO100,";
+			sql += " 	COUNT(CASE WHEN CODH=150 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO150,";
+			sql += " 	COUNT(CASE WHEN CODH=200 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) <= 5) THEN 1 ELSE NULL END) AS NHOCO200,";
+			sql += " 	COUNT(CASE WHEN CODH=15 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO15,";
+			sql += " 	COUNT(CASE WHEN CODH=20 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO20,";
+			sql += " 	COUNT(CASE WHEN CODH=25 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO25,";
+			sql += " 	COUNT(CASE WHEN CODH=40 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO40,";
+			sql += " 	COUNT(CASE WHEN CODH=50 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO50,";
+			sql += " 	COUNT(CASE WHEN (CODH=75 OR  CODH= 80) AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5)  THEN 1 ELSE NULL END) AS LONCO80,";
+			sql += " 	COUNT(CASE WHEN CODH=100 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO100,";
+			sql += " 	COUNT(CASE WHEN CODH=150 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO150,";
+			sql += " 	COUNT(CASE WHEN CODH=200 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >5) THEN 1 ELSE NULL END) AS LONCO200";
+			sql += " FROM dbo.TB_DULIEUKHACHHANG kh, TB_HIEUDONGHO hdh";
+            sql += " WHERE kh.NAM<=2012 AND kh.KY<=6 AND LEFT(kh.HIEUDH,3)=hdh.HIEUDH";
+			sql += " GROUP BY   hdh.TENDONGHO";
             return LinQConnection.getDataTable(sql);
         }
         public static DataTable getThongKeThayDHN(string tungay, string denngay)

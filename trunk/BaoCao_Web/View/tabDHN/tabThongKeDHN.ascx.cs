@@ -11,15 +11,27 @@ namespace BaoCao_Web.View.tabDHN
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DONGHONUOC.DataSource = Class.C_DHN.getCoDHN();
-            DONGHONUOC.DataBind();
+            //DONGHONUOC.DataSource = Class.C_DHN.getCoDHN();
+            //DONGHONUOC.DataBind();
+            //if (IsPostBack)
+            //    return;
+            int ky = DateTime.Now.Month;
+            int nam = DateTime.Now.Year;
+            if (ky >= 13)
+            {
+                ky = 1;
+                nam = nam + 1;
+            }
 
-            NAMGAN.DataSource = Class.C_DHN.getNamGanDHN();
+            cbKy.SelectedIndex = (ky - 1);
+
+            lbSoDHN.Text = String.Format("{0:0,0}", Class.C_DHN.TongSoDHN(ky + "", nam + ""));
+            NAMGAN.DataSource = Class.C_DHN.getNamGanDHN(ky + "", nam + "");
             NAMGAN.DataBind();
 
-            thongkedhn.DataSource = Class.C_DHN.getThongKeDHN();
+            thongkedhn.DataSource = Class.C_DHN.getThongKeDHN(ky, nam);
             thongkedhn.DataBind();
-            
+
         }
         decimal totalPrice = 0M;
         protected void DONGHONUOC_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -75,8 +87,8 @@ namespace BaoCao_Web.View.tabDHN
             e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
         }
 
-        double CO15 = 0; double CO20 = 0; double CO25 = 0; double CO40 = 0; double CO50 = 0; double CO80 = 0; 
-        double CO100 = 0; double CO150 = 0; double CO200 = 0; double NHOCO15 = 0; double NHOCO20 = 0; 
+        double CO15 = 0; double CO20 = 0; double CO25 = 0; double CO40 = 0; double CO50 = 0; double CO80 = 0;
+        double CO100 = 0; double CO150 = 0; double CO200 = 0; double NHOCO15 = 0; double NHOCO20 = 0;
         double NHOCO25 = 0; double NHOCO40 = 0; double NHOCO50 = 0; double NHOCO80 = 0; double NHOCO100 = 0;
         double NHOCO150 = 0; double NHOCO200 = 0; double LONCO15 = 0; double LONCO20 = 0; double LONCO25 = 0;
         double LONCO40 = 0; double LONCO50 = 0; double LONCO80 = 0; double LONCO100 = 0; double LONCO150 = 0; double LONCO200 = 0;
@@ -143,7 +155,7 @@ namespace BaoCao_Web.View.tabDHN
                 LONCO150 += Double.Parse(Label26.Text);
                 Label Label27 = (Label)e.Row.FindControl("Label27");
                 LONCO200 += Double.Parse(Label27.Text);
-                 
+
             }
             if (e.Row.RowType == DataControlRowType.Footer)
             {
@@ -183,7 +195,7 @@ namespace BaoCao_Web.View.tabDHN
                 Label17.Text = String.Format("{0:0,0}", NHOCO150);
                 Label Label18 = (Label)e.Row.FindControl("Label18");
                 Label18.Text = String.Format("{0:0,0}", NHOCO200);
-                Label Label19 = (Label)e.Row.FindControl("Label19");               
+                Label Label19 = (Label)e.Row.FindControl("Label19");
                 Label19.Text = String.Format("{0:0,0}", LONCO15);
                 Label Label20 = (Label)e.Row.FindControl("Label20");
                 Label20.Text = String.Format("{0:0,0}", LONCO20);
@@ -203,6 +215,27 @@ namespace BaoCao_Web.View.tabDHN
                 Label27.Text = String.Format("{0:0,0}", LONCO200);
             }
 
+        }
+
+        protected void cbKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            totalPrice = 0M;
+            totalPrice2 = 0M;
+            CO15 = 0; CO20 = 0; CO25 = 0; CO40 = 0; CO50 = 0; CO80 = 0;
+            CO100 = 0; CO150 = 0; CO200 = 0; NHOCO15 = 0; NHOCO20 = 0;
+            NHOCO25 = 0; NHOCO40 = 0; NHOCO50 = 0; NHOCO80 = 0; NHOCO100 = 0;
+            NHOCO150 = 0; NHOCO200 = 0; LONCO15 = 0; LONCO20 = 0; LONCO25 = 0;
+            LONCO40 = 0; LONCO50 = 0; LONCO80 = 0; LONCO100 = 0; LONCO150 = 0; LONCO200 = 0;
+
+            int ky = int.Parse(cbKy.Text);
+            int nam = DateTime.Now.Year;
+
+            lbSoDHN.Text = String.Format("{0:0,0}", Class.C_DHN.TongSoDHN(ky + "", nam + ""));
+            NAMGAN.DataSource = Class.C_DHN.getNamGanDHN(ky + "", nam + "");
+            NAMGAN.DataBind();
+
+            thongkedhn.DataSource = Class.C_DHN.getThongKeDHN(ky, nam);
+            thongkedhn.DataBind();
         }
     }
 }

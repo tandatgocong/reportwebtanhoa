@@ -15,6 +15,35 @@
     </style>
 <table width="2500px;" border="0" cellpadding="0" cellspacing="0">
 <tr>
+<td>
+<div class="block block_left events" style="width: 780px;">
+<h4>TỔNG SỐ ĐỒNG HỒ NƯỚC&nbsp; KỲ&nbsp;
+                    <asp:DropDownList ID="cbKy" runat="server" Height="20px" 
+        Width="47px" AutoPostBack="True" 
+        onselectedindexchanged="cbKy_SelectedIndexChanged">
+                        <asp:ListItem>01</asp:ListItem>
+                        <asp:ListItem>02</asp:ListItem>
+                        <asp:ListItem>03</asp:ListItem>
+                        <asp:ListItem>04</asp:ListItem>
+                        <asp:ListItem>05</asp:ListItem>
+                        <asp:ListItem>06</asp:ListItem>
+                        <asp:ListItem>07</asp:ListItem>
+                        <asp:ListItem>08</asp:ListItem>
+                        <asp:ListItem>09</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                        <asp:ListItem>11</asp:ListItem>
+                        <asp:ListItem>12</asp:ListItem>
+                    </asp:DropDownList>
+                 LÀ 
+    <asp:Label ID="lbSoDHN" runat="server" Text="Label" CssClass="numberonline" 
+        Font-Bold="True" Font-Names=".VnBodoniH" Font-Size="15pt" ForeColor="Red"></asp:Label>
+</h4>
+
+</div>
+
+</td>
+</tr>
+<tr>
 <td><div class="block block_left events" style="width: 160px;">
  	<!--<h3>THEO CỞ ĐHN </h3>
 	<div class="block_content">
@@ -50,6 +79,7 @@
             <SortedDescendingHeaderStyle BackColor="#7E0000" />
         </asp:GridView>
  	</div>-->
+   
     <h3>THEO NĂM LẮP ĐẶT </h3>
     <div class="block_content">
         <asp:GridView ID="NAMGAN" runat="server" AutoGenerateColumns="False" 
