@@ -129,9 +129,9 @@
                         <b>HIỆN CÓ TRÊN MẠNG (1);</b> &nbsp;&nbsp; (1) = (2) + (3) </td>
                      
                     <td class="style7" colspan="9">
-                      <b>SỬ DỤNG <= 5 NĂM (2);</b></td>
+                      <b>SỬ DỤNG < 5 NĂM (2);</b></td>
                      <td class="style7" colspan="9">
-                       <b>SỬ DỤNG > 5 NĂM (3);</b></td>
+                       <b>SỬ DỤNG >= 5 NĂM (3);</b></td>
                 </tr>
                  <tr class="head1">
                   
