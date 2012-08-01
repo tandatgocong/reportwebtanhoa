@@ -326,9 +326,14 @@
     <Content Include="Image\block_bg.gif" />
     <Content Include="StyleSheet\Menu.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
+    <Content Include="View\Admin.Master" />
+    <Content Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx" />
+    <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\count_visit.txt" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\HomePage.Master" />
+    <Content Include="View\KinhDoanh.aspx" />
     <Content Include="View\QuanLyDHN.aspx" />
     <Content Include="View\QuanLyHoSoKhachHang.aspx" />
     <Content Include="View\tabBieuDo\tab_BieuDoDoanhThu.ascx" />
@@ -337,8 +342,8 @@
     <Content Include="View\tabDHN\tabBienDocCS.ascx" />
     <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
     <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
-    <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiSanLuong.ascx" />
+    <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabThongKeDHN.ascx" />
     <Content Include="View\tabDHN\tab_ChiTietCode.ascx" />
     <Content Include="View\tab_TheoDoiTDK.aspx" />
@@ -389,6 +394,19 @@
     <Compile Include="View\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx.cs">
+      <DependentUpon>UpdateKinhDoanh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx.designer.cs">
+      <DependentUpon>UpdateKinhDoanh.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx.cs">
+      <DependentUpon>ViewKinhDoanh.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx.designer.cs">
+      <DependentUpon>ViewKinhDoanh.ascx</DependentUpon>
+    </Compile>
     <Compile Include="View\BieuDoBaoCao.aspx.cs">
       <DependentUpon>BieuDoBaoCao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -409,6 +427,13 @@
     </Compile>
     <Compile Include="View\HomePage.Master.designer.cs">
       <DependentUpon>HomePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\KinhDoanh.aspx.cs">
+      <DependentUpon>KinhDoanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\KinhDoanh.aspx.designer.cs">
+      <DependentUpon>KinhDoanh.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyDHN.aspx.cs">
       <DependentUpon>QuanLyDHN.aspx</DependentUpon>
@@ -466,19 +491,19 @@
     <Compile Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx.designer.cs">
       <DependentUpon>tabLoaiKHTieuThuThap.ascx</DependentUpon>
     </Compile>
-    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.cs">
-      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.designer.cs">
-      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
-    </Compile>
     <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.cs">
       <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.designer.cs">
       <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.cs">
+      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx.designer.cs">
+      <DependentUpon>tabTheoDoiTieuThuThap.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabThongKeDHN.ascx.cs">
       <DependentUpon>tabThongKeDHN.ascx</DependentUpon>
@@ -519,8 +544,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Logs\Log4Net.log" />
-    <Content Include="View\Admin.Master" />
-    <Content Include="View\HomePage.Master" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
