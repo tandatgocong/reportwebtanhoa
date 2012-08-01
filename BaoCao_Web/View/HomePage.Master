@@ -45,8 +45,12 @@
                 <li> 
                     <a href="QuanLyDHN.aspx?page=DHN&type=CTCODE" class="">PHÂN TÍCH CODE ĐỌC SỐ</a>
                 </li> 
-                <li class="last"> 
+                <li > 
                     <a href="QuanLyDHN.aspx?page=DHN&type=CS" class="">KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
+                </li>	
+                
+                 <li class="last"> 
+                    <a href="QuanLyDHN.aspx?page=DHN&type=SDS" class="">SỔ ĐỌC SỐ</a>
                 </li>	         
 		           
 		        </ul>
@@ -155,6 +159,11 @@
               <tr> 
                 <td> 
                     <a id="A2" href="QuanLyDHN.aspx?page=DHN&type=CS" >KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
+                </td> 
+             </tr> 
+              <tr> 
+                <td> 
+                    <a id="A4" href="QuanLyDHN.aspx?page=DHN&type=SDS" >SỔ ĐỌC SỐ</a>
                 </td> 
              </tr> 
     

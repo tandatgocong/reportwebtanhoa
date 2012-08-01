@@ -37,6 +37,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\log4net.dll</HintPath>
@@ -342,6 +348,7 @@
     <Content Include="View\tabDHN\tabBienDocCS.ascx" />
     <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
     <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
+    <Content Include="View\tabDHN\tabSoDocSo.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiSanLuong.ascx" />
     <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabThongKeDHN.ascx" />
@@ -366,6 +373,11 @@
     <Compile Include="Class\C_QuanLyDHN.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -403,6 +415,7 @@
     </Compile>
     <Compile Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx.cs">
       <DependentUpon>ViewKinhDoanh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx.designer.cs">
       <DependentUpon>ViewKinhDoanh.ascx</DependentUpon>
@@ -470,6 +483,12 @@
     <Compile Include="View\tabBieuDo\tb_BienDongDHN.ascx.designer.cs">
       <DependentUpon>tb_BienDongDHN.ascx</DependentUpon>
     </Compile>
+    <Compile Include="View\tabDHN\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\tabDHN\tabBienDocCS.ascx.cs">
       <DependentUpon>tabBienDocCS.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -490,6 +509,13 @@
     </Compile>
     <Compile Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx.designer.cs">
       <DependentUpon>tabLoaiKHTieuThuThap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tabSoDocSo.ascx.cs">
+      <DependentUpon>tabSoDocSo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabSoDocSo.ascx.designer.cs">
+      <DependentUpon>tabSoDocSo.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabTheoDoiSanLuong.ascx.cs">
       <DependentUpon>tabTheoDoiSanLuong.ascx</DependentUpon>
@@ -547,6 +573,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataBase\TanHoa.dbml.layout">
@@ -557,6 +584,16 @@
     <None Include="DataBase\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\tabDHN\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
