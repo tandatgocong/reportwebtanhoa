@@ -18,103 +18,96 @@
 }
 
 .menuhead li a.top_link {
-	display:block;
-	float:left;
-	height:35px;
-	line-height:32px;
-	color:#FFF;
-	text-decoration:none;
-	font-size:13px;
-	font-weight:bold;
-	padding:0 13px 0 13px;/* padding-right: distance of between tabs*/
-	cursor:pointer;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 32px;
+    padding: 0 13px 0 12px;
+    text-decoration: none;
 }
 .menuhead li a.top_link span {
-	float:left;
-	display:block;
-	padding:0 5px 0 5px; /*align left and right of text in tab*/
-	_padding-left: 5px; _padding-right: 5px;
-	#padding-left: 5px; #padding-right: 5px;
-	height:35px;
+	display: block;
+    float: left;
+    height: 35px;
+    padding: 0 5px;
 }
 
 .menuhead li a.top_link:hover {
-	color:#FFF;
-	background-color:#015cc0;
-	line-height:35px;
+	    background-color: #02579D;
+    color: #FFFFFF;
+    line-height: 35px;
 }
 .menuhead li a.top_link:hover span {
-	background-color:#015cc0;
+	background-color:#02579D;
 }
 .menuhead li:hover > a.top_link {
 	color:#FFF;
-	background-color:#015cc0;
+	background-color:#02579D;
 	line-height:35px;
 }
 .menuhead li:hover > a.top_link span {
-	background-color:#015cc0;
+	background-color:#02579D;
 }
 
 /*Current*/
 
 .menuhead li.current {
-	display:block;
-	float:left;
-	border-right: 1px #000 solid;
+	 border-right: 1px solid #000000;
+    display: block;
+    float: left;
 }
 
 .menuhead li a.current_link {
-	display:block;
-	float:left;
-	height:35px;
-	line-height:32px;
-	color:#FFF;
-	text-decoration:none;
-	font-size:13px;
-	font-weight:bold;
-	padding:0 10px 0 5px;/* padding-right: distance of between tabs*/
-	cursor:pointer;
-	background-color:#fd0700;
+	background-color: Red;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 32px;
+    padding: 0 10px 0 5px;
+    text-decoration: none;
 }
 .menuhead li a.current_link span {
-	float:left;
-	display:block;
-	padding:0 6px 0 10px; /*align left and right of text in tab*/
-	_padding-left: 8px; _padding-right: 4px;
-	#padding-left: 8px; #padding-right: 4px;
-	height:35px; _height: 35px; _line-height:35px;
-	background-color:#fd0700;
+	background-color: red;
+    display: block;
+    float: left;
+    height: 35px;
+    padding: 0 6px 0 10px;
 }
 .menuhead li a.current_link:hover {
-	color:#FFF;
-	background-color:#015cc0;
-	line-height:32px; _height: 35px; _line-height:35px;
+	background-color: #02579D;
+    color: #FFFFFF;
+    line-height: 32px;
 }
+
 .menuhead li a.current_link:hover span {
-	background-color:#015cc0;
+	background-color:#02579D;
 }
 .menuhead li:hover > a.current_link {
-	color:#FFF;
-	background-color:#015cc0;
-	line-height:35px;
+	    background-color: #02579D;
+    color: #FFFFFF;
+    line-height: 35px;
 }
 .menuhead li:hover > a.current_link span {
-	background-color:#015cc0;
+	background-color:#02579D;
 }
 
 
 .menuhead table {
-	border-collapse:collapse;
-	width:0;
-	height:0;
-	position:absolute;
-	top:0;
-	left:0;
+	border-collapse: collapse;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
 }
-/* Default link styling */
-
-/* Style the list OR link hover. Depends on which browser is used */
-
 .menuhead a:hover {
 	visibility:visible;
 	position:relative;
@@ -124,20 +117,20 @@
 	position:relative;
 	z-index:200;
 }
-/* keep the 'next' level invisible by placing it off screen. */
+
 .menuhead ul {
-	position:absolute;
-	left:-9999px;
-	top:-9999px;
-	width:0;
-	height:0;
-	margin:0;
-	padding:0;
-	list-style:none;
+    height: 0;
+    left: -9999px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -9999px;
+    width: 0;
 }
 
 .menuhead ul.sub_gioithieu {
-	width:195px;
+	width:250px;
 }
 
 .menuhead ul.sub_dichvu {
@@ -157,42 +150,71 @@
 }
 
 
-.menuhead :hover ul {
-	left:-1px;
-	top:35px;
-	background: #FFF;
-	padding:0px;
-	border:1px #000 solid;
-	border-width:0 1px 1px;
-	white-space:nowrap;
-	height:auto;
-	z-index:300;
-}
-.menuhead :hover ul li {
-	display:block;
-	height:30px; #line-height:30px;
-	padding-bottom: 0px;
-	position:relative;
-	font-weight:normal;
-	width:auto;
-	background: #015cc0 url(../images/bullet_menumain.gif) no-repeat;
-	background-position: 5px 8px;
-	border: 1px #000 dotted;
-	border-width: 0px 0px 1px 0px;
-	#border-bottom: 1px #267b5b solid;
-	vertical-align:middle;
+.menuhead *:hover ul {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #02579D ;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    height: auto;
+    left: -1px;
+    padding: 0;
+    top: 35px;
+    white-space: nowrap;
+    z-index: 300;
 }
 
-.menuhead :hover .last {
-	display:block;
-	height:30px;
-	position:relative;
-	font-weight:normal;
-	width:auto;
-	background: #015cc0 url(../images/bullet_menumain.gif) no-repeat;
-	background-position: 5px 7px;
-	border-bottom: 0px
+.menuhead *:hover ul li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../images/bullet_menumain.gif") no-repeat scroll 5px 8px #02579D;
+    border-color: #000000;
+    border-style: dotted;
+    border-width: 0 0 1px;
+    display: block;
+    font-weight: normal;
+    height: 20px;
+    padding-bottom: 2px;
+    position: relative;
+    width: auto;
 }
+
+
+.menuhead *:hover .last {  
+    border-bottom: 0 none;
+    display: block;
+    font-weight: normal;
+    height: 20px;
+    position: relative;
+    width: auto;
+}
+.menuhead *:hover ul li a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 0 0 17px;
+    text-decoration: none;
+    width: auto;
+}
+.menuhead *:hover ul li a:hover {
+   
+    color: #02579D;
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-left: 17px;
+    height: 20px;
+}
+
+
 
 .menuhead :hover ul li a {
 	display:block;
