@@ -67,7 +67,7 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Clear();
                 Control control = LoadControl("tabDHN/tabSoDocSo.ascx");
                 this.Panel1.Controls.Add(control);
-                title.Text = "THEO DÕI KẾT QUẢ BIÊN ĐỌC CHỈ SỐ NƯỚC ";
+                title.Text = "SỔ ĐỌC SỐ  ";
             }
 
             

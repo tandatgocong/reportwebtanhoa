@@ -73,3 +73,11 @@
 2012-06-18 12:38:33,017 [12152] INFO  File --------------------------------------------------------
 2012-06-18 12:38:47,898 [12152] INFO  File --------------------------------------------------------
 2012-06-18 12:38:56,768 [1860] INFO  File --------------------------------------------------------
+2012-08-03 10:13:00,056 [4868] INFO  File --------------------------------------------------------
+2012-08-03 10:13:00,428 [4868] INFO  File RESET SO LIEU  3 record
+2012-08-03 10:13:08,049 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  0 record
+2012-08-03 10:13:44,387 [4868] ERROR File LinQConnection getDataTableTimeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+2012-08-03 10:13:44,548 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  0 record
+2012-08-03 10:14:02,299 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  0 record
+2012-08-03 10:14:02,313 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  3 record
+2012-08-03 10:14:02,574 [4868] INFO  File --------------------------------------------------------

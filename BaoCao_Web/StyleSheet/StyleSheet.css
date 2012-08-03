@@ -513,7 +513,7 @@ div.contain_table{
 }
 
 .table_list{
-	width:100%;
+	
 	border:1px #669966 dotted;
 }
 
@@ -555,6 +555,7 @@ div.contain_table{
 	border-right:1px solid #EAEAEA;
 	padding-right:3px;padding-left:5px;
 	#height: 20px;
+    text-align: center;
 }
 
 .table_list .nobor{

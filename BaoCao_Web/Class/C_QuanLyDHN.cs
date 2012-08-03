@@ -29,7 +29,7 @@ namespace BaoCao_Web.Class
             return tennv;
         }
 
-      
+
         public static DataSet getThongKeDHN(int ky, int nam)
         {
             LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);
@@ -71,7 +71,7 @@ namespace BaoCao_Web.Class
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
                 sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky ;
+                sql += " WHERE  KY=" + ky;
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
@@ -86,7 +86,7 @@ namespace BaoCao_Web.Class
                 sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
                 sql += " COUNT(case when (t.TIEUTHU >= (t.TBTHU * 1.51)) AND t.CODE='4' then 1 else null end) AS TANG,";
                 sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM";
-                sql += " FROM DocSo_PHT.dbo.DS" + nam+"  t ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + " AND DOT=" + dot + " ) as t3";
                 sql += " ON t.DANHBA=t3.DANHBA";
@@ -132,6 +132,29 @@ namespace BaoCao_Web.Class
         public static DataTable getTheoDoiBienDocChiSo()
         {
             string query = "SELECT ROW_NUMBER() OVER (ORDER BY MAYDS  ASC) STT, FULLNAME,MAYDS ,SOLUONGDHN  ,SANLUONG   ,KHONGGHI ,NHAXD ,TANG ,GIAM FROM TB_NHANVIENDOCSO  ORDER BY MAYDS ASC ";
+            return LinQConnection.getDataTable(query);
+        }
+
+        public static DataTable getNhanVienDocSo()
+        {
+            string query = "SELECT MAYDS, NAME FROM TB_NHANVIENDOCSO  ORDER BY MAYDS ASC ";
+            return LinQConnection.getDataTable(query);
+        }
+        public static DataTable getSoDocSo(string nvds, string dot, int ky)
+        {
+            string query = "";
+            if ("00".Equals(dot))
+            {
+                query = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  ASC) STT,DANHBO, LOTRINH,HOTEN, (SONHA+ '' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN ";
+                query += "FROM TB_DULIEUKHACHHANG KH ";
+                query += "WHERE CONVERT(INT,SUBSTRING(RTRIM(LOTRINH),3,2))='"+nvds +"' AND KY<="+ky;
+            }
+            else
+            {
+                query = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  ASC) STT,DANHBO, LOTRINH,HOTEN, (SONHA+ '' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN ";
+                query += "FROM TB_DULIEUKHACHHANG KH ";
+                query += "WHERE LEFT(RTRIM(LOTRINH),2)='" + dot + "' AND CONVERT(INT,SUBSTRING(RTRIM(LOTRINH),3,2))='" + nvds + "' AND KY<=" + ky;
+            }
             return LinQConnection.getDataTable(query);
         }
     }
