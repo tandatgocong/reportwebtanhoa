@@ -6,7 +6,7 @@
 <style type="text/css">
     .style2
     {
-        width: 136px;
+        width: 132px;
     }
     .style3
     {
@@ -16,12 +16,19 @@
     {
         width: 76px;
         height: 2px;
+        border-left:1px #99cc99 solid;
+        text-align: center;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
     }
     .style5
     {
-        width: 67px;
+        width: 64px;
         height: 2px;
-        border-bottom: 2px solid;
+        border-bottom-style: solid;
+        border-right:1px #99cc99 solid;
+        border-bottom-width: 2px;
+        text-align: center;
     }
     .style6
     {
@@ -33,13 +40,18 @@
     }
     .style11
     {
-        width: 52px;
+        width: 53px;
         height: 42px;
+         border-right:1px #99cc99 solid;
     }
     .style12
     {
-        width: 71px;
+        width: 74px;
         height: 2px;
+        border-right:1px #99cc99 solid;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        text-align: center;
     }
     .style14
     {
@@ -48,19 +60,25 @@
     .style24
     {
         width: 107px;
+        border-left:1px #99cc99 solid;
+        border-right:1px #99cc99 solid;
+        border-bottom: 2px solid;
     }
     .style25
     {
         width: 89px;
         height: 42px;
-    }
-    .style29
-    {
-        width: 119px;
+        border-right:1px #99cc99 solid;
+        border-left:1px #99cc99 solid;
+        text-align: center;
     }
     .style30
     {
-        width: 69px;
+        width: 69px;        
+        border-left:1px #99cc99 solid;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        text-align: right;
     }
     .style32
     {
@@ -70,63 +88,112 @@
     {
         width: 92px;
     }
+    .style400
+    {
+        text-align: right;
+         border-bottom-style: solid;     
+        border-bottom-width: 2px;
+       
+    }
+    .style401
+    {
+        text-align: right;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        border-left:1px #99cc99 solid;
+        border-right:1px #99cc99 solid;
+       
+    }
     .style40
     {
         text-align: right;
+         border-bottom-style: solid;     
+        border-bottom-width: 2px;
+       
     }
     .style41
     {
         width: 48px;
+       
     }
     .style45
     {
         width: 52px;
         height: 2px;
+        border-left:1px #99cc99 solid;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        text-align: center;
     }
     .style46
     {
         width: 89px;
         height: 2px;
-    }
-    .style47
-    {
-        width: 56px;
-        height: 2px;
-    }
-    .style51
-    {
-        width: 49px;
-        height: 2px;
-    }
-    .style53
-    {
-        width: 49px;
-        height: 42px;
+        border-right:1px #99cc99 solid;
+        border-left:1px #99cc99 solid;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        text-align: center;
     }
     .style54
     {
         width: 44px;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
+        text-align: center;
     }
     .style55
     {
-        width: 50px;
+        width: 52px;
         text-align: center;
-    }
-    .style57
-    {
-        width: 56px;
-        height: 42px;
+        border-left:1px #99cc99 solid;
+        border-right:1px #99cc99 solid;
+        border-bottom-style: solid;     
+        border-bottom-width: 2px;
     }
     .style58
     {
         height: 42px;
+          border-left:1px #99cc99 solid;
+        border-right:1px #99cc99 solid;
+        text-align: center;
+    }
+    .style59
+    {
+        width: 114px;
+    }
+    .style61
+    {
+        width: 52px;
+        height: 42px;
+        border-right: 2px #99cc99 solid;
+    }
+    .style62
+    {
+        width: 52px;
+        height: 2px;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-right: 2px #99cc99 solid;
+    }
+    .style63
+    {
+        width: 53px;
+        height: 2px;
+        border-right: 1px #99cc99 solid;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
+    .style402
+    {
+        text-align: right;
     }
 </style>
 
 
 
 <div class="block_content">
-   <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="100%"  
+   <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
         BorderWidth="0px" Width="1221px" >      
             <table cellpadding="0" cellspacing="0" 
                 style="font-family:Times New Roman; font-size:15px; width: 1192px;" 
@@ -146,7 +213,7 @@
                      <td  rowspan="2" class="style14" >
                          GIÁ BQ</td>
                  
-                     <td  rowspan="2" class="style29"  >
+                     <td  rowspan="2" class="style59"  >
                          HÓA ĐƠN
                          <br />
                          TB</td>
@@ -176,7 +243,7 @@
             <table border="0" cellpadding="0" cellspacing="0" style="width: 1192px;" >
                 <tr>
                     <td class="style55" rowspan="2" >
-                        1</td>
+                        <b>1</b></td>
                     <td  colspan="2" class="style58">
                         17 399 904 670</td>
                     <td style="text-align: center" class="style24" rowspan="2" >
@@ -186,41 +253,46 @@
                     <td class="style25" >
                         7 343</td>
                     <td rowspan="2" class="style30">
-                        0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;<hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 63px;" />235&nbsp;</td>
-                    <td class="style57">
+                        <div class="style402">
+                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;</div>
+                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 63px;" />
+                        <div class="style402">
+                            235&nbsp;</div>
+                    </td>
+                    <td class="style61">
                         </td>
                     <td  rowspan="2" class="style41">
                         <div class="style40" >
-                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;</div>
-                        <hr style="height: 1px; margin-bottom:0px; margin-top:0px; width: 44px;" />
-                        <div class="style40">
+                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;
+                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 44px;" />
+                        
                             235&nbsp;</div>
                     </td>
                     <td class="style11" >
                     </td>
                     <td  rowspan="2" class="style32">
-                        <div>
-                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;</div>
-                        <hr style="height: 1px; margin-bottom:0px; margin-top:0px; width: 47px;" />
-                        <div >
+                        <div class="style40">
+                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;
+                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 47px;" />
+                        
                             235&nbsp;</div>
                     </td>
-                    <td class="style53" >
+                    <td class="style61" >
                     </td>
                     <td rowspan="2" class="style54">
                         99</td>
                     <td rowspan="2" >
-                        <div class="style40" >
-                            0&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;</div>
-                            <hr style="height: 1px; margin-bottom:0px; margin-top:0px; width: 108px;" />
-                        <div class="style40" >
+                        <div class="style400" >
+                            0&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;
+                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 108px;" />
+                       
                             235&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" style="border:1px;">
-                        <div class="style40" >
-                            0&nbsp;&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;&nbsp;</div>
+                        <div class="style401" >
+                            0&nbsp;&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;&nbsp;
                             <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 161px;" />
-                        <div class="style40"  >
+                        
                             235&nbsp;&nbsp;&nbsp;</div>
                     </td>
                 </tr>
@@ -236,11 +308,11 @@
                     </td>
                     <td class="style46" >
                         2 044 960&nbsp;&nbsp;</td>
-                    <td class="style47" >
+                    <td class="style62" >
                         789</td>
-                    <td class="style45" >
-                        dads</td>
-                    <td class="style51" >
+                    <td class="style63" >
+                        789</td>
+                    <td class="style62" >
                         678</td>
                 </tr>
             </table>
