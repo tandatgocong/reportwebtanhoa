@@ -11,8 +11,8 @@
      window.document.getElementById("KD").className = "current_link";
     </script>
 <div  style="width:100%; height:600px;">
-<div class="title_page"><asp:Label ID="title" runat="server" Text=""></asp:Label></div>
-<asp:Panel ID="Panel1" runat="server" Height="94%" ScrollBars="Auto" 
+
+<asp:Panel ID="Panel1" runat="server" Height="100%" ScrollBars="Auto" 
         Width="99%" CssClass="panel" >
         </asp:Panel>
         </div>

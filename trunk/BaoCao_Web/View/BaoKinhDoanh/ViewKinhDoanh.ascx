@@ -189,9 +189,12 @@
         text-align: right;
     }
 </style>
+<div class="title_page"><asp:Label ID="title" runat="server" Text="SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
+        ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
+        ForeColor="#006600">
 
-
-
+    </asp:DropDownList>
+    </div>
 <div class="block_content">
    <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
         BorderWidth="0px" Width="1221px" >      
@@ -237,27 +240,28 @@
               </tbody>
             </table>
              
-        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="443px"  
-                BorderWidth="0px" Width="1217px" >
+        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
+                BorderWidth="0px" Width="1217px" Height="480px" >
              
-            <table border="0" cellpadding="0" cellspacing="0" style="width: 1192px;" >
+            <table border="0" cellpadding="0" cellspacing="0" 
+                style="width: 1192px;" >
                 <tr>
                     <td class="style55" rowspan="2" >
-                        <b>1</b></td>
-                    <td  colspan="2" class="style58">
-                        17 399 904 670</td>
+                        <b >1</b></td>
+                    <td  colspan="2" class="style58" >
+                       <span title="Tiền Nước Chuẩn Thu ">17 399 904 670 </span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
-                        2 369 602</td>
+                       <span title="Lượng Nước Chuẩn Thu ">2 369 602 </span></td>
                     <td  colspan="2" class="style58">
-                        115 493</td>
+                       <span title="Số Đồng Hồ Nước">115 493</span></td>
                     <td class="style25" >
-                        7 343</td>
+                       <span title="Giá Bán Bình Quân">7 343</span></td>
                     <td rowspan="2" class="style30">
                         <div class="style402">
-                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;</div>
+                            <span title="HĐ Trung Bình Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ Trung Bình Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ Trung Bình Q.Tân Phú">107</span>&nbsp;</div>
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 63px;" />
                         <div class="style402">
-                            235&nbsp;</div>
+                            <span title="Tổng HĐ Trung Bình">235</span>&nbsp;</div>
                     </td>
                     <td class="style61">
                         </td>
@@ -315,11 +319,13 @@
                     <td class="style62" >
                         678</td>
                 </tr>
+          
+                              
             </table>
              
         </asp:Panel>
     </asp:Panel>
-     </div>
+</div>
 
 
 
