@@ -17,6 +17,14 @@ namespace BaoCao_Web.View.BaoKinhDoanh
                 year.Items.Add(i+"");
             }
             year.SelectedIndex = 2;
+           Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(y+"");
+          
         }
+
+        protected void year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(this.year.Text+ ""); 
+        }
+
     }
 }

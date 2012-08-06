@@ -81,3 +81,24 @@
 2012-08-03 10:14:02,299 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  0 record
 2012-08-03 10:14:02,313 [4868] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  3 record
 2012-08-03 10:14:02,574 [4868] INFO  File --------------------------------------------------------
+2012-08-06 15:58:39,640 [6324] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 15:59:31,250 [4740] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 15:59:57,298 [5472] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:01:54,770 [4104] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:02:01,758 [5348] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:45,669 [6248] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:49,729 [6248] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:51,249 [6132] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:52,943 [4612] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:54,950 [6248] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:03:56,723 [4612] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:04:36,223 [3516] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:04:40,103 [4612] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:04:40,245 [4612] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:04:41,573 [4612] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:07:49,046 [6248] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:08:46,538 [3516] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:09:08,515 [6248] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:09:35,784 [4712] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:11:22,422 [6460] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-06 16:11:22,472 [6460] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
