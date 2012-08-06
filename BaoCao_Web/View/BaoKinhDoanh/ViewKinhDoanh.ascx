@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ViewKinhDoanh.ascx.cs" Inherits="BaoCao_Web.View.BaoKinhDoanh.ViewKinhDoanh" %>
 <link href="../../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
-
-
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
 
 <style type="text/css">
     .style2
@@ -191,7 +191,8 @@
 </style>
 <div class="title_page"><asp:Label ID="title" runat="server" Text="SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
-        ForeColor="#006600">
+        ForeColor="#006600" AutoPostBack="True" 
+        onselectedindexchanged="year_SelectedIndexChanged">
 
     </asp:DropDownList>
     </div>
@@ -245,11 +246,19 @@
              
             <table border="0" cellpadding="0" cellspacing="0" 
                 style="width: 1192px;" >
+                             <% 
+                       DataTable table = new DataTable();
+                       if (Session["BAOKD"] != null)
+                       {
+                           table = (DataTable)Session["BAOKD"];
+                           for (int i = 0; i < table.Rows.Count; i++)
+                           {
+                           %>
                 <tr>
                     <td class="style55" rowspan="2" >
-                        <b >1</b></td>
+                        <b ><%=table.Rows[i]["KY"]%></b></td>
                     <td  colspan="2" class="style58" >
-                       <span title="Tiền Nước Chuẩn Thu ">17 399 904 670 </span> </td>
+                       <span title="Tiền Nước Chuẩn Thu "><%=table.Rows[i]["DOANHTHU"]%></span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
                        <span title="Lượng Nước Chuẩn Thu ">2 369 602 </span></td>
                     <td  colspan="2" class="style58">
@@ -267,51 +276,48 @@
                         </td>
                     <td  rowspan="2" class="style41">
                         <div class="style40" >
-                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;
+                           <span title="HĐ=0 Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ=0 Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ=0 Q.Tân Phú">107</span>&nbsp;
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 44px;" />
-                        
-                            235&nbsp;</div>
+                        <span title="Tổng HĐ=0">235&nbsp;</span></div>
                     </td>
                     <td class="style11" >
                     </td>
                     <td  rowspan="2" class="style32">
                         <div class="style40">
-                            0&nbsp;<br /> 128&nbsp;<br /> 107&nbsp;
+                            <span title="HĐ<4 Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ<4  Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ<4  Q.Tân Phú">107</span>&nbsp;
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 47px;" />
-                        
-                            235&nbsp;</div>
+                        <span title="Tổng HĐ<4">235&nbsp;</span></div>
                     </td>
                     <td class="style61" >
                     </td>
                     <td rowspan="2" class="style54">
-                        99</td>
+                       <span title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước">235&nbsp;</span></td>
                     <td rowspan="2" >
                         <div class="style400" >
-                            0&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;
-                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 108px;" />
-                       
-                            235&nbsp;&nbsp;</div>
+                            &nbsp;&nbsp;<br /> <span title="Hóa Đơn Tồn Tư Gia ">128</span>&nbsp;&nbsp;<br /><span title="Hóa Đơn Tồn Cơ Quan ">107</span>&nbsp;&nbsp;
+                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 108px;" />                       
+                            <span title="Tổng Hóa Đơn Tồn ">235</span>&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" style="border:1px;">
                         <div class="style401" >
-                            0&nbsp;&nbsp;&nbsp;<br /> 128&nbsp;&nbsp;&nbsp;<br /> 107&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;<br /><span title="Doanh Thu Tồn Tư Gia "> 128</span>&nbsp;&nbsp;&nbsp;<br /><span title="Doanh Thu Tồn Cơ Quan">107</span>&nbsp;&nbsp;&nbsp;
                             <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 161px;" />
-                        
-                            235&nbsp;&nbsp;&nbsp;</div>
+                            <span title="Tổng Doanh Thu Tồn">235</span>&nbsp;&nbsp;</div>
                     </td>
+
                 </tr>
                 <tr>
                     <td class="style4" >
-                        9949</td>
+                       <span title="Tỉ Lệ Thực Thu 4 Kỳ">9949</span></td>
                     <td class="style5" >
-                        6866</td>
+                       <span title="Tỉ Lệ Thực Thu Kỳ ">6866</span></td>
                     <td class="style45" >
-                        656</td>
+                         <span title="ĐHN Tăng">656</span></td>
                     <td class="style12" >
-                        20 855&nbsp;
+                        <span title="Số Lượng Hóa Đơn <=4m3">656</span>&nbsp;
                     </td>
                     <td class="style46" >
-                        2 044 960&nbsp;&nbsp;</td>
+                        <span title="Tổng Hóa Đơn Định Mức">2 044 960</span>&nbsp;&nbsp;</td>
                     <td class="style62" >
                         789</td>
                     <td class="style63" >
@@ -320,9 +326,9 @@
                         678</td>
                 </tr>
           
-                              
+                        <%}
+                       } %>      
             </table>
-             
         </asp:Panel>
     </asp:Panel>
 </div>

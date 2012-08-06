@@ -371,6 +371,7 @@
     <Compile Include="Class\C_QuanLyDHN.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="Class\SoLieuKinhDoanh.cs" />
     <Compile Include="DataBase\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
