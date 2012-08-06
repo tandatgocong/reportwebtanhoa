@@ -18,14 +18,14 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Clear();
                 Control control = LoadControl("BaoKinhDoanh/UpdateKinhDoanh.ascx");
                 this.Panel1.Controls.Add(control);
-                title.Text = "THỐNG KÊ ĐỒNG HỒ NƯỚC";
+               // title.Text = "THỐNG KÊ ĐỒNG HỒ NƯỚC";
             }else  if ("V".Equals(Request.Params["type"] + ""))
             {
 
                 this.Panel1.Controls.Clear();
                 Control control = LoadControl("BaoKinhDoanh/ViewKinhDoanh.ascx");
                 this.Panel1.Controls.Add(control);
-                title.Text = "SỐ LIỆU KINH DOANH";
+               // title.Text = "SỐ LIỆU KINH DOANH NĂM " ;
             }
             
         }

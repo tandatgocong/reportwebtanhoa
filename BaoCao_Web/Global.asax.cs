@@ -32,6 +32,7 @@ namespace BaoCao_Web
         {
             // Code that runs when a new session is started
             Session["title"]="";
+            Session["year"] = DateTime.Now.Year.ToString();
         }
 
         void Session_End(object sender, EventArgs e)
