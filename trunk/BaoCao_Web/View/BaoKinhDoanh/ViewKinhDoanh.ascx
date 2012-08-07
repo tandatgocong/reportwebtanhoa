@@ -201,7 +201,7 @@
    <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
         BorderWidth="0px" Width="1221px" >      
             <table cellpadding="0" cellspacing="0" 
-                style="font-family:Times New Roman; font-size:15px; width: 1192px;" 
+                style="font-family:Times New Roman; font-size:15px; width: 1120px;" 
                 class="table_list" >
               <tbody>
                   <tr class="head" >
@@ -245,7 +245,7 @@
                 BorderWidth="0px" Width="1217px" Height="480px" >
              
             <table border="0" cellpadding="0" cellspacing="0" 
-                style="width: 1192px;" >
+                style="width: 1120px;" >
                              <% 
                        DataTable table = new DataTable();
                        if (Session["BAOKD"] != null)
@@ -298,18 +298,18 @@
                     </td>
                     <td rowspan="2" class="style54">
                        <span title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
-                    <td rowspan="2" >
+                    <td rowspan="2" style="width:80px" >
                         <div class="style400" >&nbsp;&nbsp;<br /> 
                             <span title="Hóa Đơn Tồn Tư Gia "><%=Format.NumberFormat(table.Rows[i]["HDTON_TG"])%></span>&nbsp;&nbsp;<br />
                             <span title="Hóa Đơn Tồn Cơ Quan "><%=Format.NumberFormat(table.Rows[i]["HDTON_CQ"])%></span>&nbsp;&nbsp;
-                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 108px;" />                       
+                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width:70px;" />                       
                             <span title="Tổng Hóa Đơn Tồn "><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" style="border:1px;">
                         <div class="style401" >&nbsp;&nbsp;&nbsp;<br />
                         <span title="Doanh Thu Tồn Tư Gia "><%=Format.NumberFormat(table.Rows[i]["SLTON_TG"])%></span>&nbsp;&nbsp;&nbsp;<br />
                         <span title="Doanh Thu Tồn Cơ Quan"><%=Format.NumberFormat(table.Rows[i]["SLTON_CQ"])%></span>&nbsp;&nbsp;&nbsp;
-                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 161px;" />
+                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 100px;" />
                             <span title="Tổng Doanh Thu Tồn"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;</div>
                     </td>
 
