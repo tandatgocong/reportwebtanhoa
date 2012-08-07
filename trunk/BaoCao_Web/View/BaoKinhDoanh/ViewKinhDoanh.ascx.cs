@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BaoCao_Web.Class;
 
 namespace BaoCao_Web.View.BaoKinhDoanh
 {
@@ -23,7 +24,8 @@ namespace BaoCao_Web.View.BaoKinhDoanh
 
         protected void year_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(this.year.Text+ ""); 
+            Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(this.year.Text+ "");
+            
         }
 
     }

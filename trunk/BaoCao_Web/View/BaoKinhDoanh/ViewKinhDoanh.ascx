@@ -2,6 +2,7 @@
 <link href="../../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="BaoCao_Web.Class" %>
 
 <style type="text/css">
     .style2
@@ -240,8 +241,7 @@
                 </tr>
               </tbody>
             </table>
-             
-        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
+          <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
                 BorderWidth="0px" Width="1217px" Height="480px" >
              
             <table border="0" cellpadding="0" cellspacing="0" 
@@ -258,78 +258,87 @@
                     <td class="style55" rowspan="2" >
                         <b ><%=table.Rows[i]["KY"]%></b></td>
                     <td  colspan="2" class="style58" >
-                       <span title="Tiền Nước Chuẩn Thu "><%=table.Rows[i]["DOANHTHU"]%></span> </td>
+                       <span title="Tiền Nước Chuẩn Thu "><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
-                       <span title="Lượng Nước Chuẩn Thu ">2 369 602 </span></td>
+                       <span title="Lượng Nước Chuẩn Thu "><%=Format.NumberFormat(table.Rows[i]["SANLUONG"])%></span></td>
                     <td  colspan="2" class="style58">
-                       <span title="Số Đồng Hồ Nước">115 493</span></td>
+                       <span title="Số Đồng Hồ Nước"><%=Format.NumberFormat(table.Rows[i]["SLDHN"])%></span></td>
                     <td class="style25" >
-                       <span title="Giá Bán Bình Quân">7 343</span></td>
+                       <span title="Giá Bán Bình Quân"><%=Format.NumberFormat(table.Rows[i]["GIABQ"])%></span></td>
                     <td rowspan="2" class="style30">
                         <div class="style402">
-                            <span title="HĐ Trung Bình Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ Trung Bình Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ Trung Bình Q.Tân Phú">107</span>&nbsp;</div>
+                            <span title="HĐ Trung Bình Q.Phú Nhuận"><%=Format.NumberFormat(table.Rows[i]["HDTB_PN"])%></span>&nbsp;<br />
+                            <span title="HĐ Trung Bình Q.Tân Bình"><%=Format.NumberFormat(table.Rows[i]["HDTB_TB"])%></span>&nbsp;<br />
+                            <span title="HĐ Trung Bình Q.Tân Phú"><%=Format.NumberFormat(table.Rows[i]["HDTB_TP"])%></span>&nbsp;</div>
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 63px;" />
                         <div class="style402">
-                            <span title="Tổng HĐ Trung Bình">235</span>&nbsp;</div>
+                            <span title="Tổng HĐ Trung Bình"><%=Format.NumberFormat(table.Rows[i]["HDTB"])%></span>&nbsp;</div>
                     </td>
                     <td class="style61">
                         </td>
                     <td  rowspan="2" class="style41">
                         <div class="style40" >
-                           <span title="HĐ=0 Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ=0 Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ=0 Q.Tân Phú">107</span>&nbsp;
+                           <span title="HĐ=0 Q.Phú Nhuận"><%=Format.NumberFormat(table.Rows[i]["HOADON0_PN"])%></span>&nbsp;<br /> 
+                           <span title="HĐ=0 Q.Tân Bình"><%=Format.NumberFormat(table.Rows[i]["HOADON0_TB"])%></span>&nbsp;<br />
+                           <span title="HĐ=0 Q.Tân Phú"><%=Format.NumberFormat(table.Rows[i]["HOADON0_TP"])%></span>&nbsp;
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 44px;" />
-                        <span title="Tổng HĐ=0">235&nbsp;</span></div>
+                        <span title="Tổng HĐ=0"><%=Format.NumberFormat(table.Rows[i]["HOADON0"])%>&nbsp;</span></div>
                     </td>
                     <td class="style11" >
                     </td>
                     <td  rowspan="2" class="style32">
                         <div class="style40">
-                            <span title="HĐ<4 Q.Phú Nhuận">0</span>&nbsp;<br /> <span title="HĐ<4  Q.Tân Bình">128</span>&nbsp;<br /><span title="HĐ<4  Q.Tân Phú">107</span>&nbsp;
+                            <span title="HĐ<4 Q.Phú Nhuận"><%=Format.NumberFormat(table.Rows[i]["HOADON4_PN"])%></span>&nbsp;<br /> 
+                            <span title="HĐ<4  Q.Tân Bình"><%=Format.NumberFormat(table.Rows[i]["HOADON4_TB"])%></span>&nbsp;<br />
+                            <span title="HĐ<4  Q.Tân Phú"><%=Format.NumberFormat(table.Rows[i]["HOADON4_TP"])%></span>&nbsp;
                         <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 47px;" />
-                        <span title="Tổng HĐ<4">235&nbsp;</span></div>
+                        <span title="Tổng HĐ<4"><%=Format.NumberFormat(table.Rows[i]["HOADON4"])%>&nbsp;</span></div>
                     </td>
                     <td class="style61" >
                     </td>
                     <td rowspan="2" class="style54">
-                       <span title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước">235&nbsp;</span></td>
+                       <span title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
                     <td rowspan="2" >
-                        <div class="style400" >
-                            &nbsp;&nbsp;<br /> <span title="Hóa Đơn Tồn Tư Gia ">128</span>&nbsp;&nbsp;<br /><span title="Hóa Đơn Tồn Cơ Quan ">107</span>&nbsp;&nbsp;
+                        <div class="style400" >&nbsp;&nbsp;<br /> 
+                            <span title="Hóa Đơn Tồn Tư Gia "><%=Format.NumberFormat(table.Rows[i]["HDTON_TG"])%></span>&nbsp;&nbsp;<br />
+                            <span title="Hóa Đơn Tồn Cơ Quan "><%=Format.NumberFormat(table.Rows[i]["HDTON_CQ"])%></span>&nbsp;&nbsp;
                             <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 108px;" />                       
-                            <span title="Tổng Hóa Đơn Tồn ">235</span>&nbsp;&nbsp;</div>
+                            <span title="Tổng Hóa Đơn Tồn "><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" style="border:1px;">
-                        <div class="style401" >
-                            &nbsp;&nbsp;&nbsp;<br /><span title="Doanh Thu Tồn Tư Gia "> 128</span>&nbsp;&nbsp;&nbsp;<br /><span title="Doanh Thu Tồn Cơ Quan">107</span>&nbsp;&nbsp;&nbsp;
-                            <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 161px;" />
-                            <span title="Tổng Doanh Thu Tồn">235</span>&nbsp;&nbsp;</div>
+                        <div class="style401" >&nbsp;&nbsp;&nbsp;<br />
+                        <span title="Doanh Thu Tồn Tư Gia "><%=Format.NumberFormat(table.Rows[i]["SLTON_TG"])%></span>&nbsp;&nbsp;&nbsp;<br />
+                        <span title="Doanh Thu Tồn Cơ Quan"><%=Format.NumberFormat(table.Rows[i]["SLTON_CQ"])%></span>&nbsp;&nbsp;&nbsp;
+                        <hr style="height: 0px; margin-bottom:0px; margin-top:0px; width: 161px;" />
+                            <span title="Tổng Doanh Thu Tồn"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;</div>
                     </td>
 
                 </tr>
                 <tr>
                     <td class="style4" >
-                       <span title="Tỉ Lệ Thực Thu 4 Kỳ">9949</span></td>
+                       <span title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY"])%></span></td>
                     <td class="style5" >
-                       <span title="Tỉ Lệ Thực Thu Kỳ ">6866</span></td>
+                       <span title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY"])%></span></td>
                     <td class="style45" >
-                         <span title="ĐHN Tăng">656</span></td>
+                         <span title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN"])%></span></span></td>
                     <td class="style12" >
-                        <span title="Số Lượng Hóa Đơn <=4m3">656</span>&nbsp;
+                        <span title="Số Lượng Hóa Đơn <=4m3"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO3"])%></span>&nbsp;
                     </td>
                     <td class="style46" >
-                        <span title="Tổng Hóa Đơn Định Mức">2 044 960</span>&nbsp;&nbsp;</td>
+                        <span title="Tổng Hóa Đơn Định Mức"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
                     <td class="style62" >
-                        789</td>
+                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG"])%></td>
                     <td class="style63" >
-                        789</td>
+                        <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG"])%></td>
                     <td class="style62" >
-                        678</td>
+                        <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG"])%></td>
                 </tr>
           
                         <%}
                        } %>      
             </table>
-        </asp:Panel>
+        </asp:Panel>   
+        
     </asp:Panel>
 </div>
 
