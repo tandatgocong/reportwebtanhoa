@@ -12,6 +12,7 @@ namespace BaoCao_Web.View.BaoKinhDoanh
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             int y = DateTime.Now.Year;
             for (int i = y - 2; i < y + 3; i++)
             {

@@ -102,3 +102,10 @@
 2012-08-06 16:09:35,784 [4712] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
 2012-08-06 16:11:22,422 [6460] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
 2012-08-06 16:11:22,472 [6460] ERROR File LinQConnection getDataTableInvalid object name 'BAOCAO_KINHDOANH'.
+2012-08-07 10:12:09,124 [6756] INFO  File --------------------------------------------------------
+2012-08-07 10:12:09,246 [6756] INFO  File RESET SO LIEU  3 record
+2012-08-07 10:12:09,664 [6756] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT  3 record
+2012-08-07 10:12:10,086 [6756] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT  3 record
+2012-08-07 10:12:10,143 [6756] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT  0 record
+2012-08-07 10:12:10,180 [6756] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  3 record
+2012-08-07 10:12:10,253 [6756] INFO  File --------------------------------------------------------
