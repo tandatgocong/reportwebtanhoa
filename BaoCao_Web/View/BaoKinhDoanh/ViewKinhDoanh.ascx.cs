@@ -29,5 +29,11 @@ namespace BaoCao_Web.View.BaoKinhDoanh
             
         }
 
+        protected void btIn_Click(object sender, EventArgs e)
+        {
+            CrystalReportSource1.ReportDocument.SetDataSource(Class.SoLieuKinhDoanh.getSoLieuByYear("2012"));
+            CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "SO_LIEU_NAM 2012");
+        }
+
     }
 }

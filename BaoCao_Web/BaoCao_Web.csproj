@@ -286,19 +286,12 @@
     <Content Include="ckeditor\themes\default\theme.js" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Image\081312091357.gif" />
-    <Content Include="Image\081412091445.gif" />
-    <Content Include="Image\1.jpg" />
-    <Content Include="Image\2.jpg" />
-    <Content Include="Image\3.jpg" />
-    <Content Include="Image\4.jpg" />
-    <Content Include="Image\5.jpg" />
-    <Content Include="Image\6.jpg" />
-    <Content Include="Image\7.jpg" />
-    <Content Include="Image\8.gif" />
+    <Content Include="Image\1down.png" />
+    <Content Include="Image\1up.png" />
     <Content Include="Image\add.ico" />
     <Content Include="Image\bg.gif" />
     <Content Include="Image\bg_head.jpg" />
+    <Content Include="Image\block_bg.gif" />
     <Content Include="Image\box-bullet1.gif" />
     <Content Include="Image\btn-chitiet.gif" />
     <Content Include="Image\bullet0_over.png" />
@@ -313,6 +306,7 @@
     <Content Include="Image\menu_bg.png" />
     <Content Include="Image\news_list_bg.gif" />
     <Content Include="Image\nochange.png" />
+    <Content Include="Image\print_icon.gif" />
     <Content Include="Image\table_list_bghead.png" />
     <Content Include="Image\Untitled.png" />
     <Content Include="Image\up.png" />
@@ -327,7 +321,6 @@
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
-    <Content Include="Image\block_bg.gif" />
     <Content Include="StyleSheet\Menu.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
     <Content Include="View\Admin.Master" />
@@ -400,6 +393,23 @@
     </Compile>
     <Compile Include="View\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\kinhdoanh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kinhdoanh.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\rpt_tkKinhDoanh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_tkKinhDoanh.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx.cs">
       <DependentUpon>UpdateKinhDoanh.ascx</DependentUpon>
@@ -559,6 +569,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Logs\Log4Net.log" />
+    <None Include="View\BaoKinhDoanh\kinhdoanh.xsc">
+      <DependentUpon>kinhdoanh.xsd</DependentUpon>
+    </None>
+    <None Include="View\BaoKinhDoanh\kinhdoanh.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kinhdoanh.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\BaoKinhDoanh\kinhdoanh.xss">
+      <DependentUpon>kinhdoanh.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -573,6 +594,16 @@
     <None Include="DataBase\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\rpt_tkKinhDoanh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_tkKinhDoanh.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
