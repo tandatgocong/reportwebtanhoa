@@ -11,6 +11,7 @@ namespace BaoCao_Web.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             MaintainScrollPositionOnPostBack = true;
             if ("U".Equals(Request.Params["type"] + ""))
             {
