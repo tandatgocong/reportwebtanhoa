@@ -8,7 +8,7 @@
     }
     .style13
     {
-        height: 51px;
+        height: 51px;  
     }
     .style15
     {
@@ -18,7 +18,7 @@
     .style23
     {
         width: 157px;
-        height: 51px;
+        height: 51px;  
     }
     .style28
     {
@@ -56,11 +56,12 @@
     {
         width: 177px;
         height: 51px;
+        
     }
     .style45
     {
         width: 1px;
-        height: 51px;
+        height: 51px;  
     }
     .style47
     {
@@ -165,7 +166,7 @@
     .style111
     {
         height: 51px;
-        width: 12px;
+        width: 12px;  
     }
     .style112
     {
@@ -204,7 +205,8 @@
     &nbsp;KỲ
     <asp:DropDownList 
         ID="ky" runat="server" Font-Bold="True" Font-Size="13pt" 
-        ForeColor="#006600" AutoPostBack="True" >
+        ForeColor="#006600" AutoPostBack="True" 
+        onselectedindexchanged="ky_SelectedIndexChanged" >
         <asp:ListItem>1</asp:ListItem>
         <asp:ListItem>2</asp:ListItem>
         <asp:ListItem>3</asp:ListItem>
@@ -223,7 +225,7 @@
 <div class="block_content">
    <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
         BorderWidth="0px" Width="100%" >
-       <table >
+       <table border="0" cellpadding="0" cellspacing="0">
            <tr>
                <td class="style59">
                    &nbsp;</td>
@@ -258,7 +260,8 @@
                <td class="style111">
                    &nbsp;</td>
                <td class="style13" >
-                   Tỉ Lệ Doanh Thu 4 Kỳ :<br /> <asp:TextBox ID="txtTiLeDTKy0" runat="server" 
+                   Tỉ Lệ Doanh Thu 4 Kỳ :<br /> 
+                   <asp:TextBox ID="txtTiLeDT4Ky" runat="server" 
                        Width="131px"></asp:TextBox>
                </td>
                <td class="style29">
@@ -268,23 +271,23 @@
                <td class="style15">
                </td>
                <td class="style58">
-                   Sản Lượng:<asp:TextBox ID="txtDoanhThu0" runat="server" Width="146px"></asp:TextBox>
+                   Sản Lượng:<asp:TextBox ID="txtSanLuong" runat="server" Width="146px"></asp:TextBox>
                </td>
                <td class="style102">
                    &nbsp;</td>
                <td class="style107">
-                   Đồng Hồ Nước :<asp:TextBox ID="txtTiLeDTKy1" runat="server" Width="131px"></asp:TextBox>
+                   Đồng Hồ Nước :<asp:TextBox ID="txtDHN" runat="server" Width="131px"></asp:TextBox>
                </td>
                <td class="style112">
                    &nbsp;</td>
                <td class="style54">
                    Tăng ĐHN :<br />
-                   <asp:TextBox ID="txtTiLeDTKy2" runat="server" Width="131px"></asp:TextBox>
+                   <asp:TextBox ID="txtTangDHN" runat="server" Width="131px"></asp:TextBox>
                </td>
                <td class="style62">
                    &nbsp;</td>
                <td class="style33">
-                   Hóa Đơn &lt; 4m<sup>3</sup><asp:TextBox ID="txtTiLeDTKy3" runat="server" 
+                   Hóa Đơn &lt; 4m<sup>3</sup><asp:TextBox ID="txtHoaDonNho3" runat="server" 
                        Width="131px"></asp:TextBox></td>
                <td class="style28">
                </td>
@@ -293,12 +296,12 @@
                <td class="style34">
                    </td>
                <td class="style66">
-                   Giá Bình Quân:<asp:TextBox ID="txtDoanhThu1" runat="server" Width="143px"></asp:TextBox>
+                   Giá Bình Quân:<asp:TextBox ID="txtGiaBinhQuan" runat="server" Width="143px"></asp:TextBox>
                </td>
                <td class="style47">
                    &nbsp;</td>
                <td class="style36">
-                   Hóa Đơn Định Mực<asp:TextBox ID="txtTiLeDTKy4" runat="server" Width="131px"></asp:TextBox>
+                   Hóa Đơn Định Mực<asp:TextBox ID="txtHoaDonDM" runat="server" Width="131px"></asp:TextBox>
                </td>
                <td class="style109">
                    &nbsp;</td>
@@ -310,12 +313,12 @@
                    </td>
                <td class="style115" colspan="8">
                    <strong>Hóa Đơn T.Bình</strong>&nbsp; Q.Phú Nhuận :
-                   <asp:TextBox ID="txtTiLeDTKy5" runat="server" Width="88px"></asp:TextBox>
-                   &nbsp; Tân Bình:<asp:TextBox ID="txtTiLeDTKy6" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hdTBPN" runat="server" Width="88px"></asp:TextBox>
+                   &nbsp; Tân Bình:<asp:TextBox ID="HdTBTB" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Phú:
-                   <asp:TextBox ID="txtTiLeDTKy7" runat="server" Width="88px"></asp:TextBox>
-                   Tổng Cộng :<asp:TextBox ID="txtTiLeDTKy8" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="txtTiLeDTKy9" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hdtbTP" runat="server" Width="88px"></asp:TextBox>
+                   Tổng Cộng :<asp:TextBox ID="hdtbTongCong" runat="server" Width="116px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hdtbTANGGIAM" runat="server" Width="88px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -323,12 +326,12 @@
                    </td>
                <td class="style37" colspan="8">
                    <strong>Hóa Đơn 0m</strong><sup>3</sup> &nbsp; Q.Phú Nhuận :
-                   <asp:TextBox ID="txtTiLeDTKy10" runat="server" Width="88px"></asp:TextBox>
-                   &nbsp; Tân Bình:<asp:TextBox ID="txtTiLeDTKy11" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hdtb0MPN" runat="server" Width="88px"></asp:TextBox>
+                   &nbsp; Tân Bình:<asp:TextBox ID="hd0mTB" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Phú:
-                   <asp:TextBox ID="txtTiLeDTKy12" runat="server" Width="88px"></asp:TextBox>
-                   Tổng Cộng :<asp:TextBox ID="txtTiLeDTKy13" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="txtTiLeDTKy14" runat="server" Width="101px"></asp:TextBox>
+                   <asp:TextBox ID="hd0mTP" runat="server" Width="88px"></asp:TextBox>
+                   Tổng Cộng :<asp:TextBox ID="hd0mTONG" runat="server" Width="116px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd0mTANGGIAM" runat="server" Width="101px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -336,12 +339,12 @@
                    </td>
                <td class="style87" colspan="8">
                    <strong>Hóa Đơn 4m</strong><sup>3</sup>&nbsp;&nbsp; Q.Phú Nhuận :
-                   <asp:TextBox ID="txtTiLeDTKy15" runat="server" Width="88px"></asp:TextBox>
-                   &nbsp; Tân Bình:<asp:TextBox ID="txtTiLeDTKy16" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hd4mPN" runat="server" Width="88px"></asp:TextBox>
+                   &nbsp; Tân Bình:<asp:TextBox ID="hd4mTB" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Phú:
-                   <asp:TextBox ID="txtTiLeDTKy17" runat="server" Width="88px"></asp:TextBox>
-                   Tổng Cộng :<asp:TextBox ID="txtTiLeDTKy18" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="txtTiLeDTKy19" runat="server" Width="102px"></asp:TextBox>
+                   <asp:TextBox ID="hd4mTP" runat="server" Width="88px"></asp:TextBox>
+                   Tổng Cộng :<asp:TextBox ID="hd4mTONGCONG" runat="server" Width="116px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd4mTANGGIAM" runat="server" Width="102px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -349,26 +352,26 @@
                    </td>
                <td class="style97" rowspan="2">
                    <strong>Số HĐ Tồn Các Kỳ Trước</strong><br />
-                   <asp:TextBox ID="txtDoanhThu2" runat="server" Width="156px"></asp:TextBox>
+                   <asp:TextBox ID="hdTonKyTruoc" runat="server" Width="156px"></asp:TextBox>
                </td>
                <td class="style95" colspan="7">
                    <strong>Hóa Đơn Tồn Thu </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tư Gia:
-                   <asp:TextBox ID="txtDoanhThu3" runat="server" Width="143px"></asp:TextBox>
+                   <asp:TextBox ID="hdTonTG" runat="server" Width="143px"></asp:TextBox>
                    &nbsp; &nbsp; Cơ Quan:
-                   <asp:TextBox ID="txtDoanhThu5" runat="server" Width="143px"></asp:TextBox>
-                   &nbsp; Tổng:&nbsp;<asp:TextBox ID="txtDoanhThu7" runat="server" Width="175px"></asp:TextBox>
+                   <asp:TextBox ID="hdTonCQ" runat="server" Width="143px"></asp:TextBox>
+                   &nbsp; Tổng:&nbsp;<asp:TextBox ID="hdTonTONGCONG" runat="server" Width="175px"></asp:TextBox>
                    </td>
            </tr>
            <tr>
                <td class="style85">
                    </td>
                <td class="style87" colspan="7">
-                   <strong>Doanh Thu Tồn Thu</strong>&nbsp;&nbsp; Tư Gia: &nbsp;<asp:TextBox ID="txtDoanhThu4" 
+                   <strong>Doanh Thu Tồn Thu</strong>&nbsp;&nbsp; Tư Gia: &nbsp;<asp:TextBox ID="dtTonTG" 
                        runat="server" Width="143px"></asp:TextBox>
                    &nbsp;&nbsp; Cơ Quan:
-                   <asp:TextBox ID="txtDoanhThu6" runat="server" Width="143px"></asp:TextBox>
+                   <asp:TextBox ID="dtTonCQ" runat="server" Width="143px"></asp:TextBox>
                    &nbsp;&nbsp; Tổng:
-                   <asp:TextBox ID="txtDoanhThu8" runat="server" Width="172px"></asp:TextBox>
+                   <asp:TextBox ID="dtTonTONGCONG" runat="server" Width="172px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -377,7 +380,7 @@
                <td class="style117">
                    </td>
                <td class="style103" colspan="5">
-                   <asp:Button ID="Button1" runat="server" CssClass="button" Text="CẬP NHẬT" 
+                   <asp:Button ID="btCapNhat" runat="server" CssClass="button" Text="CẬP NHẬT" 
                        Width="156px" />
                </td>
                <td class="style118">
