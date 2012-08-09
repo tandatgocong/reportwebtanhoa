@@ -18,5 +18,10 @@ namespace BaoCao_Web.View.BaoKinhDoanh
             }
             year.SelectedIndex = 2;
         }
+
+        protected void ky_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

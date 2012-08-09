@@ -67,273 +67,273 @@ namespace BaoCao_Web.View.BaoKinhDoanh {
         protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy;
         
         /// <summary>
-        /// txtTiLeDTKy0 control.
+        /// txtTiLeDT4Ky control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy0;
+        protected global::System.Web.UI.WebControls.TextBox txtTiLeDT4Ky;
         
         /// <summary>
-        /// txtDoanhThu0 control.
+        /// txtSanLuong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu0;
+        protected global::System.Web.UI.WebControls.TextBox txtSanLuong;
         
         /// <summary>
-        /// txtTiLeDTKy1 control.
+        /// txtDHN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy1;
+        protected global::System.Web.UI.WebControls.TextBox txtDHN;
         
         /// <summary>
-        /// txtTiLeDTKy2 control.
+        /// txtTangDHN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy2;
+        protected global::System.Web.UI.WebControls.TextBox txtTangDHN;
         
         /// <summary>
-        /// txtTiLeDTKy3 control.
+        /// txtHoaDonNho3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy3;
+        protected global::System.Web.UI.WebControls.TextBox txtHoaDonNho3;
         
         /// <summary>
-        /// txtDoanhThu1 control.
+        /// txtGiaBinhQuan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu1;
+        protected global::System.Web.UI.WebControls.TextBox txtGiaBinhQuan;
         
         /// <summary>
-        /// txtTiLeDTKy4 control.
+        /// txtHoaDonDM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy4;
+        protected global::System.Web.UI.WebControls.TextBox txtHoaDonDM;
         
         /// <summary>
-        /// txtTiLeDTKy5 control.
+        /// hdTBPN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy5;
+        protected global::System.Web.UI.WebControls.TextBox hdTBPN;
         
         /// <summary>
-        /// txtTiLeDTKy6 control.
+        /// HdTBTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy6;
+        protected global::System.Web.UI.WebControls.TextBox HdTBTB;
         
         /// <summary>
-        /// txtTiLeDTKy7 control.
+        /// hdtbTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy7;
+        protected global::System.Web.UI.WebControls.TextBox hdtbTP;
         
         /// <summary>
-        /// txtTiLeDTKy8 control.
+        /// hdtbTongCong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy8;
+        protected global::System.Web.UI.WebControls.TextBox hdtbTongCong;
         
         /// <summary>
-        /// txtTiLeDTKy9 control.
+        /// hdtbTANGGIAM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy9;
+        protected global::System.Web.UI.WebControls.TextBox hdtbTANGGIAM;
         
         /// <summary>
-        /// txtTiLeDTKy10 control.
+        /// hdtb0MPN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy10;
+        protected global::System.Web.UI.WebControls.TextBox hdtb0MPN;
         
         /// <summary>
-        /// txtTiLeDTKy11 control.
+        /// hd0mTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy11;
+        protected global::System.Web.UI.WebControls.TextBox hd0mTB;
         
         /// <summary>
-        /// txtTiLeDTKy12 control.
+        /// hd0mTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy12;
+        protected global::System.Web.UI.WebControls.TextBox hd0mTP;
         
         /// <summary>
-        /// txtTiLeDTKy13 control.
+        /// hd0mTONG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy13;
+        protected global::System.Web.UI.WebControls.TextBox hd0mTONG;
         
         /// <summary>
-        /// txtTiLeDTKy14 control.
+        /// hd0mTANGGIAM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy14;
+        protected global::System.Web.UI.WebControls.TextBox hd0mTANGGIAM;
         
         /// <summary>
-        /// txtTiLeDTKy15 control.
+        /// hd4mPN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy15;
+        protected global::System.Web.UI.WebControls.TextBox hd4mPN;
         
         /// <summary>
-        /// txtTiLeDTKy16 control.
+        /// hd4mTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy16;
+        protected global::System.Web.UI.WebControls.TextBox hd4mTB;
         
         /// <summary>
-        /// txtTiLeDTKy17 control.
+        /// hd4mTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy17;
+        protected global::System.Web.UI.WebControls.TextBox hd4mTP;
         
         /// <summary>
-        /// txtTiLeDTKy18 control.
+        /// hd4mTONGCONG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy18;
+        protected global::System.Web.UI.WebControls.TextBox hd4mTONGCONG;
         
         /// <summary>
-        /// txtTiLeDTKy19 control.
+        /// hd4mTANGGIAM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiLeDTKy19;
+        protected global::System.Web.UI.WebControls.TextBox hd4mTANGGIAM;
         
         /// <summary>
-        /// txtDoanhThu2 control.
+        /// hdTonKyTruoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu2;
+        protected global::System.Web.UI.WebControls.TextBox hdTonKyTruoc;
         
         /// <summary>
-        /// txtDoanhThu3 control.
+        /// hdTonTG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu3;
+        protected global::System.Web.UI.WebControls.TextBox hdTonTG;
         
         /// <summary>
-        /// txtDoanhThu5 control.
+        /// hdTonCQ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu5;
+        protected global::System.Web.UI.WebControls.TextBox hdTonCQ;
         
         /// <summary>
-        /// txtDoanhThu7 control.
+        /// hdTonTONGCONG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu7;
+        protected global::System.Web.UI.WebControls.TextBox hdTonTONGCONG;
         
         /// <summary>
-        /// txtDoanhThu4 control.
+        /// dtTonTG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu4;
+        protected global::System.Web.UI.WebControls.TextBox dtTonTG;
         
         /// <summary>
-        /// txtDoanhThu6 control.
+        /// dtTonCQ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu6;
+        protected global::System.Web.UI.WebControls.TextBox dtTonCQ;
         
         /// <summary>
-        /// txtDoanhThu8 control.
+        /// dtTonTONGCONG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoanhThu8;
+        protected global::System.Web.UI.WebControls.TextBox dtTonTONGCONG;
         
         /// <summary>
-        /// Button1 control.
+        /// btCapNhat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btCapNhat;
     }
 }
