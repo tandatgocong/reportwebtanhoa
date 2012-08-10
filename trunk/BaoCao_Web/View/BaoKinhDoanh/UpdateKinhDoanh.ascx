@@ -326,7 +326,7 @@
                    </td>
                <td class="style37" colspan="8">
                    <strong>Hóa Đơn 0m</strong><sup>3</sup> &nbsp; Q.Phú Nhuận :
-                   <asp:TextBox ID="hdtb0MPN" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hd0MPN" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Bình:<asp:TextBox ID="hd0mTB" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Phú:
                    <asp:TextBox ID="hd0mTP" runat="server" Width="88px"></asp:TextBox>
