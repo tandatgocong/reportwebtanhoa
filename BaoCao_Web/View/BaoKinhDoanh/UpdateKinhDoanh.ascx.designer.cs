@@ -175,13 +175,13 @@ namespace BaoCao_Web.View.BaoKinhDoanh {
         protected global::System.Web.UI.WebControls.TextBox hdtbTANGGIAM;
         
         /// <summary>
-        /// hdtb0MPN control.
+        /// hd0MPN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hdtb0MPN;
+        protected global::System.Web.UI.WebControls.TextBox hd0MPN;
         
         /// <summary>
         /// hd0mTB control.
