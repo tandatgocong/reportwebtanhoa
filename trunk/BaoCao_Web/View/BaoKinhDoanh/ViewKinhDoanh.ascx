@@ -333,7 +333,7 @@
                     <td class="style46" >
                         <span title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
                     <td class="style62" >
-                    <% double HDTB_TANG = double.Parse(table.Rows[i]["HDTB_TANG"] + "");
+                    <% double HDTB_TANG = double.Parse(table.Rows[i]["HDTB_TANG"] + "0");
                        if (HDTB_TANG > 0) {
                            
                         %>
@@ -354,7 +354,7 @@
                        } 
                      %>
                                                             <td class="style63">
-                                                                <% double HOADON0_TG = double.Parse(table.Rows[i]["HOADON0_TG"] + "");
+                                                                <% double HOADON0_TG = double.Parse(table.Rows[i]["HOADON0_TG"] + "0");
                        if (HOADON0_TG > 0)
                        {
                         %>
@@ -375,7 +375,7 @@
                        } 
                      %>
                                                                 <td class="style62">
-                                                                    <% double HOADON4_TG = double.Parse(table.Rows[i]["HOADON4_TG"] + "");
+                                                                    <% double HOADON4_TG = double.Parse(table.Rows[i]["HOADON4_TG"] + "0");
                        if (HOADON4_TG > 0)
                        {
                            
