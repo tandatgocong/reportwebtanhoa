@@ -109,10 +109,6 @@
     {
         height: 39px;
     }
-    .style89
-    {
-        height: 39px;
-    }
     .style93
     {
         width: 3px;
@@ -121,11 +117,6 @@
     .style95
     {
         height: 33px;
-    }
-    .style96
-    {
-        height: 39px;
-        width: 177px;
     }
     .style97
     {
@@ -316,7 +307,8 @@
                    <asp:TextBox ID="hdTBPN" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Bình:<asp:TextBox ID="HdTBTB" runat="server" Width="88px"></asp:TextBox>
                    &nbsp; Tân Phú:
-                   <asp:TextBox ID="hdtbTP" runat="server" Width="88px"></asp:TextBox>
+                   <asp:TextBox ID="hdtbTP" runat="server" Width="88px" 
+                       ontextchanged="hdtbTP_TextChanged"></asp:TextBox>
                    Tổng Cộng :<asp:TextBox ID="hdtbTongCong" runat="server" Width="116px"></asp:TextBox>
                    &nbsp;Tăng/Giảm:<asp:TextBox ID="hdtbTANGGIAM" runat="server" Width="88px"></asp:TextBox>
                </td>
@@ -379,12 +371,12 @@
                    </td>
                <td class="style117">
                    </td>
-               <td class="style103" colspan="5">
+               <td class="style103" colspan="6">
                    <asp:Button ID="btCapNhat" runat="server" CssClass="button" Text="CẬP NHẬT" 
-                       Width="156px" />
+                       Width="156px" onclick="btCapNhat_Click" />
+                   &nbsp;&nbsp;
+                   <asp:Label ID="lbResult" runat="server" Font-Bold="True"></asp:Label>
                </td>
-               <td class="style118">
-                   </td>
            </tr>
        </table>
           

@@ -13,7 +13,7 @@ namespace BaoCao_Web.View
         {
             
             MaintainScrollPositionOnPostBack = true;
-            if ("U".Equals(Request.Params["type"] + ""))
+            if ("U".Equals(Request.Params["type"] + "") || "u".Equals(Request.Params["type"] + ""))
             {
 
                 this.Panel1.Controls.Clear();
