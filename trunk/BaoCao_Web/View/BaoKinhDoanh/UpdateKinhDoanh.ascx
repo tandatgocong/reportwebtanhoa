@@ -183,12 +183,8 @@
         height: 48px;
         width: 177px;
     }
-    .style118
-    {
-        height: 48px;
-    }
     </style>
-<div class="title_page"><asp:Label ID="title" runat="server" Text="CẬP NHẬT SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
+<div class="title_page" style="height:30px;"><asp:Label ID="title" runat="server" Text="CẬP NHẬT SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
         ForeColor="#006600" >
 
@@ -196,7 +192,7 @@
     &nbsp;KỲ
     <asp:DropDownList 
         ID="ky" runat="server" Font-Bold="True" Font-Size="13pt" 
-        ForeColor="#006600" AutoPostBack="True" 
+        ForeColor="#006600" 
         onselectedindexchanged="ky_SelectedIndexChanged" >
         <asp:ListItem>1</asp:ListItem>
         <asp:ListItem>2</asp:ListItem>
@@ -212,6 +208,8 @@
         <asp:ListItem>12</asp:ListItem>
 
     </asp:DropDownList>
+    &nbsp;<asp:Button ID="btCapNhat0" runat="server" CssClass="button" Text="LOAD THÔNG TIN " 
+                       Width="156px" onclick="btCapNhat0_Click" />
     </div>
 <div class="block_content">
    <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
@@ -373,7 +371,7 @@
                    </td>
                <td class="style103" colspan="6">
                    <asp:Button ID="btCapNhat" runat="server" CssClass="button" Text="CẬP NHẬT" 
-                       Width="156px" onclick="btCapNhat_Click" />
+                       Width="156px" onclick="btCapNhat_Click" UseSubmitBehavior="False" />
                    &nbsp;&nbsp;
                    <asp:Label ID="lbResult" runat="server" Font-Bold="True"></asp:Label>
                </td>

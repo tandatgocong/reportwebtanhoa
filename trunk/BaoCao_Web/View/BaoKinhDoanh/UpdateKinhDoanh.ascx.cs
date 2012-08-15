@@ -23,12 +23,7 @@ namespace BaoCao_Web.View.BaoKinhDoanh
                 year.Items.Add(i + "");
             }
             year.SelectedIndex = 2;
-            if (IsPostBack)
-            {
-                flag = false;
-                lbResult.Text = "";
-            }
-
+           
         }
 
         void refesh()
@@ -366,10 +361,49 @@ namespace BaoCao_Web.View.BaoKinhDoanh
 
         protected void ky_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btCapNhat_Click(object sender, EventArgs e)
+        {
             string nam = year.Text;
             string ky_ = ky.Text;
             kd = Class.SoLieuKinhDoanh.findByKy(int.Parse(ky_), int.Parse(nam));
-            if (flag) {               
+
+            if (kd != null)
+            {
+                Update();
+            }
+            else {
+                Insert();
+            }
+        }
+
+        protected void hdtbTP_TextChanged(object sender, EventArgs e)
+        {
+            double rs = 0;
+            try
+            { rs += double.Parse(this.hd0MPN.Text.Replace(" ", "")); }
+            catch (Exception) { }
+
+            try
+            { rs += double.Parse(this.hd0mTB.Text.Replace(" ", "")); }
+            catch (Exception) {  }
+
+            try
+            { rs += double.Parse(this.hd0mTP.Text.Replace(" ", "")); }
+            catch (Exception) { }
+
+            this.hd0mTONG.Text = rs + "";
+        }
+
+        protected void btCapNhat0_Click(object sender, EventArgs e)
+        {
+            string nam = year.Text;
+            string ky_ = ky.Text;
+            kd = Class.SoLieuKinhDoanh.findByKy(int.Parse(ky_), int.Parse(nam));
+            if (flag)
+            {
                 if (kd != null)
                 {
                     this.txtDoanhThu.Text = kd.DOANHTHU + "";
@@ -409,36 +443,6 @@ namespace BaoCao_Web.View.BaoKinhDoanh
                     refesh();
                 }
             }
-        }
-
-        protected void btCapNhat_Click(object sender, EventArgs e)
-        {
-            if (kd != null)
-            {
-                Update();
-            }
-            else {
-                Insert();
-            }
-
-        }
-
-        protected void hdtbTP_TextChanged(object sender, EventArgs e)
-        {
-            double rs = 0;
-            try
-            { rs += double.Parse(this.hd0MPN.Text.Replace(" ", "")); }
-            catch (Exception) { }
-
-            try
-            { rs += double.Parse(this.hd0mTB.Text.Replace(" ", "")); }
-            catch (Exception) {  }
-
-            try
-            { rs += double.Parse(this.hd0mTP.Text.Replace(" ", "")); }
-            catch (Exception) { }
-
-            this.hd0mTONG.Text = rs + "";
         }
     }
 }

@@ -44,8 +44,7 @@
     .style11
     {
         width: 53px;
-        height: 42px;
-         border-right:1px #99cc99 solid;
+        border-right:1px #99cc99 solid;
     }
     .style12
     {
@@ -168,7 +167,6 @@
     .style61
     {
         width: 52px;
-        height: 42px;
         border-right: 2px #99cc99 solid;
     }
     .style62
@@ -192,6 +190,109 @@
     {
         text-align: right;
     }
+    .style405
+    {
+        width: 52px;
+        border-right: 2px #99cc99 solid;
+        height: 27px;
+    }
+    .style406
+    {
+        width: 42px;
+        border-right: 1px #99cc99 solid;
+        height: 27px;
+    }
+    .style407
+    {
+        height: 27px;
+        border-left: 1px #99cc99 solid;
+        border-right: 1px #99cc99 solid;
+        text-align: center;
+    }
+    .style408
+    {
+        width: 89px;
+        height: 27px;
+        border-right: 1px #99cc99 solid;
+        border-left: 1px #99cc99 solid;
+        text-align: center;
+    }
+    .style409
+    {
+        width: 76px;
+        border-left: 1px #99cc99 solid;
+        text-align: center;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
+    .style410
+    {
+        width: 64px;
+        border-bottom-style: solid;
+        border-right: 1px #99cc99 solid;
+        border-bottom-width: 2px;
+        text-align: center;
+    }
+    .style411
+    {
+        width: 52px;
+        border-left: 1px #99cc99 solid;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        text-align: center;
+    }
+    .style412
+    {
+        width: 74px;
+        border-right: 1px #99cc99 solid;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        text-align: center;
+    }
+    .style413
+    {
+        width: 89px;
+        border-right: 1px #99cc99 solid;
+        border-left: 1px #99cc99 solid;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        text-align: center;
+    }
+    .style414
+    {
+        width: 52px;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-right: 2px #99cc99 solid;
+    }
+    .style415
+    {
+        width: 42px;
+        border-right: 1px #99cc99 solid;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
+    .style416
+    {
+        text-align: right;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        width: 69px;
+    }
+    .style417
+    {
+        text-align: right;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        width: 45px;
+    }
+    .style418
+    {
+        text-align: right;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        width: 41px;
+    }
 </style>
 <div class="title_page" style="hight:20px;"><asp:Label ID="title" runat="server" Text="SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
@@ -204,7 +305,7 @@
         Width="59px" CssClass="button" />
     </div>
 <div class="block_content">
-   <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto" Height="95%"  
+   <asp:Panel ID="DuLieuNam" runat="server" ScrollBars="Auto" Height="95%"  
         BorderWidth="0px" Width="1143px" >      
           <table cellpadding="0" cellspacing="0" 
                 style="font-family:Times New Roman; font-size:15px; width: 1120px;" 
@@ -333,95 +434,71 @@
                     <td class="style46" >
                         <span title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
                     <td class="style62" >
-                    <% double HDTB_TANG = double.Parse(table.Rows[i]["HDTB_TANG"] + "0");
+                    <% double HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG"]);
                        if (HDTB_TANG > 0) {
-                           
                         %>
                         <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG"])%></td>
+                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG"])%>
                         <%
                        }
                        else if (HDTB_TANG < 0)
                        {
                            HDTB_TANG = HDTB_TANG * (-1);
                         %>
-                     
-                                                        
-                                                            <img src="../../Image/down.png" width="15px" height="15px" />
-                                                            <%=Format.NumberFormat(HDTB_TANG)%>
-                                                            </td>
-                                                            <%
+                            <img src="../../Image/down.png" width="15px" height="15px" />
+                            <%=Format.NumberFormat(HDTB_TANG)%>
+                            <%
                        } 
                      %>
-                                                            <td class="style63">
-                                                                <% double HOADON0_TG = double.Parse(table.Rows[i]["HOADON0_TG"] + "0");
-                       if (HOADON0_TG > 0)
-                       {
+                            </td><td class="style63">
+                                    <% double HOADON0_TG = Format.ConvertDouble(table.Rows[i]["HOADON0_TG"]);
+                        if (HOADON0_TG > 0)
+                        {
                         %>
-                                                                <img src="../../Image/up.png" width="15px" height="15px" />
-                                                                <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG"])%>
-                                                            </td>
-                                                            <%
-                       }
-                       else if (HOADON0_TG < 0)
-                       {
+                                    <img src="../../Image/up.png" width="15px" height="15px" />
+                                    <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG"])%>
+                                    <%
+                         }
+                         else if (HOADON0_TG < 0)
+                        {
                            HOADON0_TG = HOADON0_TG * (-1);
                         %>
-                                                            
-                                                                <img src="../../Image/down.png" width="15px" height="15px" />
-                                                                <%=Format.NumberFormat(HOADON0_TG)%>
-                                                                </td>
-                                                                <%
+                                    <img src="../../Image/down.png" width="15px" height="15px" />
+                                    <%=Format.NumberFormat(HOADON0_TG)%>
+                                    <%
                        } 
-                     %>
-                                                                <td class="style62">
-                                                                    <% double HOADON4_TG = double.Parse(table.Rows[i]["HOADON4_TG"] + "0");
-                       if (HOADON4_TG > 0)
-                       {
-                           
-                        %>
-                                                                    <img src="../../Image/up.png" width="15px" height="15px" />
-                                                                    <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG"])%>
-                                                                </td>
-                                                                <%
-                       }
-                       else if (HOADON4_TG < 0)
-                       {
-                           HOADON4_TG = HOADON4_TG * (-1);
-                        %>
-                                                                
-                                                                    <img src="../../Image/down.png" width="15px" height="15px" />
-                                                                    <%=Format.NumberFormat(HOADON4_TG)%>
-                                                                    </td>
-                                                                    <%
-                       } 
-                     %>
-                                                                    </td>
-                                                                
-                                                            
-                    
-                                                            
-                                                        
-                    
-                                                        
-                                                    
-                    
-                                                    
-                                                
-                    
-                            
-                    
-                </tr>
-                 <%}
-            } %>      
+                      %>
+                                </td>
+                                <td class="style62">
+                                    <% double HOADON4_TG = Format.ConvertDouble(table.Rows[i]["HOADON4_TG"]);
+                             if (HOADON4_TG > 0)
+                            {
+                            %>
+                                    <img src="../../Image/up.png" width="15px" height="15px" />
+                                    <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG"])%>
+                                    <%
+                           }
+                           else if (HOADON4_TG < 0)
+                           {
+                               HOADON4_TG = HOADON4_TG * (-1);
+                            %>
+                                    <img src="../../Image/down.png" width="15px" height="15px" />
+                                    <%=Format.NumberFormat(HOADON4_TG)%>
+                                    <%
+                           } 
+                         %>
+                                </td>
+                                <%}
+            } %>
+                            </tr>
+            </tr>   
             </table>
               <CR:CrystalReportSource ID="CrystalReportSource1" runat="server">
         <Report FileName="rpt_tkKinhDoanh.rpt">
         </Report>
     </CR:CrystalReportSource>
         </asp:Panel>   
-    </asp:Panel>
-  
+       </asp:Panel>
 </div>
 
 

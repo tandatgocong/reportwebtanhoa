@@ -19,7 +19,19 @@ namespace BaoCao_Web.Class
             }
             return "";        
         }
-
+        public static double ConvertDouble(object num1)
+        {
+            if (num1 != null)
+            {
+                string num = num1.ToString();
+                num = num.Replace(" ", "");
+                if (!"".Equals(num) && !"NULL".Equals(num.ToUpper()))
+                {
+                    return double.Parse(num);
+                }
+            }
+            return 0;
+        }
         public static string PhanTram(object num1)
         {
             if (num1 != null)

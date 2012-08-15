@@ -27,6 +27,13 @@ namespace BaoCao_Web.View
                 Control control = LoadControl("BaoKinhDoanh/ViewKinhDoanh.ascx");
                 this.Panel1.Controls.Add(control);
                // title.Text = "SỐ LIỆU KINH DOANH NĂM " ;
+            }else  if ("S".Equals(Request.Params["type"] + ""))
+            {
+
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("BaoKinhDoanh/SoSanhSoLieuKD.ascx");
+                this.Panel1.Controls.Add(control);
+               // title.Text = "SỐ LIỆU KINH DOANH NĂM " ;
             }
             
         }
