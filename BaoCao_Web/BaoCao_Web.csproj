@@ -324,6 +324,7 @@
     <Content Include="StyleSheet\Menu.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
     <Content Include="View\Admin.Master" />
+    <Content Include="View\BaoKinhDoanh\SoSanhSoLieuKD.ascx" />
     <Content Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx" />
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
@@ -393,6 +394,13 @@
     </Compile>
     <Compile Include="View\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\SoSanhSoLieuKD.ascx.cs">
+      <DependentUpon>SoSanhSoLieuKD.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\BaoKinhDoanh\SoSanhSoLieuKD.ascx.designer.cs">
+      <DependentUpon>SoSanhSoLieuKD.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\BaoKinhDoanh\kinhdoanh.Designer.cs">
       <AutoGen>True</AutoGen>

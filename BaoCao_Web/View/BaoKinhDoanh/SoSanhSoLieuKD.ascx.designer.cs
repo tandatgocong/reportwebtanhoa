@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.BaoKinhDoanh {
     
     
-    public partial class ViewKinhDoanh {
+    public partial class SoSanhSoLieuKD {
         
         /// <summary>
         /// title control.
@@ -40,13 +40,13 @@ namespace BaoCao_Web.View.BaoKinhDoanh {
         protected global::System.Web.UI.WebControls.Button btIN;
         
         /// <summary>
-        /// DuLieuNam control.
+        /// dsad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DuLieuNam;
+        protected global::System.Web.UI.WebControls.Panel dsad;
         
         /// <summary>
         /// Panel1 control.
@@ -56,14 +56,5 @@ namespace BaoCao_Web.View.BaoKinhDoanh {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// CrystalReportSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportSource CrystalReportSource1;
     }
 }
