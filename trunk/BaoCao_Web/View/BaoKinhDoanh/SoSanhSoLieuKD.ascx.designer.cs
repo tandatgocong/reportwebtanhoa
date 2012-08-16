@@ -31,13 +31,22 @@ namespace BaoCao_Web.View.BaoKinhDoanh {
         protected global::System.Web.UI.WebControls.DropDownList year;
         
         /// <summary>
-        /// btIN control.
+        /// title0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btIN;
+        protected global::System.Web.UI.WebControls.Label title0;
+        
+        /// <summary>
+        /// year0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList year0;
         
         /// <summary>
         /// dsad control.

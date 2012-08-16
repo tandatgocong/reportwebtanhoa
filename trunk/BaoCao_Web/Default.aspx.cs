@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace BaoCao_Web
 {
@@ -12,10 +13,10 @@ namespace BaoCao_Web
         protected void Page_Load(object sender, EventArgs e)
         {
             //for logging to file
-            log4net.ILog logger = log4net.LogManager.GetLogger("File");
+           log4net.ILog logger = log4net.LogManager.GetLogger("File");
+           Response.Redirect(@"View\Home.aspx");
+           
 
-     
-            Response.Redirect(@"View\Home.aspx");
         }
     }
 }

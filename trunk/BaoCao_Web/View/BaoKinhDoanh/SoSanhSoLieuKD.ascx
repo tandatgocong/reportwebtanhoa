@@ -15,24 +15,6 @@
     {
         width: 42px;
     }
-    .style4
-    {
-        width: 76px;
-        height: 2px;
-        border-left:1px #99cc99 solid;
-        text-align: center;
-        border-bottom-style: dotted;
-        border-bottom-width: 1px;
-    }
-    .style5
-    {
-        width: 64px;
-        height: 2px;
-        border-bottom-style: dotted;
-        border-right:1px #99cc99 solid;
-        border-bottom-width: 1px;
-        text-align: center;
-    }
     .style6
     {
         width: 97px;
@@ -40,15 +22,6 @@
     .style10
     {
         width: 117px;
-    }
-    .style12
-    {
-        width: 74px;
-        height: 2px;
-        border-right:1px #99cc99 solid;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        text-align: center;
     }
     .style14
     {
@@ -78,17 +51,6 @@
         border-bottom-width: 1px;
         text-align: right;
     }
-    .style35
-    {
-        width: 85px;
-    }
-    .style400
-    {
-        text-align: right;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-       
-    }
     .style4001
     {
         border-left:1px #99cc99 solid;
@@ -99,59 +61,12 @@
        
     }
     
-    .style401
-    {
-        width:100%;
-        text-align: right;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        border-left:1px #99cc99 solid;
-        border-right:1px #99cc99 solid;
-        height: 45px;
-    }
     .style40
     {
         text-align: right;
          border-bottom-style: dotted;     
         border-bottom-width: 1px;
        
-    }
-    .style45
-    {
-        width: 52px;
-        height: 2px;
-        border-left:1px #99cc99 solid;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        text-align: center;
-    }
-    .style61
-    {
-        width: 52px;
-        height: 2px;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        text-align: center;
-    }
-    .style661
-    {
-        width: 52px;
-        height: 2px;
-        border-right:1px #99cc99 solid;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        text-align: center;
-    }
-    
-    .style46
-    {
-        width: 89px;
-        height: 2px;
-        border-right:1px #99cc99 solid;
-        border-left:1px #99cc99 solid;
-        border-bottom-style: dotted;     
-        border-bottom-width: 1px;
-        text-align: center;
     }
     .style54
     {
@@ -173,11 +88,6 @@
     {
         width: 114px;
     }
-    .style61
-    {
-        width: 52px;
-        border-right: 2px #99cc99 solid;
-    }
     .style402
     {
         text-align: right;
@@ -193,10 +103,6 @@
     {
         width: 43px;
     }
-    .style410
-    {
-        width: 99px;
-    }
     .style662
     {
        
@@ -210,7 +116,7 @@
     }
     .style663
     {
-        width: 1150px;
+        width: 1247px;
         height: 147px;
     }
     .style664
@@ -221,15 +127,6 @@
         border-right: 2px solid #99cc99;
         border-bottom-style: dotted;
         border-bottom-width: 1px;
-    }
-    .style665
-    {
-        width: 52px;
-        height: 49px;
-        border-right: 1px #99cc99 solid;
-        border-bottom-style: dotted;
-        border-bottom-width: 1px;
-        text-align: center;
     }
     .style666
     {
@@ -304,7 +201,7 @@
     }
     .style674
     {
-        width: 52px;
+        width: 57px;
         height: 53px;
         border-right: 1px #99cc99 solid;
         border-bottom-style: dotted;
@@ -357,22 +254,50 @@
         border-bottom-width: 1px;
         text-align: center;
     }
+    .style4004
+    {
+        width: 57px;
+        height: 49px;
+        border-right: 1px #99cc99 solid;
+        border-bottom-style: dotted;
+        border-bottom-width: 1px;
+        text-align: center;
+    }
+    .style4005
+    {
+        text-align: right;
+        border-bottom-style: dotted;
+        border-bottom-width: 1px;
+        width: 112px;
+    }
+    .style4006
+    {
+        width: 116px;
+    }
+    .style4007
+    {
+        width: 95px;
+    }
     </style>
-<div class="title_page" style="hight:20px;"><asp:Label ID="title" runat="server" Text="SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
+<div class="title_page" style="hight:20px;"><asp:Label ID="title" runat="server" 
+        Text="SO SÁNH SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
+        ForeColor="#006600" AutoPostBack="True">
+
+    </asp:DropDownList>
+    &nbsp;<asp:Label ID="title0" runat="server" Text="VỚI"></asp:Label>&nbsp;&nbsp;<asp:DropDownList 
+        ID="year0" runat="server" Font-Bold="True" Font-Size="13pt" 
         ForeColor="#006600" AutoPostBack="True" 
         onselectedindexchanged="year_SelectedIndexChanged">
 
     </asp:DropDownList>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btIN" runat="server" onclick="btIn_Click" Text="IN" 
-        Width="59px" CssClass="button" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
 <div class="block_content">
    <asp:Panel ID="dsad" runat="server" ScrollBars="Auto" Height="95%"  
-        BorderWidth="0px" Width="1200px" >      
+        BorderWidth="0px" Width="1285px" >      
           <table cellpadding="0" cellspacing="0" 
-                style="font-family:Times New Roman; font-size:15px; width: 1150px;" 
+                style="font-family:Times New Roman; font-size:15px; width: 1249px;" 
                 class="table_list" >
               <tbody>
                   <tr class="head" >
@@ -405,17 +330,17 @@
                 </tr>
                   <tr class="head" >
                  
-                     <td class="style410"   >
+                     <td class="style4006"   >
                          0m<sup>3</sup></td>
                  
-                     <td class="style35"  >
+                     <td class="style4007"  >
                          4m<sup>3</sup></td>
                  
                 </tr>
               </tbody>
             </table>
           <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
-                BorderWidth="0px" Width="1177px" Height="480px" >
+                BorderWidth="0px" Width="1275px" Height="480px" >
              
             <table border="0" cellpadding="0" cellspacing="0" class="style663" >
                              <% 
@@ -430,19 +355,19 @@
                     <td class="style55" rowspan="6" style="border-bottom: 2px solid;">
                       <span style="font:17px; font-weight:bold"><%=table.Rows[i]["KY"]%></span></td>
                     <td class="style55" rowspan="2">
-                      <span style="color:#B22222;">  <b>2012</b></span></td><td  colspan="2" class="style671"  >
-                      <span style="color:#B22222;" title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
+                      <span style="color:#000000;">  <b><%=table.Rows[i]["NAM"]%></b></span></td><td  colspan="2" class="style671"  >
+                      <span style="color:#000000;" title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
-                       <span style="color:#B22222;" title="Lượng Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SANLUONG"])%></span></td>
+                       <span style="color:#000000;" title="Lượng Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SANLUONG"])%></span></td>
                     <td  colspan="2" class="style671">
-                       <span style="color:#B22222;" title="Số Đồng Hồ Nước Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLDHN"])%></span></td>
+                       <span style="color:#000000;" title="Số Đồng Hồ Nước Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLDHN"])%></span></td>
                     <td class="style672" >
-                       <span style="color:#B22222;" title="Giá Bán Bình Quân Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["GIABQ"])%></span></td>
+                       <span style="color:#000000;" title="Giá Bán Bình Quân Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["GIABQ"])%></span></td>
                     <td rowspan="2" class="style30">
                         <div class="style402">
-                            <span style="color:#B22222;" title="Tổng HĐ Trung Bình Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTB"])%></span>&nbsp;</div>
+                            <span style="color:#000000;" title="Tổng HĐ Trung Bình Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTB"])%></span>&nbsp;</div>
                     </td>
-                    <td class="style673" rowspan="2"><span style="color:#B22222;">
+                    <td class="style673" rowspan="2"><span style="color:#000000;">
                         <% double HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG"]);
                        if (HDTB_TANG > 0) {
                         %>
@@ -462,9 +387,9 @@
                         </td>
                     <td  rowspan="2" class="style40">
                         <div class="" >                          
-                        <span style="color:#B22222;" title="Tổng HĐ 0m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON0"])%>&nbsp;</span></div>
+                        <span style="color:#000000;" title="Tổng HĐ 0m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON0"])%>&nbsp;</span></div>
                     </td>
-                    <td class="style674" rowspan="2" ><span style="color:#B22222;">
+                    <td class="style674" rowspan="2" ><span style="color:#000000;">
                         <% double HOADON0_TG = Format.ConvertDouble(table.Rows[i]["HOADON0_TG"]);
                         if (HOADON0_TG > 0)
                         {
@@ -486,9 +411,9 @@
                     <td  rowspan="2" class="style40">
                         <div class="">
                            
-                        <span style="color:#B22222;" title="Tổng HĐ 4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON4"])%>&nbsp;</span></div>
+                        <span style="color:#000000;" title="Tổng HĐ 4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON4"])%>&nbsp;</span></div>
                     </td>
-                    <td class="style673" rowspan="2" ><span style="color:#B22222;">
+                    <td class="style673" rowspan="2" ><span style="color:#000000;">
                         <% double HOADON4_TG = Format.ConvertDouble(table.Rows[i]["HOADON4_TG"]);
                              if (HOADON4_TG > 0)
                             {
@@ -508,28 +433,29 @@
                          %></span>
                     </td>
                     <td rowspan="2" class="style54">
-                       <span style="color:#B22222;" style="font:17px; font-weight:bold" title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
-                    <td rowspan="2" style="width:80px" class="style400" >
-                        <div  >&nbsp;&nbsp;<br /> 
-                          <span style="color:#B22222;" title="Tổng Hóa Đơn Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
+                       <span style="color:#000000;" style="font:17px; font-weight:bold" title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
+                    <td rowspan="2" class="style4005" >
+                        <div  ><span style="color:#000000;" 
+                                title='Tổng Hóa Đơn Tồn Kỳ <%=table.Rows[i]["KY"]%>'>
+                            <%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" class="style4001" >
-                       <span style="color:#B22222;" title="Tổng Doanh Thu Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;
+                       <span style="color:#000000;" title="Tổng Doanh Thu Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;
                     </td>
 
                 </tr>
                 <tr>
                     <td class="style676" >
-                       <span style="color:#B22222;" title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY"])%></span></td>
+                       <span style="color:#000000;" title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY"])%></span></td>
                     <td class="style677" >
-                       <span style="color:#B22222;" title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY"])%></span></td>
+                       <span style="color:#000000;" title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY"])%></span></td>
                     <td class="style678" >
-                        <span style="color:#B22222;" title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN"])%></span></td>
+                        <span style="color:#000000;" title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN"])%></span></td>
                     <td class="style679" >
-                        <span style="color:#B22222;" title="Số Lượng Hóa Đơn <4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO3"])%></span>&nbsp;
+                        <span style="color:#000000;" title="Số Lượng Hóa Đơn <4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO3"])%></span>&nbsp;
                     </td>
                     <td class="style680" >
-                        <span style="color:#B22222;" title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
+                        <span style="color:#000000;" title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
                             
                </tr>
             
@@ -537,26 +463,26 @@
                 <tr>
                     
                     <td class="style55" rowspan="2">
-                        <span style="color:#FF8C00;"> <b>2012</b></span>  
+                        <span style="color:#000000;"> <b><%=table.Rows[i]["NAM1"]%></b></span>  
                     </td>
                     <td  colspan="2" class="style405" >
-                       <span style="color:#FF8C00;" title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
+                       <span style="color:#000000;" title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU1"])%></span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
-                       <span style="color:#FF8C00;" title="Lượng Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SANLUONG"])%></span></td>
+                       <span style="color:#000000;" title="Lượng Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SANLUONG1"])%></span></td>
                     <td  colspan="2" class="style405">
-                       <span style="color:#FF8C00;" title="Số Đồng Hồ Nước Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLDHN"])%></span></td>
+                       <span style="color:#000000;" title="Số Đồng Hồ Nước Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLDHN1"])%></span></td>
                     <td class="style25" >
-                       <span style="color:#FF8C00;" title="Giá Bán Bình Quân Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["GIABQ"])%></span></td>
+                       <span style="color:#000000;" title="Giá Bán Bình Quân Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["GIABQ1"])%></span></td>
                     <td rowspan="2" class="style30">
                         <div class="style402">
-                            <span style="color:#FF8C00;" title="Tổng HĐ Trung Bình Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTB"])%></span>&nbsp;</div>
+                            <span style="color:#000000;" title="Tổng HĐ Trung Bình Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTB1"])%></span>&nbsp;</div>
                     </td>
-                    <td class="style664" rowspan="2"><span style="color:#FF8C00;">
-                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG"]);
+                    <td class="style664" rowspan="2"><span style="color:#000000;">
+                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG1"]);
                        if (HDTB_TANG > 0) {
                         %>
                         <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG"])%>
+                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG1"])%>
                         <%
                        }
                        else if (HDTB_TANG < 0)
@@ -571,15 +497,15 @@
                         </td>
                     <td  rowspan="2" class="style40">
                         <div class="" >                          
-                        <span style="color:#FF8C00;" title="Tổng HĐ 0m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON0"])%>&nbsp;</span></div>
+                        <span style="color:#000000;" title="Tổng HĐ 0m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON01"])%>&nbsp;</span></div>
                     </td>
-                    <td class="style665" rowspan="2" ><span style="color:#FF8C00;">
-                        <%  HOADON0_TG = Format.ConvertDouble(table.Rows[i]["HOADON0_TG"]);
+                    <td class="style4004" rowspan="2" ><span style="color:#000000;">
+                        <%  HOADON0_TG = Format.ConvertDouble(table.Rows[i]["HOADON0_TG1"]);
                         if (HOADON0_TG > 0)
                         {
                         %>
                         <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG"])%>
+                        <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG1"])%>
                         <%
                          }
                          else if (HOADON0_TG < 0)
@@ -595,15 +521,15 @@
                     <td  rowspan="2" class="style40">
                         <div class="">
                            
-                        <span style="color:#FF8C00;" title="Tổng HĐ 4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON4"])%>&nbsp;</span></div>
+                        <span style="color:#000000;" title="Tổng HĐ 4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON41"])%>&nbsp;</span></div>
                     </td>
-                    <td class="style664" rowspan="2" ><span style="color:#FF8C00;">
-                        <%  HOADON4_TG = Format.ConvertDouble(table.Rows[i]["HOADON4_TG"]);
+                    <td class="style664" rowspan="2" ><span style="color:#000000;">
+                        <%  HOADON4_TG = Format.ConvertDouble(table.Rows[i]["HOADON4_TG1"]);
                              if (HOADON4_TG > 0)
                             {
                             %>
                         <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG"])%>
+                        <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG1"])%>
                         <%
                            }
                            else if (HOADON4_TG < 0)
@@ -617,135 +543,330 @@
                          %></span>
                     </td>
                     <td rowspan="2" class="style54">
-                       <span style="color:#FF8C00;" style="font:17px; font-weight:bold" title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
-                    <td rowspan="2" style="width:80px" class="style400" >
-                        <div  >&nbsp;&nbsp;<br /> 
-                          <span style="color:#FF8C00;" title="Tổng Hóa Đơn Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
+                       <span style="color:#000000;" style="font:17px; font-weight:bold" title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC1"])%>&nbsp;</span></td>
+                    <td rowspan="2" class="style4005" >
+                        <div  > 
+                          <span style="color:#000000;" title="Tổng Hóa Đơn Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG1"])%></span>&nbsp;&nbsp;</div>
                     </td>
                     <td rowspan="2" class="style4001"  >
-                        <span style="color:#FF8C00;" title="Tổng Doanh Thu Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;
+                        <span style="color:#000000;" title="Tổng Doanh Thu Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG1"])%></span>&nbsp;&nbsp;&nbsp;
                     </td>
 
                 </tr>
                 <tr>
                     <td class="style666" >
-                       <span style="color:#FF8C00;" title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY"])%></span></td>
+                       <span style="color:#000000;" title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY1"])%></span></td>
                     <td class="style667" >
-                       <span style="color:#FF8C00;" title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY"])%></span></td>
+                       <span style="color:#000000;" title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY1"])%></span></td>
                     <td class="style668" >
-                         <span style="color:#FF8C00;" title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN"])%></span></td>
+                         <span style="color:#000000;" title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN1"])%></span></td>
                     <td class="style669" >
-                        <span style="color:#FF8C00;" title="Số Lượng Hóa Đơn <4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO3"])%></span>&nbsp;
+                        <span style="color:#000000;" title="Số Lượng Hóa Đơn <4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO31"])%></span>&nbsp;
                     </td>
                     <td class="style670" >
-                        <span style="color:#FF8C00;" title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
+                        <span style="color:#000000;" title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM1"])%></span>&nbsp;&nbsp;</td>
                             
                </tr>
 
+
                 <tr>                    
-                    <td class="style662" rowspan="2" style="border-bottom: 2px solid; background:#E0FFFF;">
+                    <td class="style662" rowspan="2" style="border-bottom: 2px solid;background:#F5F5F5;">
                      <span style="color:blue;"> <b>SO SÁNH</b></span>  
                        </td>
-                    <td  colspan="2" class="style405" style="background:#E0FFFF;">
-                       <span style="color:blue;" title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
-                    <td style="text-align: center;border-bottom: 2px solid; background:#E0FFFF;" class="style24" rowspan="2">
-                       <span style="color:blue;" title="Lượng Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SANLUONG"])%></span></td>
-                    <td  colspan="2" class="style405" style="background:#E0FFFF;">
-                       <span style="color:blue;" title="Số Đồng Hồ Nước Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLDHN"])%></span></td>
-                    <td class="style25" style="background:#E0FFFF;">
-                       <span style="color:blue;" title="Giá Bán Bình Quân Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["GIABQ"])%></span></td>
-                    <td rowspan="2" class="style30" style="border-bottom: 2px solid; background:#E0FFFF;">
-                        <div class="style402">
-                            <span style="color:blue;" title="Tổng HĐ Trung Bình Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTB"])%></span>&nbsp;</div>
-                    </td>
-                    <td class="style664" rowspan="2" style="border-bottom: 2px solid; background:#E0FFFF;"><span style="color:blue;">
-                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG"]);
+                    <td  colspan="2" class="style405" style="background:#F5F5F5;" >                   
+                      <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["DOANHTHU2"]);
                        if (HDTB_TANG > 0) {
                         %>
-                        <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HDTB_TANG"])%>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["DOANHTHU2"])%></b></span>
                         <%
                        }
                        else if (HDTB_TANG < 0)
                        {
                            HDTB_TANG = HDTB_TANG * (-1);
                         %>
-                        <img src="../../Image/down.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(HDTB_TANG)%>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
                         <%
                        } 
-                     %></span>
+                     %>
+                     </td>
+                    <td style="text-align: center;border-bottom: 2px solid; background:#F5F5F5;" class="style24" rowspan="2">
+                       <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["SANLUONG2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["SANLUONG2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                    </td>
+                    <td  colspan="2" class="style405" style="background:#F5F5F5;">
+                    <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["SLDHN2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["SLDHN2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                    </td>
+                    <td class="style25" style="background:#F5F5F5;">
+                    <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["GIABQ2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["GIABQ2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                    </td>
+                    <td rowspan="2" class="style30" style="border-bottom: 2px solid; background:#F5F5F5;">
+                        <div class="style402">
+                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HDTB2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                     </div>
+                     </td>
+                    <td class="style664" rowspan="2" style="border-bottom: 2px solid; background:#F5F5F5;"><span style="color:blue;">
+                       
+                     </span>
                         </td>
-                    <td  rowspan="2" class="style40" style="border-bottom: 2px solid; background:#E0FFFF;">
-                        <div class="" >                          
-                        <span style="color:blue;" title="Tổng HĐ 0m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON0"])%>&nbsp;</span></div>
-                    </td>
-                    <td class="style665" rowspan="2" style="border-bottom: 2px solid; background:#E0FFFF;"><span style="color:blue;">
-                        <%  HOADON0_TG = Format.ConvertDouble(table.Rows[i]["HOADON0_TG"]);
-                        if (HOADON0_TG > 0)
-                        {
+                    <td  rowspan="2" class="style40" style="border-bottom: 2px solid; background:#F5F5F5;">
+                        <div class="" >    
+                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HOADON02"]);
+                       if (HDTB_TANG > 0) {
                         %>
-                        <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HOADON0_TG"])%>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HOADON02"])%></b></span>
                         <%
-                         }
-                         else if (HOADON0_TG < 0)
-                        {
-                           HOADON0_TG = HOADON0_TG * (-1);
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
                         %>
-                        <img src="../../Image/down.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(HOADON0_TG)%>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
                         <%
                        } 
-                      %></span>
+                     %>
+
+                       </div>
                     </td>
-                    <td  rowspan="2" class="style40" style="border-bottom: 2px solid; background:#E0FFFF;">
+                    <td class="style4004" rowspan="2" style="border-bottom: 2px solid; background:#F5F5F5;">
+                       <span style="color:blue;">
+                       </span>
+                    </td>
+                    <td  rowspan="2" class="style40" style="border-bottom: 2px solid; background:#F5F5F5;">
                         <div class="">
-                           
-                        <span style="color:blue;" title="Tổng HĐ 4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HOADON4"])%>&nbsp;</span></div>
-                    </td>
-                    <td class="style664" rowspan="2" style="border-bottom: 2px solid; background:#E0FFFF;"><span style="color:blue;">
-                        <%  HOADON4_TG = Format.ConvertDouble(table.Rows[i]["HOADON4_TG"]);
-                             if (HOADON4_TG > 0)
-                            {
-                            %>
-                        <img src="../../Image/up.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(table.Rows[i]["HOADON4_TG"])%>
+                        <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HOADON42"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HOADON42"])%></b></span>
                         <%
-                           }
-                           else if (HOADON4_TG < 0)
-                           {
-                               HOADON4_TG = HOADON4_TG * (-1);
-                            %>
-                        <img src="../../Image/down.png" width="15px" height="15px" />
-                        <%=Format.NumberFormat(HOADON4_TG)%>
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
                         <%
-                           } 
-                         %></span>
+                       } 
+                     %>
+                       </div>
                     </td>
-                    <td rowspan="2" class="style54"style="border-bottom: 2px solid; background:#E0FFFF;">
-                       <span style="color:blue;font:17px; font-weight:bold" title="Số Lượng Hóa Đơn Tồn Các Kỳ Trước"><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC"])%>&nbsp;</span></td>
-                    <td rowspan="2" style="width:80px;border-bottom: 2px solid; background:#E0FFFF;" class="style400">
-                        <div  >&nbsp;&nbsp;<br /> 
-                          <span style="color:blue;" title="Tổng Hóa Đơn Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG"])%></span>&nbsp;&nbsp;</div>
+                    <td class="style664" rowspan="2" style="border-bottom: 2px solid; background:#F5F5F5;">
+                     <span style="color:blue;">
+                      </span>
                     </td>
-                    <td rowspan="2" class="style4001" style="border-bottom: 2px solid; background:#E0FFFF;">                        
-                      <span style="color:blue;" title="Tổng Doanh Thu Tồn Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG"])%></span>&nbsp;&nbsp;&nbsp;
+                    <td rowspan="2" class="style54"style="border-bottom: 2px solid; background:#F5F5F5;">
+
+                    <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTON_TRUOC2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HDTON_TRUOC2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                     </td>
+                    <td rowspan="2" style="border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 2px; background:#F5F5F5;" 
+                        class="style4005">
+                         <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTON_TONG2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HDTON_TONG2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>  
+                    </td>
+                    <td rowspan="2" class="style4001" style="border-bottom: 2px solid; background:#F5F5F5;">
+                      <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["SLTON_TONG2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["SLTON_TONG2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                        &nbsp;&nbsp;
                     </td>
 
                 </tr>
                 <tr>
-                    <td class="style666" style="border-bottom: 2px solid; background:#E0FFFF;" >
-                       <span style="color:blue;" title="Tỉ Lệ Thực Thu 4 Kỳ"><%=Format.PhanTram(table.Rows[i]["DT_4KY"])%></span></td>
-                    <td class="style667" style="border-bottom: 2px solid; background:#E0FFFF;">
-                       <span style="color:blue;" title="Tỉ Lệ Thực Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.PhanTram(table.Rows[i]["DT_KY"])%></span></td>
-                    <td class="style668" style="border-bottom: 2px solid; background:#E0FFFF;">
-                         <span style="color:blue;" title="ĐHN Tăng"><%=Format.NumberFormat(table.Rows[i]["TANGDHN"])%></span></td>
-                    <td class="style669" style="border-bottom: 2px solid; background:#E0FFFF;">
-                        <span style="color:blue;" title="Số Lượng Hóa Đơn <4m3 Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DHN_NHO3"])%></span>&nbsp;
+                    <td class="style666" style="border-bottom: 2px solid; background:#F5F5F5;" >
+                    <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["DT_4KY2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.PhanTram(table.Rows[i]["DT_4KY2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.PhanTram(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %></td>
+                    <td class="style667" style="border-bottom: 2px solid; background:#F5F5F5;">
+                    <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["DT_KY2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.PhanTram(table.Rows[i]["DT_KY2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.PhanTram(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                       </td>
+                    <td class="style668" style="border-bottom: 2px solid; background:#F5F5F5;">
+                       <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["HDTB_TANG2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["HDTB_TANG2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                      %>
                     </td>
-                    <td class="style670" style="border-bottom: 2px solid; background:#E0FFFF;">
-                        <span style="color:blue;" title="Tổng Hóa Đơn Định Mức Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["TONG_DM"])%></span>&nbsp;&nbsp;</td>
+                    <td class="style669" style="border-bottom: 2px solid; background:#F5F5F5;">
+                     <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["DHN_NHO32"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["DHN_NHO32"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>
+                     &nbsp;
+                    </td>
+                    <td class="style670" style="border-bottom: 2px solid; background:#F5F5F5;">
+                     <%  HDTB_TANG = Format.ConvertDouble(table.Rows[i]["TONG_DM2"]);
+                       if (HDTB_TANG > 0) {
+                        %>
+                        <img src="../../Image/ss-TANG.png" width="15px" height="15px" />
+                        <span style="color:#32CD32;"><b><%=Format.NumberFormat(table.Rows[i]["TONG_DM2"])%></b></span>
+                        <%
+                       }
+                       else if (HDTB_TANG < 0)
+                       {
+                           HDTB_TANG = HDTB_TANG * (-1);
+                        %>
+                        <img src="../../Image/ss-GIAM.png" width="15px" height="15px" />
+                       <span style="color:#FF0000;"><b><%=Format.NumberFormat(HDTB_TANG)%></b></span>
+                        <%
+                       } 
+                     %>&nbsp;&nbsp;</td>
               <%}
             } %>
          </tr>
