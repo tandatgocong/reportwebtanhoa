@@ -158,7 +158,7 @@
                 </tr>
               </tbody>
             </table>
-        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="312px" 
+        <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="415px" 
                 Width="1213px" BorderWidth="0px">
             <asp:GridView ID="sanLuongTo" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#CC9966" 

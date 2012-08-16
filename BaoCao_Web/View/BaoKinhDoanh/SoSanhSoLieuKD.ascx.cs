@@ -17,16 +17,17 @@ namespace BaoCao_Web.View.BaoKinhDoanh
             for (int i = y - 2; i < y + 3; i++)
             {
                 year.Items.Add(i+"");
+                year0.Items.Add(i + "");
             }
             year.SelectedIndex = 2;
-           Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(y+"");
+            year0.SelectedIndex = 1;
+            Session["BAOKD"] = Class.SoLieuKinhDoanh.SoSanhSoLieu((y-1) + "",(y)+"");
           
         }
 
         protected void year_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["BAOKD"] = Class.SoLieuKinhDoanh.getSoLieuByYear(this.year.Text+ "");
-            
+            Session["BAOKD"] = Class.SoLieuKinhDoanh.SoSanhSoLieu(this.year.Text + "", this.year0.Text + ""); 
         }
 
         protected void btIn_Click(object sender, EventArgs e)
