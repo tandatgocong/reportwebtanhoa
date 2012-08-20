@@ -294,7 +294,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
 <div class="block_content">
-   <asp:Panel ID="dsad" runat="server" ScrollBars="Auto" Height="95%"  
+   <asp:Panel ID="dsad" runat="server" ScrollBars="Auto" 
         BorderWidth="0px" Width="1285px" >      
           <table cellpadding="0" cellspacing="0" 
                 style="font-family:Times New Roman; font-size:15px; width: 1249px;" 
@@ -340,7 +340,7 @@
               </tbody>
             </table>
           <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
-                BorderWidth="0px" Width="1275px" Height="480px" >
+                BorderWidth="0px" Width="1275px"  >
              
             <table border="0" cellpadding="0" cellspacing="0" class="style663" >
                              <% 
