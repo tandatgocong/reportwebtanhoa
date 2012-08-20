@@ -305,10 +305,10 @@
         Width="59px" CssClass="button" />
     </div>
 <div class="block_content">
-   <asp:Panel ID="DuLieuNam" runat="server" ScrollBars="Auto" Height="95%"  
+   <asp:Panel ID="DuLieuNam" runat="server" ScrollBars="Auto"   
         BorderWidth="0px" Width="1143px" >      
           <table cellpadding="0" cellspacing="0" 
-                style="font-family:Times New Roman; font-size:15px; width: 1120px;" 
+                style="font-family:Times New Roman; font-size:15px; width: 1115px;" 
                 class="table_list" >
               <tbody>
                   <tr class="head" >
@@ -349,10 +349,10 @@
               </tbody>
             </table>
           <asp:Panel ID="Panel1" runat="server" ScrollBars="Auto"  
-                BorderWidth="0px" Width="1142px" Height="480px" >
+                BorderWidth="0px" Width="1120px" Height="100%" >
              
             <table border="0" cellpadding="0" cellspacing="0" 
-                style="width: 1120px;" >
+                style="width: 1114px;" >
                              <% 
                        DataTable table = new DataTable();
                        if (Session["BAOKD"] != null)
