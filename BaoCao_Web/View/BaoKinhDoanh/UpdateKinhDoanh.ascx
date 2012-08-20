@@ -184,6 +184,7 @@
         width: 177px;
     }
     </style>
+
 <div class="title_page" style="height:30px;"><asp:Label ID="title" runat="server" Text="CẬP NHẬT SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
         ForeColor="#006600" >
@@ -308,7 +309,7 @@
                    <asp:TextBox ID="hdtbTP" runat="server" Width="88px" 
                        ontextchanged="hdtbTP_TextChanged"></asp:TextBox>
                    Tổng Cộng :<asp:TextBox ID="hdtbTongCong" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hdtbTANGGIAM" runat="server" Width="88px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hdtbTANGGIAM" runat="server" Width="83px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -321,7 +322,7 @@
                    &nbsp; Tân Phú:
                    <asp:TextBox ID="hd0mTP" runat="server" Width="88px"></asp:TextBox>
                    Tổng Cộng :<asp:TextBox ID="hd0mTONG" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd0mTANGGIAM" runat="server" Width="101px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd0mTANGGIAM" runat="server" Width="95px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -334,7 +335,7 @@
                    &nbsp; Tân Phú:
                    <asp:TextBox ID="hd4mTP" runat="server" Width="88px"></asp:TextBox>
                    Tổng Cộng :<asp:TextBox ID="hd4mTONGCONG" runat="server" Width="116px"></asp:TextBox>
-                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd4mTANGGIAM" runat="server" Width="102px"></asp:TextBox>
+                   &nbsp;Tăng/Giảm:<asp:TextBox ID="hd4mTANGGIAM" runat="server" Width="93px"></asp:TextBox>
                </td>
            </tr>
            <tr>
@@ -349,7 +350,7 @@
                    <asp:TextBox ID="hdTonTG" runat="server" Width="143px"></asp:TextBox>
                    &nbsp; &nbsp; Cơ Quan:
                    <asp:TextBox ID="hdTonCQ" runat="server" Width="143px"></asp:TextBox>
-                   &nbsp; Tổng:&nbsp;<asp:TextBox ID="hdTonTONGCONG" runat="server" Width="175px"></asp:TextBox>
+                   &nbsp; Tổng:&nbsp;<asp:TextBox ID="hdTonTONGCONG" runat="server" Width="171px"></asp:TextBox>
                    </td>
            </tr>
            <tr>
@@ -361,7 +362,7 @@
                    &nbsp;&nbsp; Cơ Quan:
                    <asp:TextBox ID="dtTonCQ" runat="server" Width="143px"></asp:TextBox>
                    &nbsp;&nbsp; Tổng:
-                   <asp:TextBox ID="dtTonTONGCONG" runat="server" Width="172px"></asp:TextBox>
+                   <asp:TextBox ID="dtTonTONGCONG" runat="server" Width="170px"></asp:TextBox>
                </td>
            </tr>
            <tr>
