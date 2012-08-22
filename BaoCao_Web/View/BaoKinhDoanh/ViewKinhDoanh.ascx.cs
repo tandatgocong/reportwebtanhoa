@@ -32,6 +32,7 @@ namespace BaoCao_Web.View.BaoKinhDoanh
         protected void btIn_Click(object sender, EventArgs e)
         {
             CrystalReportSource1.ReportDocument.SetDataSource(Class.SoLieuKinhDoanh.getSoLieuByYear(this.year.Text));
+            CrystalReportSource1.ReportDocument.SetParameterValue("nam", this.year.Text);
             CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "SO_LIEU_NAM " + this.year.Text);
         }
 
