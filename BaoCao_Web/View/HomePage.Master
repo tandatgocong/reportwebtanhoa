@@ -22,7 +22,7 @@
  	 <div>
  		<ul class="menuhead">
  			<li id="mnHome" class="current"><a class="current_link" id="HOME" href="Home.aspx"><span>TRANG CHỦ</span></a></li>
-            <li id="mnKinhDoanh" class="top"><a href="KinhDoanh.aspx?page=KD&type=V" id="KINHDOANH" class="top_link" ><span>BÁO CÁO KINH DOANH</span></a>
+            <li id="mnKinhDoanh" class="top"><a href="KinhDoanh.aspx?page=KD&type=V" id="KINHDOANH" class="top_link" ><span>SỐ LIỆU KINH DOANH</span></a>
                 <ul class="sub_gioithieu">
                 	<li >
                   <a href="KinhDoanh.aspx?page=KD&type=V" class="">SỐ LIỆU KINH DOANH THEO NĂM </a>
