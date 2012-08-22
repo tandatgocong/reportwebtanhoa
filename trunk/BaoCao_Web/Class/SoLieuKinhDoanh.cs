@@ -15,8 +15,11 @@ namespace BaoCao_Web.Class
         
         public static DataTable getSoLieuByYear(string year)
         {
-            string query = "SELECT * FROM BAOCAO_KINHDOANH WHERE NAM='"+year+"'  ORDER BY KY ASC ";
-            return LinQConnection.getDataTable(query);
+            string query2 = "SELECT TOP(1) * FROM BAOCAO_KINHDOANH WHERE NAM ='" + (int.Parse(year)-1) + "' AND KY=12 ";
+            string query = "SELECT * FROM BAOCAO_KINHDOANH WHERE NAM ='" + year + "'  ORDER BY NAM,KY ASC ";
+            DataTable tb = LinQConnection.getDataTable(query2);
+            tb.Merge(LinQConnection.getDataTable(query));
+            return tb;
         }
 
         public static bool Update() {
