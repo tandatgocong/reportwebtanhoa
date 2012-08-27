@@ -307,6 +307,8 @@
     <Content Include="Image\news_list_bg.gif" />
     <Content Include="Image\nochange.png" />
     <Content Include="Image\print_icon.gif" />
+    <Content Include="Image\ss-GIAM.PNG" />
+    <Content Include="Image\ss-TANG.PNG" />
     <Content Include="Image\table_list_bghead.png" />
     <Content Include="Image\Untitled.png" />
     <Content Include="Image\up.png" />
@@ -407,12 +409,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kinhdoanh.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\rpt_tkKinhDoanh.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_tkKinhDoanh.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx.cs">
       <DependentUpon>UpdateKinhDoanh.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -468,6 +464,12 @@
     </Compile>
     <Compile Include="View\QuanLyHoSoKhachHang.aspx.designer.cs">
       <DependentUpon>QuanLyHoSoKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\rpt_tkKinhDoanh.cs">
+      <DependentUpon>rpt_tkKinhDoanh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="View\tabBieuDo\tab_BieuDoDoanhThu.ascx.cs">
       <DependentUpon>tab_BieuDoDoanhThu.ascx</DependentUpon>
