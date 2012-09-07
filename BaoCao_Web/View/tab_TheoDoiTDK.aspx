@@ -107,10 +107,13 @@
                      </asp:GridView>
                  </td>
             </tr>
-        </table>
-        <br />
-          
-                <asp:GridView ID="danhsachtrongai" runat="server" AutoGenerateColumns="False" 
+        </table>    <br /> 
+        
+        <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Visible="false"
+    Width="1227px">
+    <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
+    <HeaderTemplate>Danh Dách Trở Ngại Chưa Xử Lý</HeaderTemplate><ContentTemplate>
+    <asp:GridView ID="danhsachtrongai" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" 
                             CellPadding="4" ShowFooter="True" Visible="False" Height="180px" 
                             Width="1203px" onrowcreated="danhsachtrongai_RowCreated" 
@@ -118,27 +121,27 @@
                             <Columns>
                                 <asp:BoundField DataField="TENBANGKE" HeaderText="BẢNG KÊ">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="SOBANGKE" HeaderText="SỐ BẢNG KÊ">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="90px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DHN_DANHBO" HeaderText="DANH BỘ">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="150px" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TRONGAI" HeaderText="LÝ DO TRỞ NGẠI">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle VerticalAlign="Middle" Width="370px" />
+                                <ItemStyle VerticalAlign="Middle" Width="200px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="HOTEN" HeaderText="HỌ TÊN">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle  VerticalAlign="Middle" Width="220px" />
+                                <ItemStyle  VerticalAlign="Middle" Width="200px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DIACHI" HeaderText="ĐỊA CHỈ">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <ItemStyle  VerticalAlign="Middle" Width="250px" />
+                                <ItemStyle  VerticalAlign="Middle" Width="300px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="NGAYBAO" HeaderText="NGÀY BÁO">
                                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -155,7 +158,67 @@
                             <SortedDescendingCellStyle BackColor="#D6DFDF" />
                             <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
-                        <asp:GridView ID="tongBangKe" runat="server" AutoGenerateColumns="False" 
+              </ContentTemplate></ajaxToolkit:TabPanel>
+    <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2">
+    <HeaderTemplate>Danh Dách Trở Ngại Đã Xử Lý</HeaderTemplate><ContentTemplate>
+    
+    <asp:GridView ID="daxuly" runat="server" AutoGenerateColumns="False" 
+                            BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" 
+                            CellPadding="4" ShowFooter="True" Visible="False" Height="180px" 
+                            Width="1203px" 
+            onrowdatabound="daxuly_RowDataBound">
+                            <Columns>
+                                <asp:BoundField DataField="TENBANGKE" HeaderText="BẢNG KÊ">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="SOBANGKE" HeaderText="SỐ BẢNG KÊ">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="90px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DHN_DANHBO" HeaderText="DANH BỘ">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TRONGAI" HeaderText="LÝ DO TRỞ NGẠI">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle VerticalAlign="Middle" Width="200px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="NOIDUNGXULY" HeaderText="CHUYỄN XỬ LÝ">
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="150px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="XLT_KETQUA" HeaderText="KẾT QUẢ XỬ LÝ">
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="150px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="HOTEN" HeaderText="HỌ TÊN">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle  VerticalAlign="Middle" Width="200px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DIACHI" HeaderText="ĐỊA CHỈ">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle  VerticalAlign="Middle" Width="300px" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="NGAYBAO" HeaderText="NGÀY BÁO" Visible="False">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px"  />
+                                </asp:BoundField>
+                            </Columns>
+                            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                            <RowStyle BackColor="White" ForeColor="#003399" />
+                            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                            <SortedDescendingHeaderStyle BackColor="#002876" />
+                        </asp:GridView>
+    
+    </ContentTemplate></ajaxToolkit:TabPanel>
+</ajaxToolkit:TabContainer>
+ 
+                
+                <asp:GridView ID="tongBangKe" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" 
                             CellPadding="4" ShowFooter="True" Visible="False" Width="326px">
                             <Columns>
@@ -195,6 +258,9 @@
                             <SortedDescendingCellStyle BackColor="#D6DFDF" />
                             <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
+     
+     
+     
        <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
          <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >

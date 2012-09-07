@@ -98,7 +98,18 @@ namespace BaoCao_Web.Class
         {
             string sql = "SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI'  , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
             sql += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh  ";
-            sql += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' ";
+            sql += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' AND (XLT_XULY='0' OR XLT_XULY IS NULL) ";
+            sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+            sql += " ORDER BY DHN_NGAYBAOTHAY DESC";
+
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static DataTable getTroNgaiThay_daxuly(string tungay, string denngay)
+        {
+            string sql = "SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI'  , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI', CASE WHEN XLT_CHUYENXL='BANKTKS-DC' THEN N'CHUYỂN KIỂM TRA' ELSE CASE WHEN XLT_CHUYENXL='TCTB' THEN N'CHUYỂN TCTB' ELSE N'ĐỘI XỬ LÝ' END  END AS 'NOIDUNGXULY', XLT_KETQUA ";
+            sql += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' AND XLT_XULY='1'  ";
             sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
             sql += " ORDER BY DHN_NGAYBAOTHAY DESC";
 
