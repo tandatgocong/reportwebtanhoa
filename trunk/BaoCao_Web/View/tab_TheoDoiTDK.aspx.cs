@@ -34,6 +34,8 @@ namespace BaoCao_Web.View
             {
                 tongBangKe.Visible = true;
                 danhsachtrongai.Visible = false;
+                daxuly.Visible = false;
+                TabContainer1.Visible = false;
                 this.tongBangKe.DataSource = Class.C_DHN.getThongKeLoaiBaoThay(this.tungay.Text.Trim(), this.denngay.Text.Trim());
                 this.tongBangKe.DataBind();
             }
@@ -41,8 +43,14 @@ namespace BaoCao_Web.View
             {
                 tongBangKe.Visible = false;
                 danhsachtrongai.Visible = true;
+                daxuly.Visible = true;
+                TabContainer1.Visible = true;
                 this.danhsachtrongai.DataSource = Class.C_DHN.getTroNgaiThay(this.tungay.Text.Trim(), this.denngay.Text.Trim());
                 this.danhsachtrongai.DataBind();
+
+                this.daxuly.DataSource = Class.C_DHN.getTroNgaiThay_daxuly(this.tungay.Text.Trim(), this.denngay.Text.Trim());
+                this.daxuly.DataBind();
+
             }
         }
 
@@ -61,6 +69,19 @@ namespace BaoCao_Web.View
         }
 
         protected void danhsachtrongai_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
+            {
+
+                // when mouse is over the row, save original color to new attribute, and change it to highlight color
+                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
+
+                // when mouse leaves the row, change the bg color to its original value  
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
+            }
+        }
+
+        protected void daxuly_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
             {
