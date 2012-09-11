@@ -78,6 +78,7 @@
            menu4.addItem("&nbsp;&nbsp; THEO DÕI CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CODE", "0");
            menu4.addItem("&nbsp;&nbsp; PHÂN TÍCH CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CTCODE", "0");
            menu4.addItem("&nbsp;&nbsp; KẾT QUẢ BIÊN ĐỌC CHỈ SỐ", "QuanLyDHN.aspx?page=DHN&type=CS", "0");
+          
            var menu5 = ms.addMenu(document.getElementById("menu5"));
            menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG ĐHN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "BieuDoBaoCao.aspx?page=BDBC&type=BDDHN", "0");
            menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG SẢN LƯỢNG", "BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG", "0");
