@@ -33,9 +33,7 @@
                 </ul>
             
             </li>
- 			<li id="mnGioithieu" class="top"><a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" id="DHN" class="top_link" ><span>QUẢN LÝ ĐỒNG HỒ NƯỚC</span>
-    		<!--[if gte IE 7]><!--></a><!--<![endif]-->
-    		<!--[if lte IE 6]><table><tr><td><![endif]   -->			
+ 			<li id="mnGioithieu" class="top"><a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" id="DHN" class="top_link" ><span>QUẢN LÝ ĐỒNG HỒ NƯỚC</span></a>
                 <ul class="sub_gioithieu">
                 	<li > 
                   <a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" class="">THỐNG KÊ ĐỒNG HỒ NƯỚC </a>
