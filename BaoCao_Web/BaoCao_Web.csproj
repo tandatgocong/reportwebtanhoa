@@ -46,6 +46,11 @@
       <HintPath>Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -330,6 +335,7 @@
     <Content Include="View\BaoKinhDoanh\UpdateKinhDoanh.ascx" />
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
+    <Content Include="View\ChamCong.aspx" />
     <Content Include="View\count_visit.txt" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\HomePage.Master" />
@@ -429,6 +435,13 @@
     </Compile>
     <Compile Include="View\BieuDoBaoCao.aspx.designer.cs">
       <DependentUpon>BieuDoBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChamCong.aspx.cs">
+      <DependentUpon>ChamCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ChamCong.aspx.designer.cs">
+      <DependentUpon>ChamCong.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -559,6 +572,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="View\tabHSKH\" />
+    <Folder Include="View\tabTCHC\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ckeditor\.htaccess" />
@@ -613,7 +627,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6575</DevelopmentServerPort>
+          <DevelopmentServerPort>6929</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
