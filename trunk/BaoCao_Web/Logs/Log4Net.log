@@ -120,3 +120,52 @@
 2012-08-20 14:31:51,579 [6832] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  0 record
 2012-08-20 14:31:51,625 [6832] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  3 record
 2012-08-20 14:31:52,115 [6832] INFO  File --------------------------------------------------------
+2012-11-01 13:58:04,530 [8096] ERROR File OleDbConnection getDataTableCould not find file 'D:\MITADATA.mdb'.
+2012-11-01 13:58:08,983 [8676] ERROR File OleDbConnection getDataTableCould not find file 'D:\MITADATA.mdb'.
+2012-11-01 13:58:41,869 [8096] ERROR File OleDbConnection getDataTableCould not find file 'D:\MITADATA.mdb'.
+2012-11-01 13:59:42,212 [9400] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'ior.UserEnrollNumber = info.Us erEnrollNumber  and info.UserFullCode in ('00246','00202','00260')  AND MONTH(ior.TimeDate)=10'.
+2012-11-01 14:00:37,478 [8856] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'ior.UserEnrollNumber = info.Us erEnrollNumber  AND MONTH(ior.TimeDate)=10'.
+2012-11-01 14:02:16,300 [9948] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'ior.UserEnrollNumber = info.Us erEnrollNumber'.
+2012-11-01 14:03:05,281 [10076] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'ior.UserEnrollNumber = info.Us erEnrollNumber'.
+2012-11-01 14:35:25,954 [9092] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:35:28,523 [10436] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:35:30,183 [9092] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:35:31,531 [9092] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:36:05,557 [9092] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:39:40,277 [10436] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:39:43,659 [11112] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:40:31,593 [7544] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:41:04,246 [10328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:42:00,953 [10328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:42:24,255 [10328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-01 14:43:31,201 [10312] ERROR File OleDbConnection getDataTableSyntax error in string in query expression 'IDD='6'.
+2012-11-01 14:57:45,253 [10548] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 14:57:58,871 [7976] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 14:59:23,265 [5020] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 14:59:33,217 [10548] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:01:30,574 [5020] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:02:18,448 [10276] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:03:19,026 [10548] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:09:16,091 [10916] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:09:56,285 [10900] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:10:04,664 [1660] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:13:34,659 [8916] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:13:37,135 [10608] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:17:06,694 [8264] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:20:35,219 [12100] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:21:45,891 [12124] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:26:26,737 [11688] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:26:26,796 [11688] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:26:47,274 [11688] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:26:47,337 [11688] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:31:04,903 [12488] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:31:26,394 [12324] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:32:19,770 [512] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:36:06,658 [11060] ERROR File OleDbConnection getDataTableSyntax error in FROM clause.
+2012-11-01 15:37:07,589 [11060] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'info.UserFullCode <> ''  IDD=2 AND info.UserLoaiNV='VP''.
+2012-11-01 16:01:24,771 [4828] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-11-01 16:13:18,222 [2604] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2012-11-02 09:07:49,363 [3056] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'ior.UserFullCode ='00071' AND TimeDate=10/30/2012 00:00:00.000'.
+2012-11-05 14:11:05,825 [11560] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-11-05 14:13:59,455 [9840] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-11-05 14:14:01,510 [3492] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
