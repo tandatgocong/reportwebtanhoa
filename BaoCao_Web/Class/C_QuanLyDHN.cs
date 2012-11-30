@@ -135,6 +135,25 @@ namespace BaoCao_Web.Class
             return LinQConnection.getDataTable(query);
         }
 
+        public static DataTable getThoiGianDocDo(string nam, string ky, string dot)
+        {
+            string query = "SELECT  nv.MAYDS, nv.FULLNAME, COUNT(*) AS SOLUONG , CONVERT(VARCHAR(5),MIN(GIOGHI),108) AS BATDAU,CONVERT(VARCHAR(5),MAX(GIOGHI),108) AS KETHUC ";
+            query += " FROM TB_NHANVIENDOCSO nv, DocSo_PHT.dbo.DS" + nam + "  ds ";
+            query += " WHERE nv.MAYDS  = ds.MAY AND ds.KY='" + ky + "' AND ds.DOT='" + dot + "'";
+            query += " GROUP BY nv.MAYDS, nv.FULLNAME";
+            query += " ORDER BY nv.MAYDS ASC";
+            if ("00".Equals(dot)) {
+                query = "SELECT  nv.MAYDS, nv.FULLNAME, COUNT(*) AS SOLUONG , CONVERT(VARCHAR(5),MIN(GIOGHI),108) AS BATDAU,CONVERT(VARCHAR(5),MAX(GIOGHI),108) AS KETHUC ";
+                query += " FROM TB_NHANVIENDOCSO nv, DocSo_PHT.dbo.DS" + nam + "  ds ";
+                query += " WHERE nv.MAYDS  = ds.MAY AND ds.KY='" + ky + "' ";
+                query += " GROUP BY nv.MAYDS, nv.FULLNAME";
+                query += " ORDER BY nv.MAYDS ASC";
+            }
+            return LinQConnection.getDataTable(query);
+        }
+
+
+
         public static DataTable getNhanVienDocSo()
         {
             string query = "SELECT MAYDS, NAME FROM TB_NHANVIENDOCSO  ORDER BY MAYDS ASC ";

@@ -169,3 +169,27 @@
 2012-11-05 14:11:05,825 [11560] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
 2012-11-05 14:13:59,455 [9840] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
 2012-11-05 14:14:01,510 [3492] ERROR File LinQConnection getDataTableA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2012-11-12 13:41:32,610 [8048] ERROR File LinQConnection getDataTableThe multi-part identifier "ks.DOT" could not be bound.
+2012-11-12 13:42:35,472 [6936] ERROR File LinQConnection getDataTableThe multi-part identifier "ks.DOT" could not be bound.
+2012-11-27 15:27:48,374 [3812] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:27:48,533 [3812] ERROR File LinQConnection getDataTableInvalid column name 'TUGNAY'.
+2012-11-27 15:28:05,298 [8444] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:28:42,518 [8444] ERROR File LinQConnection getDataTableInvalid column name 'TUGNAY'.
+2012-11-27 15:29:22,824 [8216] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:30:31,044 [8216] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:31:15,420 [8216] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:32:09,461 [8216] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:35:06,403 [312] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:53:42,221 [3440] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:54:14,212 [9936] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 15:54:17,979 [9860] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2012-11-27 09:23:15,276 [7896] ERROR File LinQConnection getDataTableInvalid column name 'LOACT'.
+Invalid column name 'LOACT'.
+2012-11-27 09:23:15,359 [7896] ERROR File LinQConnection getDataTableInvalid column name 'LOACT'.
+Invalid column name 'LOACT'.
+2012-11-27 09:24:09,689 [7224] ERROR File LinQConnection getDataTableInvalid column name 'LOACT'.
+Invalid column name 'LOACT'.
+2012-11-27 09:24:09,694 [7224] ERROR File LinQConnection getDataTableInvalid column name 'LOACT'.
+Invalid column name 'LOACT'.
+2012-11-27 09:25:23,451 [8452] ERROR File LinQConnection getDataTableConversion failed when converting the nvarchar value 'SÁNG' to data type int.
+2012-11-27 09:27:38,174 [7492] ERROR File LinQConnection getDataTableConversion failed when converting the nvarchar value 'SÁNG' to data type int.

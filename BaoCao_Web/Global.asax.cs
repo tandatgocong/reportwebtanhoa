@@ -36,7 +36,8 @@ namespace BaoCao_Web
             Session["year"] = DateTime.Now.Year.ToString();
             Session["chamcong"] = null;
             Session["col"] = 0;
-            Session["arrTitle"] = new string[] {}; 
+            Session["arrTitle"] = new string[] {};
+            Session["login"] = null;
         }
 
         void Session_End(object sender, EventArgs e)

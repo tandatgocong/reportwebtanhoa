@@ -9,11 +9,13 @@ using System.Data;
 using System.Globalization;
 using ExcelCOM = Microsoft.Office.Interop.Excel;
 using System.IO;
+using BaoCao_Web.DataBase;
 
 namespace BaoCao_Web.View
 {
     public partial class ChamCong : System.Web.UI.Page
     {
+        string thang__ = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
@@ -41,7 +43,79 @@ namespace BaoCao_Web.View
             }
            
         }
+        TCHC_GIAYXINVE _xinve = null;
+        TanHoaDataContext db = new TanHoaDataContext();
+        int sophutTre = 0;
+        int sophuSom = 0;
+        string type = "";
+        string noidung = "";
+
+        int getThongTin(string manv, DateTime ngay) {
+            //di ngoai
+            var query = from q in db.TCHC_GIAYXINVEs where q.MANV== manv && q.LOAIGP=="VH" select q;
+            if (query.ToList().Count > 0) {
+                type = "DN";
+                noidung = "DI NGOAI";
+                return 1;
+            }
+            
+            //khong thoi han
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
+            if (query.ToList().Count > 0)
+            {
+                sophutTre = query.ToList()[0].PHUTVAO.Value;
+                sophuSom = query.ToList()[0].PHUTRA.Value;
+                type = "KT";
+                noidung = "XIN VE SOM";
+                return 2;
+            }
+
+            //xin trong ngay
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TN" && q.TUNGAY == ngay orderby q.CREATEDATE descending  select q;
+            if (query.ToList().Count > 0)
+            {
+                sophutTre = query.ToList()[0].PHUTVAO.Value;
+                sophuSom = query.ToList()[0].PHUTRA.Value;
+                type = "TN";
+                noidung = "XIN VE SOM";
+                return 3;
+            }
+
+            //xin tu ngay den ngay
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TN" && q.TUNGAY >= ngay && q.DENNGAY <= ngay orderby q.CREATEDATE descending  select q;
+            if (query.ToList().Count > 0)
+            {
+                sophutTre = query.ToList()[0].PHUTVAO.Value;
+                sophuSom = query.ToList()[0].PHUTRA.Value;
+                type = "TH";
+                noidung = "XIN VE SOM";
+                return 4;
+            }
+
+            /* Cong Tác */
+            //xin tu ngay den ngay
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "CT" &&  (q.TUNGAY== ngay || (q.TUNGAY > ngay && q.DENNGAY <= ngay)) orderby q.CREATEDATE descending  select q;
+            if (query.ToList().Count > 0)
+            {
+                _xinve = query.ToList()[0];
+                sophutTre = query.ToList()[0].PHUTVAO.Value;
+                sophuSom = query.ToList()[0].PHUTRA.Value;
+                type = "TH";
+                noidung = "CONG TAC";
+                return 5;
+            }
+            
+            return 0;
+        }
+
+        public void giovao() { 
         
+        }
+        public void giora() { 
+        
+        }
+            
+
         public void LoadData()
         {
             DataTable tableTre = new DataTable();
@@ -77,6 +151,7 @@ namespace BaoCao_Web.View
             workTable.Columns.Add("TENNV", typeof(String));
             DateTime tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             DateTime dNgay = DateTime.ParseExact(denngay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            thang__ = dNgay.Month.ToString();
             TimeSpan Time = dNgay - tNgay;
             int TongSoNgay = Time.Days + 3;
             Panel2.Width = TongSoNgay * 150;
@@ -119,12 +194,15 @@ namespace BaoCao_Web.View
                 tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 while (tNgay <= dNgay)
                 {
+                    tre = "";
+                    som = "";
                     string sql_ck = " SELECT ior.TimeStr FROM CheckInOut AS ior WHERE (((ior.UserFullCode)='" + manv + "') AND ((CDate([TimeDate]))='" + tNgay.ToShortDateString() + "')) ORDER BY TimeStr ASC";
                     DataTable t1 = Class.OledbConnection.getDataTable(connectionString, sql_ck);
                     int flag_ = t1.Rows.Count;
                     bool boolTre = false;
                     if (flag_ > 0)
                     {
+                        // Giờ Vào
                         string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
                         if (!"".Equals(gVao))
                         {
@@ -166,10 +244,9 @@ namespace BaoCao_Web.View
                             row[Class.Format.NgayVNVN(tNgay)] = "-";
 
                         }
-
+                                                              
+                        // Giờ Ra
                         string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
-                        if (!gVao.Equals(gRa))
-                        {
                             try
                             {
                                 DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
@@ -200,11 +277,7 @@ namespace BaoCao_Web.View
                                 row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
                             }
 
-                        }
-                        else
-                        {
-                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
-                        }
+                       
                     }
                     if (boolTre) {
                         AddTableTre(tableTre,manv, tennv, phongban, ngay, thu, giovao, giora, tre,som);
@@ -229,18 +302,32 @@ namespace BaoCao_Web.View
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Clear();
-            Response.Charset = "";
-            Response.Buffer = true;
-            Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("content-disposition", "attachment;filename=CHAMCONG.xls");
-            Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
+
+            string title = "DI TRE THANG " + tungay.Text.Substring(3,2) + ".xls";
+            HttpContext.Current.Response.Clear();
+            HttpContext.Current.Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", title));
+            HttpContext.Current.Response.ContentType = "application/ms-excel";
+            HttpContext.Current.Response.Charset = "UTF-8";
             using (StringWriter sw = new StringWriter())
             using (HtmlTextWriter htw = new HtmlTextWriter(sw))
             {
                 Table table = new Table();
                 table.GridLines = System.Web.UI.WebControls.GridLines.Both;
                 TableRow tRow = new TableRow();
+                TableCell Cell = new TableCell();
+                Cell.BorderColor = System.Drawing.Color.Black;
+                Cell.Text = "DANH SACH NHAN VIEN TRE THANG " + tungay.Text.Substring(3, 2) + " ( TU " + tungay.Text + " DEN " + denngay.Text + ")";
+                Cell.BorderStyle = BorderStyle.Solid;
+                Cell.HorizontalAlign = HorizontalAlign.Center;
+                Cell.VerticalAlign = VerticalAlign.Middle;
+                Cell.Font.Bold = true;
+                Cell.Font.Size = 15;
+                Cell.Height = 30; 
+                Cell.ColumnSpan = 9;
+                tRow.Cells.Add(Cell);
+                table.Rows.Add(tRow);
+
+                tRow = new TableRow();
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "MA NV" });
                 tRow.Cells.Add(new TableCell() { Width = 300, HorizontalAlign = HorizontalAlign.Center, Text = "TEN NHAN VIEN" });
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "PHONG BAN" });
@@ -251,20 +338,13 @@ namespace BaoCao_Web.View
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "TRE" });
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "SOM" });
                 table.Rows.Add(tRow); // Done! Header row added.
-
-
-                // Note TableCell has a property BackColor. Once can set the
-                // that within the cell such as BackColor = System.Drawing.Color.Blue
-                // and that will carry into the Excel Document!
-
-                // UserData is our Linq entity list and we will enumerate it to fill the into cells of the row
-                // and subsequently into the table.
+                
                 DataTable  tableTre = (DataTable)Session["tableTre"];
                 foreach (DataRow item in tableTre.Rows)
                 {
                     tRow = new TableRow();
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[0].ToString() });
-                    tRow.Cells.Add(new TableCell() { Width = 300, HorizontalAlign = HorizontalAlign.Center, Text = item[1].ToString() });
+                    tRow.Cells.Add(new TableCell() { Width = 300, HorizontalAlign = HorizontalAlign.Left, Text = item[1].ToString() });
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[2].ToString() });
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[3].ToString() });
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[4].ToString() });
@@ -276,10 +356,9 @@ namespace BaoCao_Web.View
                 }
 
                 table.RenderControl(htw);
-                Response.Output.Write(sw.ToString());
-                Response.End();
-
-                Response.Clear();
+                HttpContext.Current.Response.Output.Write(sw.ToString());
+                HttpContext.Current.Response.End();
+                HttpContext.Current.Response.Clear();
 
             }
         }

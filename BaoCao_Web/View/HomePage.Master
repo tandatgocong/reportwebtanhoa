@@ -5,6 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>       
@@ -57,8 +58,11 @@
                     <a href="QuanLyDHN.aspx?page=DHN&type=CS" class="">KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
                 </li>	
                 
-                 <li class="last"> 
+                 <li > 
                     <a href="QuanLyDHN.aspx?page=DHN&type=SDS" class="">SỔ ĐỌC SỐ</a>
+                </li>	 
+                <li class="last"> 
+                   <a  href="QuanLyDHN.aspx?page=DHN&type=TGD" >THỜI GIAN ĐỌC </a>
                 </li>	         
 		           
 		        </ul>
@@ -81,8 +85,11 @@
 				    <li class="last"><a  href="BieuDoBaoCao.aspx?page=BDBC&type=BDDTHU" >BIẾN ĐỘNG DOANH THU</a></li>		           
     			</ul>
             </li>
-            <li id="mnLienHe" class="top"><a href="ChamCong.aspx?page=KD"  id="LH" class="top_link"><span>CHẤM CÔNG</span>
-            </a>
+            <li id="mnLienHe" class="top"><a href="ChamCong.aspx?page=KD"  id="LH" class="top_link"><span>CHẤM CÔNG</span></a>
+             <ul class="sub_tintuc">
+    				<li><a  href="ChamCong.aspx?page=KD" >THEO DÕI CHẤM CÔNG </a></li>
+					<li class="last"><a  href="hc_CapNhatGiayXP.aspx?page=KD" >CẬP NHẬT GIẤY PHÉP</a></li>
+    			</ul>
             </li>         
  		</ul>
  	</div>
@@ -129,17 +136,17 @@
         <table id="menu" class="menu" cellSpacing="0" cellPadding="0">
          <% if ("DHN".Equals(Request.Params["page"] + ""))
        { %>
-        <tr> 
+          <tr> 
                 <td> 
                   <a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" >THỐNG KÊ ĐỒNG HỒ NƯỚC</a>
                 </td> 
            </tr> 
-           <tr> 
+          <tr> 
                 <td> 
                   <a id="menu5" href="tab_TheoDoiTDK.aspx?page=DHN" >THEO DÕI BÁO THAY ĐHN</a>
                 </td> 
             </tr> 
-            <tr> 
+          <tr> 
                 <td> 
                   <a id="menu6" href="QuanLyDHN.aspx?page=DHN&type=TDSL" >THEO DÕI SẢN LƯỢNG</a>
                 </td> 
@@ -149,29 +156,34 @@
                 <a id="menu7" href="QuanLyDHN.aspx?page=DHN&type=TDTT" >THEO DÕI TIÊU THỤ THẤP</a>
              </td> 
             </tr> 
-            <!--  <tr> 
+          <!--  <tr> 
                 <td> 
                     <a id="menu8" href="QuanLyDHN.aspx?page=DHN&type=TTT" >LOẠI KH TIÊU THỤ THẤP</a>
                 </td> 
              </tr> -->
-             <tr> 
+          <tr> 
                 <td> 
                     <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>
                 </td> 
              </tr>
-             <tr> 
+          <tr> 
                 <td> 
                     <a id="A3" href="QuanLyDHN.aspx?page=DHN&type=CTCODE" >PHÂN TÍCH CODE ĐỌC SỐ</a>
                 </td> 
              </tr> 
-              <tr> 
+          <tr> 
                 <td> 
                     <a id="A2" href="QuanLyDHN.aspx?page=DHN&type=CS" >KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
                 </td> 
              </tr> 
-              <tr> 
+          <tr> 
                 <td> 
                     <a id="A4" href="QuanLyDHN.aspx?page=DHN&type=SDS" >SỔ ĐỌC SỐ</a>
+                </td> 
+             </tr> 
+          <tr> 
+                <td> 
+                    <a id="A5" href="QuanLyDHN.aspx?page=DHN&type=TGD" >THỜI GIAN ĐỌC </a>
                 </td> 
              </tr> 
     
@@ -183,32 +195,10 @@
                   <a id="A1" href="QuanLyHoSoKhachHang.aspx?page=HSKH" >NHẬN ĐƠN KHÁCH HÀNG</a>
                 </td> 
            </tr> 
-         <!--  <tr> 
-                <td> 
-                  <a id="A2" href="Home.aspx?page=MB" >LOẠI SẢN PHẦM 1</a>
-                </td> 
-            </tr> 
-            <tr> 
-                <td> 
-                  <a id="A3" href="Home.aspx?page=MC" >LOẠI SẢN PHẦM 2</a>
-                </td> 
-            </tr> 
-            <tr> 
-             <td> 
-                <a id="A4" href="Home.aspx?page=DT" >LOẠI SẢN PHẦM 3</a>
-             </td> 
-            </tr> 
-            <tr> 
-                <td> 
-                    <a id="A5" href="Home.aspx?page=PK" >LOẠI SẢN PHẦM 4</a>
-                </td> 
-             </tr>  -->            
-      
+                        
     <% }
        else if ("BDBC".Equals(Request.Params["page"] + ""))
        { %>
-    
-   
            <tr> 
                 <td> 
                   <a id="A6" href="BieuDoBaoCao.aspx?page=BDBC&type=BDDHN" >BIẾN ĐỘNG ĐHN</a>
@@ -219,16 +209,14 @@
                   <a id="A7" href="BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG" >BIẾN ĐỘNG SẢN LƯỢNG</a>
                 </td> 
             </tr> 
-            <tr> 
+           <tr> 
                 <td> 
                   <a id="A8" href="BieuDoBaoCao.aspx?page=BDBC&type=BDDTHU" >BIẾN ĐỘNG DOANH THU</a>
                 </td> 
             </tr> 
-            <tr> 
             
-    <%} %>
-
-             <tr>
+  <%} %>
+     <tr>
              <td><a href="#" >&nbsp;</a>  </td>
              </tr>
         </table>

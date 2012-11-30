@@ -1640,6 +1640,25 @@
       <Column Name="GIAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TCHC_GIAYXINVE" Member="TCHC_GIAYXINVEs">
+    <Type Name="TCHC_GIAYXINVE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PHONGBAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENNV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOAIGP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BUOICT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TUNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DENNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PHUTVAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHUTRA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NOIDUNGGV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.BC_TONGKET" Method="BC_TONGKET">
     <Parameter Name="TUNGAY" Parameter="tUNGAY" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="DENNGAY" Parameter="dENNGAY" Type="System.String" DbType="VarChar(50)" />
