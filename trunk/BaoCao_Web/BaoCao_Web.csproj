@@ -337,14 +337,17 @@
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
     <Content Include="View\count_visit.txt" />
+    <Content Include="View\hc_CapNhatGiayXP.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\HomePage.Master" />
     <Content Include="View\KinhDoanh.aspx" />
+    <Content Include="View\Login.aspx" />
     <Content Include="View\QuanLyDHN.aspx" />
     <Content Include="View\QuanLyHoSoKhachHang.aspx" />
     <Content Include="View\tabBieuDo\tab_BieuDoDoanhThu.ascx" />
     <Content Include="View\tabBieuDo\tab_BieuDoSanLuong.ascx" />
     <Content Include="View\tabBieuDo\tb_BienDongDHN.ascx" />
+    <Content Include="View\tabDHN\tab_TheoDoiGhiCS.ascx" />
     <Content Include="View\tabDHN\tabBienDocCS.ascx" />
     <Content Include="View\tabDHN\tabCodeDocSo.ascx" />
     <Content Include="View\tabDHN\tabLoaiKHTieuThuThap.ascx" />
@@ -353,6 +356,7 @@
     <Content Include="View\tabDHN\tabTheoDoiTieuThuThap.ascx" />
     <Content Include="View\tabDHN\tabThongKeDHN.ascx" />
     <Content Include="View\tabDHN\tab_ChiTietCode.ascx" />
+    <Content Include="View\tabTCHC\tabCapNhatGiay.ascx" />
     <Content Include="View\tab_TheoDoiTDK.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -371,6 +375,7 @@
     <Compile Include="Class\C_Chart.cs" />
     <Compile Include="Class\C_DHN.cs" />
     <Compile Include="Class\C_QuanLyDHN.cs" />
+    <Compile Include="Class\C_ToChucHanhChanh.cs" />
     <Compile Include="Class\Format.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
@@ -443,6 +448,13 @@
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\hc_CapNhatGiayXP.aspx.cs">
+      <DependentUpon>hc_CapNhatGiayXP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\hc_CapNhatGiayXP.aspx.designer.cs">
+      <DependentUpon>hc_CapNhatGiayXP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -463,6 +475,13 @@
     </Compile>
     <Compile Include="View\KinhDoanh.aspx.designer.cs">
       <DependentUpon>KinhDoanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyDHN.aspx.cs">
       <DependentUpon>QuanLyDHN.aspx</DependentUpon>
@@ -504,6 +523,13 @@
     </Compile>
     <Compile Include="View\tabBieuDo\tb_BienDongDHN.ascx.designer.cs">
       <DependentUpon>tb_BienDongDHN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabDHN\tab_TheoDoiGhiCS.ascx.cs">
+      <DependentUpon>tab_TheoDoiGhiCS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tab_TheoDoiGhiCS.ascx.designer.cs">
+      <DependentUpon>tab_TheoDoiGhiCS.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabDHN\tabBienDocCS.ascx.cs">
       <DependentUpon>tabBienDocCS.ascx</DependentUpon>
@@ -561,6 +587,13 @@
     <Compile Include="View\tabDHN\tab_ChiTietCode.ascx.designer.cs">
       <DependentUpon>tab_ChiTietCode.ascx</DependentUpon>
     </Compile>
+    <Compile Include="View\tabTCHC\tabCapNhatGiay.ascx.cs">
+      <DependentUpon>tabCapNhatGiay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabTCHC\tabCapNhatGiay.ascx.designer.cs">
+      <DependentUpon>tabCapNhatGiay.ascx</DependentUpon>
+    </Compile>
     <Compile Include="View\tab_TheoDoiTDK.aspx.cs">
       <DependentUpon>tab_TheoDoiTDK.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -572,7 +605,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="View\tabHSKH\" />
-    <Folder Include="View\tabTCHC\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ckeditor\.htaccess" />

@@ -101,7 +101,7 @@
                 <td class="style6"> <asp:Label ID="Label2" runat="server" Text="Đến Ngày : " CssClass="label"></asp:Label></td>
                 <td class="style2"><asp:TextBox runat="server" ID="denngay" autocomplete="off" /></td>
                 <td class="style6">&nbsp;<asp:Button ID="btXemBangKe" runat="server" Text="XEM THÔNG TIN" 
-                        CssClass="button" onclick="btXemBangKe_Click"  /></td>
+                        CssClass="button" onclick="btXemBangKe_Click" Height="30px"  /></td>
                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
          <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >
@@ -205,13 +205,14 @@
           %>
               </tbody>
             </table>
-            <asp:Button ID="Button1" runat="server" Text="XUẤT FILE" 
-                        CssClass="button" onclick="Button1_Click" />
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="XUẤT FILE NHÂN VIÊN ĐI TRỂ" 
+                        CssClass="button" onclick="Button1_Click" Height="30px" />
       <!-- End Show -->
      </div>
    
      
-       <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
+    <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
          <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>

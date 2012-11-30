@@ -251,8 +251,7 @@ a.linkfoot_text:hover{
 	cursor: pointer;	
     font-size: 14px;
     font-family: "Times New Roman";
-    height: 25px;
-}
+    }
 
 .button:hover
 {
@@ -493,6 +492,7 @@ div.contain_table{
 	border-right:0px solid #EAEAEA;
 	padding-right:3px;padding-left:5px;
 	height: 22px; #height: 20px;
+    text-align: left;
 }
 .table_list_in .head_nobor{
 	border: 0;
