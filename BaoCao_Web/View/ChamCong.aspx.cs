@@ -27,7 +27,7 @@ namespace BaoCao_Web.View
             DropDownList1.DataBind();
         }
 
-        public void AddTableTre(DataTable tableTre, string manv, string tennv, string phongban, string ngay, string thu, string giovao, string giora, string tre,string som) {
+        public void AddTableTre(DataTable tableTre, string manv, string tennv, string phongban, string ngay, string thu, string giovao, string giora, string tre,string som, string ghichu) {
             if (tableTre != null) {
                 DataRow row = tableTre.NewRow();
                 row["MANV"] = manv;
@@ -36,9 +36,12 @@ namespace BaoCao_Web.View
                 row["NGAY"] = ngay;
                 row["THU"] = thu;
                 row["GIOVAO"] = giovao;
-                row["GIORA"] = giora;
                 row["TRE"] = tre;
+                row["GIORA"] = giora;                
                 row["SOM"] = som;
+                row["GHICHU"] = ghichu;  
+              
+
                 tableTre.Rows.Add(row);
             }
            
@@ -54,6 +57,7 @@ namespace BaoCao_Web.View
             //di ngoai
             var query = from q in db.TCHC_GIAYXINVEs where q.MANV== manv && q.LOAIGP=="VH" select q;
             if (query.ToList().Count > 0) {
+                _xinve = query.ToList()[0];
                 type = "DN";
                 noidung = "DI NGOAI";
                 return 1;
@@ -63,30 +67,27 @@ namespace BaoCao_Web.View
             query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
-                sophutTre = query.ToList()[0].PHUTVAO.Value;
-                sophuSom = query.ToList()[0].PHUTRA.Value;
+                _xinve = query.ToList()[0];
                 type = "KT";
                 noidung = "XIN VE SOM";
                 return 2;
             }
 
             //xin trong ngay
-            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TN" && q.TUNGAY == ngay orderby q.CREATEDATE descending  select q;
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TN" && q.TUNGAY == ngay.Date orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
-                sophutTre = query.ToList()[0].PHUTVAO.Value;
-                sophuSom = query.ToList()[0].PHUTRA.Value;
+                _xinve = query.ToList()[0];
                 type = "TN";
                 noidung = "XIN VE SOM";
                 return 3;
             }
 
             //xin tu ngay den ngay
-            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TN" && q.TUNGAY >= ngay && q.DENNGAY <= ngay orderby q.CREATEDATE descending  select q;
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "TH" && ngay.Date >= q.TUNGAY && ngay.Date <= q.DENNGAY orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
-                sophutTre = query.ToList()[0].PHUTVAO.Value;
-                sophuSom = query.ToList()[0].PHUTRA.Value;
+                _xinve = query.ToList()[0];
                 type = "TH";
                 noidung = "XIN VE SOM";
                 return 4;
@@ -94,12 +95,11 @@ namespace BaoCao_Web.View
 
             /* Cong Tác */
             //xin tu ngay den ngay
-            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "CT" &&  (q.TUNGAY== ngay || (q.TUNGAY > ngay && q.DENNGAY <= ngay)) orderby q.CREATEDATE descending  select q;
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "CT" && (q.TUNGAY == ngay.Date || (ngay.Date >= q.TUNGAY && ngay.Date <= q.DENNGAY)) orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
                 _xinve = query.ToList()[0];
-                sophutTre = query.ToList()[0].PHUTVAO.Value;
-                sophuSom = query.ToList()[0].PHUTRA.Value;
+              
                 type = "TH";
                 noidung = "CONG TAC";
                 return 5;
@@ -108,14 +108,16 @@ namespace BaoCao_Web.View
             return 0;
         }
 
-        public void giovao() { 
-        
+        public int parseInt(object o) {
+            try
+            {
+                return int.Parse(o.ToString());
+            }
+            catch (Exception)
+            {
+            }
+            return 0; 
         }
-        public void giora() { 
-        
-        }
-            
-
         public void LoadData()
         {
             DataTable tableTre = new DataTable();
@@ -125,9 +127,10 @@ namespace BaoCao_Web.View
             tableTre.Columns.Add("NGAY", typeof(String));
             tableTre.Columns.Add("THU", typeof(String));
             tableTre.Columns.Add("GIOVAO", typeof(String));
-            tableTre.Columns.Add("GIORA", typeof(String));
             tableTre.Columns.Add("TRE", typeof(String));
+            tableTre.Columns.Add("GIORA", typeof(String));
             tableTre.Columns.Add("SOM", typeof(String));
+            tableTre.Columns.Add("GHICHU", typeof(String));
 
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
             string sql = " SELECT info.UserFullCode, info.UserFullName, dt.Dept";
@@ -167,6 +170,7 @@ namespace BaoCao_Web.View
                 workTable.Columns.Add(Class.Format.NgayVNVN(tNgay) + "TRE", typeof(String));              
                 workTable.Columns.Add(Class.Format.NgayVNVN(tNgay) + "RA", typeof(String));
                 workTable.Columns.Add(Class.Format.NgayVNVN(tNgay) + "SOM", typeof(String));
+                workTable.Columns.Add(Class.Format.NgayVNVN(tNgay) + "TYPE", typeof(String));
                 tNgay = tNgay.AddDays(1.0);
                 flag = flag + 3;
             }
@@ -177,6 +181,7 @@ namespace BaoCao_Web.View
             DataTable tb = Class.OledbConnection.getDataTable(connectionString, sql);
             for (int i = 0; i < tb.Rows.Count; i++)
             {
+                int tongphuttre = 0;
                 int tongngaycong = 0;
                 int tongtre = 0;
                 string manv = tb.Rows[i]["UserFullCode"].ToString();
@@ -192,6 +197,15 @@ namespace BaoCao_Web.View
                 row["MANV"] = manv;
                 row["TENNV"] = tennv;
                 tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                int phutSomThem = 0;
+                int phutTreThem = 0;
+                int flagLoai = getThongTin(manv, tNgay);
+                if (flagLoai == 2)
+                {
+                    flagLoai = 2;
+                    phutTreThem = parseInt(_xinve.PHUTVAO);
+                    phutSomThem = parseInt(_xinve.PHUTRA);
+                }
                 while (tNgay <= dNgay)
                 {
                     tre = "";
@@ -202,87 +216,387 @@ namespace BaoCao_Web.View
                     bool boolTre = false;
                     if (flag_ > 0)
                     {
-                        // Giờ Vào
-                        string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
-                        if (!"".Equals(gVao))
+                        if (flagLoai == 1)
                         {
-                            string tmp = t1.Rows[0]["TimeStr"].ToString();
-                            try
+                            string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
+                            if (!"".Equals(gVao))
                             {
-                                ngay = Class.Format.NgayVNVN(tNgay);
-                                DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                row[ngay] = tm1.ToString("H:mm");
-                                tongngaycong++;
-                                thu = tm1.Date.DayOfWeek.ToString();
-                                giovao = tm1.ToString("H:mm");
-
-                                if (tm1.Hour == 7 && tm1.Minute > 40)
+                                string tmp = t1.Rows[0]["TimeStr"].ToString();
+                                try
                                 {
-                                    row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
-                                    tongtre++;
-                                    boolTre = true;
-                                    int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
-                                    tre = tr + "";
+                                    ngay = Class.Format.NgayVNVN(tNgay);
+                                    DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    row[ngay] = tm1.ToString("H:mm");
+                                    tongngaycong++;
+                                    thu = tm1.Date.DayOfWeek.ToString();
+                                    giovao = tm1.ToString("H:mm");
                                 }
-                                else if (tm1.Hour > 7)
+                                catch (Exception)
                                 {
-                                    row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
-                                    tongtre++;
-                                    boolTre = true;
-                                    int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
-                                    tre = tr + "";
+                                    row[Class.Format.NgayVNVN(tNgay)] = "-";
                                 }
-                                
                             }
-                            catch (Exception)
+                            else
                             {
                                 row[Class.Format.NgayVNVN(tNgay)] = "-";
-                            }
-                        }
-                        else
-                        {
-                            row[Class.Format.NgayVNVN(tNgay)] = "-";
 
-                        }
-                                                              
-                        // Giờ Ra
-                        string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+                            }
+
+                            // Gi? Ra
+                            string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+
                             try
                             {
                                 DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                 row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                 giora = tm2.ToString("HH:mm");
 
-                                if (tm2.Hour == 16 && tm2.Minute < 50)
-                                {
-                                    row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
-                                    tongtre++;
-                                    boolTre = true;
-                                    int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
-                                    som = tr + "";
-                                }
-                                else if (tm2.Hour < 16)
-                                {
-                                    row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
-                                    tongtre++;
-                                    boolTre = true;
-                                    int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
-                                    som = tr + "";
-                                }
-                               
-
                             }
                             catch (Exception)
                             {
                                 row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
                             }
+                        }else if(flagLoai!=2){
+                            //if ("00120".Equals(manv))
+                            //{
+                            //    flagLoai = getThongTin(manv, tNgay);
+                            //}
+                            flagLoai = getThongTin(manv, tNgay);
+                            if (flagLoai == 3 || flagLoai == 4) // đi công tác
+                            {
+                                phutTreThem = parseInt(_xinve.PHUTVAO);
+                                phutSomThem = parseInt(_xinve.PHUTRA);
+                                
+                            }
+                            else if (flagLoai == 5) // đi công tác
+                            {
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+                                ngay = Class.Format.NgayVNVN(tNgay);
+                                tongngaycong++;
+                                thu = tNgay.Date.DayOfWeek.ToString();
+                                if (_xinve.BUOICT == "S")
+                                {
+                                    ////////////////////
+                                    string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
+                                    if (!"".Equals(gVao))
+                                    {
+                                        string tmp = t1.Rows[0]["TimeStr"].ToString();
+                                        try
+                                        {
+                                            ngay = Class.Format.NgayVNVN(tNgay);
+                                            DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            row[ngay] = tm1.ToString("H:mm");
+                                            giovao = tm1.ToString("H:mm");
 
-                       
+                                            if (tm1.Hour == 13 && tm1.Minute > 10)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (13 * 60 + 40);
+                                                tre = tr + "";
+                                                tongphuttre += tr;
+                                            }
+                                            else if (tm1.Hour > 13)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (13 * 60 + 40);
+                                                tre = tr + "";
+                                                tongphuttre += tr;
+                                            }
+
+                                        }
+                                        catch (Exception)
+                                        {
+                                            row[Class.Format.NgayVNVN(tNgay)] = "-";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay)] = "-";
+
+                                    }
+
+                                    // Gi? Ra
+                                    string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+                                    if (gRa.Equals(gVao))
+                                    {
+                                        AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
+                                    }
+                                    else
+                                    {
+                                        try
+                                        {
+                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
+                                            giora = tm2.ToString("HH:mm");
+
+                                            if (tm2.Hour == 16 && tm2.Minute < 50)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                                som = tr + "";
+                                                tongphuttre += tr;
+                                            }
+                                            else if (tm2.Hour < 16)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                                som = tr + "";
+                                                tongphuttre += tr;
+                                            }
+
+
+                                        }
+                                        catch (Exception)
+                                        {
+                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
+                                        }
+                                    }
+
+                                    ///////
+
+                                }
+                                else if (_xinve.BUOICT == "C")
+                                {
+                                    ////////////////////
+                                    string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
+                                    if (!"".Equals(gVao))
+                                    {
+                                        string tmp = t1.Rows[0]["TimeStr"].ToString();
+                                        try
+                                        {
+                                            ngay = Class.Format.NgayVNVN(tNgay);
+                                            DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            row[ngay] = tm1.ToString("H:mm");
+                                            giovao = tm1.ToString("H:mm");
+
+                                            if (tm1.Hour == 7 && tm1.Minute > 40)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
+                                                tre = tr + "";
+                                                tongphuttre += tr;
+                                            }
+                                            else if (tm1.Hour > 7)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
+                                                tre = tr + "";
+                                                tongphuttre += tr;
+                                            }
+
+                                        }
+                                        catch (Exception)
+                                        {
+                                            row[Class.Format.NgayVNVN(tNgay)] = "-";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay)] = "-";
+
+                                    }
+
+                                    // Gi? Ra
+                                    string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+                                    if (gRa.Equals(gVao))
+                                    {
+                                        AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
+                                    }
+                                    else
+                                    {
+                                        try
+                                        {
+                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
+                                            giora = tm2.ToString("HH:mm");
+
+                                            if (tm2.Hour == 11 && tm2.Minute < 20)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                                som = tr + "";
+                                                tongphuttre += tr;
+                                            }
+                                            else if (tm2.Hour < 11)
+                                            {
+                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                                tongtre++;
+                                                boolTre = true;
+                                                int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                                som = tr + "";
+                                                tongphuttre += tr;
+                                            }
+
+
+                                        }
+                                        catch (Exception)
+                                        {
+                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
+                                        }
+                                    }
+
+                                    ///////
+                                }
+                            }
+
+                        }
+
+                        ////////////////////// TÍNH GIỜ THEO ĐIỀU KIỆN //////////////////////////////////////
+                        if (flagLoai == 2 || flagLoai == 3 || flagLoai == 4 || flagLoai==0)
+                        {
+                            // Gi? Vào
+                            string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
+                            if (!"".Equals(gVao))
+                            {
+                                string tmp = t1.Rows[0]["TimeStr"].ToString();
+                                try
+                                {
+                                    ngay = Class.Format.NgayVNVN(tNgay);
+                                    DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    row[ngay] = tm1.ToString("H:mm");
+                                    tongngaycong++;
+                                    thu = tm1.Date.DayOfWeek.ToString();
+                                    giovao = tm1.ToString("H:mm");
+                                    if ("00176".Equals(manv)) {
+                                        tm1 = tm1.AddMinutes(phutTreThem * -1); 
+                                    }
+                                   
+                                    
+                                    if (tm1.Hour == 7 && tm1.Minute > 40)
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                        tongtre++;
+                                        boolTre = true;
+                                        int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
+                                        tre = tr + "";
+                                        tongphuttre += tr;
+                                    }
+                                    else if (tm1.Hour > 7)
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
+                                        tongtre++;
+                                        boolTre = true;
+                                        int tr = (tm1.Hour * 60 + tm1.Minute) - (7 * 60 + 40);
+                                        tre = tr + "";
+                                        tongphuttre += tr;
+                                    }
+
+                                }
+                                catch (Exception)
+                                {
+                                    row[Class.Format.NgayVNVN(tNgay)] = "-";
+                                }
+                            }
+                            else
+                            {
+                                row[Class.Format.NgayVNVN(tNgay)] = "-";
+
+                            }
+
+                            // Gi? Ra
+                            string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+
+                            if (gVao.Equals(gRa))
+                            {
+                                AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
+                                row[Class.Format.NgayVNVN(tNgay) + "RA"] = "KQ";
+
+                            }
+                            else {
+                                try
+                                {
+                                    DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
+                                    giora = tm2.ToString("HH:mm");
+
+                                    tm2 = tm2.AddMinutes(phutSomThem);
+
+                                    if (tm2.Hour == 16 && tm2.Minute < 50)
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                        tongtre++;
+                                        boolTre = true;
+                                        int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                        som = tr + "";
+                                        tongphuttre += tr;
+                                    }
+                                    else if (tm2.Hour < 16)
+                                    {
+                                        row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                        tongtre++;
+                                        boolTre = true;
+                                        int tr = (16 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                        som = tr + "";
+                                        tongphuttre += tr;
+                                    }
+
+
+                                }
+                                catch (Exception)
+                                {
+                                    row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
+                                }
+                            }
+                            
+                                                    
+                        }
+
+                    }
+                    else {
+
+                        // không quét đi công tác
+                        if (getThongTin(manv, tNgay) == 5) // đi công tác
+                        {
+                            if (_xinve.BUOICT == "N") {
+                                ngay = Class.Format.NgayVNVN(tNgay);
+                                row[ngay] ="CT";
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+                                tongngaycong++;
+                                thu = tNgay.Date.DayOfWeek.ToString();
+                                giovao = "CT";
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+
+                                row[Class.Format.NgayVNVN(tNgay) + "RA"] = "CT";
+                                giora = "CT"; 
+
+                            } 
+                        }
+                        else { // không quét
+                            if (tNgay.DayOfWeek != DayOfWeek.Saturday && tNgay.DayOfWeek != DayOfWeek.Sunday) {
+                                AddTableTre(tableTre, manv, tennv, phongban, Class.Format.NgayVNVN(tNgay), tNgay.DayOfWeek.ToString(), "", "", "", "", "KHONG QUET");
+                                row[Class.Format.NgayVNVN(tNgay)] = "KQ";
+                                row[Class.Format.NgayVNVN(tNgay) + "RA"] = "KQ";
+                            }
+                            
+                        }
+                        
+                    
                     }
                     if (boolTre) {
-                        AddTableTre(tableTre,manv, tennv, phongban, ngay, thu, giovao, giora, tre,som);
+                        AddTableTre(tableTre,manv, tennv, phongban, ngay, thu, giovao, giora, tre,som,"");
                     }
+
                     tNgay = tNgay.AddDays(1.0);
+                    if (flagLoai != 2 && flagLoai != 0)
+                    {
+                        phutTreThem = 0;
+                        phutSomThem = 0;
+                    }
+                   
                 }
                 row["NGÀY CÔNG"] = tongngaycong;
                 row["TRỂ"] = tongtre;
@@ -323,7 +637,7 @@ namespace BaoCao_Web.View
                 Cell.Font.Bold = true;
                 Cell.Font.Size = 15;
                 Cell.Height = 30; 
-                Cell.ColumnSpan = 9;
+                Cell.ColumnSpan = 10;
                 tRow.Cells.Add(Cell);
                 table.Rows.Add(tRow);
 
@@ -334,9 +648,10 @@ namespace BaoCao_Web.View
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "NGAY" });
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "THU " });
                 tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "GIO VAO" });
-                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "GIO RA" });
-                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "TRE" });
-                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "SOM" });
+                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "VAO TRE" });
+                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "GIO VE" });
+                tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = "VE SOM" });
+                tRow.Cells.Add(new TableCell() { Width = 200, HorizontalAlign = HorizontalAlign.Center, Text = "GHI CHU " });
                 table.Rows.Add(tRow); // Done! Header row added.
                 
                 DataTable  tableTre = (DataTable)Session["tableTre"];
@@ -352,6 +667,7 @@ namespace BaoCao_Web.View
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[6].ToString() });
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[7].ToString() });
                     tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[8].ToString() });
+                    tRow.Cells.Add(new TableCell() { Width = 100, HorizontalAlign = HorizontalAlign.Center, Text = item[9].ToString() });
                     table.Rows.Add(tRow);
                 }
 

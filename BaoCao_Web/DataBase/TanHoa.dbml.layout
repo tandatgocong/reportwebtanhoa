@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 36, 43.375" name="TanHoa">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 36, 43.5" name="TanHoa">
   <DataContextMoniker Name="/TanHoaDataContext" />
   <nestedChildShapes>
     <classShape Id="c2074100-ced1-4b6b-acbf-fea73260f98a" absoluteBounds="9.75, 3.75, 2, 9.27065266927083">
@@ -426,10 +426,10 @@
         <elementListCompartment Id="7921a71c-1cbc-4f86-a93c-7021fbf8a877" absoluteBounds="3.765, 27.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1767aa6a-e331-4bfd-8558-f51f703c2bac" absoluteBounds="0.875, 39.375, 2, 3.6939111328124996">
+    <classShape Id="7fe50771-e440-4506-a39f-eaa4aee4608d" absoluteBounds="0.75, 39.375, 2, 3.8862125651041666">
       <DataClassMoniker Name="/TanHoaDataContext/TCHC_GIAYXINVE" />
       <nestedChildShapes>
-        <elementListCompartment Id="b7462941-7101-4674-85a9-1617009f58ab" absoluteBounds="0.88999999999999968, 39.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8353ca99-614c-4fb2-8319-ab914ac87b2f" absoluteBounds="0.76499999999999968, 39.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

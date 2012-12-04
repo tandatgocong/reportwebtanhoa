@@ -165,10 +165,24 @@
                                            
                                        }
                                        else { 
-                                        %>
-                                        <td class="style28" ><%=row[s].ToString()%></td>
-                                     
+                                            if ("CT".Equals(row[s].ToString())) {
+                                             %>
+                                        <td class="style28" style="background-color:Aqua;" ><%=row[s].ToString()%></td>
+                                        
                                       <%
+                                      }
+                                            else if ("KQ".Equals(row[s].ToString())) { 
+                                        %>
+                                        <td class="style28" style="background-color:Red;" ><%=row[s].ToString()%></td>
+                                        
+                                      <%
+                                            }
+                                            else{
+                                                  %>
+                                                <td class="style28" ><%=row[s].ToString()%></td>
+                                     
+                                              <%
+                                            }                                      
                                        }
                                        
                                        if ("1".Equals(row[s + "SOM"].ToString())) { 
@@ -179,9 +193,28 @@
                                            
                                        }
                                        else { 
+                                           if ("CT".Equals(row[s + "RA"].ToString())) {
+                                                 %>
+                                            <td class="style28" style="background-color:Aqua;" ><%=row[s + "RA"].ToString()%></td>
+                                        
+                                          <%
+                                          }
+                                                else if ("KQ".Equals(row[s + "RA"].ToString())) { 
+                                            %>
+                                            <td class="style28" style="background-color:Red;" ><%=row[s + "RA"].ToString()%></td>
+                                        
+                                          <%
+                                                }
+                                                else{
+                                                      %>
+                                                    <td class="style28" style="border-right:2px #99cc99 solid;"><%=row[s + "RA"].ToString()%></td>
+                                     
+                                                  <%
+                                                }  
+
                                         %>
                                         
-                                      <td class="style28" style="border-right:2px #99cc99 solid;"><%=row[s + "RA"].ToString()%></td>
+                                     
                                       <%
                                        }
 
@@ -219,10 +252,8 @@
 
     </div>
   </asp:Panel>
- 
- 
- 
-       </asp:Panel>
+</asp:Panel>
+
 </div>
 
 

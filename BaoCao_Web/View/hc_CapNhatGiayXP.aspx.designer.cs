@@ -67,6 +67,24 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.DropDownList cpNhanVien;
         
         /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// cbThang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbThang;
+        
+        /// <summary>
         /// cpLoaiGiayPhep control.
         /// </summary>
         /// <remarks>
@@ -220,13 +238,13 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.Label lbThanhCong;
         
         /// <summary>
-        /// ngayloc control.
+        /// cbThang0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ngayloc;
+        protected global::System.Web.UI.WebControls.DropDownList cbThang0;
         
         /// <summary>
         /// Button1 control.
@@ -236,15 +254,6 @@ namespace BaoCao_Web.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// CalendarExtender9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender9;
         
         /// <summary>
         /// GridView1 control.

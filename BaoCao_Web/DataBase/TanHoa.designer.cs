@@ -31439,6 +31439,8 @@ namespace BaoCao_Web.DataBase
 		
 		private string _NOIDUNGGV;
 		
+		private string _THANG;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -31473,6 +31475,8 @@ namespace BaoCao_Web.DataBase
     partial void OnMODIFYBYChanged();
     partial void OnNOIDUNGGVChanging(string value);
     partial void OnNOIDUNGGVChanged();
+    partial void OnTHANGChanging(string value);
+    partial void OnTHANGChanged();
     #endregion
 		
 		public TCHC_GIAYXINVE()
@@ -31776,6 +31780,26 @@ namespace BaoCao_Web.DataBase
 					this._NOIDUNGGV = value;
 					this.SendPropertyChanged("NOIDUNGGV");
 					this.OnNOIDUNGGVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG", DbType="VarChar(50)")]
+		public string THANG
+		{
+			get
+			{
+				return this._THANG;
+			}
+			set
+			{
+				if ((this._THANG != value))
+				{
+					this.OnTHANGChanging(value);
+					this.SendPropertyChanging();
+					this._THANG = value;
+					this.SendPropertyChanged("THANG");
+					this.OnTHANGChanged();
 				}
 			}
 		}
