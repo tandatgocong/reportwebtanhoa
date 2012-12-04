@@ -66,7 +66,7 @@ namespace BaoCao_Web.Class
             return false;
         }
 
-        public static DataTable getDuLieuXinVe(string dte)
+        public static DataTable getDuLieuXinVe(string month)
         {
             // không thời hạn
             string sql = "SELECT ID,PHONGBAN,MANV,TENNV,  ";
@@ -87,7 +87,7 @@ namespace BaoCao_Web.Class
             sql = "SELECT ID,PHONGBAN,MANV,TENNV,  ";
             sql += " N'CÓ THỜI HẠN' AS LOAICT, ";
             sql += " CONVERT(VARCHAR(20), TUNGAY,103) AS  'TUNGAY' , CONVERT(VARCHAR(20), DENNGAY,103) AS 'DENNGAY', CONVERT(varchar(10),PHUTVAO) AS  'PHUTVAO', CONVERT(varchar(10),PHUTRA) AS  'PHUTRA'  ";
-            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP='TH' AND CONVERT(DATETIME,'" + dte + "',103) BETWEEN CONVERT(DATETIME,TUNGAY,103) AND CONVERT(DATETIME,DENNGAY,103) ";
+            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP='TH' AND   THANG='" + month + "'"; 
             sql += " ORDER BY  PHONGBAN ASC, MANV ASC ";
 
             tab.Merge(Class.LinQConnection.getDataTable(sql));
@@ -96,8 +96,8 @@ namespace BaoCao_Web.Class
             // công tác có thời hạn
             sql = "SELECT ID,PHONGBAN,MANV,TENNV,  ";
             sql += " N'CÔNG TÁC' AS LOAICT, ";
-            sql += " CONVERT(VARCHAR(20), TUNGAY,103) AS  'TUNGAY' , CONVERT(VARCHAR(20), DENNGAY,103) AS 'DENNGAY', CASE WHEN (LOAIGP='TN' OR LOAIGP='CT')  AND (BUOICT='S' OR BUOICT='N') THEN N'SÁNG'  ELSE convert(varchar(10),PHUTVAO) END AS 'PHUTVAO' ,CASE WHEN LOAIGP='TN' AND (BUOICT='C' OR BUOICT='N') THEN N'CHIỀU' ELSE convert(varchar(10),PHUTRA)  END AS 'PHUTRA'   ";
-            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP='CT' AND CONVERT(DATETIME,'" + dte + "',103) BETWEEN CONVERT(DATETIME,TUNGAY,103) AND CONVERT(DATETIME,DENNGAY,103) ";
+            sql += " CONVERT(VARCHAR(20), TUNGAY,103) AS  'TUNGAY' , CONVERT(VARCHAR(20), DENNGAY,103) AS 'DENNGAY', CASE WHEN (LOAIGP='TN' OR LOAIGP='CT')  AND (BUOICT='S' OR BUOICT='N') THEN N'SÁNG'  ELSE convert(varchar(10),PHUTVAO) END AS 'PHUTVAO' ,CASE WHEN (LOAIGP='TN' OR LOAIGP='CT') AND (BUOICT='C' OR BUOICT='N') THEN N'CHIỀU' ELSE convert(varchar(10),PHUTRA)  END AS 'PHUTRA'   ";
+            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP='CT' AND  THANG='" + month + "'"; 
             sql += " ORDER BY  PHONGBAN ASC, MANV ASC ";
 
             tab.Merge(Class.LinQConnection.getDataTable(sql));
@@ -106,8 +106,8 @@ namespace BaoCao_Web.Class
             // có thời hạn
             sql = "SELECT ID,PHONGBAN,MANV,TENNV,  ";
             sql += " CASE WHEN LOAIGP='TN' THEN N'NGÀY' ELSE  CASE WHEN LOAIGP='TH' THEN N'CÓ THỜI HẠN' ELSE  CASE WHEN LOAIGP='TH' THEN N'KHÔNG THỜI HẠN' ELSE CASE WHEN LOAIGP='CT' THEN N'CÔNG TÁC'  END END END END AS LOAICT, ";
-            sql += " CONVERT(VARCHAR(20), TUNGAY,103) AS  'TUNGAY' , CONVERT(VARCHAR(20), DENNGAY,103) AS 'DENNGAY', CASE WHEN (LOAIGP='TN' OR LOAIGP='CT')  AND (BUOICT='S' OR BUOICT='N') THEN N'SÁNG'  ELSE convert(varchar(10),PHUTVAO) END AS 'PHUTVAO' ,CASE WHEN LOAIGP='TN' AND (BUOICT='C' OR BUOICT='N') THEN N'CHIỀU' ELSE convert(varchar(10),PHUTRA)  END AS 'PHUTRA'   ";
-            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP NOT IN ('KT','TH','VH') AND CONVERT(DATETIME,'" + dte + "',103) = CONVERT(DATETIME,TUNGAY,103) ";
+            sql += " CONVERT(VARCHAR(20), TUNGAY,103) AS  'TUNGAY' , CONVERT(VARCHAR(20), DENNGAY,103) AS 'DENNGAY', CASE WHEN (LOAIGP='TN' OR LOAIGP='CT')  AND (BUOICT='S' OR BUOICT='N') THEN N'SÁNG'  ELSE convert(varchar(10),PHUTVAO) END AS 'PHUTVAO' ,CASE WHEN (LOAIGP='TN' OR LOAIGP='CT') AND (BUOICT='C' OR BUOICT='N') THEN N'CHIỀU' ELSE convert(varchar(10),PHUTRA)  END AS 'PHUTRA'   ";
+            sql += "  FROM TCHC_GIAYXINVE  WHERE LOAIGP NOT IN ('KT','TH','VH','CT') AND  THANG='" + month + "'"; 
             sql += " ORDER BY  PHONGBAN ASC, MANV ASC ";
            
             tab.Merge( Class.LinQConnection.getDataTable(sql));

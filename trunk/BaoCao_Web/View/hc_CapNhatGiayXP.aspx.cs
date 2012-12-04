@@ -28,7 +28,8 @@ namespace BaoCao_Web.View
         public void PageLoad()
         {
             this.tungay.Text = Class.Format.NgayVNVN(DateTime.Now.Date) + "/" + DateTime.Now.Year.ToString();
-            ngayloc.Text = Class.Format.NgayVNVN(DateTime.Now.Date) + "/" + DateTime.Now.Year.ToString();
+            this.cbThang.SelectedIndex = DateTime.Now.Month-1;
+            this.cbThang0.SelectedIndex = DateTime.Now.Month - 1;
             cbPhongBanDoi.DataSource = Class.LinQConnection.getDataTable("SELECT * FROM TCHC_PHONGBAN WHERE ID <> 1 ORDER BY ID ASC ");
             cbPhongBanDoi.DataTextField = "MAPHONG";
             cbPhongBanDoi.DataValueField = "ID";
@@ -108,17 +109,15 @@ namespace BaoCao_Web.View
                     }
                 }
 
-
                 xv.NOIDUNGGV = this.txtNoiDungCT.Text;
                 xv.CREATEDATE = DateTime.Now;
                 xv.CREATEBY = Session["login"].ToString();
+                xv.THANG = this.cbThang.Text;
                 Class.C_ToChucHanhChanh.Insert(xv);
                 lbThanhCong.ForeColor = Color.Blue;
                 this.lbThanhCong.Text = "Cập Nhật Thành Công.";
                 this.txtPhutVao.Text = "";
                 this.txtPhutVao.Text = "";
-                this.tungay.Text = "";
-                this.denngay.Text = "";
                 this.txtNoiDungCT.Text = "";
                 dataLoad();
             }
@@ -194,6 +193,8 @@ namespace BaoCao_Web.View
                 this.tungay.Visible = false;
                 this.Label2.Visible = false;
                 this.denngay.Visible = false;
+                this.tungay.Text = "";
+                this.denngay.Text = "";
             }
             else if (cpLoaiGiayPhep.SelectedIndex == 3)
             {//công tác
@@ -230,6 +231,8 @@ namespace BaoCao_Web.View
                 this.denngay.Visible = false;
                 Label4.Visible = false;
                 Label5.Visible = false;
+                this.tungay.Text = "";
+                this.denngay.Text = "";
 
             }
         }
@@ -242,7 +245,7 @@ namespace BaoCao_Web.View
         {
 
 
-            GridView1.DataSource = Class.C_ToChucHanhChanh.getDuLieuXinVe(ngayloc.Text);
+            GridView1.DataSource = Class.C_ToChucHanhChanh.getDuLieuXinVe(cbThang0.Text);
             GridView1.DataBind();
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -263,5 +266,10 @@ namespace BaoCao_Web.View
             dataLoad();
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            dataLoad();
+        }
+       
     }
 }

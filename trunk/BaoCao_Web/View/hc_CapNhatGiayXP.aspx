@@ -47,11 +47,6 @@
         {
             height: 71px;
         }
-        .style19
-        {
-            width: 157px;
-            height: 71px;
-        }
         .style20
         {
             width: 140px;
@@ -103,7 +98,22 @@
                             </asp:DropDownList>
                         </td>
                         <td class="style10">
-                            &nbsp;</td>
+                            <asp:Label ID="Label7" runat="server" Text="THÁNG"></asp:Label>
+                        &nbsp;<asp:DropDownList ID="cbThang" runat="server" Width="61px">
+                                <asp:ListItem>1</asp:ListItem>
+                                <asp:ListItem>2</asp:ListItem>
+                                <asp:ListItem>3</asp:ListItem>
+                                <asp:ListItem>4</asp:ListItem>
+                                <asp:ListItem>5</asp:ListItem>
+                                <asp:ListItem>6</asp:ListItem>
+                                <asp:ListItem>7</asp:ListItem>
+                                <asp:ListItem>8</asp:ListItem>
+                                <asp:ListItem>9</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
                         <td class="style14">
                             &nbsp;</td>
                         <td class="style15">
@@ -196,13 +206,24 @@
                     </tr>
                 </table>
                 <fieldset>
-                                <legend><b>DANH SÁCH NGÀY XIN PHÉP :<asp:TextBox ID="ngayloc" runat="server" 
-                                        autocomplete="off" />
-                                    <asp:Button ID="Button1" runat="server" CssClass="button" 
-                                onclick="btXemBangKe_Click" Text="XEM" Height="21px" Width="113px" />
-                            <AjaxControl:CalendarExtender ID="CalendarExtender9" runat="server" 
-                                Enabled="True" Format="dd/MM/yyyy" TargetControlID="ngayloc">
-                            </AjaxControl:CalendarExtender></b></legend>
+                                <legend><b>DANH SÁCH NGÀY XIN PHÉP THÁNG
+                            <asp:DropDownList ID="cbThang0" runat="server" Width="61px">
+                                <asp:ListItem>1</asp:ListItem>
+                                <asp:ListItem>2</asp:ListItem>
+                                <asp:ListItem>3</asp:ListItem>
+                                <asp:ListItem>4</asp:ListItem>
+                                <asp:ListItem>5</asp:ListItem>
+                                <asp:ListItem>6</asp:ListItem>
+                                <asp:ListItem>7</asp:ListItem>
+                                <asp:ListItem>8</asp:ListItem>
+                                <asp:ListItem>9</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                            </asp:DropDownList>
+                        &nbsp;<asp:Button ID="Button1" runat="server" CssClass="button" 
+                                onclick="Button1_Click" Text="XEM" Height="21px" Width="113px" />
+                                    </b></legend>
                                 
                                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
                                     AutoGenerateColumns="False" CellPadding="4" onpageindexchanging="GridView1_PageIndexChanging" 

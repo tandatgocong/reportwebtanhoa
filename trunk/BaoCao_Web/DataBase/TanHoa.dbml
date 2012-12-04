@@ -1657,6 +1657,7 @@
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="NOIDUNGGV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="THANG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.BC_TONGKET" Method="BC_TONGKET">
