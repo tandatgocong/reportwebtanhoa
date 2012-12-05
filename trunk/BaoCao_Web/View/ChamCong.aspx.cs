@@ -152,16 +152,18 @@ namespace BaoCao_Web.View
             DataTable workTable = new DataTable("NHANSU");
             DataColumn workCol = workTable.Columns.Add("MANV", typeof(String));
             workTable.Columns.Add("TENNV", typeof(String));
+            workTable.Columns.Add("SỐ PHÚT", typeof(String));
             DateTime tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             DateTime dNgay = DateTime.ParseExact(denngay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             thang__ = dNgay.Month.ToString();
             TimeSpan Time = dNgay - tNgay;
-            int TongSoNgay = Time.Days + 3;
+            int TongSoNgay = Time.Days + 4;
             Panel2.Width = TongSoNgay * 150;
             string[] arrTitle = new string[TongSoNgay];
             int numTitle = 0;
             arrTitle[numTitle++] = "NGÀY CÔNG";
             arrTitle[numTitle++] = "TRỂ";
+            arrTitle[numTitle++] = "SỐ PHÚT";
             int flag = 2;
             while (tNgay <= dNgay)
             {
@@ -224,7 +226,7 @@ namespace BaoCao_Web.View
                                 string tmp = t1.Rows[0]["TimeStr"].ToString();
                                 try
                                 {
-                                    ngay = Class.Format.NgayVNVN(tNgay);
+                                    ngay = tNgay.Date.ToShortDateString();
                                     DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                     row[ngay] = tm1.ToString("H:mm");
                                     tongngaycong++;
@@ -261,6 +263,7 @@ namespace BaoCao_Web.View
                             //{
                             //    flagLoai = getThongTin(manv, tNgay);
                             //}
+                            type = "";
                             flagLoai = getThongTin(manv, tNgay);
                             if (flagLoai == 3 || flagLoai == 4) // đi công tác
                             {
@@ -271,7 +274,7 @@ namespace BaoCao_Web.View
                             else if (flagLoai == 5) // đi công tác
                             {
                                 row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
-                                ngay = Class.Format.NgayVNVN(tNgay);
+                                ngay = tNgay.Date.ToShortDateString();
                                 tongngaycong++;
                                 thu = tNgay.Date.DayOfWeek.ToString();
                                 if (_xinve.BUOICT == "S")
@@ -283,7 +286,7 @@ namespace BaoCao_Web.View
                                         string tmp = t1.Rows[0]["TimeStr"].ToString();
                                         try
                                         {
-                                            ngay = Class.Format.NgayVNVN(tNgay);
+                                            ngay = tNgay.Date.ToShortDateString();
                                             DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                             row[ngay] = tm1.ToString("H:mm");
                                             giovao = tm1.ToString("H:mm");
@@ -372,7 +375,7 @@ namespace BaoCao_Web.View
                                         string tmp = t1.Rows[0]["TimeStr"].ToString();
                                         try
                                         {
-                                            ngay = Class.Format.NgayVNVN(tNgay);
+                                            ngay = tNgay.Date.ToShortDateString();
                                             DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                             row[ngay] = tm1.ToString("H:mm");
                                             giovao = tm1.ToString("H:mm");
@@ -458,6 +461,7 @@ namespace BaoCao_Web.View
                         ////////////////////// TÍNH GIỜ THEO ĐIỀU KIỆN //////////////////////////////////////
                         if (flagLoai == 2 || flagLoai == 3 || flagLoai == 4 || flagLoai==0)
                         {
+                           
                             // Gi? Vào
                             string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
                             if (!"".Equals(gVao))
@@ -465,7 +469,7 @@ namespace BaoCao_Web.View
                                 string tmp = t1.Rows[0]["TimeStr"].ToString();
                                 try
                                 {
-                                    ngay = Class.Format.NgayVNVN(tNgay);
+                                    ngay = tNgay.Date.ToShortDateString();
                                     DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                     row[ngay] = tm1.ToString("H:mm");
                                     tongngaycong++;
@@ -562,7 +566,7 @@ namespace BaoCao_Web.View
                         if (getThongTin(manv, tNgay) == 5) // đi công tác
                         {
                             if (_xinve.BUOICT == "N") {
-                                ngay = Class.Format.NgayVNVN(tNgay);
+                                ngay = tNgay.Date.ToShortDateString();
                                 row[ngay] ="CT";
                                 row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
                                 tongngaycong++;
@@ -598,6 +602,7 @@ namespace BaoCao_Web.View
                     }
                    
                 }
+                row["SỐ PHÚT"] = tongphuttre;
                 row["NGÀY CÔNG"] = tongngaycong;
                 row["TRỂ"] = tongtre;
                 workTable.Rows.Add(row);
