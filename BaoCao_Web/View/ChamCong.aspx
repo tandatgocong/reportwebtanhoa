@@ -155,7 +155,7 @@
                                <%
                                foreach (string s in arrTitle)
                                {
-                                   if (!"NGÀY CÔNG".Equals(s) && !"TRỂ".Equals(s))
+                                   if (!"NGÀY CÔNG".Equals(s) && !"TRỂ".Equals(s) && !"SỐ PHÚT".Equals(s))
                                    {
                                        if ("1".Equals(row[s + "TRE"].ToString())) { 
                                         %>
@@ -176,6 +176,12 @@
                                         <td class="style28" style="background-color:Red;" ><%=row[s].ToString()%></td>
                                         
                                       <%
+}
+                                            else if ("TH".Equals(row[s + "TYPE"].ToString()) || "TN".Equals(row[s + "TYPE"].ToString()) || "KT".Equals(row[s + "TYPE"].ToString())) {
+                                                  %>
+                                                <td class="style28" style="background-color:Lavender;" ><%=row[s].ToString()%></td>
+                                        
+                                              <%
                                             }
                                             else{
                                                   %>
@@ -204,22 +210,24 @@
                                             <td class="style28" style="background-color:Red;" ><%=row[s + "RA"].ToString()%></td>
                                         
                                           <%
-                                                }
+}
+                                           else if ("TH".Equals(row[s + "TYPE"].ToString()) || "TN".Equals(row[s + "TYPE"].ToString()) || "KT".Equals(row[s + "TYPE"].ToString())) { 
+                                            %>
+                                                   <td class="style28" style="background-color:Lavender;border-right:2px #99cc99 solid;" ><%=row[s + "RA"].ToString()%></td>
+                                     
+                                                  <%
+                                           }
                                                 else{
                                                       %>
                                                     <td class="style28" style="border-right:2px #99cc99 solid;"><%=row[s + "RA"].ToString()%></td>
                                      
                                                   <%
                                                 }  
-
                                         %>
                                         
-                                     
                                       <%
                                        }
 
-                                          
-                                   
                                    }
                                    else { 
                                      %>
@@ -244,7 +252,8 @@
       <!-- End Show -->
      </div>
    
-     
+     >>fdsfdsafs
+
     <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
          <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >
@@ -253,7 +262,9 @@
     </div>
   </asp:Panel>
 </asp:Panel>
+<br />
 
+<br />
 </div>
 
 
