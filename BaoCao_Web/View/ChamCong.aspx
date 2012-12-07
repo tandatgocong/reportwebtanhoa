@@ -52,14 +52,50 @@
         }
          .style28
             {
-          text-align:left;
-                 border-bottom: 1px #99cc99 solid;
-            }
+            text-align: center;
+            border-bottom: 1px #99cc99 solid;
+        }
     .style29
     {
         width: 91px;
         height: 31px;
     }
+        .style34
+        {
+            width: 38px;
+        }
+        .style35
+        {
+            height: 23px;
+            width: 38px;
+        }
+        .style36
+        {
+            width: 40px;
+        }
+        .style37
+        {
+            height: 23px;
+            width: 40px;
+        }
+        .style38
+        {
+            width: 164px;
+        }
+        .style39
+        {
+            width: 164px;
+            height: 23px;
+        }
+        .style40
+        {
+            width: 168px;
+        }
+        .style41
+        {
+            width: 168px;
+            height: 23px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -252,18 +288,40 @@
       <!-- End Show -->
      </div>
    
-     >>fdsfdsafs
-
-    <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
-    </ajaxToolkit:CalendarExtender>
-         <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >
-    </ajaxToolkit:CalendarExtender>
-
     </div>
   </asp:Panel>
 </asp:Panel>
-<br />
-
+<table>
+<tr>
+</tr>
+</table>
+    <h3>Chú Thích</h3>
+      <table cellpadding="0" cellspacing="0" font-family:Times New Roman; font-size:15px;" 
+            class="table_list"  >
+                            <tr style="height:25px;" >
+                                        <td style="background-color:Red;border-bottom:2px #99cc99 solid;" class="style34" ></td> 
+                                        
+                                                <td class="style40" style="border-bottom:2px #99cc99 solid;border-right:2px #99cc99 solid;">
+                                                    Không Quẹt Thẻ;</td>
+                                        
+                                                <td  style="background-color:Lavender;border-bottom:2px #99cc99 solid;" class="style36" ></td>
+                                        <td  style=";border-bottom:2px #99cc99 solid;" class="style38">
+                                            Xin Về Sớm;</td>
+                                        </tr>
+                                        <tr>
+                                            
+                                     
+                                        <td style="background-color:Yellow; " class="style35" 
+                                    ></td>
+                                            <td class="style41" style="border-right:2px #99cc99 solid; " >
+                                                Vào Trể/Ra sớm;</td>
+                                            <td  style="background-color:Aqua;" class="style37"  ></td>
+                                        
+                                            <td class="style39">
+                                                Đi Công Tác Ngoài;</td>
+                                        
+                            </tr>
+            </table>
 <br />
 </div>
 

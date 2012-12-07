@@ -33,7 +33,7 @@ namespace BaoCao_Web.View
                 row["MANV"] = manv;
                 row["TENNV"] = tennv;
                 row["PHONGBAN"] = phongban;
-                row["NGAY"] = ngay;
+                row["NGAY"] = ngay + "/"+ DateTime.Now.Year.ToString();
                 row["THU"] = thu;
                 row["GIOVAO"] = giovao;
                 row["TRE"] = tre;
@@ -226,9 +226,9 @@ namespace BaoCao_Web.View
                                 string tmp = t1.Rows[0]["TimeStr"].ToString();
                                 try
                                 {
-                                    ngay = tNgay.Date.ToShortDateString();
+                                    ngay = Class.Format.NgayVNVN(tNgay);
                                     DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                    row[ngay] = tm1.ToString("H:mm");
+                                    row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                     tongngaycong++;
                                     thu = tm1.Date.DayOfWeek.ToString();
                                     giovao = tm1.ToString("H:mm");
@@ -273,66 +273,23 @@ namespace BaoCao_Web.View
                             }
                             else if (flagLoai == 5) // đi công tác
                             {
+                                row[Class.Format.NgayVNVN(tNgay)] = "CT";
                                 row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
-                                ngay = tNgay.Date.ToShortDateString();
+                                ngay = Class.Format.NgayVNVN(tNgay);
                                 tongngaycong++;
                                 thu = tNgay.Date.DayOfWeek.ToString();
                                 if (_xinve.BUOICT == "S")
                                 {
+                                    int id = 0;
                                     ////////////////////
-                                    string gVao = t1.Rows[0]["TimeStr"].ToString().Replace(" ", "");
-                                    if (!"".Equals(gVao))
+                                    if (t1.Rows.Count > 1)
                                     {
-                                        string tmp = t1.Rows[0]["TimeStr"].ToString();
+                                        id=flag_ - 1;
+                                    }
+                                    
                                         try
                                         {
-                                            ngay = tNgay.Date.ToShortDateString();
-                                            DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                            row[ngay] = tm1.ToString("H:mm");
-                                            giovao = tm1.ToString("H:mm");
-
-                                            if (tm1.Hour == 13 && tm1.Minute > 10)
-                                            {
-                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
-                                                tongtre++;
-                                                boolTre = true;
-                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (13 * 60 + 40);
-                                                tre = tr + "";
-                                                tongphuttre += tr;
-                                            }
-                                            else if (tm1.Hour > 13)
-                                            {
-                                                row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
-                                                tongtre++;
-                                                boolTre = true;
-                                                int tr = (tm1.Hour * 60 + tm1.Minute) - (13 * 60 + 40);
-                                                tre = tr + "";
-                                                tongphuttre += tr;
-                                            }
-
-                                        }
-                                        catch (Exception)
-                                        {
-                                            row[Class.Format.NgayVNVN(tNgay)] = "-";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        row[Class.Format.NgayVNVN(tNgay)] = "-";
-
-                                    }
-
-                                    // Gi? Ra
-                                    string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
-                                    if (gRa.Equals(gVao))
-                                    {
-                                        AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
-                                    }
-                                    else
-                                    {
-                                        try
-                                        {
-                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[id]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                             row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                             giora = tm2.ToString("HH:mm");
 
@@ -355,14 +312,11 @@ namespace BaoCao_Web.View
                                                 tongphuttre += tr;
                                             }
 
-
                                         }
                                         catch (Exception)
                                         {
                                             row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
                                         }
-                                    }
-
                                     ///////
 
                                 }
@@ -375,9 +329,9 @@ namespace BaoCao_Web.View
                                         string tmp = t1.Rows[0]["TimeStr"].ToString();
                                         try
                                         {
-                                            ngay = tNgay.Date.ToShortDateString();
+                                            ngay = Class.Format.NgayVNVN(tNgay);
                                             DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                            row[ngay] = tm1.ToString("H:mm");
+                                            row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                             giovao = tm1.ToString("H:mm");
 
                                             if (tm1.Hour == 7 && tm1.Minute > 40)
@@ -454,6 +408,18 @@ namespace BaoCao_Web.View
 
                                     ///////
                                 }
+                                else {
+                                    ngay = Class.Format.NgayVNVN(tNgay);
+                                    row[Class.Format.NgayVNVN(tNgay)] = "CT";
+                                    row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+                                    tongngaycong++;
+                                    thu = tNgay.Date.DayOfWeek.ToString();
+                                    giovao = "CT";
+                                    row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+
+                                    row[Class.Format.NgayVNVN(tNgay) + "RA"] = "CT";
+                                    giora = "CT";
+                                }
                             }
 
                         }
@@ -469,9 +435,9 @@ namespace BaoCao_Web.View
                                 string tmp = t1.Rows[0]["TimeStr"].ToString();
                                 try
                                 {
-                                    ngay = tNgay.Date.ToShortDateString();
+                                    ngay = Class.Format.NgayVNVN(tNgay);
                                     DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                    row[ngay] = tm1.ToString("H:mm");
+                                    row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                     tongngaycong++;
                                     thu = tm1.Date.DayOfWeek.ToString();
                                     giovao = tm1.ToString("H:mm");
@@ -565,9 +531,10 @@ namespace BaoCao_Web.View
                         // không quét đi công tác
                         if (getThongTin(manv, tNgay) == 5) // đi công tác
                         {
-                            if (_xinve.BUOICT == "N") {
-                                ngay = tNgay.Date.ToShortDateString();
-                                row[ngay] ="CT";
+                            if (_xinve.BUOICT == "N")
+                            {
+                                ngay = Class.Format.NgayVNVN(tNgay);
+                                row[Class.Format.NgayVNVN(tNgay)] = "CT";
                                 row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
                                 tongngaycong++;
                                 thu = tNgay.Date.DayOfWeek.ToString();
@@ -575,9 +542,37 @@ namespace BaoCao_Web.View
                                 row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
 
                                 row[Class.Format.NgayVNVN(tNgay) + "RA"] = "CT";
-                                giora = "CT"; 
+                                giora = "CT";
 
-                            } 
+                            }
+                            else if (_xinve.BUOICT == "S")
+                            {
+                                ngay = Class.Format.NgayVNVN(tNgay);
+                                row[Class.Format.NgayVNVN(tNgay)] = "CT";
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+                                tongngaycong++;
+                                thu = tNgay.Date.DayOfWeek.ToString();
+                                giovao = "CT";
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+
+                                AddTableTre(tableTre, manv, tennv, phongban, Class.Format.NgayVNVN(tNgay), tNgay.DayOfWeek.ToString(), "", "", "", "", "KHONG QUET");
+                                row[Class.Format.NgayVNVN(tNgay) + "RA"] = "KQ";
+
+                            }
+                            else if (_xinve.BUOICT == "C") {
+
+                                ngay = Class.Format.NgayVNVN(tNgay);
+                                row[Class.Format.NgayVNVN(tNgay)] = "KQ";
+                                AddTableTre(tableTre, manv, tennv, phongban, Class.Format.NgayVNVN(tNgay), tNgay.DayOfWeek.ToString(), "", "", "", "", "KHONG QUET");
+                                tongngaycong++;
+                                thu = tNgay.Date.DayOfWeek.ToString();
+                                giovao = "CT";
+                                row[Class.Format.NgayVNVN(tNgay) + "TYPE"] = "CT";
+
+                                row[Class.Format.NgayVNVN(tNgay) + "RA"] = "CT";
+                                giora = "CT";
+
+                            }
                         }
                         else { // không quét
                             if (tNgay.DayOfWeek != DayOfWeek.Saturday && tNgay.DayOfWeek != DayOfWeek.Sunday) {
