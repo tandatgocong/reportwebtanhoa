@@ -151,8 +151,8 @@
        <asp:Panel ID="Panel1" runat="server" ScrollBars="Horizontal">  
  <asp:Panel ID="Panel2" runat="server" ScrollBars="None">
  
- <div class="block block_left events" style=" width:100% ; margin-left:10px; margin-bottom:10px;">
- 	<h3>Kết Quả</h3>
+ <div class="block block_left events" style=" width:100% ; margin-left:10px; margin-bottom:10px; border:1px;">
+ 	<h2>Kết Quả</h3>
 	<div class="block_content">
       
       <!-- Start Show -->

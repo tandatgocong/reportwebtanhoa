@@ -441,11 +441,7 @@ namespace BaoCao_Web.View
                                     tongngaycong++;
                                     thu = tm1.Date.DayOfWeek.ToString();
                                     giovao = tm1.ToString("H:mm");
-                                    if ("00176".Equals(manv)) {
-                                        tm1 = tm1.AddMinutes(phutTreThem * -1); 
-                                    }
-                                   
-                                    
+                                    tm1 = tm1.AddMinutes(phutTreThem * -1); 
                                     if (tm1.Hour == 7 && tm1.Minute > 40)
                                     {
                                         row[Class.Format.NgayVNVN(tNgay) + "TRE"] = "1";
@@ -492,9 +488,7 @@ namespace BaoCao_Web.View
                                     DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
                                     row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                     giora = tm2.ToString("HH:mm");
-
                                     tm2 = tm2.AddMinutes(phutSomThem);
-
                                     if (tm2.Hour == 16 && tm2.Minute < 50)
                                     {
                                         row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
