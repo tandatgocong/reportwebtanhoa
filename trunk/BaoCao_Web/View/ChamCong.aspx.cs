@@ -227,7 +227,8 @@ namespace BaoCao_Web.View
                                 try
                                 {
                                     ngay = Class.Format.NgayVNVN(tNgay);
-                                    DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                 //   DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    DateTime tm1 = DateTime.Parse(t1.Rows[0]["TimeStr"].ToString());
                                     row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                     tongngaycong++;
                                     thu = tm1.Date.DayOfWeek.ToString();
@@ -249,7 +250,8 @@ namespace BaoCao_Web.View
 
                             try
                             {
-                                DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                          //      DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
                                 row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                 giora = tm2.ToString("HH:mm");
 
@@ -289,7 +291,8 @@ namespace BaoCao_Web.View
                                     
                                         try
                                         {
-                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[id]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                           // DateTime tm2 = DateTime.ParseExact(t1.Rows[id]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
                                             row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                             giora = tm2.ToString("HH:mm");
 
@@ -330,7 +333,8 @@ namespace BaoCao_Web.View
                                         try
                                         {
                                             ngay = Class.Format.NgayVNVN(tNgay);
-                                            DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                       //     DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            DateTime tm1 = DateTime.Parse(t1.Rows[0]["TimeStr"].ToString());
                                             row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                             giovao = tm1.ToString("H:mm");
 
@@ -375,7 +379,8 @@ namespace BaoCao_Web.View
                                     {
                                         try
                                         {
-                                            DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                          //  DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                            DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
                                             row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                             giora = tm2.ToString("HH:mm");
 
@@ -436,7 +441,8 @@ namespace BaoCao_Web.View
                                 try
                                 {
                                     ngay = Class.Format.NgayVNVN(tNgay);
-                                    DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    //fix bug DateTime tm1 = DateTime.ParseExact(t1.Rows[0]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    DateTime tm1 = DateTime.Parse(t1.Rows[0]["TimeStr"].ToString());
                                     row[Class.Format.NgayVNVN(tNgay)] = tm1.ToString("H:mm");
                                     tongngaycong++;
                                     thu = tm1.Date.DayOfWeek.ToString();
@@ -485,7 +491,9 @@ namespace BaoCao_Web.View
                             else {
                                 try
                                 {
-                                    DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    
+                                    //fix bug DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
                                     row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
                                     giora = tm2.ToString("HH:mm");
                                     tm2 = tm2.AddMinutes(phutSomThem);
