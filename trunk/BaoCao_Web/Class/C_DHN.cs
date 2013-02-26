@@ -24,7 +24,7 @@ namespace BaoCao_Web.Class
         public static DataTable getNamGanDHN(string ky, string nam)
         {
             string sql = "SELECT  YEAR(NGAYTHAY) as NGAYTHAY ,COUNT(*) AS SODH ";
-            sql += " FROM TB_DULIEUKHACHHANG WHERE NGAYTHAY IS NOT NULL AND KY<= " + ky + " AND NAM <= " + nam;
+            sql += " FROM TB_DULIEUKHACHHANG WHERE NGAYTHAY IS NOT NULL AND KY_<= " + ky + " AND NAM <= " + nam;
             sql += " GROUP BY YEAR(NGAYTHAY) ";
             sql += " ORDER BY YEAR(NGAYTHAY) ASC";
             return LinQConnection.getDataTable(sql);
@@ -33,7 +33,7 @@ namespace BaoCao_Web.Class
         public static int TongSoDHN(string ky, string nam)
         {
             string sql = "SELECT * ";
-            sql += " FROM TB_DULIEUKHACHHANG WHERE KY<= " + ky + " AND NAM <= " + nam;            
+            sql += " FROM TB_DULIEUKHACHHANG WHERE KY_<= " + ky + " AND NAM <= " + nam;            
             return LinQConnection.getDataTable(sql).Rows.Count;
         }
         public static DataTable getThongKeDHN(int ky, int nam)
@@ -68,7 +68,7 @@ namespace BaoCao_Web.Class
 			sql += " 	COUNT(CASE WHEN CODH=150 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >=5) THEN 1 ELSE NULL END) AS LONCO150,";
 			sql += " 	COUNT(CASE WHEN CODH=200 AND ((YEAR(CURRENT_TIMESTAMP) -YEAR(NGAYTHAY)) >=5) THEN 1 ELSE NULL END) AS LONCO200";
 			sql += " FROM dbo.TB_DULIEUKHACHHANG kh, TB_HIEUDONGHO hdh";
-            sql += " WHERE kh.NAM<=+" + nam + " AND kh.KY<=" + ky + " AND LEFT(kh.HIEUDH,3)=hdh.HIEUDH";
+            sql += " WHERE kh.NAM<=+" + nam + " AND kh.KY_<=" + ky + " AND LEFT(kh.HIEUDH,3)=hdh.HIEUDH";
 			sql += " GROUP BY   hdh.TENDONGHO";
             return LinQConnection.getDataTable(sql);
         }
