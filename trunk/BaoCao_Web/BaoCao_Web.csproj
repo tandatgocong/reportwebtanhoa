@@ -336,6 +336,7 @@
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
+    <Content Include="View\tab_TheoDoiHoDon0.aspx" />
     <Content Include="View\count_visit.txt" />
     <Content Include="View\hc_CapNhatGiayXP.aspx" />
     <Content Include="View\Home.aspx" />
@@ -447,6 +448,13 @@
     </Compile>
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tab_TheoDoiHoDon0.aspx.cs">
+      <DependentUpon>tab_TheoDoiHoDon0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tab_TheoDoiHoDon0.aspx.designer.cs">
+      <DependentUpon>tab_TheoDoiHoDon0.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\hc_CapNhatGiayXP.aspx.cs">
       <DependentUpon>hc_CapNhatGiayXP.aspx</DependentUpon>

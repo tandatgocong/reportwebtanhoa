@@ -199,3 +199,108 @@ Invalid column name 'LOACT'.
 2013-01-08 10:36:30,620 [7708] ERROR File LinQConnection getDataTableTimeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
 2013-01-08 10:36:35,101 [7156] ERROR File LinQConnection getDataTableTimeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
 2013-01-08 10:39:45,503 [7156] ERROR File LinQConnection getDataTableTimeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+2013-06-03 09:33:03,785 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:33:03,803 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:33:11,166 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:33:11,166 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:33:11,167 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:33:11,168 [4232] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:26,896 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:33,021 [3396] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:35,082 [2020] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:36,092 [2020] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:36,092 [2020] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:39,960 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:39,960 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:39,961 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:39,963 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:54,094 [2020] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:54,095 [2020] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-03 09:37:58,555 [1872] ERROR File LinQConnection getDataTableCannot open database "CAPNUOCTANHOA" requested by the login. The login failed.
+Login failed for user 'sa'.
+2013-06-04 13:17:01,877 [7536] ERROR File LinQConnection getDataTableThe handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+2013-06-04 13:17:11,096 [3828] ERROR File LinQConnection getDataTableThe handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+2013-06-04 13:17:15,017 [6488] ERROR File LinQConnection getDataTableThe handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+2013-06-04 13:17:16,400 [7536] ERROR File LinQConnection getDataTableThe handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+2013-06-04 13:25:19,598 [5960] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:25:19,618 [5960] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:25:41,920 [6736] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:25:41,920 [6736] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:26:25,008 [7876] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:26:25,008 [7876] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:38:16,205 [916] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:38:16,255 [916] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:38:16,255 [916] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:38:27,492 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2013-06-04 13:38:27,571 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH01_2013 WHERE LNCC=0
+2013-06-04 13:38:27,623 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH02_2013 WHERE LNCC=0
+2013-06-04 13:38:27,666 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH03_2013 WHERE LNCC=0
+2013-06-04 13:38:27,729 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH04_2013 WHERE LNCC=0
+2013-06-04 13:38:27,770 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH05_2013 WHERE LNCC=0
+2013-06-04 13:38:27,900 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:38:27,973 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:38:27,973 [6740] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:43:47,047 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:43:47,099 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:43:47,099 [6740] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:44:04,397 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2013-06-04 13:44:04,481 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH01_2013 WHERE LNCC=0
+2013-06-04 13:44:04,537 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH02_2013 WHERE LNCC=0
+2013-06-04 13:44:04,603 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH02_2013 WHERE LNCC=0
+2013-06-04 13:44:04,603 [6488] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH02_2013'.
+2013-06-04 13:44:04,605 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH03_2013 WHERE LNCC=0
+2013-06-04 13:44:04,767 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH04_2013 WHERE LNCC=0
+2013-06-04 13:44:04,881 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH05_2013 WHERE LNCC=0
+2013-06-04 13:44:05,073 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:44:05,125 [6488] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:44:05,125 [6488] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:44:31,688 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2013-06-04 13:44:31,769 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH01_2013 WHERE LNCC=0
+2013-06-04 13:44:31,822 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH02_2013 WHERE LNCC=0
+2013-06-04 13:44:32,135 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH03_2013 WHERE LNCC=0
+2013-06-04 13:44:32,201 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH04_2013 WHERE LNCC=0
+2013-06-04 13:44:32,242 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH05_2013 WHERE LNCC=0
+2013-06-04 13:44:32,373 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:44:32,438 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:44:32,438 [5340] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:47:10,515 [6740] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:47:10,523 [6740] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:47:22,389 [7172] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:47:22,389 [7172] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:49:58,669 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:49:58,677 [5340] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:50:07,938 [8156] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:50:07,938 [8156] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:50:26,165 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:50:26,170 [5340] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:50:34,874 [8156] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:50:34,874 [8156] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:51:32,359 [3828] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:51:32,359 [3828] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:51:48,443 [5036] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:51:48,444 [5036] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:53:02,101 [5340] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:53:02,102 [5340] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:55:29,321 [1248] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:55:29,321 [1248] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 13:55:54,414 [6644] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 13:55:54,414 [6644] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
+2013-06-04 14:15:47,615 [4472] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH06_2013 WHERE LNCC=0
+2013-06-04 14:15:47,615 [4472] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH06_2013'.
