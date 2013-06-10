@@ -13,6 +13,38 @@ namespace BaoCao_Web.Class
     {
         static log4net.ILog log = log4net.LogManager.GetLogger("File");
 
+        public static int ReturnResult(string sql)
+        {
+            int result = 0;
+            TanHoaDataContext db = new TanHoaDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection ExecuteCommand : " + sql);
+                log.Error("LinQConnection ExecuteCommand : " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+
         public static int ExecuteCommand(string sql)
         {
             int result = 0;
