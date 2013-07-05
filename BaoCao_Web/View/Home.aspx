@@ -57,11 +57,7 @@
                   <a id="menu6" href="#"><B>SỐ LIỆU KINH DOANH</B></a>
                 </td> 
            </tr> 
-           <tr> 
-                <td> 
-                  <a id="menu5" href="#" >BIỂU ĐỒ BÁO CÁO</a>
-                </td> 
-            </tr>               
+                  
              
         </table>
          </center>
@@ -78,17 +74,19 @@
            menu4.addItem("&nbsp;&nbsp; THEO DÕI CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CODE", "0");
            menu4.addItem("&nbsp;&nbsp; PHÂN TÍCH CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CTCODE", "0");
            menu4.addItem("&nbsp;&nbsp; KẾT QUẢ BIÊN ĐỌC CHỈ SỐ", "QuanLyDHN.aspx?page=DHN&type=CS", "0");
-          
-           var menu5 = ms.addMenu(document.getElementById("menu5"));
-           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG ĐHN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "BieuDoBaoCao.aspx?page=BDBC&type=BDDHN", "0");
-           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG SẢN LƯỢNG", "BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG", "0");
-           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG DOANH THU", "BieuDoBaoCao.aspx?page=BDBC&type=BDDTHU", "0");
+           menu4.addItem("&nbsp;&nbsp; THEO DÕI HÓA ĐƠN = 0M<sup>3</sup> ", "tab_TheoDoiHoDon0.aspx?page=DHN", "0");
 
            var menu6 = ms.addMenu(document.getElementById("menu6"));
            menu6.addItem("&nbsp;&nbsp; SỐ LIỆU KINH DOANH THEO NĂM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "KinhDoanh.aspx?page=KD&type=V", "0");
            menu6.addItem("&nbsp;&nbsp; SO SÁNH SỐ LIỆU KINH DOANH", "KinhDoanh.aspx?page=KD&type=S", "0");
 
-          /* var menu46 = ms.addMenu(document.getElementById("menu46"));
+          /*  var menu5 = ms.addMenu(document.getElementById("menu5"));
+           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG ĐHN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "BieuDoBaoCao.aspx?page=BDBC&type=BDDHN", "0");
+           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG SẢN LƯỢNG", "BieuDoBaoCao.aspx?page=BDBC&type=BDSLUONG", "0");
+           menu5.addItem("&nbsp;&nbsp; BIẾN ĐỘNG DOANH THU", "BieuDoBaoCao.aspx?page=BDBC&type=BDDTHU", "0");
+
+          
+          var menu46 = ms.addMenu(document.getElementById("menu46"));
            menu46.addItem("Menu 7.1", "#", "0");
            menu46.addItem("Menu 7.2", "#", "1");
            menu46.addItem("Menu 7.3", "#", "0");
