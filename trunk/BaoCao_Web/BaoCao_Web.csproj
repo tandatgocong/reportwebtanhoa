@@ -289,6 +289,7 @@
     <Content Include="ckeditor\skins\v2\skin.js" />
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="count_visit.txt" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Image\1down.png" />
@@ -336,6 +337,8 @@
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
+    <Content Include="View\Print.aspx" />
+    <Content Include="View\tab_PhanTichHoaDon0.aspx" />
     <Content Include="View\tab_TheoDoiHoDon0.aspx" />
     <Content Include="View\count_visit.txt" />
     <Content Include="View\hc_CapNhatGiayXP.aspx" />
@@ -448,6 +451,40 @@
     </Compile>
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PHANTICHHD0.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PHANTICHHD0.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\rptDanhSachHD0M3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDanhSachHD0M3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\rpt_DongHoHieuCu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\rpt_DongHoHieuCu1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DongHoHieuCu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\tab_PhanTichHoaDon0.aspx.cs">
+      <DependentUpon>tab_PhanTichHoaDon0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tab_PhanTichHoaDon0.aspx.designer.cs">
+      <DependentUpon>tab_PhanTichHoaDon0.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\tab_TheoDoiHoDon0.aspx.cs">
       <DependentUpon>tab_TheoDoiHoDon0.aspx</DependentUpon>
@@ -638,6 +675,17 @@
     <None Include="View\BaoKinhDoanh\kinhdoanh.xss">
       <DependentUpon>kinhdoanh.xsd</DependentUpon>
     </None>
+    <None Include="View\PHANTICHHD0.xsc">
+      <DependentUpon>PHANTICHHD0.xsd</DependentUpon>
+    </None>
+    <None Include="View\PHANTICHHD0.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PHANTICHHD0.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\PHANTICHHD0.xss">
+      <DependentUpon>PHANTICHHD0.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -654,6 +702,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="View\rptDanhSachHD0M3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDanhSachHD0M3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\rpt_DongHoHieuCu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DongHoHieuCu1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\rpt_tkKinhDoanh.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_tkKinhDoanh.cs</LastGenOutput>

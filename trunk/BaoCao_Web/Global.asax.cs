@@ -38,6 +38,42 @@ namespace BaoCao_Web
             Session["col"] = 0;
             Session["arrTitle"] = new string[] {};
             Session["login"] = null;
+            Session["tuky"] = "";
+            Session["denky"] = "";
+
+
+            int count_visit = 0;
+
+            //Kiểm tra file count_visit.txt nếu không tồn tại thì
+            if (System.IO.File.Exists(Server.MapPath("count_visit.txt")) == false)
+            {
+                count_visit = 1;
+            }
+            // Ngược lại thì
+            else
+            {
+                // Đọc dử liều từ file count_visit.txt
+                System.IO.StreamReader read = new System.IO.StreamReader(Server.MapPath("count_visit.txt"));
+                count_visit = int.Parse(read.ReadLine());
+                read.Close();
+                // Tăng biến count_visit thêm 1
+                count_visit++;
+            }
+
+            // khóa website
+            Application.Lock();
+
+            // gán biến Application count_visit
+            Application["count_visit"] = count_visit;
+
+            // Mở khóa website
+            Application.UnLock();
+
+            // [color=red] // Lưu dử liệu vào file count_visit.txt
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(Server.MapPath("count_visit.txt"));
+            writer.WriteLine(count_visit);
+            writer.Close();
+
         }
 
         void Session_End(object sender, EventArgs e)
