@@ -26,6 +26,7 @@
               <xs:element name="NAM" msprop:Generator_ColumnVarNameInTable="columnNAM" msprop:Generator_ColumnPropNameInRow="NAM" msprop:Generator_ColumnPropNameInTable="NAMColumn" msprop:Generator_UserColumnName="NAM" type="xs:string" minOccurs="0" />
               <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:string" minOccurs="0" />
               <xs:element name="TIEUTHU" msprop:Generator_ColumnVarNameInTable="columnTIEUTHU" msprop:Generator_ColumnPropNameInRow="TIEUTHU" msprop:Generator_ColumnPropNameInTable="TIEUTHUColumn" msprop:Generator_UserColumnName="TIEUTHU" type="xs:string" minOccurs="0" />
+              <xs:element name="NHANVIEN" msprop:Generator_ColumnVarNameInTable="columnNHANVIEN" msprop:Generator_ColumnPropNameInRow="NHANVIEN" msprop:Generator_ColumnPropNameInTable="NHANVIENColumn" msprop:Generator_UserColumnName="NHANVIEN" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

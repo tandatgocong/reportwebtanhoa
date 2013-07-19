@@ -452,6 +452,12 @@
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\rpt_DSHOADO0.cs">
+      <DependentUpon>rpt_DSHOADO0.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\PHANTICHHD0.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -702,6 +708,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="View\rpt_DSHOADO0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSHOADO0.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\rptDanhSachHD0M3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDanhSachHD0M3.cs</LastGenOutput>

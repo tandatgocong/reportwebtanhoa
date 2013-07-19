@@ -119,12 +119,12 @@ namespace BaoCao_Web.Class
         public static DataTable getTheoDoiHoaDon0(string tungay, string denngay)
         {
             string sql = "SELECT COUNT(case when CONVERT(DATETIME,DHN_NGAYGHINHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS SL_GHINHAN ";
- sql += " ,COUNT(case when (DHN_CAMKET <> '' AND DHN_CAMKET IS NOT NULL) AND  CONVERT(DATETIME,DHN_NGAYGHINHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS DHN_CAMKET ";
- sql += " ,COUNT(case when (DHN_BAMHI <> '' AND DHN_BAMHI IS NOT NULL) AND  CONVERT(DATETIME,DHN_NGAYGHINHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS DHN_BAMCHI ";
- sql += " ,COUNT(case when CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_GHINHAN ";
- sql += " ,COUNT(case when (KTKS_CAMKET <> '' AND KTKS_CAMKET IS NOT NULL) AND  CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_CAMKET ";
- sql += " ,COUNT(case when (KTKS_BAMHI <> '' AND KTKS_BAMHI IS NOT NULL) AND  CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_BAMCHI ";
- sql += " FROM DK_GIAMHOADON ";
+             sql += " ,COUNT(case when (DHN_CAMKET <> '' AND DHN_CAMKET IS NOT NULL) AND  CONVERT(DATETIME,DHN_NGAYGHINHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS DHN_CAMKET ";
+             sql += " ,COUNT(case when (DHN_BAMHI <> '' AND DHN_BAMHI IS NOT NULL) AND  CONVERT(DATETIME,DHN_NGAYGHINHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS DHN_BAMCHI ";
+             sql += " ,COUNT(case when CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_GHINHAN ";
+             sql += " ,COUNT(case when (KTKS_CAMKET <> '' AND KTKS_CAMKET IS NOT NULL) AND  CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_CAMKET ";
+             sql += " ,COUNT(case when (KTKS_BAMHI <> '' AND KTKS_BAMHI IS NOT NULL) AND  CONVERT(DATETIME,KTKS_NGAYTIEPXUC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) then 1 else null end) AS KTKS_BAMCHI ";
+             sql += " FROM DK_GIAMHOADON ";
 
 
             return LinQConnection.getDataTable(sql);

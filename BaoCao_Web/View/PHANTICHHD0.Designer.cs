@@ -301,6 +301,8 @@ namespace BaoCao_Web.View {
             
             private global::System.Data.DataColumn columnTIEUTHU;
             
+            private global::System.Data.DataColumn columnNHANVIEN;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DULIEUHOADONDataTable() {
@@ -424,6 +426,14 @@ namespace BaoCao_Web.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NHANVIENColumn {
+                get {
+                    return this.columnNHANVIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace BaoCao_Web.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DULIEUHOADONRow AddDULIEUHOADONRow(string LOTRINH, string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string HIEU, string CO, string NAM, string CODE, string TIEUTHU) {
+            public DULIEUHOADONRow AddDULIEUHOADONRow(string LOTRINH, string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string HIEU, string CO, string NAM, string CODE, string TIEUTHU, string NHANVIEN) {
                 DULIEUHOADONRow rowDULIEUHOADONRow = ((DULIEUHOADONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LOTRINH,
@@ -472,7 +482,8 @@ namespace BaoCao_Web.View {
                         CO,
                         NAM,
                         CODE,
-                        TIEUTHU};
+                        TIEUTHU,
+                        NHANVIEN};
                 rowDULIEUHOADONRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDULIEUHOADONRow);
                 return rowDULIEUHOADONRow;
@@ -506,6 +517,7 @@ namespace BaoCao_Web.View {
                 this.columnNAM = base.Columns["NAM"];
                 this.columnCODE = base.Columns["CODE"];
                 this.columnTIEUTHU = base.Columns["TIEUTHU"];
+                this.columnNHANVIEN = base.Columns["NHANVIEN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace BaoCao_Web.View {
                 base.Columns.Add(this.columnCODE);
                 this.columnTIEUTHU = new global::System.Data.DataColumn("TIEUTHU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTIEUTHU);
+                this.columnNHANVIEN = new global::System.Data.DataColumn("NHANVIEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNHANVIEN);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -851,6 +865,22 @@ namespace BaoCao_Web.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NHANVIEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableDULIEUHOADON.NHANVIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NHANVIEN\' in table \'DULIEUHOADON\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDULIEUHOADON.NHANVIENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLOTRINHNull() {
                 return this.IsNull(this.tableDULIEUHOADON.LOTRINHColumn);
             }
@@ -979,6 +1009,18 @@ namespace BaoCao_Web.View {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTIEUTHUNull() {
                 this[this.tableDULIEUHOADON.TIEUTHUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNHANVIENNull() {
+                return this.IsNull(this.tableDULIEUHOADON.NHANVIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNHANVIENNull() {
+                this[this.tableDULIEUHOADON.NHANVIENColumn] = global::System.Convert.DBNull;
             }
         }
         

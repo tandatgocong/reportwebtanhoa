@@ -15,7 +15,7 @@
 
             var options = {                
                  width: 630,
-                 height: 300
+                 height: 280
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -183,11 +183,11 @@
                                              <td class="style20"  align="center"><b>
                                                 <asp:LinkButton ID="KTKS_BAMCHI" runat="server" 
                                                      CommandName="SOLUONGTHAY" ForeColor="Blue" 
-                                                     Text='<%# Bind("KTKS_BAMCHI","{0:0,0}") %>'></asp:LinkButton></b></td>
+                                                     Text='<%# Bind("KTKS_CAMKET","{0:0,0}") %>'></asp:LinkButton></b></td>
                                              <td  class="style20"  align="center"><b>
                                                  <asp:LinkButton ID="KTKS_CAMKET" runat="server" 
                                                      CommandName="SOLUONGTHAY" ForeColor="Blue" 
-                                                     Text='<%# Bind("KTKS_CAMKET","{0:0,0}") %>'></asp:LinkButton></b></td>
+                                                     Text='<%# Bind("KTKS_BAMCHI","{0:0,0}") %>'></asp:LinkButton></b></td>
                                          </tr>
                                      </table>
                                  </ItemTemplate>
