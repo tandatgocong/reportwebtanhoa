@@ -63,14 +63,20 @@ namespace BaoCao_Web.View
                 return 1;
             }
             
-            //khong thoi han
-            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
+          
+
+            
+
+            /* Cong Tác */
+            //xin tu ngay den ngay
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "CT" && (q.TUNGAY == ngay.Date || (ngay.Date >= q.TUNGAY && ngay.Date <= q.DENNGAY)) orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
                 _xinve = query.ToList()[0];
-                type = "KT";
-                noidung = "XIN VE SOM";
-                return 2;
+              
+                type = "TH";
+                noidung = "CONG TAC";
+                return 5;
             }
 
             //xin trong ngay
@@ -93,18 +99,16 @@ namespace BaoCao_Web.View
                 return 4;
             }
 
-            /* Cong Tác */
-            //xin tu ngay den ngay
-            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "CT" && (q.TUNGAY == ngay.Date || (ngay.Date >= q.TUNGAY && ngay.Date <= q.DENNGAY)) orderby q.CREATEDATE descending select q;
+            //khong thoi han
+            query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
             if (query.ToList().Count > 0)
             {
                 _xinve = query.ToList()[0];
-              
-                type = "TH";
-                noidung = "CONG TAC";
-                return 5;
+                type = "KT";
+                noidung = "XIN VE SOM";
+                return 2;
             }
-            
+
             return 0;
         }
 

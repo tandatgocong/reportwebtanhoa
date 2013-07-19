@@ -40,7 +40,9 @@ namespace BaoCao_Web
             Session["login"] = null;
             Session["tuky"] = "";
             Session["denky"] = "";
-
+            Session["TongDS"] = "";
+            Session["treport"] = "";
+            Session["SQL"] = "";
 
             int count_visit = 0;
 

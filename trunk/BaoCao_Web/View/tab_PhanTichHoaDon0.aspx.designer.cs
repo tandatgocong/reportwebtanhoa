@@ -94,6 +94,33 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.Panel panelTu;
         
         /// <summary>
+        /// lbTongCong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTongCong;
+        
+        /// <summary>
+        /// GridViewTuCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewTuCode;
+        
+        /// <summary>
+        /// GridViewTuQP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewTuQP;
+        
+        /// <summary>
         /// panelAnd control.
         /// </summary>
         /// <remarks>

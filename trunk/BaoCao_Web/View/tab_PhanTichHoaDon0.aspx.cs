@@ -11,21 +11,22 @@ namespace BaoCao_Web.View
 {
     public partial class tab_PhanTichHoaDon0 : System.Web.UI.Page
     {
+        log4net.ILog log = log4net.LogManager.GetLogger("File");
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (IsPostBack)
-            //    return;
+            if (IsPostBack)
+                return;
             this.tungay.Text = "12/2012";
             this.denngay.Text = (DateTime.Now.Date.Month - 1) + "/" + DateTime.Now.Date.Year;
             //ThongKeHoadon();
         }
 
         public void PhanTichHoaDon()
-        {                      
+        {
             try
             {
-                this.panelAnd.Visible = false;
-                this.panelTu.Visible = false;
+                //this.panelAnd.Visible = false;
+                //this.panelTu.Visible = false;
                 string tuky = getFullKY(this.tungay.Text);
                 string denky = getFullKY(this.denngay.Text);
                 DataTable tableTre = new DataTable();
@@ -40,15 +41,17 @@ namespace BaoCao_Web.View
                 denky = denky.Replace("/", "_");
 
 
-                if ("and".Equals(this.sosanh.Text)) {
-                    this.panelAnd.Visible = true;                  
+                if ("and".Equals(this.sosanh.Text))
+                {
+                    this.panelAnd.Visible = true;
+                    this.panelTu.Visible = false;
                     Session["tuky"] = tuky;
                     Session["denky"] = denky;
                     string sql = "SELECT COUNT(*) FROM HOADONTH" + tuky + " WHERE LNCC=0";
                     // log.Error("LinQConnection ExecuteCommand : " + sql);
                     int Tongtuky = Class.LinQConnection.ReturnResult(sql);
-                    
-                    
+
+
                     sql = "SELECT COUNT(*) FROM HOADONTH" + denky + " WHERE LNCC=0";
                     int Tongdenky = Class.LinQConnection.ReturnResult(sql);
 
@@ -56,7 +59,7 @@ namespace BaoCao_Web.View
 
 
                     sql = "SELECT COUNT(*) FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC = 0";
-                    int ca2ky =  Class.LinQConnection.ReturnResult(sql);
+                    int ca2ky = Class.LinQConnection.ReturnResult(sql);
 
                     sql = "SELECT COUNT(*) FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
                     int sudunglai = Class.LinQConnection.ReturnResult(sql);
@@ -64,8 +67,8 @@ namespace BaoCao_Web.View
                     sql = "SELECT SUM(CONVERT(int,K01.LNCC)) FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
                     int tongsanluong = Class.LinQConnection.ReturnResult(sql);
 
-                    int phatsinh = Tongtuky - ca2ky + tanggiam; 
-                   
+                    int phatsinh = Tongtuky - ca2ky + tanggiam;
+
 
                     DataRow row = tableTre.NewRow();
                     row[tuky.Replace("_", "/")] = Tongtuky;
@@ -132,32 +135,36 @@ namespace BaoCao_Web.View
                 }
                 else if ("To".Equals(this.sosanh.Text))
                 {
-                    this.panelAnd.Visible = true;      
+                    this.panelAnd.Visible = false;
+                    this.panelTu.Visible = true;
+                    getChart();
                 }
 
             }
             catch (Exception)
             {
-                
+
             }
 
         }
-        
+
         protected void btXemBangKe_Click(object sender, EventArgs e)
         {
             PhanTichHoaDon();
-           
+
         }
 
-       
-        string FullKy(int n) {
+
+        string FullKy(int n)
+        {
             if (n < 10)
                 return "0" + n;
-            return n+"";
+            return n + "";
         }
 
-        string getFullKY(string _ky) { 
-            string k="";
+        string getFullKY(string _ky)
+        {
+            string k = "";
 
             try
             {
@@ -169,158 +176,143 @@ namespace BaoCao_Web.View
             }
             catch (Exception)
             {
-               
+
             }
             return k;
         }
-        //public static string DoiDonViMet(double number)
-        //{
-        //    //string line = String.Format('{0:0.0}', number);
-        //    //string[] words = Regex.Split(line, '\\.');
-        //    //if (words.Length == 2)
-        //    //{
-        //    //    return words[0] + 'm' + words[1];
-        //    //}
-        //    //return words[0] + 'm';
-        //    string line = String.Format("{0:0.0}", number);
-        //    string[] words = Regex.Split(line, "\\.");
-        //    if (words.Length == 2)
-        //    {
-        //        if (words[1].Equals('0'))
-        //            return words[0];
-        //        else
-        //            return words[0] + ',' + words[1];
-        //    }
-        //    return words[0];
-        //}
-        static log4net.ILog log = log4net.LogManager.GetLogger("File");
-        //public DataTable getChart() {
-        //  DataTable tableTre = new DataTable();
+
+        public DataTable getChart()
+        {
+            DataTable tableTre = new DataTable();
+
            
-        //    string _tungay = this.tungay.Text.Trim();
-        //    int _tuky = int.Parse(_tungay.Substring(3, 2));
-        //    int _tunam = int.Parse(_tungay.Substring(6, 4));
-       
-        //    string _denngay = this.denngay.Text.Trim();
-        //    int _denky = int.Parse(_denngay.Substring(3, 2));
-        //    int _dennam = int.Parse(_denngay.Substring(6, 4));
-            
-        //    DateTime tNgay = DateTime.ParseExact(_tungay, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-        //    DateTime dNgay = DateTime.ParseExact(_denngay, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-      
-        //    int tongThang=(dNgay.Month - tNgay.Month) + 12 * (dNgay.Year - tNgay.Year)+1;           
-        //    string[] arrTitle = new string[tongThang];
 
-        //    for (int i = 0; i < tongThang; i++)
-        //    {
-        //        string tableName=FullKy(_tuky)+"_"+_tunam;
-        //        tableTre.Columns.Add(tableName, typeof(String));
-        //        arrTitle[i] = tableName;
-        //        _tuky = _tuky + 1;
-        //        if (_tuky > 12) {
-        //            _tuky = 1;
-        //            _tunam = _tunam + 1;
-        //        }
-        //    }
+            string _tungay = "01/"+getFullKY(this.tungay.Text);
+            int _tuky = int.Parse(_tungay.Substring(3, 2));
+            int _tunam = int.Parse(_tungay.Substring(6, 4));
 
-        //    string title = "['KỲ', 'Số Lượng Hóa Đơn =0']";
-            
+            string _denngay = "01/" + getFullKY(this.denngay.Text);
+            int _denky = int.Parse(_denngay.Substring(3, 2));
+            int _dennam = int.Parse(_denngay.Substring(6, 4));
 
-        //    if (tableTre != null)
-        //    {
-        //        DataRow row = tableTre.NewRow();
-        //        foreach (string s in arrTitle)
-        //        {
-        //            string sql = "SELECT COUNT(*) FROM HOADONTH"+s+" WHERE LNCC=0";
-        //           // log.Error("LinQConnection ExecuteCommand : " + sql);
-        //            int soluong = Class.LinQConnection.ReturnResult(sql);
-        //            row[s] = soluong;
-        //            if (soluong != 0) {
-        //                title += ",['" + s.Replace("_", "/") + "', " + soluong + "]";
-        //            }
-                    
+            DateTime tNgay = DateTime.ParseExact(_tungay, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime dNgay = DateTime.ParseExact(_denngay, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-        //        }
-        //        tableTre.Rows.Add(row);
-        //    }
-        //  title =  "[" + title + "]";
-        //  Session["hoadon"] = title;
-        //    return tableTre;
-        //}
+            int tongThang = (dNgay.Month - tNgay.Month) + 12 * (dNgay.Year - tNgay.Year) + 1;
+            string[] arrTitle = new string[tongThang];
+
+            for (int i = 0; i < tongThang; i++)
+            {
+                string tableName = FullKy(_tuky) + "_" + _tunam;
+                tableTre.Columns.Add(tableName, typeof(String));
+                arrTitle[i] = tableName;
+                _tuky = _tuky + 1;
+                if (_tuky > 12)
+                {
+                    _tuky = 1;
+                    _tunam = _tunam + 1;
+                }
+            }
+
+            string title = " ['Kỳ', 'Tổng HĐ=0', 'Tăng/Giảm', 'KH Không Sử Dụng', 'KH Sử Dụng Lại', 'KH Phát Sinh']";
+
+            string minKy="";
+            string maxky = "";
+            if (tableTre != null)
+            {
+                minKy = arrTitle[0].ToString();
+                DataRow row = tableTre.NewRow();
+                bool flag = false;
+                int Tongtuky = 0;
+                string tongdanhsach = "SELECT K01.KHU as LOTRINH,K01.DANHBO,K01.HOPDONG,K01.TENKH as HOTEN,K01.SONHA, K01.DUONG as TENDUONG,K01.HIEUDH as HIEU,K01.CODH  as CO,K01.NAMLD as NAM,K01.CODE,K01.LNCC as 'TIEUTHU',K01.NHANVIEN,K01.QUAN,K01.PHUONG   FROM  HOADONTH" + minKy + " K01 WHERE LNCC=0 ";
+
+                string phantichCode = "SELECT K01.CODE, COUNT(*) AS SL   FROM  HOADONTH" + minKy + " K01 WHERE K01.LNCC=0 ";
+                string phantichQP = "SELECT (K01.QUAN+'.'+K01.PHUONG ) AS QP, COUNT(*) AS SL    FROM  HOADONTH" + minKy + " K01 WHERE K01.LNCC=0 ";
+                
+                foreach (string s in arrTitle)
+                {
+
+                    string sql = "SELECT COUNT(*) FROM HOADONTH" + s + " WHERE LNCC=0";
+                    // log.Error("LinQConnection ExecuteCommand : " + sql);
+                    int soluong = Class.LinQConnection.ReturnResult(sql);
+                    row[s] = soluong;
+                    if (soluong != 0)
+                    {
+                        if (flag == false)
+                        {
+                            title += ",['" + s.Replace("_", "/") + "'," + soluong + ",0,0,0,0]";
+                            Tongtuky = soluong;
+                            flag = true;
+                        }
+                        else {
+                            maxky = s;
+                            tongdanhsach += " AND DANHBO IN (SELECT DANHBO FROM HOADONTH" + s + " WHERE LNCC=0 )";
+                            phantichCode += " AND DANHBO IN (SELECT DANHBO FROM HOADONTH" + s + " WHERE LNCC=0 )";
+                            phantichQP += " AND DANHBO IN (SELECT DANHBO FROM HOADONTH" + s + " WHERE LNCC=0 )";
+                            int tanggiam = soluong - Tongtuky;
+                            sql = "SELECT COUNT(*) FROM HOADONTH" + minKy + " K12, HOADONTH" + s + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC = 0";
+                            int ca2ky = Class.LinQConnection.ReturnResult(sql);
+
+                            sql = "SELECT COUNT(*) FROM HOADONTH" + minKy + " K12, HOADONTH" + s + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
+                            int sudunglai = Class.LinQConnection.ReturnResult(sql);
+
+                            sql = "SELECT SUM(CONVERT(int,K01.LNCC)) FROM HOADONTH" + minKy + " K12, HOADONTH" + s + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
+                            int tongsanluong = Class.LinQConnection.ReturnResult(sql);
+
+                            int phatsinh = Tongtuky - ca2ky + tanggiam;
+
+                            title += ",['" + s.Replace("_", "/") + "'," + soluong + "," + tanggiam + "," + ca2ky + "," + sudunglai + "," + phatsinh + "]";
+                        }
+                    }
+                }
+
+
+                phantichCode += " GROUP BY CODE ORDER BY CODE ASC ";
+                phantichQP += " GROUP BY K01.QUAN+'.'+K01.PHUONG ORDER BY K01.QUAN+'.'+K01.PHUONG ASC ";
+
+
+
+                tongdanhsach = tongdanhsach.Replace(minKy, "MIN");
+                tongdanhsach = tongdanhsach.Replace(maxky, "MAX");
+
+                phantichCode = phantichCode.Replace(minKy, "MIN");
+                phantichCode = phantichCode.Replace(maxky, "MAX");
+
+                phantichQP = phantichQP.Replace(minKy, "MIN");
+                phantichQP = phantichQP.Replace(maxky, "MAX");
+
+
+                tongdanhsach = tongdanhsach.Replace("MIN", maxky);
+                tongdanhsach = tongdanhsach.Replace("MAX", minKy);
+
+                phantichCode = phantichCode.Replace("MIN", maxky);
+                phantichCode = phantichCode.Replace("MAX", minKy);
+
+                phantichQP = phantichQP.Replace("MIN", maxky);
+                phantichQP = phantichQP.Replace("MAX", minKy);
+
+
+                GridViewTuCode.DataSource = Class.LinQConnection.getDataTable(phantichCode); ;
+                GridViewTuCode.DataBind();
+                GridViewTuQP.DataSource = Class.LinQConnection.getDataTable(phantichQP); ;
+                GridViewTuQP.DataBind();
+
+                Session["SQL"] = tongdanhsach;
+                tongdanhsach += "ORDER BY K01.KHU  ASC";
+                DataTable TongDS = Class.LinQConnection.getDataTable(tongdanhsach);
+                Session["TongDS"] = TongDS;
+                lbTongCong.Text = "TỔNG SỐ HÓA ĐƠN = 0M3 " + tongThang + " KỲ LIÊN TIẾP  : " + Class.Format.NumberFormat(TongDS.Rows.Count);
+                Session["treport"] = "DANH SÁCH HÓA ĐƠN = 0M3 " + tongThang + " KỲ LIÊN TIẾP TỪ KỲ " + getFullKY(this.tungay.Text) + " ĐẾN " + getFullKY(this.denngay.Text);
+                ///tableTre.Rows.Add(row);
+            }
+
+            title = "[" + title + "]";
+            Session["hoadon"] = title;
+            return tableTre;
+        }
         
         
-        protected void dataTongBK_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            //if ("TONG".Equals(e.CommandName) || "SOLUONGTHAY".Equals(e.CommandName))
-            //{
-            //    tongBangKe.Visible = true;
-            //    danhsachtrongai.Visible = false;
-            //    daxuly.Visible = false;
-            //    TabContainer1.Visible = false;
-            //    this.tongBangKe.DataSource = Class.C_DHN.getThongKeLoaiBaoThay(this.tungay.Text.Trim(), this.denngay.Text.Trim());
-            //    this.tongBangKe.DataBind();
-            //}
-            //if ("TRONGAI".Equals(e.CommandName))
-            //{
-            //    tongBangKe.Visible = false;
-            //    danhsachtrongai.Visible = true;
-            //    daxuly.Visible = true;
-            //    TabContainer1.Visible = true;
-            //    this.danhsachtrongai.DataSource = Class.C_DHN.getTroNgaiThay(this.tungay.Text.Trim(), this.denngay.Text.Trim());
-            //    this.danhsachtrongai.DataBind();
 
-            //    this.daxuly.DataSource = Class.C_DHN.getTroNgaiThay_daxuly(this.tungay.Text.Trim(), this.denngay.Text.Trim());
-            //    this.daxuly.DataBind();
-               
-            //}
-        }
-
-        protected void danhsachtrongai_RowCreated(object sender, GridViewRowEventArgs e)
-        {
-            //if (e.Row.RowType == DataControlRowType.DataRow)
-            //{
-            //    // when mouse is over the row, save original color to new attribute, and change it to highlight yellow color
-            //    e.Row.Attributes.Add("onmouseover",
-            //  "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFF00'");
-
-            //    // when mouse leaves the row, change the bg color to its original value   
-            //    e.Row.Attributes.Add("onmouseout",
-            //    "this.style.backgroundColor=this.originalstyle;");
-            //}
-        }
-
-        protected void danhsachtrongai_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
-            {
-
-                // when mouse is over the row, save original color to new attribute, and change it to highlight color
-                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
-
-                // when mouse leaves the row, change the bg color to its original value  
-                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
-            }
-        }
-
-        protected void daxuly_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == System.Web.UI.WebControls.DataControlRowType.DataRow)
-            {
-
-                // when mouse is over the row, save original color to new attribute, and change it to highlight color
-                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
-
-                // when mouse leaves the row, change the bg color to its original value  
-                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
-            }
-        }
-
-        protected void linkTUKY_Click(object sender, EventArgs e)
-        {
-            CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "SO_LIEU_NAM");
-        }
-    
-
-          
     }
+
 }

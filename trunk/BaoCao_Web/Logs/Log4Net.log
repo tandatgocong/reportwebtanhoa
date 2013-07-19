@@ -451,3 +451,31 @@ Column "HOADONTH06_2013.PHUONG" is invalid in the ORDER BY clause because it is 
 2013-07-04 16:20:09,863 [7032] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
 2013-07-05 08:27:08,222 [4264] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
 2013-07-05 08:27:08,243 [4264] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-09 10:27:36,169 [1672] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-09 10:27:36,207 [1672] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-09 10:28:44,303 [1260] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-09 10:28:44,303 [1260] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-09 11:58:46,010 [5688] ERROR File LinQConnection getDataTableInvalid column name 'NAMLD'.
+2013-07-09 12:00:01,156 [8008] ERROR File LinQConnection getDataTableInvalid column name 'NAMLD'.
+2013-07-10 16:08:06,325 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:06,343 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:15,796 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:15,796 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:30,169 [4392] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:30,169 [4392] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:35,388 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:35,388 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:39,942 [4392] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:39,942 [4392] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:49,304 [6804] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:49,304 [6804] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:08:54,323 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:08:54,323 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:11:21,499 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:11:21,499 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:13:08,839 [6336] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:13:08,848 [6336] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:13:24,159 [940] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:13:24,159 [940] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2013-07-10 16:13:28,350 [940] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
+2013-07-10 16:13:28,350 [940] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
