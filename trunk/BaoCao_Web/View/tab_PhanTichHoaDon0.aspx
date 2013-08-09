@@ -278,7 +278,7 @@
                            table = (DataTable)Session["PHANTICH"];
                            %><table cellpadding="0" cellspacing="0"  style="font-family:Times New Roman; font-size:15px; width: 100%;" 
                                 class="table_list" >
-                              <tbody>
+                              <tbody>   
                                   <tr class="head" >                    
                                      <td  colspan="2" class="style31" >
                                          TỔNG HĐ 0m<sup>3</sup></td>                 
@@ -308,7 +308,9 @@
                                 <td  class="style59" ><b><a  href="Print.aspx?page=2K" ><%=Format.NumberFormat(table.Rows[0]["=0 2 KỲ"])%></a></b></td>
                                 <td  class="style67" ><b><a  href="Print.aspx?page=DL" ><%=Format.NumberFormat(table.Rows[0]["SỬ DỤNG LẠI"])%></a></b><br />
                                    <b> SẢN LƯỢNG: <%=Format.NumberFormat(table.Rows[0]["SANLUONG"])%> m<sup>3 </sup></b></td>
-                                <td  class="style67" ><b><a  href="Print.aspx?page=PS" ><%=Format.NumberFormat(table.Rows[0]["PHÁT SINH"])%></b></a></td>
+                                <td  class="style67" ><b><a  href="Print.aspx?page=PS" ><%=Format.NumberFormat(table.Rows[0]["PHÁT SINH"])%></a></b><br />
+                                  <b><%=Format.NumberFormat(table.Rows[0]["SANLUONGGIAM"])%> m<sup>3 </sup></b>
+                                </td>
                                 </tr>
                                 <tr >
                                     <td class="style676" colspan="6"><h3>PHÂN TÍCH THEO MÃ CODE</h3></td>

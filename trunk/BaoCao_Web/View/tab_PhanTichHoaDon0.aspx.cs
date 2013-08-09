@@ -37,6 +37,8 @@ namespace BaoCao_Web.View
                 tableTre.Columns.Add("SỬ DỤNG LẠI", typeof(String));
                 tableTre.Columns.Add("PHÁT SINH", typeof(String));
                 tableTre.Columns.Add("SANLUONG", typeof(String));
+                tableTre.Columns.Add("SANLUONGGIAM", typeof(String));
+                
                 tuky = tuky.Replace("/", "_");
                 denky = denky.Replace("/", "_");
 
@@ -67,6 +69,8 @@ namespace BaoCao_Web.View
                     sql = "SELECT SUM(CONVERT(int,K01.LNCC)) FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
                     int tongsanluong = Class.LinQConnection.ReturnResult(sql);
 
+                    sql = "SELECT SUM(CONVERT(int,K12.LNCC)) FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC <> 0 AND K01.LNCC = 0";
+                    int tongsanluonggiam = Class.LinQConnection.ReturnResult(sql); 
                     int phatsinh = Tongtuky - ca2ky + tanggiam;
 
 
@@ -78,6 +82,9 @@ namespace BaoCao_Web.View
                     row["SỬ DỤNG LẠI"] = sudunglai;
                     row["PHÁT SINH"] = phatsinh;
                     row["SANLUONG"] = tongsanluong;
+                    row["SANLUONGGIAM"] = tongsanluonggiam;
+                    
+
                     tableTre.Rows.Add(row);
                     Session["PHANTICH"] = tableTre;
 
