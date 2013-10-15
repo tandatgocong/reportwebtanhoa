@@ -139,6 +139,24 @@ namespace BaoCao_Web.View
                     QPPHATSINH.DataSource = Class.LinQConnection.getDataTable("SELECT ( K01.QUAN+'.'+ K01.PHUONG) AS QP, COUNT(*) AS 'SL' FROM HOADONTH" + tuky + " K12, HOADONTH" + denky + " K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC <> 0 AND K01.LNCC = 0 AND K01.QUAN IS NOT NULL GROUP BY (K01.QUAN+'.'+K01.PHUONG) ORDER BY (K01.QUAN+'.'+K01.PHUONG) ASC");
                     QPPHATSINH.DataBind();
 
+                    /// PHAN TICH THEO NHAN VIEN DS
+
+                    DataTable t1 = Class.LinQConnection.getDataTable("SELECT  nv.MAYDS, nv.FULLNAME,COUNT(*) AS SOLUONG FROM TB_NHANVIENDOCSO nv, HOADONTH" + tuky + "  ds  WHERE nv.MAYDS  = CONVERT(int,SUBSTRING(Khu,3,2)) AND LNCC=0 GROUP BY nv.MAYDS, nv.FULLNAME ORDER BY nv.MAYDS ASC");
+                    HDONHANVIENTU.DataSource = t1;
+                    HDONHANVIENTU.DataBind();
+
+                    DataTable t2 = Class.LinQConnection.getDataTable("SELECT  nv.MAYDS, nv.FULLNAME,COUNT(*) AS SOLUONG FROM TB_NHANVIENDOCSO nv, HOADONTH" + denky + "  ds  WHERE nv.MAYDS  = CONVERT(int,SUBSTRING(Khu,3,2)) AND LNCC=0 GROUP BY nv.MAYDS, nv.FULLNAME ORDER BY nv.MAYDS ASC");
+                    HDONHANVIENDEN.DataSource = t2;
+                    HDONHANVIENDEN.DataBind();
+
+                    for (int i = 0; i < t1.Rows.Count; i++) {
+                        t1.Rows[i]["SOLUONG"] = int.Parse(t2.Rows[i]["SOLUONG"].ToString()) - int.Parse(t1.Rows[i]["SOLUONG"].ToString());
+                    }
+
+                    sosanhnv.DataSource = t1;
+                    sosanhnv.DataBind();
+                    
+
                 }
                 else if ("To".Equals(this.sosanh.Text))
                 {
