@@ -265,6 +265,33 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.GridView QPPHATSINH;
         
         /// <summary>
+        /// HDONHANVIENTU control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView HDONHANVIENTU;
+        
+        /// <summary>
+        /// HDONHANVIENDEN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView HDONHANVIENDEN;
+        
+        /// <summary>
+        /// sosanhnv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView sosanhnv;
+        
+        /// <summary>
         /// CrystalReportSource1 control.
         /// </summary>
         /// <remarks>
