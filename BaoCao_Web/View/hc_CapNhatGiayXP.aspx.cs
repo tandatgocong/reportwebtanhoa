@@ -27,6 +27,11 @@ namespace BaoCao_Web.View
         }
         public void PageLoad()
         {
+            cbNam.Items.Add((DateTime.Now.Year - 1)+"");
+            cbNam.Items.Add((DateTime.Now.Year ) + "");
+            cbNam.Items.Add((DateTime.Now.Year +1) + "");
+            this.cbNam.SelectedIndex = 1;
+
             this.tungay.Text = Class.Format.NgayVNVN(DateTime.Now.Date) + "/" + DateTime.Now.Year.ToString();
             this.cbThang.SelectedIndex = DateTime.Now.Month-1;
             this.cbThang0.SelectedIndex = DateTime.Now.Month - 1;
@@ -245,7 +250,7 @@ namespace BaoCao_Web.View
         {
 
 
-            GridView1.DataSource = Class.C_ToChucHanhChanh.getDuLieuXinVe(cbThang0.Text);
+            GridView1.DataSource = Class.C_ToChucHanhChanh.getDuLieuXinVe(cbThang0.Text, cbNam.Text);
             GridView1.DataBind();
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

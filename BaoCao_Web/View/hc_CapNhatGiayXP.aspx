@@ -221,6 +221,8 @@
                                 <asp:ListItem>11</asp:ListItem>
                                 <asp:ListItem>12</asp:ListItem>
                             </asp:DropDownList>
+                            <asp:DropDownList ID="cbNam" runat="server" Width="61px">
+                            </asp:DropDownList>
                         &nbsp;<asp:Button ID="Button1" runat="server" CssClass="button" 
                                 onclick="Button1_Click" Text="XEM" Height="21px" Width="113px" />
                                     </b></legend>
