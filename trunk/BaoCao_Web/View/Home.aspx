@@ -74,7 +74,8 @@
            menu4.addItem("&nbsp;&nbsp; THEO DÕI CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CODE", "0");
            menu4.addItem("&nbsp;&nbsp; PHÂN TÍCH CODE ĐỌC SỐ", "QuanLyDHN.aspx?page=DHN&type=CTCODE", "0");
            menu4.addItem("&nbsp;&nbsp; KẾT QUẢ BIÊN ĐỌC CHỈ SỐ", "QuanLyDHN.aspx?page=DHN&type=CS", "0");
-           menu4.addItem("&nbsp;&nbsp; THEO DÕI HÓA ĐƠN = 0M<sup>3</sup> ", "tab_TheoDoiHoDon0.aspx?page=DHN", "0");
+           menu4.addItem("&nbsp;&nbsp; THEO DÕI HÓA ĐƠN = 0M<sup>3</sup> ", "tab_PhanTichHoaDon0.aspx?page=DHN", "0");
+           
 
            var menu6 = ms.addMenu(document.getElementById("menu6"));
            menu6.addItem("&nbsp;&nbsp; SỐ LIỆU KINH DOANH THEO NĂM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "KinhDoanh.aspx?page=KD&type=V", "0");

@@ -330,10 +330,11 @@
     if (TransMenu.isSupported()) {
         var ms = new TransMenuSet(TransMenu.direction.right, 0, 0, TransMenu.reference.topRight);
         var menu4 = ms.addMenu(document.getElementById("A55"));
-        menu4.addItem("&nbsp;&nbsp; CÔNG TÁC GIẢM HÓA ĐƠN = 0M3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "tab_TheoDoiHoDon0.aspx?page=DHN", "0");
-        menu4.addItem("&nbsp;&nbsp; PHÂN TÍCH HÓA ĐƠN = 0M3 ", "tab_PhanTichHoaDon0.aspx?page=DHN", "0");      
+        menu4.addItem("&nbsp;&nbsp; SỐ LIỆU CÔNG TÁC GIẢM HÓA ĐƠN = 0M3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", "tab_TheoDoiCongTacHD0.aspx?page=DHN", "0");
+        menu4.addItem("&nbsp;&nbsp; PHÂN TÍCH HÓA ĐƠN = 0M3 ", "tab_PhanTichHoaDon0.aspx?page=DHN", "0");
+        /* menu4.addItem("&nbsp;&nbsp; SỐ LIỆU CÔNG TÁC GIẢM HÓA ĐƠN = 0M3 ", "tab_PhanTichHoaDon0.aspx?page=DHN", "0");     
        
-        /* var menu46 = ms.addMenu(document.getElementById("menu46"));
+        var menu46 = ms.addMenu(document.getElementById("menu46"));
         menu46.addItem("Menu 7.1", "#", "0");
         menu46.addItem("Menu 7.2", "#", "1");
         menu46.addItem("Menu 7.3", "#", "0");
