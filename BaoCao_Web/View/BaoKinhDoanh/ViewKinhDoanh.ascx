@@ -190,110 +190,7 @@
     {
         text-align: right;
     }
-    .style405
-    {
-        width: 52px;
-        border-right: 2px #99cc99 solid;
-        height: 27px;
-    }
-    .style406
-    {
-        width: 42px;
-        border-right: 1px #99cc99 solid;
-        height: 27px;
-    }
-    .style407
-    {
-        height: 27px;
-        border-left: 1px #99cc99 solid;
-        border-right: 1px #99cc99 solid;
-        text-align: center;
-    }
-    .style408
-    {
-        width: 89px;
-        height: 27px;
-        border-right: 1px #99cc99 solid;
-        border-left: 1px #99cc99 solid;
-        text-align: center;
-    }
-    .style409
-    {
-        width: 76px;
-        border-left: 1px #99cc99 solid;
-        text-align: center;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-    }
-    .style410
-    {
-        width: 64px;
-        border-bottom-style: solid;
-        border-right: 1px #99cc99 solid;
-        border-bottom-width: 2px;
-        text-align: center;
-    }
-    .style411
-    {
-        width: 52px;
-        border-left: 1px #99cc99 solid;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        text-align: center;
-    }
-    .style412
-    {
-        width: 74px;
-        border-right: 1px #99cc99 solid;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        text-align: center;
-    }
-    .style413
-    {
-        width: 89px;
-        border-right: 1px #99cc99 solid;
-        border-left: 1px #99cc99 solid;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        text-align: center;
-    }
-    .style414
-    {
-        width: 52px;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        border-right: 2px #99cc99 solid;
-    }
-    .style415
-    {
-        width: 42px;
-        border-right: 1px #99cc99 solid;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-    }
-    .style416
-    {
-        text-align: right;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        width: 69px;
-    }
-    .style417
-    {
-        text-align: right;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        width: 45px;
-    }
-    .style418
-    {
-        text-align: right;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        width: 41px;
-    }
-</style>
+    </style>
 <div class="title_page" style="hight:50px;"><asp:Label ID="title" runat="server" Text="SỐ LIỆU KINH DOANH NĂM"></asp:Label>&nbsp;<asp:DropDownList 
         ID="year" runat="server" Font-Bold="True" Font-Size="13pt" 
         ForeColor="#006600" AutoPostBack="True" 
@@ -372,8 +269,7 @@
                          {
                              %><%=table.Rows[i]["KY"]%>/<%=table.Rows[i]["NAM"]%><%
                          }
-                       %>
-                     </span></td>
+                       %></span></td>
                     <td  colspan="2" class="style58" >
                        <span title="Tiền Nước Chuẩn Thu Kỳ <%=table.Rows[i]["KY"]%>"><%=Format.NumberFormat(table.Rows[i]["DOANHTHU"])%></span> </td>
                     <td style="text-align: center" class="style24" rowspan="2" >
