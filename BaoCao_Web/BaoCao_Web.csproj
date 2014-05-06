@@ -453,6 +453,18 @@
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\inNhanVienHD0.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inNhanVienHD0.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\inQuanPhuongHD0.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inQuanPhuongHD0.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\tab_TheoDoiCongTacHD0.aspx.cs">
       <DependentUpon>tab_TheoDoiCongTacHD0.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -716,6 +728,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="View\inNhanVienHD0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>inNhanVienHD0.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\inQuanPhuongHD0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>inQuanPhuongHD0.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\rpt_DSHOADO0.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DSHOADO0.cs</LastGenOutput>
@@ -741,7 +761,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6929</DevelopmentServerPort>
+          <DevelopmentServerPort>6548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

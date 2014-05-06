@@ -479,3 +479,21 @@ Column "HOADONTH06_2013.PHUONG" is invalid in the ORDER BY clause because it is 
 2013-07-10 16:13:24,159 [940] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
 2013-07-10 16:13:28,350 [940] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH07_2013 WHERE LNCC=0
 2013-07-10 16:13:28,350 [940] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH07_2013'.
+2014-04-14 08:34:26,655 [3016] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2014-04-14 08:34:26,679 [3016] ERROR File LinQConnection ExecuteCommand : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+2014-04-14 08:35:35,669 [4252] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2014-04-14 08:35:35,669 [4252] ERROR File LinQConnection ExecuteCommand : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+2014-04-14 08:37:27,112 [532] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH12_2012 WHERE LNCC=0
+2014-04-14 08:37:27,118 [532] ERROR File LinQConnection ExecuteCommand : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+2014-04-14 09:04:49,938 [3052] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+2014-04-14 09:04:50,010 [3052] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+2014-04-14 09:05:16,995 [1488] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+2014-04-14 09:05:17,192 [1488] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+2014-04-14 09:58:28,101 [8052] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+Incorrect syntax near '/'.
+2014-04-14 09:59:20,441 [8052] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+Incorrect syntax near '/'.
+2014-04-14 10:03:44,043 [7864] ERROR File LinQConnection getDataTableIncorrect syntax near '/'.
+Incorrect syntax near '/'.
+2014-04-14 10:06:57,739 [6156] ERROR File LinQConnection getDataTableAn expression of non-boolean type specified in a context where a condition is expected, near 'S'.
+2014-04-14 10:08:08,443 [1208] ERROR File LinQConnection getDataTableAn expression of non-boolean type specified in a context where a condition is expected, near 'S'.

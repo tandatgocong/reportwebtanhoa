@@ -16,7 +16,7 @@ namespace BaoCao_Web.View
         {
             if (IsPostBack)
                 return;
-            this.tungay.Text = "12/2012";
+            this.tungay.Text = "1/2014";
             this.denngay.Text = (DateTime.Now.Date.Month - 1) + "/" + DateTime.Now.Date.Year;
             //ThongKeHoadon();
         }
@@ -179,6 +179,64 @@ namespace BaoCao_Web.View
 
         }
 
+        protected void inNhanVien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tuky = getFullKY(this.tungay.Text);
+                string denky = getFullKY(this.denngay.Text);
+                Session["TU"] = tuky;
+                Session["DEN"] = denky;
+                tuky = tuky.Replace("/", "_");
+                denky = denky.Replace("/", "_");
+
+                string sql = "  SELECT *,T1.SOLUONG1-T2.SOLUONG2 AS 'TG' FROM ( ";
+                sql += " SELECT  nv.MAYDS, nv.FULLNAME as F1,COUNT(*) AS SOLUONG1 FROM TB_NHANVIENDOCSO nv, HOADONTH" + tuky + " ds  WHERE nv.MAYDS  = CONVERT(int,SUBSTRING(Khu,3,2)) AND LNCC=0 GROUP BY nv.MAYDS, nv.FULLNAME  ";
+                sql += " ) AS T1 ";
+                sql += " JOIN ";
+                sql += " (SELECT  nv.MAYDS AS M2, nv.FULLNAME as F2,COUNT(*) AS SOLUONG2 FROM TB_NHANVIENDOCSO nv, HOADONTH" + denky + "  ds  WHERE nv.MAYDS  = CONVERT(int,SUBSTRING(Khu,3,2)) AND LNCC=0 GROUP BY nv.MAYDS, nv.FULLNAME ";
+                sql += " ) AS T2 ";
+                sql += " ON T1.MAYDS=T2.M2 ";
+                sql += " ORDER BY T1.MAYDS ASC ";
+                Session["SQL"] = sql;
+                Session["treport"] = "CÔNG TÁC THEO DÕI HÓA ĐƠN = 0M3 THEO NHÂN VIÊN ĐỌC SỐ";
+                Response.Redirect(@"Print.aspx?page=NVDS");
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        protected void inQuanPhuong_Click(object sender, EventArgs e)
+        {
+            string tuky = getFullKY(this.tungay.Text);
+            string denky = getFullKY(this.denngay.Text);
+            Session["TU"] = tuky;
+            Session["DEN"] = denky;
+            tuky = tuky.Replace("/", "_");
+            denky = denky.Replace("/", "_");
+
+            string sql1 = " SELECT (QUAN+'.'+PHUONG) AS QP, COUNT(*) AS 'SL' FROM HOADONTH" + tuky + " WHERE LNCC=0 AND QUAN IS NOT NULL GROUP BY (QUAN+'.'+PHUONG) ORDER BY (QUAN+'.'+PHUONG) ASC";
+
+            string sql2 = " SELECT (QUAN+'.'+PHUONG) AS QP, COUNT(*) AS 'SL' FROM HOADONTH" + denky + " WHERE LNCC=0 AND QUAN IS NOT NULL GROUP BY (QUAN+'.'+PHUONG) ORDER BY (QUAN+'.'+PHUONG) ASC";
+
+            string sql3 = " SELECT *,T1.SL-T2.SL AS 'TG'  ";
+            sql3 += " FROM ( SELECT (QUAN+'.'+PHUONG) AS QP, COUNT(*) AS 'SL' FROM HOADONTH" + tuky + " WHERE LNCC=0 AND QUAN IS NOT NULL  GROUP BY (QUAN+'.'+PHUONG) ) AS T1   ";
+            sql3 += " JOIN ( SELECT (QUAN+'.'+PHUONG) AS QP, COUNT(*) AS 'SL' FROM HOADONTH" + denky + " WHERE LNCC=0 AND QUAN IS NOT NULL  GROUP BY (QUAN+'.'+PHUONG)) AS T2   ";
+            sql3 += " ON T1.QP=T2.QP  ";
+            sql3 += " ORDER BY T1.QP ASC ";
+
+
+            Session["SQL"] = sql1;
+            Session["SQL2"] = sql2;
+            Session["SQL3"] = sql3;
+            Session["treport"] = "PHÂN TÍCH HÓA ĐƠN =0M3 THEO QUẬN PHƯỜNG";
+            Response.Redirect(@"Print.aspx?page=PTQP");
+
+
+        }
+        
 
         string FullKy(int n)
         {
