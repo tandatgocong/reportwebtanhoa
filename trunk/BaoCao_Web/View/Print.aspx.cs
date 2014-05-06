@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
+using BaoCao_Web.DataBase;
 
 namespace BaoCao_Web.View
 {
@@ -130,7 +132,42 @@ namespace BaoCao_Web.View
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
+            else if ("NVDS".Equals(Request.Params["page"] + ""))
+            {
+                sql = Session["SQL"]+"";
+                CrystalReportSource1.Report.FileName = "inNhanVienHD0.rpt";
+                title = Session["treport"] + "";
+                CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
+                CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky1", Session["TU"]+"");
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky2", Session["DEN"]+"");
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
+            }
+            else if ("PTQP".Equals(Request.Params["page"] + ""))
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                DataSet ds = new DataSet();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(Session["SQL"]+"", db.Connection.ConnectionString);
+                adapter.Fill(ds, "QP01");
+
+                adapter = new SqlDataAdapter(Session["SQL2"] + "", db.Connection.ConnectionString);
+                adapter.Fill(ds, "QP02");
+
+                adapter = new SqlDataAdapter(Session["SQL3"] + "", db.Connection.ConnectionString);
+                adapter.Fill(ds, "TANGGIAM");
+
+                CrystalReportSource1.Report.FileName = "inQuanPhuongHD0.rpt";
+                title = Session["treport"] + "";
+                CrystalReportSource1.ReportDocument.SetDataSource(ds);
+                CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky1", Session["TU"] + "");
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky2", Session["DEN"] + "");
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
+
+            }
            
         }
     }

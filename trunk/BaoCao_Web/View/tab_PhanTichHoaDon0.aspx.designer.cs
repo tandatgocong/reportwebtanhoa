@@ -85,42 +85,6 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.Button btXemBangKe;
         
         /// <summary>
-        /// panelTu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelTu;
-        
-        /// <summary>
-        /// lbTongCong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTongCong;
-        
-        /// <summary>
-        /// GridViewTuCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTuCode;
-        
-        /// <summary>
-        /// GridViewTuQP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTuQP;
-        
-        /// <summary>
         /// panelAnd control.
         /// </summary>
         /// <remarks>
@@ -146,6 +110,15 @@ namespace BaoCao_Web.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Gdenky;
+        
+        /// <summary>
+        /// GridView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
         /// Ghd02 control.
@@ -220,6 +193,15 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.GridView Gdoituongphatsinh;
         
         /// <summary>
+        /// inQuanPhuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inQuanPhuong;
+        
+        /// <summary>
         /// QPTUKY control.
         /// </summary>
         /// <remarks>
@@ -265,6 +247,15 @@ namespace BaoCao_Web.View {
         protected global::System.Web.UI.WebControls.GridView QPPHATSINH;
         
         /// <summary>
+        /// inNhanVien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inNhanVien;
+        
+        /// <summary>
         /// HDONHANVIENTU control.
         /// </summary>
         /// <remarks>
@@ -290,6 +281,42 @@ namespace BaoCao_Web.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView sosanhnv;
+        
+        /// <summary>
+        /// panelTu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelTu;
+        
+        /// <summary>
+        /// lbTongCong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTongCong;
+        
+        /// <summary>
+        /// GridViewTuCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewTuCode;
+        
+        /// <summary>
+        /// GridViewTuQP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewTuQP;
         
         /// <summary>
         /// CrystalReportSource1 control.

@@ -173,104 +173,7 @@
             </tr>
              <tr>
                  <td colspan="5" class="style32" valign="top" >
-                  <asp:Panel ID="panelTu" runat="server" Width="780px" Visible="false" >     
-                  <span style="margin-top: 10px"> <b>  <a  href="Print.aspx?page=TU""><asp:Label ID="lbTongCong" runat="server" 
-                          Font-Size="Large"></asp:Label></a></b></span>
-   
-                    <br />
-                   <h3>Biểu Đồ Theo Dõi Hóa Đơn =0 M<sup>3</sup> </h3>
-                <div id="chart_div" style="width: 730px; height: 430px;"></div> 
 
-             <h3>PHÂN TÍCH HÓA ĐƠN</h3>              
-                   <table>
-                    <tr>
-                        <td style="vertical-align:top">
-                            <asp:GridView ID="GridViewTuCode" runat="server" AutoGenerateColumns="False" 
-                                        Width="200px" BackColor="White" BorderColor="#CC9966" BorderStyle="None" 
-                                        BorderWidth="1px" CellPadding="4">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="MÃ CODE">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("CODE") %>'></asp:Label>
-                                                </ItemTemplate>
-                                                <EditItemTemplate>
-                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("CODE") %>'></asp:TextBox>
-                                                </EditItemTemplate>
-                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="SỐ LƯỢNG">
-                                                <ItemTemplate>
-                                                  <a  href='<%# Eval("CODE","Print.aspx?page=CODE&ma={0}") %>' ><asp:Label ID="Label1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:Label> </a>
-                                                </ItemTemplate>
-                                                <EditItemTemplate>
-                                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:TextBox>
-                                                </EditItemTemplate>
-                                                <ItemStyle Width="80px" HorizontalAlign="Center" VerticalAlign="Middle" />
-                                            </asp:TemplateField>
-                                        </Columns>
-                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                                        <RowStyle BackColor="White" ForeColor="#330099" />
-                                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                                        <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                                        <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                                        <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                                        <SortedDescendingHeaderStyle BackColor="#7E0000" />
-                                    </asp:GridView>
-                        </td>
-                        <td>              </td>
-                         <td style="vertical-align:top">
-                            <asp:GridView ID="GridViewTuQP" runat="server" AutoGenerateColumns="False" 
-                                        Width="200px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
-                                        BorderWidth="1px" CellPadding="3">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="MÃ QP">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("QP") %>'></asp:Label>
-                                                </ItemTemplate>
-                                                <EditItemTemplate>
-                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("QP") %>'></asp:TextBox>
-                                                </EditItemTemplate>
-                                                <ItemStyle Width="80px" HorizontalAlign="Center" VerticalAlign="Middle" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="SỐ LƯỢNG">
-                                                <ItemTemplate>
-                                                <a  href='<%# Eval("QP","Print.aspx?page=QP&ma={0}") %>' >      <asp:Label ID="Label1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:Label></a>
-                                                </ItemTemplate>
-                                                <EditItemTemplate>
-                                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:TextBox>
-                                                </EditItemTemplate>
-                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
-                                            </asp:TemplateField>
-                                        </Columns>
-                                        <FooterStyle BackColor="White" ForeColor="#000066" />
-                                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                                        <RowStyle ForeColor="#000066" />
-                                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                        <SortedDescendingHeaderStyle BackColor="#00547E" />
-                                    </asp:GridView>
-                        </td>
-                    </tr>
-                   </table>
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-                
-                  </asp:Panel>
                 <asp:Panel ID="panelAnd" runat="server" Width="780px" Visible="false"><% 
                        DataTable table = new DataTable();
                        if (Session["PHANTICH"] != null)
@@ -374,7 +277,10 @@
                                         <SortedDescendingHeaderStyle BackColor="#7E0000" />
                                     </asp:GridView>
                                      </td>
-                                <td  class="style67"></td>
+                                <td  class="style67">
+                                    <asp:GridView ID="GridView2" runat="server">
+                                    </asp:GridView>
+                                     </td>
                                 <td  class="style59" valign="top" align="center">
                                     <asp:GridView ID="Ghd02" runat="server" AutoGenerateColumns="False" 
                                         BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
@@ -621,7 +527,8 @@
                                 </tr>
 
                              <tr >
-                                    <td class="style676" colspan="6"><h3>PHÂN TÍCH THEO QUẬN PHƯỜNG </h3></td>
+                                    <td class="style676" colspan="6"><h3>PHÂN TÍCH THEO QUẬN PHƯỜNG <asp:Button ID="inQuanPhuong" runat="server" CssClass="button" OnClick="inQuanPhuong_Click"
+                        Text=" IN " /></h3></td>
                              </tr>
                              <tr >
                                 <td  class="style63" valign="top" align="center">
@@ -773,7 +680,8 @@
                                 </tr>
                              
                              <tr >
-                                    <td class="style676" colspan="6"><h3>PHÂN TÍCH THEO NHÂN VIÊN ĐỌC SỐ </h3></td>
+                                    <td class="style676" colspan="6"><h3>PHÂN TÍCH THEO NHÂN VIÊN ĐỌC SỐ <asp:Button ID="inNhanVien" runat="server" CssClass="button" OnClick="inNhanVien_Click"
+                        Text=" IN " /></h3></td>
                              </tr>
                              <tr class="head" >
                                <td  class="style62" valign="top" align="center" colspan="2"> <%=table.Columns[0].ColumnName%></td>
@@ -886,6 +794,96 @@
                        }
                        %>
                 </asp:Panel>
+             
+           <asp:Panel ID="panelTu" runat="server" Width="780px" Visible="false" >     
+                  <span style="margin-top: 10px"> <b>  <a  href="Print.aspx?page=TU""><asp:Label ID="lbTongCong" runat="server" 
+                          Font-Size="Large"></asp:Label></a></b></span>
+   
+                    <br />
+                   <h3>Biểu Đồ Theo Dõi Hóa Đơn =0 M<sup>3</sup> </h3>
+                <div id="chart_div" style="width: 730px; height: 430px;"></div> 
+
+             <h3>PHÂN TÍCH HÓA ĐƠN</h3>              
+                   <table>
+                    <tr>
+                        <td style="vertical-align:top">
+                            <asp:GridView ID="GridViewTuCode" runat="server" AutoGenerateColumns="False" 
+                                        Width="200px" BackColor="White" BorderColor="#CC9966" BorderStyle="None" 
+                                        BorderWidth="1px" CellPadding="4">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="MÃ CODE">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("CODE") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("CODE") %>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="SỐ LƯỢNG">
+                                                <ItemTemplate>
+                                                  <a  href='<%# Eval("CODE","Print.aspx?page=CODE&ma={0}") %>' ><asp:Label ID="Label1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:Label> </a>
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <ItemStyle Width="80px" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="White" ForeColor="#330099" />
+                                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                        <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                        <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                        <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                        <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                    </asp:GridView>
+                        </td>
+                        <td>              </td>
+                         <td style="vertical-align:top">
+                            <asp:GridView ID="GridViewTuQP" runat="server" AutoGenerateColumns="False" 
+                                        Width="200px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
+                                        BorderWidth="1px" CellPadding="3">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="MÃ QP">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("QP") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("QP") %>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <ItemStyle Width="80px" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="SỐ LƯỢNG">
+                                                <ItemTemplate>
+                                                <a  href='<%# Eval("QP","Print.aspx?page=QP&ma={0}") %>' >      <asp:Label ID="Label1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:Label></a>
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("SL","{0:0,0}") %>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <FooterStyle BackColor="White" ForeColor="#000066" />
+                                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                                        <RowStyle ForeColor="#000066" />
+                                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                        <SortedDescendingHeaderStyle BackColor="#00547E" />
+                                    </asp:GridView>
+                        </td>
+                    </tr>
+                   </table>
+                             
+                  </asp:Panel>
+
+             
                  </td>
             </tr>
        <tr>
