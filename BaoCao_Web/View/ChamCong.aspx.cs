@@ -214,6 +214,10 @@ namespace BaoCao_Web.View
                 }
                 while (tNgay <= dNgay)
                 {
+                    if("00245".Equals(manv))
+                    {
+                       tre = "";
+                    }
                     tre = "";
                     som = "";
                     string sql_ck = " SELECT ior.TimeStr FROM CheckInOut AS ior WHERE (((ior.UserFullCode)='" + manv + "') AND ((CDate([TimeDate]))='" + tNgay.ToShortDateString() + "')) ORDER BY TimeStr ASC";
@@ -372,48 +376,50 @@ namespace BaoCao_Web.View
                                         row[Class.Format.NgayVNVN(tNgay)] = "-";
 
                                     }
-
+                                  
+                                    row[Class.Format.NgayVNVN(tNgay) + "RA"] = "CT";
+                                    
                                     // Gi? Ra
-                                    string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
-                                    if (gRa.Equals(gVao))
-                                    {
-                                        AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
-                                    }
-                                    else
-                                    {
-                                        try
-                                        {
-                                          //  DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
-                                            DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
-                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
-                                            giora = tm2.ToString("HH:mm");
+                                    //string gRa = t1.Rows[flag_ - 1]["TimeStr"].ToString().Replace(" ", "");
+                                    //if (gRa.Equals(gVao))
+                                    //{
+                                    //    AddTableTre(tableTre, manv, tennv, phongban, ngay, thu, giovao, "-", tre, "-", "KHONG QUET");
+                                    //}
+                                    //else
+                                    //{
+                                    //    try
+                                    //    {
+                                    //      //  DateTime tm2 = DateTime.ParseExact(t1.Rows[flag_ - 1]["TimeStr"].ToString(), dateformat, CultureInfo.CreateSpecificCulture("en-US"));
+                                    //        DateTime tm2 = DateTime.Parse(t1.Rows[flag_ - 1]["TimeStr"].ToString());
+                                    //        row[Class.Format.NgayVNVN(tNgay) + "RA"] = tm2.ToString("HH:mm");
+                                    //        giora = tm2.ToString("HH:mm");
 
-                                            if (tm2.Hour == 11 && tm2.Minute < 20)
-                                            {
-                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
-                                                tongtre++;
-                                                boolTre = true;
-                                                int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
-                                                som = tr + "";
-                                                tongphuttre += tr;
-                                            }
-                                            else if (tm2.Hour < 11)
-                                            {
-                                                row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
-                                                tongtre++;
-                                                boolTre = true;
-                                                int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
-                                                som = tr + "";
-                                                tongphuttre += tr;
-                                            }
+                                    //        if (tm2.Hour == 11 && tm2.Minute < 20)
+                                    //        {
+                                    //            row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                    //            tongtre++;
+                                    //            boolTre = true;
+                                    //            int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                    //            som = tr + "";
+                                    //            tongphuttre += tr;
+                                    //        }
+                                    //        else if (tm2.Hour < 11)
+                                    //        {
+                                    //            row[Class.Format.NgayVNVN(tNgay) + "SOM"] = "1";
+                                    //            tongtre++;
+                                    //            boolTre = true;
+                                    //            int tr = (11 * 60 + 50) - (tm2.Hour * 60 + tm2.Minute);
+                                    //            som = tr + "";
+                                    //            tongphuttre += tr;
+                                    //        }
 
 
-                                        }
-                                        catch (Exception)
-                                        {
-                                            row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
-                                        }
-                                    }
+                                    //    }
+                                    //    catch (Exception)
+                                    //    {
+                                    //        row[Class.Format.NgayVNVN(tNgay) + "RA"] = "-";
+                                    //    }
+                                    //}
 
                                     ///////
                                 }
