@@ -68,8 +68,8 @@ namespace BaoCao_Web.View
         {
             /* ---------------------- */
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-            string sql = " SELECT info.UserFullCode, info.UserFullName, dt.Dept";
-            sql += " FROM UserInfo info,Dept dt WHERE info.IDD=dt.IDD ";
+            string sql = " SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dp.Dept ";
+            sql += " FROM UserInfo info ,Dept dp WHERE info.IDD =dp.IDD  ";
             if (!"1".Equals(cbPhongBanDoi.SelectedValue))
             {
                 sql += " AND info.IDD=" + cbPhongBanDoi.SelectedValue;
@@ -82,11 +82,14 @@ namespace BaoCao_Web.View
             //{
             //    sql += " AND info.UserLoaiNV='CN' ";
             //}
-            sql += " ORDER BY info.IDD ASC, info.UserFullCode ASC ";
+            sql += " ORDER BY info.UserFullCode ASC ";
             cpNhanVien.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
             cpNhanVien.DataTextField = "UserFullName";
             cpNhanVien.DataValueField = "UserFullCode";
             cpNhanVien.DataBind();
+            GridView1.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
+            GridView1.DataBind();
+
         }
 
         int stt = 1;

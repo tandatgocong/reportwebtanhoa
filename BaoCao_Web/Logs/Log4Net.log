@@ -497,3 +497,5 @@ Incorrect syntax near '/'.
 Incorrect syntax near '/'.
 2014-04-14 10:06:57,739 [6156] ERROR File LinQConnection getDataTableAn expression of non-boolean type specified in a context where a condition is expected, near 'S'.
 2014-04-14 10:08:08,443 [1208] ERROR File LinQConnection getDataTableAn expression of non-boolean type specified in a context where a condition is expected, near 'S'.
+2015-04-15 15:51:04,758 [5604] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'info.IDD =dp.IDD AND'.
+2015-04-15 15:51:04,828 [5604] ERROR File OleDbConnection getDataTableSyntax error (missing operator) in query expression 'info.IDD =dp.IDD AND'.

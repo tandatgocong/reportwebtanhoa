@@ -34,7 +34,7 @@
             <span class="style2"><strong>&nbsp;TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </strong>
             </span>
             <br class="style2" />
-            <span class="style2">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</span><br 
+            <span class="style2">CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA</span><br 
                 class="style2" />
             <span class="style2">------------//------------</span></span><br />
             <br />
