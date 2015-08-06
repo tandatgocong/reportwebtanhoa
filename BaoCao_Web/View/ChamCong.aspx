@@ -3,13 +3,11 @@
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script language="javascript" type="text/javascript">
-    window.document.getElementById("HOME").className = "top_link";
-    window.document.getElementById("KINHDOANH").className = "top_link";
-    window.document.getElementById("HSKH").className = "top_link";
-    window.document.getElementById("BDBC").className = "top_link";
-    window.document.getElementById("DHN").className = "top_link";
-    window.document.getElementById("LH").className = "current_link";
+      <script language="javascript" type="text/javascript">
+          window.document.getElementById("HOME").className = "top_link";
+          window.document.getElementById("DHN").className = "top_link";
+          window.document.getElementById("CHAMCONG").className = "current_link";
+          window.document.getElementById("BDBC").className = "top_link";
     </script>
     <style type="text/css">
         .style1

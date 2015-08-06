@@ -94,6 +94,28 @@ namespace BaoCao_Web.Class
             return table;
         }
 
+        public static DataTable getDataTableHoaDon(string sql)
+        {
+            DataTable table = new DataTable();
+            ThuTienDataContext db = new ThuTienDataContext();
+            try
+            {
+                db.Connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(table);
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            return table;
+        }
+
+
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();

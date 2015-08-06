@@ -3,6 +3,12 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+      <script language="javascript" type="text/javascript">
+          window.document.getElementById("HOME").className = "top_link";
+          window.document.getElementById("DHN").className = "top_link";
+          window.document.getElementById("CHAMCONG").className = "current_link";
+          window.document.getElementById("BDBC").className = "top_link";
+    </script>
     <style type="text/css">
         .style4
         {            color: #CC0000;

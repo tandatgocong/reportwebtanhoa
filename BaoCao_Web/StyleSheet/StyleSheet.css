@@ -448,6 +448,7 @@ div.block h3 {
     line-height: 23px;
     margin: 0;
     padding-left: 10px;
+    text-align: center;
 }
 
 div.block h4 {
@@ -470,7 +471,7 @@ div.block_content {
     margin-top:4px;
     margin-bottom:4px;
     font-size: 13px;
-
+    height: 472px;
 }
 
 /* -------------------- */

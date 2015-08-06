@@ -308,6 +308,7 @@
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\foot.png" />
+    <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\menu_bg.png" />
     <Content Include="Image\news_list_bg.gif" />
@@ -338,6 +339,14 @@
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
     <Content Include="View\hc_CapNhatThongTinNV.aspx" />
+    <Content Include="View\PhanTichSanLuong.aspx" />
+    <Content Include="View\tabSanLuong\CharBieuDoSL.aspx" />
+    <Content Include="View\tabSanLuong\FillData.aspx" />
+    <Content Include="View\tabSanLuong\PhanTichThayDHN.aspx" />
+    <Content Include="View\tabSanLuong\tabPhanTichThay.ascx" />
+    <Content Include="View\tabSanLuong\tabSLTheoDoiTuong.ascx" />
+    <Content Include="View\tabSanLuong\tbPhanTichDMA.ascx" />
+    <Content Include="View\tabSanLuong\WebForm1.aspx" />
     <Content Include="View\tab_TheoDoiCongTacHD0.aspx" />
     <Content Include="View\Print.aspx" />
     <Content Include="View\tab_PhanTichHoaDon0.aspx" />
@@ -380,6 +389,7 @@
     <Compile Include="Class\C_BaoCaoSanLuong.cs" />
     <Compile Include="Class\C_Chart.cs" />
     <Compile Include="Class\C_DHN.cs" />
+    <Compile Include="Class\C_PhanTichDMA.cs" />
     <Compile Include="Class\C_QuanLyDHN.cs" />
     <Compile Include="Class\C_ToChucHanhChanh.cs" />
     <Compile Include="Class\Format.cs" />
@@ -395,6 +405,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ThuTien.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThuTien.dbml</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -472,6 +487,62 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>inQuanPhuongHD0.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\PhanTichSanLuong.aspx.cs">
+      <DependentUpon>PhanTichSanLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PhanTichSanLuong.aspx.designer.cs">
+      <DependentUpon>PhanTichSanLuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\CharBieuDoSL.aspx.cs">
+      <DependentUpon>CharBieuDoSL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\CharBieuDoSL.aspx.designer.cs">
+      <DependentUpon>CharBieuDoSL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\FillData.aspx.cs">
+      <DependentUpon>FillData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\FillData.aspx.designer.cs">
+      <DependentUpon>FillData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\PhanTichThayDHN.aspx.cs">
+      <DependentUpon>PhanTichThayDHN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\PhanTichThayDHN.aspx.designer.cs">
+      <DependentUpon>PhanTichThayDHN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tabPhanTichThay.ascx.cs">
+      <DependentUpon>tabPhanTichThay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tabPhanTichThay.ascx.designer.cs">
+      <DependentUpon>tabPhanTichThay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tabSLTheoDoiTuong.ascx.cs">
+      <DependentUpon>tabSLTheoDoiTuong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tabSLTheoDoiTuong.ascx.designer.cs">
+      <DependentUpon>tabSLTheoDoiTuong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tbPhanTichDMA.ascx.cs">
+      <DependentUpon>tbPhanTichDMA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\tbPhanTichDMA.ascx.designer.cs">
+      <DependentUpon>tbPhanTichDMA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\tabSanLuong\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabSanLuong\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\tab_TheoDoiCongTacHD0.aspx.cs">
       <DependentUpon>tab_TheoDoiCongTacHD0.aspx</DependentUpon>
@@ -696,6 +767,11 @@
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="DataBase\ThuTien.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThuTien.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Logs\Log4Net.log" />
     <None Include="View\BaoKinhDoanh\kinhdoanh.xsc">
       <DependentUpon>kinhdoanh.xsd</DependentUpon>
@@ -735,6 +811,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataBase\ThuTien.dbml.layout">
+      <DependentUpon>ThuTien.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="View\inNhanVienHD0.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>inNhanVienHD0.cs</LastGenOutput>

@@ -17,7 +17,7 @@
             font-size: 45px;
             color: #CC0000;
         }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Pages_content"><!--
@@ -38,28 +38,15 @@
                 class="style2" />
             <span class="style2">------------//------------</span></span><br />
             <br />
+            <span class="style3"><strong>
+            <img  src="../Image/Logo%20Tan%20Hoa.png" style="height: 290px; width: 307px" /><br />
             <br />
-            <br />
-            <span class="style3"><strong>THỐNG KÊ SỐ LIỆU</strong></span><br />
+            THỐNG KÊ SỐ LIỆU</strong></span><br />
             <br />
             
        
         <br />
           <div id="wrap" class="menu" align="center" style=" margin-left:3px; margin-bottom:5px;">
-       <table id="menu" class="menu" cellSpacing="0" cellPadding="0">
-           <tr> 
-                <td> 
-                  <a id="menu4" href="#"><B>QUẢN LÝ ĐỒNG HỒ NƯỚC</B></a>
-                </td> 
-           </tr> 
-            <tr> 
-                <td> 
-                  <a id="menu6" href="#"><B>SỐ LIỆU KINH DOANH</B></a>
-                </td> 
-           </tr> 
-                  
-             
-        </table>
          </center>
      </div>
    <script type="text/javascript">

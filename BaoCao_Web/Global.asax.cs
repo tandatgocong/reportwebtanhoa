@@ -43,6 +43,7 @@ namespace BaoCao_Web
             Session["TongDS"] = "";
             Session["treport"] = "";
             Session["SQL"] = "";
+            Session["LoaiDT"] = "";
 
             int count_visit = 0;
 
