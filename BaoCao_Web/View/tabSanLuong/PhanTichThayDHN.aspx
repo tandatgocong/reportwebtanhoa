@@ -112,6 +112,7 @@
  	<h1>
         <asp:Label ID="lbTt" runat="server" Text="PHÂN TÍCH DANH SÁCH ĐHN  "></asp:Label>
       &nbsp;&nbsp;</h1>
+      <div style=" color:Red;font-weight:bold;"><i>Click Số Danh Bộ để xem chart sản lượng 12 kỳ đọc số</i></div>
 	<div class="block_content">
       
       <!-- Start Show -->

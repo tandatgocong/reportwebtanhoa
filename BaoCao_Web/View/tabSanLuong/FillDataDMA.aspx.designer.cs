@@ -10,7 +10,7 @@
 namespace BaoCao_Web.View.tabSanLuong {
     
     
-    public partial class FillData {
+    public partial class FillDataDMA {
         
         /// <summary>
         /// form1 control.
@@ -22,15 +22,6 @@ namespace BaoCao_Web.View.tabSanLuong {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
         /// lbTt control.
         /// </summary>
         /// <remarks>
@@ -40,30 +31,12 @@ namespace BaoCao_Web.View.tabSanLuong {
         protected global::System.Web.UI.WebControls.Label lbTt;
         
         /// <summary>
-        /// txtDanhBo control.
+        /// chart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDanhBo;
-        
-        /// <summary>
-        /// btThem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btThem;
-        
-        /// <summary>
-        /// btThem0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btThem0;
+        protected global::System.Web.UI.WebControls.Button chart;
     }
 }

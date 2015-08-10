@@ -38,6 +38,8 @@ namespace BaoCao_Web
             Session["col"] = 0;
             Session["arrTitle"] = new string[] {};
             Session["login"] = null;
+            Session["ky"] = "";
+            Session["nam"] = "";
             Session["tuky"] = "";
             Session["denky"] = "";
             Session["TongDS"] = "";

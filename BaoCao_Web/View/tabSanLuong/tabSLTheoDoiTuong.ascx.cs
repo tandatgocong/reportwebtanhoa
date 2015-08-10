@@ -29,9 +29,13 @@ namespace BaoCao_Web.View.tabSanLuong
             string dotds = dot.Text;
             string kyds = ky.Text;
             string namds = nam.Text;
+           
             int ky_ = int.Parse(kyds);
             int nam_ = int.Parse(namds);
             int dot_ = int.Parse(dotds);
+
+            
+
             if ("1".Equals(bcTheo.SelectedValue + ""))
             {
                 Session["LoaiDT"] = "TỔ ĐỌC SỐ";

@@ -84,8 +84,7 @@
             </tr>
         </table>
 
- 	<h3>&nbsp;
-        </h3>
+ 	<div style=" color:Red;font-weight:bold;"><i>Click vào mã DMA để xem danh sách đhn và sản lượng 12 kỳ đọc số</i></div>
 	<div class="block_content">
         
             <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:15px;" class="table_list" >
@@ -146,7 +145,7 @@
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("MADMA") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("MADMA") %>'></asp:Label>
+                        <b> <a  href='<%# Eval("MADMA","tabSanLuong/FillDataDMA.aspx?value={0}") %>' ><asp:Label ID="Label4" runat="server" Text='<%# Bind("MADMA") %>'></asp:Label></a></b>    
                         </ItemTemplate>
                         <FooterStyle Font-Names="Times New Roman" Font-Size="Medium" 
                                         HorizontalAlign="Center" VerticalAlign="Middle" />

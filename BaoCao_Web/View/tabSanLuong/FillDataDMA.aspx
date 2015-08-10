@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FillData.aspx.cs" Inherits="BaoCao_Web.View.tabSanLuong.FillData" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FillDataDMA.aspx.cs" Inherits="BaoCao_Web.View.tabSanLuong.FillDataDMA" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
@@ -112,16 +112,13 @@
   <div class="block block_left events" style=" width:100% ; margin-bottom:10px; border:1px;">
  	<h1 style="height: 46px">
         &nbsp;&nbsp;
-        <asp:Button ID="Button1" CssClass="button"  runat="server" Text="Quay Lại" 
-            onclick="Button1_Click1" />
-&nbsp;<asp:Label ID="lbTt" runat="server" Text=""></asp:Label>
-      &nbsp;<asp:TextBox ID="txtDanhBo" runat="server" Visible="False"></asp:TextBox>
-&nbsp;<asp:Button ID="btThem" runat="server" onclick="Button1_Click" Text="Thêm" 
-            Visible="False" />
-        <asp:Button ID="btThem0" runat="server" onclick="btThem0_Click" Text="Xóa" 
-            Visible="False" />
+        &nbsp;<asp:Label ID="lbTt" runat="server" Text=""></asp:Label>
+      &nbsp;&nbsp;
+        <asp:Button ID="chart" runat="server" onclick="chart_Click" 
+            Text="Biểu Đồ Sản Lượng 12 Kỳ Đọc Số" 
+            PostBackUrl="~/View/tabSanLuong/CharDMA.aspx" />
       </h1>
-      <div style=" color:Red;font-weight:bold;"><i>Click Số Danh Bộ để xem chart sản lượng 12 kỳ đọc số</i></div>
+   <div style=" color:Red;font-weight:bold;"><i>Click Số Danh Bộ để xem chart sản lượng 12 kỳ đọc số</i></div>
 	<div class="block_content">
       
       <!-- Start Show -->
@@ -186,13 +183,52 @@
             </tr>
                      
          <%
+             int T1 = 0;
+             int T2 = 0;
+             int T3 = 0;
+             int T4 = 0;
+             int T5 = 0;
+             int T6 = 0;
+             int T7 = 0;
+             int T8 = 0;
+             int T9 = 0;
+             int T10 = 0;
+             int T11 = 0;
+             int T12 = 0;
+             string ky1 = ""; string ky2 = ""; string ky3 = ""; string ky4 = ""; string ky5 = ""; string ky6 = ""; string ky7 = ""; string ky8 = ""; string ky9 = ""; string ky10 = ""; string ky11 = ""; string ky12 = "";
              DataTable table = new DataTable();
              if (Session["chamcong"] != null)
              {
                  table = (DataTable)Session["chamcong"];
                  for (int i = 0; i < table.Rows.Count; i++)
                  {
-                               %>
+                      T1 += (table.Rows[i]["T1"].ToString() != "" ? int.Parse(table.Rows[i]["T1"].ToString()) : 0);
+                      T2 += (table.Rows[i]["T2"].ToString() != "" ? int.Parse(table.Rows[i]["T2"].ToString()) : 0);
+                      T3 += (table.Rows[i]["T3"].ToString() != "" ? int.Parse(table.Rows[i]["T3"].ToString()) : 0);
+                      T4 += (table.Rows[i]["T4"].ToString() != "" ? int.Parse(table.Rows[i]["T4"].ToString()) : 0);
+                      T5 += (table.Rows[i]["T5"].ToString() != "" ? int.Parse(table.Rows[i]["T5"].ToString()) : 0);
+                      T6 += (table.Rows[i]["T6"].ToString() != "" ? int.Parse(table.Rows[i]["T6"].ToString()) : 0);
+                      T7 += (table.Rows[i]["T7"].ToString() != "" ? int.Parse(table.Rows[i]["T7"].ToString()) : 0);
+                      T8 += (table.Rows[i]["T8"].ToString() != "" ? int.Parse(table.Rows[i]["T8"].ToString()) : 0);
+                      T9 += (table.Rows[i]["T9"].ToString() != "" ? int.Parse(table.Rows[i]["T9"].ToString()) : 0);
+                      T10 += (table.Rows[i]["T10"].ToString() != "" ? int.Parse(table.Rows[i]["T10"].ToString()) : 0);
+                      T11 += (table.Rows[i]["T11"].ToString() != "" ? int.Parse(table.Rows[i]["T11"].ToString()) : 0);
+                      T12 += (table.Rows[i]["T12"].ToString() != "" ? int.Parse(table.Rows[i]["T12"].ToString()) : 0);
+                      ky1 = table.Rows[i]["K1"].ToString();
+                      ky2 = table.Rows[i]["K2"].ToString();
+                      ky3 = table.Rows[i]["K3"].ToString();
+                      ky4 = table.Rows[i]["K4"].ToString();
+                      ky5 = table.Rows[i]["K5"].ToString();
+                      ky6 = table.Rows[i]["K6"].ToString();
+                      ky7 = table.Rows[i]["K7"].ToString();
+                      ky8 = table.Rows[i]["K8"].ToString();
+                      ky9 = table.Rows[i]["K9"].ToString();
+                      ky10 = table.Rows[i]["K10"].ToString();
+                      ky11 = table.Rows[i]["K11"].ToString();
+                      ky12 = table.Rows[i]["K12"].ToString();
+                     
+                    
+                %>
             <tr>
                 
                <td  rowspan="2" class="style8" style="border-right:2px #99cc99 solid; border-bottom: 2px solid;"><%=(i + 1)%></td>                              
@@ -204,40 +240,40 @@
                <td  rowspan="2" class="style6" style="border-right:2px #99cc99 solid; border-bottom: 2px solid;" ><%=table.Rows[i]["DM"].ToString()%></td>  
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K1"].ToString()%></td>
+                    class="style11"><%=ky1%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K2"].ToString()%></td>
+                    class="style11"><%=ky2%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K3"].ToString()%></td>
+                    class="style11"><%=ky3%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K4"].ToString()%></td>
+                    class="style11"><%=ky4%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K5"].ToString()%></td>
+                    class="style11"><%=ky5%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K6"].ToString()%></td>
+                    class="style11"><%=ky6%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K7"].ToString()%></td>
+                    class="style11"><%=ky7%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K8"].ToString()%></td>
+                    class="style11"><%=ky8%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K9"].ToString()%></td>
+                    class="style11"><%=ky9%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K10"].ToString()%></td>
+                    class="style11"><%=ky10%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K11"].ToString()%></td>
+                    class="style11"><%=ky11%></td>
                 <td  colspan="2" 
                     style="border-right:2px #99cc99 solid; text-align: center; border-bottom: 1px dotted;" 
-                    class="style11"><%=table.Rows[i]["K12"].ToString()%></td>
+                    class="style11"><%=ky12%></td>
             </tr>
             <tr >
                  <td style="border-right:2px #99cc99 solid; border-bottom: 2px solid; text-align:center" 
@@ -294,6 +330,73 @@
              }                           
              
           %>
+          <tr style="background-color:#00CC00;font-weight:bold;font-size:large" >
+                  <td colspan="7" rowspan="2" style="border-right:2px #99cc99 solid; border-bottom: 2px outset; text-align:center" 
+                     class="style14">&nbsp;TỔNG CỘNG </td>
+                 <td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed; text-align:center"  class="style14"><%=String.Format("{0:0,0}",T1)%></td>
+                <% if (T1 > T2)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T2)%></td><%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T2)%></td><%}
+                 %>
+                 <% if (T1 > T3)
+                   {%><td rowspan="2" colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 2px outset;text-align:center;background-color:Red;" class="style14"><%=String.Format("{0:0,0}",T3)%></td><%}
+                   else{%><td rowspan="2" colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 2px outset;text-align:center" class="style14"><%=String.Format("{0:0,0}",T3)%></td><%}
+                 %>
+                 <% if (T1 > T4)
+                   {%><td rowspan="2" colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 2px outset;text-align:center;background-color:Red;" class="style14"><%=String.Format("{0:0,0}",T4)%></td><%}
+                   else{%><td rowspan="2" colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 2px outset;text-align:center" class="style14"><%=String.Format("{0:0,0}",T4)%></td><%}
+                 %>
+                 <% if (T1 > T5)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed; text-align:center;background-color:Red;" class="style14"><%=String.Format("{0:0,0}",T5)%></td><%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed; text-align:center" class="style14"><%=String.Format("{0:0,0}",T5)%></td><%}
+                 %>
+                 <% if (T1 > T6)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T6)%></td>     <%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T6)%></td>     <%}
+                 %>
+                 <% if (T1 > T7)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T7)%></td> <%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T7)%></td> <%}
+                 %>                 <% if (T1 > T8)
+                   {%> <td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T8)%></td><%}
+                   else{%> <td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T8)%></td><%}
+                 %>
+                
+                 <% if (T1 > T9)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T9)%></td> <%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T9)%></td> <%}
+                 %>
+                 <% if (T1 > T10)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T10)%></td><%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T10)%></td><%}
+                 %>
+                 <% if (T1 > T11)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T11)%></td><%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T11)%></td><%}
+                 %>
+                 <% if (T1 > T12)
+                   {%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center;background-color:Red;"  class="style14"><%=String.Format("{0:0,0}",T12)%></td> <%}
+                   else{%><td colspan="2" style="border-right:2px #99cc99 solid; border-bottom: 1px dashed;text-align:center"  class="style14"><%=String.Format("{0:0,0}",T12)%></td> 
+                   <%}
+                   string title = "['KỲ','SẢN LƯỢNG']";
+                   title += ", ['" + ky1 + "'," + T1 + "]";
+                   title += ", ['" + ky2 + "'," + T2 + "]";
+                   title += ", ['" + ky3 + "'," + T3 + "]";
+                   title += ", ['" + ky4 + "'," + T4 + "]";
+                   title += ", ['" + ky5 + "'," + T5 + "]";
+                   title += ", ['" + ky6 + "'," + T6 + "]";
+                   title += ", ['" + ky7 + "'," + T7 + "]";
+                   title += ", ['" + ky8 + "'," + T8 + "]";
+                   title += ", ['" + ky9 + "'," + T9 + "]";
+                   title += ", ['" + ky10 + "'," + T10 + "]";
+                   title += ", ['" + ky11 + "'," + T11 + "]";
+                   title += ", ['" + ky12 + "'," + T12 + "]";
+                   Session["sldma"] = title;                                                                                                                                                                    
+                                                                                                                                                                                        
+                                                                                                                                                                                        
+                 %>
+            </tr>
+
               </tbody>
             </table>
   

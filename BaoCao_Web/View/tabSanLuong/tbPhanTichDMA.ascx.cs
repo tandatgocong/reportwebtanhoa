@@ -30,8 +30,8 @@ namespace BaoCao_Web.View.tabSanLuong
             string namds = nam.Text;
             int ky_ = int.Parse(kyds);
             int nam_ = int.Parse(namds);
-
-
+            Session["ky"] = ky_;
+            Session["nam"] = nam_;
 
               Class.C_PhanTichDMA.CAPNHAT_DHN_HH();
               Class.C_PhanTichDMA.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(namds, ky_);

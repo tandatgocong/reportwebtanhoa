@@ -110,5 +110,10 @@ namespace BaoCao_Web.View.tabSanLuong
            // Response.Redirect(Request.RawUrl);
            
         }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect(@"View\Home.aspx");
+        }
     }
 }

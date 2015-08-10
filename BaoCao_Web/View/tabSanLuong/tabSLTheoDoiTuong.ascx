@@ -111,8 +111,8 @@
             </tr>
         </table>
 
- 	<h3>&nbsp;
-        </h3>
+ 	<div style=" color:Red;font-weight:bold;"><i>Click vào loại đối tượng để xem danh sách đhn và sản lượng 12 kỳ đọc số</i></div>
+
 	<div class="block_content">
         
             <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:15px;" class="table_list" >
