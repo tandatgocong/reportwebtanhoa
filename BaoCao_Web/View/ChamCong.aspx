@@ -150,7 +150,7 @@
  <asp:Panel ID="Panel2" runat="server" ScrollBars="None">
  
  <div class="block block_left events" style=" width:100% ; margin-left:10px; margin-bottom:10px; border:1px;">
- 	<h2>Kết Quả</h3>
+ 	<h2>Kết Quả</h2>
 	<div class="block_content">
       
       <!-- Start Show -->
@@ -294,7 +294,7 @@
 </tr>
 </table>
     <h3>Chú Thích</h3>
-      <table cellpadding="0" cellspacing="0" font-family:Times New Roman; font-size:15px;" 
+      <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px;" 
             class="table_list"  >
                             <tr style="height:25px;" >
                                         <td style="background-color:Red;border-bottom:2px #99cc99 solid;" class="style34" ></td> 
