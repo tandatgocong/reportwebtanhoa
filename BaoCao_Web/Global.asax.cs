@@ -46,7 +46,7 @@ namespace BaoCao_Web
             Session["treport"] = "";
             Session["SQL"] = "";
             Session["LoaiDT"] = "";
-
+            Session["col"] = 3;
             int count_visit = 0;
 
             //Kiểm tra file count_visit.txt nếu không tồn tại thì

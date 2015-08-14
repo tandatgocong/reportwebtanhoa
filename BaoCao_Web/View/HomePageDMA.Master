@@ -1,6 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="BaoCao_Web.View.HomePage" %>
-<%@ Import Namespace="System.Data" %>
-<%@ Import Namespace="System.Data.SqlClient" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePageDMA.Master.cs" Inherits="BaoCao_Web.View.HomePageDMA" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-<div id="Home">
+<div id="Home" style="width:100%">
      <div class="Header" style="background-image: url(../Image/bg_head.jpg);">
        <!--<img src="../Image/logo.png" style=" margin-top:4px;" /> -->
      </div>
@@ -75,7 +73,7 @@
     		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
   			</li>
   			<!--<li id="mnTintuc" class="top"><a href="QuanLyHoSoKhachHang.aspx?page=HSKH" id="HSKH" class="top_link"><span>QUẢN LÝ HỒ SƠ KHÁCH HÀNG</span>-->
-    		<!--[if gte IE 7]><!--><!--<![endif]-->
+    		<!--[if gte IE 7]><!--></a><!--<![endif]-->
     		<!--[if lte IE 6]><table><tr><td><![endif]-->
     			<!--<ul class="sub_tintuc">
     				<li><a href="#">TIN TỔNG QUÁT</a></li>
@@ -92,7 +90,7 @@
 				    <li class="last"><a  href="PhanTichSanLuong.aspx?page=BDBC&type=PTDMA" >THEO DMA</a></li>		           
     			</ul>
             </li>
-            <li id="Li1" class="top"><a href="QuanLyDMA.aspx" id="A9" class="top_link"><span>QUẢN LÝ DMA</span></a>           
+              <li id="Li1" class="top"><a href="QuanLyDMA.aspx" id="DMA" class="current_link"><span>QUẢN LÝ DMA</span></a>           
             </li>
             <li id="mnLienHe" class="top"><a href="ChamCong.aspx?page=KD"  id="CHAMCONG" class="top_link"><span>CHẤM CÔNG</span></a>
              <ul class="sub_tintuc">
@@ -109,7 +107,7 @@
 </div>
        <script language="javascript" type="text/javascript">
            window.document.getElementById("KINHDOANH").className = "top_link";
-           window.document.getElementById("HOME").className = "current_link";
+           window.document.getElementById("HOME").className = "top_link";
            window.document.getElementById("DHN").className = "top_link";
            window.document.getElementById("CHAMCONG").className = "top_link";
            window.document.getElementById("BDBC").className = "top_link";
@@ -117,150 +115,14 @@
     </script>
  <!--		END MENU	-->
 <!-- Content -->
-<div class="Content">
-   <% if ("KD".Equals(Request.Params["page"] + ""))
-      { %>
+<div class="Content" style="width:100%">
+  
       <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
        
 		
    
    </asp:ContentPlaceHolder>
-       <%}else{ %>
-<table width="1000px" cellpadding="0" cellspacing="0" border="0">
-<tr align="justify">
-<td valign="top" style="width:170px;" >
-      <div> <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                 <tbody><tr>
-                   <td bgcolor="#DDEDFB" style="border-bottom:1pt #67aeef solid"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                     <tbody><tr>
-                       <td width="33"><img width="33" height="31" src="../Image/box-bullet1.gif" /></td>
-                       <td width="10">&nbsp;</td>
-                       <td><b>DANH MỤC BÁO CÁO</b> </td>
-                     </tr>
-                   </tbody></table></td>
-                 </tr>
-               </tbody>
-           </table>
-       </div>
-       <div  class="menu" align="left" style=" margin-left:3px; margin-bottom:5px;">
-        <table id="menu" class="menu" cellSpacing="0" cellPadding="0">
-         <% if ("DHN".Equals(Request.Params["page"] + ""))
-       { %>
-          <tr> 
-                <td> 
-                  <a href="QuanLyDHN.aspx?page=DHN&type=DTTDK" >THỐNG KÊ ĐỒNG HỒ NƯỚC</a>
-                </td> 
-           </tr> 
-          <tr> 
-                <td> 
-                  <a id="menu5" href="tab_TheoDoiTDK.aspx?page=DHN" >THEO DÕI BÁO THAY ĐHN</a>
-                </td> 
-            </tr> 
-          <tr> 
-                <td> 
-                  <a id="menu6" href="QuanLyDHN.aspx?page=DHN&type=TDSL" >THEO DÕI SẢN LƯỢNG</a>
-                </td> 
-            </tr> 
-          <tr> 
-             <td> 
-                <a id="menu7" href="QuanLyDHN.aspx?page=DHN&type=TDTT" >THEO DÕI TIÊU THỤ THẤP</a>
-             </td> 
-            </tr> 
-          <!--  <tr> 
-                <td> 
-                    <a id="menu8" href="QuanLyDHN.aspx?page=DHN&type=TTT" >LOẠI KH TIÊU THỤ THẤP</a>
-                </td> 
-             </tr> -->
-          <tr> 
-                <td> 
-                    <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>
-                </td> 
-             </tr>
-          <tr> 
-                <td> 
-                    <a id="A3" href="QuanLyDHN.aspx?page=DHN&type=CTCODE" >PHÂN TÍCH CODE ĐỌC SỐ</a>
-                </td> 
-             </tr> 
-          <tr> 
-                <td> 
-                    <a id="A2" href="QuanLyDHN.aspx?page=DHN&type=CS" >KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
-                </td> 
-             </tr> 
-          <tr> 
-                <td> 
-                    <a id="A4" href="QuanLyDHN.aspx?page=DHN&type=SDS" >SỔ ĐỌC SỐ</a>
-                </td> 
-             </tr> 
-          <tr> 
-                <td> 
-                    <a id="A5" href="QuanLyDHN.aspx?page=DHN&type=TGD" >THỜI GIAN ĐỌC </a>
-                </td> 
-             </tr> 
-              <tr> 
-                <td> 
-                    <a  id="A55" href="tab_TheoDoiHoDon0.aspx?page=DHN"  class="" >THEO DÕI HÓA ĐƠN = 0M<sup>3</sup> </a>
-
-                </td> 
-             </tr> 
-
-             
-    
-    <%}
-       else if ("HSKH".Equals(Request.Params["page"] + ""))
-       {%>    
-           <tr> 
-                <td> 
-                  <a id="A1" href="QuanLyHoSoKhachHang.aspx?page=HSKH" >NHẬN ĐƠN KHÁCH HÀNG</a>
-                </td> 
-           </tr> 
-                        
-    <% }
-       else if ("BDBC".Equals(Request.Params["page"] + ""))
-       { %>
-           <tr> 
-                <td> 
-                  <a id="A6" href="PhanTichSanLuong.aspx?page=BDBC&type=PTTHAY" >THEO THAY ĐHN</a>
-                </td> 
-           </tr> 
-           <tr> 
-                <td> 
-                  <a id="A7" href="PhanTichSanLuong.aspx?page=BDBC&type=PTDOITHUONG" >THEO ĐỐI TƯỢNG</a>
-                </td> 
-            </tr> 
-              <tr> 
-                <td> 
-                  <a  href="tabSanLuong/FillData.aspx?value=TIEMNANG" >THEO KHÁCH HÀNG TM</a>
-                </td> 
-            </tr> 
-            
-           <tr> 
-                <td> 
-                  <a id="A8" href="PhanTichSanLuong.aspx?page=BDBC&type=PTDMA" >THEO DMA</a>
-                </td> 
-            </tr> 
-            
-  <%} %>
-     <tr>
-             <td><a href="#" >&nbsp;</a>  </td>
-             </tr>
-        </table>
-
-     </div>
-      
-     </td>
-<td valign="top" style="width: 812px;">
-    
-   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">     	
-   
-   </asp:ContentPlaceHolder>
-</td>
-
-
-</tr>
-</table>
-   <!--<div id="subwrap">  -->
-        
-    <%} %>
+     
  <!--  </div>   -->
 </div>
 <!-- End Content -->

@@ -21,7 +21,7 @@ a:hover{
 
 #Home{
 	margin: 0 auto;
-	width: 1000px;
+	width: 1128px;
 }
 
 #Home .Header{
@@ -58,7 +58,7 @@ a:hover{
 
 div.Pages_content{
 	float: right;
-	width: 813px;
+	width: 910px;
 	margin: 0;
 	padding: 0;
 	height:600px;
@@ -546,6 +546,16 @@ div.contain_table{
 	height: 25px;
 }
 
+.table_list tr.head11 td{
+	border-bottom: 1px #99cc99 solid;	
+	font:normal 12px Arial, Tahoma, Helvetica, sans-serif;
+	color: #006633;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 5px;
+	height: 25px;
+}
+
 .table_list .head_bor{
 	border-right: 1px #99cc99 solid;
 }
@@ -680,4 +690,10 @@ div.numberonline {
     font-size: 14px;
     font-family: "Times New Roman";
     height: 25px;
+}
+
+.checkBoxList {
+  max-height:100px;
+  height:auto !important;
+  height:100px;
 }

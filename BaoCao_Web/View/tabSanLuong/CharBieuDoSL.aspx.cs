@@ -13,6 +13,10 @@ namespace BaoCao_Web.View.tabSanLuong
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MaintainScrollPositionOnPostBack = true;
+            if (IsPostBack)
+                return;
+                
             NamHienTai_DHN();
         }
         public void NamHienTai_DHN()

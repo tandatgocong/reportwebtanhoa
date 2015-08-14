@@ -18,7 +18,7 @@ namespace BaoCao_Web.View.tabSanLuong
             btThem0.Visible = false;
             if ("GIÁ BIỂU".Equals(Session["LoaiDT"] + "") || "CỞ ĐHN".Equals(Session["LoaiDT"] + ""))
             {
-                Load();
+                PLoad();
             }
             if ("TIEMNANG".Equals(Request.Params["value"].ToString()))
             {
@@ -31,7 +31,7 @@ namespace BaoCao_Web.View.tabSanLuong
 
 
         }
-        public void Load()
+        public void PLoad()
         {
             string pra = Request.Params["value"].ToString();
             string sql = "SELECT SUBSTRING(LOTRINH,1,2) as 'DOT', kh.DANHBO, kh.HOTEN, kh.SONHA +' '+kh.TENDUONG AS DIACHI,kh.GIABIEU as GB,kh.DINHMUC as DM, ";
