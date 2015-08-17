@@ -45,7 +45,7 @@
     position: absolute;
     top: 1em;
     right: 15em;
-    width: 120px;
+    width: 130px;
     padding: 4px;
     background-color: #fff;
     font-weight: bold;
@@ -70,10 +70,11 @@
                           <div class="outer">                    
                            <img  height="300" width="400" src="<%=img%> " />                          
                             <table class="topright" border="1" style=" background-color:#90EE90;" cellpadding="0" cellspacing="0" >
-                                <tr> <td rowspan="2">Áp Lực</td> 
+                                <tr style="height:20px;"> <td rowspan="2">Áp Lực</td> 
                          <%
                           string ChannelID = "";
                           string sq = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-","") +"' AND ChannelName='Inlet'";
+                          string sqLL = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Flow'";
                           string sqTB = "SELECT *  FROM [DATALOGGER]  where MaDMA='" + dma.Replace("TH-", "").Replace("-",".") + "' ";
                           DataTable t2 = BaoCao_Web.Class.LinQConnectionGis.getDataTable(sqTB);
 
@@ -119,10 +120,18 @@
                                 <tr>
                                  <td style="text-align:center; border-top:2px;"><%=ALMax%></td> 
                                </tr>
+                               <%
+                                   
+                                          DataTable t3 = BaoCao_Web.Class.LinQConnectionGis.getDataTable(sqLL);
+                                          if (t3.Rows.Count > 0)
+                                          {
+                                              %><tr > <td>Lưu Lượng</td> <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></td></tr><%
+                                          }     
+                               %>
+                                 
                             </table>                            
                             </div>
                           <%
-
                           DataTable tb = BaoCao_Web.Class.LinQConnection.getDataTable("SELECT  * FROM TONGDHN_DMA WHERE MADMA='" + dma + "'  ");
                           %><table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:10px;" class="table_list" >
                              <tbody>
