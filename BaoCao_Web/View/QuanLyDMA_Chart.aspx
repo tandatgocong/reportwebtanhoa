@@ -26,11 +26,33 @@
         }
     </script>
 
+    <style type="text/css">
+
+
+
+.button{
+	background-color:#02579D;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: #FFF;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-size: 14px;
+    font-family: "Times New Roman";
+    }
+
+    </style>
+
 </head>
 <body style="width:100%;">
     <form id="form1" runat="server">
     <p>
-        Chọn Ngày&nbsp;
+        &nbsp;
+        <asp:Button ID="Button1" CssClass="button"  runat="server" Text="Quay Lại" 
+            onclick="Button1_Click1" />
+&nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Blue" 
+            Text="Chọn Ngày Khác Xem Áp Lực:  "></asp:Label>
     
      
                     <asp:TextBox ID="txtngay" runat="server" ReadOnly="True"></asp:TextBox>

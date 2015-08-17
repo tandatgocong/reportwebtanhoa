@@ -62,7 +62,7 @@ namespace BaoCao_Web.View
             string value = Request.Params["value"].ToString();
             string title = "['GIỜ','ÁP LỰC']";
 
-            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),5) AS GIO,Value FROM dbo.t_Data_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,'" + Calendar1.SelectedDate + "')  AND  (DATEPART(MINUTE, [TimeStamp])=0) ORDER BY  [TimeStamp] DESC ";
+            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),2) AS GIO,Value FROM dbo.t_Data_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,'" + Calendar1.SelectedDate + "')  AND  (DATEPART(MINUTE, [TimeStamp])=0) ORDER BY  [TimeStamp] DESC ";
             DataTable table = LinQConnectionGis.getDataTable(sl);
 
             for (int i = 0; i < table.Rows.Count; i++)
@@ -75,6 +75,11 @@ namespace BaoCao_Web.View
 
             Session["sanluong"] = title;
 
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect(@"View\QuanLyDMA.aspx");
         }
     }
 }
