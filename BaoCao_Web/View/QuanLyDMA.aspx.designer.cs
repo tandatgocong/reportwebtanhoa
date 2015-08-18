@@ -13,6 +13,15 @@ namespace BaoCao_Web.View.KTCN {
     public partial class QuanLyDMA {
         
         /// <summary>
+        /// cAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cAll;
+        
+        /// <summary>
         /// listDMA control.
         /// </summary>
         /// <remarks>

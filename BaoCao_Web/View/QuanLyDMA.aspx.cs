@@ -44,5 +44,30 @@ namespace BaoCao_Web.View.KTCN
             //DataList1.DataSource = 
             //DataList1.DataBind();
         }
+
+        protected void cAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cAll.Checked)
+            {
+                string flag = "'123'";
+                foreach (ListItem item in listDMA.Items)
+                {
+                    flag += ",'" + item.Value + "'";
+                    item.Selected = true;
+                }
+                string sql = "SELECT ID,MADMA FROM GNKDT_THONGTINDMA WHERE MADMA IN (" + flag + ") ORDER BY ID ASC";
+                DataTable tb = Class.LinQConnection.getDataTable(sql);
+                Session["chamcong"] = tb;
+            }
+            else
+            {
+                foreach (ListItem item in listDMA.Items)
+                {
+                    item.Selected = false;
+                }
+
+                Session["chamcong"] = null;
+            }
+        }
     }
 }

@@ -355,6 +355,8 @@
     <Content Include="Image\DMA\TH-08-02.PNG" />
     <Content Include="Image\DMA\TH-08-03.PNG" />
     <Content Include="Image\DMA\TH-08-04.png" />
+    <Content Include="Image\DMA\TH-08-05.PNG" />
+    <Content Include="Image\DMA\TH-08-06.PNG" />
     <Content Include="Image\DMA\TH-08-07.png" />
     <Content Include="Image\DMA\TH-08-08.png" />
     <Content Include="Image\DMA\TH-08-09.png" />
@@ -445,7 +447,6 @@
     <Content Include="View\Print.aspx" />
     <Content Include="View\tab_PhanTichHoaDon0.aspx" />
     <Content Include="View\tab_TheoDoiHoDon0.aspx" />
-    <Content Include="View\count_visit.txt" />
     <Content Include="View\hc_CapNhatGiayXP.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\HomePage.Master" />

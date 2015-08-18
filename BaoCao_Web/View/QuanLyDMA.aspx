@@ -17,7 +17,9 @@
                  <tbody><tr>
                    <td bgcolor="#DDEDFB" style="border-bottom:1pt #67aeef solid"><table width="100%" cellspacing="0" cellpadding="0" border="0">
                      <tbody><tr>
-                       <td width="33"><img width="33" height="31" src="../Image/box-bullet1.gif" /></td>
+                       <td width="33">
+                           <asp:CheckBox ID="cAll" runat="server" AutoPostBack="True" 
+                               oncheckedchanged="cAll_CheckedChanged" /></td>
                        <td width="10">&nbsp;</td>
                        <td><b>MÃ DMA</b> </td>
                      </tr>
@@ -133,15 +135,19 @@
                             </div>
                           <%
                           DataTable tb = BaoCao_Web.Class.LinQConnection.getDataTable("SELECT  * FROM TONGDHN_DMA WHERE MADMA='" + dma + "'  ");
-                          %><table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:10px;" class="table_list" >
+                          if (tb.Rows.Count > 0)
+                          {
+                          %><%=dma%>
+                          <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:10px;" class="table_list" >
                              <tbody>
                                      <tr style="background-color:#E6E6FA" class="head11"  ><td >Tổng ĐHN</td><td>15</td><td>20</td><td>25</td><td>40</td><td>50</td><td>80</td><td>100</td><td>150</td><td>200</td></tr>
-                                     <tr class="head11" ><td><%=String.Format("{0:0,0}",tb.Rows[0]["TONG"])%></td><td><%=String.Format("{0:0,0}",tb.Rows[0]["CO15"])%></td><td><%=tb.Rows[0]["CO20"]%></td><td><%=tb.Rows[0]["CO25"]%></td>
+                                     <tr class="head11" ><td><%=String.Format("{0:0,0}", tb.Rows[0]["TONG"])%></td><td><%=String.Format("{0:0,0}", tb.Rows[0]["CO15"])%></td><td><%=tb.Rows[0]["CO20"]%></td><td><%=tb.Rows[0]["CO25"]%></td>
                                      <td><%=tb.Rows[0]["CO40"]%></td><td><%=tb.Rows[0]["CO50"]%></td><td><%=tb.Rows[0]["CO80"]%></td><td><%=tb.Rows[0]["CO100"]%></td><td><%=tb.Rows[0]["CO150"]%></td><td><%=tb.Rows[0]["CO200"]%></td></tr>
                              </tbody>
                              </table>             
                            </td>
                           <%
+                          }
                           if((i+1)%4==0)
                           {
                               %></tr><tr>  <%
