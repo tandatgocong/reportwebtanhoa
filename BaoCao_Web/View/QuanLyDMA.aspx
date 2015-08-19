@@ -71,7 +71,7 @@
                      %><td>       
                           <div class="outer">                    
                            <img  height="300" width="400" src="<%=img%> " />                          
-                            <table class="topright" border="1" style=" background-color:#90EE90;" cellpadding="0" cellspacing="0" >
+                            <table class="topright" border="1" style="background-color:#98FB98;" cellpadding="0" cellspacing="0" >
                                 <tr style="height:20px;"> <td rowspan="2">Áp Lực</td> 
                          <%
                           string ChannelID = "";
@@ -127,7 +127,8 @@
                                           DataTable t3 = BaoCao_Web.Class.LinQConnectionGis.getDataTable(sqLL);
                                           if (t3.Rows.Count > 0)
                                           {
-                                              %><tr > <td>Lưu Lượng</td> <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></td></tr><%
+                                              %><tr > <td>Lưu Lượng</td>
+                                              <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></td></tr><%
                                           }     
                                %>
                                  
@@ -137,7 +138,7 @@
                           DataTable tb = BaoCao_Web.Class.LinQConnection.getDataTable("SELECT  * FROM TONGDHN_DMA WHERE MADMA='" + dma + "'  ");
                           if (tb.Rows.Count > 0)
                           {
-                          %><%=dma%>
+                          %>
                           <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:10px;" class="table_list" >
                              <tbody>
                                      <tr style="background-color:#E6E6FA" class="head11"  ><td >Tổng ĐHN</td><td>15</td><td>20</td><td>25</td><td>40</td><td>50</td><td>80</td><td>100</td><td>150</td><td>200</td></tr>

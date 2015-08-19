@@ -430,6 +430,7 @@
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
+    <Content Include="View\QuanLyDMA_ChartLL.aspx" />
     <Content Include="View\hc_CapNhatThongTinNV.aspx" />
     <Content Include="View\QuanLyDMA.aspx" />
     <Content Include="View\PhanTichSanLuong.aspx" />
@@ -569,6 +570,13 @@
     </Compile>
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyDMA_ChartLL.aspx.cs">
+      <DependentUpon>QuanLyDMA_ChartLL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyDMA_ChartLL.aspx.designer.cs">
+      <DependentUpon>QuanLyDMA_ChartLL.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\HomePageDMA.Master.cs">
       <DependentUpon>HomePageDMA.Master</DependentUpon>
