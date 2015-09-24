@@ -47,10 +47,12 @@ namespace BaoCao_Web.View.tabSanLuong
                 {
                     // ky hien tai
                     Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(nam_.ToString(), ky_);
+                   
                     // ky truoc
                     if (ky_ == 1)
                     {
                         Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC((nam_ - 1) + "", 12);
+
                     }
                     else
                     {
@@ -150,14 +152,17 @@ namespace BaoCao_Web.View.tabSanLuong
                 {
                     // ky hien tai
                     Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_GB(nam_.ToString(), ky_);
+                    lbKyNay.Text ="("+ Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + nam_ + " AND kh.KY=" + ky_) + " đợt )";
                     // ky truoc
                     if (ky_ == 1)
                     {
                         Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_GB((nam_ - 1) + "", 12);
+                        lbKyTruoc.Text = "(" + Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + (nam_ - 1) + " AND kh.KY=12") + " đợt )";
                     }
                     else
                     {
                         Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_GB(nam_.ToString(), ky_ - 1);
+                        lbKyTruoc.Text = "(" + Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + nam_ + " AND kh.KY=" + (ky_ - 1)) + " đợt )";
                     }
 
                     // nam truoc
@@ -173,6 +178,7 @@ namespace BaoCao_Web.View.tabSanLuong
                 {
                     // ky hien tai
                     Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_GB_DOT(nam_.ToString(), ky_, dot_);
+
                     // ky truoc
                     if (ky_ == 1)
                     {
@@ -202,14 +208,17 @@ namespace BaoCao_Web.View.tabSanLuong
                 {
                     // ky hien tai
                     Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_CODH(nam_.ToString(), ky_);
+                    lbKyNay.Text = "(" + Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + nam_ + " AND kh.KY=" + ky_) + " đợt )";
                     // ky truoc
                     if (ky_ == 1)
                     {
                         Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_CODH((nam_ - 1) + "", 12);
+                        lbKyTruoc.Text = "(" + Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + (nam_ - 1) + " AND kh.KY=12") + " đợt )";
                     }
                     else
                     {
                         Class.C_BaoCaoSanLuong.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_CODH(nam_.ToString(), ky_ - 1);
+                        lbKyTruoc.Text = "(" + Class.LinQConnectionTT.ReturnResult("SELECT MAX(DOT)  FROM HOADON kh WHERE kh.NAM=" + nam_ + " AND kh.KY=" + (ky_ - 1)) + " đợt )";
                     }
 
                     // nam truoc

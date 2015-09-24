@@ -121,10 +121,14 @@
                     <td class="style6" rowspan="2"><asp:Label ID="lbTieuDe" runat="server" Text=" "></asp:Label> 
                         </td>
                     <td class="style7" colspan="2">
-                        <b>KỲ TRƯỚC</b></td>
+                        <b>KỲ TRƯỚC 
+                        <asp:Label ID="lbKyTruoc" runat="server" Font-Italic="True" ForeColor="Red"></asp:Label>
+                        </b></td>
                      
                     <td class="style7" colspan="2">
-                       <b>KỲ NÀY</b></td>
+                       <b>KỲ NÀY<asp:Label ID="lbKyNay" runat="server" Font-Italic="True" 
+                            ForeColor="Red"></asp:Label>
+                        </b></td>
                      <td class="style7" colspan="2">
                        <b>TĂNG/GIẢM</b></td>
                  

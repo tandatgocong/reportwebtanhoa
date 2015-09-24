@@ -43,12 +43,15 @@ namespace BaoCao_Web.Class
             sql += " SET GNKDT_THONGTINDMA.KN_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND   kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND ds.NAM=" + nam + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
+
 
             try
             {
@@ -63,16 +66,7 @@ namespace BaoCao_Web.Class
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC(int nam, int ky)
         {
-            //string sql = "UPDATE W_BAOCAO_SANLUONG ";
-            //sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
-            //sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
-            //sql += " ( ";
-            //sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            //sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            //sql += " WHERE  KY=" + ky;
-            //sql += " GROUP BY TODS ";
-            //sql += " ) as t2 ";
-            //sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
+           
             int nam_ = nam;
             int ky_ = ky;
 
@@ -91,10 +85,12 @@ namespace BaoCao_Web.Class
             sql += " SET GNKDT_THONGTINDMA.KT_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam_ + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky_ + " AND  kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky_ + " AND ds.NAM=" + nam + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
 
@@ -112,30 +108,22 @@ namespace BaoCao_Web.Class
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC(int nam, int ky)
         {
-            //string sql = "UPDATE W_BAOCAO_SANLUONG ";
-            //sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
-            //sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
-            //sql += " ( ";
-            //sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            //sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            //sql += " WHERE  KY=" + ky;
-            //sql += " GROUP BY TODS ";
-            //sql += " ) as t2 ";
-            //sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
+           
 
             int nam_ = nam;
             int ky_ = ky;
             nam_ = nam - 1;
 
-
             string sql = "UPDATE GNKDT_THONGTINDMA ";
             sql += " SET GNKDT_THONGTINDMA.NT_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam_ + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND   kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND ds.NAM=" + nam_ + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
 

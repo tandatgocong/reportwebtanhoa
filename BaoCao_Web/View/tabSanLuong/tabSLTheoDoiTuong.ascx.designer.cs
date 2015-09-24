@@ -103,6 +103,24 @@ namespace BaoCao_Web.View.tabSanLuong {
         protected global::System.Web.UI.WebControls.Label lbTieuDe;
         
         /// <summary>
+        /// lbKyTruoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbKyTruoc;
+        
+        /// <summary>
+        /// lbKyNay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbKyNay;
+        
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>

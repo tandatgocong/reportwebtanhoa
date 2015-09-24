@@ -54,7 +54,7 @@ namespace BaoCao_Web.View.tabSanLuong
             DataTable tb = LinQConnection.getDataTable(sql);
             for (int i = 0; i < tb.Rows.Count; i++)
             {
-                string sl = "SELECT TOP(12) DANHBA,CAST(KY AS varchar)+'/'+CAST(NAM AS varchar) as KY,CODE,TIEUTHU FROM HOADON WHERE DANHBA='" + tb.Rows[i]["DANHBO"].ToString() + "' ORDER BY NAM DESC, KY desc";
+                string sl = "SELECT TOP(12) DANHBA,CAST(KY AS varchar)+'/'+CAST(NAM AS varchar) as KY,CODE,TIEUTHU FROM HOADON WHERE DANHBA='" + tb.Rows[i]["DANHBO"].ToString() + "' ORDER BY CAST(NAM AS INT) DESC, CAST(KY AS INT) DESC ";
                 DataTable tbsl = LinQConnection.getDataTableHoaDon(sl);
                 for (int j = 0; j < tbsl.Rows.Count; j++)
                 {
@@ -81,7 +81,7 @@ namespace BaoCao_Web.View.tabSanLuong
             DataTable tb = LinQConnection.getDataTable(sql);
             for (int i = 0; i < tb.Rows.Count; i++)
             {
-                string sl = "SELECT TOP(12) DANHBA,CAST(KY AS varchar)+'/'+CAST(NAM AS varchar) as KY,CODE,TIEUTHU FROM HOADON WHERE DANHBA='" + tb.Rows[i]["DANHBO"].ToString() + "' ORDER BY NAM DESC, KY desc";
+                string sl = "SELECT TOP(12) DANHBA,CAST(KY AS varchar)+'/'+CAST(NAM AS varchar) as KY,CODE,TIEUTHU FROM HOADON WHERE DANHBA='" + tb.Rows[i]["DANHBO"].ToString() + "' ORDER BY CAST(NAM AS INT) DESC, CAST(KY AS INT) DESC ";
                 DataTable tbsl = LinQConnection.getDataTableHoaDon(sl);
                 for (int j = 0; j < tbsl.Rows.Count; j++)
                 {

@@ -480,6 +480,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\LinQConnectionTT.cs" />
     <Compile Include="Class\LinQConnectionGis.cs" />
     <Compile Include="Class\C_BaoCaoCodeDS.cs" />
     <Compile Include="Class\C_BaoCaoTieuThuThap.cs" />
