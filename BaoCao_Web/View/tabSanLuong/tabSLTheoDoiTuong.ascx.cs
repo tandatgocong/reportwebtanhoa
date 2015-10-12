@@ -39,6 +39,7 @@ namespace BaoCao_Web.View.tabSanLuong
             if ("1".Equals(bcTheo.SelectedValue + ""))
             {
                 Session["LoaiDT"] = "TỔ ĐỌC SỐ";
+                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO " + Session["LoaiDT"] + " KỲ " + kyds+"/"+namds;
                 Panel1.Width = 1195;
 
                 lbTieuDe.Text = "TỔ ĐỌC SỐ";
@@ -96,6 +97,7 @@ namespace BaoCao_Web.View.tabSanLuong
                 Session["LoaiDT"] = "QUẬN PHƯỜNG";
                 Panel1.Width = 1213;
                 lbTieuDe.Text = "MÃ QUẬN PHƯỜNG";
+                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO " + Session["LoaiDT"] + " KỲ " + kyds + "/" + namds;
                 if ("00".Equals(dotds))
                 {
                     // ky hien tai
@@ -148,6 +150,7 @@ namespace BaoCao_Web.View.tabSanLuong
                 Panel1.Width = 1213;
                 lbTieuDe.Text = " GIÁ BIỂU ";
                 Session["LoaiDT"] = "GIÁ BIỂU";
+                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO " + Session["LoaiDT"] + " KỲ " + kyds + "/" + namds;
                 if ("00".Equals(dotds))
                 {
                     // ky hien tai
@@ -202,6 +205,7 @@ namespace BaoCao_Web.View.tabSanLuong
             else if ("4".Equals(bcTheo.SelectedValue + ""))
             {
                 Session["LoaiDT"] = "CỞ ĐHN";
+                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO " + Session["LoaiDT"] + " KỲ " + kyds + "/" + namds;
                 Panel1.Width = 1213;
                 lbTieuDe.Text = " CỞ ĐHN ";
                 if ("00".Equals(dotds))
@@ -468,6 +472,21 @@ namespace BaoCao_Web.View.tabSanLuong
             else if ("4".Equals(bcTheo.SelectedValue + ""))
             {
                 lbTieuDe.Text = "CỞ ĐHN";
+            }
+        }
+
+        protected void btIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "SELECT * FROM W_BAOCAO_SANLUONG ";
+                Session["SQL"] = sql;
+                Response.Redirect(@"Print.aspx?page=bcSL");
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

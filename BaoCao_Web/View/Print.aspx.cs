@@ -18,6 +18,7 @@ namespace BaoCao_Web.View
 
             string sql = "";
             string title="";
+            string loai = "";
             if ("TK".Equals(Request.Params["page"] + ""))
             {
                 sql = "SELECT ISNULL(kh.LOTRINH,hd.KHU) as LOTRINH,hd.DANHBO,hd.HOPDONG,ISNULL(kh.HOTEN,hd.TENKH) as HOTEN,ISNULL(kh.SONHA,hd.SONHA) as SONHA, ";
@@ -168,6 +169,19 @@ namespace BaoCao_Web.View
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
+            else if ("bcSL".Equals(Request.Params["page"] + ""))
+            {
+                CrystalReportSource1.Report.FileName = "rpt_tab_SanLuong.rpt";
+                title = Session["treport"] + "";
+
+                CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report("SELECT TODS, MAYDS as TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG FROM W_BAOCAO_SANLUONG_MAY ", "W_BAOCAO_SANLUONG"));
+                CrystalReportSource1.ReportDocument.SetParameterValue("tenbk", title);
+                CrystalReportSource1.ReportDocument.SetParameterValue("loaibk", Session["LoaiDT"]+ "");
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
+
+            }
+
+            
            
         }
     }

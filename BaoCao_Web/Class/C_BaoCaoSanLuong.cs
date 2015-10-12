@@ -134,24 +134,42 @@ namespace BaoCao_Web.Class
         /// 
         public static DataTable get_BAOCAO_SANLUONG_MAY()
         {
-            string sql = "SELECT '    '+(CONVERT(VARCHAR(10),TODS)+' '+CASE WHEN MAYDS<10 THEN '0'+(CONVERT(VARCHAR(10),MAYDS)) ELSE (CONVERT(VARCHAR(10),MAYDS)) END) AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
+            string sql = "SELECT '    '+(CONVERT(VARCHAR(10),TODS)+'.'+CASE WHEN MAYDS<10 THEN '0'+(CONVERT(VARCHAR(10),MAYDS)) ELSE (CONVERT(VARCHAR(10),MAYDS)) END) AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
             sql += " FROM W_BAOCAO_SANLUONG_MAY  ORDER BY TODS ASC, MAYDS ASC ";
-            return Class.LinQConnection.getDataTable(sql.Replace(@"\t", " "));
+            return Class.LinQConnectionTT.getDataTable(sql.Replace(@"\t", " "));
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(string nam, int ky)
         {
+            //string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS 'KN_DHN', ";
+            //sql += " (case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS KN_SANLUONG, ";
+            //sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY QUAN,PHUONG ";
+            //try
+            //{
+            //    Class.LinQConnection.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY " + ex.Message);
+            //}
+           
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
-            sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS 'KN_DHN', ";
-            sql += " (case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS KN_SANLUONG, ";
-            sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY QUAN,PHUONG ";
+            sql += " SELECT kh.QUAN,kh.PHUONG, COUNT(kh.DANHBA) AS 'KN_DHN',  ";
+            sql += " (case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS KN_SANLUONG, ";
+            sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0  ";
+            sql += "  FROM  HOADON kh ";
+            sql += " WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += " GROUP BY kh.QUAN,kh.PHUONG  ";
             try
             {
-                Class.LinQConnection.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                Class.LinQConnectionTT.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  " + resqult + " record");
             }
             catch (Exception ex)
@@ -162,49 +180,93 @@ namespace BaoCao_Web.Class
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(string nam, int ky)
         {
+            //string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
+            //sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
+            //sql += " ( ";
+            //sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY QUAN,PHUONG ";
+            //sql += " ) as t2 ";
+            //sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.QUAN AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.PHUONG";
+
+            //try
+            //{
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC " + ex.Message);
+            //}
+        
             string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY QUAN,PHUONG ";
+            sql += "  SELECT QUAN,PHUONG, COUNT(kh.DANHBA) AS COUNTDHN,(case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS SANLUONG  ";
+            sql += "  FROM HOADON kh ";
+            sql += "  WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += "  GROUP BY QUAN,PHUONG ";
             sql += " ) as t2 ";
-            sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.QUAN AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.PHUONG";
+            sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.QUAN AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.PHUONG ";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  " + resqult + " record");
             }
             catch (Exception ex)
             {
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC " + ex.Message);
             }
+
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY(string nam, int ky)
         {
+            //string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
+            //sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
+            //sql += " ( ";
+            //sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY QUAN,PHUONG ";
+            //sql += " ) as t2 ";
+            //sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.QUAN AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.PHUONG ";
+            //try
+            //{
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC " + ex.Message);
+            //}
+
             string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT QUAN,PHUONG, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND QUAN IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY QUAN,PHUONG ";
+            sql += "  SELECT QUAN,PHUONG, COUNT(kh.DANHBA) AS COUNTDHN,(case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS SANLUONG  ";
+            sql += "  FROM HOADON kh ";
+            sql += "  WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += "  GROUP BY QUAN,PHUONG";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.QUAN AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.PHUONG ";
+
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
             }
             catch (Exception ex)
             {
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC " + ex.Message);
             }
+
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY()
@@ -217,7 +279,7 @@ namespace BaoCao_Web.Class
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
             }
             catch (Exception ex)
@@ -327,46 +389,87 @@ namespace BaoCao_Web.Class
         {
             string sql = "SELECT '    '+ TODS  AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
             sql += " FROM W_BAOCAO_SANLUONG_MAY  ORDER BY TODS ASC ";
-            return Class.LinQConnection.getDataTable(sql.Replace(@"\t", " "));
+            return Class.LinQConnectionTT.getDataTable(sql.Replace(@"\t", " "));
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_CODH(string nam, int ky)
         {
+            //string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SELECT kh.CODH,kh.CODH, COUNT(ds.DANHBA) AS 'KN_DHN', ";
+            //sql += " (case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS KN_SANLUONG, ";
+            //sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY kh.CODH,kh.CODH ";
+            //try
+            //{
+            //    Class.LinQConnection.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY " + ex.Message);
+            //}
+
+
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
-            sql += " SELECT kh.CODH,kh.CODH, COUNT(ds.DANHBA) AS 'KN_DHN', ";
-            sql += " (case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS KN_SANLUONG, ";
-            sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY kh.CODH,kh.CODH ";
+            sql += " SELECT kh.CODH,kh.CODH, COUNT(kh.DANHBA) AS 'KN_DHN',  ";
+            sql += " (case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS KN_SANLUONG, ";
+            sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0  ";
+            sql += "  FROM  HOADON kh ";
+            sql += " WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += " GROUP BY kh.CODH,kh.CODH  ";
             try
             {
-                Class.LinQConnection.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                Class.LinQConnectionTT.ExecuteCommand("DELETE FROM W_BAOCAO_SANLUONG_MAY ");
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  " + resqult + " record");
             }
             catch (Exception ex)
             {
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY " + ex.Message);
             }
+
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_CODH(string nam, int ky)
         {
+            //string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
+            //sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
+            //sql += " ( ";
+            //sql += " SELECT kh.CODH, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY kh.CODH ";
+            //sql += " ) as t2 ";
+            //sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.CODH ";
+
+            //try
+            //{
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC " + ex.Message);
+            //}
+
             string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT kh.CODH, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY kh.CODH ";
+            sql += "  SELECT kh.CODH, COUNT(kh.DANHBA) AS COUNTDHN,(case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS SANLUONG  ";
+            sql += "  FROM HOADON kh ";
+            sql += "  WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += "  GROUP BY kh.CODH ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.CODH ";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  " + resqult + " record");
             }
             catch (Exception ex)
@@ -377,25 +480,47 @@ namespace BaoCao_Web.Class
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_CODH(string nam, int ky)
         {
+            //string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
+            //sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
+            //sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
+            //sql += " ( ";
+            //sql += " SELECT kh.CODH, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
+            //sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
+            //sql += " GROUP BY kh.CODH ";
+            //sql += " ) as t2 ";
+            //sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.CODH ";
+            //try
+            //{
+            //    int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+            //    log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC " + ex.Message);
+            //}
+
+
             string sql = "UPDATE W_BAOCAO_SANLUONG_MAY ";
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT kh.CODH, COUNT(ds.DANHBA) AS COUNTDHN,(case when SUM(ds.TIEUTHU) IS NULL then 0 else SUM(ds.TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE ds.DANHBA=kh.DANHBO AND kh.CODH IS NOT NULL AND ds.KY=" + ky;
-            sql += " GROUP BY kh.CODH ";
+            sql += "  SELECT kh.CODH, COUNT(kh.DANHBA) AS COUNTDHN,(case when SUM(kh.TIEUTHU) IS NULL then 0 else SUM(kh.TIEUTHU) end) AS SANLUONG  ";
+            sql += "  FROM HOADON kh ";
+            sql += "  WHERE kh.NAM=" + nam + " AND kh.KY=" + ky;
+            sql += "  GROUP BY kh.CODH ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.CODH ";
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
             }
             catch (Exception ex)
             {
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC " + ex.Message);
             }
+
         }
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_CODH()
@@ -408,7 +533,7 @@ namespace BaoCao_Web.Class
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+                int resqult = Class.LinQConnectionTT.ExecuteCommand(sql.Replace(@"\t", " "));
                 log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
             }
             catch (Exception ex)

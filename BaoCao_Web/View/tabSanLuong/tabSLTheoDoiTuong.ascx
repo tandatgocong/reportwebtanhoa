@@ -53,10 +53,12 @@
                         <asp:ListItem Value="2">Quận Phường</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td class="style2"> <asp:Label ID="Label1" runat="server" Text="ĐỢT ĐỌC SỐ  : " 
-                        CssClass="label"></asp:Label></td>
+                <td class="style2"> 
+                    <asp:Label ID="Label1" runat="server" Text="ĐỢT ĐỌC SỐ  : " 
+                        CssClass="label" Visible="False"></asp:Label></td>
                 <td class="style3">
-                    <asp:DropDownList ID="dot" runat="server" Height="20px" Width="56px">
+                    <asp:DropDownList ID="dot" runat="server" Height="20px" Width="56px" 
+                        Visible="False">
                         <asp:ListItem>00</asp:ListItem>
                         <asp:ListItem>01</asp:ListItem>
                         <asp:ListItem>02</asp:ListItem>
@@ -81,7 +83,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="style2"> 
-                    <asp:Label ID="Label2" runat="server" Text="KỲ " 
+                    <asp:Label ID="Label2" runat="server" Text="KỲ ĐỌC SỐ" 
                         CssClass="label"></asp:Label></td>
                 <td class="style4">
                     <asp:DropDownList ID="ky" runat="server" Height="20px" Width="47px">
@@ -111,7 +113,8 @@
             </tr>
         </table>
 
- 	<div style=" color:Red;font-weight:bold;"><i>Click vào loại đối tượng để xem danh sách đhn và sản lượng 12 kỳ đọc số</i></div>
+ 	<div style=" color:Red;font-weight:bold;"><i>Click vào loại đối tượng để xem danh sách đhn và sản lượng 12 kỳ đọc số&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </i></div>
 
 	<div class="block_content">
         
@@ -119,6 +122,10 @@
               <tbody>
                   <tr class="head" >
                     <td class="style6" rowspan="2"><asp:Label ID="lbTieuDe" runat="server" Text=" "></asp:Label> 
+                        <i>
+        <asp:Button ID="btIn" runat="server" Text="IN" 
+                        CssClass="button" onclick="btIn_Click" Height="23px" 
+            Width="74px" /></i> 
                         </td>
                     <td class="style7" colspan="2">
                         <b>KỲ TRƯỚC 

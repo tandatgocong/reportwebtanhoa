@@ -103,6 +103,15 @@ namespace BaoCao_Web.View.tabSanLuong {
         protected global::System.Web.UI.WebControls.Label lbTieuDe;
         
         /// <summary>
+        /// btIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btIn;
+        
+        /// <summary>
         /// lbKyTruoc control.
         /// </summary>
         /// <remarks>

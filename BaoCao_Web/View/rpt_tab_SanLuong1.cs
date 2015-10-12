@@ -16,14 +16,14 @@ namespace BaoCao_Web.View {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_tkKinhDoanh : ReportClass {
+    public class rpt_tab_SanLuong : ReportClass {
         
-        public rpt_tkKinhDoanh() {
+        public rpt_tab_SanLuong() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_tkKinhDoanh.rpt";
+                return "rpt_tab_SanLuong.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BaoCao_Web.View {
         
         public override string FullResourceName {
             get {
-                return "BaoCao_Web.View.rpt_tkKinhDoanh.rpt";
+                return "BaoCao_Web.View.rpt_tab_SanLuong.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,25 @@ namespace BaoCao_Web.View {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nam {
+        public CrystalDecisions.Shared.IParameterField Parameter_tenbk {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_loaibk {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_tkKinhDoanh : Component, ICachedReport {
+    public class Cachedrpt_tab_SanLuong : Component, ICachedReport {
         
-        public Cachedrpt_tkKinhDoanh() {
+        public Cachedrpt_tab_SanLuong() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace BaoCao_Web.View {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_tkKinhDoanh rpt = new rpt_tkKinhDoanh();
+            rpt_tab_SanLuong rpt = new rpt_tab_SanLuong();
             rpt.Site = this.Site;
             return rpt;
         }

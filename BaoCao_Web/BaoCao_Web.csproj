@@ -480,6 +480,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\C_tab_BaoCao.cs" />
     <Compile Include="Class\LinQConnectionTT.cs" />
     <Compile Include="Class\LinQConnectionGis.cs" />
     <Compile Include="Class\C_BaoCaoCodeDS.cs" />
@@ -625,6 +626,15 @@
     </Compile>
     <Compile Include="View\QuanLyDMA_Chart.aspx.designer.cs">
       <DependentUpon>QuanLyDMA_Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\rpt_tab_SanLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\rpt_tab_SanLuong1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_tab_SanLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\tabSanLuong\CharBieuDoSL.aspx.cs">
       <DependentUpon>CharBieuDoSL.aspx</DependentUpon>
@@ -989,6 +999,10 @@
     <EmbeddedResource Include="View\rpt_DongHoHieuCu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DongHoHieuCu1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\rpt_tab_SanLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_tab_SanLuong1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\rpt_tkKinhDoanh.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
