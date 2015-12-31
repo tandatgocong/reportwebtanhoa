@@ -142,7 +142,8 @@ namespace BaoCao_Web.Class
             query += " WHERE nv.MAYDS  = ds.MAY AND ds.KY='" + ky + "' AND ds.DOT='" + dot + "'";
             query += " GROUP BY nv.MAYDS, nv.FULLNAME";
             query += " ORDER BY nv.MAYDS ASC";
-            if ("00".Equals(dot)) {
+            if ("00".Equals(dot))
+            {
                 query = "SELECT  nv.MAYDS, nv.FULLNAME, COUNT(*) AS SOLUONG , CONVERT(VARCHAR(5),MIN(GIOGHI),108) AS BATDAU,CONVERT(VARCHAR(5),MAX(GIOGHI),108) AS KETHUC ";
                 query += " FROM TB_NHANVIENDOCSO nv, DocSo_PHT.dbo.DS" + nam + "  ds ";
                 query += " WHERE nv.MAYDS  = ds.MAY AND ds.KY='" + ky + "' ";
@@ -166,7 +167,7 @@ namespace BaoCao_Web.Class
             {
                 query = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  ASC) STT,DANHBO, LOTRINH,HOTEN, (SONHA+ '' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN ";
                 query += "FROM TB_DULIEUKHACHHANG KH ";
-                query += "WHERE CONVERT(INT,SUBSTRING(RTRIM(LOTRINH),3,2))='"+nvds +"' AND KY<="+ky;
+                query += "WHERE CONVERT(INT,SUBSTRING(RTRIM(LOTRINH),3,2))='" + nvds + "' AND KY<=" + ky;
             }
             else
             {
@@ -174,6 +175,22 @@ namespace BaoCao_Web.Class
                 query += "FROM TB_DULIEUKHACHHANG KH ";
                 query += "WHERE LEFT(RTRIM(LOTRINH),2)='" + dot + "' AND CONVERT(INT,SUBSTRING(RTRIM(LOTRINH),3,2))='" + nvds + "' AND KY<=" + ky;
             }
+            return LinQConnection.getDataTable(query);
+        }
+        public static DataTable getSoThan(string sothan)
+        {
+            string query = "";
+            query = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  ASC) STT,DANHBO, LOTRINH,HOTEN, (SONHA+ ' ' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN,CHISOKYTRUOC ";
+            query += "FROM TB_DULIEUKHACHHANG KH ";
+            query += "WHERE SOTHANDH LIKE '%" + sothan + "%' ";
+            return LinQConnection.getDataTable(query);
+        }
+        public static DataTable getDiaChi(string diachi)
+        {
+            string query = "";
+            query = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  ASC) STT,DANHBO, LOTRINH,HOTEN, (SONHA+ ' ' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN,CHISOKYTRUOC ";
+            query += "FROM TB_DULIEUKHACHHANG KH ";
+            query += "WHERE (SONHA+' '+ TENDUONG) LIKE '%" + diachi + "%' ";
             return LinQConnection.getDataTable(query);
         }
     }

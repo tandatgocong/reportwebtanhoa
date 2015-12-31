@@ -59,31 +59,24 @@
                 </li>	
                 
                  <li > 
-                    <a href="QuanLyDHN.aspx?page=DHN&type=SDS" class="">SỔ ĐỌC SỐ</a>
+                    <a href="QuanLyDHN.aspx?page=DHN&type=SDS" class=""> SỔ ĐỌC SỐ</a>
                 </li>	 
                 <li> 
-                   <a  href="QuanLyDHN.aspx?page=DHN&type=TGD"  class="" >THỜI GIAN ĐỌC </a>
+                   <a  href="QuanLyDHN.aspx?page=DHN&type=TGD"  class="" > THỜI GIAN ĐỌC </a>
                 </li>	         
 
                  <li > 
-                       <a  href="tab_PhanTichHoaDon0.aspx?page=DHN"  class="" >THEO DÕI HÓA ĐƠN = 0M<sup>3</sup> </a>
+                       <a  href="tab_PhanTichHoaDon0.aspx?page=DHN"  class="" >THEO DÕI HÓA ĐƠN = 0m<sup>3</sup> </a>
                       
                 </li>	
-		            <li class="last">&nbsp;&nbsp;&nbsp; &nbsp;
-                </li>	
+              
+                <li >  <a href="QuanLyDHN.aspx?page=DHN&type=SEARCH" class=""> TRA CỨU THÔNG TIN </a>
+                 </li>	 
+		        
+                <li class="last">&nbsp;&nbsp;&nbsp; &nbsp;  </li>	
 		        </ul>
     		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-  			</li>
-  			<!--<li id="mnTintuc" class="top"><a href="QuanLyHoSoKhachHang.aspx?page=HSKH" id="HSKH" class="top_link"><span>QUẢN LÝ HỒ SƠ KHÁCH HÀNG</span>-->
-    		<!--[if gte IE 7]><!--><!--<![endif]-->
-    		<!--[if lte IE 6]><table><tr><td><![endif]-->
-    			<!--<ul class="sub_tintuc">
-    				<li><a href="#">TIN TỔNG QUÁT</a></li>
-					<li><a href="#">TIN NỘI BỘ</a></li>
-				    <li class="last"><a href="#">TIN CÔNG ĐOÀN</a></li>		           
-    			</ul>-->
-    		<!--[if lte IE 6]></td></tr></table></a><![endif]
-  			</li>-->
+  			</li>  		
   			<li id="mnTuyendung" class="top"><a href="PhanTichSanLuong.aspx?page=BDBC&type=PTTHAY" id="BDBC" class="top_link"><span>PHÂN TÍCH SẢN LƯỢNG</span></a>
             <ul class="sub_tintuc">
     				<li><a  href="PhanTichSanLuong.aspx?page=BDBC&type=PTTHAY" >THEO THAY ĐHN</a></li>
@@ -92,8 +85,7 @@
 				    <li class="last"><a  href="PhanTichSanLuong.aspx?page=BDBC&type=PTDMA" >THEO DMA</a></li>		           
     			</ul>
             </li>
-         <!-- <li id="Li1" class="top"><a href="QuanLyDMA.aspx" id="A9" class="top_link"><span>QUẢN LÝ DMA</span></a> -->
-            </li>
+         <!-- <li id="Li1" class="top"><a href="QuanLyDMA.aspx" id="A9" class="top_link"><span>QUẢN LÝ DMA</span></a> -->      
             <li id="mnLienHe" class="top"><a href="ChamCong.aspx?page=KD"  id="CHAMCONG" class="top_link"><span>CHẤM CÔNG</span></a>
              <ul class="sub_tintuc">
     				<li><a  href="ChamCong.aspx?page=KD" >THEO DÕI CHẤM CÔNG </a></li>

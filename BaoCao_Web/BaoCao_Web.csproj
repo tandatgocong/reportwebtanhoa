@@ -435,6 +435,7 @@
     <Content Include="View\QuanLyDMA.aspx" />
     <Content Include="View\PhanTichSanLuong.aspx" />
     <Content Include="View\QuanLyDMA_Chart.aspx" />
+    <Content Include="View\tabDHN\tabTraCuu.ascx" />
     <Content Include="View\tabSanLuong\CharBieuDoSL.aspx" />
     <Content Include="View\tabSanLuong\CharDMA.aspx" />
     <Content Include="View\tabSanLuong\FillDataDMA.aspx" />
@@ -635,6 +636,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_tab_SanLuong.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTraCuu.ascx.cs">
+      <DependentUpon>tabTraCuu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\tabDHN\tabTraCuu.ascx.designer.cs">
+      <DependentUpon>tabTraCuu.ascx</DependentUpon>
     </Compile>
     <Compile Include="View\tabSanLuong\CharBieuDoSL.aspx.cs">
       <DependentUpon>CharBieuDoSL.aspx</DependentUpon>

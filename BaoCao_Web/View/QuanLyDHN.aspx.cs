@@ -76,7 +76,14 @@ namespace BaoCao_Web.View
                 this.Panel1.Controls.Add(control);
                 title.Text = "THỜI GIAN BIÊN ĐỌC CHỈ SỐ  ";
             }
-
+            else if ("SEARCH".Equals(Request.Params["type"] + ""))
+            {
+                this.Panel1.Controls.Clear();
+                Control control = LoadControl("tabDHN/tabTraCuu.ascx");
+                this.Panel1.Controls.Add(control);
+                title.Text = "TRA CỨU THÔNG TIN KHÁCH HÀNG  ";
+            }
+            
             
             
         }
