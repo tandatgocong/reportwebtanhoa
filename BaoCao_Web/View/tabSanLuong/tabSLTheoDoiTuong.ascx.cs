@@ -39,7 +39,7 @@ namespace BaoCao_Web.View.tabSanLuong
             if ("1".Equals(bcTheo.SelectedValue + ""))
             {
                 Session["LoaiDT"] = "TỔ ĐỌC SỐ";
-                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO " + Session["LoaiDT"] + " KỲ " + kyds+"/"+namds;
+                Session["treport"] = "PHÂN TÍCH SẢN LƯỢNG ĐHN THEO TỔ ĐỌC SỐ  KỲ " + kyds + "/" + namds;
                 Panel1.Width = 1195;
 
                 lbTieuDe.Text = "TỔ ĐỌC SỐ";

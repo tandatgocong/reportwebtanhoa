@@ -17,19 +17,19 @@ namespace BaoCao_Web.View
         {
 
             string sql = "";
-            string title="";
+            string title = "";
             string loai = "";
             if ("TK".Equals(Request.Params["page"] + ""))
             {
                 sql = "SELECT ISNULL(kh.LOTRINH,hd.KHU) as LOTRINH,hd.DANHBO,hd.HOPDONG,ISNULL(kh.HOTEN,hd.TENKH) as HOTEN,ISNULL(kh.SONHA,hd.SONHA) as SONHA, ";
-                sql+=" ISNULL(kh.TENDUONG,hd.DUONG) as TENDUONG,ISNULL(kh.HIEUDH,'') as HIEU,ISNULL(kh.CODH,hd.CODH) as CO,ISNULL(YEAR(NGAYTHAY),'') as NAM,hd.CODE,hd.LNCC as 'TIEUTHU' ";
+                sql += " ISNULL(kh.TENDUONG,hd.DUONG) as TENDUONG,ISNULL(kh.HIEUDH,'') as HIEU,ISNULL(kh.CODH,hd.CODH) as CO,ISNULL(YEAR(NGAYTHAY),'') as NAM,hd.CODE,hd.LNCC as 'TIEUTHU' ";
                 sql += " FROM HOADONTH" + Session["tuky"] + " hd ";
-                sql+=" LEFT JOIN TB_DULIEUKHACHHANG kh ";
-                sql+=" ON kh.DANHBO = hd.DANHBO ";
-                sql+=" WHERE hd.LNCC=0 ";
-                sql+=" ORDER BY kh.LOTRINH ASC ";
+                sql += " LEFT JOIN TB_DULIEUKHACHHANG kh ";
+                sql += " ON kh.DANHBO = hd.DANHBO ";
+                sql += " WHERE hd.LNCC=0 ";
+                sql += " ORDER BY kh.LOTRINH ASC ";
 
-                title = "DANH SÁCH ĐHN TIÊU THỤ = 0 M3 KỲ " + Session["tuky"].ToString().Replace("_",@"/");
+                title = "DANH SÁCH ĐHN TIÊU THỤ = 0 M3 KỲ " + Session["tuky"].ToString().Replace("_", @"/");
 
                 CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
                 CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
@@ -79,11 +79,11 @@ namespace BaoCao_Web.View
                 sql += " WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0";
                 sql += " ORDER BY K01.KHU ASC ";
 
-                 title = "DANH SÁCH ĐHN TIÊU THỤ = 0 M3 KỲ " + Session["tuky"].ToString().Replace("_", @"/") + " SỬ DỤNG LẠI KỲ " + Session["denky"].ToString().Replace("_", @"/");
+                title = "DANH SÁCH ĐHN TIÊU THỤ = 0 M3 KỲ " + Session["tuky"].ToString().Replace("_", @"/") + " SỬ DỤNG LẠI KỲ " + Session["denky"].ToString().Replace("_", @"/");
 
-                 CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
-                 CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
-                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
+                CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
+                CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
             else if ("PS".Equals(Request.Params["page"] + ""))
@@ -106,10 +106,10 @@ namespace BaoCao_Web.View
             else if ("TU".Equals(Request.Params["page"] + ""))
             {
                 CrystalReportSource1.Report.FileName = "rpt_DSHOADO0.rpt";
-               title = Session["treport"] + "";
-               CrystalReportSource1.ReportDocument.SetDataSource((DataTable)Session["TongDS"]);
-               CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
-               CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
+                title = Session["treport"] + "";
+                CrystalReportSource1.ReportDocument.SetDataSource((DataTable)Session["TongDS"]);
+                CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
 
@@ -135,13 +135,13 @@ namespace BaoCao_Web.View
             }
             else if ("NVDS".Equals(Request.Params["page"] + ""))
             {
-                sql = Session["SQL"]+"";
+                sql = Session["SQL"] + "";
                 CrystalReportSource1.Report.FileName = "inNhanVienHD0.rpt";
                 title = Session["treport"] + "";
                 CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
                 CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
-                CrystalReportSource1.ReportDocument.SetParameterValue("ky1", Session["TU"]+"");
-                CrystalReportSource1.ReportDocument.SetParameterValue("ky2", Session["DEN"]+"");
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky1", Session["TU"] + "");
+                CrystalReportSource1.ReportDocument.SetParameterValue("ky2", Session["DEN"] + "");
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
@@ -151,7 +151,7 @@ namespace BaoCao_Web.View
                 db.Connection.Open();
                 DataSet ds = new DataSet();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(Session["SQL"]+"", db.Connection.ConnectionString);
+                SqlDataAdapter adapter = new SqlDataAdapter(Session["SQL"] + "", db.Connection.ConnectionString);
                 adapter.Fill(ds, "QP01");
 
                 adapter = new SqlDataAdapter(Session["SQL2"] + "", db.Connection.ConnectionString);
@@ -173,16 +173,37 @@ namespace BaoCao_Web.View
             {
                 CrystalReportSource1.Report.FileName = "rpt_tab_SanLuong.rpt";
                 title = Session["treport"] + "";
+                if ("CỞ ĐHN".Equals(Session["LoaiDT"]))
+                {
+                    sql = "SELECT '    '+ TODS  AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
+                    sql += " FROM W_BAOCAO_SANLUONG_MAY  ORDER BY TODS ASC ";
 
-                CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report("SELECT TODS, MAYDS as TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG FROM W_BAOCAO_SANLUONG_MAY ", "W_BAOCAO_SANLUONG"));
+                    CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report(sql, "W_BAOCAO_SANLUONG"));
+                }
+                else if ("GIÁ BIỂU".Equals(Session["LoaiDT"]))
+                {
+                    sql = "SELECT '    '+ TODS  AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
+                    sql += " FROM W_BAOCAO_SANLUONG_MAY  ORDER BY TODS ASC ";
+                    CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report(sql, "W_BAOCAO_SANLUONG"));
+                }
+                else if ("QUẬN PHƯỜNG".Equals(Session["LoaiDT"]))
+                {
+                    sql = "SELECT '    '+(CONVERT(VARCHAR(10),TODS)+'.'+CASE WHEN MAYDS<10 THEN '0'+(CONVERT(VARCHAR(10),MAYDS)) ELSE (CONVERT(VARCHAR(10),MAYDS)) END) AS TENTO, KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG";
+                    sql += " FROM W_BAOCAO_SANLUONG_MAY  ORDER BY TODS ASC, MAYDS ASC ";
+
+                    CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report(sql, "W_BAOCAO_SANLUONG"));
+                }
+                else if ("TỔ ĐỌC SỐ".Equals(Session["LoaiDT"]))
+                {
+
+                    CrystalReportSource1.ReportDocument.SetDataSource(Class.C_tab_BaoCao.tb_Report2("SELECT * FROM W_BAOCAO_SANLUONG ", "W_BAOCAO_SANLUONG"));
+                }
+
                 CrystalReportSource1.ReportDocument.SetParameterValue("tenbk", title);
-                CrystalReportSource1.ReportDocument.SetParameterValue("loaibk", Session["LoaiDT"]+ "");
+                CrystalReportSource1.ReportDocument.SetParameterValue("loaibk", Session["LoaiDT"] + "");
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
-
-            
-           
         }
     }
 }

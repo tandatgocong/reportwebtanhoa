@@ -11,11 +11,20 @@ namespace BaoCao_Web.Class
     public class C_tab_BaoCao
     {
 
-
+        static log4net.ILog log = log4net.LogManager.GetLogger("File");
         public static DataSet tb_Report(string query, string table)
         {
             DataSet ds = new DataSet();
             ThuTienDataContext db = new ThuTienDataContext();
+            db.Connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, table);
+            return ds;
+        }
+        public static DataSet tb_Report2(string query, string table)
+        {
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, table);
