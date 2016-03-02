@@ -427,3 +427,15 @@
 2016-01-04 09:05:02,759 [5808] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
 2016-01-04 09:05:02,767 [5808] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
 2016-01-04 09:05:02,777 [5808] INFO  File --------------------------------------------------------
+2016-02-24 10:11:54,967 [1120] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:11:55,050 [1120] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:06,320 [6348] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:06,373 [6348] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:10,888 [1256] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2016-02-24 10:13:10,938 [1256] ERROR File OleDbConnection getDataTableNo value given for one or more required parameters.
+2016-02-24 10:13:14,750 [1256] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:14,807 [1256] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:20,568 [6348] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:13:20,624 [6348] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:15:30,417 [6932] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-02-24 10:15:30,449 [6932] ERROR File OleDbConnection getDataTableJoin expression not supported.

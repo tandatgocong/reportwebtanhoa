@@ -40,11 +40,16 @@ namespace BaoCao_Web.View
 
             /* ---------------------- */
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-            string sql = " SELECT info.UserFullCode, info.UserFullName, dt.Dept";
-            sql += " FROM UserInfo info,Dept dt WHERE info.IDD=dt.IDD ";
+            //string sql = " SELECT info.UserFullCode, info.UserFullName, dt.Dept";
+            //sql += " FROM UserInfo info,Dept dt WHERE info.IDD=dt.IDD ";
+            string sql = "  SELECT info.UserFullCode, info.UserFullName, dt.Dept  ";
+        sql += "  FROM UserInfo info ";
+       sql += "   LEFT JOIN Dept dt ";
+      sql += "    ON  info.IDD=dt.IDD ";
+
             if (!"1".Equals(cbPhongBanDoi.SelectedValue))
             {
-                sql += " AND info.IDD=" + cbPhongBanDoi.SelectedValue;
+                sql += " WHERE info.IDD=" + cbPhongBanDoi.SelectedValue;
             }
             //if (ckNV.Checked)
             //{
@@ -68,11 +73,15 @@ namespace BaoCao_Web.View
         {
             /* ---------------------- */
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-            string sql = " SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dp.Dept ";
-            sql += " FROM UserInfo info ,Dept dp WHERE info.IDD =dp.IDD  ";
+            //string sql = " SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dp.Dept ";
+            //sql += " FROM UserInfo info ,Dept dp WHERE info.IDD =dp.IDD  ";
+            string sql = "  SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dt.Dept   ";
+            sql += "  FROM UserInfo info ";
+            sql += "   LEFT JOIN Dept dt ";
+            sql += "    ON  info.IDD=dt.IDD ";
             if (!"1".Equals(cbPhongBanDoi.SelectedValue))
             {
-                sql += " AND info.IDD=" + cbPhongBanDoi.SelectedValue;
+                sql += " WHERE info.IDD=" + cbPhongBanDoi.SelectedValue;
             }
             //if (ckNV.Checked)
             //{
