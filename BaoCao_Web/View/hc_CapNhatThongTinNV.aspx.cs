@@ -27,54 +27,47 @@ namespace BaoCao_Web.View
         }
         public void PageLoad()
         {
-           
+
             cbPhongBanDoi.DataSource = Class.LinQConnection.getDataTable("SELECT * FROM TCHC_PHONGBAN  ORDER BY ID ASC ");
-            cbPhongBanDoi.DataTextField = "MAPHONG";
+            cbPhongBanDoi.DataTextField = "TENPHONG";
             cbPhongBanDoi.DataValueField = "ID";
             cbPhongBanDoi.DataBind();
 
             cbPhongBanDoi0.DataSource = Class.LinQConnection.getDataTable("SELECT * FROM TCHC_PHONGBAN WHERE ID <> 1 ORDER BY ID ASC ");
-            cbPhongBanDoi0.DataTextField = "MAPHONG";
+            cbPhongBanDoi0.DataTextField = "TENPHONG";
             cbPhongBanDoi0.DataValueField = "ID";
             cbPhongBanDoi0.DataBind();
 
-            /* ---------------------- */
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-            //string sql = " SELECT info.UserFullCode, info.UserFullName, dt.Dept";
-            //sql += " FROM UserInfo info,Dept dt WHERE info.IDD=dt.IDD ";
+           
             string sql = "  SELECT info.UserFullCode, info.UserFullName, dt.Dept  ";
-        sql += "  FROM UserInfo info ";
-       sql += "   LEFT JOIN Dept dt ";
-      sql += "    ON  info.IDD=dt.IDD ";
+            sql += "  FROM UserInfo info ";
+            sql += "   LEFT JOIN Dept dt ";
+            sql += "    ON  info.IDD=dt.IDD ";
 
             if (!"1".Equals(cbPhongBanDoi.SelectedValue))
             {
                 sql += " WHERE info.IDD=" + cbPhongBanDoi.SelectedValue;
             }
-            //if (ckNV.Checked)
-            //{
-            //    sql += " AND info.UserLoaiNV='VP' ";
-            //}
-            //if (ckCN.Checked)
-            //{
-            //    sql += " AND info.UserLoaiNV='CN' ";
-            //}
+           
             sql += " ORDER BY info.IDD ASC, info.UserFullCode ASC ";
             cpNhanVien.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
             cpNhanVien.DataTextField = "UserFullName";
             cpNhanVien.DataValueField = "UserFullCode";
             cpNhanVien.DataBind();
 
-
         }
-
-      
-        protected void cbPhongBanDoi_SelectedIndexChanged(object sender, EventArgs e)
+        void setSTT()
         {
-            /* ---------------------- */
+            for (int i = 0; i < GridView1.Rows.Count; i++)
+            {
+                GridView1.Rows[i].Cells[0].Text = (i + 1)+"";
+            }
+        }
+        void load2()
+        {   /* ---------------------- */
             string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-            //string sql = " SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dp.Dept ";
-            //sql += " FROM UserInfo info ,Dept dp WHERE info.IDD =dp.IDD  ";
+           
             string sql = "  SELECT info.UserFullCode, info.UserFullName,info.UserLoaiNV,dt.Dept   ";
             sql += "  FROM UserInfo info ";
             sql += "   LEFT JOIN Dept dt ";
@@ -83,14 +76,7 @@ namespace BaoCao_Web.View
             {
                 sql += " WHERE info.IDD=" + cbPhongBanDoi.SelectedValue;
             }
-            //if (ckNV.Checked)
-            //{
-            //    sql += " AND info.UserLoaiNV='VP' ";
-            //}
-            //if (ckCN.Checked)
-            //{
-            //    sql += " AND info.UserLoaiNV='CN' ";
-            //}
+            
             sql += " ORDER BY info.UserFullCode ASC ";
             cpNhanVien.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
             cpNhanVien.DataTextField = "UserFullName";
@@ -98,6 +84,13 @@ namespace BaoCao_Web.View
             cpNhanVien.DataBind();
             GridView1.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
             GridView1.DataBind();
+
+            setSTT();
+        }
+      
+        protected void cbPhongBanDoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load2();
 
         }
 
@@ -133,7 +126,27 @@ namespace BaoCao_Web.View
                 this.lbThanhCong.Text = "Cập Nhật Thất Bại.";
 
             }
+            load2();
            
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string sql = " DELETE FROM UserInfo  WHERE UserFullCode='" + e.CommandArgument.ToString() + "'";
+            string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
+
+            try
+            {
+                Class.OledbConnection.ExecuteCommand(connectionString, sql);
+                this.lbThanhCong.Text = "Xóa Thành Công.";
+            }
+            catch (Exception)
+            {
+                lbThanhCong.ForeColor = Color.Red;
+                this.lbThanhCong.Text = "Xóa Thất Bại.";
+
+            }
+            load2();
         }
         
        

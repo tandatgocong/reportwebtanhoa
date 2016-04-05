@@ -142,7 +142,7 @@
                         <td class="style16">
                             </td>
                         <td class="style17">
-                        </td>
+                            &nbsp;</td>
                         <td class="style17" colspan="2">
                             <asp:Button ID="btXemBangKe" runat="server" CssClass="button" 
                                 onclick="btXemBangKe_Click" Text="CẬP NHẬT" Height="32px" Width="139px" />
@@ -170,8 +170,11 @@
                                     AutoGenerateColumns="False" CellPadding="4" 
                                     Width="57%" BackColor="White" BorderColor="#CC9966" BorderStyle="None" 
                                     BorderWidth="1px" style="text-align: center; margin-right: 31px;" 
-                                PageSize="1000">
+                                PageSize="1000" onrowcommand="GridView1_RowCommand">
                                     <Columns>
+                                        <asp:BoundField HeaderText="STT">
+                                        <ItemStyle Width="50px" />
+                                        </asp:BoundField>
                                         <asp:BoundField DataField="UserFullCode" HeaderText="MÃ NV">
                                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="90px" />
                                         </asp:BoundField>
@@ -182,6 +185,15 @@
                                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Dept" HeaderText="PHÒNG BAN" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="TRONGAI" runat="server" 
+                                                    CommandArgument='<%# Bind("UserFullCode") %>' CommandName="TRONGAI" 
+                                                    ForeColor="Blue" 
+                                                    onclientclick="if(confirm('Bạn có muốn xóa ?') == false)return false;">Xóa</asp:LinkButton>
+                                            </ItemTemplate>
+                                            <ItemStyle Width="50px" />
+                                        </asp:TemplateField>
                                     </Columns>
                                     <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
                                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
