@@ -15,7 +15,7 @@
         }
         .style4
         {
-            width: 165px;
+            width: 216px;
         }
         .style5
         {
@@ -61,8 +61,8 @@
             <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px; margin-left:370px;" class="table_list_1" >
         <tbody>
            <tr class="head1" style="height:17px;";>
-               <td class="style2" style="border-right:1px #FF0000 solid;  background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000	 solid; " colspan="2">
-                <center> TỔNG CỘNG CỔ ĐÔNG THAM DỰ </center></td>
+               <td  style="border-right:1px #FF0000 solid; text-align:center ; background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000 solid; " colspan="2">
+                TỔNG CỘNG CỔ ĐÔNG THAM DỰ </td>
              </tr>
            <tr class="head1">
                <td class="style5" 

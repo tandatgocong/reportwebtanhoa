@@ -103,6 +103,51 @@ namespace DHCD_KiemPhieu.View {
         protected global::System.Web.UI.WebControls.RadioButtonList r3;
         
         /// <summary>
+        /// r4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList r4;
+        
+        /// <summary>
+        /// r5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList r5;
+        
+        /// <summary>
+        /// r6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList r6;
+        
+        /// <summary>
+        /// r7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList r7;
+        
+        /// <summary>
+        /// r8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList r8;
+        
+        /// <summary>
         /// btSubmit control.
         /// </summary>
         /// <remarks>

@@ -23,11 +23,12 @@ namespace DHCD_KiemPhieu.View
             {
                 sql = Session["SQL"] + "";
                 CrystalReportSource1.Report.FileName = "inKQBieuQuyet.rpt";
-                //title = Session["treport"] + "";
-                //CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
-                //CrystalReportSource1.ReportDocument.SetParameterValue("title", title);
-                //CrystalReportSource1.ReportDocument.SetParameterValue("ky1", Session["TU"] + "");
-                //CrystalReportSource1.ReportDocument.SetParameterValue("ky2", Session["DEN"] + "");
+
+                CrystalReportSource1.ReportDocument.SetDataSource((DataTable)Session["TABLE"]);
+           
+                CrystalReportSource1.ReportDocument.SetParameterValue("TC", Session["TC"] + "");
+                CrystalReportSource1.ReportDocument.SetParameterValue("TS", Session["TS"] + "");
+                CrystalReportSource1.ReportDocument.SetParameterValue("TR", Session["TR"] + "");
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "KET_QUA_BIEU_QUYET");
 
             }

@@ -30,7 +30,8 @@ namespace DHCD_KiemPhieu.View
             GridView1.DataSource = Class.C_DhCoDong.getDSCoDongThamDu("");
             GridView1.DataBind();
             int sl = GridView1.Rows.Count;
-            tc_sl.Text = sl + ""; ;
+            tc_sl.Text = sl + "";
+
             tc_cp.Text = String.Format("{0:0,0}", _cpTC);
 
             double tl = _cpTC / Class.LinQConnection.ReturnResult("SELECT SUM(TONGCD) FROM DSCODONG");

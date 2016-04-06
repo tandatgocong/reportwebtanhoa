@@ -580,3 +580,11 @@ The statement has been terminated.
 2016-03-18 08:16:30,059 [7248] ERROR File LinQConnection getDataTableDivide by zero error encountered.
 2016-03-18 08:16:40,146 [1948] ERROR File LinQConnection getDataTableDivide by zero error encountered.
 2016-03-30 10:17:03,300 [3668] ERROR File LinQConnection getDataTableExecuteReader: CommandText property has not been initialized
+2016-04-05 16:48:36,440 [10004] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-04-05 16:48:43,156 [10004] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-04-06 13:31:45,203 [6116] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-04-06 14:09:04,687 [7084] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
+The statement has been terminated.

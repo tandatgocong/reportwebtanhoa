@@ -356,6 +356,11 @@
     <Compile Include="Class\Format.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="DataBase\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="iisstart.aspx.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -455,6 +460,17 @@
   <ItemGroup>
     <Content Include="App_Browsers\BrowserFile1.browser" />
     <None Include="ckeditor\.htaccess" />
+    <None Include="DataBase\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataBase\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataBase\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="DataBase\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
@@ -485,7 +501,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>18514</DevelopmentServerPort>
+          <DevelopmentServerPort>12890</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
