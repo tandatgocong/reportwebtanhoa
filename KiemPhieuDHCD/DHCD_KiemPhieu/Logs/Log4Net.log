@@ -611,3 +611,5 @@ The statement has been terminated.
 2016-04-07 10:29:31,732 [5588] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
 2016-04-07 12:00:40,301 [4548] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
 2016-04-07 12:00:40,385 [4548] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-07 13:26:24,827 [6800] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 13:26:24,969 [6800] ERROR File LinQConnection getDataTableIncorrect syntax near '='.

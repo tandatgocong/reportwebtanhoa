@@ -14,14 +14,14 @@ namespace KETQUa
         public slideKiemPhieu()
         {
             InitializeComponent();
-            l1.Text = "Thông qua Báo cáo hoạt động của Hội đồng quản trị năm 2015 \n và kế hoạch hoạt động năm 2016";
+            l1.Text = "Thông qua Báo cáo hoạt động của Hội đồng quản trị \n năm 2015 và kế hoạch hoạt động năm 2016";
             l2.Text = "Thông qua Báo cáo hoạt động của Ban kiểm soát\n Công ty CP Cấp nước Tân Hòa năm 2015";
-            l3.Text = "Thông qua Báo cáo tổng kết hoạt động sản xuất kinh doanh năm 2015\n và Phương hướng hoạt động sản xuất kinh doanh năm 2016";
-            l4.Text = "Thông qua Báo cáo tài chính tóm tắt năm 2015 (đã kiểm toán)\n và Kế hoạch tài chính năm 2016";
-            l5.Text = "Thông qua Tờ trình sửa đổi, bổ sung Điều lệ Công ty \n theo Luật doanh nghiệp năm 2014";
-            l6.Text = "Thông qua Ủy quyền cho HĐQT lựa chọn đơn vị kiểm toán năm 2016";
+            l3.Text = "Thông qua Báo cáo tổng kết hoạt động sản xuất \n kinh doanh năm 2015 và Phương hướng \nhoạt động  sản xuất kinh doanh năm 2016";
+            l4.Text = "Thông qua Báo cáo tài chính tóm tắt năm 2015\n (đã kiểm toán) và Kế hoạch tài chính năm 2016";
+            l5.Text = "Thông qua Tờ trình sửa đổi,bổ sung Điều lệ Công ty\n theo Luật doanh nghiệp năm 2014";
+            l6.Text = "Thông qua Ủy quyền cho HĐQT\n lựa chọn đơn vị kiểm toán năm 2016";
             l7.Text = "Thông qua Tờ trình phương án phân phối lợi nhuận,\n trích lập các quỹ và chi cổ tức năm 2015";
-            l8.Text = "Thông qua Báo cáo  thù lao của HĐQT, BKS, Thư ký năm 2015 \nvà Kế hoạch thù lao HĐQT, BKS, Thư ký năm 2015";
+            l8.Text = "Thông qua Báo cáo  thù lao của HĐQT, BKS, \nThư ký năm 2015 và Kế hoạch thù lao HĐQT, \nBKS, Thư ký năm 2015";
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -54,10 +54,6 @@ namespace KETQUa
         }
 
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         public void LoadForm()
         {
             this.lbThamDu.Text = String.Format("{0:0,0}", LinQConnection.ReturnResult("SELECT COUNT(TONGCD) FROM DSCODONG_THAMDU"));
@@ -358,5 +354,37 @@ namespace KETQUa
         {
             panel37.Visible = false;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void _1C1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _1C3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _1S1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _1T1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void slCoDong_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

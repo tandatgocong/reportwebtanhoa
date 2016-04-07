@@ -15,7 +15,7 @@ namespace KETQUa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new slideKiemPhieu());
+            Application.Run(new CDThamDu());
         }
     }
 }

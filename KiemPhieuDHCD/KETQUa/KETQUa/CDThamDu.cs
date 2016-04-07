@@ -40,5 +40,11 @@ namespace KETQUa
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            slideKiemPhieu o = new slideKiemPhieu();
+            o.ShowDialog();
+        }
     }
 }
