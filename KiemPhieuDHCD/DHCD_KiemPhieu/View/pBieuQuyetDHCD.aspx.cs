@@ -70,14 +70,15 @@ namespace DHCD_KiemPhieu.View
         public void LoadKhongDongY()
         {
 
-            string sql = " SELECT kp.ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  desc) [STT],cd.STTCD, cd.MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, cd.TONGCD, CASE WHEN C1=1 THEN N'Đồng ý' ELSE CASE WHEN C1=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C1, ";
-            sql += " CASE WHEN C2=1 THEN N'Đồng ý' ELSE CASE WHEN C2=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C2,";
-	        sql += " CASE WHEN C3=1 THEN N'Đồng ý' ELSE CASE WHEN C3=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C3,";
-            sql += " CASE WHEN C4=1 THEN N'Đồng ý' ELSE CASE WHEN C4=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C4,";
-            sql += " CASE WHEN C5=1 THEN N'Đồng ý' ELSE CASE WHEN C5=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C5,";
-            sql += " CASE WHEN C6=1 THEN N'Đồng ý' ELSE CASE WHEN C6=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C6,";
-            sql += " CASE WHEN C7=1 THEN N'Đồng ý' ELSE CASE WHEN C7=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C7,";
-            sql += " CASE WHEN C8=1 THEN N'Đồng ý' ELSE CASE WHEN C8=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END as C8";
+            string sql = " SELECT kp.ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  desc) [STT],cd.STTCD, cd.MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, cd.TONGCD,";
+            sql += " CASE WHEN C1=4 THEN N'Không hợp lệ' ELSE CASE WHEN C1=1 THEN N'Đồng ý' ELSE CASE WHEN C1=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C1, ";
+            sql += " CASE WHEN C2=4 THEN N'Không hợp lệ' ELSE CASE WHEN C2=1 THEN N'Đồng ý' ELSE CASE WHEN C2=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C2,";
+            sql += " CASE WHEN C3=4 THEN N'Không hợp lệ' ELSE CASE WHEN C3=1 THEN N'Đồng ý' ELSE CASE WHEN C3=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C3,";
+            sql += " CASE WHEN C4=4 THEN N'Không hợp lệ' ELSE CASE WHEN C4=1 THEN N'Đồng ý' ELSE CASE WHEN C4=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C4,";
+            sql += " CASE WHEN C5=4 THEN N'Không hợp lệ' ELSE CASE WHEN C5=1 THEN N'Đồng ý' ELSE CASE WHEN C5=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C5,";
+            sql += " CASE WHEN C6=4 THEN N'Không hợp lệ' ELSE CASE WHEN C6=1 THEN N'Đồng ý' ELSE CASE WHEN C6=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C6,";
+            sql += " CASE WHEN C7=4 THEN N'Không hợp lệ' ELSE CASE WHEN C7=1 THEN N'Đồng ý' ELSE CASE WHEN C7=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C7,";
+            sql += " CASE WHEN C8=4 THEN N'Không hợp lệ' ELSE CASE WHEN C8=1 THEN N'Đồng ý' ELSE CASE WHEN C8=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C8";
             sql += " FROM DSCODONG_THAMDU cd, BIEUQUYET kp ";
             sql += " WHERE cd.MACD=kp.MACD AND LANBQ= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBQ,103)='" + this.tungay.Text + "'  ";
             DataTable dt = Class.LinQConnection.getDataTable(sql);

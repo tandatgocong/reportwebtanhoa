@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace KETQUa
 {
-    public partial class Form1 : Form
+    public partial class CDThamDu : Form
     {
         int _ticks = 0;
-        public Form1()
+        public CDThamDu()
         {
             InitializeComponent();
             FormLoad();
@@ -34,6 +34,11 @@ namespace KETQUa
             _ticks++;
             if (_ticks % 10 == 0)
                 FormLoad();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

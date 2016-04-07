@@ -111,7 +111,7 @@
                                             <asp:DropDownList ID="DropDownList1" runat="server" Height="25px" Width="43px" 
                                                 AutoPostBack="True" 
                                                 onselectedindexchanged="DropDownList1_SelectedIndexChanged">
-                                                <asp:ListItem>0</asp:ListItem>
+                                                <asp:ListItem>----</asp:ListItem>
                                                 <asp:ListItem>1</asp:ListItem>
                                                 <asp:ListItem>2</asp:ListItem>
                                                 <asp:ListItem Value="3">3</asp:ListItem>
@@ -208,10 +208,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid; margin-bottom:10px;">
                             <asp:RadioButtonList ID="r1" runat="server" Height="16px" 
-                                RepeatDirection="Horizontal" Width="445px">
+                                RepeatDirection="Horizontal" Width="501px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -233,10 +234,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r2" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="14px">
+                                Width="496px" Height="14px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -258,10 +260,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r3" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px">
+                                Width="495px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -284,10 +287,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r4" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="14px">
+                                Width="495px" Height="14px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -310,10 +314,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r5" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="16px">
+                                Width="499px" Height="16px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -334,10 +339,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r6" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="16px">
+                                Width="494px" Height="16px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -360,10 +366,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r7" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="14px">
+                                Width="503px" Height="14px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -386,10 +393,11 @@
                         <td class="style11" 
                             style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                             <asp:RadioButtonList ID="r8" runat="server" RepeatDirection="Horizontal" 
-                                Width="444px" Height="14px">
+                                Width="498px" Height="14px">
                                 <asp:ListItem Value="1">Đồng  ý</asp:ListItem>
                                 <asp:ListItem Value="2">Không đồng ý</asp:ListItem>
                                 <asp:ListItem Value="3">Không có ý kiến</asp:ListItem>
+                                <asp:ListItem Value="4">Không hợp lệ</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -506,6 +514,11 @@
                                     style="border-right:1px #FF0000 solid; height:40px; font-size:large; border-bottom: 2px #FF0000 solid " 
                                     colspan="3">
                                     <center>Không có ý kiến</center></td>
+                                <td class="style21" colspan="3" 
+                                    style="border-right:1px #FF0000 solid; height:40px; font-size:large; border-bottom: 2px #FF0000 solid ">
+                                    <center>
+                                        Không hợp lệ</center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -568,6 +581,26 @@
                                         <asp:Label ID="t7" runat="server" Font-Size="Large" ForeColor="Red" 
                                             Text='<%# Eval("_1T3") %>'></asp:Label></center>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="c25" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_1C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; height: 40px; text-align: right;">
+                                    <asp:Label ID="s27" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_1S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="t25" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_1T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -579,8 +612,11 @@
                                     2015</td>
                                 <td class="style23" 
                                     
+                                    
+                                    
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
-                                   <center><asp:Label ID="c2" runat="server" Font-Size="Large" ForeColor="Red" 
+                                   <center>
+                                       <asp:Label ID="c2" runat="server" Font-Size="Large" ForeColor="Red" 
                                            Text='<%# Eval("_2C1") %>'></asp:Label></center>
                                 </td>
                                 <td class="style24" 
@@ -636,6 +672,27 @@
                                         <asp:Label ID="t8" runat="server" Font-Size="Large" ForeColor="Red" 
                                             Text='<%# Eval("_2T3") %>'></asp:Label></center>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="c26" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_2C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; height: 40px; text-align: right;">
+                                    <asp:Label ID="s28" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_2S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="t26" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_2T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -646,6 +703,8 @@
                                     Thông qua Báo cáo tổng kết hoạt động sản xuất kinh doanh năm 2015 và Phương 
                                     hướng hoạt động sản xuất kinh doanh năm 2016</td>
                                 <td class="style23" 
+                                    
+                                    
                                     
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
                                     <center>
@@ -701,6 +760,27 @@
                                         <asp:Label ID="t9" runat="server" Font-Size="Large" ForeColor="Red" 
                                             Text='<%# Eval("_3T3") %>'></asp:Label></center>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="c27" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_3C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; height: 40px; text-align: right;">
+                                    <asp:Label ID="s29" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_3S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="t27" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_3T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -711,8 +791,11 @@
                                     style="border-right:1px #FF0000 solid; border-bottom: 2px #FF0000 solid">Thông qua Báo cáo tài chính tóm tắt năm 2015 (đã kiểm toán) và Kế hoạch tài 
                                     chính năm 2016</td>
                                 <td class="style23" 
+                                    
+                                    
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
-                                   <center> <asp:Label ID="c10" runat="server" Font-Size="Large" ForeColor="Red" 
+                                   <center> 
+                                       <asp:Label ID="c10" runat="server" Font-Size="Large" ForeColor="Red" 
                                         style="text-align: center" Text='<%# Eval("_4C1") %>'></asp:Label></center>
                                 </td>
                                 <td class="style24" 
@@ -756,6 +839,27 @@
                                     <asp:Label ID="t20" runat="server" Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_4T3") %>'></asp:Label>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="c28" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_4C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: right; height: 40px;">
+                                    <asp:Label ID="s30" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_4S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="t28" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_4T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -765,6 +869,8 @@
                                 <td class="style22" 
                                     style="border-right:1px #FF0000 solid; border-bottom: 2px #FF0000 solid">Thông qua Tờ trình sửa đổi, bổ sung Điều lệ Công ty theo Luật doanh nghiệp năm 2014</td>
                                 <td class="style23" 
+                                    
+                                    
                                     
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
                                     <asp:Label ID="c11" runat="server" Font-Size="Large" ForeColor="Red" 
@@ -811,6 +917,27 @@
                                     <asp:Label ID="t21" runat="server" Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_5T3") %>' style="text-align: center"></asp:Label>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="c29" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_5C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: right; height: 40px;">
+                                    <asp:Label ID="s31" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_5S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="t29" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_5T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -821,6 +948,8 @@
                                     style="border-right:1px #FF0000 solid; border-bottom: 2px #FF0000 solid">
                                     Thông qua Ủy quyền cho HĐQT lựa chọn đơn vị kiểm toán năm 2016</td>
                                 <td class="style23" 
+                                    
+                                    
                                     
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
                                     <asp:Label ID="c12" runat="server" Font-Size="Large" ForeColor="Red" 
@@ -867,6 +996,27 @@
                                     <asp:Label ID="t22" runat="server" Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_6T3") %>'></asp:Label>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="c30" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_6C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: right; height: 40px;">
+                                    <asp:Label ID="s32" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_6S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
+                                    <center>
+                                        <asp:Label ID="t30" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_6T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -878,6 +1028,8 @@
                                     Thông qua Tờ trình phương án phân phối lợi nhuận, trích lập các quỹ và chi cổ 
                                     tức năm 2015</td>
                                 <td class="style23" 
+                                    
+                                    
                                     
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; text-align: center;">
                                     <asp:Label ID="c13" runat="server" Font-Size="Large" ForeColor="Red" 
@@ -923,6 +1075,28 @@
                                    <center> <asp:Label ID="t23" runat="server" Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_7T3") %>'></asp:Label></center>
                                 </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="c31" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_7C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; height: 40px; text-align: right;">
+                                    <asp:Label ID="s33" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_7S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; ">
+                                    <center>
+                                        <asp:Label ID="t31" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_7T4") %>'></asp:Label>
+                                    </center>
+                                </td>
                             </tr>
                             <tr ;="" class="head1">
                                 <td class="style30" 
@@ -934,8 +1108,12 @@
                                     Thông qua Báo cáo&nbsp; thù lao của HĐQT, BKS, Thư ký năm 2015 và Kế hoạch thù lao 
                                     HĐQT, BKS, Thư ký năm 2015</td>
                                 <td class="style23" 
+                                    
+                                    
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
-                                  <center>  <asp:Label ID="c14" runat="server" Font-Size="Large" ForeColor="Red" 
+                                  <center>  
+                                      <asp:Label ID="c14" runat="server" 
+                                          Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_8C1") %>'></asp:Label></center>
                                 </td>
                                 <td class="style24" 
@@ -977,6 +1155,26 @@
                                     style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid"><center>
                                     <asp:Label ID="t24" runat="server" Font-Size="Large" ForeColor="Red" 
                                         Text='<%# Eval("_8T3") %>'></asp:Label></center>
+                                </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="c32" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_8C4") %>'></asp:Label>
+                                    </center>
+                                </td>
+                                <td class="style24" 
+                                    
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid; height: 40px; text-align: right;">
+                                    <asp:Label ID="s34" runat="server" Font-Size="Large" ForeColor="Red" 
+                                        Text='<%# Eval("_8S4","{0:0,0}") %>'></asp:Label>
+                                </td>
+                                <td class="style23" 
+                                    style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid">
+                                    <center>
+                                        <asp:Label ID="t32" runat="server" Font-Size="Large" ForeColor="Red" 
+                                            Text='<%# Eval("_8T4") %>'></asp:Label>
+                                    </center>
                                 </td>
                             </tr>
                         </table>

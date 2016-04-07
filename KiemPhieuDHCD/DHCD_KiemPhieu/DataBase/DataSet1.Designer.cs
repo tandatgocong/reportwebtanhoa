@@ -297,6 +297,12 @@ namespace DHCD_KiemPhieu.DataBase {
             
             private global::System.Data.DataColumn column_1T3;
             
+            private global::System.Data.DataColumn column_1C4;
+            
+            private global::System.Data.DataColumn column_1S4;
+            
+            private global::System.Data.DataColumn column_1T4;
+            
             private global::System.Data.DataColumn column_2C1;
             
             private global::System.Data.DataColumn column_2S1;
@@ -314,6 +320,12 @@ namespace DHCD_KiemPhieu.DataBase {
             private global::System.Data.DataColumn column_2S3;
             
             private global::System.Data.DataColumn column_2T3;
+            
+            private global::System.Data.DataColumn column_2C4;
+            
+            private global::System.Data.DataColumn column_2S4;
+            
+            private global::System.Data.DataColumn column_2T4;
             
             private global::System.Data.DataColumn column_3C1;
             
@@ -333,6 +345,12 @@ namespace DHCD_KiemPhieu.DataBase {
             
             private global::System.Data.DataColumn column_3T3;
             
+            private global::System.Data.DataColumn column_3C4;
+            
+            private global::System.Data.DataColumn column_3S4;
+            
+            private global::System.Data.DataColumn column_3T4;
+            
             private global::System.Data.DataColumn column_4C1;
             
             private global::System.Data.DataColumn column_4S1;
@@ -350,6 +368,12 @@ namespace DHCD_KiemPhieu.DataBase {
             private global::System.Data.DataColumn column_4S3;
             
             private global::System.Data.DataColumn column_4T3;
+            
+            private global::System.Data.DataColumn column_4C4;
+            
+            private global::System.Data.DataColumn column_4S4;
+            
+            private global::System.Data.DataColumn column_4T4;
             
             private global::System.Data.DataColumn column_5C1;
             
@@ -369,6 +393,12 @@ namespace DHCD_KiemPhieu.DataBase {
             
             private global::System.Data.DataColumn column_5T3;
             
+            private global::System.Data.DataColumn column_5C4;
+            
+            private global::System.Data.DataColumn column_5S4;
+            
+            private global::System.Data.DataColumn column_5T4;
+            
             private global::System.Data.DataColumn column_6C1;
             
             private global::System.Data.DataColumn column_6S1;
@@ -386,6 +416,12 @@ namespace DHCD_KiemPhieu.DataBase {
             private global::System.Data.DataColumn column_6S3;
             
             private global::System.Data.DataColumn column_6T3;
+            
+            private global::System.Data.DataColumn column_6C4;
+            
+            private global::System.Data.DataColumn column_6S4;
+            
+            private global::System.Data.DataColumn column_6T4;
             
             private global::System.Data.DataColumn column_7C1;
             
@@ -405,6 +441,12 @@ namespace DHCD_KiemPhieu.DataBase {
             
             private global::System.Data.DataColumn column_7T3;
             
+            private global::System.Data.DataColumn column_7C4;
+            
+            private global::System.Data.DataColumn column_7S4;
+            
+            private global::System.Data.DataColumn column_7T4;
+            
             private global::System.Data.DataColumn column_8C1;
             
             private global::System.Data.DataColumn column_8S1;
@@ -422,6 +464,12 @@ namespace DHCD_KiemPhieu.DataBase {
             private global::System.Data.DataColumn column_8S3;
             
             private global::System.Data.DataColumn column_8T3;
+            
+            private global::System.Data.DataColumn column_8C4;
+            
+            private global::System.Data.DataColumn column_8S4;
+            
+            private global::System.Data.DataColumn column_8T4;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -530,6 +578,30 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _1C4Column {
+                get {
+                    return this.column_1C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _1S4Column {
+                get {
+                    return this.column_1S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _1T4Column {
+                get {
+                    return this.column_1T4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn _2C1Column {
                 get {
                     return this.column_2C1;
@@ -597,6 +669,30 @@ namespace DHCD_KiemPhieu.DataBase {
             public global::System.Data.DataColumn _2T3Column {
                 get {
                     return this.column_2T3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _2C4Column {
+                get {
+                    return this.column_2C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _2S4Column {
+                get {
+                    return this.column_2S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _2T4Column {
+                get {
+                    return this.column_2T4;
                 }
             }
             
@@ -674,6 +770,30 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _3C4Column {
+                get {
+                    return this.column_3C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _3S4Column {
+                get {
+                    return this.column_3S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _3T4Column {
+                get {
+                    return this.column_3T4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn _4C1Column {
                 get {
                     return this.column_4C1;
@@ -741,6 +861,30 @@ namespace DHCD_KiemPhieu.DataBase {
             public global::System.Data.DataColumn _4T3Column {
                 get {
                     return this.column_4T3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _4C4Column {
+                get {
+                    return this.column_4C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _4S4Column {
+                get {
+                    return this.column_4S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _4T4Column {
+                get {
+                    return this.column_4T4;
                 }
             }
             
@@ -818,6 +962,30 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _5C4Column {
+                get {
+                    return this.column_5C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _5S4Column {
+                get {
+                    return this.column_5S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _5T4Column {
+                get {
+                    return this.column_5T4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn _6C1Column {
                 get {
                     return this.column_6C1;
@@ -885,6 +1053,30 @@ namespace DHCD_KiemPhieu.DataBase {
             public global::System.Data.DataColumn _6T3Column {
                 get {
                     return this.column_6T3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _6C4Column {
+                get {
+                    return this.column_6C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _6S4Column {
+                get {
+                    return this.column_6S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _6T4Column {
+                get {
+                    return this.column_6T4;
                 }
             }
             
@@ -962,6 +1154,30 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _7C4Column {
+                get {
+                    return this.column_7C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _7S4Column {
+                get {
+                    return this.column_7S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _7T4Column {
+                get {
+                    return this.column_7T4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn _8C1Column {
                 get {
                     return this.column_8C1;
@@ -1034,6 +1250,30 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _8C4Column {
+                get {
+                    return this.column_8C4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _8S4Column {
+                get {
+                    return this.column_8S4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _8T4Column {
+                get {
+                    return this.column_8T4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1079,6 +1319,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _1C3, 
                         int _1S3, 
                         string _1T3, 
+                        int _1C4, 
+                        int _1S4, 
+                        string _1T4, 
                         int _2C1, 
                         int _2S1, 
                         string _2T1, 
@@ -1088,6 +1331,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _2C3, 
                         int _2S3, 
                         string _2T3, 
+                        int _2C4, 
+                        int _2S4, 
+                        string _2T4, 
                         int _3C1, 
                         int _3S1, 
                         string _3T1, 
@@ -1097,6 +1343,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _3C3, 
                         int _3S3, 
                         string _3T3, 
+                        int _3C4, 
+                        int _3S4, 
+                        string _3T4, 
                         int _4C1, 
                         int _4S1, 
                         string _4T1, 
@@ -1106,6 +1355,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _4C3, 
                         int _4S3, 
                         string _4T3, 
+                        int _4C4, 
+                        int _4S4, 
+                        string _4T4, 
                         int _5C1, 
                         int _5S1, 
                         string _5T1, 
@@ -1115,6 +1367,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _5C3, 
                         int _5S3, 
                         string _5T3, 
+                        int _5C4, 
+                        int _5S4, 
+                        string _5T4, 
                         int _6C1, 
                         int _6S1, 
                         string _6T1, 
@@ -1124,6 +1379,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _6C3, 
                         int _6S3, 
                         string _6T3, 
+                        int _6C4, 
+                        int _6S4, 
+                        string _6T4, 
                         int _7C1, 
                         int _7S1, 
                         string _7T1, 
@@ -1133,6 +1391,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         int _7C3, 
                         int _7S3, 
                         string _7T3, 
+                        int _7C4, 
+                        int _7S4, 
+                        string _7T4, 
                         int _8C1, 
                         int _8S1, 
                         string _8T1, 
@@ -1141,7 +1402,10 @@ namespace DHCD_KiemPhieu.DataBase {
                         string _8T2, 
                         int _8C3, 
                         int _8S3, 
-                        string _8T3) {
+                        string _8T3, 
+                        int _8C4, 
+                        int _8S4, 
+                        string _8T4) {
                 IN_KIEMPHIEURow rowIN_KIEMPHIEURow = ((IN_KIEMPHIEURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _1C1,
@@ -1153,6 +1417,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _1C3,
                         _1S3,
                         _1T3,
+                        _1C4,
+                        _1S4,
+                        _1T4,
                         _2C1,
                         _2S1,
                         _2T1,
@@ -1162,6 +1429,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _2C3,
                         _2S3,
                         _2T3,
+                        _2C4,
+                        _2S4,
+                        _2T4,
                         _3C1,
                         _3S1,
                         _3T1,
@@ -1171,6 +1441,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _3C3,
                         _3S3,
                         _3T3,
+                        _3C4,
+                        _3S4,
+                        _3T4,
                         _4C1,
                         _4S1,
                         _4T1,
@@ -1180,6 +1453,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _4C3,
                         _4S3,
                         _4T3,
+                        _4C4,
+                        _4S4,
+                        _4T4,
                         _5C1,
                         _5S1,
                         _5T1,
@@ -1189,6 +1465,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _5C3,
                         _5S3,
                         _5T3,
+                        _5C4,
+                        _5S4,
+                        _5T4,
                         _6C1,
                         _6S1,
                         _6T1,
@@ -1198,6 +1477,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _6C3,
                         _6S3,
                         _6T3,
+                        _6C4,
+                        _6S4,
+                        _6T4,
                         _7C1,
                         _7S1,
                         _7T1,
@@ -1207,6 +1489,9 @@ namespace DHCD_KiemPhieu.DataBase {
                         _7C3,
                         _7S3,
                         _7T3,
+                        _7C4,
+                        _7S4,
+                        _7T4,
                         _8C1,
                         _8S1,
                         _8T1,
@@ -1215,7 +1500,10 @@ namespace DHCD_KiemPhieu.DataBase {
                         _8T2,
                         _8C3,
                         _8S3,
-                        _8T3};
+                        _8T3,
+                        _8C4,
+                        _8S4,
+                        _8T4};
                 rowIN_KIEMPHIEURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIN_KIEMPHIEURow);
                 return rowIN_KIEMPHIEURow;
@@ -1247,6 +1535,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_1C3 = base.Columns["_1C3"];
                 this.column_1S3 = base.Columns["_1S3"];
                 this.column_1T3 = base.Columns["_1T3"];
+                this.column_1C4 = base.Columns["_1C4"];
+                this.column_1S4 = base.Columns["_1S4"];
+                this.column_1T4 = base.Columns["_1T4"];
                 this.column_2C1 = base.Columns["_2C1"];
                 this.column_2S1 = base.Columns["_2S1"];
                 this.column_2T1 = base.Columns["_2T1"];
@@ -1256,6 +1547,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_2C3 = base.Columns["_2C3"];
                 this.column_2S3 = base.Columns["_2S3"];
                 this.column_2T3 = base.Columns["_2T3"];
+                this.column_2C4 = base.Columns["_2C4"];
+                this.column_2S4 = base.Columns["_2S4"];
+                this.column_2T4 = base.Columns["_2T4"];
                 this.column_3C1 = base.Columns["_3C1"];
                 this.column_3S1 = base.Columns["_3S1"];
                 this.column_3T1 = base.Columns["_3T1"];
@@ -1265,6 +1559,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_3C3 = base.Columns["_3C3"];
                 this.column_3S3 = base.Columns["_3S3"];
                 this.column_3T3 = base.Columns["_3T3"];
+                this.column_3C4 = base.Columns["_3C4"];
+                this.column_3S4 = base.Columns["_3S4"];
+                this.column_3T4 = base.Columns["_3T4"];
                 this.column_4C1 = base.Columns["_4C1"];
                 this.column_4S1 = base.Columns["_4S1"];
                 this.column_4T1 = base.Columns["_4T1"];
@@ -1274,6 +1571,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_4C3 = base.Columns["_4C3"];
                 this.column_4S3 = base.Columns["_4S3"];
                 this.column_4T3 = base.Columns["_4T3"];
+                this.column_4C4 = base.Columns["_4C4"];
+                this.column_4S4 = base.Columns["_4S4"];
+                this.column_4T4 = base.Columns["_4T4"];
                 this.column_5C1 = base.Columns["_5C1"];
                 this.column_5S1 = base.Columns["_5S1"];
                 this.column_5T1 = base.Columns["_5T1"];
@@ -1283,6 +1583,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_5C3 = base.Columns["_5C3"];
                 this.column_5S3 = base.Columns["_5S3"];
                 this.column_5T3 = base.Columns["_5T3"];
+                this.column_5C4 = base.Columns["_5C4"];
+                this.column_5S4 = base.Columns["_5S4"];
+                this.column_5T4 = base.Columns["_5T4"];
                 this.column_6C1 = base.Columns["_6C1"];
                 this.column_6S1 = base.Columns["_6S1"];
                 this.column_6T1 = base.Columns["_6T1"];
@@ -1292,6 +1595,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_6C3 = base.Columns["_6C3"];
                 this.column_6S3 = base.Columns["_6S3"];
                 this.column_6T3 = base.Columns["_6T3"];
+                this.column_6C4 = base.Columns["_6C4"];
+                this.column_6S4 = base.Columns["_6S4"];
+                this.column_6T4 = base.Columns["_6T4"];
                 this.column_7C1 = base.Columns["_7C1"];
                 this.column_7S1 = base.Columns["_7S1"];
                 this.column_7T1 = base.Columns["_7T1"];
@@ -1301,6 +1607,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_7C3 = base.Columns["_7C3"];
                 this.column_7S3 = base.Columns["_7S3"];
                 this.column_7T3 = base.Columns["_7T3"];
+                this.column_7C4 = base.Columns["_7C4"];
+                this.column_7S4 = base.Columns["_7S4"];
+                this.column_7T4 = base.Columns["_7T4"];
                 this.column_8C1 = base.Columns["_8C1"];
                 this.column_8S1 = base.Columns["_8S1"];
                 this.column_8T1 = base.Columns["_8T1"];
@@ -1310,6 +1619,9 @@ namespace DHCD_KiemPhieu.DataBase {
                 this.column_8C3 = base.Columns["_8C3"];
                 this.column_8S3 = base.Columns["_8S3"];
                 this.column_8T3 = base.Columns["_8T3"];
+                this.column_8C4 = base.Columns["_8C4"];
+                this.column_8S4 = base.Columns["_8S4"];
+                this.column_8T4 = base.Columns["_8T4"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1333,6 +1645,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_1S3);
                 this.column_1T3 = new global::System.Data.DataColumn("_1T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_1T3);
+                this.column_1C4 = new global::System.Data.DataColumn("_1C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_1C4);
+                this.column_1S4 = new global::System.Data.DataColumn("_1S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_1S4);
+                this.column_1T4 = new global::System.Data.DataColumn("_1T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_1T4);
                 this.column_2C1 = new global::System.Data.DataColumn("_2C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_2C1);
                 this.column_2S1 = new global::System.Data.DataColumn("_2S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1351,6 +1669,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_2S3);
                 this.column_2T3 = new global::System.Data.DataColumn("_2T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_2T3);
+                this.column_2C4 = new global::System.Data.DataColumn("_2C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_2C4);
+                this.column_2S4 = new global::System.Data.DataColumn("_2S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_2S4);
+                this.column_2T4 = new global::System.Data.DataColumn("_2T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_2T4);
                 this.column_3C1 = new global::System.Data.DataColumn("_3C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_3C1);
                 this.column_3S1 = new global::System.Data.DataColumn("_3S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1369,6 +1693,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_3S3);
                 this.column_3T3 = new global::System.Data.DataColumn("_3T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_3T3);
+                this.column_3C4 = new global::System.Data.DataColumn("_3C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_3C4);
+                this.column_3S4 = new global::System.Data.DataColumn("_3S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_3S4);
+                this.column_3T4 = new global::System.Data.DataColumn("_3T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_3T4);
                 this.column_4C1 = new global::System.Data.DataColumn("_4C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_4C1);
                 this.column_4S1 = new global::System.Data.DataColumn("_4S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1387,6 +1717,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_4S3);
                 this.column_4T3 = new global::System.Data.DataColumn("_4T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_4T3);
+                this.column_4C4 = new global::System.Data.DataColumn("_4C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_4C4);
+                this.column_4S4 = new global::System.Data.DataColumn("_4S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_4S4);
+                this.column_4T4 = new global::System.Data.DataColumn("_4T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_4T4);
                 this.column_5C1 = new global::System.Data.DataColumn("_5C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_5C1);
                 this.column_5S1 = new global::System.Data.DataColumn("_5S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1405,6 +1741,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_5S3);
                 this.column_5T3 = new global::System.Data.DataColumn("_5T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_5T3);
+                this.column_5C4 = new global::System.Data.DataColumn("_5C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_5C4);
+                this.column_5S4 = new global::System.Data.DataColumn("_5S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_5S4);
+                this.column_5T4 = new global::System.Data.DataColumn("_5T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_5T4);
                 this.column_6C1 = new global::System.Data.DataColumn("_6C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_6C1);
                 this.column_6S1 = new global::System.Data.DataColumn("_6S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1423,6 +1765,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_6S3);
                 this.column_6T3 = new global::System.Data.DataColumn("_6T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_6T3);
+                this.column_6C4 = new global::System.Data.DataColumn("_6C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_6C4);
+                this.column_6S4 = new global::System.Data.DataColumn("_6S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_6S4);
+                this.column_6T4 = new global::System.Data.DataColumn("_6T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_6T4);
                 this.column_7C1 = new global::System.Data.DataColumn("_7C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_7C1);
                 this.column_7S1 = new global::System.Data.DataColumn("_7S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1441,6 +1789,12 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_7S3);
                 this.column_7T3 = new global::System.Data.DataColumn("_7T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_7T3);
+                this.column_7C4 = new global::System.Data.DataColumn("_7C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_7C4);
+                this.column_7S4 = new global::System.Data.DataColumn("_7S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_7S4);
+                this.column_7T4 = new global::System.Data.DataColumn("_7T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_7T4);
                 this.column_8C1 = new global::System.Data.DataColumn("_8C1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_8C1);
                 this.column_8S1 = new global::System.Data.DataColumn("_8S1", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1459,54 +1813,140 @@ namespace DHCD_KiemPhieu.DataBase {
                 base.Columns.Add(this.column_8S3);
                 this.column_8T3 = new global::System.Data.DataColumn("_8T3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column_8T3);
+                this.column_8C4 = new global::System.Data.DataColumn("_8C4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_8C4);
+                this.column_8S4 = new global::System.Data.DataColumn("_8S4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_8S4);
+                this.column_8T4 = new global::System.Data.DataColumn("_8T4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_8T4);
+                this.column_1C1.ReadOnly = true;
+                this.column_1S1.ReadOnly = true;
                 this.column_1T1.ReadOnly = true;
                 this.column_1T1.MaxLength = 51;
+                this.column_1C2.ReadOnly = true;
+                this.column_1S2.ReadOnly = true;
                 this.column_1T2.ReadOnly = true;
                 this.column_1T2.MaxLength = 51;
+                this.column_1C3.ReadOnly = true;
+                this.column_1S3.ReadOnly = true;
                 this.column_1T3.ReadOnly = true;
                 this.column_1T3.MaxLength = 51;
+                this.column_1C4.ReadOnly = true;
+                this.column_1S4.ReadOnly = true;
+                this.column_1T4.ReadOnly = true;
+                this.column_1T4.MaxLength = 51;
+                this.column_2C1.ReadOnly = true;
+                this.column_2S1.ReadOnly = true;
                 this.column_2T1.ReadOnly = true;
                 this.column_2T1.MaxLength = 51;
+                this.column_2C2.ReadOnly = true;
+                this.column_2S2.ReadOnly = true;
                 this.column_2T2.ReadOnly = true;
                 this.column_2T2.MaxLength = 51;
+                this.column_2C3.ReadOnly = true;
+                this.column_2S3.ReadOnly = true;
                 this.column_2T3.ReadOnly = true;
                 this.column_2T3.MaxLength = 51;
+                this.column_2C4.ReadOnly = true;
+                this.column_2S4.ReadOnly = true;
+                this.column_2T4.ReadOnly = true;
+                this.column_2T4.MaxLength = 51;
+                this.column_3C1.ReadOnly = true;
+                this.column_3S1.ReadOnly = true;
                 this.column_3T1.ReadOnly = true;
                 this.column_3T1.MaxLength = 51;
+                this.column_3C2.ReadOnly = true;
+                this.column_3S2.ReadOnly = true;
                 this.column_3T2.ReadOnly = true;
                 this.column_3T2.MaxLength = 51;
+                this.column_3C3.ReadOnly = true;
+                this.column_3S3.ReadOnly = true;
                 this.column_3T3.ReadOnly = true;
                 this.column_3T3.MaxLength = 51;
+                this.column_3C4.ReadOnly = true;
+                this.column_3S4.ReadOnly = true;
+                this.column_3T4.ReadOnly = true;
+                this.column_3T4.MaxLength = 51;
+                this.column_4C1.ReadOnly = true;
+                this.column_4S1.ReadOnly = true;
                 this.column_4T1.ReadOnly = true;
                 this.column_4T1.MaxLength = 51;
+                this.column_4C2.ReadOnly = true;
+                this.column_4S2.ReadOnly = true;
                 this.column_4T2.ReadOnly = true;
                 this.column_4T2.MaxLength = 51;
+                this.column_4C3.ReadOnly = true;
+                this.column_4S3.ReadOnly = true;
                 this.column_4T3.ReadOnly = true;
                 this.column_4T3.MaxLength = 51;
+                this.column_4C4.ReadOnly = true;
+                this.column_4S4.ReadOnly = true;
+                this.column_4T4.ReadOnly = true;
+                this.column_4T4.MaxLength = 51;
+                this.column_5C1.ReadOnly = true;
+                this.column_5S1.ReadOnly = true;
                 this.column_5T1.ReadOnly = true;
                 this.column_5T1.MaxLength = 51;
+                this.column_5C2.ReadOnly = true;
+                this.column_5S2.ReadOnly = true;
                 this.column_5T2.ReadOnly = true;
                 this.column_5T2.MaxLength = 51;
+                this.column_5C3.ReadOnly = true;
+                this.column_5S3.ReadOnly = true;
                 this.column_5T3.ReadOnly = true;
                 this.column_5T3.MaxLength = 51;
+                this.column_5C4.ReadOnly = true;
+                this.column_5S4.ReadOnly = true;
+                this.column_5T4.ReadOnly = true;
+                this.column_5T4.MaxLength = 51;
+                this.column_6C1.ReadOnly = true;
+                this.column_6S1.ReadOnly = true;
                 this.column_6T1.ReadOnly = true;
                 this.column_6T1.MaxLength = 51;
+                this.column_6C2.ReadOnly = true;
+                this.column_6S2.ReadOnly = true;
                 this.column_6T2.ReadOnly = true;
                 this.column_6T2.MaxLength = 51;
+                this.column_6C3.ReadOnly = true;
+                this.column_6S3.ReadOnly = true;
                 this.column_6T3.ReadOnly = true;
                 this.column_6T3.MaxLength = 51;
+                this.column_6C4.ReadOnly = true;
+                this.column_6S4.ReadOnly = true;
+                this.column_6T4.ReadOnly = true;
+                this.column_6T4.MaxLength = 51;
+                this.column_7C1.ReadOnly = true;
+                this.column_7S1.ReadOnly = true;
                 this.column_7T1.ReadOnly = true;
                 this.column_7T1.MaxLength = 51;
+                this.column_7C2.ReadOnly = true;
+                this.column_7S2.ReadOnly = true;
                 this.column_7T2.ReadOnly = true;
                 this.column_7T2.MaxLength = 51;
+                this.column_7C3.ReadOnly = true;
+                this.column_7S3.ReadOnly = true;
                 this.column_7T3.ReadOnly = true;
                 this.column_7T3.MaxLength = 51;
+                this.column_7C4.ReadOnly = true;
+                this.column_7S4.ReadOnly = true;
+                this.column_7T4.ReadOnly = true;
+                this.column_7T4.MaxLength = 51;
+                this.column_8C1.ReadOnly = true;
+                this.column_8S1.ReadOnly = true;
                 this.column_8T1.ReadOnly = true;
                 this.column_8T1.MaxLength = 51;
+                this.column_8C2.ReadOnly = true;
+                this.column_8S2.ReadOnly = true;
                 this.column_8T2.ReadOnly = true;
                 this.column_8T2.MaxLength = 51;
+                this.column_8C3.ReadOnly = true;
+                this.column_8S3.ReadOnly = true;
                 this.column_8T3.ReadOnly = true;
                 this.column_8T3.MaxLength = 51;
+                this.column_8C4.ReadOnly = true;
+                this.column_8S4.ReadOnly = true;
+                this.column_8T4.ReadOnly = true;
+                this.column_8T4.MaxLength = 51;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1793,6 +2233,54 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _1C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._1C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_1C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._1C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _1S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._1S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_1S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._1S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _1T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._1T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_1T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._1T4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int _2C1 {
                 get {
                     try {
@@ -1932,6 +2420,54 @@ namespace DHCD_KiemPhieu.DataBase {
                 }
                 set {
                     this[this.tableIN_KIEMPHIEU._2T3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _2C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._2C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_2C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._2C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _2S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._2S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_2S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._2S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _2T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._2T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_2T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._2T4Column] = value;
                 }
             }
             
@@ -2081,6 +2617,54 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _3C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._3C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_3C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._3C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _3S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._3S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_3S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._3S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _3T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._3T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_3T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._3T4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int _4C1 {
                 get {
                     try {
@@ -2220,6 +2804,54 @@ namespace DHCD_KiemPhieu.DataBase {
                 }
                 set {
                     this[this.tableIN_KIEMPHIEU._4T3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _4C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._4C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_4C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._4C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _4S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._4S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_4S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._4S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _4T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._4T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_4T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._4T4Column] = value;
                 }
             }
             
@@ -2369,6 +3001,54 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _5C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._5C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_5C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._5C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _5S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._5S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_5S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._5S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _5T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._5T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_5T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._5T4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int _6C1 {
                 get {
                     try {
@@ -2508,6 +3188,54 @@ namespace DHCD_KiemPhieu.DataBase {
                 }
                 set {
                     this[this.tableIN_KIEMPHIEU._6T3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _6C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._6C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_6C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._6C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _6S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._6S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_6S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._6S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _6T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._6T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_6T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._6T4Column] = value;
                 }
             }
             
@@ -2657,6 +3385,54 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _7C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._7C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_7C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._7C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _7S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._7S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_7S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._7S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _7T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._7T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_7T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._7T4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int _8C1 {
                 get {
                     try {
@@ -2801,6 +3577,54 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _8C4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._8C4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_8C4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._8C4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int _8S4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableIN_KIEMPHIEU._8S4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_8S4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._8S4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _8T4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableIN_KIEMPHIEU._8T4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_8T4\' in table \'IN_KIEMPHIEU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIN_KIEMPHIEU._8T4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_1C1Null() {
                 return this.IsNull(this.tableIN_KIEMPHIEU._1C1Column);
             }
@@ -2905,6 +3729,42 @@ namespace DHCD_KiemPhieu.DataBase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_1T3Null() {
                 this[this.tableIN_KIEMPHIEU._1T3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_1C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._1C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_1C4Null() {
+                this[this.tableIN_KIEMPHIEU._1C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_1S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._1S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_1S4Null() {
+                this[this.tableIN_KIEMPHIEU._1S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_1T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._1T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_1T4Null() {
+                this[this.tableIN_KIEMPHIEU._1T4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3017,6 +3877,42 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_2C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._2C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_2C4Null() {
+                this[this.tableIN_KIEMPHIEU._2C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_2S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._2S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_2S4Null() {
+                this[this.tableIN_KIEMPHIEU._2S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_2T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._2T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_2T4Null() {
+                this[this.tableIN_KIEMPHIEU._2T4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_3C1Null() {
                 return this.IsNull(this.tableIN_KIEMPHIEU._3C1Column);
             }
@@ -3121,6 +4017,42 @@ namespace DHCD_KiemPhieu.DataBase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_3T3Null() {
                 this[this.tableIN_KIEMPHIEU._3T3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_3C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._3C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_3C4Null() {
+                this[this.tableIN_KIEMPHIEU._3C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_3S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._3S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_3S4Null() {
+                this[this.tableIN_KIEMPHIEU._3S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_3T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._3T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_3T4Null() {
+                this[this.tableIN_KIEMPHIEU._3T4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3233,6 +4165,42 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_4C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._4C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_4C4Null() {
+                this[this.tableIN_KIEMPHIEU._4C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_4S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._4S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_4S4Null() {
+                this[this.tableIN_KIEMPHIEU._4S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_4T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._4T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_4T4Null() {
+                this[this.tableIN_KIEMPHIEU._4T4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_5C1Null() {
                 return this.IsNull(this.tableIN_KIEMPHIEU._5C1Column);
             }
@@ -3337,6 +4305,42 @@ namespace DHCD_KiemPhieu.DataBase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_5T3Null() {
                 this[this.tableIN_KIEMPHIEU._5T3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_5C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._5C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_5C4Null() {
+                this[this.tableIN_KIEMPHIEU._5C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_5S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._5S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_5S4Null() {
+                this[this.tableIN_KIEMPHIEU._5S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_5T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._5T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_5T4Null() {
+                this[this.tableIN_KIEMPHIEU._5T4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3449,6 +4453,42 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_6C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._6C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_6C4Null() {
+                this[this.tableIN_KIEMPHIEU._6C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_6S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._6S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_6S4Null() {
+                this[this.tableIN_KIEMPHIEU._6S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_6T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._6T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_6T4Null() {
+                this[this.tableIN_KIEMPHIEU._6T4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_7C1Null() {
                 return this.IsNull(this.tableIN_KIEMPHIEU._7C1Column);
             }
@@ -3557,6 +4597,42 @@ namespace DHCD_KiemPhieu.DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_7C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._7C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_7C4Null() {
+                this[this.tableIN_KIEMPHIEU._7C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_7S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._7S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_7S4Null() {
+                this[this.tableIN_KIEMPHIEU._7S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_7T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._7T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_7T4Null() {
+                this[this.tableIN_KIEMPHIEU._7T4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_8C1Null() {
                 return this.IsNull(this.tableIN_KIEMPHIEU._8C1Column);
             }
@@ -3661,6 +4737,42 @@ namespace DHCD_KiemPhieu.DataBase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_8T3Null() {
                 this[this.tableIN_KIEMPHIEU._8T3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_8C4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._8C4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_8C4Null() {
+                this[this.tableIN_KIEMPHIEU._8C4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_8S4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._8S4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_8S4Null() {
+                this[this.tableIN_KIEMPHIEU._8S4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_8T4Null() {
+                return this.IsNull(this.tableIN_KIEMPHIEU._8T4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_8T4Null() {
+                this[this.tableIN_KIEMPHIEU._8T4Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3832,6 +4944,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_1C3", "_1C3");
             tableMapping.ColumnMappings.Add("_1S3", "_1S3");
             tableMapping.ColumnMappings.Add("_1T3", "_1T3");
+            tableMapping.ColumnMappings.Add("_1C4", "_1C4");
+            tableMapping.ColumnMappings.Add("_1S4", "_1S4");
+            tableMapping.ColumnMappings.Add("_1T4", "_1T4");
             tableMapping.ColumnMappings.Add("_2C1", "_2C1");
             tableMapping.ColumnMappings.Add("_2S1", "_2S1");
             tableMapping.ColumnMappings.Add("_2T1", "_2T1");
@@ -3841,6 +4956,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_2C3", "_2C3");
             tableMapping.ColumnMappings.Add("_2S3", "_2S3");
             tableMapping.ColumnMappings.Add("_2T3", "_2T3");
+            tableMapping.ColumnMappings.Add("_2C4", "_2C4");
+            tableMapping.ColumnMappings.Add("_2S4", "_2S4");
+            tableMapping.ColumnMappings.Add("_2T4", "_2T4");
             tableMapping.ColumnMappings.Add("_3C1", "_3C1");
             tableMapping.ColumnMappings.Add("_3S1", "_3S1");
             tableMapping.ColumnMappings.Add("_3T1", "_3T1");
@@ -3850,6 +4968,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_3C3", "_3C3");
             tableMapping.ColumnMappings.Add("_3S3", "_3S3");
             tableMapping.ColumnMappings.Add("_3T3", "_3T3");
+            tableMapping.ColumnMappings.Add("_3C4", "_3C4");
+            tableMapping.ColumnMappings.Add("_3S4", "_3S4");
+            tableMapping.ColumnMappings.Add("_3T4", "_3T4");
             tableMapping.ColumnMappings.Add("_4C1", "_4C1");
             tableMapping.ColumnMappings.Add("_4S1", "_4S1");
             tableMapping.ColumnMappings.Add("_4T1", "_4T1");
@@ -3859,6 +4980,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_4C3", "_4C3");
             tableMapping.ColumnMappings.Add("_4S3", "_4S3");
             tableMapping.ColumnMappings.Add("_4T3", "_4T3");
+            tableMapping.ColumnMappings.Add("_4C4", "_4C4");
+            tableMapping.ColumnMappings.Add("_4S4", "_4S4");
+            tableMapping.ColumnMappings.Add("_4T4", "_4T4");
             tableMapping.ColumnMappings.Add("_5C1", "_5C1");
             tableMapping.ColumnMappings.Add("_5S1", "_5S1");
             tableMapping.ColumnMappings.Add("_5T1", "_5T1");
@@ -3868,6 +4992,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_5C3", "_5C3");
             tableMapping.ColumnMappings.Add("_5S3", "_5S3");
             tableMapping.ColumnMappings.Add("_5T3", "_5T3");
+            tableMapping.ColumnMappings.Add("_5C4", "_5C4");
+            tableMapping.ColumnMappings.Add("_5S4", "_5S4");
+            tableMapping.ColumnMappings.Add("_5T4", "_5T4");
             tableMapping.ColumnMappings.Add("_6C1", "_6C1");
             tableMapping.ColumnMappings.Add("_6S1", "_6S1");
             tableMapping.ColumnMappings.Add("_6T1", "_6T1");
@@ -3877,6 +5004,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_6C3", "_6C3");
             tableMapping.ColumnMappings.Add("_6S3", "_6S3");
             tableMapping.ColumnMappings.Add("_6T3", "_6T3");
+            tableMapping.ColumnMappings.Add("_6C4", "_6C4");
+            tableMapping.ColumnMappings.Add("_6S4", "_6S4");
+            tableMapping.ColumnMappings.Add("_6T4", "_6T4");
             tableMapping.ColumnMappings.Add("_7C1", "_7C1");
             tableMapping.ColumnMappings.Add("_7S1", "_7S1");
             tableMapping.ColumnMappings.Add("_7T1", "_7T1");
@@ -3886,6 +5016,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_7C3", "_7C3");
             tableMapping.ColumnMappings.Add("_7S3", "_7S3");
             tableMapping.ColumnMappings.Add("_7T3", "_7T3");
+            tableMapping.ColumnMappings.Add("_7C4", "_7C4");
+            tableMapping.ColumnMappings.Add("_7S4", "_7S4");
+            tableMapping.ColumnMappings.Add("_7T4", "_7T4");
             tableMapping.ColumnMappings.Add("_8C1", "_8C1");
             tableMapping.ColumnMappings.Add("_8S1", "_8S1");
             tableMapping.ColumnMappings.Add("_8T1", "_8T1");
@@ -3895,6 +5028,9 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("_8C3", "_8C3");
             tableMapping.ColumnMappings.Add("_8S3", "_8S3");
             tableMapping.ColumnMappings.Add("_8T3", "_8T3");
+            tableMapping.ColumnMappings.Add("_8C4", "_8C4");
+            tableMapping.ColumnMappings.Add("_8S4", "_8S4");
+            tableMapping.ColumnMappings.Add("_8T4", "_8T4");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3911,7 +5047,7 @@ namespace DHCD_KiemPhieu.DataBase.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT [_1C1], [_1S1], [_1T1], [_1C2], [_1S2], [_1T2], [_1C3], [_1S3], [_1T3], [_2C1], [_2S1], [_2T1], [_2C2], [_2S2], [_2T2], [_2C3], [_2S3], [_2T3], [_3C1], [_3S1], [_3T1], [_3C2], [_3S2], [_3T2], [_3C3], [_3S3], [_3T3], [_4C1], [_4S1], [_4T1], [_4C2], [_4S2], [_4T2], [_4C3], [_4S3], [_4T3], [_5C1], [_5S1], [_5T1], [_5C2], [_5S2], [_5T2], [_5C3], [_5S3], [_5T3], [_6C1], [_6S1], [_6T1], [_6C2], [_6S2], [_6T2], [_6C3], [_6S3], [_6T3], [_7C1], [_7S1], [_7T1], [_7C2], [_7S2], [_7T2], [_7C3], [_7S3], [_7T3], [_8C1], [_8S1], [_8T1], [_8C2], [_8S2], [_8T2], [_8C3], [_8S3], [_8T3] FROM dbo.IN_KIEMPHIEU";
+            this._commandCollection[0].CommandText = @"SELECT [_1C1], [_1S1], [_1T1], [_1C2], [_1S2], [_1T2], [_1C3], [_1S3], [_1T3], [_1C4], [_1S4], [_1T4], [_2C1], [_2S1], [_2T1], [_2C2], [_2S2], [_2T2], [_2C3], [_2S3], [_2T3], [_2C4], [_2S4], [_2T4], [_3C1], [_3S1], [_3T1], [_3C2], [_3S2], [_3T2], [_3C3], [_3S3], [_3T3], [_3C4], [_3S4], [_3T4], [_4C1], [_4S1], [_4T1], [_4C2], [_4S2], [_4T2], [_4C3], [_4S3], [_4T3], [_4C4], [_4S4], [_4T4], [_5C1], [_5S1], [_5T1], [_5C2], [_5S2], [_5T2], [_5C3], [_5S3], [_5T3], [_5C4], [_5S4], [_5T4], [_6C1], [_6S1], [_6T1], [_6C2], [_6S2], [_6T2], [_6C3], [_6S3], [_6T3], [_6C4], [_6S4], [_6T4], [_7C1], [_7S1], [_7T1], [_7C2], [_7S2], [_7T2], [_7C3], [_7S3], [_7T3], [_7C4], [_7S4], [_7T4], [_8C1], [_8S1], [_8T1], [_8C2], [_8S2], [_8T2], [_8C3], [_8S3], [_8T3], [_8C4], [_8S4], [_8T4] FROM dbo.IN_KIEMPHIEU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

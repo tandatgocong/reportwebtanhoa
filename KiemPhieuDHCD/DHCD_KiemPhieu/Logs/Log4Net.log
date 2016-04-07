@@ -588,3 +588,26 @@ The statement has been terminated.
 The statement has been terminated.
 2016-04-06 14:09:04,687 [7084] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
 The statement has been terminated.
+2016-04-07 09:12:15,860 [5088] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 09:12:15,924 [5088] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:12:18,842 [6356] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:12:28,365 [5088] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:12:36,047 [6356] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:13:17,597 [5088] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:13:57,316 [5832] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:34:32,463 [5872] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 09:34:32,526 [5872] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:34:34,876 [5872] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:34:47,405 [7400] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-04-07 09:34:47,453 [7400] ERROR File LinQConnection getDataTableIncorrect syntax near the keyword 'as'.
+2016-04-07 09:40:17,675 [6876] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 09:40:17,690 [6876] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-07 09:40:56,997 [1156] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-04-07 09:41:53,414 [6832] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 09:41:53,487 [6832] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-07 10:29:31,674 [5588] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 10:29:31,732 [5588] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-07 12:00:40,301 [4548] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-07 12:00:40,385 [4548] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
