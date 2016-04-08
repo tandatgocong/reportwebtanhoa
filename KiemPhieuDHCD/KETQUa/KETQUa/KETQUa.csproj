@@ -84,7 +84,9 @@
     <EmbeddedResource Include="slideKiemPhieu.resx">
       <DependentUpon>slideKiemPhieu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>

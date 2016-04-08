@@ -170,8 +170,6 @@
             this._2C3 = new System.Windows.Forms.Label();
             this._2T3 = new System.Windows.Forms.Label();
             this._2S3 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.slCoDong = new System.Windows.Forms.Label();
             this._1T4 = new System.Windows.Forms.Label();
@@ -214,8 +212,18 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -382,6 +390,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel37);
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.panel33);
@@ -507,10 +519,6 @@
             this.panel1.Controls.Add(this._2C3);
             this.panel1.Controls.Add(this._2T3);
             this.panel1.Controls.Add(this._2S3);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.slCoDong);
             this.panel1.Controls.Add(this._1T4);
             this.panel1.Controls.Add(this._1S4);
             this.panel1.Controls.Add(this._1C4);
@@ -1894,37 +1902,13 @@
             this._2S3.TabIndex = 20;
             this._2S3.Text = "0";
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label24.ForeColor = System.Drawing.Color.Blue;
-            this.label24.Location = new System.Drawing.Point(878, 6);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(129, 19);
-            this.label24.TabIndex = 27;
-            this.label24.Text = "KHÔNG HỢP LỆ";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label23.ForeColor = System.Drawing.Color.Blue;
-            this.label23.Location = new System.Drawing.Point(730, 4);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(127, 19);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "KHÔNG Ý KIẾN";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.Blue;
-            this.label22.Location = new System.Drawing.Point(551, 4);
+            this.label22.Location = new System.Drawing.Point(19, 6);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(135, 19);
             this.label22.TabIndex = 25;
@@ -1936,7 +1920,7 @@
             this.slCoDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.slCoDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.slCoDong.ForeColor = System.Drawing.Color.Blue;
-            this.slCoDong.Location = new System.Drawing.Point(396, 6);
+            this.slCoDong.Location = new System.Drawing.Point(52, 6);
             this.slCoDong.Name = "slCoDong";
             this.slCoDong.Size = new System.Drawing.Size(71, 19);
             this.slCoDong.TabIndex = 10;
@@ -2401,6 +2385,66 @@
             this.lineShape1.Y1 = 32;
             this.lineShape1.Y2 = 29;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.slCoDong);
+            this.panel2.Location = new System.Drawing.Point(345, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(176, 31);
+            this.panel2.TabIndex = 76;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Location = new System.Drawing.Point(523, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(174, 31);
+            this.panel3.TabIndex = 77;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.label23);
+            this.panel4.Location = new System.Drawing.Point(700, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(169, 31);
+            this.panel4.TabIndex = 78;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.Color.Blue;
+            this.label23.Location = new System.Drawing.Point(24, 7);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(127, 19);
+            this.label23.TabIndex = 27;
+            this.label23.Text = "KHÔNG Ý KIẾN";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel5.Controls.Add(this.label24);
+            this.panel5.Location = new System.Drawing.Point(871, -1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(146, 31);
+            this.panel5.TabIndex = 79;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.Blue;
+            this.label24.Location = new System.Drawing.Point(4, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(129, 19);
+            this.label24.TabIndex = 28;
+            this.label24.Text = "KHÔNG HỢP LỆ";
+            // 
             // slideKiemPhieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -2435,6 +2479,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2542,8 +2594,6 @@
         private System.Windows.Forms.Label _2C3;
         private System.Windows.Forms.Label _2T3;
         private System.Windows.Forms.Label _2S3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label slCoDong;
         private System.Windows.Forms.Label _1T4;
@@ -2628,5 +2678,11 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label24;
     }
 }

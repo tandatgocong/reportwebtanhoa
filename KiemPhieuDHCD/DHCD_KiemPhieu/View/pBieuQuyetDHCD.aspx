@@ -41,7 +41,6 @@
         }
         .style12
         {
-            height: 96px;
         }
         .style21
         {
@@ -69,7 +68,6 @@
         }
         .style28
         {
-            height: 96px;
             width: 474px;
         }
         .style30
@@ -101,7 +99,7 @@
             EnableScriptLocalization="true" ID="ScriptManager1"  />
   <table style="width:95%; margin-left:20px; " border="0">
         <tr>
-            <td class="style28" >
+            <td class="style28" rowspan="2"  valign=top>
        <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px; margin-left:20px;" class="table_list" >
         <tbody>
            <tr class="head1">
@@ -152,13 +150,6 @@
              </tr>
           </tbody>
     </table>
-    </td>
-            <td class="style12">
-                &nbsp;</td>
-        </tr>
-        
-        <tr>
-            <td class="style4" style="vertical-align:top; " rowspan=2>
                 
                 <asp:DetailsView ID="dtThongTinCD" CssClass=g2 runat="server" AutoGenerateRows="False" 
                     CellPadding="4" HeaderText="THÔNG TIN CỔ ĐÔNG" Height="150px" Width="84%" 
@@ -187,8 +178,8 @@
                     <RowStyle ForeColor="#333333" BackColor="#FFFBD6" />
                 </asp:DetailsView>
                 
-            </td>
-            <td>
+    </td>
+            <td class="style12">
                 <table cellpadding="0" cellspacing="0" class="table_list_2" 
                     style="font-family:Times New Roman; font-size:15px; width: 538px;">
                     <tr class="head">

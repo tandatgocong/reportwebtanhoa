@@ -613,3 +613,13 @@ The statement has been terminated.
 2016-04-07 12:00:40,385 [4548] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
 2016-04-07 13:26:24,827 [6800] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
 2016-04-07 13:26:24,969 [6800] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-08 07:36:12,749 [7288] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-08 07:36:12,824 [7288] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-08 07:36:12,847 [7288] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-04-08 07:36:12,847 [7288] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-04-08 07:38:16,101 [7980] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-08 07:38:16,139 [7980] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-08 07:38:16,156 [7980] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-04-08 07:38:16,156 [7980] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-04-08 07:38:39,328 [5408] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-08 07:38:39,366 [5408] ERROR File LinQConnection getDataTableIncorrect syntax near '='.

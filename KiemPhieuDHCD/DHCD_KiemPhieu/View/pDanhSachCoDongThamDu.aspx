@@ -38,7 +38,7 @@
         Text="..: DANH SÁCH CỔ ĐÔNG THAM DỰ ĐẠI HỘI :.."></asp:Label>
     </div>
     <br />
-    <table style="width:100%;">
+    <table style="width:1024px;">
         <tr>
             <td>
      <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px; margin-left:40px;" class="table_list" >
@@ -110,7 +110,8 @@
             <td>
                 &nbsp;</td>
         </tr>
-    </table>
+        <tr>
+            <td>
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" 
         BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="1000" style="margin-right: 0px" 
@@ -286,6 +287,9 @@
         <SortedDescendingCellStyle BackColor="#F6F0C0" />
         <SortedDescendingHeaderStyle BackColor="#7E0000" />
     </asp:GridView>
+            </td>
+        </tr>
+    </table>
     <br />
     <br />
     <br />

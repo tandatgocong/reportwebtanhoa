@@ -32,7 +32,7 @@ namespace KETQUa
         private void timer1_Tick(object sender, EventArgs e)
         {
             _ticks++;
-            if (_ticks % 10 == 0)
+            if (_ticks % 2 == 0)
                 FormLoad();
         }
 
