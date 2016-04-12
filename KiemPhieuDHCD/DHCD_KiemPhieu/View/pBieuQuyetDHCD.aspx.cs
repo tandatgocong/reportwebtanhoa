@@ -70,7 +70,7 @@ namespace DHCD_KiemPhieu.View
         public void LoadKhongDongY()
         {
 
-            string sql = " SELECT kp.ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  desc) [STT],cd.STTCD, cd.MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, cd.TONGCD,";
+            string sql = " SELECT kp.ID, STT,cd.STTCD, cd.MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, cd.TONGCD,";
             sql += " CASE WHEN C1=4 THEN N'Không hợp lệ' ELSE CASE WHEN C1=1 THEN N'Đồng ý' ELSE CASE WHEN C1=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C1, ";
             sql += " CASE WHEN C2=4 THEN N'Không hợp lệ' ELSE CASE WHEN C2=1 THEN N'Đồng ý' ELSE CASE WHEN C2=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C2,";
             sql += " CASE WHEN C3=4 THEN N'Không hợp lệ' ELSE CASE WHEN C3=1 THEN N'Đồng ý' ELSE CASE WHEN C3=2 THEN N'Không đồng ý' ELSE N'Không có ý kiến' END END END as C3,";
