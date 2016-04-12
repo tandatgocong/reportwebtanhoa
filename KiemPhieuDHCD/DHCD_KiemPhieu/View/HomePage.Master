@@ -31,7 +31,9 @@
                  <li >
                       <a href="pDanhSachCoDongThamDu.aspx" class="">CỔ ĐÔNG THAM DỰ </a>
                  </li>    
-                    
+                    <li >
+                      <a href="pInCoDong.aspx" class="">IN DANH SÁCH CỔ ĐÔNG </a>
+                 </li>    
                </ul>
             </li>
 

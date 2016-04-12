@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using DHCD_KiemPhieu.DataBase;
+using System.IO;
 
 namespace DHCD_KiemPhieu.View
 {
@@ -18,20 +19,74 @@ namespace DHCD_KiemPhieu.View
 
             string sql = "";
             string title = "";
-       
+
             if ("BQ".Equals(Request.Params["page"] + ""))
             {
                 sql = Session["SQL"] + "";
                 CrystalReportSource1.Report.FileName = "inKQBieuQuyet.rpt";
 
                 CrystalReportSource1.ReportDocument.SetDataSource((DataTable)Session["TABLE"]);
-           
+
                 CrystalReportSource1.ReportDocument.SetParameterValue("TC", Session["TC"] + "");
                 CrystalReportSource1.ReportDocument.SetParameterValue("TS", Session["TS"] + "");
                 CrystalReportSource1.ReportDocument.SetParameterValue("TR", Session["TR"] + "");
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "KET_QUA_BIEU_QUYET");
 
+            } if ("IN".Equals(Request.Params["page"] + ""))
+            {
+                CrystalReportSource1.Report.FileName = "inTheBieuQuyet.rpt";
+                CrystalReportSource1.ReportDocument.SetDataSource(Img());
+                CrystalReportSource1.ReportDocument.SetParameterValue("TT", Session["TT"] + "");
+
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "THE_BIEU_QUYET");
             }
+        }
+
+        private void LoadImage(DataRow objDataRow, string strImageField, string FilePath)
+        {
+            try
+            {
+                FileStream fs = new FileStream(FilePath,
+                           System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] Image = new byte[fs.Length];
+                fs.Read(Image, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                objDataRow[strImageField] = Image;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+        public DataTable Img()
+        {
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD, ImgPath, Image FROM DSCODONG  ");
+
+            for (int index = 0; index < tb.Rows.Count; index++)
+            {
+                if (tb.Rows[index]["ImgPath"].ToString() != "")
+                {
+                    //string s = this.Server.MapPath(tb.Rows[index]["ImgPath"].ToString());
+                    string s = this.Server.MapPath("./mavach/abc_" + tb.Rows[index]["STT"].ToString() + ".jpg");
+
+                    if (File.Exists(s))
+                    {
+                        LoadImage(tb.Rows[index], "Image", s);
+                    }
+                    else
+                    {
+                        LoadImage(tb.Rows[index], "Image",
+                                  "DefaultPicturePath");
+                    }
+                }
+                else
+                {
+                    LoadImage(tb.Rows[index], "Image",
+                              "DefaultPicturePath");
+                }
+            }
+            return tb;
+        
         }
     }
 }

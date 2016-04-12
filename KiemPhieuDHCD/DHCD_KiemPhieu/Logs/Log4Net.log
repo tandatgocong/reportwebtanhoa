@@ -623,3 +623,5 @@ The statement has been terminated.
 2016-04-08 07:38:16,156 [7980] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
 2016-04-08 07:38:39,328 [5408] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
 2016-04-08 07:38:39,366 [5408] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-04-12 09:46:21,458 [5112] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-04-12 09:46:21,562 [5112] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
