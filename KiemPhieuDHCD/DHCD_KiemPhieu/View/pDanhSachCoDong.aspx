@@ -58,9 +58,9 @@
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("TENCD") %>'></asp:Label>
                 </ItemTemplate>
-                <ItemStyle VerticalAlign="Middle" Width="150px" />
+                <ItemStyle VerticalAlign="Middle" Width="300px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CMND/GPKD">
+            <asp:TemplateField HeaderText="SỔ DKSH">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("CMND") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -88,7 +88,7 @@
                 </ItemTemplate>
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="70px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="ĐỊA CHỈ">
+            <asp:TemplateField HeaderText="ĐỊA CHỈ" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("DIACHI") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -97,7 +97,7 @@
                 </ItemTemplate>
                 <ItemStyle VerticalAlign="Middle" Width="270px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CP GIAO DỊCH">
+            <asp:TemplateField HeaderText="CP GIAO DỊCH" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("CDGD") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -123,7 +123,7 @@
                 <FooterStyle HorizontalAlign="Right" VerticalAlign="Middle" />
                 <ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="80px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CP PHONG TỎA">
+            <asp:TemplateField HeaderText="CP PHONG TỎA" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox10" runat="server" Text='<%# Bind("PHONGTOA") %>'></asp:TextBox>
                 </EditItemTemplate>

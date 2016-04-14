@@ -33,12 +33,16 @@
         }
         .style8
         {
-            width: 490px;
+            width: 617px;
             color: #0000FF;
         }
         .style9
         {
-            width: 111px;
+            width: 97px;
+        }
+        .style10
+        {
+            color: #FFFFFF;
         }
     </style>
      
@@ -67,7 +71,7 @@
                <td class="style9" 
                    style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                                             
-                                            BIỂU QUYẾT LẦN </td>
+                                            BIỂU QUYẾT </td>
                <td class="style11" style="border-right:2px #99cc99 solid; border-bottom: 1px solid;">
                                             <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="58px" 
                                                 AutoPostBack="True" onselectedindexchanged="DropDownList1_SelectedIndexChanged">
@@ -91,7 +95,8 @@
                 <td class="style10" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                                             &nbsp;&nbsp;&nbsp; NGÀY&nbsp;: </td>
                 <td class="style10" style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
-                                            <asp:TextBox ID="tungay"  runat="server" autocomplete="off" />
+                                            <asp:TextBox ID="tungay"  runat="server" autocomplete="off" Height="19px" 
+                                                Width="75px" />
                               <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>              
                </td>
@@ -107,12 +112,13 @@
         <tbody>
              
            <tr class="head1">
-               <td class="style11" 
+               <td class="style10" 
                    
                    
-                   style="border-right:2px #99cc99 solid;background-color:Lavender; text-align: center; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 1px;">
+                   
+                   style="border-right:2px #99cc99 solid;color:Black; background-color:#99FFCC; text-align: center; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 1px;">
                                             NHẬP SỐ THỨ TỰ CỔ ĐÔNG KHÔNG ĐỒNG Ý</td>
-                <td class="style10" style="border-right:2px #99cc99 solid; background-color:Lavender; border-bottom: 1px solid;">
+                <td class="style10" style="border-right:2px #99cc99 solid; background-color:#99FFCC; border-bottom: 1px solid;">
                                             <asp:TextBox ID="txtCoDong" onfocus="Focus(this)" runat="server" AutoPostBack="True" 
                                                 ontextchanged="txtCoDong_TextChanged" Width="99px"></asp:TextBox>
                </td>
@@ -127,10 +133,10 @@
             <tr class="head1">
                 <td class="style11" 
                     
-                    style="border-right:2px #99cc99 solid;background-color:Lavender; text-align: center; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 1px;">
+                    style="border-right:2px #99cc99 solid;color:Black; background-color:#99FFCC; text-align: center; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 1px;">
                     NHẬP SỐ THỨ TỰ CỔ ĐÔNG KHÔNG Ý KIẾN</td>
                 <td class="style10" 
-                    style="border-right:2px #99cc99 solid; background-color:Lavender; border-bottom: 1px solid;">
+                    style="border-right:2px #99cc99 solid; background-color:#99FFCC; border-bottom: 1px solid;">
                     <asp:TextBox ID="txtCoDong0" runat="server" AutoPostBack="True" 
                         onfocus="Focus(this)" ontextchanged="txtCoDong0_TextChanged" Width="101px"></asp:TextBox>
                 </td>

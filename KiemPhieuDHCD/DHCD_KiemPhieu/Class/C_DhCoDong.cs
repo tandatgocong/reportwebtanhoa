@@ -10,7 +10,7 @@ namespace DHCD_KiemPhieu.Class
     {
         public static DataTable getDSCoDongThamDu(string macd)
         {
-            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYVAO  DESC) STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD  FROM  DSCODONG_THAMDU ";
+            string sql = "SELECT  STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD  FROM  DSCODONG_THAMDU  ORDER BY NGAYVAO DESC ";
             return LinQConnection.getDataTable(sql);
         }
 

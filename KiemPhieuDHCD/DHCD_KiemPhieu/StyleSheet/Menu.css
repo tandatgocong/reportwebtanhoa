@@ -4,7 +4,8 @@
 	margin: 0;
 	padding: 0;
 	float: left;
-	width: 1000px; height: 20px;
+	width: 958px; 
+height: 20px;
 	/*background: #FFF url(/portal/Image/menu_bg.png);*/
 	background-color:#02579D;
 	font:bold 13px Arial, Tahoma, verdana, sans-serif;
@@ -242,6 +243,7 @@
 	font:bold 13px Arial, Tahoma, verdana, sans-serif;
 	color:#FFF;
 	margin-right: 2px;
+    height: 16px;
 }
 /*End Header Menu*/
 

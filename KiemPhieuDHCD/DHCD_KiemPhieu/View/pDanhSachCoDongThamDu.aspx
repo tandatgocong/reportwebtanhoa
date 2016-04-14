@@ -115,7 +115,7 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" 
         BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="1000" style="margin-right: 0px" 
-        Width="100%" onrowdatabound="GridView1_RowDataBound" 
+        Width="97%" onrowdatabound="GridView1_RowDataBound" 
         ShowFooter="True" onrowcommand="GridView1_RowCommand">
         <Columns>
             <asp:TemplateField HeaderText="STT">
@@ -151,9 +151,9 @@
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("TENCD") %>'></asp:Label>
                 </ItemTemplate>
-                <ItemStyle VerticalAlign="Middle" Width="150px" />
+                <ItemStyle VerticalAlign="Middle" Width="300px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CMND/GPKD">
+            <asp:TemplateField HeaderText="SỔ ĐKSH">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("CMND") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -181,7 +181,7 @@
                 </ItemTemplate>
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="70px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="ĐỊA CHỈ">
+            <asp:TemplateField HeaderText="ĐỊA CHỈ" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("DIACHI") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -190,7 +190,7 @@
                 </ItemTemplate>
                 <ItemStyle VerticalAlign="Middle" Width="270px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CP GIAO DỊCH">
+            <asp:TemplateField HeaderText="CP GIAO DỊCH" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("CDGD") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -216,7 +216,7 @@
                 <FooterStyle HorizontalAlign="Right" VerticalAlign="Middle" />
                 <ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="80px" />
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CP PHONG TỎA">
+            <asp:TemplateField HeaderText="CP PHONG TỎA" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox10" runat="server" Text='<%# Bind("PHONGTOA") %>'></asp:TextBox>
                 </EditItemTemplate>

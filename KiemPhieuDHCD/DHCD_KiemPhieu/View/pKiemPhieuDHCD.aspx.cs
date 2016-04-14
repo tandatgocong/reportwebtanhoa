@@ -12,10 +12,10 @@ namespace DHCD_KiemPhieu.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["login"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            //if (Session["login"] == null)
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -52,14 +52,14 @@ namespace DHCD_KiemPhieu.View
             else if (DropDownList1.SelectedIndex == 7)
                 lbTitle.Text = "Thông qua Tờ trình phương án phân phối lợi nhuận, trích lập các quỹ và chi cổ tức năm 2015";
             else if (DropDownList1.SelectedIndex == 8)
-                lbTitle.Text = "Thông qua Báo cáo  thù lao của HĐQT, BKS, Thư ký năm 2015 và Kế hoạch thù lao HĐQT, BKS, Thư ký năm 2015";
+                lbTitle.Text = "Thông qua Báo cáo  thù lao của HĐQT, BKS, Thư ký năm 2015 và Kế hoạch thù lao HĐQT, BKS, Thư ký năm 2016";
         }
 
         public void LoadDongY()
         {
             string sql = " SELECT STT,STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD ";
             sql += " FROM DSCODONG_THAMDU ";
-            sql += " WHERE MACD NOT IN (SELECT MACD FROM KIEMPHIEU WHERE LANBQ= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBQ,103)='" + this.tungay.Text + "' ) ORDER BY NGAYVAO DESC ";
+            sql += " WHERE MACD NOT IN (SELECT MACD FROM KIEMPHIEU WHERE LANBQ= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBQ,103)='" + this.tungay.Text + "' ) ORDER BY STT ASC ";
 
             DataTable dt = Class.LinQConnection.getDataTable(sql);
             G_DY.DataSource = dt;

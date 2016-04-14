@@ -74,7 +74,7 @@ namespace DHCD_KiemPhieu.View
         protected void txtCoDong_TextChanged(object sender, EventArgs e)
         {
             string sql = " INSERT INTO DSCODONG_THAMDU (STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD, NGAYVAO)";
-            sql += " SELECT STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD,GETDATE() AS NGAYVAO  FROM DSCODONG WHERE ( STTCD=REPLACE('" + this.txtCoDong.Text.Replace(" ", "") + "','THW','') OR MACD='" + this.txtCoDong.Text.Replace(" ", "") + "' )";
+            sql += " SELECT STT, STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD,GETDATE() AS NGAYVAO  FROM DSCODONG WHERE ( STT='" + this.txtCoDong.Text.Replace(" ", "") + "' )";
             Class.LinQConnection.ExecuteCommand(sql);
             Binddata();
             this.txtCoDong.Focus();
