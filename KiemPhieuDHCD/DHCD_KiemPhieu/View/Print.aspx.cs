@@ -39,8 +39,14 @@ namespace DHCD_KiemPhieu.View
                 CrystalReportSource1.ReportDocument.SetParameterValue("TT", Session["TT"] + "");
 
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "THE_BIEU_QUYET");
+            } if ("BC".Equals(Request.Params["page"] + ""))
+            {
+                CrystalReportSource1.Report.FileName = "inTheBauCu.rpt";
+                CrystalReportSource1.ReportDocument.SetDataSource(Img());
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "THE_BIEU_QUYET");
             }
         }
+    
 
         private void LoadImage(DataRow objDataRow, string strImageField, string FilePath)
         {
@@ -53,7 +59,7 @@ namespace DHCD_KiemPhieu.View
                 fs.Close();
                 objDataRow[strImageField] = Image;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 
             }

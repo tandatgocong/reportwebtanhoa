@@ -667,3 +667,19 @@ The statement has been terminated.
 The statement has been terminated.
 2016-04-14 16:16:38,395 [8760] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU'.
 The statement has been terminated.
+2016-04-20 12:31:32,821 [6800] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:31:53,974 [7688] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:32:08,629 [7324] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:32:30,261 [6800] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:32:44,938 [7324] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:32:57,542 [7324] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:33:23,270 [10216] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-20 12:33:42,638 [10472] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.

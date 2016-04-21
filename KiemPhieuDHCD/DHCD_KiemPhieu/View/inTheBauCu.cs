@@ -16,14 +16,14 @@ namespace DHCD_KiemPhieu.View {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class inTheBieuQuyet : ReportClass {
+    public class inTheBauCu : ReportClass {
         
-        public inTheBieuQuyet() {
+        public inTheBauCu() {
         }
         
         public override string ResourceName {
             get {
-                return "inTheBieuQuyet.rpt";
+                return "inTheBauCu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DHCD_KiemPhieu.View {
         
         public override string FullResourceName {
             get {
-                return "DHCD_KiemPhieu.View.inTheBieuQuyet.rpt";
+                return "DHCD_KiemPhieu.View.inTheBauCu.rpt";
             }
             set {
                 // Do nothing
@@ -87,20 +87,12 @@ namespace DHCD_KiemPhieu.View {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TT {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedinTheBieuQuyet : Component, ICachedReport {
+    public class CachedinTheBauCu : Component, ICachedReport {
         
-        public CachedinTheBieuQuyet() {
+        public CachedinTheBauCu() {
         }
         
         [Browsable(false)]
@@ -137,7 +129,7 @@ namespace DHCD_KiemPhieu.View {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            inTheBieuQuyet rpt = new inTheBieuQuyet();
+            inTheBauCu rpt = new inTheBauCu();
             rpt.Site = this.Site;
             return rpt;
         }
