@@ -90,7 +90,7 @@
                <td class="style8"  
                    style="border-right:2px #99cc99 solid; border-bottom: 1px solid;background-color: #FFFFCC;">
                                             <asp:Label ID="lbTitle" runat="server" ForeColor="Blue" 
-                                                style="font-size: x-large; text-align: left"></asp:Label>
+                                                style="font-size:40px; text-align: left" ></asp:Label>
                </td>
                 <td class="style10" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
                                             &nbsp;&nbsp;&nbsp; NGÀY&nbsp;: </td>

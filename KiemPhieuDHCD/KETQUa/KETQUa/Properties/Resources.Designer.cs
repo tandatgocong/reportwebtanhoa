@@ -73,6 +73,16 @@ namespace KETQUa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DHCD {
+            get {
+                object obj = ResourceManager.GetObject("DHCD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap thamdu {
             get {
                 object obj = ResourceManager.GetObject("thamdu", resourceCulture);

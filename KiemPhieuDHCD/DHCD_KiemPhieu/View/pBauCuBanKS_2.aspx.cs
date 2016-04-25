@@ -153,7 +153,6 @@ namespace DHCD_KiemPhieu.View
             Class.LinQConnection.ExecuteCommand(sql);
             Binddata();
             this.txtCoDong.Focus();
-           
         }
 
         protected void btSubmit_Click(object sender, EventArgs e)
