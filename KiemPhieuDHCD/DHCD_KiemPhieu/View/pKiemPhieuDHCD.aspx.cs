@@ -35,7 +35,6 @@ namespace DHCD_KiemPhieu.View
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Binddata();
             if (DropDownList1.SelectedIndex == 1)
                 lbTitle.Text = "Thông qua Báo cáo hoạt động của Hội đồng quản trị năm 2015 và kế hoạch hoạt động năm 2016";
@@ -44,15 +43,19 @@ namespace DHCD_KiemPhieu.View
             else if (DropDownList1.SelectedIndex == 3)
                 lbTitle.Text = "Thông qua Báo cáo tổng kết hoạt động sản xuất kinh doanh năm 2015  và Phương hướng hoạt động sản xuất kinh doanh năm 2016";
             else if (DropDownList1.SelectedIndex == 4)
-                lbTitle.Text = "Thông qua Báo cáo tài chính tóm tắt năm 2015 (đã kiểm toán) và Kế hoạch tài chính năm 2016";
+                lbTitle.Text = "Thông qua Báo cáo tài chính tóm tắt năm 2015 (đã kiểm toán)";
             else if (DropDownList1.SelectedIndex == 5)
-                lbTitle.Text = "Thông qua Tờ trình sửa đổi, bổ sung Điều lệ Công ty theo Luật doanh nghiệp năm 2014";
+                lbTitle.Text = "Thông qua việc sửa đổi, bổ sung Điều lệ Công Ty Cổ Phần Cấp nước Tân Hòa";
             else if (DropDownList1.SelectedIndex == 6)
-                lbTitle.Text = "Thông qua Ủy quyền cho HĐQT lựa chọn đơn vị kiểm toán năm 2016";
+                lbTitle.Text = "Thông qua Phương án phân phối lợi nhuận 2015";
             else if (DropDownList1.SelectedIndex == 7)
-                lbTitle.Text = "Thông qua Tờ trình phương án phân phối lợi nhuận, trích lập các quỹ và chi cổ tức năm 2015";
+                lbTitle.Text = "Thông qua Kế hoạch tài chính năm 2016 ";
             else if (DropDownList1.SelectedIndex == 8)
-                lbTitle.Text = "Thông qua Báo cáo  thù lao của HĐQT, BKS, Thư ký năm 2015 và Kế hoạch thù lao HĐQT, BKS, Thư ký năm 2016";
+                lbTitle.Text = "Thông qua Ủy quyền cho HĐQT quyết định lựa chọn đơn vị kiểm toán Báo cáo tài chính 2016 ";
+            else if (DropDownList1.SelectedIndex == 9)
+                lbTitle.Text = "Thông qua Quỹ tiền lương kế hoạch đối với Chủ Tịch Hội đồng quản trị, Giám đốc, Phó Giám đốc, Kế toán trưởng và chế độ thù lao của Hội đồng quản trị, Ban kiểm soát, Thư ký Công ty năm 2016 ";
+            else if (DropDownList1.SelectedIndex == 10)
+                lbTitle.Text = "Thông qua Miễn nhiệm Thành viên Ban viên Ban Kiểm soát ";
         }
 
         public void LoadDongY()

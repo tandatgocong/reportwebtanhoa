@@ -36,6 +36,13 @@ namespace DHCD_KiemPhieu.View
 
             double tl = _cpTC / Class.LinQConnection.ReturnResult("SELECT SUM(TONGCD) FROM DSCODONG");
             tc_tl.Text = String.Format("{0:0.##}", tl * 100) + "%";
+
+
+            GridView2.AllowPaging = true;
+            GridView2.DataSource = Class.C_DhCoDong.getDSCoDongChuaDen();
+            GridView2.DataBind();
+
+
         }
 
         protected void btSearch_Click(object sender, EventArgs e)
@@ -84,6 +91,26 @@ namespace DHCD_KiemPhieu.View
         {
             Class.LinQConnection.ExecuteCommand("DELETE FROM DSCODONG_THAMDU WHERE MACD='" + e.CommandArgument.ToString() + "'");
             Binddata();
+        }
+
+        protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        int cdCD = 0;
+        protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Label cpGD = (Label)e.Row.FindControl("Label22");
+                cdCD += int.Parse(cpGD.Text.Replace(",", ""));
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label kt_DHN = (Label)e.Row.FindControl("lbCPTC0");
+                kt_DHN.Text = String.Format("{0:0,0}", cdCD);
+            }          
         }
 
        

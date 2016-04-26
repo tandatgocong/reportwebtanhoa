@@ -685,3 +685,24 @@ The statement has been terminated.
 The statement has been terminated.
 2016-04-21 13:17:52,411 [6964] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
 The statement has been terminated.
+2016-04-26 07:55:38,227 [3768] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 07:56:54,534 [6488] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 07:57:01,840 [2664] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 07:57:32,976 [2664] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 07:59:51,191 [7844] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 08:00:08,639 [7348] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 08:00:23,020 [7212] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 08:00:25,257 [5916] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 08:01:13,356 [7348] ERROR File LinQConnection getDataTableInvalid column name 'NGAYVAO'.
+2016-04-26 10:06:22,023 [8032] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-26 10:21:07,088 [7324] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-26 13:52:06,061 [4064] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-26 13:52:08,518 [7680] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-26 13:52:39,386 [1112] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.
+2016-04-26 13:52:42,760 [1112] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
+The statement has been terminated.

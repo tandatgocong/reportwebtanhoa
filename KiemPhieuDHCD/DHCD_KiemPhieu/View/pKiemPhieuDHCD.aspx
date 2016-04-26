@@ -84,6 +84,8 @@
                                                 <asp:ListItem>6</asp:ListItem>
                                                 <asp:ListItem>7</asp:ListItem>
                                                 <asp:ListItem>8</asp:ListItem>
+                                                <asp:ListItem>9</asp:ListItem>
+                                                <asp:ListItem>10</asp:ListItem>
                                             </asp:DropDownList>
                                             &nbsp;
                </td>
@@ -148,11 +150,11 @@
         <tr>
             <td >
             <table cellpadding="0" cellspacing="0" class="table_list_1" 
-                    style="font-family:Times New Roman; font-size:15px; margin-left:10px; margin-right:10px;">
+                    style="font-family:Times New Roman; font-size:15px; ">
                     <tr ;="" class="head1" style="height:17px;">
                         <td class="style5" colspan="2" 
                             
-                            style="border-right:1px #FF0000 solid; color:Red;  background-color:#FFFF99; font-size:large; border-bottom: 2px #FF0000	 solid; ">
+                            style="border-right:1px #FF0000 solid; color:Red;  background-color:#FFFF99; font-size:24px; border-bottom: 2px #FF0000	 solid; ">
                             CỔ ĐÔNG KHÔNG ĐỒNG Ý</td>
                     </tr>
                     <tr class="head1">
@@ -161,7 +163,8 @@
                             SỐ LƯỢNG CỔ ĐÔNG </td>
                         <td class="style1" 
                             style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#FFFF99">
-                            <asp:Label ID="kdy_sl" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
+                            <asp:Label ID="kdy_sl" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                Font-Bold="True">0</asp:Label>
                         </td>
                     </tr>
                     <tr class="head1">
@@ -171,7 +174,8 @@
                             PHIẾU :</td>
                         <td class="style1" 
                             style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#FFFF99">
-                            <asp:Label ID="kdy_cp" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
+                            <asp:Label ID="kdy_cp" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                Font-Bold="True">0</asp:Label>
                         </td>
                     </tr>
                     <tr class="head1">
@@ -180,19 +184,20 @@
                             TỈ LỆ :</td>
                         <td class="style1" 
                             style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#FFFF99">
-                            <asp:Label ID="kdy_tl" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
+                            <asp:Label ID="kdy_tl" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                Font-Bold="True">0</asp:Label>
                         </td>
                     </tr>
                 </table>
             </td>
             <td >
             
-     <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px; margin-left:10px;margin-right:10px;" class="table_list_1" >
+     <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman; font-size:15px;" class="table_list_1" >
         <tbody>
            <tr class="head1" style="height:17px;";>
                <td class="style5" 
                    
-                   style="border-right:1px #FF0000 solid;  background-color:#D3D3D3; font-size:large; border-bottom: 2px #FF0000	 solid; " 
+                   style="border-right:1px #FF0000 solid;  background-color:#D3D3D3; font-size:25px; border-bottom: 2px #FF0000	 solid; " 
                    colspan="2">                                           
                                             CỔ ĐÔNG KHÔNG Ý KIẾN</td>
              </tr>
@@ -205,7 +210,7 @@
                                             SỐ LƯỢNG CỔ ĐÔNG </td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#D3D3D3;">                                           
-                                            <asp:Label ID="ky_sl0" runat="server" Font-Bold="True" Font-Size="X-Large" 
+                                            <asp:Label ID="ky_sl0" runat="server" Font-Bold="True" Font-Size="XX-Large" 
                                                 ForeColor="Red" Text="0"></asp:Label>
                                             </td>
              </tr>
@@ -219,8 +224,8 @@
                                             PHIẾU :</td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#D3D3D3;">                                           
-                                           <asp:Label ID="ky_cp0" runat="server" Font-Size="X-Large" ForeColor="Red" 
-                                               Text="0"></asp:Label>
+                                           <asp:Label ID="ky_cp0" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                               Text="0" Font-Bold="True"></asp:Label>
                </td>
              </tr>
            
@@ -230,8 +235,8 @@
                                             TỈ LỆ :</td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#D3D3D3;">                                           
-                                           <asp:Label ID="ky_tl0" runat="server" Font-Size="X-Large" ForeColor="Red" 
-                                               Text="0"></asp:Label>
+                                           <asp:Label ID="ky_tl0" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                               Text="0" Font-Bold="True"></asp:Label>
                   </td>
              </tr>
 
@@ -247,7 +252,7 @@
            <tr class="head1" style="height:17px;";>
                <td class="style5" 
                    
-                   style="border-right:1px #FF0000 solid;  background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000	 solid; " 
+                   style="border-right:1px #FF0000 solid;  background-color:#CCFFFF; font-size:30px; border-bottom: 2px #FF0000	 solid; " 
                    colspan="2">                                           
                                             CỔ ĐÔNG ĐỒNG Ý</td>
              </tr>
@@ -260,7 +265,7 @@
                                             SỐ LƯỢNG CỔ ĐÔNG</td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#CCFFFF;">                                           
-                                            <asp:Label ID="dy_sl" runat="server" Font-Bold="True" Font-Size="X-Large" 
+                                            <asp:Label ID="dy_sl" runat="server" Font-Bold="True" Font-Size="XX-Large" 
                                                 ForeColor="Red" Text="0"></asp:Label>
                                             </td>
              </tr>
@@ -274,8 +279,8 @@
                                             PHIẾU :</td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#CCFFFF;">                                           
-                                           <asp:Label ID="dy_cp" runat="server" Font-Size="X-Large" ForeColor="Red" 
-                                               Text="0"></asp:Label>
+                                           <asp:Label ID="dy_cp" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                               Text="0" Font-Bold="True"></asp:Label>
                </td>
              </tr>
            
@@ -285,8 +290,8 @@
                                             TỈ LỆ :</td>
                <td class="style1" 
                    style="border-right:1px #FF0000 solid; border-bottom: 1px solid;background-color:#CCFFFF;">                                           
-                                           <asp:Label ID="dy_tl" runat="server" Font-Size="X-Large" ForeColor="Red" 
-                                               Text="0"></asp:Label>
+                                           <asp:Label ID="dy_tl" runat="server" Font-Size="XX-Large" ForeColor="Red" 
+                                               Text="0" Font-Bold="True"></asp:Label>
                   </td>
              </tr>
 
