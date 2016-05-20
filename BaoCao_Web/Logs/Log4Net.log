@@ -439,3 +439,87 @@
 2016-02-24 10:13:20,624 [6348] ERROR File OleDbConnection getDataTableJoin expression not supported.
 2016-02-24 10:15:30,417 [6932] ERROR File OleDbConnection getDataTableJoin expression not supported.
 2016-02-24 10:15:30,449 [6932] ERROR File OleDbConnection getDataTableJoin expression not supported.
+2016-05-13 07:56:00,157 [1368] INFO  File --------------------------------------------------------
+2016-05-13 07:56:00,607 [1368] INFO  File RESET SO LIEU  4 record
+2016-05-13 07:56:00,702 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  4 record
+2016-05-13 07:56:00,802 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  4 record
+2016-05-13 07:56:00,925 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:00,930 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:00,994 [1368] INFO  File --------------------------------------------------------
+2016-05-13 07:56:10,076 [5324] INFO  File --------------------------------------------------------
+2016-05-13 07:56:10,081 [5324] INFO  File RESET SO LIEU  4 record
+2016-05-13 07:56:10,184 [5324] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  4 record
+2016-05-13 07:56:10,297 [5324] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  4 record
+2016-05-13 07:56:10,417 [5324] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:10,424 [5324] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:10,430 [5324] INFO  File --------------------------------------------------------
+2016-05-13 07:56:12,990 [1296] INFO  File --------------------------------------------------------
+2016-05-13 07:56:12,995 [1296] INFO  File RESET SO LIEU  4 record
+2016-05-13 07:56:13,075 [1296] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  4 record
+2016-05-13 07:56:13,158 [1296] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  4 record
+2016-05-13 07:56:13,285 [1296] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:13,293 [1296] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:13,298 [1296] INFO  File --------------------------------------------------------
+2016-05-13 07:56:42,425 [1368] INFO  File --------------------------------------------------------
+2016-05-13 07:56:42,432 [1368] INFO  File RESET SO LIEU  4 record
+2016-05-13 07:56:42,515 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  4 record
+2016-05-13 07:56:42,603 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  4 record
+2016-05-13 07:56:42,708 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:42,717 [1368] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 07:56:42,737 [1368] INFO  File --------------------------------------------------------
+2016-05-13 08:01:51,058 [6264] INFO  File --------------------------------------------------------
+2016-05-13 08:01:51,380 [6264] INFO  File RESET SO LIEU  4 record
+2016-05-13 08:01:51,478 [6264] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT  4 record
+2016-05-13 08:01:51,573 [6264] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT  4 record
+2016-05-13 08:01:51,701 [6264] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT  4 record
+2016-05-13 08:01:51,709 [6264] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:01:51,752 [6264] INFO  File --------------------------------------------------------
+2016-05-13 08:02:09,247 [6928] INFO  File --------------------------------------------------------
+2016-05-13 08:02:09,251 [6928] INFO  File RESET SO LIEU  4 record
+2016-05-13 08:02:09,337 [6928] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT  4 record
+2016-05-13 08:02:09,431 [6928] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT  4 record
+2016-05-13 08:02:09,541 [6928] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT  4 record
+2016-05-13 08:02:09,545 [6928] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:02:09,550 [6928] INFO  File --------------------------------------------------------
+2016-05-13 08:06:36,005 [5356] INFO  File --------------------------------------------------------
+2016-05-13 08:06:36,065 [5356] INFO  File RESET SO LIEU  4 record
+2016-05-13 08:06:36,369 [5356] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:06:36,395 [5356] INFO  File --------------------------------------------------------
+2016-05-13 08:06:45,778 [7236] INFO  File --------------------------------------------------------
+2016-05-13 08:06:45,784 [7236] INFO  File RESET SO LIEU  4 record
+2016-05-13 08:06:46,067 [7236] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:06:46,075 [7236] INFO  File --------------------------------------------------------
+2016-05-13 08:21:03,089 [6416] INFO  File --------------------------------------------------------
+2016-05-13 08:21:03,123 [6416] INFO  File RESET SO LIEU  4 record
+2016-05-13 08:21:03,206 [6416] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  4 record
+2016-05-13 08:21:03,295 [6416] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  4 record
+2016-05-13 08:21:03,396 [6416] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:21:03,398 [6416] INFO  File CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  4 record
+2016-05-13 08:21:03,414 [6416] INFO  File --------------------------------------------------------
+2016-05-13 08:27:17,571 [4348] INFO  File --------------------------------------------------------
+2016-05-13 08:27:19,541 [4348] INFO  File --------------------------------------------------------
+2016-05-13 08:37:05,606 [3296] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH05_2016 WHERE LNCC=0
+2016-05-13 08:37:05,611 [3296] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH05_2016'.
+2016-05-13 08:37:48,199 [4732] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH04_2016 WHERE LNCC=0
+2016-05-13 08:37:48,199 [4732] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,276 [4732] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH01_2014 K12, HOADONTH04_2016 K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC = 0
+2016-05-13 08:37:48,276 [4732] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,329 [4732] ERROR File LinQConnection ExecuteCommand : SELECT COUNT(*) FROM HOADONTH01_2014 K12, HOADONTH04_2016 K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0
+2016-05-13 08:37:48,329 [4732] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,379 [4732] ERROR File LinQConnection ExecuteCommand : SELECT SUM(CONVERT(int,K01.LNCC)) FROM HOADONTH01_2014 K12, HOADONTH04_2016 K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC =0 AND K01.LNCC <> 0
+2016-05-13 08:37:48,379 [4732] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,444 [4732] ERROR File LinQConnection ExecuteCommand : SELECT SUM(CONVERT(int,K12.LNCC)) FROM HOADONTH01_2014 K12, HOADONTH04_2016 K01 WHERE K12.DANHBO= K01.DANHBO AND K12.LNCC <> 0 AND K01.LNCC = 0
+2016-05-13 08:37:48,444 [4732] ERROR File LinQConnection ExecuteCommand : Invalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,608 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,658 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,708 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,760 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,869 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,917 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:48,960 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,012 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,124 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,168 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,211 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,262 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.
+2016-05-13 08:37:49,411 [4732] ERROR File LinQConnection getDataTableInvalid object name 'HOADONTH04_2016'.

@@ -56,46 +56,61 @@ namespace BaoCao_Web.Class
         static string khoi = ConfigurationManager.AppSettings["khoi"].ToString();
         public static void CAPNHAT_BIENDOCCHISO(string nam, int ky, int dot)
         {
+
+            //int codhn = int.Parse(ConfigurationManager.AppSettings["codhn"].ToString());
             string sql = " UPDATE TB_NHANVIENDOCSO ";
+
             if (dot == 0)
             {
-                sql += " SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ,NHAXD=t2.XAYDUNG";
+                sql += " SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ,NHAXD=t2.XAYDUNG,GIENG=t2.GIENG ";
                 sql += " FROM	TB_NHANVIENDOCSO INNER JOIN  ";
                 sql += " (  ";
-                sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TIEUTHU) IS NULL then 0 else SUM(t.TIEUTHU) end) AS SANLUONG,";
-                sql += "  COUNT(case when (t.CODE LIKE 'F%' OR t.CODE='61' OR t.CODE='64'  OR t.CODE='66')  then 1 else null end) AS KOGHI,";
-                sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
-                sql += " COUNT(case when (t.TIEUTHU >= (t.TBTHU * 1.51)) AND t.CODE='4' then 1 else null end) AS TANG,";
-                sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM";
-                sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
-                sql += " LEFT JOIN ( ";
-                sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
-                sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky;
+                sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TieuThuMoi) IS NULL then 0 else SUM(CASE WHEN t.TieuThuMoi<0 THEN 0 ELSE t.TieuThuMoi END) end) AS SANLUONG,";
+                sql += "  COUNT(case when (t.CodeMoi LIKE 'F%' OR t.CodeMoi='61' OR t.CodeMoi='64'  OR t.CodeMoi='66')  then 1 else null end) AS KOGHI,";
+                sql += "   COUNT(case when (t.GhiChuDS LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
+                sql += " COUNT(case when (t.TieuThuMoi >= (t.TBTT * 1.51)) AND t.CodeMoi='4' then 1 else null end) AS TANG,";
+                sql += " COUNT(case when (t.TieuThuMoi <= (t.TBTT * 0.51)) AND t.CodeMoi='4' then 1 else null end) AS GAM,";
+                sql += " COUNT(case when t.GhiChuDS LIKE N'%GIẾ%' then 1 else null end) AS GIENG";
+                sql += " FROM DocSoTH.dbo.DocSo  t  ";
+
+              
+                    sql += " WHERE NAM=" + nam + "  AND KY=" + ky;
+
+
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
             }
             else
             {
-                sql += " SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ,NHAXD=t2.XAYDUNG";
+                sql += " SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ,NHAXD=t2.XAYDUNG,GIENG=t2.GIENG ";
                 sql += " FROM	TB_NHANVIENDOCSO INNER JOIN  ";
                 sql += " (  ";
-                sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TIEUTHU) IS NULL then 0 else SUM(t.TIEUTHU) end) AS SANLUONG,";
-                sql += "  COUNT(case when (t.CODE LIKE 'F%' OR t.CODE='61' OR t.CODE='64'  OR t.CODE='66')  then 1 else null end) AS KOGHI,";
-                sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
-                sql += " COUNT(case when (t.TIEUTHU >= (t.TBTHU * 1.51)) AND t.CODE='4' then 1 else null end) AS TANG,";
-                sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM";
-                sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
-                sql += " LEFT JOIN ( ";
-                sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + " AND DOT=" + dot + " ) as t3";
-                sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky + " AND DOT =" + dot + "";
+                sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TieuThuMoi) IS NULL then 0 else SUM(CASE WHEN t.TieuThuMoi<0 THEN 0 ELSE t.TieuThuMoi END) end) AS SANLUONG,";
+                sql += "  COUNT(case when (t.CodeMoi LIKE 'F%' OR t.CodeMoi='61' OR t.CodeMoi='64'  OR t.CodeMoi='66')  then 1 else null end) AS KOGHI,";
+                sql += "   COUNT(case when (t.GhiChuDS LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
+                sql += " COUNT(case when (t.TieuThuMoi >= (t.TBTT * 1.51)) AND t.CodeMoi='4' then 1 else null end) AS TANG,";
+                sql += " COUNT(case when (t.TieuThuMoi <= (t.TBTT * 0.51)) AND t.CodeMoi='4' then 1 else null end) AS GAM,";
+                sql += " COUNT(case when t.GhiChuDS LIKE N'%GIẾ%' then 1 else null end) AS GIENG";
+                sql += " FROM DocSoTH.dbo.DocSo  t ";
+
+              
+                    sql += " WHERE  KY=" + ky + " AND  NAM=" + nam + "  AND DOT =" + dot + "";
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
             }
-
+            try
+            {
+                LinQConnection.ExecuteCommand("UPDATE TB_NHANVIENDOCSO SET SOLUONGDHN=0, SANLUONG=0, KHONGGHI=0, NHAXD=0, TANG=0, GIAM=0");
+                sql = sql.Replace(@"\t", " ");
+                int resqult = LinQConnection.ExecuteCommand(sql);
+                log.Info("CAPNHAT_BIENDOCCHISO  " + resqult + " record");
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHAT_BIENDOCCHISO " + ex.Message);
+            }
             //string sql = "UPDATE TB_NHANVIENDOCSO ";
             //sql += " SET SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ";
             //sql += " FROM	TB_NHANVIENDOCSO INNER JOIN  ";

@@ -20,6 +20,8 @@ namespace BaoCao_Web.Class
         {
             return  LinQConnection.getDataTable("SELECT * FROM W_BAOCAO_CODE");
         }
+
+
         public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(string nam, int ky)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
@@ -40,8 +42,8 @@ namespace BaoCao_Web.Class
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky;           
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -77,8 +79,8 @@ namespace BaoCao_Web.Class
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky;          
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -93,6 +95,10 @@ namespace BaoCao_Web.Class
                 log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC " + ex.Message);
             }
         }
+
+
+
+      
 
 
         /// chi tiet tung may doc so 
@@ -170,7 +176,6 @@ namespace BaoCao_Web.Class
         }
 
         ///// THEO ĐỢT
-
         public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(string nam, int ky, int dot)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
@@ -191,8 +196,9 @@ namespace BaoCao_Web.Class
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;           
+
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -228,9 +234,9 @@ namespace BaoCao_Web.Class
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
-            sql += " GROUP BY TODS ";
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
+                     sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
 
@@ -244,7 +250,6 @@ namespace BaoCao_Web.Class
                 log.Error("CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT " + ex.Message);
             }
         }
-
 
         /// chi tiet tung may doc so 
         /// 

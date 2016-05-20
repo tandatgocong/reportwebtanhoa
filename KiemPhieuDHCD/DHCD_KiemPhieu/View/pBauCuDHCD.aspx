@@ -17,15 +17,23 @@
          }
          .style2
          {
-             width: 306px;
+             width: 310px;
          }
          .style3
          {
-             width: 207px;;
+             width: 203px;;
          }
          .style4
          {
              width: 68px;
+         }
+         .style5
+         {
+             width: 903px;
+         }
+         .style6
+         {
+             width: 184px;
          }
      </style>
 
@@ -87,7 +95,7 @@
     </table>
     <table border="0" cellpadding="0" cellspacing="0" style="width:100%; " >
         <tr>
-            <td>
+            <td class="style5">
                 <table cellpadding="0" cellspacing="0" class="table_list_1"  style="font-family:Times New Roman; margin-left:50px; font-size:15px; width: 500px;">
                      <tr class="head1">
                           <td class="style21" style="border-right:1px #FF0000 solid; height:40px;  background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000 solid ">
@@ -109,6 +117,8 @@
                           <td class="style1" align=center >
                 <asp:Button ID="btSubmit" runat="server"  Text="Biểu Quyết" Width="103px" 
                      CssClass="button1" Height="28px" onclick="btSubmit_Click"/>
+                              <asp:Label ID="err" runat="server" Font-Bold="True" Font-Italic="True" 
+                                  ForeColor="Red"></asp:Label>
                           </td>
                       </tr>
                  </table>
@@ -117,7 +127,7 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="style5">
                 <div class="title_page" 
                     style=" margin-top:10px; height: 26px; text-align:center;">
                     <asp:Label ID="title0" runat="server" 
@@ -128,16 +138,18 @@
             
         </tr>
         <tr>
-            <td>
+            <td class="style5">
                 <table cellpadding="0" cellspacing="0" class="table_list_1" 
                     style="font-family: Times New Roman; font-size: 15px; width: 754px; margin-left:150px;">
                     <tr class="head1">
                         <td class="style21" 
                             
-                            style="border-right:1px #FF0000 solid; height:40px;  background-color:#FFFF99; font-size:large; border-bottom: 2px #FF0000 solid " 
+                            style="border-right:1px #FF0000 solid; height:40px;  background-color:#FFFF99; font-size: x-large; border-bottom: 2px #FF0000 solid " 
                             colspan="3">
                             <center>
-                                KẾT QUẢ BẦU CỬ CÔNG TY CỔ PHẨN CẤP NƯỚC TÂN HÒA
+                                KẾT QUẢ BẦU CỬ 
+                                ĐẠI BIỂU THAM GIA TỔ ĐỐI THOẠI<br />
+                                CÔNG TY CỔ PHẨN CẤP NƯỚC TÂN HÒA
                             </center>
                         </td>
                     </tr>
@@ -149,22 +161,41 @@
                                 <tr class="head1">
                                     <td class="style26" 
                                         style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
-                                        SỐ THẺ BIỂU QUYẾT PHÁT RA :&nbsp;<asp:TextBox ID="txtTheTV" runat="server" 
-                                            AutoPostBack="True" ontextchanged="txtTheTV_TextChanged" Width="23px">0</asp:TextBox>
-                                    </td>
-                                    <td class="style4" 
-                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
-                                        <asp:Label ID="tc_phatra" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
-                                    </td>
-                                </tr>
-                                <tr class="head1">
-                                    <td class="style26" 
-                                        style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
-                                        SỔ THẺ BIỂU QUYẾT THU VÀO :</td>
+                                        SỔ PHIẾU THU VÀO :</td>
                                     <td class="style4" 
                                         style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
                                         <asp:Label ID="tc_thuvao" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
                                     </td>
+                                    <td class="style6" 
+                                        
+                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
+                                        &nbsp;</td>
+                                    <td class="style4" 
+                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
+                                        &nbsp;</td>
+                                </tr>
+                                <tr class="head1">
+                                    <td class="style26" 
+                                        style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                        SỐ PHIẾU HỢP LỆ</td>
+                                    <td class="style4" 
+                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
+                                        <asp:Label ID="tc_hople" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
+                                    </td>
+                                    <td class="style6" 
+                                        
+                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid;  text-align: right;">
+                                        SỐ PHIẾU KHÔNG HỢP LỆ</td>
+                                    <td class="style4" 
+                                        style="border-right: 1px #FF0000 solid; border-bottom: 1px solid; background-color: #FFFF99; text-align: right;">
+                                        <asp:Label ID="tc_khople" runat="server" Font-Size="X-Large" ForeColor="Red">0</asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="head1">
+                                    <td class="style26" 
+                                        style="border-right:2px #FF0000 solid; border-bottom: 1px solid;" 
+                                        colspan="4">
+                                        &nbsp;</td>
                                 </tr>
                             </table>
                         </td>
@@ -173,13 +204,15 @@
                         <td class="style2" 
                             
                             style="border-right:1px #FF0000 solid; font-size:large; border-bottom-style: none; border-bottom-color: inherit; border-bottom-width: 0px;">
-                            &nbsp;</td>
+                                            &nbsp;</td>
                         <td class="style3" 
                             
-                            style="border-right:1px #FF0000 solid; font-size:large; border-bottom-style: none; border-bottom-color: inherit; border-bottom-width: 0px;">
+                            
+                            style="border-right:1px #FF0000 solid; font-size:large; border-bottom-style: none; border-bottom-color: inherit; border-bottom-width: 0px; text-align: center;">
                             ĐỒNG Ý</td>
                         <td class="style21" 
-                            style="border-right:1px #FF0000 solid; height:40px;font-size:large; border-bottom:0px; ">
+                            
+                            style="border-right:1px #FF0000 solid; height:40px;font-size:large; text-align: center; border-bottom-style: none; border-bottom-color: inherit; border-bottom-width: 0px;">
                             KHÔNG ĐỒNG Ý</td>
                     </tr>
                 </table>
@@ -187,13 +220,13 @@
             
         </tr>
         <tr>
-            <td>
+            <td class="style5">
                         
                     <asp:GridView ID="gTK" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
                         CellPadding="4" 
                         style="margin-left:150px; font-family: 'Times New Roman', Times, serif; font-size: large" 
-                        AllowSorting="True">
+                        AllowSorting="True" Width="751px">
                         <Columns>
                             <asp:BoundField DataField="STT" HeaderText="STT">
                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -267,49 +300,91 @@
                         <SortedDescendingHeaderStyle BackColor="#7E0000" />
                     </asp:GridView>
                         
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
                         
                     </td>
-            
+            <td align="left" valign=top>
+                <asp:DropDownList ID="DropDownList2" runat="server" 
+                                Height="24px" Width="58px" 
+                                                AutoPostBack="True" 
+                    onselectedindexchanged="DropDownList2_SelectedIndexChanged">
+                                                <asp:ListItem>0</asp:ListItem>
+                                                <asp:ListItem>1</asp:ListItem>
+                                                <asp:ListItem>2</asp:ListItem>
+                                                <asp:ListItem Value="3">3</asp:ListItem>
+                                                <asp:ListItem>4</asp:ListItem>
+                                                <asp:ListItem>5</asp:ListItem>
+                                                <asp:ListItem>6</asp:ListItem>
+                                                <asp:ListItem>7</asp:ListItem>
+                                                <asp:ListItem>8</asp:ListItem>
+                                                <asp:ListItem>9</asp:ListItem>
+                                                <asp:ListItem>10</asp:ListItem>
+                                                <asp:ListItem>11</asp:ListItem>
+                                            </asp:DropDownList>
+                                            </td>
         </tr>
         <tr>
-            <td>
+            <td class="style5">
                         
-                    &nbsp;</td>
+                <br />
+                        
+                <asp:Button ID="btKetQua" runat="server"  Text="Kết Quả" Width="103px" 
+                     CssClass="button1" Height="28px" onclick="btKetQua_Click" Visible="False"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <asp:DropDownList ID="DropDownList3" runat="server" 
+                                Height="24px" Width="58px"  
+                                                AutoPostBack="True" 
+                                onselectedindexchanged="DropDownList3_SelectedIndexChanged">
+                                                <asp:ListItem>0</asp:ListItem>
+                                                <asp:ListItem>1</asp:ListItem>
+                                                <asp:ListItem>2</asp:ListItem>
+                                                <asp:ListItem Value="3">3</asp:ListItem>
+                                                <asp:ListItem>4</asp:ListItem>
+                                                <asp:ListItem>5</asp:ListItem>
+                                                <asp:ListItem>6</asp:ListItem>
+                                                <asp:ListItem>7</asp:ListItem>
+                                                <asp:ListItem>8</asp:ListItem>
+                                                <asp:ListItem>9</asp:ListItem>
+                                                <asp:ListItem>10</asp:ListItem>
+                                                <asp:ListItem>11</asp:ListItem>
+                                            </asp:DropDownList>
+                                           
+               <b><a href="Print.aspx?page=TDT">
+                <asp:Label ID="lbTongCong" Text="IN KẾT QUẢ" runat="server" Font-Size="Large" 
+                    style="text-align: left"></asp:Label>
+                </a></b>
+                
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+            </td>
             
         </tr>
     </table>

@@ -51,9 +51,9 @@
                 <li> 
                     <a href="QuanLyDHN.aspx?page=DHN&type=CODE" class="">THEO DÕI CODE ĐỌC SỐ</a>
                 </li> 
-                <li> 
+               <!-- <li> 
                     <a href="QuanLyDHN.aspx?page=DHN&type=CTCODE" class="">PHÂN TÍCH CODE ĐỌC SỐ</a>
-                </li> 
+                </li> -->
                 <li > 
                     <a href="QuanLyDHN.aspx?page=DHN&type=CS" class="">KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>
                 </li>	
@@ -61,9 +61,9 @@
                  <li > 
                     <a href="QuanLyDHN.aspx?page=DHN&type=SDS" class=""> SỔ ĐỌC SỐ</a>
                 </li>	 
-                <li> 
+               <!--   <li> 
                    <a  href="QuanLyDHN.aspx?page=DHN&type=TGD"  class="" > THỜI GIAN ĐỌC </a>
-                </li>	         
+                </li>	-->         
 
                  <li > 
                        <a  href="tab_PhanTichHoaDon0.aspx?page=DHN"  class="" >THEO DÕI HÓA ĐƠN = 0m<sup>3</sup> </a>
@@ -168,11 +168,11 @@
                     <a id="A11" href="QuanLyDHN.aspx?page=DHN&type=CODE" >THEO DÕI CODE ĐỌC SỐ</a>
                 </td> 
              </tr>
-          <tr> 
+         <!--  <tr> 
                 <td> 
                     <a id="A3" href="QuanLyDHN.aspx?page=DHN&type=CTCODE" >PHÂN TÍCH CODE ĐỌC SỐ</a>
                 </td> 
-             </tr> 
+             </tr> -->
           <tr> 
                 <td> 
                     <a id="A2" href="QuanLyDHN.aspx?page=DHN&type=CS" >KẾT QUẢ BIÊN ĐỌC CHỈ SỐ</a>

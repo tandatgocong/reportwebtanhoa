@@ -40,23 +40,25 @@ namespace BaoCao_Web.Class
                 log.Error("RESET SO LIEU " + ex.Message);
             }
         }
+
+
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(string nam, int ky)
         {
             string sql = "UPDATE W_BAOCAO_SANLUONG ";
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN, COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM=" + nam;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
             }
             catch (Exception ex)
             {
@@ -70,17 +72,17 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM=" + nam;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
             }
             catch (Exception ex)
             {
@@ -94,23 +96,24 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM=" + nam;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
             }
             catch (Exception ex)
             {
                 log.Error("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC " + ex.Message);
             }
         }
+
 
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM()
         {
@@ -229,15 +232,16 @@ namespace BaoCao_Web.Class
 
         ///// THEO ĐỢT
 
+
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT(string nam, int ky, int dot)
         {
             string sql = "UPDATE W_BAOCAO_SANLUONG ";
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += "(";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS=t2.TODS";
@@ -245,8 +249,8 @@ namespace BaoCao_Web.Class
             try
             {
                 sql = sql.Replace(@"\t", " ");
-                int resqult = Class.LinQConnection.ExecuteCommand(sql);
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql);
+
             }
             catch (Exception ex)
             {
@@ -260,17 +264,17 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON W_BAOCAO_SANLUONG.TODS = t2.TODS";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
             }
             catch (Exception ex)
             {
@@ -284,17 +288,17 @@ namespace BaoCao_Web.Class
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
 
             try
             {
-                int resqult = Class.LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
-                log.Info("CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT  " + resqult + " record");
+                int resqult = LinQConnection.ExecuteCommand(sql.Replace(@"\t", " "));
+
             }
             catch (Exception ex)
             {

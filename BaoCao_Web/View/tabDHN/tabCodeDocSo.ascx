@@ -44,9 +44,9 @@
             <tr>
                 <td class="style2"> 
                     <asp:Label ID="Label13" runat="server" Text=" BÁO CÁO THEO :" 
-                        CssClass="label"></asp:Label></td>
+                        CssClass="label" Visible="False"></asp:Label></td>
                 <td class="style2"> 
-                    <asp:DropDownList ID="bcTheo" runat="server">
+                    <asp:DropDownList ID="bcTheo" runat="server" Visible="False">
                         <asp:ListItem Value="1">Tổ Đọc Số</asp:ListItem>
                         <asp:ListItem Value="2">Quận Phường</asp:ListItem>
                     </asp:DropDownList>

@@ -706,3 +706,26 @@ The statement has been terminated.
 The statement has been terminated.
 2016-04-26 13:52:42,760 [1112] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU_KS'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_KS'.
 The statement has been terminated.
+2016-05-17 13:37:05,594 [6464] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:43:17,870 [6820] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:45:40,403 [5288] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:46:38,176 [7208] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:48:25,380 [5404] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:49:16,411 [6404] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:50:12,818 [7604] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:50:48,344 [4908] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:51:55,479 [6648] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 13:55:04,855 [7232] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:09:36,317 [3984] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:13:21,126 [7704] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:13:38,421 [3984] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:13:47,815 [7704] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:15:29,582 [6164] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:15:48,835 [3652] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:15:52,812 [6164] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2016-05-17 14:47:49,783 [5252] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='17/05/2016' 
+2016-05-17 14:47:49,809 [5252] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-05-17 14:47:56,060 [7560] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='17/05/2016' 
+2016-05-17 14:47:56,060 [7560] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-05-19 09:40:51,991 [7412] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-05-19 09:40:52,053 [7412] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
