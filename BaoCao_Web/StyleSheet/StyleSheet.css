@@ -623,6 +623,8 @@ div.contain_table{
 	font-weight: bold;
 }
 
+
+
 .table_list .row_title_level3{
 	padding-left: 40px;
 }
@@ -696,4 +698,38 @@ div.numberonline {
   max-height:100px;
   height:auto !important;
   height:100px;
+}
+
+
+
+
+.table_list_2{
+	
+	border:2px #0000CC dotted;
+}
+
+.table_list_2 tr.head1 td{
+	
+	font:normal 13px Arial, Tahoma, Helvetica, sans-serif;
+	font-weight: bold;	
+	color:Blue;
+	text-align: center;
+	padding: 2px 5px;
+	height: 35px;
+	
+}
+
+.table_list_2 tr.head td{
+	background-color: #Yellow;
+	border-bottom: 1px #0000CC	 solid; 
+	font-weight: bold;
+	height:27px;
+	text-align: left;
+	padding: 2px 5px;
+	font-style: normal;
+    font-variant: normal;
+    font-size: 40 px;
+    line-height: normal;
+    font-family: "Times New Roman";
+    color:Blue;
 }

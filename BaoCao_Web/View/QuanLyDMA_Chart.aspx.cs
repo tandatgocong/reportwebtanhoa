@@ -79,6 +79,7 @@ namespace BaoCao_Web.View
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
+            Session["chamcong"] = null;
             Response.Redirect(@"View\QuanLyDMA.aspx");
         }
     }

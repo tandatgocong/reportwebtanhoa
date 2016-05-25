@@ -19,10 +19,21 @@ namespace BaoCao_Web.View.KTCN
         }
         public void pLoad()
         {
+            int y = DateTime.Now.Year;
+            Session["chamcong"] = null;
+            Session["year"] = y;
             listDMA.DataSource = Class.LinQConnection.getDataTable("SELECT ID,MADMA FROM GNKDT_THONGTINDMA ORDER BY ID ASC");
             listDMA.DataTextField = "MADMA";
             listDMA.DataValueField = "MADMA";
             listDMA.DataBind();
+           
+            int i = 0;
+            while (i<=3)
+            {
+                DropDownList1.Items.Add(new ListItem(y + "", y + ""));
+                i++;
+                y = y - 1;
+            }
 
         }
 
@@ -68,6 +79,11 @@ namespace BaoCao_Web.View.KTCN
 
                 Session["chamcong"] = null;
             }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["year"] = DropDownList1.SelectedValue;
         }
     }
 }

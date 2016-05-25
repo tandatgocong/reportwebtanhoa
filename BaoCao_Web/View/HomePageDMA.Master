@@ -14,8 +14,12 @@
 <body>
     <form id="form1" runat="server">
 <div id="Home" style="width:100%">
-     <div class="Header" style="background-image: url(../Image/bg_head.jpg);">
-       <!--<img src="../Image/logo.png" style=" margin-top:4px;" /> -->
+     <div class="Header" 
+         style="background-image: url('../Image/bg_head.jpg'); text-align: center;">
+       &nbsp;
+       <div style="vertical-align:middle;"><asp:Label ID="Label1"  runat="server" 
+               Font-Bold="True" Font-Size="X-Large" 
+             ForeColor="Yellow" Text="CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA"></asp:Label></div>
      </div>
      <div class="Menu">
  	 <div>
