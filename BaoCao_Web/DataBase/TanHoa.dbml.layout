@@ -432,5 +432,11 @@
         <elementListCompartment Id="8353ca99-614c-4fb2-8319-ab914ac87b2f" absoluteBounds="0.76499999999999968, 39.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="1726cdd4-4c96-4d46-b7ed-07ea2f41cd8d" absoluteBounds="13, 12.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/TanHoaDataContext/w_dsDMA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3d16dff-e7c5-4bd7-b2aa-249deb47831f" absoluteBounds="13.015, 13.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

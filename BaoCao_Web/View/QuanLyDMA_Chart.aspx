@@ -49,8 +49,7 @@
     <form id="form1" runat="server">
     <p>
         &nbsp;
-        <asp:Button ID="Button1" CssClass="button"  runat="server" Text="Quay Lại" 
-            onclick="Button1_Click1" />
+       <span style="color:Red"> <a title="Click Xem Biểu Đồ !" href="QuanLyDMA.aspx">....Trở lại.....</a></span>
 &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Blue" 
             Text="Chọn Ngày Khác Xem Áp Lực:  "></asp:Label>
     

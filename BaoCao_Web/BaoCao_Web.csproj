@@ -399,6 +399,7 @@
     <Content Include="Image\down.png" />
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
+    <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
@@ -430,6 +431,7 @@
     <Content Include="View\BaoKinhDoanh\ViewKinhDoanh.ascx" />
     <Content Include="View\BieuDoBaoCao.aspx" />
     <Content Include="View\ChamCong.aspx" />
+    <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\QuanLyDMA_ChartLL.aspx" />
     <Content Include="View\hc_CapNhatThongTinNV.aspx" />
     <Content Include="View\QuanLyDMA.aspx" />
@@ -574,6 +576,13 @@
     <Compile Include="View\ChamCong.aspx.designer.cs">
       <DependentUpon>ChamCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\dmaApLuc.aspx.cs">
+      <DependentUpon>dmaApLuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\dmaApLuc.aspx.designer.cs">
+      <DependentUpon>dmaApLuc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\QuanLyDMA_ChartLL.aspx.cs">
       <DependentUpon>QuanLyDMA_ChartLL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -627,6 +636,12 @@
     </Compile>
     <Compile Include="View\QuanLyDMA_Chart.aspx.designer.cs">
       <DependentUpon>QuanLyDMA_Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\rptDSdhnDMArpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSdhnDMArpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\rpt_tab_SanLuong.cs">
       <SubType>Component</SubType>
@@ -995,6 +1010,10 @@
     <EmbeddedResource Include="View\inQuanPhuongHD0.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>inQuanPhuongHD0.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\rptDSdhnDMArpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSdhnDMArpt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\rpt_DSHOADO0.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

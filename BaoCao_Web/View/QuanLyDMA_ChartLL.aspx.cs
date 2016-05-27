@@ -21,9 +21,9 @@ namespace BaoCao_Web.View
         public void NamHienTai_DHN()
         {
             string value = Request.Params["value"].ToString();
-            string title = "['GIỜ','LƯU LƯỢNG']";
+            string title = "['GIỜ','m3/h']";
 
-            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),5) AS GIO,Value FROM dbo.t_Index_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,GETDATE()) ORDER BY  [TimeStamp] DESC ";
+            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),5) AS GIO,Value FROM dbo.t_Data_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,GETDATE()) ORDER BY  [TimeStamp] DESC ";
             DataTable table = LinQConnectionGis.getDataTable(sl);
 
             for (int i = 0; i < table.Rows.Count; i++)
@@ -60,9 +60,9 @@ namespace BaoCao_Web.View
         public void chontungay()
         {
             string value = Request.Params["value"].ToString();
-            string title = "['GIỜ','LƯU LƯỢNG']";
+            string title = "['GIỜ','m3/h']";
 
-            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),2) AS GIO,Value FROM dbo.t_Index_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,'" + Calendar1.SelectedDate + "')  AND  (DATEPART(MINUTE, [TimeStamp])=0) ORDER BY  [TimeStamp] DESC ";
+            string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),2) AS GIO,Value FROM dbo.t_Data_Logger_" + value + " WHERE CONVERT(DATE,[TimeStamp])=CONVERT(DATE,'" + Calendar1.SelectedDate + "')  AND  (DATEPART(MINUTE, [TimeStamp])=0) ORDER BY  [TimeStamp] DESC ";
             DataTable table = LinQConnectionGis.getDataTable(sl);
 
             for (int i = 0; i < table.Rows.Count; i++)
@@ -79,8 +79,8 @@ namespace BaoCao_Web.View
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            Session["chamcong"] = null;
-            Response.Redirect(@"View\QuanLyDMA.aspx");
+            //Session["chamcong"] = null;
+            Response.Redirect(@"\View\QuanLyDMA.aspx");
         }
     }
 }

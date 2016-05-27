@@ -204,6 +204,15 @@ namespace BaoCao_Web.View
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
 
             }
+            else if ("DMA".Equals(Request.Params["page"] + ""))
+            {
+                sql = "SELECT * FROM w_dsDMA WHERE MADMA='" + Request.Params["madma"] + "'";
+                CrystalReportSource1.Report.FileName = "rptDSdhnDMArpt.rpt";
+                CrystalReportSource1.ReportDocument.SetDataSource(Class.LinQConnection.getDataTable(sql));
+                CrystalReportSource1.ReportDocument.SetParameterValue("dma", Request.Params["madma"]);
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "DANH_SACH_DHN");
+
+            }
         }
     }
 }

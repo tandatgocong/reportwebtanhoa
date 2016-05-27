@@ -2,9 +2,10 @@
 <xs:schema id="kinhdoanh" targetNamespace="http://tempuri.org/kinhdoanh.xsd" xmlns:mstns="http://tempuri.org/kinhdoanh.xsd" xmlns="http://tempuri.org/kinhdoanh.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.CAPNUOCTANHOAConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString2 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.CAPNUOCTANHOAConnectionString2.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BAOCAO_KINHDOANHTableAdapter" GeneratorDataComponentClassName="BAOCAO_KINHDOANHTableAdapter" Name="BAOCAO_KINHDOANH" UserDataComponentName="BAOCAO_KINHDOANHTableAdapter">
@@ -145,6 +146,33 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="w_dsDMATableAdapter" GeneratorDataComponentClassName="w_dsDMATableAdapter" Name="w_dsDMA" UserDataComponentName="w_dsDMATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString2 (Web.config)" DbObjectName="CAPNUOCTANHOA.dbo.w_dsDMA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DANHBO, HOTEN, SONHA, TENDUONG, TENPHUONG, TENQUAN, HIEUDH, CODH, SOTHANDH, VITRIDHN, NAM, DIENTHOAI FROM dbo.w_dsDMA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DANHBO" DataSetColumn="DANHBO" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="SONHA" DataSetColumn="SONHA" />
+              <Mapping SourceColumn="TENDUONG" DataSetColumn="TENDUONG" />
+              <Mapping SourceColumn="TENPHUONG" DataSetColumn="TENPHUONG" />
+              <Mapping SourceColumn="TENQUAN" DataSetColumn="TENQUAN" />
+              <Mapping SourceColumn="HIEUDH" DataSetColumn="HIEUDH" />
+              <Mapping SourceColumn="CODH" DataSetColumn="CODH" />
+              <Mapping SourceColumn="SOTHANDH" DataSetColumn="SOTHANDH" />
+              <Mapping SourceColumn="VITRIDHN" DataSetColumn="VITRIDHN" />
+              <Mapping SourceColumn="NAM" DataSetColumn="NAM" />
+              <Mapping SourceColumn="DIENTHOAI" DataSetColumn="DIENTHOAI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -153,7 +181,7 @@
   <xs:element name="kinhdoanh" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="kinhdoanh" msprop:Generator_UserDSName="kinhdoanh">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="BAOCAO_KINHDOANH" msprop:Generator_TableClassName="BAOCAO_KINHDOANHDataTable" msprop:Generator_TableVarName="tableBAOCAO_KINHDOANH" msprop:Generator_TablePropName="BAOCAO_KINHDOANH" msprop:Generator_RowDeletingName="BAOCAO_KINHDOANHRowDeleting" msprop:Generator_UserTableName="BAOCAO_KINHDOANH" msprop:Generator_RowChangingName="BAOCAO_KINHDOANHRowChanging" msprop:Generator_RowEvHandlerName="BAOCAO_KINHDOANHRowChangeEventHandler" msprop:Generator_RowDeletedName="BAOCAO_KINHDOANHRowDeleted" msprop:Generator_RowEvArgName="BAOCAO_KINHDOANHRowChangeEvent" msprop:Generator_RowChangedName="BAOCAO_KINHDOANHRowChanged" msprop:Generator_RowClassName="BAOCAO_KINHDOANHRow">
+        <xs:element name="BAOCAO_KINHDOANH" msprop:Generator_TableClassName="BAOCAO_KINHDOANHDataTable" msprop:Generator_TableVarName="tableBAOCAO_KINHDOANH" msprop:Generator_RowChangedName="BAOCAO_KINHDOANHRowChanged" msprop:Generator_TablePropName="BAOCAO_KINHDOANH" msprop:Generator_RowDeletingName="BAOCAO_KINHDOANHRowDeleting" msprop:Generator_RowChangingName="BAOCAO_KINHDOANHRowChanging" msprop:Generator_RowEvHandlerName="BAOCAO_KINHDOANHRowChangeEventHandler" msprop:Generator_RowDeletedName="BAOCAO_KINHDOANHRowDeleted" msprop:Generator_RowClassName="BAOCAO_KINHDOANHRow" msprop:Generator_UserTableName="BAOCAO_KINHDOANH" msprop:Generator_RowEvArgName="BAOCAO_KINHDOANHRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -193,11 +221,105 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="w_dsDMA" msprop:Generator_TableClassName="w_dsDMADataTable" msprop:Generator_TableVarName="tablew_dsDMA" msprop:Generator_TablePropName="w_dsDMA" msprop:Generator_RowDeletingName="w_dsDMARowDeleting" msprop:Generator_RowChangingName="w_dsDMARowChanging" msprop:Generator_RowEvHandlerName="w_dsDMARowChangeEventHandler" msprop:Generator_RowDeletedName="w_dsDMARowDeleted" msprop:Generator_UserTableName="w_dsDMA" msprop:Generator_RowChangedName="w_dsDMARowChanged" msprop:Generator_RowEvArgName="w_dsDMARowChangeEvent" msprop:Generator_RowClassName="w_dsDMARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SONHA" msprop:Generator_ColumnVarNameInTable="columnSONHA" msprop:Generator_ColumnPropNameInRow="SONHA" msprop:Generator_ColumnPropNameInTable="SONHAColumn" msprop:Generator_UserColumnName="SONHA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENDUONG" msprop:Generator_ColumnVarNameInTable="columnTENDUONG" msprop:Generator_ColumnPropNameInRow="TENDUONG" msprop:Generator_ColumnPropNameInTable="TENDUONGColumn" msprop:Generator_UserColumnName="TENDUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENPHUONG" msprop:Generator_ColumnVarNameInTable="columnTENPHUONG" msprop:Generator_ColumnPropNameInRow="TENPHUONG" msprop:Generator_ColumnPropNameInTable="TENPHUONGColumn" msprop:Generator_UserColumnName="TENPHUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENQUAN" msprop:Generator_ColumnVarNameInTable="columnTENQUAN" msprop:Generator_ColumnPropNameInRow="TENQUAN" msprop:Generator_ColumnPropNameInTable="TENQUANColumn" msprop:Generator_UserColumnName="TENQUAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HIEUDH" msprop:Generator_ColumnVarNameInTable="columnHIEUDH" msprop:Generator_ColumnPropNameInRow="HIEUDH" msprop:Generator_ColumnPropNameInTable="HIEUDHColumn" msprop:Generator_UserColumnName="HIEUDH">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODH" msprop:Generator_ColumnVarNameInTable="columnCODH" msprop:Generator_ColumnPropNameInRow="CODH" msprop:Generator_ColumnPropNameInTable="CODHColumn" msprop:Generator_UserColumnName="CODH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOTHANDH" msprop:Generator_ColumnVarNameInTable="columnSOTHANDH" msprop:Generator_ColumnPropNameInRow="SOTHANDH" msprop:Generator_ColumnPropNameInTable="SOTHANDHColumn" msprop:Generator_UserColumnName="SOTHANDH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VITRIDHN" msprop:Generator_ColumnVarNameInTable="columnVITRIDHN" msprop:Generator_ColumnPropNameInRow="VITRIDHN" msprop:Generator_ColumnPropNameInTable="VITRIDHNColumn" msprop:Generator_UserColumnName="VITRIDHN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNAM" msprop:Generator_ColumnPropNameInRow="NAM" msprop:Generator_ColumnPropNameInTable="NAMColumn" msprop:Generator_UserColumnName="NAM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIENTHOAI" msprop:Generator_ColumnVarNameInTable="columnDIENTHOAI" msprop:Generator_ColumnPropNameInRow="DIENTHOAI" msprop:Generator_ColumnPropNameInTable="DIENTHOAIColumn" msprop:Generator_UserColumnName="DIENTHOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:BAOCAO_KINHDOANH" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="w_dsDMA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:w_dsDMA" />
+      <xs:field xpath="mstns:DANHBO" />
     </xs:unique>
   </xs:element>
 </xs:schema>

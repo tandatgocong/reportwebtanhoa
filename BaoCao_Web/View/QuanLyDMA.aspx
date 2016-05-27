@@ -75,7 +75,7 @@
                                 <tr style="height:20px;"> <td rowspan="2">Áp Lực</td> 
                          <%
                           string ChannelID = "";
-                          string sq = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Inlet'";
+                          string sq = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Pressure'";
                           string sqLL = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Flow'";
                           string sqTB = "SELECT *  FROM [DATALOGGER]  where MaDMA='" + dma.Replace("TH-", "").Replace("-", ".") + "' ";
                           DataTable t2 = BaoCao_Web.Class.LinQConnectionGis.getDataTable(sqTB);
@@ -128,8 +128,19 @@
                           DataTable t3 = BaoCao_Web.Class.LinQConnectionGis.getDataTable(sqLL);
                           if (t3.Rows.Count > 0)
                           {
+                              try
+                              {
+                                  ChannelID = t3.Rows[0]["ChannelId"].ToString();
+                              }
+                              catch (Exception)
+                              {
+                                  
+                                
+                              }
+                              
+                              
                                               %><tr > <td>Lưu Lượng</td>
-                                              <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></td></tr><%
+                                              <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_ChartLL.aspx?value=<%=ChannelID%>"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></a></td></tr><%
                           }     
                                %>
                                  
@@ -143,7 +154,8 @@
                           <table cellpadding="0" cellspacing="0" style="width:100%; font-family:Times New Roman; font-size:10px;" class="table_list" >
                              <tbody>
                                      <tr style="background-color:#E6E6FA" class="head11"  ><td >DHN Hiện Hữu </td><td>15</td><td>20</td><td>25</td><td>40</td><td>50</td><td>80</td><td>100</td><td>150</td><td>200</td></tr>
-                                     <tr class="head11" ><td><%=String.Format("{0:0,0}", tb.Rows[0]["TONG"])%></td><td><%=String.Format("{0:0,0}", tb.Rows[0]["CO15"])%></td><td><%=tb.Rows[0]["CO20"]%></td><td><%=tb.Rows[0]["CO25"]%></td>
+                                     <tr class="head11" ><td><%=String.Format("{0:0,0}", tb.Rows[0]["TONG"])%>
+                                     <br /> <a  href="Print.aspx?page=DMA&madma=<%=dma%>" > Danh sách Khách Hàng </a> </td><td><%=String.Format("{0:0,0}", tb.Rows[0]["CO15"])%></td><td><%=tb.Rows[0]["CO20"]%></td><td><%=tb.Rows[0]["CO25"]%></td>
                                      <td><%=tb.Rows[0]["CO40"]%></td><td><%=tb.Rows[0]["CO50"]%></td><td><%=tb.Rows[0]["CO80"]%></td><td><%=tb.Rows[0]["CO100"]%></td><td><%=tb.Rows[0]["CO150"]%></td><td><%=tb.Rows[0]["CO200"]%></td></tr>
                              </tbody>
                              </table>  

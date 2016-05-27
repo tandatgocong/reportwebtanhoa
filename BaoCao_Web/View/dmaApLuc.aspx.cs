@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
-namespace BaoCao_Web.View.KTCN
+namespace BaoCao_Web.View
 {
-    public partial class QuanLyDMA : System.Web.UI.Page
+    public partial class dmaApLuc : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,23 +16,18 @@ namespace BaoCao_Web.View.KTCN
             if (IsPostBack)
                 return;
             pLoad();
+
         }
+
         public void pLoad()
         {
-            int y = DateTime.Now.Year;           
+            int y = DateTime.Now.Year;
+            Session["col"] = TextBox1.Text;
             Session["year"] = y;
-            listDMA.DataSource = Class.LinQConnection.getDataTable("SELECT ID,MADMA FROM GNKDT_THONGTINDMA ORDER BY ID ASC");
-            listDMA.DataTextField = "MADMA";
+            listDMA.DataSource = Class.LinQConnection.getDataTable("SELECT ID,MADMA,REPLACE(MADMA,'TH-','') as TEN FROM GNKDT_THONGTINDMA ORDER BY ID ASC");
+            listDMA.DataTextField = "TEN";
             listDMA.DataValueField = "MADMA";
             listDMA.DataBind();
-           
-            int i = 0;
-            while (i<=3)
-            {
-                DropDownList1.Items.Add(new ListItem(y + "", y + ""));
-                i++;
-                y = y - 1;
-            }
 
         }
 
@@ -49,13 +44,13 @@ namespace BaoCao_Web.View.KTCN
             }
             string sql = "SELECT ID,MADMA FROM GNKDT_THONGTINDMA WHERE MADMA IN (" + flag + ") ORDER BY ID ASC";
             DataTable tb = Class.LinQConnection.getDataTable(sql);
-            Session["chamcong"] = tb;
+            Session["chamcongAL"] = tb;
 
             //DataList1.DataSource = 
             //DataList1.DataBind();
         }
 
-        protected void cAll_CheckedChanged(object sender, EventArgs e)
+         protected void cAll_CheckedChanged(object sender, EventArgs e)
         {
             if (cAll.Checked)
             {
@@ -67,7 +62,7 @@ namespace BaoCao_Web.View.KTCN
                 }
                 string sql = "SELECT ID,MADMA FROM GNKDT_THONGTINDMA WHERE MADMA IN (" + flag + ") ORDER BY ID ASC";
                 DataTable tb = Class.LinQConnection.getDataTable(sql);
-                Session["chamcong"] = tb;
+                Session["chamcongAL"] = tb;
             }
             else
             {
@@ -76,13 +71,24 @@ namespace BaoCao_Web.View.KTCN
                     item.Selected = false;
                 }
 
-                Session["chamcong"] = null;
+                Session["chamcongAL"] = null;
             }
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["year"] = DropDownList1.SelectedValue;
-        }
+         protected void TextBox1_TextChanged(object sender, EventArgs e)
+         {
+             Session["col"] = TextBox1.Text;
+         }
+
+         protected void check0_CheckedChanged(object sender, EventArgs e)
+         {
+             //string sq = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Pressure'";
+         }
+
+         protected void checkLoi_CheckedChanged(object sender, EventArgs e)
+         {
+
+         }
+
     }
 }

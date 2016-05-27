@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>BIỂU ĐỒ ÁP LỰC NƯỚC </title>
+    <title>BIỂU ĐỒ LƯU LƯỢNG NƯỚC </title>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- linechart "corechart",-->
     <script type="text/javascript">
         google.load("visualization", "1", { packages: ["linechart" ] });
@@ -48,10 +48,9 @@
 <body style="width:100%;">
     <form id="form1" runat="server">
     <p>
-        &nbsp;
-        <asp:Button ID="Button1" CssClass="button"  runat="server" Text="Quay Lại" 
-            onclick="Button1_Click1" />
-&nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Blue" 
+         &nbsp;
+        <span style="color:Red"><a href="QuanLyDMA.aspx" title="Click Xem Biểu Đồ !">
+         ....Trở lại.....</a></span>&nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Blue" 
             Text="Chọn Ngày Khác Xem :  "></asp:Label>
     
      
