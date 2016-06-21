@@ -96,7 +96,7 @@
             </li>
               <li id="Li1" class="top"><a href="QuanLyDMA.aspx" id="A9" class="top_link"><span>QUẢN LÝ DMA</span></a> 
             <ul class="sub_tintuc">
-    				<li><a  href="dmaApLuc.aspx" target=_blank >ÁP LỰC</a></li></ul>
+    				<li><a  href="dmaApLuc.aspx" >ÁP LỰC</a></li></ul>
             </li> 
             <li id="mnLienHe" class="top"><a href="ChamCong.aspx?page=KD"  id="CHAMCONG" class="top_link"><span>CHẤM CÔNG</span></a>
              <ul class="sub_tintuc">

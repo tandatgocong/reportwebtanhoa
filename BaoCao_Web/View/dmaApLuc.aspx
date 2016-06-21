@@ -8,6 +8,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>..: ÁP LỰC DMA :..</title>
+ 
+    
+<script type="text/javascript">
+    init_reload();
+    function init_reload(){
+        setInterval( function() {
+                   window.location.reload();
+
+               }, 900000);
+    }
+    </script>
+
+     
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,8 +35,7 @@
         <td>
              <asp:Label ID="Label2" runat="server" Text="Áp lực = 0 : " Visible="False"></asp:Label>   
              <asp:CheckBox ID="check0" runat="server" 
-                 oncheckedchanged="check0_CheckedChanged" AutoPostBack="True" 
-                 Visible="False" /> 
+                 oncheckedchanged="check0_CheckedChanged" AutoPostBack="True"  Visible="False" /> 
         &nbsp;</td>
          <td>
              <asp:Label ID="Label3" runat="server" Text="Áp lực lỗi : " Visible="False"></asp:Label>    
@@ -195,7 +208,7 @@
 </td>
  </tr>
 </table>
-
+   
 
     </form>
 </body>
