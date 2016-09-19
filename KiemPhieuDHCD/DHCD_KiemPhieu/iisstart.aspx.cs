@@ -14,11 +14,8 @@ namespace DHCD_KiemPhieu
         {
             //for logging to file
            log4net.ILog logger = log4net.LogManager.GetLogger("File");
-           if (Session["login"] == null)
-           {
-               Response.Redirect(@"View\Login.aspx");
-           }
-
+           
+           Response.Redirect(@"View\Login.aspx");
           
            
 

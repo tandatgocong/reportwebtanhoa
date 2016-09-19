@@ -729,3 +729,81 @@ The statement has been terminated.
 2016-05-17 14:47:56,060 [7560] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
 2016-05-19 09:40:51,991 [7412] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
 2016-05-19 09:40:52,053 [7412] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:08:44,874 [8016] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:08:45,143 [8016] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:11:49,181 [5912] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:11:49,255 [5912] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:11:49,345 [5912] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:11:49,345 [5912] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:12:55,252 [3908] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:12:55,316 [3908] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:12:55,352 [3908] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:12:55,352 [3908] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:13:02,672 [3908] ERROR File LinQConnection getDataTableThe select list for the INSERT statement contains fewer items than the insert list. The number of SELECT values must match the number of INSERT columns.
+2016-08-29 09:13:37,960 [4528] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:13:38,055 [4528] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:13:46,014 [6556] ERROR File LinQConnection getDataTableThe select list for the INSERT statement contains fewer items than the insert list. The number of SELECT values must match the number of INSERT columns.
+2016-08-29 09:14:01,068 [3908] ERROR File LinQConnection getDataTableThe select list for the INSERT statement contains fewer items than the insert list. The number of SELECT values must match the number of INSERT columns.
+2016-08-29 09:14:10,755 [2432] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW003).
+The statement has been terminated.
+2016-08-29 09:14:10,786 [2432] ERROR File LinQConnection getDataTableThe select list for the INSERT statement contains fewer items than the insert list. The number of SELECT values must match the number of INSERT columns.
+2016-08-29 09:15:48,023 [3180] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:15:48,082 [3180] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:15:48,105 [3180] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:15:48,105 [3180] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:15:50,315 [1164] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:15:50,315 [1164] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:18:29,470 [6556] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:18:29,545 [6556] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:18:29,568 [6556] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:18:29,568 [6556] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:18:41,017 [7028] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 09:18:41,017 [7028] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 09:21:57,245 [7868] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:21:57,318 [7868] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:24:32,476 [1248] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW008).
+The statement has been terminated.
+2016-08-29 09:24:32,490 [1248] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'. The duplicate key value is (1, Aug 29 2016 12:00AM, THW008).
+The statement has been terminated.
+2016-08-29 09:25:40,516 [2920] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW008).
+The statement has been terminated.
+2016-08-29 09:25:40,516 [2920] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'. The duplicate key value is (1, Aug 29 2016 12:00AM, THW008).
+The statement has been terminated.
+2016-08-29 09:26:29,665 [2432] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW008).
+The statement has been terminated.
+2016-08-29 09:26:29,674 [2432] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'. The duplicate key value is (1, Aug 29 2016 12:00AM, THW008).
+The statement has been terminated.
+2016-08-29 09:27:43,775 [5516] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW008).
+The statement has been terminated.
+2016-08-29 09:27:43,776 [5516] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'. The duplicate key value is (1, Aug 29 2016 12:00AM, THW008).
+The statement has been terminated.
+2016-08-29 09:37:31,092 [6900] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (THW008).
+The statement has been terminated.
+2016-08-29 09:37:31,100 [6900] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'. The duplicate key value is (1, Aug 29 2016 12:00AM, THW008).
+The statement has been terminated.
+2016-08-29 09:38:36,872 [7120] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:38:36,927 [7120] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 09:52:54,180 [1148] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 09:52:54,268 [1148] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 10:12:43,741 [7612] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-29 10:12:44,022 [7612] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-29 10:12:44,183 [7612] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 10:12:44,183 [7612] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-29 10:12:53,454 [5152] ERROR File LinQConnection ExecuteCommand : SELECT SUM(TONGCD) FROM DSCODONG_THAMDU
+2016-08-29 10:12:53,454 [5152] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2016-08-30 13:24:06,670 [3276] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-30 13:24:06,825 [3276] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2016-08-30 13:24:16,083 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
+The statement has been terminated.
+2016-08-30 13:24:16,131 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-08-30 13:24:19,149 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
+The statement has been terminated.
+2016-08-30 13:24:19,182 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-08-30 13:24:26,594 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
+The statement has been terminated.
+2016-08-30 13:24:26,623 [9856] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_BIEUQUYET'. Cannot insert duplicate key in object 'dbo.BIEUQUYET'.
+The statement has been terminated.
+2016-08-30 13:30:11,444 [9760] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2016-08-30 13:30:11,528 [9760] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
