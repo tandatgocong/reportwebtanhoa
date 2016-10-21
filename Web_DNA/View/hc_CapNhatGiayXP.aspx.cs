@@ -110,7 +110,7 @@ namespace BaoCao_Web.View
                 lbThanhCong.ForeColor = Color.Blue;
                 this.lbThanhCong.Text = "Cập Nhật Thành Công.";
                 this.txtPhutVao.Text = "";
-                this.txtPhutVao.Text = "";
+                this.txtPhutRa.Text = "";
                 this.txtNoiDungCT.Text = "";
                 dataLoad();
             }
@@ -227,8 +227,8 @@ namespace BaoCao_Web.View
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-           
-            Class.LinQConnection.ExecuteCommand("DELETE FROM TCHC_GIAYXINVE WHERE ID='" + e.CommandArgument.ToString() + "'");
+            string connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
+            Class.OledbConnection.ExecuteCommand(connectionString,"DELETE FROM tblGiayXinVe WHERE ID=" + e.CommandArgument.ToString() + " ");
             dataLoad();
         }
 

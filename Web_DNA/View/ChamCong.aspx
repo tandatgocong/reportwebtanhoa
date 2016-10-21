@@ -161,8 +161,15 @@
                                       <%
                                            
                                        }
-                                       else { 
-                                            if ("CT".Equals(row[s].ToString())) {
+                                       else {
+                                           if ("NP".Equals(row[s].ToString()))
+                                           {
+                                               %>
+                                                 <td class="style28" style="background-color:Green;" ><%=row[s].ToString()%></td>
+                                        
+                                              <%
+                                          
+                                           }else  if ("CT".Equals(row[s].ToString())) {
                                              %>
                                         <td class="style28" style="background-color:Aqua;" ><%=row[s].ToString()%></td>
                                         
