@@ -70,6 +70,15 @@
             width: 168px;
             height: 23px;
         }
+        .style43
+        {
+            width: 43px;
+            height: 23px;
+        }
+        .style44
+        {
+            width: 43px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -175,7 +184,7 @@
                                         
                                       <%
                                       }
-                                            else if ("KQ".Equals(row[s].ToString())) { 
+                                     else if ("KQ".Equals(row[s].ToString())) { 
                                         %>
                                         <td class="style28" style="background-color:Red;" ><%=row[s].ToString()%></td>
                                         
@@ -202,7 +211,7 @@
                                       <%
                                            
                                        }
-                                       else { 
+                                       else {
                                            if ("CT".Equals(row[s + "RA"].ToString())) {
                                                  %>
                                             <td class="style28" style="background-color:Aqua;" ><%=row[s + "RA"].ToString()%></td>
@@ -221,12 +230,17 @@
                                      
                                                   <%
                                            }
-                                                else{
+                                           else if ("NP".Equals(row[s + "RA"].ToString())) { 
+                                           %> <td class="style28" style="background-color:Green;" ><%=row[s].ToString()%></td> <%
+                                           
+                                           }
+                                           else
+                                           {
                                                       %>
                                                     <td class="style28" style="border-right:2px #99cc99 solid;"><%=row[s + "RA"].ToString()%></td>
                                      
                                                   <%
-                                                }  
+                                           }  
                                         %>
                                         
                                       <%
@@ -273,6 +287,10 @@
                                                 <td  style="background-color:Lavender;border-bottom:2px #99cc99 solid;" class="style36" ></td>
                                         <td  style=";border-bottom:2px #99cc99 solid;" class="style38">
                                             Xin Về Sớm;</td>
+                                        <td  style=";border-bottom:2px #99cc99 solid;" class="style44">
+                                            &nbsp;</td>
+                                        <td  style=";border-bottom:2px #99cc99 solid;" class="style38">
+                                            &nbsp;</td>
                                         </tr>
                                         <tr>
                                             
@@ -285,6 +303,12 @@
                                         
                                             <td class="style39">
                                                 Đi Công Tác Ngoài;</td>
+                                        
+                                            <td class="style43" style="background-color:Green;" >
+                                                &nbsp;</td>
+                                        
+                                            <td class="style39">
+                                                Nghỉ Phép</td>
                                         
                             </tr>
             </table>
