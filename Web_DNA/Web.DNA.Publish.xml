@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\LETANDAT\Desktop\SSS" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/BaoCao_Web.pdb" publishTime="10/26/2016 11:21:41" />
+    <file relUrl="Lib/AjaxControlToolkit.dll" publishTime="10/12/2016 13:56:18" />
+    <file relUrl="Image/table_list_bghead.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/ss-GIAM.PNG" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Global.asax" publishTime="10/12/2016 13:56:34" />
+    <file relUrl="App_Browsers/BrowserFile1.browser" publishTime="10/12/2016 13:54:51" />
+    <file relUrl="JavaScript/transmenu.js" publishTime="10/12/2016 13:55:46" />
+    <file relUrl="Image/1up.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/Logo Tan Hoa.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/btn-chitiet.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/print_icon.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="StyleSheet/Menu.css" publishTime="10/12/2016 13:56:20" />
+    <file relUrl="Image/button_bg.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/foot.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="View/Print.aspx" publishTime="10/12/2016 13:56:25" />
+    <file relUrl="Lib/String_Indentity.dll" publishTime="10/12/2016 13:56:18" />
+    <file relUrl="JavaScript/jquery-1.6.2.js" publishTime="10/12/2016 13:55:46" />
+    <file relUrl="Image/bullet0_over.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/EDIT.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="bin/log4net.dll" publishTime="10/12/2016 13:56:19" />
+    <file relUrl="Image/XOA.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Lib/String_Indentity_.dll" publishTime="10/12/2016 13:56:19" />
+    <file relUrl="Image/edit.ico" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="JavaScript/headmenu.css" publishTime="10/12/2016 13:55:46" />
+    <file relUrl="Image/error.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="10/12/2016 13:56:18" />
+    <file relUrl="Image/nochange.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/Capture.JPG" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="StyleSheet/StyleSheet.css" publishTime="10/13/2016 09:23:12" />
+    <file relUrl="Default.aspx" publishTime="10/12/2016 13:56:34" />
+    <file relUrl="Image/logo.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/bg_head.jpg" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Lib/log4net.dll" publishTime="10/12/2016 13:56:19" />
+    <file relUrl="View/ChamCong.aspx" publishTime="10/24/2016 14:46:53" />
+    <file relUrl="Image/block_bg.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/delete2.ico" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="View/Home.aspx" publishTime="10/13/2016 13:43:33" />
+    <file relUrl="Image/1down.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="View/hc_CapNhatThongTinNV.aspx" publishTime="10/12/2016 13:56:25" />
+    <file relUrl="Image/down.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/menu_bg.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/bg.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Lib/CKEditor.NET.dll" publishTime="10/12/2016 13:56:18" />
+    <file relUrl="View/Login.aspx" publishTime="10/12/2016 13:56:25" />
+    <file relUrl="count_visit.txt" publishTime="10/26/2016 10:10:32" />
+    <file relUrl="JavaScript/jquery-1.2.6.js" publishTime="10/12/2016 13:55:46" />
+    <file relUrl="Web.config" publishTime="10/26/2016 11:21:43" />
+    <file relUrl="bin/BaoCao_Web.dll" publishTime="10/26/2016 11:21:41" />
+    <file relUrl="View/tabTCHC/tabCapNhatGiay.ascx" publishTime="10/12/2016 13:56:25" />
+    <file relUrl="Image/add.ico" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="JavaScript/headmenu.js" publishTime="10/12/2016 13:55:46" />
+    <file relUrl="View/HomePage.Master" publishTime="10/25/2016 10:51:47" />
+    <file relUrl="Image/ss-TANG.PNG" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="View/hc_CapNhatGiayXP.aspx" publishTime="10/25/2016 10:59:57" />
+    <file relUrl="Image/Untitled.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/up.png" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="Image/news_list_bg.gif" publishTime="10/12/2016 13:55:45" />
+    <file relUrl="View/QuanLyHoSoKhachHang.aspx" publishTime="10/13/2016 13:39:11" />
+    <file relUrl="Image/box-bullet1.gif" publishTime="10/12/2016 13:55:45" />
+  </publishProfile>
+</publishData>

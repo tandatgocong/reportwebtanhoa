@@ -18,6 +18,7 @@ namespace BaoCao_Web.View
         string thang__ = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -95,17 +96,6 @@ namespace BaoCao_Web.View
                 return 4;
             }
 
-            ////khong thoi han
-            sql = "SELECT * FROM tblGiayXinVe WHERE LOAIGP='TH' AND  MANV='" + manv + "' AND ( '" + ngay.Date.ToShortDateString() + "' between  CDate([TUNGAY]) and CDate([DENNGAY]) ) ";
-            _xinve = Class.OledbConnection.getDataTable(connectionString, sql);
-            //query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
-            if (_xinve!=null && _xinve.Rows.Count > 0)
-            {
-                type = "KT";
-                noidung = "XIN VE SOM";
-                return 2;
-            }
-
             sql = "SELECT * FROM tblGiayXinVe WHERE LOAIGP='NP' AND  MANV='" + manv + "' AND (CDate([TUNGAY]) = '" + ngay.Date.ToShortDateString() + "' ) ";
             _xinve = Class.OledbConnection.getDataTable(connectionString, sql);
             //query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
@@ -115,6 +105,18 @@ namespace BaoCao_Web.View
                 noidung = "NGHI PHEP";
                 return 7;
             }
+
+            ////khong thoi han
+            sql = "SELECT * FROM tblGiayXinVe WHERE LOAIGP='KT' AND  MANV='" + manv + "'  ";
+            _xinve = Class.OledbConnection.getDataTable(connectionString, sql);
+            //query = from q in db.TCHC_GIAYXINVEs where q.MANV == manv && q.LOAIGP == "KT" orderby q.CREATEDATE descending select q;
+            if (_xinve != null && _xinve.Rows.Count > 0)
+            {
+                type = "KT";
+                noidung = "XIN VE SOM";
+                return 2;
+            }
+
 
             return 0;
         }

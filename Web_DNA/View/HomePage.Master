@@ -21,7 +21,7 @@
        &nbsp;
        <div style="vertical-align:middle;"><asp:Label ID="Label1"  runat="server" 
                Font-Bold="True" Font-Size="X-Large" 
-             ForeColor="Yellow" Text=""></asp:Label></div>
+             ForeColor="Yellow" Text="CÔNG TY CỔ PHẦN XÂY DỰNG HẠ TẦNG D.N.A"></asp:Label></div>
      </div>
      <div class="Menu">
  	 <div>
@@ -89,7 +89,7 @@
              <ul class="sub_tintuc">
     				<li><a  href="ChamCong.aspx?page=KD" >THEO DÕI CHẤM CÔNG </a></li>
 					<li><a  href="hc_CapNhatGiayXP.aspx?page=KD" >CẬP NHẬT GIẤY PHÉP</a></li>
-                    <li class="last"><a  href="hc_CapNhatThongTinNV.aspx?page=KD" >ĐIỀU CHỈNH NHÂN VIÊN</a></li>
+                    <!-- <li class="last"><a  href="hc_CapNhatThongTinNV.aspx?page=KD" >ĐIỀU CHỈNH NHÂN VIÊN</a></li> -->
     			</ul>
             </li>         
  		</ul>

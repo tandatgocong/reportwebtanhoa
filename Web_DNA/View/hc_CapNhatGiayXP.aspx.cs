@@ -41,7 +41,7 @@ namespace BaoCao_Web.View
             //cbPhongBanDoi.DataValueField = "ID";
             //cbPhongBanDoi.DataBind();
             /* ---------------------- */
-             connectionString= ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
             string sql = " SELECT info.UserEnrollNumber, info.UserFullName FROM UserInfo info order by UserFullCode asc ";
 
             cpNhanVien.DataSource = Class.OledbConnection.getDataTable(connectionString, sql);
@@ -57,7 +57,7 @@ namespace BaoCao_Web.View
         {
             try
             {
-                 connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
+                connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
                  string sql = "INSERT INTO tblGiayXinVe(MANV,TENNV,LOAIGP,TENLOAI,BUOICT,TUNGAY,DENNGAY,PHUTVAO,PHUTRA,THANG,NAM) ";
                 sql += "VALUES (";
                 sql += this.cpNhanVien.SelectedItem.Value;
@@ -211,8 +211,8 @@ namespace BaoCao_Web.View
         }
         public void dataLoad()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
-            string sql = " SELECT ID,MANV,TENNV,TENLOAI,BUOICT, Format(TUNGAY,'dd/mm/yyyy') as TNGAY ,Format(DENNGAY,'dd/mm/yyyy') as DNGAY ,PHUTVAO,PHUTRA,THANG FROM tblGiayXinVe WHERE THANG=" + cbThang0.Text + "  AND NAM=" + cbNam.Text + "  ";
+            connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
+            string sql = " SELECT ID,MANV,TENNV,TENLOAI,BUOICT, Format(TUNGAY,'dd/mm/yyyy') as TNGAY ,Format(DENNGAY,'dd/mm/yyyy') as DNGAY ,PHUTVAO,PHUTRA,THANG FROM tblGiayXinVe WHERE ( THANG=" + cbThang0.Text + "  AND NAM=" + cbNam.Text + " ) OR  LOAIGP='KT' ";
             DataTable tb = Class.OledbConnection.getDataTable(connectionString, sql);
             GridView1.DataSource = tb;
             GridView1.DataBind();
@@ -227,7 +227,7 @@ namespace BaoCao_Web.View
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["WiseEyeOn39ConnectionString"].ConnectionString;
             Class.OledbConnection.ExecuteCommand(connectionString,"DELETE FROM tblGiayXinVe WHERE ID=" + e.CommandArgument.ToString() + " ");
             dataLoad();
         }

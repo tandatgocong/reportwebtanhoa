@@ -516,3 +516,126 @@
 2016-10-24 15:22:10,288 [5328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
 2016-10-24 15:22:10,547 [5328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
 2016-10-24 15:22:10,921 [5328] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:08,203 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:08,528 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:08,767 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:09,121 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:09,369 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:09,642 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:09,886 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:10,124 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:10,404 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:10,650 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:11,009 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:11,133 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:48:11,372 [7808] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:55,519 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:55,821 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:56,090 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:56,444 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:56,688 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:56,969 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:57,217 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:57,471 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:57,745 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:57,988 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:58,348 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:58,473 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:54:58,711 [9312] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:45,146 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:45,365 [9776] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:55:45,503 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:45,671 [9776] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:55:45,759 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:45,935 [9776] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:55:46,134 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:46,295 [9776] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:55:46,383 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:46,553 [9776] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:55:46,639 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:46,927 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:47,171 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:55:47,519 [9776] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:26,700 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:26,860 [6700] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:56:26,989 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:27,157 [6700] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:56:27,245 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:27,412 [6700] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:56:27,613 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:27,778 [6700] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:56:27,869 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:28,038 [6700] ERROR File OleDbConnection getDataTableInvalid use of Null
+2016-10-25 10:56:28,125 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:28,404 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:28,642 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:56:29,013 [6700] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:15,669 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:15,909 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:16,108 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:16,422 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:16,625 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:16,870 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:17,077 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:17,285 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:17,574 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:17,859 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:18,210 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:18,339 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 10:57:18,580 [5524] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:00:10,777 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:16,845 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:19,344 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:19,617 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:19,779 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:19,950 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:20,237 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:20,481 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-25 11:01:20,840 [10180] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-26 09:57:17,765 [6548] ERROR File OleDbConnection getDataTableThe Microsoft Jet database engine cannot open the file '\\SERVER_HP380\mcc$\Data'.  It is already opened exclusively by another user, or you need permission to view its data.
+2016-10-26 09:58:05,226 [6560] ERROR File OleDbConnection getDataTable'C:\Program Files\Common Files\Microsoft Shared\DevServer\10.0\SERVER_HP380\mcc$\Data' is not a valid path.  Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+2016-10-26 09:58:43,760 [6344] ERROR File OleDbConnection getDataTable'C:\SERVER_HP380\mcc$\Data\WiseEyeOn39.mdb' is not a valid path.  Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+2016-10-26 10:03:41,381 [3696] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:06:44,458 [5220] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:53,885 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:53,955 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,027 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,088 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,148 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,207 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,482 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,543 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,605 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,684 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,747 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,808 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,870 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,933 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:54,995 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,072 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,132 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,193 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,264 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,325 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,385 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,463 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,539 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,619 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,863 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:55,932 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,007 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,074 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,134 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,194 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,255 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,316 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,397 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,463 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,533 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:07:56,595 [4304] ERROR File OleDbConnection getDataTableNot a valid file name.
+2016-10-26 10:10:11,347 [3144] ERROR File OleDbConnection getDataTable'C:\SERVER_HP380\mcc$\Data\WiseEyeOn39.mdb' is not a valid path.  Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+2016-10-26 10:10:39,555 [7836] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-26 10:10:40,067 [7836] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-26 10:10:40,289 [7836] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-26 10:10:40,507 [7836] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2016-10-26 10:10:41,051 [7836] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.

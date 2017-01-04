@@ -134,7 +134,7 @@
                             
                         </td>
                         <td class="style15">
-                            <asp:Label ID="Label2" runat="server" Text="TỪ NGÀY" Visible="False"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="ĐẾN NGÀY" Visible="False"></asp:Label>
                         </td>
                         <td class="style7">
                             <asp:TextBox ID="denngay" runat="server" autocomplete="off" Visible="False" />
