@@ -807,3 +807,13 @@ The statement has been terminated.
 The statement has been terminated.
 2016-08-30 13:30:11,444 [9760] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
 2016-08-30 13:30:11,528 [9760] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-01-04 10:03:07,359 [6720] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-01-04 10:03:07,505 [6720] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-01-04 10:03:13,128 [6212] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-01-04 10:03:13,173 [6212] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-01-04 10:05:45,357 [6212] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='04/01/2017' 
+2017-01-04 10:05:45,357 [6212] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-01-04 10:05:50,521 [1984] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-01-04 10:05:50,568 [1984] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-01-04 10:13:34,856 [6780] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='04/01/2017' 
+2017-01-04 10:13:34,856 [6780] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.

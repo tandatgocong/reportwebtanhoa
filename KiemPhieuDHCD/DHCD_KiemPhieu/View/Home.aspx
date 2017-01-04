@@ -4,7 +4,7 @@
     
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style type="text/css">
+    <style type="text/css">
         .style1
         {
             font-size: x-large;
@@ -43,7 +43,7 @@
             <span class="style3"><strong>
             <img  src="../Image/Logo%20Tan%20Hoa.png" style="height: 290px; width: 307px" /><br />
             <br />
-            ĐẠI HỘI CỔ ĐÔNG</strong></span><br />
+            ĐẠI HỘI CHI ĐOÀN KHỐI KỸ THUẬT</strong></span><br />
             <br />
             
        

@@ -51,7 +51,7 @@
 
      <div class="title_page" style=" margin-top:10px; height: 26px; text-align:center;">
          <asp:Label ID="title" runat="server" 
-        Text="..: KIỂM PHIẾU BẦU CỬ CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA :.."></asp:Label>
+        Text="..: KIỂM PHIẾU BẦU CỬ  :.."></asp:Label>
     </div>
 <ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
             EnableScriptLocalization="true" ID="ScriptManager1"  />
@@ -147,10 +147,7 @@
                             style="border-right:1px #FF0000 solid; height:40px;  background-color:#FFFF99; font-size: x-large; border-bottom: 2px #FF0000 solid " 
                             colspan="3">
                             <center>
-                                KẾT QUẢ BẦU CỬ 
-                                ĐẠI BIỂU THAM GIA TỔ ĐỐI THOẠI<br />
-                                CÔNG TY CỔ PHẨN CẤP NƯỚC TÂN HÒA
-                            </center>
+                                KẾT QUẢ&nbsp; KIỂM PHIẾU</center>
                         </td>
                     </tr>
                     <tr class="head1">
