@@ -1,8 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="QuanLyKhachHang.View.Home" %>
-
-
-    
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <style type="text/css">
         .style1
@@ -21,14 +17,7 @@
             color: #CC0000;
         }
         </style>
-
-    <div class="Pages_content"><!--
-<div class="title_page"><asp:Label ID="title" runat="server" Text="BÁO CÁO TỔNG KẾT"></asp:Label>
-    </div>
-		<div class="pages_contain" style="margin-top:10px; margin-left:10px; margin-right:10px;">        
-
-
-        </div>--><center>
+ <center>
             <br />
             <span class="style1"><span class="style2">
             <br />
@@ -51,7 +40,12 @@
           <div id="wrap" class="menu" align="center" style=" margin-left:3px; margin-bottom:5px;">
          </center>
      </div>
-   <script type="text/javascript">
+       <script language="javascript" type="text/javascript">
+           window.document.getElementById("HOME").className = "current_link";
+           window.document.getElementById("GANMOI").className = "top_link";
+           window.document.getElementById("KHACHHANG").className = "top_link";
+           window.document.getElementById("APLUC").className = "top_link"; 
+  
             <!--
        if (TransMenu.isSupported()) {
            var ms = new TransMenuSet(TransMenu.direction.right, 0, 0, TransMenu.reference.topRight);

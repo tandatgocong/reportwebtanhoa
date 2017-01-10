@@ -15,7 +15,13 @@
 
                }, 900000);
     }
+   
+         window.document.getElementById("HOME").className = "top_link";
+         window.document.getElementById("GANMOI").className = "top_link";
+         window.document.getElementById("KHACHHANG").className = "top_link";
+         window.document.getElementById("APLUC").className = "current_link"; 
     </script>
+
     <table>
         <tr>
         <td>

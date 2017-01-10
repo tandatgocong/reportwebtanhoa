@@ -1,11 +1,19 @@
-﻿html, body{
-	margin: 0 auto;
+﻿
+
+html, body
+{
+    height:100%;
+	margin:  auto;
 	padding: 0;
 	background: #d9f1fb;
 	font-family: Arial, Tahoma, Helvetica, sans-serif;
 	font-size: 13px;
 	font-style:normal;	
 }
+body { 
+    min-height:100%;
+}
+
 a,
 a:link,
 a:visited,
@@ -61,8 +69,7 @@ a:hover{
   
 
 div.Pages_content{
-	float: right;
-	
+	float: none;	
 	margin: 0;
 	padding: 0;
 	height:600px;
@@ -81,6 +88,18 @@ div.title_page {
     padding: 5px 0;
     text-transform: uppercase;
 }
+
+div.title_page_tt {
+    border-bottom: 1px solid #663300;
+    color: #006600;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
 div.pading {
     border-bottom: 1px solid #663300;
     color: Blue;
