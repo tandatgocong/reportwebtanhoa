@@ -58,5 +58,10 @@ namespace BaoCao_Web
             // this.Label2.Text = json.ToString();
         }
 
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

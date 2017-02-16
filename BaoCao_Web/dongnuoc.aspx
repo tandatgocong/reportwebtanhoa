@@ -31,20 +31,20 @@
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
+          
             var map = new google.maps.Map(document.getElementById("map"), options);
-            var html = "<table>" +
-                 "<tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>" +
-                 "<tr><td>Address:</td> <td><input type='text' id='address'/></td> </tr>" +
-                 "<tr><td>Type:</td> <td><select id='type'>" +
-                 "<option value='bar' SELECTED>bar</option>" +
-                 "<option value='restaurant'>restaurant</option>" +
-                 "</select> </td></tr>" +
-                 "<tr><td></td><td><input type='button' value='Save & Close' onclick='saveData()'/></td></tr>";
-            infowindow = new google.maps.InfoWindow({
-                content: html
-            });
-
            
+
+		  /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      
+      /* Optional: Makes the sample page fill the window. */
+		  var marker = new google.maps.Marker({
+				  position: latlng,
+				  map: map,
+				  title: 'Hello World!'
+				});
+
 
             google.maps.event.addListener(map, "click", function (event) {
                 marker = new google.maps.Marker({
@@ -55,22 +55,20 @@
                     infowindow.open(map, marker);
                 });
             });
+
+            var latlng1 = marker.getPosition();
+             var html = "<table><tr><td> <a href='addDongNuocc.aspx?lat="+latlng1.lat() +"&lng=" + latlng1.lng()+ "'>Thêm Đóng Nước</a> <input type='button' value='Save & Close' onclick='saveData()'/> </td></tr></table>";
+            infowindow = new google.maps.InfoWindow({
+                content: html
+            });
         }
 
-        function saveData() {
-            var name = escape(document.getElementById("name").value);
-            var address = escape(document.getElementById("address").value);
-            var type = document.getElementById("type").value;
+        function saveData() {         
             var latlng = marker.getPosition();
 
-            var url = "phpsqlinfo_addrow.php?name=" + name + "&address=" + address +
-                "&type=" + type + "&lat=" + latlng.lat() + "&lng=" + latlng.lng();
-            downloadUrl(url, function (data, responseCode) {
-                if (responseCode == 200 && data.length >= 1) {
-                    infowindow.close();
-                    document.getElementById("message").innerHTML = "Location added.";
-                }
-            });
+            var url = "addDN.aspx?lat=" + latlng.lat() + "&lng=" + latlng.lng();
+            window.open(url,"_self")
+            
         }
 
         function downloadUrl(url, callback) {
