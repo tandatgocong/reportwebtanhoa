@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using log4net;
-using System.Data;
+using System.Web;
 using System.Data.SqlClient;
 using QuanLyKhachHang.DataBase;
+using System.Data;
+using log4net;
 
 namespace QuanLyKhachHang.Class
 {
-    public static class LinQConnection
+    public static class LinQConnectionGM
     {
-        static log4net.ILog log = log4net.LogManager.GetLogger("File");
+        private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
 
-        public static double ReturnResult(string sql)
+        public static int ExecuteCommand(string sql)
         {
-            double result = 0;
-            TanHoaDataContext db = new TanHoaDataContext();
+            int result = 0;
+            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -45,13 +45,17 @@ namespace QuanLyKhachHang.Class
             return result;
         }
 
-        public static int ExecuteCommand(string sql)
+        public static int ExecuteCommand_(string sql)
         {
             int result = 0;
-            TanHoaDataContext db = new TanHoaDataContext();
+            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 result = Convert.ToInt32(cmd.ExecuteNonQuery());
@@ -62,7 +66,9 @@ namespace QuanLyKhachHang.Class
             }
             catch (Exception ex)
             {
-                log.Error("LinQConnection getDataTable" + ex.Message);
+                log.Error("LinQConnection ExecuteCommand_ : " + sql);
+                log.Error("LinQConnection ExecuteCommand_ : " + ex.Message);
+
             }
             finally
             {
@@ -71,14 +77,16 @@ namespace QuanLyKhachHang.Class
             db.SubmitChanges();
             return result;
         }
-
-
         public static DataTable getDataTable(string sql)
         {
             DataTable table = new DataTable();
-            TanHoaDataContext db = new TanHoaDataContext();
+            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
+                if (db.Connection.State == ConnectionState.Open)
+                {
+                    db.Connection.Close();
+                }
                 db.Connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(table);
@@ -93,36 +101,16 @@ namespace QuanLyKhachHang.Class
             }
             return table;
         }
-
-
-        public static DataTable getDataTableHoaDon(string sql)
-        {
-            DataTable table = new DataTable();
-            ThuTienDataContext db = new ThuTienDataContext();
-            try
-            {
-                db.Connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-                adapter.Fill(table);
-            }
-            catch (Exception ex)
-            {
-                log.Error("LinQConnection getDataTable" + ex.Message);
-            }
-            finally
-            {
-                db.Connection.Close();
-            }
-            return table;
-        }
-
-
 
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
+            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
+                if (db.Connection.State == ConnectionState.Open)
+                {
+                    db.Connection.Close();
+                }
                 db.Connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 DataSet dataset = new DataSet();
@@ -140,41 +128,8 @@ namespace QuanLyKhachHang.Class
             }
             return null;
         }
-        public static DataTable ExecuteStoredProcedure(string storedNam, string lan,string ngay)
-        {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-            DataTable dt = new DataTable();
-            try
-            {
 
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand(storedNam, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter _ky = cmd.Parameters.Add("@LAN", SqlDbType.VarChar);
-                _ky.Direction = ParameterDirection.Input;
-                _ky.Value = lan;
-
-                SqlParameter _nam = cmd.Parameters.Add("@NGAY", SqlDbType.VarChar);
-                _nam.Direction = ParameterDirection.Input;
-                _nam.Value = ngay;
-
-                adapter.SelectCommand = cmd;
-
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                log.Error("LinQConnection getDataTable" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return dt;
-
-        }
+      
+       
     }
 }

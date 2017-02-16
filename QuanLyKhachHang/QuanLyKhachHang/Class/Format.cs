@@ -2,11 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 
 namespace QuanLyKhachHang.Class
 {
-    public class Format
+    public static class Format
     {
+        public static void MessageBox(this Page Page, String Message)
+        {
+            Page.ClientScript.RegisterStartupScript(
+               Page.GetType(),
+               "MessageBox",
+               "<script language='javascript'>alert('" + Message + "');</script>"
+            );
+        }
+
+        public static string sodanhbo(string _danhbo)
+        {
+            if (_danhbo.Length == 11)
+            {
+                _danhbo = _danhbo.Insert(4, "  ");
+                _danhbo = _danhbo.Insert(9, "  ");
+
+            }
+            return _danhbo;
+        }
+
         public static string NumberFormat(object num1)
         {
             if (num1 != null)
@@ -70,7 +91,7 @@ namespace QuanLyKhachHang.Class
             {
                 thang = d1.Month.ToString();
             }
-            kq = kq + ngay + "/" + thang;
+            kq = kq + ngay + "/" + thang + "/" + nam;
             return kq;
         }
     }

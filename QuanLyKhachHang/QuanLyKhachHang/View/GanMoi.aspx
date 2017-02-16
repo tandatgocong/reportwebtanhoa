@@ -40,10 +40,10 @@
         <tbody>
            <tr class="head1">
                <td class="style11" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
-                                            &nbsp;DANH BỘ:</td>
+                                            &nbsp;SỐ HỒ SƠ:</td>
                <td class="style5" 
                    style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
-                                            <asp:TextBox ID="txtDanhBo" runat="server" autocomplete="off" 
+                                            <asp:TextBox ID="txtShs" runat="server" autocomplete="off" 
                                                 ontextchanged="txtDanhBo_TextChanged" />
                </td>               
                 <td class="style10" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">

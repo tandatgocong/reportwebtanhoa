@@ -399,6 +399,7 @@
     <Content Include="Image\down.png" />
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
+    <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
@@ -445,20 +446,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\C_DhCoDong.cs" />
+    <Compile Include="Class\C_DuLieuKhachHang.cs" />
     <Compile Include="Class\Format.cs" />
+    <Compile Include="Class\C_GanMoi.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="Class\LinQConnectionGis.cs" />
+    <Compile Include="Class\LinQConnectionGM.cs" />
     <Compile Include="Class\OledbConnection.cs" />
     <Compile Include="DataBase\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\DocSo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\GanMoi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GanMoi.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\GIS.designer.cs" />
     <Compile Include="DataBase\GIS1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GIS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ThuTien.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThuTien.dbml</DependentUpon>
     </Compile>
     <Compile Include="iisstart.aspx.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
@@ -564,6 +583,16 @@
     <None Include="DataBase\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DataBase\DocSo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataBase\GanMoi.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GanMoi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataBase\GIS.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GIS1.designer.cs</LastGenOutput>
@@ -572,6 +601,11 @@
     <None Include="DataBase\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataBase\ThuTien.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThuTien.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Logs\Log4Net.log" />
@@ -588,6 +622,21 @@
   <ItemGroup>
     <None Include="DataBase\GIS.dbml.layout">
       <DependentUpon>GIS.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\DocSo.dbml.layout">
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\ThuTien.dbml.layout">
+      <DependentUpon>ThuTien.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\GanMoi.dbml.layout">
+      <DependentUpon>GanMoi.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

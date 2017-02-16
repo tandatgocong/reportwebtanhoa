@@ -35,6 +35,7 @@ namespace QuanLyKhachHang
             Session["BAOKD"] = null;
             Session["year"] = DateTime.Now.Year.ToString();
             Session["chamcong"] = null;
+            Session["HoaDon"] = null;
             Session["col"] = 0;
             Session["arrTitle"] = new string[] {};
             Session["login"] = null;
@@ -47,6 +48,7 @@ namespace QuanLyKhachHang
             Session["SQL"] = "";
             Session["LoaiDT"] = "";
             Session["col"] = 3;
+            Session["MADMA"] = "";
             int count_visit = 0;
 
            

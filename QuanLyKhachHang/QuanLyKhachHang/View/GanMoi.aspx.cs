@@ -13,18 +13,31 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!txtDiaChi.Text.Trim().Equals(""))
-            { txtDiaChi.Focus(); }
-            else if (!txtDienthoai.Text.Trim().Equals(""))
-            { txtDienthoai.Focus(); }
-            else if (!txtDanhBo.Text.Trim().Equals(""))
-            { txtDanhBo.Focus(); }
-            MaintainScrollPositionOnPostBack = true;
-            if (IsPostBack)
-                return;
-            pSearch.Visible = false;
-            pResult.Visible = false;
-           
+            //if (!txtDiaChi.Text.Trim().Equals(""))
+            //{ txtDiaChi.Focus(); }
+            //else if (!txtDienthoai.Text.Trim().Equals(""))
+            //{ txtDienthoai.Focus(); }
+            //else if (!txtDanhBo.Text.Trim().Equals(""))
+            //{ txtDanhBo.Focus(); }
+            //MaintainScrollPositionOnPostBack = true;
+            //if (IsPostBack)
+            //    return;
+            //pSearch.Visible = false;
+            //pResult.Visible = false;
+            if (!IsPostBack)
+            {
+                pSearch.Visible = false;
+                pResult.Visible = false;
+
+
+                if (!txtDiaChi.Text.Trim().Equals(""))
+                { txtDiaChi.Focus(); }
+                else if (!txtDienthoai.Text.Trim().Equals(""))
+                { txtDienthoai.Focus(); }
+                else if (!txtShs.Text.Trim().Equals(""))
+                { txtShs.Focus(); }
+            }
+
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -62,7 +75,7 @@ namespace QuanLyKhachHang.View
 
         void search()
         {
-            if (!txtDanhBo.Text.Trim().Equals(""))
+            if (!txtShs.Text.Trim().Equals(""))
             {
                 Result();
             }

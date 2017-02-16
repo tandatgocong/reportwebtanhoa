@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data;
+using QuanLyKhachHang.DataBase;
+using System.Data.SqlClient;
+using log4net;
+
+namespace QuanLyKhachHang.Class
+{
+    public static class C_DuLieuKhachHang
+    {
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_DuLieuKhachHang).Name);
+
+        static TanHoaDataContext db = new TanHoaDataContext();
+
+
+        public static TB_DULIEUKHACHHANG finByDanhBo(string danhbo)
+        {
+            try
+            {
+                db = new TanHoaDataContext();
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO == danhbo select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static TB_DULIEUKHACHHANG finByLoTrinh(string lotrinh)
+        {
+            try
+            {
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.LOTRINH == lotrinh select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
+        {
+            try
+            {
+                var query = (from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo orderby q.CREATEDATE descending select q).Take(1);
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static void Insert(TB_DULIEUKHACHHANG tb)
+        {
+            try
+            {
+                db.TB_DULIEUKHACHHANGs.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+        public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
+        {
+            var query = from q in db.TB_DULIEUKHACHHANGs select q;
+            return query.ToList();
+        }
+        public static bool Update()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+        public static DataTable lisGhiChu(string danhbo)
+        {
+            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static DataTable getDongMoiNuoc(string danhbo)
+        {
+            string sql = " select ROW_NUMBER() OVER (ORDER BY NgayDN DESC) [STT], ";
+            sql += " case when  kqdn.DongNuoc=1  then CONVERT(varchar(50),NgayDN,103) end as NGAYDN,LyDo, ";
+            sql += " case when kqdn.MoNuoc=1   then CONVERT(varchar(50),NgayMN,103) end as NGAYMN ";
+            sql += " from TT_KQDongNuoc kqdn  where DanhBo='" + danhbo + "'  ORDER BY NgayDN DESC";
+
+            return LinQConnection.getDataTableHoaDon(sql);
+        }
+
+        public static DataTable getListHoaDonReport(string danhba)
+        {
+
+            DocSoDataContext db = new DocSoDataContext();
+            DataSet ds = new DataSet();
+
+            string query = " SELECT top(1)  CAST(hd.KY as int ) as KyHD, CAST(hd.NAM as int ) as NamHD , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CodeMoi, hd.CSCU, hd.CSMOI, hd.TieuThuMoi as TIEUTHU, 0  as PBVMT, 0 as TGTGT,0  as TNuoc, 0.0 as ThanhTien ";
+            query += "  ,N'Đọc số' AS ThanhToan   ";
+            query += " FROM dbo.DocSo  hd ";
+            query += " WHERE DANHBA=  '" + danhba + "' ";
+            query += "  ORDER BY hd.Nam desc,CAST(hd.KY as int) DESC  ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TIEUTHU");
+
+            query = " SELECT top(12)  CAST(hd.KY as int ) as KyHD, CAST(hd.NAM as int ) as NamHD , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CODE as CodeMoi, cast(hd.CSCU as int) as CSCU, cast(hd.CSMOI as int) as CSMOI,cast(hd.TIEUTHU as int) AS TIEUTHU , CAST( hd.PHI as int)  as PBVMT, CAST( hd.THUE as int) as TGTGT,  CAST( hd.GIABAN as int) as TNuoc, (hd.PHI + hd.THUE +hd.GIABAN) as ThanhTien ";
+            query += " ,CASE WHEN NGAYGIAITRACH IS NULL OR NGAYGIAITRACH ='' THEN '' ELSE 'x'  END AS ThanhToan   ";
+            query += " FROM dbo.HOADON  hd ";
+            query += " WHERE DANHBA= '" + danhba + "'  ";
+            query += " ORDER BY hd.Nam desc,CAST(hd.KY as int) DESC ";
+
+
+            DataTable TB_HD = Class.LinQConnection.getDataTableHoaDon(query);
+
+            ds.Tables["TIEUTHU"].Merge(TB_HD);
+
+            return ds.Tables["TIEUTHU"];
+        }
+    }
+}

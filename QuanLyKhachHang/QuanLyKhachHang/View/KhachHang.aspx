@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="KhachHang.aspx.cs" Inherits="QuanLyKhachHang.View.KhachHang" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -37,6 +39,10 @@
         .style1
         {
             height: 25px;
+        }
+        .style2
+        {
+            width: 6%;
         }
     </style>
 
@@ -189,7 +195,9 @@
          <td  >
                  <asp:Label ID="lbDinhMuc" runat="server" Text="Label"></asp:Label>
          </td>
-         <td class="cach" colspan="2">&nbsp;</td>
+         <td class="cach" colspan="2" >Điện Thoại:&nbsp;<asp:Label ID="lbDienthoai" 
+                 runat="server" Text="Label"></asp:Label>
+            </td> 
       </tr>
       <tr class="head1">
         <td>Ngày Gắn: </td>
@@ -217,15 +225,239 @@
         </tr>
         <tr class="head1">
             <td colspan="6">
-                 <div class="title_page_tt"><i><asp:Label ID="Label1" runat="server" Text="..: Lịch sử điều chỉnh :.."></asp:Label></i>
-        </div>
+                 <div class="title_page" style="margin-bottom:5px;"><asp:Label ID="Label1" runat="server" Text="..: LỊCH SỬ QUẢN LÝ KHÁCH HÀNG :.."></asp:Label>
+                 </div>
+                 <asp:Panel ID="Panel3" runat="server" ScrollBars="Both" Height="180px" 
+                     Width="560px"  >  
+                 <asp:Panel ID="Panel4" runat="server" ScrollBars="None" Width="540px" > 
+
+                                 <asp:GridView ID="gGhiChu" runat="server" AutoGenerateColumns="False" 
+                                     BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
+                                     CellPadding="3" GridLines="Vertical" Width="526px">
+                                     <AlternatingRowStyle BackColor="#DCDCDC" />
+                                     <Columns>
+                                         <asp:BoundField DataField="CREATEDATE"  DataFormatString="{0:dd/MM/yyyy}"  HeaderText="Ngày Cập Nhật">
+                                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="90px" />
+                                         </asp:BoundField>
+                                         <asp:BoundField DataField="NOIDUNG" HeaderText="Nội Dung" >
+                                         <ItemStyle Width="320px" />
+                                         </asp:BoundField>
+                                         <asp:BoundField DataField="DONVI" HeaderText="Đơn vị">
+                                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+                                         </asp:BoundField>
+                                     </Columns>
+                                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                                     <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                                     <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                     <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                     <SortedDescendingHeaderStyle BackColor="#000065" />
+                                 </asp:GridView>
+                 </asp:Panel>
+                 </asp:Panel>
+                 <br />
+
+
                </td>
         </tr>
 
 </table>
 
  </td>
+ <td valign=top>
+  <div class="title_page"><asp:Label ID="Label3" runat="server" Text="..: THÔNG TIN ĐỌC SỐ VÀ THU TIỀN :.."></asp:Label>
+   </div>
+   <asp:Panel ID="Panel5" runat="server" ScrollBars="Both" Height="220px" 
+                     Width="880px" style="margin-bottom: 0px"  >  
+    <asp:Panel ID="Panel6" runat="server" ScrollBars="None" Width="850px" > 
+         <table cellpadding="0" border=0 cellspacing="0" style="font-family:Times New Roman; font-size:15px; margin-left:20px;" class="table_list" >
+        <tbody>
+           <tr class="head1"  align="center">
+            <td style="width:60px" >Kỳ Đọc Số</td>
+            <td style="width:50px" >Ngày đọc</td>
+            <td style="width:75px" >Chỉ số cũ</td>
+            <td style="width:85px" >Chỉ số mới</td>
+            <td style="width:60px" >Tiêu thụ</td>
+            <td style="width:80px" >Phí BVMT</td>
+            <td style="width:80px" >Thuế GTGT</td>
+            <td style="width:80px" >Tiền Nước</td>
+            <td style="width:80px" >Thành Tiền</td>
+            <td style="width:60px">Thanh Toán</td>
+            </tr>
+		<%
+             DataTable table = new DataTable();
+             if (Session["HoaDon"] != null)
+             {
+                 table = (DataTable)Session["HoaDon"];
+                 foreach (DataRow row in table.Rows)
+                 {
+                              %>
+                              <tr style="height:25px;">
+                                <td align="center" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=int.Parse(row["KyHD"].ToString()) <= 9 ? ("0" + row["KyHD"].ToString()) : row["KyHD"].ToString()%>/<%=row["NamHD"].ToString()%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=row["NGAYDOC"].ToString()%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=row["CSCU"].ToString()%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=row["CSMOI"].ToString()%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=row["TIEUTHU"].ToString()%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=String.Format("{0:0,0}",row["PBVMT"])%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=String.Format("{0:0,0}",row["TGTGT"])%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=String.Format("{0:0,0}",row["TNuoc"])%></td>
+                                <td align="right" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=String.Format("{0:0,0}",row["ThanhTien"])%></td>
+                                <td align="center" style="border-right:1px #99cc99 solid; border-bottom:1px #99cc99 solid;"><%=row["ThanhToan"].ToString()%></td>
+                         </tr>
+                              <%
+                               
+                 }
+             }
+        %>
+        
+            </tbody></table>
+ </asp:Panel>
+ </asp:Panel>
+ <div class="title_page"><asp:Label ID="Label4" runat="server" Text="..: ĐÓNG MỞ NƯỚC :.. "></asp:Label>
+   </div>
+    <asp:Panel ID="Panel7" runat="server" ScrollBars="Both" Height="220px" 
+                     Width="600px" style="margin-bottom: 0px"  >  
+    <asp:Panel ID="Panel8" runat="server" ScrollBars="None" Width="600px" > 
+
+     <asp:GridView ID="GridView2" runat="server" CellPadding="3" 
+         GridLines="Vertical" AutoGenerateColumns="False" BackColor="White" 
+         BorderColor="#999999" BorderStyle="None" BorderWidth="1px">
+         <AlternatingRowStyle BackColor="#DCDCDC" />
+         <Columns>
+             <asp:BoundField DataField="STT" HeaderText="STT">
+             <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="70px" />
+             </asp:BoundField>
+             <asp:BoundField DataField="NGAYDN" HeaderText="Ngày Đóng Nước">
+             <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
+             </asp:BoundField>
+             <asp:BoundField DataField="LyDo" HeaderText="Lý Do">
+             <ItemStyle Width="300px" />
+             </asp:BoundField>
+             <asp:BoundField DataField="NGAYMN" HeaderText="Ngày Mở Nước">
+             <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
+             </asp:BoundField>
+         </Columns>
+         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+         <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+         <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+         <SortedAscendingCellStyle BackColor="#F1F1F1" />
+         <SortedAscendingHeaderStyle BackColor="#0000A9" />
+         <SortedDescendingCellStyle BackColor="#CAC9C9" />
+         <SortedDescendingHeaderStyle BackColor="#000065" />
+     </asp:GridView>
+</asp:Panel></asp:Panel>
+ </td>
  </tr>
+
+ <tr>
+  <td>
+    <div class="title_page"><asp:Label ID="Label5" runat="server" Text="..: THÔNG TIN ÁP LỰC NƯỚC :.."></asp:Label>
+    </div>
+     <table cellpadding="0" cellspacing="0" border=2  style="width:100%; background-color:White; font-family:Times New Roman; font-size:15px;" class="table_list" >
+         <tbody>
+          <tr>
+              <%
+                  DataTable table = new DataTable();
+                  if (Session["MADMA"] != null)
+                  {
+
+                      string dma = Session["MADMA"].ToString();
+                      string img = @"../Image/DMA/" + dma + @".png";
+                     %><td>       
+                          <div class="outer">                    
+                           <img  height="300" width="500" src="<%=img%> " />                          
+                            <table width="300;" class="topright" border="1" style="background-color:#CCFFCC; text-align:center; margin-top:30px; margin-left:20px; font-size:20px;" cellpadding="0" cellspacing="0" >
+                                <tr style="height:20px;"> <td rowspan="2">Áp Lực</td> 
+                         <%
+                      string ChannelID = "";
+                      string sq = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Pressure'";
+                      string sqLL = "SELECT *  FROM [t_Channel_Configurations]  where LEFT([Description],5)='" + dma.Replace("TH-", "") + "' AND ChannelName='Flow'";
+                      string sqTB = "SELECT *  FROM [DATALOGGER]  where MaDMA='" + dma.Replace("TH-", "").Replace("-", ".") + "' ";
+                      DataTable t2 = QuanLyKhachHang.Class.LinQConnectionGis.getDataTable(sqTB);
+
+                      string ALMin = "";
+                      string ALMax = "";
+                      if (t2.Rows.Count > 0)
+                      {
+                          ALMin = string.Format("{0:0.##}", t2.Rows[0]["GiaTriNN"]);
+                          ALMax = string.Format("{0:0.##}", t2.Rows[0]["GiaTriLN"]);
+                      }
+
+                      DataTable t1 = QuanLyKhachHang.Class.LinQConnectionGis.getDataTable(sq);
+                      if (t1.Rows.Count > 0)
+                      {
+                          ChannelID = t1.Rows[0]["ChannelId"].ToString();
+                              %>
+                              
+                              <%
+                          if (t1.Rows[0]["LastValue"] == null)
+                          {
+                                         %><td rowspan="2"   style=" background-color:White;width:50px; text-align:center"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_Chart.aspx?value=<%=ChannelID%>"><img alt="" class="style1" src="../Image/error.gif" /></a></td><%
+                          }
+                          else if (t1.Rows[0]["LastValue"].ToString() == "0")
+                          { 
+                              %>
+                                <td rowspan="2"   style=" background-color:Red;width:50px; text-align:center"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_Chart.aspx?value=<%=ChannelID%>">0</a></td><%
+                          }
+                          else
+                          {
+                              if (DateTime.Now.Date == DateTime.Parse(t1.Rows[0]["TimeStamp"].ToString()).Date)
+                              {
+                                    %><td rowspan="2" style="text-align:center;width:100px; color:Red;"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_Chart.aspx?value=<%=ChannelID%>"><%=t1.Rows[0]["LastValue"]%></a> </td><%
+                              }
+                              else
+                              { 
+                                    %><td rowspan="2" style="background-color:Yellow;width:50px;text-align:center"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_Chart.aspx?value=<%=ChannelID%>"><%=t1.Rows[0]["LastValue"]%></a></td><%
+                              }
+                          }
+
+                      }
+                      else
+                      { 
+                                %><td rowspan="2"  style="background-color:White;width:50px;text-align:center"><img alt="" class="style1" src="../Image/error.gif" /></td><%
+                      }
+                          %>
+                                     
+                                     <td style="text-align:center;width:50px;"><%=ALMin%></td> 
+                                 </tr>
+                                <tr>
+                                 <td style="text-align:center; border-top:2px;width:50px;"><%=ALMax%></td> 
+                               </tr>
+                               <%
+                                   
+                      DataTable t3 = QuanLyKhachHang.Class.LinQConnectionGis.getDataTable(sqLL);
+                      if (t3.Rows.Count > 0)
+                      {
+                          try
+                          {
+                              ChannelID = t3.Rows[0]["ChannelId"].ToString();
+                          }
+                          catch (Exception)
+                          {
+
+                          }
+                               %><tr > <td>Lưu Lượng</td>
+                                <td colspan="2" style="height:20px; text-align:center;vertical-align:middle"><a title="Click Xem Biểu Đồ !" href="QuanLyDMA_ChartLL.aspx?value=<%=ChannelID%>"><%=String.Format("{0:0.##}", t3.Rows[0]["LastValue"])%></a></td></tr><%
+                      }     
+                               %>
+                                 
+                            </table>                            
+                            </div>
+                          
+                          <%
+                     
+                  }
+             %>
+            </tr>
+         </tbody>
+        </table>
+    </td>
+</tr>
  </table>
 
 
