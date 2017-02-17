@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="dongnuoc.aspx.cs" Inherits="QuanLyKhachHang.View.dongnuoc" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,9 +16,10 @@
             type="text/javascript"></script>
 
             <script type="text/javascript">
+                var map;
                 var marker;
                 var infowindow;
-
+                var infoWindow2;
                 function initialize() {
                     var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
                      <%
@@ -34,7 +38,15 @@
                         center: latlng,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     }
-                    var map = new google.maps.Map(document.getElementById("map"), options);
+                    map = new google.maps.Map(document.getElementById("map"), options);
+
+                       infoWindow2 = new google.maps.InfoWindow();
+
+                       // Event that closes the Info Window with a click on the map
+                       google.maps.event.addListener(map, 'click', function() {
+                          infoWindow2.close();
+                       });
+
                     var html = "<table><tr><td><input type='button' value='Thêm Mới Đóng Nước' onclick='saveData();'/></td></tr></table>";
                     infowindow = new google.maps.InfoWindow({
                         content: html
@@ -50,18 +62,70 @@
                         });
                     });
                 
-                
-                var marker2 = new google.maps.Marker({
-				  position: latlng,
-				  map: map,
-				  title: 'Hello World!'
-				  });
-                   
-                    /*
+
+                 
+                var infowindow2 = new google.maps.InfoWindow();
+
+            
+
+                     <% 
+                       DataTable table = new DataTable();
+                       if(Session["dsDongnuoc"]!=null)
+                       {
+                        table = (DataTable)Session["dsDongnuoc"];
+                        for(int i=0;i<table.Rows.Count;i++)
+                        {
+                        %>
+                           var x = parseFloat(<%=table.Rows[i]["lat"]%>);
+                           var y = parseFloat(<%=table.Rows[i]["lng"]%>);
+                          // var latlng2 = new google.maps.LatLng(x, y);
+
+                             var latlng2 = new google.maps.LatLng(x, y);
+                             var name<%=i%> =<%=table.Rows[i]["ID"]%>;
+                                                            
+                          
+                             var cityCircle = new google.maps.Circle({
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#FF0000',
+                                fillOpacity: 0.35,
+                                map: map,
+                                center: latlng2,
+                                radius: 200
+                              });
+
+                              var marker<%=i%> = new google.maps.Marker({
+				              position: latlng2,
+				              map: map,
+				              title: name<%=i%>
+				              });
 
 
-                    */
+                            google.maps.event.addListener(marker<%=i%>, 'click', function() {
+                              // Creating the content to be inserted in the infowindow
+                              var iwContent="<div class='title_page'>Thông Tin Đóng Nước </div> <br/> " ;
+                              iwContent+="<table style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr> <tr>";
+                          iwContent+="<td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
+                          iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
+                          iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
+                          iwContent+="</table>";
+      
+                              // including content to the Info Window.
+                              infoWindow2.setContent(iwContent);
+
+                              // opening the Info Window in the current map and at the current marker location.
+                              infoWindow2.open(map, marker<%=i%>);
+                           });
+
+
+                        <%
+                        }
+                       }
+                    %>
                 }
+
+               
 
 
                 function saveData() {                   
@@ -71,7 +135,7 @@
                   document.location.href = newUrl;
 
                }
-
+               
                 function downloadUrl(url, callback) {
                     var request = window.ActiveXObject ?
           new ActiveXObject('Microsoft.XMLHTTP') :
@@ -89,7 +153,7 @@
                 }
 
                 function doNothing() { }
-    </script>
+            </script>
     
      <style type="text/css">
          .style1
