@@ -25,7 +25,7 @@
  	 <div >
  		<ul class="menuhead">
  			<li id="mnHome" class="current"><a  id="HOME" href="Home.aspx"><span>TRANG CHỦ</span></a></li>
-             <li id="mnKinhDoanh" class="top"><a href="KhachHang.aspx" id="KHACHHANG" class="top_link" ><span>KHÁCH HÀNG</span></a>
+             <li id="mnKinhDoanh" class="top"><a href="dongnuoc.aspx" id="KHACHHANG" class="top_link" ><span>ĐÓNG NƯỚC</span></a>
               <!-- <ul class="sub_gioithieu">
                  <li >
                       <a href="pDanhSachCoDongThamDu.aspx" class="">CỔ ĐÔNG THAM DỰ </a>

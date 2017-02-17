@@ -32,23 +32,14 @@ namespace QuanLyKhachHang
         {
             // Code that runs when a new session is started
             Session["title"]="";
-            Session["BAOKD"] = null;
             Session["year"] = DateTime.Now.Year.ToString();
-            Session["chamcong"] = null;
-            Session["HoaDon"] = null;
             Session["col"] = 0;
-            Session["arrTitle"] = new string[] {};
             Session["login"] = null;
-            Session["ky"] = "";
-            Session["nam"] = "";
-            Session["tuky"] = "";
-            Session["denky"] = "";
-            Session["TongDS"] = "";
-            Session["treport"] = "";
-            Session["SQL"] = "";
-            Session["LoaiDT"] = "";
             Session["col"] = 3;
             Session["MADMA"] = "";
+            Session["lat"] = "10.801433295748337" ;
+            Session["lng"] = "106.65252816547981";
+            Session["dsDongnuoc"] = null;
             int count_visit = 0;
 
            
