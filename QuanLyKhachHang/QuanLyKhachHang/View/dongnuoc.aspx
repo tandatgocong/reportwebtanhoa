@@ -153,9 +153,10 @@
                 }
 
                 function doNothing() { }
+                /*------------------------*/
             </script>
     
-     <style type="text/css">
+<style type="text/css">
          .style1
          {
              width: 148px;
@@ -164,24 +165,26 @@
          {
              width: 89px;
          }
-     </style>
+</style>
+
 
   <body style="margin:0px; padding:0px;" onload="initialize()">
 
   <table border=1 width=100%>
   <tr>
-    <td class="style2">
+    <td>
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
         <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
       </td>
+      
+<div id="out"></div></td>      
   </tr>
   <tr>
-    <td >
-    <div id="map" style="width: 1524px; height: 800px"></div>
-    <div id="message"></div>
-    
+    <td  >
+    <div id="map" style="width: 100%; height: 800px"></div>
+    <div id="message"></div>    
     </td>
   </tr>
   </table>
