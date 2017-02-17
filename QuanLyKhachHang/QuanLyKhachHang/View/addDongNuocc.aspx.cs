@@ -22,6 +22,7 @@ namespace QuanLyKhachHang.View
         }
         public void dataLoad()
         {
+           
         }
 
         protected void btXemBangKe_Click(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace QuanLyKhachHang.View
 
                 xv.NoiDung = this.txtNoiDungCT.Text;
                 xv.CreateDate = DateTime.Now;
-
+                xv.CreateBy = Session["login"].ToString();
                 Class.C_CallCenter.Insert(xv);
                 lbThanhCong.ForeColor = Color.Blue;
                 this.lbThanhCong.Text = "Cập Nhật Thành Công.";

@@ -18,12 +18,12 @@ namespace QuanLyKhachHang.View
         }
         public void pagLoad()
         {
-            //Session["dsDongnuoc"] = null;
-            ////DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            ////DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            Session["dsDongnuoc"] = null;
+            //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            //string sql = "";
-            //Session["dsDongnuoc"] = Class.C_CallCenter.getDataTable(sql);
+            string sql = " select * from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
+            Session["dsDongnuoc"] = Class.C_CallCenter.getDataTable(sql);
         
         }
         void search() {

@@ -11,85 +11,86 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
             type="text/javascript"></script>
-    <script type="text/javascript">
-        var marker;
-        var infowindow;
 
-        function initialize() {
-            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
-            <%
+            <script type="text/javascript">
+                var marker;
+                var infowindow;
+
+                function initialize() {
+                    var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+                     <%
             
-            if( Session["lat"] != "" &&   Session["lng"] != "")
-            {
+                        if( Session["lat"] != "" &&   Session["lng"] != "")
+                        {
                 
-                %>
-                    latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
-                <%
-            }
-            %>
-            var options = {
-                zoom: 15,
-                center: latlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-          
-            var map = new google.maps.Map(document.getElementById("map"), options);
-           
+                            %>
+                                latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
+                            <%
+                        }
+                    %>
 
-		  /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      
-      /* Optional: Makes the sample page fill the window. */
-		  var marker = new google.maps.Marker({
+                    var options = {
+                        zoom: 15,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), options);
+                    var html = "<table><tr><td><input type='button' value='Thêm Mới Đóng Nước' onclick='saveData();'/></td></tr></table>";
+                    infowindow = new google.maps.InfoWindow({
+                        content: html
+                    });
+
+                    google.maps.event.addListener(map, "click", function (event) {
+                        marker = new google.maps.Marker({
+                            position: event.latLng,
+                            map: map
+                        });
+                        google.maps.event.addListener(marker, "click", function () {
+                            infowindow.open(map, marker);
+                        });
+                    });
+                
+                
+                var marker2 = new google.maps.Marker({
 				  position: latlng,
 				  map: map,
 				  title: 'Hello World!'
-				});
+				  });
+                   
+                    /*
 
 
-            google.maps.event.addListener(map, "click", function (event) {
-                marker = new google.maps.Marker({
-                    position: event.latLng,
-                    map: map
-                });
-                google.maps.event.addListener(marker, "click", function () {
-                    infowindow.open(map, marker);
-                });
-            });
+                    */
+                }
 
-            var latlng1 = marker.getPosition();
-             var html = "<table><tr><td> <a href='addDongNuocc.aspx?lat="+latlng1.lat() +"&lng=" + latlng1.lng()+ "'>Thêm Đóng Nước</a> <input type='button' value='Save & Close' onclick='saveData()'/> </td></tr></table>";
-            infowindow = new google.maps.InfoWindow({
-                content: html
-            });
-        }
 
-        function saveData() {         
-            var latlng = marker.getPosition();
+                function saveData() {                   
+                    var latlng = marker.getPosition();                    
+                    var newUrl="addDongNuocc.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()
+                   // alert(latlng);
+                  document.location.href = newUrl;
 
-            var url = "addDN.aspx?lat=" + latlng.lat() + "&lng=" + latlng.lng();
-            window.open(url,"_self")
-            
-        }
+               }
 
-        function downloadUrl(url, callback) {
-            var request = window.ActiveXObject ?
+                function downloadUrl(url, callback) {
+                    var request = window.ActiveXObject ?
           new ActiveXObject('Microsoft.XMLHTTP') :
           new XMLHttpRequest;
 
-            request.onreadystatechange = function () {
-                if (request.readyState == 4) {
-                    request.onreadystatechange = doNothing;
-                    callback(request.responseText, request.status);
+                    request.onreadystatechange = function () {
+                        if (request.readyState == 4) {
+                            request.onreadystatechange = doNothing;
+                            callback(request.responseText, request.status);
+                        }
+                    };
+
+                    request.open('GET', url, true);
+                    request.send(null);
                 }
-            };
 
-            request.open('GET', url, true);
-            request.send(null);
-        }
-
-        function doNothing() { }
+                function doNothing() { }
     </script>
+    
      <style type="text/css">
          .style1
          {
