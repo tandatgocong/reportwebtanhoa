@@ -28,8 +28,9 @@
         }
     </style>
 
-     <div class="title_page" style="hight:20px;"><asp:Label ID="title" runat="server" 
-        Text="CẬP NHẬT GIẤY ĐƯỢC PHÉP VỀ SỚM"></asp:Label>
+     <div class="title_page" style="hight:20px;">
+         <asp:Label ID="title" runat="server" 
+        Text="CẬP NHẬT THÔNG TIN ĐÓNG NƯỚC"></asp:Label>
     </div>
      <table class="">
                     <tr>
@@ -38,6 +39,17 @@
                         <td class="style2" colspan="3"> 
                             <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
                             </asp:ToolkitScriptManager>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style1">
+                            ĐỊA CHỈ&nbsp;</td>
+                        <td class="style2" colspan="3"> 
+                              <asp:TextBox ID="txtDiachi" runat="server"  Height="20px" 
+                                Width="360px" />
+                            
+                         
+                            
                         </td>
                     </tr>
                     <tr>
@@ -92,11 +104,13 @@
                             <asp:Button ID="btXemBangKe" runat="server" CssClass="button" 
                                   Text="CẬP NHẬT" Height="32px" Width="139px" 
                                 onclick="btXemBangKe_Click" />
+                            <asp:Button ID="btTrolai" runat="server" CssClass="button" 
+                                  Text="TRỞ LẠI" Height="32px" Width="139px" onclick="btTrolai_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td class="style8" colspan="4">
-                            <asp:Label ID="lbThanhCong" runat="server"></asp:Label>
+                            <asp:Label ID="lbThanhCong" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
                         </td>
                     </tr>
                 </table>

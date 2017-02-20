@@ -13,7 +13,11 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["id"] != null)
+            {
+                Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"] .ToString()+ "' ");
+                Response.Redirect(@"dongnuoc.aspx");
+            }
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -33,6 +37,8 @@ namespace QuanLyKhachHang.View
                 string lng = Request.QueryString["lng"];
                 //=(10.7523028428119,106.5858256816864)
                 KT_DongNuoc xv = new KT_DongNuoc();
+                xv.DongMo = true;
+                xv.DiaChi = this.txtDiachi.Text;
                 xv.lat = lat;
                 xv.lng = lng;
                 try
@@ -72,6 +78,13 @@ namespace QuanLyKhachHang.View
 
             }
         }
+
+        protected void btTrolai_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"dongnuoc.aspx");
+        }
+
+      
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="dongnuoc.aspx.cs" Inherits="QuanLyKhachHang.View.dongnuoc" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="QuanLyKhachHang.Class" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -29,6 +30,7 @@
                 
                             %>
                                 latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
+
                             <%
                         }
                     %>
@@ -60,9 +62,7 @@
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(map, marker);
                         });
-                    });
-                
-
+                            });
                  
                 var infowindow2 = new google.maps.InfoWindow();
 
@@ -105,10 +105,12 @@
                             google.maps.event.addListener(marker<%=i%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
                               var iwContent="<div class='title_page'>Thông Tin Đóng Nước </div> <br/> " ;
-                              iwContent+="<table style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr> <tr>";
-                          iwContent+="<td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
-                          iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
-                          iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
+                              iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
+                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
+                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
+                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
+                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
+                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Mở Nước' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
                           iwContent+="</table>";
       
                               // including content to the Info Window.
@@ -125,8 +127,11 @@
                     %>
                 }
 
-               
-
+               function monuoc(id) {                
+                var newUrl="addDongNuocc.aspx?id="+id ;
+                   // alert(latlng);
+                  document.location.href = newUrl;
+               }
 
                 function saveData() {                   
                     var latlng = marker.getPosition();                    
@@ -168,7 +173,7 @@
 </style>
 
 
-  <body style="margin:0px; padding:0px;" onload="initialize()">
+ <body style="margin:0px; padding:0px;" onload="initialize()">
 
   <table border=1 width=100%>
   <tr>
@@ -176,7 +181,7 @@
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
         <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label2" runat="server"></asp:Label>
       </td>
       
 <div id="out"></div></td>      

@@ -86,6 +86,30 @@ namespace QuanLyKhachHang.Class
             }
             return false;
         }
+        public static void ExecuteCommand(string sql)
+        {
+            int result = 0;
+            CallCenterDataContext db = new CallCenterDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+        }
 
 
     }

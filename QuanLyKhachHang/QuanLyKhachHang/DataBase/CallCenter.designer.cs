@@ -82,9 +82,13 @@ namespace QuanLyKhachHang.DataBase
 		
 		private int _ID;
 		
+		private System.Nullable<bool> _DongMo;
+		
 		private string _lat;
 		
 		private string _lng;
+		
+		private string _DiaChi;
 		
 		private System.Nullable<System.DateTime> _TuNgay;
 		
@@ -110,10 +114,14 @@ namespace QuanLyKhachHang.DataBase
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnDongMoChanging(System.Nullable<bool> value);
+    partial void OnDongMoChanged();
     partial void OnlatChanging(string value);
     partial void OnlatChanged();
     partial void OnlngChanging(string value);
     partial void OnlngChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
     partial void OnTuNgayChanging(System.Nullable<System.DateTime> value);
     partial void OnTuNgayChanged();
     partial void OnDenNgayChanging(System.Nullable<System.DateTime> value);
@@ -159,6 +167,26 @@ namespace QuanLyKhachHang.DataBase
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DongMo", DbType="Bit")]
+		public System.Nullable<bool> DongMo
+		{
+			get
+			{
+				return this._DongMo;
+			}
+			set
+			{
+				if ((this._DongMo != value))
+				{
+					this.OnDongMoChanging(value);
+					this.SendPropertyChanging();
+					this._DongMo = value;
+					this.SendPropertyChanged("DongMo");
+					this.OnDongMoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lat", DbType="NVarChar(20)")]
 		public string lat
 		{
@@ -195,6 +223,26 @@ namespace QuanLyKhachHang.DataBase
 					this._lng = value;
 					this.SendPropertyChanged("lng");
 					this.OnlngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(MAX)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
 				}
 			}
 		}

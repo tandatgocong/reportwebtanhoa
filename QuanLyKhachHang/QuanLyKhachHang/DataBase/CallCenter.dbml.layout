@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CallCenter">
   <DataContextMoniker Name="/CallCenterDataContext" />
   <nestedChildShapes>
-    <classShape Id="c1c9ce20-0cb2-4a04-9737-c685d3e5a422" absoluteBounds="1.5, 1.5, 2, 3.1170068359375">
+    <classShape Id="d5eeb3ba-7137-45a4-80c4-a79d75026307" absoluteBounds="1.75, 1.375, 2, 3.5016097005208326">
       <DataClassMoniker Name="/CallCenterDataContext/KT_DongNuoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="77a5107e-8d95-4440-a919-9cf32a622803" absoluteBounds="1.5150000000000001, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2501702a-7a8e-41ae-bc5f-52b4b2676a76" absoluteBounds="1.7650000000000001, 1.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
