@@ -21,13 +21,10 @@ namespace QuanLyKhachHang.View
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            dataLoad();
+           // dataLoad();
 
         }
-        public void dataLoad()
-        {
-           
-        }
+      //
 
         protected void btXemBangKe_Click(object sender, EventArgs e)
         {
@@ -69,7 +66,8 @@ namespace QuanLyKhachHang.View
                 this.tugio.Text = "";
                 this.dengio.Text = "";
                 this.txtNoiDungCT.Text = "";
-                dataLoad();
+                Session["lat"] = lat;
+                Session["lng"] = lng;
             }
             catch (Exception)
             {

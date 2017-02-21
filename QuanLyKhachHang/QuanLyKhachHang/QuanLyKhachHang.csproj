@@ -69,6 +69,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="callcenter.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -401,6 +402,7 @@
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
+    <Content Include="Image\icon2.png" />
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\menu_bg.png" />
@@ -447,6 +449,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="callcenter.aspx.cs">
+      <DependentUpon>callcenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="callcenter.aspx.designer.cs">
+      <DependentUpon>callcenter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Class\C_CallCenter.cs" />
     <Compile Include="Class\C_DhCoDong.cs" />
     <Compile Include="Class\C_DuLieuKhachHang.cs" />

@@ -1,18 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="dongnuoc.aspx.cs" Inherits="QuanLyKhachHang.View.dongnuoc" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="callcenter.aspx.cs" Inherits="QuanLyKhachHang.callcenter" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script language="javascript" type="text/javascript">
-        window.document.getElementById("HOME").className = "top_link";
-        window.document.getElementById("GANMOI").className = "top_link";
-        window.document.getElementById("KHACHHANG").className = "current_link";
-        window.document.getElementById("APLUC").className = "top_link"; 
-    </script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <link href="../StyleSheet/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="../JavaScript/transmenu.js" type="text/javascript"></script>
+    <title>...: Call Center :...</title>
+</head>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
             type="text/javascript"></script>
 
@@ -24,17 +23,13 @@
                 function initialize() {
                     var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
                      <%
-            
                         if( Session["lat"] != "" &&   Session["lng"] != "")
                         {
-                
                             %>
                                 latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
-
                             <%
                         }
                     %>
-
                     var options = {
                         zoom: 15,
                         center: latlng,
@@ -42,31 +37,15 @@
                     }
                     map = new google.maps.Map(document.getElementById("map"), options);
 
-                       infoWindow2 = new google.maps.InfoWindow();
-
-                       // Event that closes the Info Window with a click on the map
-                       google.maps.event.addListener(map, 'click', function() {
-                          infoWindow2.close();
-                       });
-
-                    infowindow = new google.maps.InfoWindow({
-                        content: html
-                    });
-
-                    google.maps.event.addListener(map, "click", function (event) {
-                        marker = new google.maps.Marker({
-                            position: event.latLng,
-                            map: map
-                        });
-                        google.maps.event.addListener(marker, "click", function () {
-                            infowindow.open(map, marker);
-                        });
-                    });
-                 var html = "<table><tr><td><input type='button' value='Thêm Mới Đóng Nước' onclick='saveData();'/></td></tr></table>";
-                    
+               
+                 var marker = new google.maps.Marker({
+				      position: latlng,
+                      icon: 'Image/icon2.png',
+				      map: map,
+				      title: ''
+				    });
+                 
                 var infowindow2 = new google.maps.InfoWindow();
-
-            
 
                      <% 
                        DataTable table = new DataTable();
@@ -110,7 +89,6 @@
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
-                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Mở Nước' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
                           iwContent+="</table>";
       
                               // including content to the Info Window.
@@ -125,13 +103,11 @@
                         }
                        }
                     %>
+
+                   
                 }
 
-               function monuoc(id) {                
-                var newUrl="addDongNuocc.aspx?id="+id ;
-                   // alert(latlng);
-                  document.location.href = newUrl;
-               }
+               
 
                 function saveData() {                   
                     var latlng = marker.getPosition();                    
@@ -162,26 +138,23 @@
             </script>
     
 <style type="text/css">
-         .style1
-         {
-             width: 148px;
-         }
-         .style2
-         {
-             width: 89px;
-         }
+         .style3
+    {
+        height: 32px;
+    }
 </style>
 
 
  <body style="margin:0px; padding:0px;" onload="initialize()">
-
+  <form id="form1" runat="server">
   <table border=1 width=100%>
   <tr>
-    <td>
+    <td class="style3"><b>
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
-        <asp:Label ID="Label2" runat="server"></asp:Label>
+        <asp:TextBox ID="TextBox1" runat="server"  ontextchanged="TextBox1_TextChanged"></asp:TextBox>
+        <asp:Button ID="btTim" runat="server" CssClass="button" Text="Tìm Kiếm" 
+            onclick="btTim_Click" Height="30px" />
+        </b>
       </td>
       
 <div id="out"></div></td>      
@@ -193,7 +166,7 @@
     </td>
   </tr>
   </table>
-  <</body>
+  </form>
+ </body>
 
-
-</asp:Content>
+</html>
