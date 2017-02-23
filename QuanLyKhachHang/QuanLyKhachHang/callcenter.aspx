@@ -23,13 +23,17 @@
                 function initialize() {
                     var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
                      <%
+            
                         if( Session["lat"] != "" &&   Session["lng"] != "")
                         {
+                
                             %>
                                 latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
+
                             <%
                         }
                     %>
+
                     var options = {
                         zoom: 15,
                         center: latlng,
@@ -37,15 +41,39 @@
                     }
                     map = new google.maps.Map(document.getElementById("map"), options);
 
-               
-                 var marker = new google.maps.Marker({
+                       infoWindow2 = new google.maps.InfoWindow();
+
+                       // Event that closes the Info Window with a click on the map
+                       google.maps.event.addListener(map, 'click', function() {
+                          infoWindow2.close();
+                       });
+                    
+                      marker = new google.maps.Marker({
 				      position: latlng,
                       icon: 'Image/icon2.png',
 				      map: map,
 				      title: ''
 				    });
+                    /**
+                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+                    infowindow = new google.maps.InfoWindow({
+                        content: html
+                    });
+
+                    google.maps.event.addListener(map, "click", function (event) {
+                        marker = new google.maps.Marker({
+                            position: event.latLng,
+                            map: map
+                        });
+                        google.maps.event.addListener(marker, "click", function () {
+                            infowindow.open(map, marker);
+                        });
+                    });
                  
+                    **/
                 var infowindow2 = new google.maps.InfoWindow();
+
+            
 
                      <% 
                        DataTable table = new DataTable();
@@ -89,6 +117,7 @@
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
+                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;</td></tr>";
                           iwContent+="</table>";
       
                               // including content to the Info Window.
@@ -103,11 +132,13 @@
                         }
                        }
                     %>
-
-                   
                 }
 
-               
+               function monuoc(id) {                
+                var newUrl="addDongNuocc.aspx?id="+id ;
+                   // alert(latlng);
+                  document.location.href = newUrl;
+               }
 
                 function saveData() {                   
                     var latlng = marker.getPosition();                    
@@ -137,24 +168,18 @@
                 /*------------------------*/
             </script>
     
-<style type="text/css">
-         .style3
-    {
-        height: 32px;
-    }
-</style>
+
 
 
  <body style="margin:0px; padding:0px;" onload="initialize()">
-  <form id="form1" runat="server">
+     <form id="form1" runat="server">
   <table border=1 width=100%>
   <tr>
-    <td class="style3"><b>
+    <td>
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server"  ontextchanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:Button ID="btTim" runat="server" CssClass="button" Text="Tìm Kiếm" 
-            onclick="btTim_Click" Height="30px" />
-        </b>
+        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged" 
+            Height="24px" Width="236px"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server"></asp:Label>
       </td>
       
 <div id="out"></div></td>      
@@ -166,7 +191,7 @@
     </td>
   </tr>
   </table>
-  </form>
+ </form>
  </body>
 
 </html>

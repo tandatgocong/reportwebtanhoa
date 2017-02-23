@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="dongnuoc.aspx.cs" Inherits="QuanLyKhachHang.View.dongnuoc" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="QuanLyVan.aspx.cs" Inherits="QuanLyKhachHang.View.QuanLyVan" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
-
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script language="javascript" type="text/javascript">
-        window.document.getElementById("HOME").className = "top_link";
-        window.document.getElementById("GANMOI").className = "top_link";
-        window.document.getElementById("KHACHHANG").className = "current_link";
-        window.document.getElementById("APLUC").className = "top_link"; 
+ <script language="javascript" type="text/javascript">
+     window.document.getElementById("HOME").className = "top_link";
+     window.document.getElementById("GANMOI").className = "current_link";
+     window.document.getElementById("KHACHHANG").className = "top_link";
+     window.document.getElementById("APLUC").className = "top_link"; 
     </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
@@ -48,7 +48,7 @@
                        google.maps.event.addListener(map, 'click', function() {
                           infoWindow2.close();
                        });
-                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Van' onclick='saveData()'/> </td></tr></table>";
                     infowindow = new google.maps.InfoWindow({
                         content: html
                     });
@@ -135,7 +135,7 @@
 
                 function saveData() {                   
                     var latlng = marker.getPosition();                    
-                    var newUrl="addDongNuocc.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()
+                    var newUrl="addThongTinVan.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()
                    // alert(latlng);
                   document.location.href = newUrl;
 
@@ -179,8 +179,8 @@
   <tr>
     <td>
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
+        <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
+        <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" />
         <asp:Label ID="Label2" runat="server"></asp:Label>
       </td>
       
@@ -193,7 +193,8 @@
     </td>
   </tr>
   </table>
-  <</body>
+ </body>
 
 
 </asp:Content>
+ 

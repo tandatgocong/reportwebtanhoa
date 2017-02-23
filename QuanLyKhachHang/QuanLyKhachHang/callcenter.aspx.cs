@@ -21,6 +21,12 @@ namespace QuanLyKhachHang
         }
         public void pagLoad()
         {
+            if (Request.QueryString["add"] != null)
+            {
+                this.TextBox1.Text = Request.QueryString["add"].ToString();
+                getLag(Request.QueryString["add"].ToString());
+            }
+
             Session["dsDongnuoc"] = null;
             //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -30,9 +36,8 @@ namespace QuanLyKhachHang
             Session["dsDongnuoc"] = C_CallCenter.getDataTable(sql);
 
         }
-        void search()
+        public void getLag( string dc)
         {
-            string dc = this.TextBox1.Text;
             string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
             XmlTextReader reader = new XmlTextReader(URLString);
             string geometry = "";
@@ -42,24 +47,30 @@ namespace QuanLyKhachHang
             {
                 switch (reader.NodeType)
                 {
-                    case XmlNodeType.Element: 
+                    case XmlNodeType.Element:
                         geometry = reader.Name;
                         break;
 
-                    case XmlNodeType.Text: 
+                    case XmlNodeType.Text:
                         if (geometry == "lat")
                             lat = reader.Value;
                         else if (geometry == "lng")
                             lng = reader.Value;
                         break;
 
-                    case XmlNodeType.EndElement: 
+                    case XmlNodeType.EndElement:
                         break;
                 }
             }
 
             Session["lat"] = lat;
             Session["lng"] = lng;
+        
+        }
+        void search()
+        {
+            string dc = this.TextBox1.Text;
+            getLag(dc);
             //var json = new WebClient().DownloadString(url);
             // this.Label2.Text = json.ToString();
 

@@ -14,17 +14,14 @@
 <body>
     <form id="form1" runat="server">
 <div id="Home">
-     <div class="Header" 
-         style="background-image: url('../Image/bg_head.jpg'); text-align: center;">
-       &nbsp;
+     <div class="Header"  style="background-image: url('../Image/bg_head.jpg'); text-align: center;">
        <div style="vertical-align:middle;">
        <marquee scrollamount=20><asp:Label ID="Label1"  runat="server" Font-Bold="True" Font-Size="X-Large"   ForeColor="Yellow" Text="TRUNG TÂM HỔ TRỢ KHÁCH HÀNG - CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA"></asp:Label></marquee>
        </div>
      </div>
      <div class="Menu">
- 	 <div >
  		<ul class="menuhead">
- 			<li id="mnHome" class="current"><a  id="HOME" href="Home.aspx"><span>TRANG CHỦ</span></a></li>
+ 			<li id="mnHome" class="current"><a id="HOME" href="Home.aspx"><span>TRANG CHỦ</span></a></li>
              <li id="mnKinhDoanh" class="top"><a href="dongnuoc.aspx" id="KHACHHANG" class="top_link" ><span>ĐÓNG NƯỚC</span></a>
               <!-- <ul class="sub_gioithieu">
                  <li >
@@ -38,7 +35,7 @@
                  </li>    
                </ul>-->
             </li>
-            <li id="Li1" class="top"><a href="GanMoi.aspx" id="GANMOI" class="top_link" ><span>GẮN MỚI</span></a>
+            <li id="Li1" class="top"><a href="QuanLyVan.aspx" id="GANMOI" class="top_link" ><span>QUẢN LÝ VAN</span></a>
                <!--  <ul class="sub_gioithieu">
                  <li >
                       <a href="pDanhSachCoDongThamDu.aspx" class="">CỔ ĐÔNG THAM DỰ </a>
@@ -69,7 +66,7 @@
   			
  		</ul>
  	</div>
-</div>
+ 
        <script language="javascript" type="text/javascript">
            window.document.getElementById("HOME").className = "top_link";
            window.document.getElementById("GANMOI").className = "top_link";

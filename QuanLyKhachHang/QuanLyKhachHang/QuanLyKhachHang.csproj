@@ -406,6 +406,7 @@
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\menu_bg.png" />
+    <Content Include="Image\navigation.jpg" />
     <Content Include="Image\news_list_bg.gif" />
     <Content Include="Image\nochange.png" />
     <Content Include="Image\print_icon.gif" />
@@ -428,6 +429,7 @@
     <Content Include="StyleSheet\Menu.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
     <Content Include="View\addDongNuocc.aspx" />
+    <Content Include="View\addThongTinVan.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\GanMoi.aspx" />
@@ -438,6 +440,7 @@
     <Content Include="View\Login.aspx" />
     <Content Include="View\QuanLyDMA_Chart.aspx" />
     <Content Include="View\QuanLyDMA_ChartLL.aspx" />
+    <Content Include="View\QuanLyVan.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -526,6 +529,13 @@
     <Compile Include="View\addDongNuocc.aspx.designer.cs">
       <DependentUpon>addDongNuocc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\addThongTinVan.aspx.cs">
+      <DependentUpon>addThongTinVan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\addThongTinVan.aspx.designer.cs">
+      <DependentUpon>addThongTinVan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\dmaApLuc.aspx.cs">
       <DependentUpon>dmaApLuc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -595,6 +605,13 @@
     </Compile>
     <Compile Include="View\QuanLyDMA_ChartLL.aspx.designer.cs">
       <DependentUpon>QuanLyDMA_ChartLL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyVan.aspx.cs">
+      <DependentUpon>QuanLyVan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyVan.aspx.designer.cs">
+      <DependentUpon>QuanLyVan.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -688,7 +705,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>8369</DevelopmentServerPort>
+          <DevelopmentServerPort>5469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
