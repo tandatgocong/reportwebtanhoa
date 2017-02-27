@@ -1,23 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="dongnuoc.aspx.cs" Inherits="QuanLyKhachHang.View.dongnuoc" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="QuanLyBaoBe.aspx.cs" Inherits="QuanLyKhachHang.View.QuanLyBaoBe" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script language="javascript" type="text/javascript">
-        window.document.getElementById("HOME").className = "top_link";
-        window.document.getElementById("GANMOI").className = "top_link";
-        window.document.getElementById("KHACHHANG").className = "current_link";
-        window.document.getElementById("APLUC").className = "top_link";
-        window.document.getElementById("BAOBE").className = "top_link";
+ <script language="javascript" type="text/javascript">
+     window.document.getElementById("HOME").className = "top_link";
+     window.document.getElementById("GANMOI").className = "top_link";
+     window.document.getElementById("KHACHHANG").className = "top_link";
+     window.document.getElementById("APLUC").className = "top_link";
+     window.document.getElementById("BAOBE").className = "current_link";
     </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
             type="text/javascript"></script>
 
-            <script type="text/javascript">
+            <script type="text/javascript"> 
                 var map;
                 var marker;
                 var infowindow;
@@ -37,7 +36,7 @@
                     %>
 
                     var options = {
-                        zoom: 15,
+                        zoom: 17,
                         center: latlng,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     }
@@ -49,7 +48,26 @@
                        google.maps.event.addListener(map, 'click', function() {
                           infoWindow2.close();
                        });
-                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+
+                      var marker0 = new google.maps.Marker({
+				      position: latlng,
+                      icon: '/Image/icon2.png',
+				      map: map,
+				      title: ''
+				    });
+
+
+                    //var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+
+                     var html = "<table>" +
+                         "<tr><td>Điện Thoại:</td> <td><input type='text' id='dienthoai'/> </td> </tr>" +
+                         "<tr><td>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
+                         "<tr><td>Loại:</td> <td><select id='type'>" +
+                         "<option value='1' SELECTED>Bể Nổi</option>" +
+                         "<option value='2'>Bể Ngầm</option>" +
+                         "</select> </td></tr>" +
+                         "<tr><td></td><td><input type='button' value='Thêm Mới' onclick='saveData()'/></td></tr>";
+
                     infowindow = new google.maps.InfoWindow({
                         content: html
                     });
@@ -174,13 +192,13 @@
 </style>
 
 
- <body style="margin:0px; padding:0px;" onload="initialize()">
+ <body onload="initialize()">
 
   <table border=1 width=100%>
   <tr>
     <td>
         <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
         <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
         <asp:Label ID="Label2" runat="server"></asp:Label>
       </td>

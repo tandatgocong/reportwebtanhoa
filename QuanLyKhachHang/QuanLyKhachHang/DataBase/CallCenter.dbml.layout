@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CallCenter">
   <DataContextMoniker Name="/CallCenterDataContext" />
   <nestedChildShapes>
-    <classShape Id="d5eeb3ba-7137-45a4-80c4-a79d75026307" absoluteBounds="1.75, 1.375, 2, 3.5016097005208326">
+    <classShape Id="d5eeb3ba-7137-45a4-80c4-a79d75026307" absoluteBounds="0.5, 0.5, 2, 3.5016097005208326">
       <DataClassMoniker Name="/CallCenterDataContext/KT_DongNuoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="2501702a-7a8e-41ae-bc5f-52b4b2676a76" absoluteBounds="1.7650000000000001, 1.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2501702a-7a8e-41ae-bc5f-52b4b2676a76" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2336a1e0-2060-4a49-bbf3-24b47998ae1a" absoluteBounds="4.125, 1.125, 2, 4.8477197265625">
+      <DataClassMoniker Name="/CallCenterDataContext/KT_BaoBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e3cd051-b8ac-4fb0-b973-edc68d2b9b7b" absoluteBounds="4.14, 1.585, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

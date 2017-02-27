@@ -73,6 +73,18 @@ namespace QuanLyKhachHang.Class
             }
         }
 
+        public static void Insert(KT_BaoBe tb)
+        {
+            try
+            {
+                db.KT_BaoBes.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         public static bool Update()
         {
             try

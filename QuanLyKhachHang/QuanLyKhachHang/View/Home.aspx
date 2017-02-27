@@ -1,5 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="QuanLyKhachHang.View.Home" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<script type="text/javascript">
+
+    function initGeolocation() {
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        } else {
+            console.log('Geolocation is not supported');
+        }
+    }
+
+    function errorCallback() { }
+
+    function successCallback(position) {    
+        var mapUrl = "http://maps.google.com/maps/api/staticmap?center=";
+        mapUrl = mapUrl + position.coords.latitude + ',' + position.coords.longitude;
+        mapUrl = mapUrl + '&zoom=15&size=512x512&maptype=roadmap&sensor=false';
+        var imgElement = document.getElementById("static-map");
+        imgElement.src = mapUrl;
+    }
+</script>
+
 <style type="text/css">
         .style1
         {

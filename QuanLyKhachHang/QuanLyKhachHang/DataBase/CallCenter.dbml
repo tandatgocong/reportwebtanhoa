@@ -18,4 +18,29 @@
       <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KT_BaoBe" Member="KT_BaoBes">
+    <Type Name="KT_BaoBe">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Lng" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiBao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Phuong" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgayBao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayTiepNhan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayThucHien" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoaiThucHien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KetQua" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FilePdf" Type="System.Data.Linq.Binary" DbType="VarBinary(1)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -7,7 +7,8 @@
      window.document.getElementById("HOME").className = "top_link";
      window.document.getElementById("GANMOI").className = "top_link";
      window.document.getElementById("KHACHHANG").className = "current_link";
-     window.document.getElementById("APLUC").className = "top_link"; 
+     window.document.getElementById("APLUC").className = "top_link";
+     window.document.getElementById("BAOBE").className = "top_link";
     </script>
 <style type="text/css">
         .style1
