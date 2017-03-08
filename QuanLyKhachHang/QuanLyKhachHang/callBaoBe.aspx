@@ -8,10 +8,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="StyleSheet/Menu.css" rel="stylesheet" type="text/css" />
-    <link href="StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
-    <script src="StyleSheet/transmenu.js" type="text/javascript"></script>
+    <link href="StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -70,15 +69,51 @@
 
                     //var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
 
-                     var html = "<table>" +
-                         "<tr><td>Điện Thoại:</td> <td><input type='text' id='dienthoai'/> </td> </tr>" +
-                         "<tr><td>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
-                         "<tr><td>Loại:</td> <td><select id='type'>" +
-                         "<option value='1' SELECTED>Bể Nổi</option>" +
-                         "<option value='2'>Bể Ngầm</option>" +
+                     var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Điện Thoại:</td> <td style='hight:100px; width:200px;'><input type='text' id='dienthoai'/> </td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
+                         
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Phường:</td> <td><select id='phuong'>" +
+                         "<option value='01' SELECTED> 01 </option>" +
+                         "<option value='02' SELECTED> 02 </option>" +
+                         "<option value='03' SELECTED> 03 </option>" +
+                         "<option value='04' SELECTED> 04 </option>" +
+                         "<option value='05' SELECTED> 05 </option>" +
+                         "<option value='06' SELECTED> 06 </option>" +
+                         "<option value='07' SELECTED> 07 </option>" +
+                         "<option value='08' SELECTED> 08 </option>" +
+                         "<option value='09' SELECTED> 09 </option>" +
+                         "<option value='10' SELECTED> 10 </option>" +
+                         "<option value='11' SELECTED> 11 </option>" +
+                         "<option value='12' SELECTED> 12 </option>" +
+                         "<option value='13' SELECTED> 13 </option>" +
+                         "<option value='14' SELECTED> 14 </option>" +
+                         "<option value='15' SELECTED> 15 </option>" +
+                         "<option value='01' SELECTED> Tân Sơn Nhì </option>" +
+                         "<option value='02' SELECTED> Tân Quý </option>" +
+                         "<option value='03' SELECTED> Sơn Kỳ </option>" +
+                         "<option value='04' SELECTED> Tân Thành </option>" +
+                         "<option value='05' SELECTED> Phú Thọ Hòa </option>" +
+                         "<option value='06' SELECTED> Phú Thạnh </option>" +
+                         "<option value='07' SELECTED> Phú Trung </option>" +
+                         "<option value='08' SELECTED> Hòa Thạnh </option>" +
+                         "<option value='09' SELECTED> Tân Thới Hòa </option>" +
+                         "<option value='10' SELECTED> Hiệp Tân </option>" +
+                         "<option value='11' SELECTED> Tây Thạnh </option>" +
+                          "</select> </td></tr>" +
+
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Quận:</td> <td><select id='quan'>" +
+                         "<option value='22' SELECTED>Phú Nhuận</option>" +
+                         "<option value='23'>Tân Bình</option>" +
+                         "<option value='33'>Tân Phú</option>" +
                          "</select> </td></tr>" +
-                         "<tr><td>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
-                         "<tr><td></td><td><input type='button' value='Thêm Mới' onclick='saveData()'/></td></tr>";
+
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Loại:</td> <td><select id='type'>" +
+                         "<option value='Bể Nổi' SELECTED>Bể Nổi</option>" +
+                         "<option value='Bể Ngầm'>Bể Ngầm</option>" +
+                         "</select> </td></tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='saveData()'/></td></tr>";
 
                     infowindow = new google.maps.InfoWindow({
                         content: html
@@ -165,13 +200,15 @@
                }
 
                 function saveData() {   
-                    var dienthoai = escape(document.getElementById("dienthoai").value);
-                    var ghichu = escape(document.getElementById("ghichu").value);
-                    var diachi = escape(document.getElementById("diachi").value);
+                    var dienthoai = document.getElementById("dienthoai").value;
+                    var ghichu = document.getElementById("ghichu").value;
+                    var diachi = document.getElementById("diachi").value;
                     var type = document.getElementById("type").value;
+                    var phuong = document.getElementById("phuong").value;
+                    var quan = document.getElementById("quan").value;
                                         
                     var latlng = marker.getPosition();                    
-                    var newUrl="addCallBaoBe.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type;
+                    var newUrl="addCallBaoBe.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan;
                    // alert(latlng);
                   document.location.href = newUrl;
 

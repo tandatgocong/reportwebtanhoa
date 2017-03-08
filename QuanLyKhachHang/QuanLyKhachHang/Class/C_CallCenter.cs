@@ -47,6 +47,19 @@ namespace QuanLyKhachHang.Class
             }
             return null;
         }
+        public static KT_Van finByIdV(int id)
+        {
+            try
+            {
+                var query = from q in db.KT_Vans where q.ID == id select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
 
         public static void Insert(KT_DongNuoc tb)
         {
@@ -85,6 +98,31 @@ namespace QuanLyKhachHang.Class
                 log.Error(ex.Message);
             }
         }
+        public static void Insert(KT_Van tb)
+        {
+            try
+            {
+                db.KT_Vans.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+        public static void Delete(KT_Van tb)
+        {
+            try
+            {
+                db.KT_Vans.DeleteOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
         public static bool Update()
         {
             try

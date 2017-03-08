@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using QuanLyKhachHang.DataBase;
+using System.Text;
 
 namespace QuanLyKhachHang
 {
@@ -15,18 +16,22 @@ namespace QuanLyKhachHang
             if (Request.QueryString["lng"] != null)
             {
                 string dienthoai = Request.QueryString["dienthoai"].ToString();
-                string ghichu = Request.QueryString["ghichu"].ToString();
-                string diachi = Request.QueryString["diachi"].ToString();
+                string ghichu =Request.QueryString["ghichu"];
+                string diachi = HttpUtility.UrlDecode(Request.QueryString["diachi"], Encoding.GetEncoding("utf-8"));
                 string type = Request.QueryString["type"].ToString();
                 string lat = Request.QueryString["lat"].ToString();
                 string lng = Request.QueryString["lng"].ToString();
+                string phuong = Request.QueryString["phuong"].ToString();
+                string quan = Request.QueryString["quan"].ToString();
                 KT_BaoBe kt = new KT_BaoBe();
-                kt.TinhTrang = int.Parse(type);
+                kt.TinhTrang =1;
                 kt.Lat = lat;
                 kt.Lng = lng;
                 kt.SoDT = dienthoai;
-                kt.LoaiBao = int.Parse(type);
+                kt.LoaiBao = type;
                 kt.DiaChi = diachi;
+                kt.Phuong = phuong;
+                kt.Quan = quan;
                 kt.NgayBao = DateTime.Now;
                 kt.GhiChu = ghichu;
                 kt.CreateDate = DateTime.Now;
@@ -34,7 +39,7 @@ namespace QuanLyKhachHang
                 Class.C_CallCenter.Insert(kt);
 
               //  Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
-                Response.Redirect(@"callBaoBe.aspx");
+                 Response.Redirect(@"callBaoBe.aspx");
             }
             if (Request.QueryString["id"] != null)
             {

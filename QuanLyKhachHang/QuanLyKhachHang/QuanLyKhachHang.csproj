@@ -432,7 +432,7 @@
     <Content Include="StyleSheet\StyleSheet.css" />
     <Content Include="View\addBaoBe.aspx" />
     <Content Include="View\addDongNuocc.aspx" />
-    <Content Include="View\addThongTinVan.aspx" />
+    <Content Include="View\addVan.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\Print.aspx" />
@@ -552,12 +552,12 @@
     <Compile Include="View\addDongNuocc.aspx.designer.cs">
       <DependentUpon>addDongNuocc.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\addThongTinVan.aspx.cs">
-      <DependentUpon>addThongTinVan.aspx</DependentUpon>
+    <Compile Include="View\addVan.aspx.cs">
+      <DependentUpon>addVan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\addThongTinVan.aspx.designer.cs">
-      <DependentUpon>addThongTinVan.aspx</DependentUpon>
+    <Compile Include="View\addVan.aspx.designer.cs">
+      <DependentUpon>addVan.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\dmaApLuc.aspx.cs">
       <DependentUpon>dmaApLuc.aspx</DependentUpon>
