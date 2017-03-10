@@ -13,45 +13,118 @@
         window.document.getElementById("APLUC").className = "top_link";
         window.document.getElementById("BAOBE").className = "top_link";
     </script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
-            type="text/javascript"></script>
+      #infowindow-content .title {
+        font-weight: bold;
+      }
 
-            <script type="text/javascript">
-                var map;
-                var marker;
-                var infowindow;
-                var infoWindow2;
-                function initialize() {
-                    var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
-                     <%
-            
-                        if( Session["lat"] != "" &&   Session["lng"] != "")
-                        {
-                
-                            %>
-                                latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
+      #infowindow-content {
+        display: none;
+      }
 
-                            <%
-                        }
-                    %>
+      #map #infowindow-content {
+        display: inline;
+      }
 
-                    var options = {
-                        zoom: 15,
-                        center: latlng,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }
-                    map = new google.maps.Map(document.getElementById("map"), options);
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
 
-                       infoWindow2 = new google.maps.InfoWindow();
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
 
-                       // Event that closes the Info Window with a click on the map
-                       google.maps.event.addListener(map, 'click', function() {
-                          infoWindow2.close();
-                       });
-                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+        height:25px;
+        margin-top:15px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+  
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+     <div id="map" style="width: 100%; height: 800px"></div>
+
+    <script>
+        var lagx;
+        var lagy;
+        // This example adds a search box to a map, using the Google Place Autocomplete
+        // feature. People can enter geographical searches. The search box will return a
+        // pick list containing a mix of places and predicted search terms.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        function initAutocomplete() {
+            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+            var marker;
+            var infowindow;
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: latlng,
+                zoom: 13,
+                mapTypeId: 'roadmap'
+            });
+
+            //////////////
+                infowindow = new google.maps.InfoWindow();
+                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='save()'/> </td></tr></table>";
                     infowindow = new google.maps.InfoWindow({
-                        content: html
+                        content: html 
                     });
 
                     google.maps.event.addListener(map, "click", function (event) {
@@ -60,14 +133,19 @@
                             map: map
                         });
                         google.maps.event.addListener(marker, "click", function () {
-                            infowindow.open(map, marker);
+                            infowindow.open(map, marker),
+                            lagx=marker.getPosition().lat(),
+                            lagy=marker.getPosition().lng()
                         });
                     });
                  
                     
-                var infowindow2 = new google.maps.InfoWindow();
+                var  infoWindow2 = new google.maps.InfoWindow();
 
-            
+                       // Event that closes the Info Window with a click on the map
+                       google.maps.event.addListener(map, 'click', function() {
+                          infoWindow2.close();
+                       });
 
                      <% 
                        DataTable table = new DataTable();
@@ -126,75 +204,96 @@
                         }
                        }
                     %>
+
+
+
+
+
+
+
+            ////////////////////
+
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+            });
+
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
                 }
 
-               function monuoc(id) {                
-                var newUrl="addDongNuocc.aspx?id="+id ;
-                   // alert(latlng);
-                  document.location.href = newUrl;
-               }
+                /* Clear out the old markers.
+                markers.forEach(function (marker) {
+                    marker.setMap(null);
+                }); */
+                markers = [];
 
-                function saveData() {                   
-                    var latlng = marker.getPosition();                    
-                    var newUrl="addDongNuocc.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()
-                   // alert(latlng);
-                  document.location.href = newUrl;
-
-               }
-               
-                function downloadUrl(url, callback) {
-                    var request = window.ActiveXObject ?
-          new ActiveXObject('Microsoft.XMLHTTP') :
-          new XMLHttpRequest;
-
-                    request.onreadystatechange = function () {
-                        if (request.readyState == 4) {
-                            request.onreadystatechange = doNothing;
-                            callback(request.responseText, request.status);
-                        }
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function (place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
                     };
 
-                    request.open('GET', url, true);
-                    request.send(null);
-                }
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
 
-                function doNothing() { }
-                /*------------------------*/
-            </script>
+                    
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+            
+ }
+     function monuoc(id) {                
+                var newUrl="addDongNuocc.aspx?id="+id ;            
+                  document.location.href = newUrl;
+               }
+
+                function save() {    
+               // var latlng = marker.getPosition();  
+//                       alert(lagx);        
+//                       alert(lagy);  
+//                    var latlng = marker.getPosition();                    
+                    var newUrl="addDongNuocc.aspx?lat="+lagx+ "&lng=" + lagy
+                   // alert(latlng);
+                  document.location.href = newUrl;
+
+               }
+
+    </script>
     
-<style type="text/css">
-         .style1
-         {
-             width: 148px;
-         }
-         .style2
-         {
-             width: 89px;
-         }
-</style>
-
-
- <body style="margin:0px; padding:0px;" onload="initialize()">
-
-  <table border=1 width=100%>
-  <tr>
-    <td>
-        <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
-        <asp:Label ID="Label2" runat="server"></asp:Label>
-      </td>
-      
-<div id="out"></div></td>      
-  </tr>
-  <tr>
-    <td  >
-    <div id="map" style="width: 100%; height: 800px"></div>
-    <div id="message"></div>    
-    </td>
-  </tr>
-  </table>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
   </body>
-
 
 </asp:Content>

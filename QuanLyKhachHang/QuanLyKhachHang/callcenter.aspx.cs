@@ -23,8 +23,8 @@ namespace QuanLyKhachHang
         {
             if (Request.QueryString["add"] != null)
             {
-                this.TextBox1.Text = Request.QueryString["add"].ToString();
-                getLag(Request.QueryString["add"].ToString());
+                //this.TextBox1.Text = Request.QueryString["add"].ToString();
+                //getLag(Request.QueryString["add"].ToString());
             }
 
             Session["dsDongnuoc"] = null;
@@ -69,7 +69,7 @@ namespace QuanLyKhachHang
         }
         void search()
         {
-            string dc = this.TextBox1.Text;
+            string dc = "";
             getLag(dc);
             //var json = new WebClient().DownloadString(url);
             // this.Label2.Text = json.ToString();
