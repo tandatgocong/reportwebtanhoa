@@ -13,6 +13,12 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["id"] != null)
+            {
+                Class.C_CallCenter.ExecuteCommand("UPDATE KT_Van SET Xoa='True',ModifyDate=GETDATE(),ModifyBy='" + Session["login"].ToString() + "' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
+                Response.Redirect(@"QuanLyVan.aspx");
+            }
+            
             if (Request.QueryString["lng"] != null)
             {
                 string lat = Request.QueryString["lat"];

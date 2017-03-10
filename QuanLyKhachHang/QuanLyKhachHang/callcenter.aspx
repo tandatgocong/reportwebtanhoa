@@ -49,7 +49,7 @@
                        });
                     
                       marker = new google.maps.Marker({
-				      position: latlng,
+				      position: latlng,                      
                       icon: 'Image/icon2.png',
 				      map: map,
 				      title: ''

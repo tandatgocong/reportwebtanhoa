@@ -415,8 +415,12 @@
     <Content Include="Image\ss-GIAM.PNG" />
     <Content Include="Image\ss-TANG.PNG" />
     <Content Include="Image\table_list_bghead.png" />
+    <Content Include="Image\tch.png" />
     <Content Include="Image\Untitled.png" />
     <Content Include="Image\up.png" />
+    <Content Include="Image\vanbien.png" />
+    <Content Include="Image\vanchan.png" />
+    <Content Include="Image\xacan.png" />
     <Content Include="Image\XOA.png" />
     <Content Include="JavaScript\headmenu.css" />
     <Content Include="JavaScript\headmenu.js" />

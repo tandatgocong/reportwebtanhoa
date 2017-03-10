@@ -19,7 +19,7 @@ namespace QuanLyKhachHang.View
                 string type = Request.QueryString["type"].ToString();
                 string lat = Request.QueryString["lat"].ToString();
                 string lng = Request.QueryString["lng"].ToString(); 
-
+                
                 Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
                 Response.Redirect(@"dongnuoc.aspx");
             }
