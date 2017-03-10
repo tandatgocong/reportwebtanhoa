@@ -39,7 +39,7 @@ a:hover{
 #Home .Header{
 	margin: 0;
 	padding: 0;
-	height: 50px;
+	height: 0px;
 	position: relative;
 	
 }
@@ -56,8 +56,8 @@ a:hover{
 /* Content */
 #Home .Content{
 	margin: 0 0 0 0;
-	padding: 0;
-	height:100%;
+	padding: 0;	
+	flex: 1 1 0;
 	background-color: White;
 }
 #Home .Content_Admin{

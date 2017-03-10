@@ -2,104 +2,155 @@
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
- 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="StyleSheet/Menu.css" rel="stylesheet" type="text/css" />
-    <link href="StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />   
+<head id="Head1" runat="server">
+ <link href="../StyleSheet/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="../StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="../JavaScript/transmenu.js" type="text/javascript"></script>
+    <title>...: Call Center :...</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
- <script language="javascript" type="text/javascript">
-     window.document.getElementById("HOME").className = "top_link";
-     window.document.getElementById("GANMOI").className = "top_link";
-     window.document.getElementById("KHACHHANG").className = "top_link";
-     window.document.getElementById("APLUC").className = "top_link";
-     window.document.getElementById("BAOBE").className = "current_link";
-    </script>
+      #infowindow-content .title {
+        font-weight: bold;
+      }
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBWgYu4Xxr6m1nac1RJfl9eCrr-rG1chY"
-            type="text/javascript"></script>
+      #infowindow-content {
+        display: none;
+      }
 
-            <script type="text/javascript"> 
-                var map;
-                var marker;
-                var infowindow;
-                var infoWindow2;
-                function initialize() {
-                    var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
-                     <%
-            
-                        if( Session["lat"] != "" &&   Session["lng"] != "")
-                        {
-                
-                            %>
-                                latlng = new google.maps.LatLng(<%=Session["lat"] %>, <%=Session["lng"] %>);
+      #map #infowindow-content {
+        display: inline;
+      }
 
-                            <%
-                        }
-                    %>
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
 
-                    var options = {
-                        zoom: 17,
-                        center: latlng,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }
-                    map = new google.maps.Map(document.getElementById("map"), options);
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
 
-                       infoWindow2 = new google.maps.InfoWindow();
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
 
-                       // Event that closes the Info Window with a click on the map
-                       google.maps.event.addListener(map, 'click', function() {
-                          infoWindow2.close();
-                       });
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
 
-                      var marker0 = new google.maps.Marker({
-				      position: latlng,
-                      icon: '/Image/icon2.png',
-				      map: map,
-				      title: ''
-				    });
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+        height:25px;
+        margin-top:11px;
+      }
 
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
-                    //var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='saveData()'/> </td></tr></table>";
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+  
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+     <div id="map" style="width: 100%; height: 800px"></div>
 
-                     var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
+    <script>
+        var lagx;
+        var lagy;
+        // This example adds a search box to a map, using the Google Place Autocomplete
+        // feature. People can enter geographical searches. The search box will return a
+        // pick list containing a mix of places and predicted search terms.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        function initAutocomplete() {
+            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+            var marker;
+            var infowindow;
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: latlng,
+                zoom: 13,
+                mapTypeId: 'roadmap'
+            });
+ 
+                infowindow = new google.maps.InfoWindow();
+                   var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Điện Thoại:</td> <td style='hight:100px; width:200px;'><input type='text' id='dienthoai'/> </td> </tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
                          
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Phường:</td> <td><select id='phuong'>" +
                          "<option value='01' SELECTED> 01 </option>" +
-                         "<option value='02' SELECTED> 02 </option>" +
-                         "<option value='03' SELECTED> 03 </option>" +
-                         "<option value='04' SELECTED> 04 </option>" +
-                         "<option value='05' SELECTED> 05 </option>" +
-                         "<option value='06' SELECTED> 06 </option>" +
-                         "<option value='07' SELECTED> 07 </option>" +
-                         "<option value='08' SELECTED> 08 </option>" +
-                         "<option value='09' SELECTED> 09 </option>" +
-                         "<option value='10' SELECTED> 10 </option>" +
-                         "<option value='11' SELECTED> 11 </option>" +
-                         "<option value='12' SELECTED> 12 </option>" +
-                         "<option value='13' SELECTED> 13 </option>" +
-                         "<option value='14' SELECTED> 14 </option>" +
-                         "<option value='15' SELECTED> 15 </option>" +
-                         "<option value='01' SELECTED> Tân Sơn Nhì </option>" +
-                         "<option value='02' SELECTED> Tân Quý </option>" +
-                         "<option value='03' SELECTED> Sơn Kỳ </option>" +
-                         "<option value='04' SELECTED> Tân Thành </option>" +
-                         "<option value='05' SELECTED> Phú Thọ Hòa </option>" +
-                         "<option value='06' SELECTED> Phú Thạnh </option>" +
-                         "<option value='07' SELECTED> Phú Trung </option>" +
-                         "<option value='08' SELECTED> Hòa Thạnh </option>" +
-                         "<option value='09' SELECTED> Tân Thới Hòa </option>" +
-                         "<option value='10' SELECTED> Hiệp Tân </option>" +
-                         "<option value='11' SELECTED> Tây Thạnh </option>" +
+                         "<option value='02' > 02 </option>" +
+                         "<option value='03' > 03 </option>" +
+                         "<option value='04' > 04 </option>" +
+                         "<option value='05' > 05 </option>" +
+                         "<option value='06' > 06 </option>" +
+                         "<option value='07' > 07 </option>" +
+                         "<option value='08' > 08 </option>" +
+                         "<option value='09' > 09 </option>" +
+                         "<option value='10' > 10 </option>" +
+                         "<option value='11' > 11 </option>" +
+                         "<option value='12' > 12 </option>" +
+                         "<option value='13' > 13 </option>" +
+                         "<option value='14' > 14 </option>" +
+                         "<option value='15' > 15 </option>" +
+                         "<option value='01' > Tân Sơn Nhì </option>" +
+                         "<option value='02' > Tân Quý </option>" +
+                         "<option value='03' > Sơn Kỳ </option>" +
+                         "<option value='04' > Tân Thành </option>" +
+                         "<option value='05' > Phú Thọ Hòa </option>" +
+                         "<option value='06' > Phú Thạnh </option>" +
+                         "<option value='07' > Phú Trung </option>" +
+                         "<option value='08' > Hòa Thạnh </option>" +
+                         "<option value='09' > Tân Thới Hòa </option>" +
+                         "<option value='10' > Hiệp Tân </option>" +
+                         "<option value='11' > Tây Thạnh </option>" +
                           "</select> </td></tr>" +
 
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Quận:</td> <td><select id='quan'>" +
@@ -113,10 +164,9 @@
                          "<option value='Bể Ngầm'>Bể Ngầm</option>" +
                          "</select> </td></tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
-                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='saveData()'/></td></tr>";
-
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='save()'/></td></tr>";
                     infowindow = new google.maps.InfoWindow({
-                        content: html
+                        content: html 
                     });
 
                     google.maps.event.addListener(map, "click", function (event) {
@@ -125,14 +175,19 @@
                             map: map
                         });
                         google.maps.event.addListener(marker, "click", function () {
-                            infowindow.open(map, marker);
+                            infowindow.open(map, marker),
+                            lagx=marker.getPosition().lat(),
+                            lagy=marker.getPosition().lng()
                         });
                     });
                  
-                    
-                var infowindow2 = new google.maps.InfoWindow();
+                   
+                var  infoWindow2 = new google.maps.InfoWindow();
 
-            
+                       // Event that closes the Info Window with a click on the map
+                       google.maps.event.addListener(map, 'click', function() {
+                          infoWindow2.close();
+                       });
 
                      <% 
                        DataTable table = new DataTable();
@@ -191,85 +246,99 @@
                         }
                        }
                     %>
+
+
+
+
+
+
+
+            ////////////////////
+
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+            });
+
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
                 }
 
-               function monuoc(id) {                
+                /* Clear out the old markers.
+                markers.forEach(function (marker) {
+                    marker.setMap(null);
+                }); */
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function (place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+            
+ }
+            function monuoc(id) {                
                 var newUrl="addCallBaoBe.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
                }
 
-                function saveData() {   
+                function save() {    
                     var dienthoai = document.getElementById("dienthoai").value;
                     var ghichu = document.getElementById("ghichu").value;
                     var diachi = document.getElementById("diachi").value;
                     var type = document.getElementById("type").value;
                     var phuong = document.getElementById("phuong").value;
                     var quan = document.getElementById("quan").value;
-                                        
-                    var latlng = marker.getPosition();                    
-                    var newUrl="addCallBaoBe.aspx?lat="+latlng.lat() + "&lng=" + latlng.lng()+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan;
+                                      
+                    var newUrl="addCallBaoBe.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan;
                    // alert(latlng);
                   document.location.href = newUrl;
+                      
+               }
 
-              }
-               
-                function downloadUrl(url, callback) {
-                    var request = window.ActiveXObject ?
-          new ActiveXObject('Microsoft.XMLHTTP') :
-          new XMLHttpRequest;
-
-                    request.onreadystatechange = function () {
-                        if (request.readyState == 4) {
-                            request.onreadystatechange = doNothing;
-                            callback(request.responseText, request.status);
-                        }
-                    };
-
-                    request.open('GET', url, true);
-                    request.send(null);
-                }
-
-                function doNothing() { }
-                /*------------------------*/
-            </script>
+    </script>
     
-<style type="text/css">
-         .style1
-         {
-             width: 148px;
-         }
-         .style2
-         {
-             width: 89px;
-         }
-</style>
-
-
- <body onload="initialize()">
-
-  <table border=1 width=100%>
-  <tr>
-    <td>
-        <asp:Label ID="Label1" runat="server" Text="Tìm Địa Chỉ "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
-        <asp:Button ID="btTim" runat="server" Text="Tìm Kiếm" onclick="btTim_Click" />
-        <asp:Label ID="Label2" runat="server"></asp:Label>
-      </td>
-      
-<div id="out"></div></td>      
-  </tr>
-  <tr>
-    <td  >
-    <div id="map" style="width: 100%; height: 800px"></div>
-    <div id="message"></div>    
-    </td>
-  </tr>
-  </table>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
   </body>
-
- 
-
-    </form>
-</body>
-</html>
+  </html>

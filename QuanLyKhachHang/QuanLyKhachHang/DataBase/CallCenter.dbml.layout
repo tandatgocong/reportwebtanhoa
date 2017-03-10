@@ -14,10 +14,10 @@
         <elementListCompartment Id="93b3afdc-0961-4c18-b84c-68bf69bca6b9" absoluteBounds="4.89, 2.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="876acb76-dc74-45e8-b540-697c0ec5fa7b" absoluteBounds="2.625, 1.125, 2, 5.8092268880208326">
+    <classShape Id="f397e080-c322-4bf1-8a23-81f0fcf8c536" absoluteBounds="8.375, 1.375, 2, 6.0015283203125">
       <DataClassMoniker Name="/CallCenterDataContext/KT_Van" />
       <nestedChildShapes>
-        <elementListCompartment Id="99a89df1-9ba4-4a52-8c87-50bc1bd0e4f4" absoluteBounds="2.64, 1.585, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c264feaf-fa17-4616-b9ea-740bfd0f5224" absoluteBounds="8.39, 1.835, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

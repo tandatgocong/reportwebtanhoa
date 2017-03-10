@@ -1020,6 +1020,8 @@ namespace QuanLyKhachHang.DataBase
 		
 		private int _ID;
 		
+		private string _STT;
+		
 		private string _Lat;
 		
 		private string _Lng;
@@ -1076,6 +1078,8 @@ namespace QuanLyKhachHang.DataBase
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnSTTChanging(string value);
+    partial void OnSTTChanged();
     partial void OnLatChanging(string value);
     partial void OnLatChanged();
     partial void OnLngChanging(string value);
@@ -1149,6 +1153,26 @@ namespace QuanLyKhachHang.DataBase
 					this._ID = value;
 					this.SendPropertyChanged("ID");
 					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="VarChar(50)")]
+		public string STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
 				}
 			}
 		}

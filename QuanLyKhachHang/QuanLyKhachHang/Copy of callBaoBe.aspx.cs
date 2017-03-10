@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using QuanLyKhachHang.Class;
 
-namespace QuanLyKhachHang.View
+namespace QuanLyKhachHang
 {
-    public partial class QuanLyVan : System.Web.UI.Page
+    public partial class callBaoBe : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,19 +21,18 @@ namespace QuanLyKhachHang.View
 
         public void pagLoad()
         {
-            Session["dsVan"] = null;
-            string sql = "SELECT  v.*,CASE WHEN v.ChanTuyen = 1 THEN N'Chặn Tuyến' ELSE  ";
-            sql += "    CASE WHEN v.XaCan = 1 THEN N'Xã Cặn' ELSE  ";
-            sql += "        CASE WHEN v.TCH=1 THEN N'TCH' ELSE  ";
-            sql += "      CASE WHEN v.VanBien=1 THEN  N'Van Biên' ELSE '' END END END END AS TenLoai  ";
-            sql += "    FROM  [KT_Van] v  ";
-            sql += "     WHERE Xoa='false' ";
-            Session["dsVan"] = C_CallCenter.getDataTable(sql);
+            Session["dsBaoBe"] = null;
+            //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+            //string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
+            string sql = " SELECT * from KT_BaoBe  where CAST(GETDATE() as date) =  CAST(NgayBao as date) and CreateBy='callcenter'  ";
+            Session["dsBaoBe"] = C_CallCenter.getDataTable(sql);
 
         }
         void search()
         {
-            string dc = "";
+            string dc = this.TextBox1.Text;
             string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
             XmlTextReader reader = new XmlTextReader(URLString);
             string geometry = "";
@@ -64,17 +63,17 @@ namespace QuanLyKhachHang.View
                 }
             }
 
-            //this.Label2.Text = lat + "--" + lng;
+            this.Label2.Text = lat + "--" + lng;
             Session["lat"] = lat;
             Session["lng"] = lng;
             //var json = new WebClient().DownloadString(url);
             // this.Label2.Text = json.ToString();
 
         }
-        //protected void btTim_Click(object sender, EventArgs e)
-        //{
-        //    search();
+        protected void btTim_Click(object sender, EventArgs e)
+        {
+            search();
 
-        //}
+        }
     }
 }

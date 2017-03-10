@@ -36,7 +36,9 @@ namespace QuanLyKhachHang.View
                 string masovan = Request.QueryString["masovan"];
                 string thongtin = Request.QueryString["thongtin"];
                 string ghichu = Request.QueryString["ghichu"];
+                string stt = Request.QueryString["stt"];
                 KT_Van v = new KT_Van();
+                v.STT = stt;
                 v.Lat = lat;
                 v.Lng = lng;
                 v.TuyenOng = tuyenong;

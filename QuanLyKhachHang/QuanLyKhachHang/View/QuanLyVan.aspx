@@ -75,6 +75,8 @@
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
         width: 400px;
+        height:25px;
+        margin-top:11px;
       }
 
       #pac-input:focus {
@@ -95,8 +97,10 @@
   
   <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height: 800px"></div>
+     <div id="map" style="width: 100%; height: 100vh"></div>
     <script>
+       var lagx;
+        var lagy;
         // This example adds a search box to a map, using the Google Place Autocomplete
         // feature. People can enter geographical searches. The search box will return a
         // pick list containing a mix of places and predicted search terms.
@@ -111,12 +115,80 @@
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 13,
+                zoom: 18,
                 mapTypeId: 'roadmap'
             });
 
             //////////////
-            var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Van</div> <br/>";
+           var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Van</div> <br/> <table class='table_list'  >" +
+                        "<tr  class='head11' ><td style='width:120px;text-align:left;' >STT :  </td> <td> <input style='width:250px;' type='text' id='stt'/> </td> </tr>" +
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Đường Chính :  </td> <td><input style='width:250px;' type='text' id='duongchinh'/> </td> </tr>" +
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Địa Chỉ Đặt Van :  </td> <td><input style='width:250px;' type='text' id='diachi'/> </td> </tr>" +                        
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' > Phường:</td> <td><select id='phuong' style='width:250px;'>" +
+                         "<option value='01' SELECTED> 01 </option>" +
+                         "<option value='02' > 02 </option>" +
+                         "<option value='03' > 03 </option>" +
+                         "<option value='04' > 04 </option>" +
+                         "<option value='05' > 05 </option>" +
+                         "<option value='06' > 06 </option>" +
+                         "<option value='07' > 07 </option>" +
+                         "<option value='08' > 08 </option>" +
+                         "<option value='09' > 09 </option>" +
+                         "<option value='10' > 10 </option>" +
+                         "<option value='11' > 11 </option>" +
+                         "<option value='12' > 12 </option>" +
+                         "<option value='13' > 13 </option>" +
+                         "<option value='14' > 14 </option>" +
+                         "<option value='15' > 15 </option>" +
+                         "<option value='01' > Tân Sơn Nhì </option>" +
+                         "<option value='02' > Tân Quý </option>" +
+                         "<option value='03' > Sơn Kỳ </option>" +
+                         "<option value='04' > Tân Thành </option>" +
+                         "<option value='05' > Phú Thọ Hòa </option>" +
+                         "<option value='06' > Phú Thạnh </option>" +
+                         "<option value='07' > Phú Trung </option>" +
+                         "<option value='08' > Hòa Thạnh </option>" +
+                         "<option value='09' > Tân Thới Hòa </option>" +
+                         "<option value='10' > Hiệp Tân </option>" +
+                         "<option value='11' > Tây Thạnh </option>" +
+                          "</select> </td></tr>" +
+                          "<tr  class='head11' ><td style='width:120px;text-align:left;' >Quận:</td> <td><select style='width:250px;' id='quan'>" +
+                         "<option value='22'>Phú Nhuận</option>" +
+                         "<option value='23'>Tân Bình</option>" +
+                         "<option value='31'>Tân Phú</option>" +
+                         "</select> </td></tr>" +
+                        
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Tuyến Ống :  </td> <td><select id='tuyenong' style='width:250px;'>" +
+                         "<option value='100' SELECTED> 100 </option>" +
+                         "<option value='150' SELECTED> 150 </option>" +
+                         "<option value='180' SELECTED> 180 </option>" +
+                         "<option value='200' SELECTED> 200 </option>" +
+                         "<option value='250' SELECTED> 250 </option>" +
+                         "<option value='300' SELECTED> 300 </option>" +
+                         "<option value='375' SELECTED> 375 </option>" +
+                         "<option value='400' SELECTED> 400 </option>" +
+                         "<option value='500' SELECTED> 500 </option>" +
+                         "<option value='1500' SELECTED> 1500 </option>" +
+                          "</select> </td></tr>" +  
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' > Cở Van :  </td> <td><select id='covan' style='width:250px;'>" +
+                         "<option value='100' SELECTED> 100 </option>" +
+                         "<option value='150' SELECTED> 150 </option>" +                          
+                         "<option value='200' SELECTED> 200 </option>" +
+                         "<option value='250' SELECTED> 250 </option>" +
+                         "<option value='300' SELECTED> 300 </option>" +
+                         "<option value='375' SELECTED> 375 </option>" +
+                         "<option value='400' SELECTED> 400 </option>" +
+                         "<option value='500' SELECTED> 500 </option>" +
+                         "<option value='1500' SELECTED> 1500 </option>" +
+                          "</select> </td></tr>" + 
+
+                          "<tr  class='head11' ><td style='width:120px;text-align:left;' >Mã Số Van :  </td> <td><input style='width:250px;' type='text' id='masovan'/> </td> </tr>" +   
+                          "<tr  class='head11' ><td style='width:120px;text-align:left;' >Loại Van :  </td> <td style=' text-align:left;'> <input type='checkbox'   id='chantuyen'> Chặn Tuyến &nbsp;&nbsp; <br><input type='checkbox' id='xacan'> Xã Cặn &nbsp;&nbsp;  <br> " +  
+                                "<input type='checkbox' id='TCH'> TCH &nbsp;&nbsp; <br><input type='checkbox' id='vanbien'> Van Biên&nbsp;&nbsp;  <br> </td></tr>" +
+
+                        "<tr  class='head11' ><td style='width:120px;text-align:left;' >Thông Tin Mạng:</td> <td><input type='text' style='width:250px;' id='thongtin'/></td> </tr>" +
+                        "<tr  class='head11' ><td style='width:120px;text-align:left;' >Ghi Chú:</td> <td><input type='text' style='width:250px;' id='ghichu'/></td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='save();'/></td></tr>";
 
             infowindow = new google.maps.InfoWindow({
                 content: html
@@ -128,12 +200,12 @@
                     map: map
                 });
                 google.maps.event.addListener(marker, "click", function () {
-                    infowindow.open(map, marker);
+                    infowindow.open(map, marker),
+                     lagx=marker.getPosition().lat(),
+                     lagy=marker.getPosition().lng()
                 });
             });
-
-           
-
+             
              var infoWindow2 = new google.maps.InfoWindow();
 
              // Event that closes the Info Window with a click on the map
@@ -206,11 +278,9 @@
 
                             google.maps.event.addListener(marker<%=i%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                            var iwContent= " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Thông Tin  Van</div> <br/> <table class='table_list'  >" +
+                            var iwContent= " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Thông Tin Van  <%=table.Rows[i]["TenLoai"]%></div> <br/> <table class='table_list'  >" +                         
                          "<tr  class='head11' ><td style='width:120px;text-align:left;' >Đường Chính :  </td> <td> <b> <%=table.Rows[i]["TenDuong"]%>  </b> </td> </tr>" +
-                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Địa Chỉ Đặt Van :  </td> <td><b> <%=table.Rows[i]["DiaChi"]%> </b> </td> </tr>" +                        
-                         "<tr  class='head11' ><td style='width:120px;text-align:left;' > Phường:</td> <td> <b><%=table.Rows[i]["TENPHUONG"]%> </b> </td></tr>" +
-                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Quận:</td> <td><%=table.Rows[i]["TENQUAN"]%> </b> </td></tr>" +                        
+                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >Địa Chỉ Đặt Van :  </td> <td><b> <%=table.Rows[i]["DiaChi"]%> </b> </td> </tr>" +   
                          "<tr  class='head11' ><td style='width:120px;text-align:left;' >Tuyến Ống :  </td> <td> <%=table.Rows[i]["TuyenOng"]%> </td></tr>" +  
                          "<tr  class='head11' ><td style='width:120px;text-align:left;' > Cở Van :  </td> <td> <%=table.Rows[i]["CoVan"]%> </td></tr>" + 
 
@@ -237,7 +307,26 @@
 
 
              
+             var infoWindow = new google.maps.InfoWindow({map: map});
 
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location');
+                    map.setCenter(pos);
+                  }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                  });
+                } else {
+                  // Browser doesn't support Geolocation
+                  handleLocationError(false, infoWindow, map.getCenter());
+                }
 
 
 
@@ -305,7 +394,31 @@
             });
              
         }
+         function monuoc(id) {                
+                 var newUrl="addVan.aspx?id="+id ;
+                   // alert(latlng);
+                  document.location.href = newUrl;
+               }
 
+                function save() {   
+                    var stt = document.getElementById("stt").value;
+                    var duongchinh = document.getElementById("duongchinh").value;
+                    var diachi = document.getElementById("diachi").value;                
+                    var phuong = document.getElementById("phuong").value;
+                    var quan = document.getElementById("quan").value;
+                    var tuyenong = document.getElementById("tuyenong").value;
+                    var covan = document.getElementById("covan").value;
+                    var chantuyen = document.getElementById("chantuyen").checked;
+                    var xacan = document.getElementById("xacan").checked;
+                    var TCH = document.getElementById("TCH").checked;
+                    var vanbien = document.getElementById("vanbien").checked;
+                    var masovan = document.getElementById("masovan").value;
+                    var thongtin = document.getElementById("thongtin").value;
+                    var ghichu = document.getElementById("ghichu").value; 
+                    var newUrl="addVan.aspx?lat="+lagx+ "&lng=" + lagy+ "&duongchinh=" + duongchinh + "&diachi=" + diachi+ "&phuong=" + phuong+ "&quan=" + quan+ "&tuyenong=" + tuyenong+ "&covan=" + covan +"&chantuyen="+ chantuyen + "&xacan="+ xacan + "&TCH="+ TCH +"&vanbien="+ vanbien +"&masovan="+masovan +"&thongtin="+ thongtin +"&ghichu="+ ghichu+"&stt="+stt;
+                    document.location.href = newUrl;
+
+              }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
   </body>

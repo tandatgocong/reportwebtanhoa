@@ -66,7 +66,7 @@
       }
 
       #pac-input {
-        background-color: #fff;
+          background-color: #fff;
         font-family: Roboto;
         font-size: 15px;
         font-weight: 300;
@@ -75,7 +75,7 @@
         text-overflow: ellipsis;
         width: 400px;
         height:25px;
-        margin-top:15px;
+        margin-top:11px;
       }
 
       #pac-input:focus {

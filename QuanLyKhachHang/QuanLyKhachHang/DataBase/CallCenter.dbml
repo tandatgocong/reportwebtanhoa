@@ -46,6 +46,7 @@
   <Table Name="dbo.KT_Van" Member="KT_Vans">
     <Type Name="KT_Van">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Lat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Lng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TuyenOng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

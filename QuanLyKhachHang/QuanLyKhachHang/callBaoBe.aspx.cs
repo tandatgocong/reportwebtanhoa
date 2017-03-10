@@ -32,7 +32,7 @@ namespace QuanLyKhachHang
         }
         void search()
         {
-            string dc = this.TextBox1.Text;
+            string dc = "";
             string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
             XmlTextReader reader = new XmlTextReader(URLString);
             string geometry = "";
@@ -63,7 +63,7 @@ namespace QuanLyKhachHang
                 }
             }
 
-            this.Label2.Text = lat + "--" + lng;
+           //  this.Label2.Text = lat + "--" + lng;
             Session["lat"] = lat;
             Session["lng"] = lng;
             //var json = new WebClient().DownloadString(url);
