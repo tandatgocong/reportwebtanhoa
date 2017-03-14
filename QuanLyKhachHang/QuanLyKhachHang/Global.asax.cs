@@ -41,7 +41,7 @@ namespace QuanLyKhachHang
             Session["lng"] = "106.65252816547981";
             Session["dsDongnuoc"] = null;
             int count_visit = 0;
-
+            Session["imgfile"] = "";
            
             // khóa website
             Application.Lock();

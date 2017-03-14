@@ -290,11 +290,11 @@
                         return;
                     }
                     var icon = {
-                        url: place.icon,
+                        url: 'Image/icon2.png',
                         size: new google.maps.Size(71, 71),
                         origin: new google.maps.Point(0, 0),
                         anchor: new google.maps.Point(17, 34),
-                        scaledSize: new google.maps.Size(25, 25)
+                        scaledSize: new google.maps.Size(67, 67)
                     };
 
                     // Create a marker for each place.

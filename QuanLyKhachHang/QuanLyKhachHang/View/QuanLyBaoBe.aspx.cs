@@ -13,26 +13,26 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
             pagLoad();
         }
+
         public void pagLoad()
         {
-            Session["dsDongnuoc"] = null;
+            Session["dsBaoBe"] = null;
             //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
             //string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
-            string sql = " SELECT * from KT_BaoBe  ";
-            Session["dsDongnuoc"] = C_CallCenter.getDataTable(sql);
+            string sql = " SELECT * from KT_BaoBe  where CAST(GETDATE() as date) =  CAST(NgayBao as date) and CreateBy='callcenter'  ";
+            Session["dsBaoBe"] = C_CallCenter.getDataTable(sql);
 
         }
         void search()
         {
-            string dc = this.TextBox1.Text;
+            string dc = "";
             string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
             XmlTextReader reader = new XmlTextReader(URLString);
             string geometry = "";
@@ -63,7 +63,7 @@ namespace QuanLyKhachHang.View
                 }
             }
 
-            this.Label2.Text = lat + "--" + lng;
+            //  this.Label2.Text = lat + "--" + lng;
             Session["lat"] = lat;
             Session["lng"] = lng;
             //var json = new WebClient().DownloadString(url);
@@ -75,7 +75,5 @@ namespace QuanLyKhachHang.View
             search();
 
         }
-         
-
     }
 }

@@ -53,7 +53,7 @@
             <span class="style3"><strong>
             <img  src="../Image/Logo%20Tan%20Hoa.png" style="height: 290px; width: 307px" /><br />
             <br />
-            TRUNG TÂM KHÁCH HÀNG</strong></span><br />
+            QUẢN LÝ THÔNG TIN </strong></span><br />
             <br />
             
        
