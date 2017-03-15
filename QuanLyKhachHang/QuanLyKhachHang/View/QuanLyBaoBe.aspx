@@ -96,7 +96,7 @@
   
   <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height: 800px"></div>
+     <div id="map" style="width: 100%; height: 100vh"></div>
 
     <script>
         var lagx;
@@ -120,7 +120,51 @@
             });
  
                 infowindow = new google.maps.InfoWindow();
-                   var html = " <input type='button'  value='  Thêm Mới Điểm Bể  ' onclick='save()'/> ";
+                var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Điện Thoại:</td> <td style='hight:100px; width:200px;'><input type='text' id='dienthoai'/> </td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
+                         
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Phường:</td> <td><select id='phuong'>" +
+                         "<option value='01' SELECTED> 01 </option>" +
+                         "<option value='02' > 02 </option>" +
+                         "<option value='03' > 03 </option>" +
+                         "<option value='04' > 04 </option>" +
+                         "<option value='05' > 05 </option>" +
+                         "<option value='06' > 06 </option>" +
+                         "<option value='07' > 07 </option>" +
+                         "<option value='08' > 08 </option>" +
+                         "<option value='09' > 09 </option>" +
+                         "<option value='10' > 10 </option>" +
+                         "<option value='11' > 11 </option>" +
+                         "<option value='12' > 12 </option>" +
+                         "<option value='13' > 13 </option>" +
+                         "<option value='14' > 14 </option>" +
+                         "<option value='15' > 15 </option>" +
+                         "<option value='01' > Tân Sơn Nhì </option>" +
+                         "<option value='02' > Tân Quý </option>" +
+                         "<option value='03' > Sơn Kỳ </option>" +
+                         "<option value='04' > Tân Thành </option>" +
+                         "<option value='05' > Phú Thọ Hòa </option>" +
+                         "<option value='06' > Phú Thạnh </option>" +
+                         "<option value='07' > Phú Trung </option>" +
+                         "<option value='08' > Hòa Thạnh </option>" +
+                         "<option value='09' > Tân Thới Hòa </option>" +
+                         "<option value='10' > Hiệp Tân </option>" +
+                         "<option value='11' > Tây Thạnh </option>" +
+                          "</select> </td></tr>" +
+
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Quận:</td> <td><select id='quan'>" +
+                         "<option value='22' SELECTED>Phú Nhuận</option>" +
+                         "<option value='23'>Tân Bình</option>" +
+                         "<option value='33'>Tân Phú</option>" +
+                         "</select> </td></tr>" +
+
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Loại:</td> <td><select id='type'>" +
+                         "<option value='Bể Nổi' SELECTED>Bể Nổi</option>" +
+                         "<option value='Bể Ngầm'>Bể Ngầm</option>" +
+                         "</select> </td></tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='save()'/></td></tr></table>";
                     infowindow = new google.maps.InfoWindow({
                         content: html 
                     });
@@ -152,9 +196,19 @@
                         table = (DataTable)Session["dsBaoBe"];
                         for(int i=0;i<table.Rows.Count;i++)
                         {
+                            string filelis ="";
+                            string[] words = Regex.Split(table.Rows[i]["Img"].ToString(), ",");
+                            for (int j= 0; j < words.Length; j++)
+                            {
+                                 if (!words[j].Equals("")) {
+                                         filelis+=" <img  src='" + words[j] + "' width='300' height='200' />  ";
+                                 }
+                         
+                           }
                         %>
-                           var x = parseFloat(<%=table.Rows[i]["lat"]%>);
-                           var y = parseFloat(<%=table.Rows[i]["lng"]%>);
+
+                              var x = parseFloat(<%=table.Rows[i]["lat"]%>);
+                              var y = parseFloat(<%=table.Rows[i]["lng"]%>);
                           // var latlng2 = new google.maps.LatLng(x, y);
 
                              var latlng2 = new google.maps.LatLng(x, y);
@@ -181,14 +235,21 @@
 
                             google.maps.event.addListener(marker<%=i%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                              var iwContent="<div class='title_page'>Thông Tin  Báo Bể</div> <br/> " ;
-                              iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
-                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
-                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Báo Bể Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";
-                          
-                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Ghi Chú : <%=table.Rows[i]["GhiChu"]%> &nbsp;</td></tr>";
-                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Xóa' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
-                          iwContent+="</table>";
+                              var iwContent="<div class='title_page'>Thông Tin  Báo Bể</div> " ;
+                              iwContent+="<table style='font-family:Times New Roman; font-size: 15px'>";
+                              iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;&nbsp;&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ngày Báo Bể :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ghi Chú Báo Bể : <%=table.Rows[i]["GhiChu"]%> &nbsp;</td></tr>";
+                              iwContent+="</table> ";
+
+                              iwContent+=" <div class='title_page'> Thông Tin Hoàn Công Sửa Bể </div> " ;                          
+                              iwContent+="<table style='font-family:Times New Roman; font-size: 15px'>";
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Loại Sửa Bể :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Sửa Bể Từ Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp; <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Đến  Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></td></tr>";  
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ghi Chú Sửa Bể :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+=" <tr><td colspan='2' align='center' style='border-bottom:1px; border-bottom-style:dotted; height:200px; width:100px;'> <marquee behavior='scroll' direction='left' onmouseover='this.stop();' onmouseout='this.start();'> <%=filelis%> </marquee></td></tr>";
+                              iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'> &nbsp; &nbsp; <input type='button' class='button' value='Cập Nhật Hoàn Công' onclick='hoancong(<%=table.Rows[i]["ID"]%>);'/> &nbsp; &nbsp; &nbsp;&nbsp;<input type='button' class='button'  value='    Xóa Điểm Bể   ' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
+                              iwContent+="</table>";
       
                               // including content to the Info Window.
                               infoWindow2.setContent(iwContent);
@@ -290,23 +351,36 @@
                 map.fitBounds(bounds);
             });
             
- }
+       }
             function monuoc(id) {                
                 var newUrl="addBaoBee.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
                }
-
-                function save() {  
-                                      
-                    var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy ;
+            function hoancong(id) {                
+                var newUrl="addBaoBee.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
+               }
+            function save() {  
+                   var dienthoai = document.getElementById("dienthoai").value;
+                   var ghichu = document.getElementById("ghichu").value;
+                   var diachi = document.getElementById("diachi").value;
+                   var type = document.getElementById("type").value;
+                   var phuong = document.getElementById("phuong").value;
+                   var quan = document.getElementById("quan").value;                                      
+                   var newUrl="addBaoBe.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan;
+                   // alert(latlng);
+                   document.location.href = newUrl;
+                                    
+                   // var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy ;
+                   // alert(latlng);
+                   //document.location.href = newUrl;
                       
                }
 
     </script>
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete" async defer></script>
   </body>
 </asp:Content>

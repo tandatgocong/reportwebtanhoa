@@ -8,16 +8,16 @@
         <elementListCompartment Id="2501702a-7a8e-41ae-bc5f-52b4b2676a76" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="062900da-a04e-4dcd-8689-7ece0558e805" absoluteBounds="4.875, 1.625, 2, 4.8477197265625">
-      <DataClassMoniker Name="/CallCenterDataContext/KT_BaoBe" />
-      <nestedChildShapes>
-        <elementListCompartment Id="93b3afdc-0961-4c18-b84c-68bf69bca6b9" absoluteBounds="4.89, 2.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f397e080-c322-4bf1-8a23-81f0fcf8c536" absoluteBounds="8.375, 1.375, 2, 6.0015283203125">
       <DataClassMoniker Name="/CallCenterDataContext/KT_Van" />
       <nestedChildShapes>
         <elementListCompartment Id="c264feaf-fa17-4616-b9ea-740bfd0f5224" absoluteBounds="8.39, 1.835, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6fef1c6-e8bc-4203-8ac0-45c4b84a7b9a" absoluteBounds="4.375, 1.875, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/CallCenterDataContext/KT_BaoBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03c5dfcf-2175-4ac9-9efe-5b4c0076a8d2" absoluteBounds="4.39, 2.335, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

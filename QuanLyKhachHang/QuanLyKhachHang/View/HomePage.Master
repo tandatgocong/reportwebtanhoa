@@ -92,7 +92,7 @@
     </script>
  <!--		END MENU	-->
 <!-- Content -->
-<div class="Content" style="">
+<div class="Content" style="width: 100%; height:950px;">
 <table width="100%"  cellpadding="0" cellspacing="0" border="0">
 <tr align="justify">
 
@@ -111,13 +111,13 @@
  <!--  </div>   -->
 </div>
 <!-- End Content -->
-  <!--		START FOOTER	-->
+  <!--		START FOOTER	 
 <div class="Foot clear">
     <div class="copyright">
       © Copyright  2017 - Tan Hoa Water Supply JSC.<br />
     </div>
 </div>
-  <!--		END FOOTER	-->   
+  	END FOOTER	-->   
      
 </div>
 <script language="javascript">

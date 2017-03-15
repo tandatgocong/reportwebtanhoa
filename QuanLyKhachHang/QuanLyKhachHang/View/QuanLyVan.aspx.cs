@@ -34,7 +34,8 @@ namespace QuanLyKhachHang.View
         void search()
         {
             string dc = "";
-            string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
+            //string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
+            string URLString = " http://maps.google.com/maps/api/geocode/xml?latlng=10.7684380,106.6306070&sensor=false ";
             XmlTextReader reader = new XmlTextReader(URLString);
             string geometry = "";
             string lat = "0";

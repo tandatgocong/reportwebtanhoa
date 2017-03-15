@@ -2,7 +2,7 @@
 
 html, body
 {
-    height:100%;
+   
 	margin:  auto;
 	padding: 0;
 	background: #d9f1fb;
@@ -58,6 +58,7 @@ a:hover{
 	margin: 0 0 0 0;
 	padding: 0;	
 	flex: 1 1 0;
+	width:100px;
 	background-color: White;
 }
 #Home .Content_Admin{
@@ -564,15 +565,17 @@ div.contain_table{
 
 .checklist
 {
-	font:normal 17px Arial, Tahoma, Helvetica, sans-serif;
 	color: #0033FF;
 	font-weight: bold;
-	height:100px;
 	padding: 2px 5px;
-	height: 25px;
 	margin-left:50px;
-	margin-top:20px;
+	margin-top:0px;
 	margin-bottom:10px;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 17px;
+    line-height: normal;
+    font-family: Arial, Tahoma, Helvetica, sans-serif;
 }
 
 .table_list tr.head1 td{
