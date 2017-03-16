@@ -50,22 +50,8 @@
         {
             width: 1203px;
         }
-        .style28
-        {
-        width: 197px;
-    }
-        .style29
-        {
-            width: 197px;
-            height: 24px;
-        }
         .style30
         {
-            height: 31px;
-        }
-        .style31
-        {
-            width: 197px;
             height: 31px;
         }
         .style32
@@ -87,11 +73,6 @@
         {
             height: 36px;
         }
-        .style39
-        {
-            width: 197px;
-            height: 36px;
-        }
         .style40
         {
             width: 536px;
@@ -99,11 +80,6 @@
         }
         .style41
         {
-            height: 37px;
-        }
-        .style42
-        {
-            width: 197px;
             height: 37px;
         }
         .style43
@@ -118,11 +94,6 @@
         }
         .style45
         {
-            height: 38px;
-        }
-        .style46
-        {
-            width: 197px;
             height: 38px;
         }
         .style47
@@ -144,11 +115,6 @@
         {
             height: 34px;
         }
-        .style51
-        {
-            width: 197px;
-            height: 34px;
-        }
         .style52
         {
             width: 536px;
@@ -161,11 +127,6 @@
         }
         .style54
         {
-            height: 40px;
-        }
-        .style55
-        {
-            width: 197px;
             height: 40px;
         }
         .style56
@@ -184,7 +145,7 @@
         }
         .style59
         {
-            width: 197px;
+            width: 603px;
             height: 234px;
         }
         .style60
@@ -199,6 +160,45 @@
         .style62
         {
             width: 53px;
+        }
+        .style63
+        {
+            width: 603px;
+            height: 24px;
+        }
+        .style64
+        {
+            width: 603px;
+        }
+        .style65
+        {
+            width: 603px;
+            height: 31px;
+        }
+        .style66
+        {
+            width: 603px;
+            height: 36px;
+        }
+        .style67
+        {
+            width: 603px;
+            height: 37px;
+        }
+        .style68
+        {
+            width: 603px;
+            height: 38px;
+        }
+        .style69
+        {
+            width: 603px;
+            height: 34px;
+        }
+        .style70
+        {
+            width: 603px;
+            height: 40px;
         }
     </style>
 </asp:Content>
@@ -254,7 +254,7 @@
                 </td>
                 <td class="style12">
                     </td>
-                <td class="style29" style="border-bottom: 1px #99cc99 solid"  >
+                <td class="style63" style="border-bottom: 1px #99cc99 solid"  >
                    <asp:Label ID="Label1" runat="server" Text=" Địa Chỉ Báo Bể :"></asp:Label>
                 </td>
                 <td class="style14" style="border-bottom: 1px #99cc99 solid">
@@ -270,7 +270,7 @@
                 </td>
                 <td class="style4">
                     &nbsp;</td>
-                <td class="style28" style="border-bottom: 1px #99cc99 solid">
+                <td class="style64" style="border-bottom: 1px #99cc99 solid">
                    <asp:Label ID="Label2" runat="server" Text=" Ngày Báo Bể :"></asp:Label>
                 </td>
                 <td class="style6" style="border-bottom: 1px #99cc99 solid">
@@ -284,7 +284,7 @@
                 </td>
                 <td class="style3">
                     &nbsp;</td>
-                <td class="style28" style="border-bottom: 1px #99cc99 solid">
+                <td class="style64" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label3" runat="server" Text="Ghi Chú Báo Bể :"></asp:Label>
                 </td>
                 <td class="style25" style="border-bottom: 1px #99cc99 solid">
@@ -309,7 +309,7 @@
                 </td>
                 <td class="style30">
                     </td>
-                <td class="style31" style="border-bottom: 1px #99cc99 solid">
+                <td class="style65" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label4" runat="server" 
                         Text="Ngày Giao Sửa Bể"></asp:Label>
                 </td>
@@ -324,12 +324,12 @@
                     </td>
                 <td class="style38">
                     </td>
-                <td class="style39" style="border-bottom: 1px #99cc99 solid">
+                <td class="style66" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label6" runat="server" 
                         Text="Loại Sửa Bể :"></asp:Label>
                 </td>
                 <td class="style40" style="border-bottom: 1px #99cc99 solid">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="114px">
+                    <asp:DropDownList ID="cbLoaiSB" runat="server" Height="30px" Width="113px">
                         <asp:ListItem Selected="True" Value="1">Hoàn Thiện</asp:ListItem>
                         <asp:ListItem Value="2">Sửa Tạm</asp:ListItem>
                     </asp:DropDownList>
@@ -342,12 +342,12 @@
                     </td>
                 <td class="style41">
                     </td>
-                <td class="style42" style="border-bottom: 1px #99cc99 solid">
+                <td class="style67" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label5" runat="server" 
                         Text="Ngày Thực Hiện :"></asp:Label>
                 </td>
                 <td class="style43" style="border-bottom: 1px #99cc99 solid">
-                    &nbsp;<table style="width:100%;">
+                    <table cellpadding="0" border="0" cellpadding="0" style="width:100%;" >
                         <tr>
                             <td class="style61">
                     <asp:TextBox ID="dataThucHienTN" runat="server" TextMode="DateTimeLocal" />
@@ -370,7 +370,7 @@
                     </td>
                 <td class="style45">
                     </td>
-                <td class="style46" style="border-bottom: 1px #99cc99 solid">
+                <td class="style68" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label7" runat="server" 
                         Text="Ghi Chú Thực Hiện"></asp:Label>
                 </td>
@@ -386,7 +386,7 @@
                     &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
-                <td class="style28" style="border-bottom: 1px #99cc99 solid">
+                <td class="style64" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label8" runat="server" 
                         Text="Nhân Viên Sửa Bể :"></asp:Label>
                 </td>
@@ -409,7 +409,7 @@
                 </td>
                 <td class="style3">
                     &nbsp;</td>
-                <td class="style28" style="border-bottom: 1px #99cc99 solid">
+                <td class="style64" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label9" runat="server" 
                         Text="Nhân Viên Giám Sát"></asp:Label>
                 </td>
@@ -433,7 +433,7 @@
                     </td>
                 <td class="style50">
                     </td>
-                <td class="style51" style="border-bottom: 1px #99cc99 solid">
+                <td class="style69" style="border-bottom: 1px #99cc99 solid">
                     <asp:Label ID="Label11" runat="server" 
                         Text="File Hoàn Công :"></asp:Label>
                 </td>
@@ -480,7 +480,7 @@
                 </td>
                 <td class="style3">
                     &nbsp;</td>
-                <td class="style28">
+                <td class="style64">
                     Chọn Hình</td>
                 <td class="style25">
                     <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -499,13 +499,15 @@
                     </td>
                 <td class="style54">
                     </td>
-                <td class="style55">
+                <td class="style70">
                     </td>
                 <td class="style56">
-                    <asp:Button ID="btSearch" runat="server" Height="30px"  Text="Thêm Mới" 
+                    <asp:Button ID="btSearch" runat="server" Height="30px"  Text="CẬP NHẬT" 
                         Width="115px" Font-Bold="True" Font-Names="Times New Roman" 
-                        Font-Size="12pt" ForeColor="#663300" onclick="btSearch_Click"  />
-                    <input id="Reset1" type="reset" value="Làm Lại" />
+                        Font-Size="12pt" onclick="btSearch_Click" CssClass="button"  />
+                    &nbsp;<asp:Button ID="btSearch0" runat="server" Height="30px"  Text="TRỞ LẠI" 
+                        Width="115px" Font-Bold="True" Font-Names="Times New Roman" 
+                        Font-Size="12pt" onclick="btTrolai" CssClass="button"  />
                     </td>
                 <td class="style57">
                     </td>
@@ -515,7 +517,7 @@
                     &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
-                <td class="style28">
+                <td class="style64">
                     &nbsp;</td>
                 <td class="style27" colspan="2">
                     <asp:Label ID="lbThanhCong" runat="server" ForeColor="Blue" Font-Bold="True" 

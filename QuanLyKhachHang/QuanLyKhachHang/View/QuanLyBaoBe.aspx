@@ -99,8 +99,8 @@
      <div id="map" style="width: 100%; height: 100vh"></div>
 
     <script>
-        var lagx;
-        var lagy;
+        var lagx=10.801433295748337;
+        var lagy=106.65252816547981;
         // This example adds a search box to a map, using the Google Place Autocomplete
         // feature. People can enter geographical searches. The search box will return a
         // pick list containing a mix of places and predicted search terms.
@@ -110,7 +110,8 @@
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
         function initAutocomplete() {
-            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+                      
+            var latlng = new google.maps.LatLng(lagx, lagy);
             var marker;
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -201,15 +202,32 @@
                             for (int j= 0; j < words.Length; j++)
                             {
                                  if (!words[j].Equals("")) {
-                                         filelis+=" <img  src='" + words[j] + "' width='300' height='200' />  ";
+                                         filelis+=" <a href='" + words[j] + "'> <img  src='" + words[j] + "' width='300' height='200' /> </a> ";
                                  }
                          
                            }
                         %>
-
-                              var x = parseFloat(<%=table.Rows[i]["lat"]%>);
+                             
+                              var x= parseFloat(<%=table.Rows[i]["lat"]%>);
+                              lagx= parseFloat(<%=table.Rows[i]["lat"]%>);
                               var y = parseFloat(<%=table.Rows[i]["lng"]%>);
-                          // var latlng2 = new google.maps.LatLng(x, y);
+                              lagy= parseFloat(<%=table.Rows[i]["lng"]%>);
+                          
+                            
+                             var typeSua= parseInt(<%=table.Rows[i]["LoaiThucHien"]%>);                            
+                             
+                             var tinhtrang= parseInt(<%=table.Rows[i]["THUCHIEN"]%>);
+                             var icon_='/Image/Marker.png';
+                             var mau="#FF0000";
+                             if(tinhtrang==2)
+                               { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';}
+                            
+                             var beton= parseInt(<%=table.Rows[i]["BETON"]%>);                             
+                             if (beton==1)
+                                icon_='/Image/warning.png';
+                           
+                             if(typeSua==2)
+                                { mau="#00FF00"; icon_='/Image/Markerxong.png';}
 
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
@@ -219,15 +237,16 @@
                                 strokeColor: '#FF0000',
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
-                                fillColor: '#FF0000',
+                                fillColor: mau,
                                 fillOpacity: 0.35,
                                 map: map,
                                 center: latlng2,
-                                radius: 50
+                                radius: 20
                               });
 
                               var marker<%=i%> = new google.maps.Marker({
 				              position: latlng2,
+                              icon: icon_,
 				              map: map,
 				              title: name<%=i%>
 				              });
@@ -244,10 +263,14 @@
 
                               iwContent+=" <div class='title_page'> Thông Tin Hoàn Công Sửa Bể </div> " ;                          
                               iwContent+="<table style='font-family:Times New Roman; font-size: 15px'>";
-                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Loại Sửa Bể :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";                          
-                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Sửa Bể Từ Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp; <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Đến  Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></td></tr>";  
-                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ghi Chú Sửa Bể :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";                          
-                              iwContent+=" <tr><td colspan='2' align='center' style='border-bottom:1px; border-bottom-style:dotted; height:200px; width:100px;'> <marquee behavior='scroll' direction='left' onmouseover='this.stop();' onmouseout='this.start();'> <%=filelis%> </marquee></td></tr>";
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Loại Sửa Bể :<b>  <%=table.Rows[i]["TenLoai"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Sửa Bể Từ Ngày :<b>  <%=table.Rows[i]["TuGio"]%> </b></> &nbsp; <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Đến  Ngày :<b>  <%=table.Rows[i]["DenGio"]%> </b></td></tr>";  
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Thời Gian Sửa bể :<b>  <%=table.Rows[i]["GIO"]%><sup>h</sup> <%=table.Rows[i]["GIO"]%> </b></>    </b></td></tr>";  
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ghi Chú Sửa Bể :<b>  <%=table.Rows[i]["KetQua"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;NV Giám Sát :<b>  <%=table.Rows[i]["NVGiamSat"]%> </b></> &nbsp;  </td></tr>";   
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;NV Sửa Bể :<b>  <%=table.Rows[i]["NVSuaBe"]%> </b></> &nbsp;  </td></tr>";   
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;File Hoàn Công:<b>  <a href='<%=table.Rows[i]["FilePdf"]%>'>download</a>  </b></> &nbsp;  </td></tr>"; 
+                              iwContent+=" <tr><td colspan='2' align='center' style='border-bottom:1px; border-bottom-style:dotted; height:200px; width:100px;'> <marquee behavior='scroll' SCROLLAMOUNT='20' direction='left' onmouseover='this.stop();' onmouseout='this.start();'> <%=filelis%> </marquee></td></tr>";
                               iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'> &nbsp; &nbsp; <input type='button' class='button' value='Cập Nhật Hoàn Công' onclick='hoancong(<%=table.Rows[i]["ID"]%>);'/> &nbsp; &nbsp; &nbsp;&nbsp;<input type='button' class='button'  value='    Xóa Điểm Bể   ' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
                               iwContent+="</table>";
       
@@ -266,8 +289,15 @@
 
 
             ////////////////////
+            var infoWindow = new google.maps.InfoWindow({map: map});
+                 var pos = {
+                      lat: lagx,
+                      lng: lagy
+                    };
+                    
+                    map.setCenter(pos);
 
-             var infoWindow = new google.maps.InfoWindow({map: map});
+             
 
                 // Try HTML5 geolocation.
                 if (navigator.geolocation) {
@@ -284,7 +314,8 @@
                     handleLocationError(true, infoWindow, map.getCenter());
                   });
                 } else {
-                  // Browser doesn't support Geolocation
+                                  // Browser doesn't support Geolocation
+                 
                   handleLocationError(false, infoWindow, map.getCenter());
                 }
 

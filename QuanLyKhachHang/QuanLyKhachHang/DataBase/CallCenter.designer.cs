@@ -1196,9 +1196,13 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _KetQua;
 		
+		private string _NVGiamSat;
+		
+		private string _NVSuaBe;
+		
 		private string _Img;
 		
-		private System.Data.Linq.Binary _FilePdf;
+		private string _FilePdf;
 		
 		private System.Nullable<System.DateTime> _CreateDate;
 		
@@ -1246,9 +1250,13 @@ namespace QuanLyKhachHang.DataBase
     partial void OnDenGioChanged();
     partial void OnKetQuaChanging(string value);
     partial void OnKetQuaChanged();
+    partial void OnNVGiamSatChanging(string value);
+    partial void OnNVGiamSatChanged();
+    partial void OnNVSuaBeChanging(string value);
+    partial void OnNVSuaBeChanged();
     partial void OnImgChanging(string value);
     partial void OnImgChanged();
-    partial void OnFilePdfChanging(System.Data.Linq.Binary value);
+    partial void OnFilePdfChanging(string value);
     partial void OnFilePdfChanged();
     partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
     partial void OnCreateDateChanged();
@@ -1605,6 +1613,46 @@ namespace QuanLyKhachHang.DataBase
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NVGiamSat", DbType="NVarChar(500)")]
+		public string NVGiamSat
+		{
+			get
+			{
+				return this._NVGiamSat;
+			}
+			set
+			{
+				if ((this._NVGiamSat != value))
+				{
+					this.OnNVGiamSatChanging(value);
+					this.SendPropertyChanging();
+					this._NVGiamSat = value;
+					this.SendPropertyChanged("NVGiamSat");
+					this.OnNVGiamSatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NVSuaBe", DbType="NVarChar(500)")]
+		public string NVSuaBe
+		{
+			get
+			{
+				return this._NVSuaBe;
+			}
+			set
+			{
+				if ((this._NVSuaBe != value))
+				{
+					this.OnNVSuaBeChanging(value);
+					this.SendPropertyChanging();
+					this._NVSuaBe = value;
+					this.SendPropertyChanged("NVSuaBe");
+					this.OnNVSuaBeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="NVarChar(500)")]
 		public string Img
 		{
@@ -1625,8 +1673,8 @@ namespace QuanLyKhachHang.DataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePdf", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary FilePdf
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePdf", DbType="NVarChar(500)")]
+		public string FilePdf
 		{
 			get
 			{

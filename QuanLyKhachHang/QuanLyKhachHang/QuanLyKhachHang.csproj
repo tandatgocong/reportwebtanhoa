@@ -407,6 +407,9 @@
     <Content Include="Image\icon2.png" />
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
+    <Content Include="Image\Marker.png" />
+    <Content Include="Image\MarkerSuaTam.png" />
+    <Content Include="Image\Markerxong.png" />
     <Content Include="Image\menu_bg.png" />
     <Content Include="Image\navigation.jpg" />
     <Content Include="Image\news_list_bg.gif" />
@@ -420,6 +423,7 @@
     <Content Include="Image\up.png" />
     <Content Include="Image\vanbien.png" />
     <Content Include="Image\vanchan.png" />
+    <Content Include="Image\warning.png" />
     <Content Include="Image\xacan.png" />
     <Content Include="Image\XOA.png" />
     <Content Include="JavaScript\headmenu.css" />

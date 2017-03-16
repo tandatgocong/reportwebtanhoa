@@ -27,7 +27,7 @@ namespace QuanLyKhachHang.View
             pLoad();
 
         }
-
+        KT_BaoBe kt = null;
         public void pLoad()
         {
             lbID.Text = Request.QueryString["id"].ToString();
@@ -41,6 +41,13 @@ namespace QuanLyKhachHang.View
             checkNVGS.DataTextField = "TenNV";
             checkNVGS.DataValueField = "TenNV";
             checkNVGS.DataBind();
+            kt = C_CallCenter.finByIdB(int.Parse(lbID.Text));
+            if (kt != null)
+            {
+                lbDiaChi.Text = kt.DiaChi;
+                lbNgayBaoBe.Text = Class.Format.NgayVNVN(kt.NgayBao.Value);
+                lbGhiChuBB.Text = kt.GhiChu;
+            }
 
         }
 
@@ -75,7 +82,7 @@ namespace QuanLyKhachHang.View
 
                     imgFile.ImageUrl = imgpath;
                     this.imagePath.Value = this.imagePath.Value + imgpath + ",";
-                    Session["imgfile"] = this.imagePath.Value;
+                    Session["imgfile"] = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1); 
                     imgFile.ToolTip = "This file was stored to as file.";
                 }
                 catch (Exception ex)
@@ -101,7 +108,27 @@ namespace QuanLyKhachHang.View
                 //string phuong = Request.QueryString["phuong"].ToString();
                 //string quan = Request.QueryString["quan"].ToString();
 
-                KT_BaoBe kt = new KT_BaoBe();
+                KT_BaoBe kt = C_CallCenter.finByIdB(int.Parse(lbID.Text));
+                if (kt != null)
+                {
+                    kt.NgayTiepNhan = DateTime.Parse(this.txtDate.Text);
+                    kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
+                    
+                    kt.TuGio = DateTime.Parse(this.dataThucHienTN.Text);
+                    kt.DenGio = DateTime.Parse(this.dateTNden.Text);
+                   
+                    kt.KetQua = this.txtGhiChuSuaBe.Text;
+                    kt.NVGiamSat = this.txtNVGS.Text;
+                    kt.NVSuaBe = this.txtNVSua.Text;
+                    kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);  
+                    kt.FilePdf = this.FilePath.Value;
+                    kt.ModifyDate = DateTime.Now;
+                    kt.ModifyBy = Session["login"].ToString();
+                   
+                    C_CallCenter.Update();
+                    lbThanhCong.ForeColor = Color.Blue;
+                    this.lbThanhCong.Text = "Thêm Mới Địa Điểm Thành Công.";
+                }
                 //kt.TinhTrang = 1;
                 //kt.Lat = lat;
                 //kt.Lng = lng;
@@ -112,13 +139,7 @@ namespace QuanLyKhachHang.View
                 //kt.Quan = quan;
                 //kt.NgayBao = DateTime.Now;
                 //kt.GhiChu = ghichu;
-                kt.Img = this.imagePath.Value;
-                kt.CreateDate = DateTime.Now;
-                kt.CreateBy = Session["login"].ToString();
-                Class.C_CallCenter.Insert(kt);
-
-                lbThanhCong.ForeColor = Color.Blue;
-                this.lbThanhCong.Text = "Thêm Mới Địa Điểm Thành Công.";
+               
             }
             catch (Exception)
             {
@@ -216,6 +237,11 @@ namespace QuanLyKhachHang.View
                     this.uploadfile.Text = "Lỗi Không Upload Về Server";
                 }
 
+        }
+
+        protected void btTrolai(object sender, EventArgs e)
+        {
+            Response.Redirect(@"QuanLyBaoBe.aspx");
         }
 
 

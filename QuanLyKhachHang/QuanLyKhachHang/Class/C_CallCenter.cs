@@ -47,6 +47,21 @@ namespace QuanLyKhachHang.Class
             }
             return null;
         }
+
+        public static KT_BaoBe finByIdB(int id)
+        {
+            try
+            {
+                var query = from q in db.KT_BaoBes where q.ID == id select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         public static KT_Van finByIdV(int id)
         {
             try

@@ -68,8 +68,10 @@
       <Column Name="TuGio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DenGio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="KetQua" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NVGiamSat" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NVSuaBe" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="Img" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="FilePdf" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FilePdf" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
