@@ -113,7 +113,8 @@ namespace QuanLyKhachHang.View
                 {
                     kt.NgayTiepNhan = DateTime.Parse(this.txtDate.Text);
                     kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
-                    
+
+                    kt.NgayThucHien = DateTime.Parse(this.dateTNden.Text);
                     kt.TuGio = DateTime.Parse(this.dataThucHienTN.Text);
                     kt.DenGio = DateTime.Parse(this.dateTNden.Text);
                    

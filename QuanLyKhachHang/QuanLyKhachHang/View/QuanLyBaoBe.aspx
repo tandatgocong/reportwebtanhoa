@@ -122,7 +122,7 @@
  
                 infowindow = new google.maps.InfoWindow();
                 var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
-                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Điện Thoại:</td> <td style='hight:100px; width:200px;'><input type='text' id='dienthoai'/> </td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>NV Báo Bể:</td> <td style='hight:100px; width:200px;'><input type='text' value='<%=Session["login"]%>' id='dienthoai'/> </td> </tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
                          
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Phường:</td> <td><select id='phuong'>" +
@@ -219,22 +219,23 @@
                              var tinhtrang= parseInt(<%=table.Rows[i]["THUCHIEN"]%>);
                              var icon_='/Image/Marker.png';
                              var mau="#FF0000";
-                             if(tinhtrang==2)
-                               { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';}
+                             
+                             /*if(tinhtrang==2)
+                               { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';} */
                             
                              var beton= parseInt(<%=table.Rows[i]["BETON"]%>);                             
                              if (beton==1)
-                                icon_='/Image/warning.png';
+                                { mau="#FFCC00"; icon_='/Image/warning.png';}
                            
-                             if(typeSua==2)
-                                { mau="#00FF00"; icon_='/Image/Markerxong.png';}
+                             if(typeSua==2 || typeSua==1)
+                                { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';}
 
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
                                                             
                           
                              var cityCircle = new google.maps.Circle({
-                                strokeColor: '#FF0000',
+                                strokeColor: mau,
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
                                 fillColor: mau,
@@ -263,7 +264,7 @@
 
                               iwContent+=" <div class='title_page'> Thông Tin Hoàn Công Sửa Bể </div> " ;                          
                               iwContent+="<table style='font-family:Times New Roman; font-size: 15px'>";
-                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Loại Sửa Bể :<b>  <%=table.Rows[i]["TenLoai"]%> </b></> &nbsp;  </td></tr>";                          
+                              iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Sửa Bể :<b>  <%=table.Rows[i]["TenLoai"]%> </b></> &nbsp;  </td></tr>";                          
                               iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Sửa Bể Từ Ngày :<b>  <%=table.Rows[i]["TuGio"]%> </b></> &nbsp; <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Đến  Ngày :<b>  <%=table.Rows[i]["DenGio"]%> </b></td></tr>";  
                               iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Thời Gian Sửa bể :<b>  <%=table.Rows[i]["GIO"]%><sup>h</sup> <%=table.Rows[i]["GIO"]%> </b></>    </b></td></tr>";  
                               iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;&nbsp;&nbsp;Ghi Chú Sửa Bể :<b>  <%=table.Rows[i]["KetQua"]%> </b></> &nbsp;  </td></tr>";                          
@@ -384,7 +385,7 @@
             
        }
             function monuoc(id) {                
-                var newUrl="addBaoBee.aspx?id="+id ;
+                var newUrl="addBaoBe.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
                }

@@ -423,6 +423,7 @@
     <Content Include="Image\up.png" />
     <Content Include="Image\vanbien.png" />
     <Content Include="Image\vanchan.png" />
+    <Content Include="Image\warning.gif" />
     <Content Include="Image\warning.png" />
     <Content Include="Image\xacan.png" />
     <Content Include="Image\XOA.png" />
@@ -442,6 +443,7 @@
     <Content Include="View\addBaoBee.aspx" />
     <Content Include="View\addDongNuocc.aspx" />
     <Content Include="View\addVan.aspx" />
+    <Content Include="View\bbDanhSach.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\Print.aspx" />
@@ -574,6 +576,13 @@
     </Compile>
     <Compile Include="View\addVan.aspx.designer.cs">
       <DependentUpon>addVan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\bbDanhSach.aspx.cs">
+      <DependentUpon>bbDanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\bbDanhSach.aspx.designer.cs">
+      <DependentUpon>bbDanhSach.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\dmaApLuc.aspx.cs">
       <DependentUpon>dmaApLuc.aspx</DependentUpon>
