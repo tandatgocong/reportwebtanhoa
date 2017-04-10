@@ -32,7 +32,7 @@ namespace DHCD_KiemPhieu
         {
             // Code that runs when a new session is started
             Session["title"]="";
-            Session["BAOKD"] = null;
+            Session["BAUCU"] = null;
             Session["year"] = DateTime.Now.Year.ToString();
             Session["chamcong"] = null;
             Session["col"] = 0;

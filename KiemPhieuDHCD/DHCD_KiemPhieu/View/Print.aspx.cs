@@ -46,6 +46,12 @@ namespace DHCD_KiemPhieu.View
                 CrystalReportSource1.ReportDocument.SetDataSource(Img());
                 CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "THE_BIEU_QUYET");
             }
+            if ("HD".Equals(Request.Params["page"] + ""))
+            {
+                CrystalReportSource1.Report.FileName = "inTheBauCuHDQT.rpt";
+                CrystalReportSource1.ReportDocument.SetDataSource(Img());
+                CrystalReportSource1.ReportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "THE_BIEU_QUYET");
+            }
             if ("TDT".Equals(Request.Params["page"] + ""))
             {
                 sql = Session["SQL"] + "";
@@ -97,7 +103,7 @@ namespace DHCD_KiemPhieu.View
 
             for (int index = 0; index < tb.Rows.Count; index++)
             {
-                if (tb.Rows[index]["ImgPath"].ToString() != "")
+                if (tb.Rows[index]["STT"].ToString() != "")
                 {
                     //string s = this.Server.MapPath(tb.Rows[index]["ImgPath"].ToString());
                     string s = this.Server.MapPath("./mavach/abc_" + tb.Rows[index]["STT"].ToString() + ".jpg");

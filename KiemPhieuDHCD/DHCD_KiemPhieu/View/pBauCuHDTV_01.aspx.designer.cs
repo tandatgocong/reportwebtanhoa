@@ -8,9 +8,10 @@
 //------------------------------------------------------------------------------
 
 namespace DHCD_KiemPhieu.View {
-    
-    
-    public partial class pKiemPhieuDHCD {
+
+
+    public partial class pBauCuHDTV_01
+    {
         
         /// <summary>
         /// title control.
@@ -40,15 +41,6 @@ namespace DHCD_KiemPhieu.View {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// lbTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTitle;
-        
-        /// <summary>
         /// tungay control.
         /// </summary>
         /// <remarks>
@@ -67,129 +59,111 @@ namespace DHCD_KiemPhieu.View {
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
-        /// txtCoDong control.
+        /// checkName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCoDong;
+        protected global::System.Web.UI.WebControls.CheckBoxList checkName;
         
         /// <summary>
-        /// txtCoDong0 control.
+        /// btSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCoDong0;
+        protected global::System.Web.UI.WebControls.Button btSubmit;
         
         /// <summary>
-        /// kdy_sl control.
+        /// err control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kdy_sl;
+        protected global::System.Web.UI.WebControls.Label err;
         
         /// <summary>
-        /// kdy_cp control.
+        /// title0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kdy_cp;
+        protected global::System.Web.UI.WebControls.Label title0;
         
         /// <summary>
-        /// kdy_tl control.
+        /// tc_thuvao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kdy_tl;
+        protected global::System.Web.UI.WebControls.Label tc_thuvao;
         
         /// <summary>
-        /// ky_sl0 control.
+        /// tc_hople control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ky_sl0;
+        protected global::System.Web.UI.WebControls.Label tc_hople;
         
         /// <summary>
-        /// ky_cp0 control.
+        /// tc_khople control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ky_cp0;
+        protected global::System.Web.UI.WebControls.Label tc_khople;
         
         /// <summary>
-        /// ky_tl0 control.
+        /// gTK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ky_tl0;
+        protected global::System.Web.UI.WebControls.GridView gTK;
         
         /// <summary>
-        /// dy_sl control.
+        /// DropDownList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dy_sl;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
         
         /// <summary>
-        /// dy_cp control.
+        /// btKetQua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dy_cp;
+        protected global::System.Web.UI.WebControls.Button btKetQua;
         
         /// <summary>
-        /// dy_tl control.
+        /// DropDownList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dy_tl;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
         
         /// <summary>
-        /// G_KDY control.
+        /// lbTongCong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView G_KDY;
-        
-        /// <summary>
-        /// G_KYK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView G_KYK;
-        
-        /// <summary>
-        /// G_DY control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView G_DY;
+        protected global::System.Web.UI.WebControls.Label lbTongCong;
     }
 }

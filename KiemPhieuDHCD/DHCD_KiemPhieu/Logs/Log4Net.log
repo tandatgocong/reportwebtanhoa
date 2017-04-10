@@ -817,3 +817,55 @@ The statement has been terminated.
 2017-01-04 10:05:50,568 [1984] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
 2017-01-04 10:13:34,856 [6780] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='04/01/2017' 
 2017-01-04 10:13:34,856 [6780] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-03-31 09:27:01,249 [8188] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='31/03/2017' 
+2017-03-31 09:27:01,274 [8188] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-03-31 09:27:03,668 [8148] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='31/03/2017' 
+2017-03-31 09:27:03,668 [8148] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-03-31 09:43:26,012 [8148] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-03-31 09:43:26,099 [8148] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-03-31 09:44:05,978 [7644] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-03-31 09:44:06,009 [7644] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-03-31 09:44:07,440 [7644] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-03-31 09:44:07,470 [7644] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-07 11:03:31,012 [4896] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-07 11:03:31,066 [4896] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 09:58:55,890 [9972] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A0DAF0CB0'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'. The duplicate key value is (3).
+The statement has been terminated.
+2017-04-10 09:58:59,579 [9564] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 09:58:59,697 [9564] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:04:05,242 [9424] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 10:04:05,250 [9424] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:15:36,361 [6748] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 10:15:36,372 [6748] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:22:57,558 [3676] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 10:22:57,635 [3676] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:23:00,217 [3676] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 10:23:00,274 [3676] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:23:04,637 [6228] ERROR File LinQConnection getDataTableConversion failed when converting the varchar value '----' to data type int.
+2017-04-10 10:23:04,687 [6228] ERROR File LinQConnection getDataTableIncorrect syntax near '='.
+2017-04-10 10:32:32,002 [824] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU'.
+The statement has been terminated.
+2017-04-10 10:47:03,988 [5888] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU'.
+The statement has been terminated.
+2017-04-10 10:47:56,483 [9164] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU'.
+The statement has been terminated.
+2017-04-10 10:48:22,563 [436] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU'.
+The statement has been terminated.
+2017-04-10 11:03:29,011 [4892] ERROR File LinQConnection getDataTableInvalid object name 'KIEMPHIEU'.
+2017-04-10 11:03:31,846 [9440] ERROR File LinQConnection getDataTableInvalid object name 'KIEMPHIEU'.
+2017-04-10 11:03:38,589 [9440] ERROR File LinQConnection getDataTableInvalid object name 'KIEMPHIEU'.
+2017-04-10 11:03:40,775 [8524] ERROR File LinQConnection getDataTableInvalid object name 'KIEMPHIEU'.
+2017-04-10 16:01:54,358 [6888] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:02:22,596 [2752] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:02:55,598 [2752] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:03:17,911 [2752] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:03:43,810 [2752] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:04:19,854 [6384] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.
+2017-04-10 16:04:50,325 [6384] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
+The statement has been terminated.

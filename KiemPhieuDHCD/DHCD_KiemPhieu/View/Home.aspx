@@ -43,7 +43,7 @@
             <span class="style3"><strong>
             <img  src="../Image/Logo%20Tan%20Hoa.png" style="height: 290px; width: 307px" /><br />
             <br />
-            ĐẠI HỘI CHI ĐOÀN KHỐI KỸ THUẬT</strong></span><br />
+            ĐẠI HỘI CỔ ĐÔNG</strong></span><br />
             <br />
             
        

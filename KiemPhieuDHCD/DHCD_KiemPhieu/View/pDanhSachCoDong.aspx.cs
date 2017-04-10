@@ -96,28 +96,36 @@ namespace DHCD_KiemPhieu.View
         int _cpTC = 0;
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
+            try
             {
-                Label cpGD = (Label)e.Row.FindControl("Label9");
-                _cpGD += int.Parse(cpGD.Text.Replace(",",""));
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    Label cpGD = (Label)e.Row.FindControl("Label9");
+                    _cpGD += int.Parse(cpGD.Text.Replace(",", ""));
 
-                Label cpPT = (Label)e.Row.FindControl("Label10");
-                _cpPT += int.Parse(cpPT.Text.Replace(",", ""));
+                    Label cpPT = (Label)e.Row.FindControl("Label10");
+                    _cpPT += int.Parse(cpPT.Text.Replace(",", ""));
 
-                Label cpTC = (Label)e.Row.FindControl("Label11");
-                _cpTC += int.Parse(cpTC.Text.Replace(",", ""));
+                    Label cpTC = (Label)e.Row.FindControl("Label11");
+                    _cpTC += int.Parse(cpTC.Text.Replace(",", ""));
+                }
+                if (e.Row.RowType == DataControlRowType.Footer)
+                {
+                    Label kn_DHN = (Label)e.Row.FindControl("lbCPGD");
+                    kn_DHN.Text = String.Format("{0:0,0}", _cpGD); ;
+
+                    Label knSanLuong = (Label)e.Row.FindControl("lbCPPT");
+                    knSanLuong.Text = String.Format("{0:0,0}", _cpPT);
+
+                    Label kt_DHN = (Label)e.Row.FindControl("lbCPTC");
+                    kt_DHN.Text = String.Format("{0:0,0}", _cpTC); ;
+                }       
             }
-            if (e.Row.RowType == DataControlRowType.Footer)
+            catch (Exception)
             {
-                Label kn_DHN = (Label)e.Row.FindControl("lbCPGD");
-                kn_DHN.Text = String.Format("{0:0,0}", _cpGD); ;
-
-                Label knSanLuong = (Label)e.Row.FindControl("lbCPPT");
-                knSanLuong.Text = String.Format("{0:0,0}", _cpPT);
-
-                Label kt_DHN = (Label)e.Row.FindControl("lbCPTC");
-                kt_DHN.Text = String.Format("{0:0,0}", _cpTC); ;
-            }          
+                 
+            }
+               
         }
 
        

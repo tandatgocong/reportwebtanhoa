@@ -16,14 +16,14 @@ namespace DHCD_KiemPhieu.View {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class inTheBauCu : ReportClass {
+    public class inTheBauCuHDQT : ReportClass {
         
-        public inTheBauCu() {
+        public inTheBauCuHDQT() {
         }
         
         public override string ResourceName {
             get {
-                return "inTheBauCu.rpt";
+                return "inTheBauCuHDQT.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DHCD_KiemPhieu.View {
         
         public override string FullResourceName {
             get {
-                return "DHCD_KiemPhieu.View.inTheBauCu.rpt";
+                return "DHCD_KiemPhieu.View.inTheBauCuHDQT.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DHCD_KiemPhieu.View {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedinTheBauCu : Component, ICachedReport {
+    public class CachedinTheBauCuHDQT : Component, ICachedReport {
         
-        public CachedinTheBauCu() {
+        public CachedinTheBauCuHDQT() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DHCD_KiemPhieu.View {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            inTheBauCu rpt = new inTheBauCu();
+            inTheBauCuHDQT rpt = new inTheBauCuHDQT();
             rpt.Site = this.Site;
             return rpt;
         }
