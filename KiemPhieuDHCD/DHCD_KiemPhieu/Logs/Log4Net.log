@@ -869,3 +869,71 @@ The statement has been terminated.
 The statement has been terminated.
 2017-04-10 16:04:50,325 [6384] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'FK_KIEMPHIEU'. Cannot insert duplicate key in object 'dbo.KIEMPHIEU_BIEUQUYET'.
 The statement has been terminated.
+2017-04-12 08:29:00,959 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:02,013 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:03,018 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:03,949 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:04,843 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:05,784 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:06,799 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:07,746 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:08,715 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:09,580 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:10,584 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:11,658 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:12,748 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:18,334 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:21,971 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:28,038 [9060] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:30,107 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:31,880 [9060] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:33,709 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:35,423 [9060] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:38,780 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:40,729 [9060] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:47,028 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:51,167 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:53,036 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:54,108 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:55,215 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:56,211 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:57,111 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:29:58,100 [4080] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:30:23,257 [9116] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:30:45,582 [8992] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:31:51,358 [8992] ERROR File LinQConnection getDataTableThe DELETE statement conflicted with the REFERENCE constraint "FK_KIEMPHIEU_BAUCU_DSCODONG_THAMDU". The conflict occurred in database "DH_CODONG", table "dbo.KIEMPHIEU_BAUCU", column 'MACD'.
+The statement has been terminated.
+2017-04-12 08:37:45,576 [3716] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A7F60ED59'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
+The statement has been terminated.

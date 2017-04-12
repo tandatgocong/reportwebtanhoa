@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using DHCD_KiemPhieu.DataBase;
+using System.Reflection;
+using System.Data.SqlClient;
 
 namespace DHCD_KiemPhieu.View
 {
@@ -21,17 +24,217 @@ namespace DHCD_KiemPhieu.View
                 return;
             Binddata();
           //  this.txtCoDong.Text = "";
-            this.tungay.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+         
+            // this.tungay.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
         }
+        public DataTable LINQToDataTable<T>(IEnumerable<T> varlist)
+        {
+            DataTable dtReturn = new DataTable();
+
+            // column names 
+            PropertyInfo[] oProps = null;
+
+            if (varlist == null) return dtReturn;
+
+            foreach (T rec in varlist)
+            {
+                // Use reflection to get property names, to create table, Only first time, others will follow 
+                if (oProps == null)
+                {
+                    oProps = ((Type)rec.GetType()).GetProperties();
+                    foreach (PropertyInfo pi in oProps)
+                    {
+                        Type colType = pi.PropertyType;
+
+                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition()
+                        == typeof(Nullable<>)))
+                        {
+                            colType = colType.GetGenericArguments()[0];
+                        }
+
+                        dtReturn.Columns.Add(new DataColumn(pi.Name, colType));
+                    }
+                }
+
+                DataRow dr = dtReturn.NewRow();
+
+                foreach (PropertyInfo pi in oProps)
+                {
+                    dr[pi.Name] = pi.GetValue(rec, null) == null ? DBNull.Value : pi.GetValue
+                    (rec, null);
+                }
+
+                dtReturn.Rows.Add(dr);
+            }
+            return dtReturn;
+        }
+
+        protected static string _connectionString;  // Chuỗi kết nối
+        protected SqlConnection connection;         // Đối tượng kết nối
+        protected SqlDataAdapter adapter;           // Đối tượng adapter chứa dữ liệu
+        protected SqlCommand command;               // Đối tượng command thực thi truy vấn
+
+        public void Connect()
+        {
+            _connectionString = db.Connection.ConnectionString;
+            connection = new SqlConnection(_connectionString);
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+        }
+
+        public void Disconnect()
+        {
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
+        }
+
+        /// <summary>
+        /// Thực thi câu truy vấn SQL trả về một đối tượng DataSet chứa kết quả trả về
+        /// </summary>
+        /// <param name="strSelect">Câu truy vấn cần thực thi lấy dữ liệu</param>
+        /// <returns>Đối tượng dataset chứa dữ liệu kết quả câu truy vấn</returns>
+        public DataSet ExecuteQuery_SqlDataAdapter_DataSet(string sql)
+        {
+            try
+            {
+                Connect();
+                DataSet dataset = new DataSet();
+                command = new SqlCommand();
+                command.Connection = this.connection;
+                adapter = new SqlDataAdapter(sql, connection);
+                try
+                {
+                    adapter.Fill(dataset);
+                }
+                catch (SqlException e)
+                {
+                    throw e;
+                }
+                Disconnect();
+                return dataset;
+            }
+            catch (Exception ex)
+            {
+                Disconnect();
+                //MessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Thực thi câu truy vấn SQL trả về một đối tượng DataTable chứa kết quả trả về
+        /// </summary>
+        /// <param name="strSelect">Câu truy vấn cần thực thi lấy dữ liệu</param>
+        /// <returns>Đối tượng datatable chứa dữ liệu kết quả câu truy vấn</returns>
+        public DataTable ExecuteQuery_SqlDataAdapter_DataTable(string sql)
+        {
+            try
+            {
+                return ExecuteQuery_SqlDataAdapter_DataSet(sql).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                Disconnect();
+                //MessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+
+        TanHoaDataContext db = new TanHoaDataContext();
+        int TongUV = 0;
         private void Binddata()
         {
+            var query2 = from itemBC in db.KIEMPHIEU_BAUCUs
+                         where itemBC.UNGVIEN.LoaiBC == int.Parse(DropDownList1.SelectedValue.ToString())
+                         group itemBC by itemBC.ID_UngCu into itemGroup
+                         select new
+                         {
+                             ID = itemGroup.Key,
+                             Name = db.UNGVIENs.SingleOrDefault(item => item.ID == itemGroup.Key).Name,
+                             SoPhieu = itemGroup.Count(item => item.TONGCD > 0),
+                             CoPhan = itemGroup.Sum(item => item.TONGCD.Value),
+                             Dat = (double)(itemGroup.Sum(item => item.TONGCD.Value)) / (db.DSCODONG_THAMDUs.Sum(item => item.TONGCD.Value)) * 100,
+                         };
+           
+            
+            DataTable tb = LINQToDataTable(query2);
 
-            DataTable tb = Class.LinQConnection.getDataTable("SELECT * FROM UNGVIEN WHERE LOAIBC="+DropDownList1.SelectedValue);
+
             if (tb.Rows.Count > 0)
+            {
                 Session["BAUCU"] = tb;
+                TongUV = tb.Rows.Count;
+                Count();
+            }
             else
                 Session["BAUCU"] = null;
 
+
+        }
+
+        public void Count()
+        {
+
+
+            int LoaiBC = DropDownList1.SelectedIndex;
+            if (LoaiBC > 0)
+            {
+                ///
+                if (db.DSCODONG_THAMDUs.Count() > 0)
+                    txtCDThamDu.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.DSCODONG_THAMDUs.Count());
+                else
+                    txtCDThamDu.Text = "0";
+
+                if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0)
+                    txtCDBoPhieu.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count());
+                else
+                    txtCDBoPhieu.Text = "0";
+
+                if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() > 0)
+                    txtPhieuHopLe.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count());
+                else
+                    txtPhieuHopLe.Text = "0";
+
+                if (db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0)
+                    txtPhieuKhongHopLe.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count());
+                else
+                    txtPhieuKhongHopLe.Text = "0";
+
+                if (db.DSCODONG_THAMDUs.Count() - (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count()) > 0)
+                    txtCDKhongBoPhieu.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.DSCODONG_THAMDUs.Count() - (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count()));
+                else
+                    txtCDKhongBoPhieu.Text = "0";
+                ///
+
+                if (db.DSCODONG_THAMDUs.Count() > 0)
+                    txtCDThamDu_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.DSCODONG_THAMDUs.Sum(item => item.TONGCD.Value) * TongUV);
+                else
+                    txtCDThamDu_CP.Text = "0";
+
+                if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() > 0 && db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0)
+                    txtCDBoPhieu_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Count() > 0 ? db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) : 0 + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0 ? db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) * TongUV : 0);
+                else
+                    txtCDBoPhieu_CP.Text = "0";
+
+                if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() > 0)
+                    txtPhieuHopLe_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value));
+                else
+                    txtPhieuHopLe_CP.Text = "0";
+
+                if (db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0)
+                    txtPhieuKhongHopLe_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) * TongUV);
+                else
+                    txtPhieuKhongHopLe_CP.Text = "0";
+
+                string sql = "select SUM(TONGCD) from DSCODONG_THAMDU where MACD in (select distinct MACD from KIEMPHIEU_BAUCU a,UNGVIEN b where a.ID_UngCu=b.ID and b.LoaiBC=" + LoaiBC + ")";
+                if ((db.DSCODONG_THAMDUs.Sum(item => item.TONGCD.Value) - ((db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Count() > 0 ? int.Parse(ExecuteQuery_SqlDataAdapter_DataTable(sql).Rows[0][0].ToString()) : 0) + (db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0 ? db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) : 0))) > 0)
+                    txtCDKhongBoPhieu_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", (db.DSCODONG_THAMDUs.Sum(item => item.TONGCD.Value) - ((db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Count() > 0 ? int.Parse(ExecuteQuery_SqlDataAdapter_DataTable(sql).Rows[0][0].ToString()) : 0) + (db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0 ? db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) : 0))) * TongUV);
+                else
+                    txtCDKhongBoPhieu_CP.Text = "0";
+                ///
+
+            }
         }
 
 
@@ -42,76 +245,15 @@ namespace DHCD_KiemPhieu.View
 
             Binddata();
             if (DropDownList1.SelectedIndex == 1)
-                title.Text = "..:  KẾT QUẢ BẦU CỬ THÀNH VIÊN HỘI ĐỒNG QUẢN TRỊ  :..";
+                title.Text = "..: KẾT QUẢ BẦU CỬ THÀNH VIÊN HỘI ĐỒNG QUẢN TRỊ :..";
             else if (DropDownList1.SelectedIndex == 2)
-                title.Text = "..:  KẾT QUẢ BẦU CỬ THÀNH VIÊN BAN KIỂM SOÁT :..";
+                title.Text = "..: KẾT QUẢ BẦU CỬ THÀNH VIÊN BAN KIỂM SOÁT:..";
             else
-                title.Text = "..:  KẾT QUẢ BẦU CỬ  CÔNG TY CP CẤP NƯỚC TÂN HÒA :..";
+                title.Text = "..: KẾT QUẢ BẦU CỬ  CÔNG TY CP CẤP NƯỚC TÂN HÒA :..";
           
         }
 
-        public void LoadDongY()
-        {
-            //string sql = " SELECT STT,STTCD, MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, TONGCD ";
-            //sql += " FROM DSCODONG_THAMDU ";
-            //sql += " WHERE MACD NOT IN (SELECT MACD FROM KIEMPHIEU_KS WHERE LANBQ= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBQ,103)='" + this.tungay.Text + "' ) ORDER BY STT ASC ";
-
-            //DataTable dt = Class.LinQConnection.getDataTable(sql);
-            //G_DY.DataSource = dt;
-            //G_DY.DataBind();
-
-
-            //dy_sl.Text = "0";
-            //dy_cp.Text = "0";
-            //dy_tl.Text = "0";
-
-            //try
-            //{
-            //    double sum = Convert.ToDouble(dt.Compute("SUM(TONGCD)", string.Empty));
-            //    dy_sl.Text = String.Format("{0:0,0}", dt.Rows.Count);
-            //    dy_cp.Text = String.Format("{0:0,0}", sum);
-
-            //    double tl = sum / Class.LinQConnection.ReturnResult("SELECT SUM(TONGCD) FROM DSCODONG_THAMDU");
-            //    dy_tl.Text = String.Format("{0:0.##}", tl * 100) + "%";
-            //}
-            //catch (Exception)
-            //{
-               
-            //}
-            
-
-        }
-        public void LoadKhongDongY()
-        {
-
-            //string sql = " SELECT kp.ID, STT,cd.STTCD, cd.MACD, TENCD, CMND, NGAYCAP, NOICAP, DIACHI, CDGD, PHONGTOA, cd.TONGCD";
-            //sql += " FROM DSCODONG_THAMDU cd, KIEMPHIEU_KS kp ";
-            //sql += " WHERE kp.LOAIBQ=0 AND cd.MACD=kp.MACD AND LANBQ= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBQ,103)='" + this.tungay.Text + "'  ORDER BY CREATEDATE DESC ";
-
-            //DataTable dt = Class.LinQConnection.getDataTable(sql);
-            //G_KDY.DataSource = dt;
-            //G_KDY.DataBind();
-
-            //kdy_sl.Text = "0";
-            //kdy_cp.Text = "0";
-            //kdy_tl.Text = "0";
-
-            //try
-            //{
-
-            //    double sum = Convert.ToDouble(dt.Compute("SUM(TONGCD)", string.Empty));
-            //    kdy_sl.Text = String.Format("{0:0,0}", dt.Rows.Count);
-            //    kdy_cp.Text = String.Format("{0:0,0}", sum);
-
-            //    double tl = sum / Class.LinQConnection.ReturnResult("SELECT SUM(TONGCD) FROM DSCODONG_THAMDU");
-            //    kdy_tl.Text = String.Format("{0:0.##}", tl * 100) + "%";
-            //}
-            //catch (Exception)
-            //{
-
-
-            //}
-        }
+       
 
       
         protected void btCapNhat2_Click(object sender, EventArgs e)
@@ -124,16 +266,7 @@ namespace DHCD_KiemPhieu.View
             Binddata();
         }
 
-        protected void txtCoDong_TextChanged(object sender, EventArgs e)
-        {
-
-            //string sql = " INSERT INTO KIEMPHIEU_KS(LANBQ,NGAYBQ,LOAIBQ,STTCD,MACD,TONGCD,CREATEBY,CREATEDATE) ";
-            //sql += " SELECT " + DropDownList1.SelectedValue.ToString() + " AS LANBQ,'" + DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) + "' AS NGAYBQ,0 AS LOAIBQ,STTCD,MACD,TONGCD,'" + Session["login"] + "' AS CREATEBY, GETDATE() AS CREATEDATE ";
-            //sql += " FROM DSCODONG_THAMDU WHERE ( STTCD=REPLACE('" + this.txtCoDong.Text.Replace(" ", "") + "','THW','') OR MACD='" + this.txtCoDong.Text.Replace(" ", "") + "' )";
-            //Class.LinQConnection.ExecuteCommand(sql);
-            //Binddata();
-            //this.txtCoDong.Focus();
-        }
+        
 
     }
 }

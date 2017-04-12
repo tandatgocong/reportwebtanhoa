@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KETQUa")]
+[assembly: AssemblyTitle("BauCu")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CtrlSoft")]
-[assembly: AssemblyProduct("KETQUa")]
-[assembly: AssemblyCopyright("Copyright © CtrlSoft 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("BauCu")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c5a5bfeb-d0b0-4fc5-930c-6081f897d0a3")]
+[assembly: Guid("3ac5b95c-7489-46c7-82f7-e90481fffe39")]
 
 // Version information for an assembly consists of the following four values:
 //

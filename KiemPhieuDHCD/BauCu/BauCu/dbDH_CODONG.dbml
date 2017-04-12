@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DH_CODONG" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=HP_G7\KD;Initial Catalog=DH_CODONG;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DH_CODONGConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DH_CODONG" Class="dbDH_CODONGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7\KD;Initial Catalog=DH_CODONG;Persist Security Info=True;User ID=sa" SettingsObjectName="BauCu.Properties.Settings" SettingsPropertyName="DH_CODONGConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAUCU" Member="BAUCUs">
     <Type Name="BAUCU">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -13,12 +13,10 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UNGVIEN" Member="UNGVIENs">
-    <Type Name="UNGVIEN">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="LoaiBC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="UNGVIEN_KIEMPHIEU_BAUCU" Member="KIEMPHIEU_BAUCUs" ThisKey="ID" OtherKey="ID_UngCu" Type="KIEMPHIEU_BAUCU" />
+  <Table Name="dbo.TIEUCHIBIEUQUYET" Member="TIEUCHIBIEUQUYETs">
+    <Type Name="TIEUCHIBIEUQUYET">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.BIEUQUYET" Member="BIEUQUYETs">
@@ -119,36 +117,12 @@
       <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TIEUCHIBIEUQUYET" Member="TIEUCHIBIEUQUYETs">
-    <Type Name="TIEUCHIBIEUQUYET">
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+  <Table Name="dbo.UNGVIEN" Member="UNGVIENs">
+    <Type Name="UNGVIEN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LoaiBC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UNGVIEN_KIEMPHIEU_BAUCU" Member="KIEMPHIEU_BAUCUs" ThisKey="ID" OtherKey="ID_UngCu" Type="KIEMPHIEU_BAUCU" />
     </Type>
   </Table>
-  <Function Name="dbo.BC_TONGKET" Method="BC_TONGKET">
-    <Parameter Name="TUNGAY" Parameter="tUNGAY" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="DENNGAY" Parameter="dENNGAY" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="HIEULUC" Parameter="hIEULUC" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THONGKEDHN_TP" Method="THONGKEDHN_TP">
-    <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
-    <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THONGKEDHN_TB01" Method="THONGKEDHN_TB01">
-    <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THONGKEDHN_TB02" Method="THONGKEDHN_TB02">
-    <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
 </Database>

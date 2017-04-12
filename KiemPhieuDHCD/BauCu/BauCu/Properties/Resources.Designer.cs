@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KETQUa.Properties {
+namespace BauCu.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KETQUa.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KETQUa.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BauCu.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,26 @@ namespace KETQUa.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7DAD55C95F0DE0791C8734849271D87EEDE795F2BB2BA5CEB2_pimgpsh_fullsize_distr {
+            get {
+                object obj = ResourceManager.GetObject("^7DAD55C95F0DE0791C8734849271D87EEDE795F2BB2BA5CEB2^pimgpsh_fullsize_distr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _CB6B79F2F54793C667A2ADC36CD7097486B08FAE353A205052_pimgpsh_fullsize_distr {
+            get {
+                object obj = ResourceManager.GetObject("^CB6B79F2F54793C667A2ADC36CD7097486B08FAE353A205052^pimgpsh_fullsize_distr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

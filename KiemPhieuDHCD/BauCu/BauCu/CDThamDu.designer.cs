@@ -1,4 +1,4 @@
-﻿namespace KETQUa
+﻿namespace BauCu
 {
     partial class CDThamDu
     {
@@ -43,7 +43,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox1.Image = global::KETQUa.Properties.Resources.thamdu;
+            this.pictureBox1.Image = global::BauCu.Properties.Resources.thamdu;
             this.pictureBox1.Location = new System.Drawing.Point(145, 452);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(515, 202);
@@ -100,7 +100,7 @@
             // exit
             // 
             this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.exit.Image = global::KETQUa.Properties.Resources.Cancel;
+            this.exit.Image = global::BauCu.Properties.Resources.Cancel;
             this.exit.Location = new System.Drawing.Point(-2, 633);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(27, 23);
@@ -115,8 +115,8 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 5;
+            this.button1.Text = "KP";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CDThamDu
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackgroundImage = global::KETQUa.Properties.Resources.DHCD;
+            this.BackgroundImage = global::BauCu.Properties.Resources._CB6B79F2F54793C667A2ADC36CD7097486B08FAE353A205052_pimgpsh_fullsize_distr;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(683, 656);
             this.ControlBox = false;
@@ -134,6 +134,7 @@
             this.Controls.Add(this.lbCP);
             this.Controls.Add(this.lbSL);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CDThamDu";
