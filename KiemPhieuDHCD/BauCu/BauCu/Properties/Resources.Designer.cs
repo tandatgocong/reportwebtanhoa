@@ -63,6 +63,16 @@ namespace BauCu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11 {
+            get {
+                object obj = ResourceManager.GetObject("11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7DAD55C95F0DE0791C8734849271D87EEDE795F2BB2BA5CEB2_pimgpsh_fullsize_distr {
             get {
                 object obj = ResourceManager.GetObject("^7DAD55C95F0DE0791C8734849271D87EEDE795F2BB2BA5CEB2^pimgpsh_fullsize_distr", resourceCulture);
@@ -96,6 +106,16 @@ namespace BauCu.Properties {
         internal static System.Drawing.Bitmap DHCD {
             get {
                 object obj = ResourceManager.GetObject("DHCD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dong_ho {
+            get {
+                object obj = ResourceManager.GetObject("dong ho", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

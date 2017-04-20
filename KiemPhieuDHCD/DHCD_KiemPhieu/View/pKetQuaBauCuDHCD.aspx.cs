@@ -212,10 +212,14 @@ namespace DHCD_KiemPhieu.View
                 else
                     txtCDThamDu_CP.Text = "0";
 
-                if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() > 0 && db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0)
-                    txtCDBoPhieu_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Count() > 0 ? db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) : 0 + db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Count() > 0 ? db.KHONGHOPLEs.Where(item => item.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value) * TongUV : 0);
+                string sql1 = "select SUM(TONGCD)*2+(select SUM(TONGCD) from KHONGHOPLE where LoaiBC=" + LoaiBC + ")*2 from DSCODONG_THAMDU where MACD in (select distinct MACD from KIEMPHIEU_BAUCU a,UNGVIEN b where a.ID_UngCu=b.ID and b.LoaiBC=" + LoaiBC + ")";
+                int Sum = int.Parse(ExecuteQuery_SqlDataAdapter_DataTable(sql1).Rows[0][0].ToString());
+                if (Sum > 0)
+                    txtCDBoPhieu_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", Sum);
                 else
                     txtCDBoPhieu_CP.Text = "0";
+
+
 
                 if (db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Select(item => item.STTCD).Distinct().Count() > 0)
                     txtPhieuHopLe_CP.Text = String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"), "{0:#,##}", db.KIEMPHIEU_BAUCUs.Where(item => item.UNGVIEN.LoaiBC == LoaiBC).Sum(item => item.TONGCD.Value));

@@ -30,6 +30,7 @@ namespace BauCu
             dgvUngVien_KQ.AutoGenerateColumns = false;
             dgvBauCu.AutoGenerateColumns = false;
             dgvKhongHopLe.AutoGenerateColumns = false;
+            dgvChuaBoPhieu.AutoGenerateColumns = false;
             cmbLan.SelectedIndex = 0;
             dtQuanTri = LINQToDataTable(db.UNGVIENs.Where(item => item.LoaiBC == 1).ToList());
             dtKiemSoat = LINQToDataTable(db.UNGVIENs.Where(item => item.LoaiBC == 2).ToList());
@@ -85,6 +86,7 @@ namespace BauCu
             txtTongSoCoPhan.Text = "";
             txtTongSoPhieuBau.Text = "";
             chkKhongHopLe.Checked = false;
+            checkAll.Checked = false;
         }
 
         public void LoadDSBauCu()
@@ -191,6 +193,10 @@ namespace BauCu
                              SoPhieu = item.TONGCD.Value * 2,
                          };
             dgvKhongHopLe.DataSource = LINQToDataTable(query3);
+            ///
+
+            string sql2 = "select sttcd,tencd,sophieu=tongcd*2 from DSCODONG_THAMDU where MACD not in (select distinct MACD from KHONGHOPLE WHERE LoaiBC=" + LoaiBC + " ) AND  MACD not in (select distinct MACD from KIEMPHIEU_BAUCU a,UNGVIEN b where a.ID_UngCu=b.ID and b.LoaiBC=" + LoaiBC + ")";
+            dgvChuaBoPhieu.DataSource = ExecuteQuery_SqlDataAdapter_DataTable(sql2);
         }
 
         private void radQuanTri_CheckedChanged(object sender, EventArgs e)
@@ -280,7 +286,8 @@ namespace BauCu
                     item.Cells["Chon"].Value = false;
                     item.Cells["SoPhieu"].Value = 0;
                 }
-                LoadDSBauCu(); 
+                LoadDSBauCu();
+                txtSTTCD.Focus();
             }
         }
 
@@ -457,6 +464,18 @@ namespace BauCu
                 Disconnect();
                 MessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
+            }
+        }
+
+        private void checkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkAll.Checked)
+            {
+                foreach (DataGridViewRow item in dgvUngVien.Rows)
+                {
+                    item.Cells["Chon"].Value = true;
+                }
+                btnThem.PerformClick();
             }
         }
     }

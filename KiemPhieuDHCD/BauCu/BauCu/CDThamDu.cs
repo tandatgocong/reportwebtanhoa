@@ -34,6 +34,8 @@ namespace BauCu
                 double tl = _cpTC / double.Parse(db.DSCODONGs.Sum(item => item.TONGCD.Value) + "");
 
                 lbTL.Text = String.Format("{0:0.##}", tl * 100).Replace(".",",") + "%";
+                lbTime.Text = DateTime.Now.ToString("HH:mm");
+
             }
             catch (Exception)
             {
