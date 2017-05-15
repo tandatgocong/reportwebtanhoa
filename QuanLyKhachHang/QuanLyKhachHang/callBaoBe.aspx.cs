@@ -21,13 +21,14 @@ namespace QuanLyKhachHang
 
         public void pagLoad()
         {
-            Session["dsBaoBe"] = null;
+            Session["login"] = "callcenter";
+
             //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
             //string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
             string sql = " SELECT * from KT_BaoBe  where CAST(GETDATE() as date) =  CAST(NgayBao as date) and CreateBy='callcenter'  ";
-            Session["dsBaoBe"] = C_CallCenter.getDataTable(sql);
+            Session["dsBaoBe"] = C_KyThuat.getDataTable(sql);
 
         }
         void search()

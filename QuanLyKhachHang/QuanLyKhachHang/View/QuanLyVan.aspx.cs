@@ -28,7 +28,7 @@ namespace QuanLyKhachHang.View
             sql += "      CASE WHEN v.VanBien=1 THEN  N'Van Biên' ELSE '' END END END END AS TenLoai  ";
             sql += "    FROM  [KT_Van] v  ";
             sql += "     WHERE Xoa='false' ";
-            Session["dsVan"] = C_CallCenter.getDataTable(sql);
+            Session["dsVan"] = C_KyThuat.getDataTable(sql);
 
         }
         void search()

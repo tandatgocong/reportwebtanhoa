@@ -15,7 +15,7 @@ namespace QuanLyKhachHang.View
         {
             if (Request.QueryString["id"] != null)
             {
-                Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"] .ToString()+ "' ");
+                Class.C_KyThuat.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"] .ToString()+ "' ");
                 Response.Redirect(@"dongnuoc.aspx");
             }
             MaintainScrollPositionOnPostBack = true;
@@ -60,7 +60,7 @@ namespace QuanLyKhachHang.View
                 xv.NoiDung = this.txtNoiDungCT.Text;
                 xv.CreateDate = DateTime.Now;
                 xv.CreateBy = Session["login"].ToString();
-                Class.C_CallCenter.Insert(xv);
+                Class.C_KyThuat.Insert(xv);
                 lbThanhCong.ForeColor = Color.Blue;
                 this.lbThanhCong.Text = "Cập Nhật Thành Công.";
                 this.tugio.Text = "";

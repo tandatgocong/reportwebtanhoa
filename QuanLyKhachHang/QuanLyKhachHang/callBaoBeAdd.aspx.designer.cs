@@ -11,7 +11,7 @@ namespace QuanLyKhachHang
 {
 
 
-    public partial class addCallBaoBe
+    public partial class callBaoBeAdd
     {
 
         /// <summary>

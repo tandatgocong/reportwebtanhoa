@@ -15,7 +15,7 @@ namespace QuanLyKhachHang.View
         {
             if (Request.QueryString["id"] != null)
             {
-                Class.C_CallCenter.ExecuteCommand("UPDATE KT_Van SET Xoa='True',ModifyDate=GETDATE(),ModifyBy='" + Session["login"].ToString() + "' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
+                Class.C_KyThuat.ExecuteCommand("UPDATE KT_Van SET Xoa='True',ModifyDate=GETDATE(),ModifyBy='" + Session["login"].ToString() + "' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
                 Response.Redirect(@"QuanLyVan.aspx");
             }
             
@@ -62,7 +62,7 @@ namespace QuanLyKhachHang.View
                 v.Xoa = false;
                 v.CreateDate = DateTime.Now;
                 v.CreateBy = Session["login"].ToString();
-                C_CallCenter.Insert(v);
+                C_KyThuat.Insert(v);
 
                 Response.Redirect(@"QuanLyVan.aspx");
             }

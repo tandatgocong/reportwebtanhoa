@@ -937,3 +937,13 @@ The statement has been terminated.
 The statement has been terminated.
 2017-04-12 08:37:45,576 [3716] ERROR File LinQConnection getDataTableViolation of PRIMARY KEY constraint 'PK__DSCODONG__603F182A7F60ED59'. Cannot insert duplicate key in object 'dbo.DSCODONG_THAMDU'.
 The statement has been terminated.
+2017-04-27 13:51:11,504 [7848] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='27/04/2017' 
+2017-04-27 13:51:11,519 [7848] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-04-27 13:52:30,456 [4980] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 14:04:31,232 [6416] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 14:16:43,356 [7360] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 14:17:14,227 [7244] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 14:17:28,625 [7360] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 15:17:43,342 [6868] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 15:23:53,551 [3536] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-04-27 15:26:54,942 [7476] ERROR File LinQConnection getDataTableDivide by zero error encountered.

@@ -320,24 +320,6 @@
                     </td>
             </tr>
             <tr>
-                <td class="style38">
-                    </td>
-                <td class="style38">
-                    </td>
-                <td class="style66" style="border-bottom: 1px #99cc99 solid">
-                    <asp:Label ID="Label6" runat="server" 
-                        Text="Loại Sửa Bể :"></asp:Label>
-                </td>
-                <td class="style40" style="border-bottom: 1px #99cc99 solid">
-                    <asp:DropDownList ID="cbLoaiSB" runat="server" Height="30px" Width="113px">
-                        <asp:ListItem Selected="True" Value="1">Hoàn Thiện</asp:ListItem>
-                        <asp:ListItem Value="2">Sửa Tạm</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-                <td class="style37">
-                    </td>
-            </tr>
-            <tr>
                 <td class="style41">
                     </td>
                 <td class="style41">

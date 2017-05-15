@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using QuanLyKhachHang.DataBase;
 using System.Text;
 
-namespace QuanLyKhachHang.View
+namespace QuanLyKhachHang
 {
-    public partial class addBaoBe : System.Web.UI.Page
+    public partial class callBaoBeAdd : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,22 +67,17 @@ namespace QuanLyKhachHang.View
                 Class.C_TrungTamKhachHang.Insert(tn);
 
 
-
-
                 //  Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
-               
-                    Response.Redirect(@"QuanLyBaoBe.aspx");
+
+                Response.Redirect(@"callBaoBe.aspx");
             }
-             
+
 
             if (Request.QueryString["id"] != null)
             {
                 Class.C_KyThuat.ExecuteCommand("DELETE KT_BaoBe WHERE ID='" + Request.QueryString["id"].ToString() + "' AND CreateBy='" + Session["login"].ToString() + "' ");
-                Response.Redirect(@"QuanLyBaoBe.aspx");
+                Response.Redirect(@"callBaoBe.aspx");
             }
-
         }
-        
-
     }
 }

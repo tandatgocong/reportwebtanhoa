@@ -22,8 +22,8 @@ namespace QuanLyKhachHang.DataBase
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CallCenter")]
-	public partial class CallCenterDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KYTHUAT")]
+	public partial class KyThuatDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -41,31 +41,31 @@ namespace QuanLyKhachHang.DataBase
     partial void DeleteKT_BaoBe(KT_BaoBe instance);
     #endregion
 		
-		public CallCenterDataContext() : 
+		public KyThuatDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CallCenterConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CallCenterDataContext(string connection) : 
+		public KyThuatDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CallCenterDataContext(System.Data.IDbConnection connection) : 
+		public KyThuatDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CallCenterDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public KyThuatDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CallCenterDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public KyThuatDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -1174,7 +1174,9 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _LoaiBao;
 		
-		private string _DiaChi;
+		private string _SoNha;
+		
+		private string _TenDuong;
 		
 		private string _Phuong;
 		
@@ -1212,6 +1214,8 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _ModifyBy;
 		
+		private string _SoHoSo;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1228,8 +1232,10 @@ namespace QuanLyKhachHang.DataBase
     partial void OnSoDTChanged();
     partial void OnLoaiBaoChanging(string value);
     partial void OnLoaiBaoChanged();
-    partial void OnDiaChiChanging(string value);
-    partial void OnDiaChiChanged();
+    partial void OnSoNhaChanging(string value);
+    partial void OnSoNhaChanged();
+    partial void OnTenDuongChanging(string value);
+    partial void OnTenDuongChanged();
     partial void OnPhuongChanging(string value);
     partial void OnPhuongChanged();
     partial void OnQuanChanging(string value);
@@ -1266,6 +1272,8 @@ namespace QuanLyKhachHang.DataBase
     partial void OnModifyDateChanged();
     partial void OnModifyByChanging(string value);
     partial void OnModifyByChanged();
+    partial void OnSoHoSoChanging(string value);
+    partial void OnSoHoSoChanged();
     #endregion
 		
 		public KT_BaoBe()
@@ -1393,22 +1401,42 @@ namespace QuanLyKhachHang.DataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(MAX)")]
-		public string DiaChi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNha", DbType="NVarChar(MAX)")]
+		public string SoNha
 		{
 			get
 			{
-				return this._DiaChi;
+				return this._SoNha;
 			}
 			set
 			{
-				if ((this._DiaChi != value))
+				if ((this._SoNha != value))
 				{
-					this.OnDiaChiChanging(value);
+					this.OnSoNhaChanging(value);
 					this.SendPropertyChanging();
-					this._DiaChi = value;
-					this.SendPropertyChanged("DiaChi");
-					this.OnDiaChiChanged();
+					this._SoNha = value;
+					this.SendPropertyChanged("SoNha");
+					this.OnSoNhaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDuong", DbType="NVarChar(MAX)")]
+		public string TenDuong
+		{
+			get
+			{
+				return this._TenDuong;
+			}
+			set
+			{
+				if ((this._TenDuong != value))
+				{
+					this.OnTenDuongChanging(value);
+					this.SendPropertyChanging();
+					this._TenDuong = value;
+					this.SendPropertyChanged("TenDuong");
+					this.OnTenDuongChanged();
 				}
 			}
 		}
@@ -1769,6 +1797,26 @@ namespace QuanLyKhachHang.DataBase
 					this._ModifyBy = value;
 					this.SendPropertyChanged("ModifyBy");
 					this.OnModifyByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHoSo", DbType="NVarChar(50)")]
+		public string SoHoSo
+		{
+			get
+			{
+				return this._SoHoSo;
+			}
+			set
+			{
+				if ((this._SoHoSo != value))
+				{
+					this.OnSoHoSoChanging(value);
+					this.SendPropertyChanging();
+					this._SoHoSo = value;
+					this.SendPropertyChanged("SoHoSo");
+					this.OnSoHoSoChanged();
 				}
 			}
 		}

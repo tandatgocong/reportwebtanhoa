@@ -21,7 +21,7 @@
          }
          .style3
          {
-             width: 203px;;
+             width: 203px;
          }
          .style4
          {
@@ -43,10 +43,10 @@
 
     <script language="javascript" type="text/javascript">
         window.document.getElementById("HOME").className = "top_link";
-     window.document.getElementById("CODONG").className = "top_link";
-     window.document.getElementById("KIEMPHIEU").className = "top_link";
-     window.document.getElementById("BIEUQUYET").className = "top_link";
-     window.document.getElementById("BAUCU").className = "current_link"; 
+        // window.document.getElementById("CODONG").className = "top_link";
+        /// window.document.getElementById("KIEMPHIEU").className = "top_link";
+        window.document.getElementById("BIEUQUYET").className = "current_link";
+        // window.document.getElementById("BAUCU").className = "top_link"; 
     </script>
 
      <div class="title_page" style=" margin-top:10px; height: 26px; text-align:center;">
@@ -88,7 +88,9 @@
            <tr class="head1">
                <td class="style11" 
                    style="border-right:2px #99cc99 solid; border-bottom: 1px solid;" colspan="4">
-                                            &nbsp;</td>
+                                            <asp:CheckBox ID="an" runat="server" AutoPostBack="True" 
+                                                oncheckedchanged="an_CheckedChanged" />
+               </td>
              </tr>
              
           </tbody>
@@ -96,11 +98,13 @@
     <table border="0" cellpadding="0" cellspacing="0" style="width:100%; " >
         <tr>
             <td class="style5">
+                <asp:Panel ID="Panel1"  runat=server>
                 <table cellpadding="0" cellspacing="0" class="table_list_1"  style="font-family:Times New Roman; margin-left:50px; font-size:15px; width: 500px;">
                      <tr class="head1">
                           <td class="style21" style="border-right:1px #FF0000 solid; height:40px;  background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000 solid ">
                               <center>
                                         DANH SÁCH ỨNG CỬ
+                                        
                               </center>
                            </td>
                       </tr>
@@ -122,17 +126,12 @@
                           </td>
                       </tr>
                  </table>
-           
+           </asp:Panel>
            
             </td>
         </tr>
         <tr>
             <td class="style5">
-                <div class="title_page" 
-                    style=" margin-top:10px; height: 26px; text-align:center;">
-                    <asp:Label ID="title0" runat="server" 
-                        Text="   "></asp:Label>
-                </div>
                 <br />
             </td>
             
@@ -140,14 +139,13 @@
         <tr>
             <td class="style5">
                 <table cellpadding="0" cellspacing="0" class="table_list_1" 
-                    style="font-family: Times New Roman; font-size: 15px; width: 754px; margin-left:150px;">
+                    style="font-family: Times New Roman; font-size: 15px; width: 754px; margin-left:50px;">
                     <tr class="head1">
                         <td class="style21" 
                             
-                            style="border-right:1px #FF0000 solid; height:40px;  background-color:#FFFF99; font-size: x-large; border-bottom: 2px #FF0000 solid " 
+                            style="border-right:1px #FF0000 solid; height:40px;  background-color:#FFFF99; font-size: x-large; border-bottom: 2px #FF0000 solid; text-align: center;" 
                             colspan="3">
-                            <center>
-                                KẾT QUẢ&nbsp; KIỂM PHIẾU</center>
+                            <asp:Label ID="lbKetqua" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr class="head1">
@@ -222,7 +220,7 @@
                     <asp:GridView ID="gTK" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
                         CellPadding="4" 
-                        style="margin-left:150px; font-family: 'Times New Roman', Times, serif; font-size: large" 
+                        style="margin-left:50px; font-family: 'Times New Roman', Times, serif; font-size: large" 
                         AllowSorting="True" Width="751px">
                         <Columns>
                             <asp:BoundField DataField="STT" HeaderText="STT">

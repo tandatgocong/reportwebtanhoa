@@ -121,9 +121,10 @@
  
                 infowindow = new google.maps.InfoWindow();
                    var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
-                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Điện Thoại:</td> <td style='hight:100px; width:200px;'><input type='text' id='dienthoai'/> </td> </tr>" +
-                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Địa chỉ:</td> <td><input type='text' id='diachi'/></td> </tr>" +
-                         
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>NV Báo Bể:</td> <td style='hight:100px; width:200px;'><input type='text' value='<%=Session["login"]%>' id='dienthoai'/> </td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Khách Hàng :</td> <td><input type='text' id='tenkh'/></td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Số Nhà :</td> <td><input type='text' id='sonha'/></td> </tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Đường:</td> <td><input type='text' id='diachi'/></td> </tr>" +                         
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Phường:</td> <td><select id='phuong'>" +
                          "<option value='01' SELECTED> 01 </option>" +
                          "<option value='02' > 02 </option>" +
@@ -164,7 +165,8 @@
                          "<option value='Bể Ngầm'>Bể Ngầm</option>" +
                          "</select> </td></tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
-                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='save()'/></td></tr>";
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Thêm Mới' onclick='save()'/></td></tr></table>";
+
                     infowindow = new google.maps.InfoWindow({
                         content: html 
                     });
@@ -227,7 +229,7 @@
                               // Creating the content to be inserted in the infowindow
                               var iwContent="<div class='title_page'>Thông Tin  Báo Bể</div> <br/> " ;
                               iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
-                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
+                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["TenDuong"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Báo Bể Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";
                           
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Ghi Chú : <%=table.Rows[i]["GhiChu"]%> &nbsp;</td></tr>";
@@ -318,24 +320,31 @@
             
  }
             function monuoc(id) {                
-                var newUrl="addCallBaoBe.aspx?id="+id ;
+                var newUrl="callBaoBeAdd.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
                }
 
-                function save() {    
-                    var dienthoai = document.getElementById("dienthoai").value;
-                    var ghichu = document.getElementById("ghichu").value;
-                    var diachi = document.getElementById("diachi").value;
-                    var type = document.getElementById("type").value;
-                    var phuong = document.getElementById("phuong").value;
-                    var quan = document.getElementById("quan").value;
-                                      
-                    var newUrl="addCallBaoBe.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan;
+                function save() {  
+                   var dienthoai = document.getElementById("dienthoai").value;
+                   var ghichu = document.getElementById("ghichu").value;
+                   var diachi = document.getElementById("diachi").value;
+                   var type = document.getElementById("type").value;
+                   var phuong = document.getElementById("phuong").value;
+                   var quan = document.getElementById("quan").value;         
+                   var tenkh = document.getElementById("tenkh").value;  
+                   var sonha = document.getElementById("sonha").value;  
+                   
+                                                
+                   var newUrl="callBaoBeAdd.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan+ "&tenkh=" + tenkh+ "&sonha=" + sonha;
                    // alert(latlng);
-                  document.location.href = newUrl;
+                   document.location.href = newUrl;
+                                    
+                   // var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy ;
+                   // alert(latlng);
+                   //document.location.href = newUrl;
                       
-               }
+              }
 
     </script>
     

@@ -32,19 +32,19 @@ namespace QuanLyKhachHang.View
         {
             lbID.Text = Request.QueryString["id"].ToString();
 
-            checkNVSua.DataSource = C_CallCenter.getDataTable("SELECT * FROM KT_NhanVienSuaBe ");
+            checkNVSua.DataSource = C_KyThuat.getDataTable("SELECT * FROM KT_NhanVienSuaBe ");
             checkNVSua.DataTextField = "TenNV";
             checkNVSua.DataValueField = "TenNV";
             checkNVSua.DataBind();
 
-            checkNVGS.DataSource = C_CallCenter.getDataTable("SELECT * FROM KT_NhanVienGiamSat ");
+            checkNVGS.DataSource = C_KyThuat.getDataTable("SELECT * FROM KT_NhanVienGiamSat ");
             checkNVGS.DataTextField = "TenNV";
             checkNVGS.DataValueField = "TenNV";
             checkNVGS.DataBind();
-            kt = C_CallCenter.finByIdB(int.Parse(lbID.Text));
+            kt = C_KyThuat.finByIdB(int.Parse(lbID.Text));
             if (kt != null)
             {
-                lbDiaChi.Text = kt.DiaChi;
+                lbDiaChi.Text = kt.SoNha +"  " + kt.TenDuong;
                 lbNgayBaoBe.Text = Class.Format.NgayVNVN(kt.NgayBao.Value);
                 lbGhiChuBB.Text = kt.GhiChu;
             }
@@ -108,11 +108,11 @@ namespace QuanLyKhachHang.View
                 //string phuong = Request.QueryString["phuong"].ToString();
                 //string quan = Request.QueryString["quan"].ToString();
 
-                KT_BaoBe kt = C_CallCenter.finByIdB(int.Parse(lbID.Text));
+                KT_BaoBe kt = C_KyThuat.finByIdB(int.Parse(lbID.Text));
                 if (kt != null)
                 {
                     kt.NgayTiepNhan = DateTime.Parse(this.txtDate.Text);
-                    kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
+                  //  kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
 
                     kt.NgayThucHien = DateTime.Parse(this.dateTNden.Text);
                     kt.TuGio = DateTime.Parse(this.dataThucHienTN.Text);
@@ -126,9 +126,13 @@ namespace QuanLyKhachHang.View
                     kt.ModifyDate = DateTime.Now;
                     kt.ModifyBy = Session["login"].ToString();
                    
-                    C_CallCenter.Update();
+                    C_KyThuat.Update();
+
+                    string sql = "UPDATE TTKH_TiepNhan SET NgayXuLy=" + DateTime.Parse(this.dateTNden.Text) + ",KetQuaXuLy=N'Hoàn Tất Sửa Bể',NhanVienXuLy=N'" + Session["login"].ToString() + "'  WHERE SoHoSo='" + kt.SoHoSo + "'";
+                    if (C_TrungTamKhachHang.ExecuteCommand_(sql) > 0)
+
                     lbThanhCong.ForeColor = Color.Blue;
-                    this.lbThanhCong.Text = "Thêm Mới Địa Điểm Thành Công.";
+                    this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thành Công.";
                 }
                 //kt.TinhTrang = 1;
                 //kt.Lat = lat;

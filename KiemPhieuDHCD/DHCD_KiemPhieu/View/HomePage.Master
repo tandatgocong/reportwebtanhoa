@@ -21,13 +21,13 @@
        &nbsp;
        <div style="vertical-align:middle;"><asp:Label ID="Label1"  runat="server" 
                Font-Bold="True" Font-Size="X-Large" 
-             ForeColor="Yellow" Text="ĐẠI HỘI CỔ ĐÔNG - CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA NĂM 2017"></asp:Label></div>
+             ForeColor="Yellow" Text="HỘI NGHỊ NGƯỜI LAO ĐỘNG - CÔNG TY CỔ PHẦN CN TÂN HÒA NĂM 2017"></asp:Label></div>
      </div>
      <div class="Menu">
  	 <div style="width:100%">
  		<ul class="menuhead">
  			<li id="mnHome" class="current"><a class="current_link" id="HOME" href="Home.aspx"><span>TRANG CHỦ</span></a></li>
-              <li id="mnKinhDoanh" class="top"><a href="pDanhSachCoDong.aspx" id="CODONG" class="top_link" ><span>DANH SÁCH CỔ ĐÔNG</span></a>
+          <!--    <li id="mnKinhDoanh" class="top"><a href="pDanhSachCoDong.aspx" id="CODONG" class="top_link" ><span>DANH SÁCH CỔ ĐÔNG</span></a>
                <ul class="sub_gioithieu">
                  <li >
                       <a href="pDanhSachCoDongThamDu.aspx" class="">CỔ ĐÔNG THAM DỰ </a>
@@ -44,15 +44,17 @@
                </ul>
             </li> 
  		   <li id="mnGioithieu" class="top"><a href="pBieuQuyetDHCD_TIEUCHI.aspx" id="KIEMPHIEU" class="top_link" ><span>BIỂU QUYẾT NGHỊ QUYẾT </span></a></li>
-           <!-- <li id="mnGioithieu" class="top"><a href="pBieuQuyetDHCD_2.aspx" id="KIEMPHIEU" class="top_link" ><span>KIỂM PHIẾU</span></a></li>  
-           <li id="mnBieuQuyet" class="top"><a href="pBauCuBanKS.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ</span></a> -->
-             <ul class="sub_gioithieu">
+           <li id="mnBieuQuyet" class="top"><a href="pKetQuaBauCuDHCD.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ HĐQT & BAN KIỂM SOÁT</span></a></li>
+           --> 
+           <!-- <li id="mnGioithieu" class="top"><a href="pBieuQuyetDHCD_2.aspx" id="KIEMPHIEU" class="top_link" ><span>KIỂM PHIẾU</span></a></li>  --> 
+           <li id="mnBieuQuyet" class="top"><a href="pBauCuDHCD.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ</span></a>
+            <!-- <ul class="sub_gioithieu">
                  <li >
                       <a href="pBauCuBanKS_2.aspx" class="">BẦU CỬ 2 </a>
                  </li>    
-               </ul>
+               </ul>--> 
             </li> 
-             <li id="mnBieuQuyet" class="top"><a href="pKetQuaBauCuDHCD.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ HĐQT & BAN KIỂM SOÁT</span></a></li>
+             
         <!--    <li id="mnBauCu" class="top"><a href="pBauCuDHCD.aspx" id="BAUCU" class="top_link" ><span>BẦU CỬ</span></a></li> ĐOÀN-->
   			
  		 
@@ -62,10 +64,10 @@
 </div>
        <script language="javascript" type="text/javascript">
            window.document.getElementById("HOME").className = "current_link";
-           window.document.getElementById("CODONG").className = "top_link";
-           window.document.getElementById("KIEMPHIEU").className = "top_link";
+          // window.document.getElementById("CODONG").className = "top_link";
+          /// window.document.getElementById("KIEMPHIEU").className = "top_link";
            window.document.getElementById("BIEUQUYET").className = "top_link"; 
-           window.document.getElementById("BAUCU").className = "top_link"; 
+          // window.document.getElementById("BAUCU").className = "top_link"; 
     </script>
  <!--		END MENU	-->
 <!-- Content -->

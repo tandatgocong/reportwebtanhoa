@@ -25,7 +25,7 @@ namespace DHCD_KiemPhieu.View
 
         private void Binddata()
         {
-            checkName.DataSource = Class.LinQConnection.getDataTable("SELECT * FROM BAUCU WHERE LANBC= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBC,103)='" + this.tungay.Text + "'");
+            checkName.DataSource = Class.LinQConnection.getDataTable("SELECT STT,  (CAST(STT AS VARCHAR) + '. ' +TENBC) AS  TENBC FROM BAUCU WHERE LANBC= " + DropDownList1.SelectedValue.ToString() + " AND CONVERT(VARCHAR(50),NGAYBC,103)='" + this.tungay.Text + "'  ORDER BY STT ASC ");
             checkName.DataTextField = "TENBC";
             checkName.DataValueField = "STT";
             checkName.DataBind();
@@ -35,6 +35,16 @@ namespace DHCD_KiemPhieu.View
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Binddata();
+            if (DropDownList1.SelectedIndex == 1)
+            {
+                title.Text  = "..: KIỂM PHIẾU BẦU CỬ BAN THANH TRA NHÂN DÂN NĂM 2017 :..";
+                lbKetqua.Text = "KẾT QUẢ BẦU CỬ BAN THANH TRA NHÂN DÂN NĂM 2017";
+            }
+            else if (DropDownList1.SelectedIndex == 2)
+            {
+                title.Text = lbKetqua.Text = "..: KIỂM PHIẾU BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017 :..";
+                lbKetqua.Text = "KẾT QUẢ BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017";
+            }
         }
 
         protected void G_KDY_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -51,7 +61,8 @@ namespace DHCD_KiemPhieu.View
                     {
                         checkName.Items[i].Attributes.Add("style", "text-decoration:line-through; color:Red;");
                     }
-                }          
+                }   
+       
         }
 
         void loadKQ()
@@ -99,6 +110,9 @@ namespace DHCD_KiemPhieu.View
             }
             catch (Exception)
             {
+                this.tc_hople.Text = "0";
+                this.tc_khople.Text = "0";
+                this.tc_thuvao.Text = "0";
             }
 
         }
@@ -178,6 +192,15 @@ namespace DHCD_KiemPhieu.View
 
             gTK.DataSource = Class.LinQConnection.getDataTable(sql);
             gTK.DataBind();
+        }
+
+        protected void an_CheckedChanged(object sender, EventArgs e)
+        {
+            if(an.Checked)
+                this.Panel1.Visible = false;
+            else
+                this.Panel1.Visible = true;
+            
         }
     }
 }

@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 
 namespace QuanLyKhachHang.Class
 {
-    public class C_CallCenter
+    public class C_KyThuat
     {
         static log4net.ILog log = log4net.LogManager.GetLogger("File");
-        static CallCenterDataContext db = new CallCenterDataContext();
+        static KyThuatDataContext db = new KyThuatDataContext();
 
         public static DataTable getDataTable(string sql)
         {
@@ -154,7 +154,7 @@ namespace QuanLyKhachHang.Class
         public static void ExecuteCommand(string sql)
         {
             int result = 0;
-            CallCenterDataContext db = new CallCenterDataContext();
+            KyThuatDataContext db = new KyThuatDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
