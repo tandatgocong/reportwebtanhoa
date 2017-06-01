@@ -229,7 +229,7 @@
                               // Creating the content to be inserted in the infowindow
                               var iwContent="<div class='title_page'>Thông Tin  Báo Bể</div> <br/> " ;
                               iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
-                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["TenDuong"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
+                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b> <%=table.Rows[i]["SoNha"]%> &nbsp;  <%=table.Rows[i]["TenDuong"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Báo Bể Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";
                           
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Ghi Chú : <%=table.Rows[i]["GhiChu"]%> &nbsp;</td></tr>";

@@ -396,8 +396,8 @@
                }
             function hoancong(id) {                
                 var newUrl="addBaoBee.aspx?id="+id ;
-                   // alert(latlng);
-                  document.location.href = newUrl;
+                 //  alert(newUrl);
+                  document.location.href = newUrl ;
                }
             function save() {  
                    var dienthoai = document.getElementById("dienthoai").value;
@@ -410,7 +410,7 @@
                    var sonha = document.getElementById("sonha").value;  
                    
                                                 
-                   var newUrl="callBaoBeAdd.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan+ "&tenkh=" + tenkh+ "&sonha=" + sonha;
+                   var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan+ "&tenkh=" + tenkh+ "&sonha=" + sonha;
                    // alert(latlng);
                    document.location.href = newUrl;
                                     

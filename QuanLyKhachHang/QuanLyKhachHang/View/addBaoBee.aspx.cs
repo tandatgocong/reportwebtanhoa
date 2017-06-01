@@ -16,11 +16,15 @@ namespace QuanLyKhachHang.View
 {
     public partial class addBaoBee : System.Web.UI.Page
     {
+
         protected HtmlInputFile filMyFile;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"Login.aspx");
+            }
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -87,7 +91,7 @@ namespace QuanLyKhachHang.View
                 }
                 catch (Exception ex)
                 {
-                    this.upload.Text = "Lỗi Không Upload Ảnh Về Server";
+                    this.upload.Text = "Lỗi Không Upload Ảnh Về Server" + ex.ToString();
                 }
         
         }
@@ -112,28 +116,59 @@ namespace QuanLyKhachHang.View
                 if (kt != null)
                 {
                     kt.NgayTiepNhan = DateTime.Parse(this.txtDate.Text);
-                  //  kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
+                    //  kt.LoaiThucHien = int.Parse(this.cbLoaiSB.SelectedValue.ToString());
 
-                    kt.NgayThucHien = DateTime.Parse(this.dateTNden.Text);
-                    kt.TuGio = DateTime.Parse(this.dataThucHienTN.Text);
-                    kt.DenGio = DateTime.Parse(this.dateTNden.Text);
-                   
+                    try
+                    {
+                        kt.NgayThucHien = DateTime.Parse(this.dateTNden.Text);
+                        kt.TuGio = DateTime.Parse(this.dataThucHienTN.Text);
+                        kt.DenGio = DateTime.Parse(this.dateTNden.Text);
+                    }
+                    catch (Exception) { }
+
+
+
                     kt.KetQua = this.txtGhiChuSuaBe.Text;
                     kt.NVGiamSat = this.txtNVGS.Text;
                     kt.NVSuaBe = this.txtNVSua.Text;
-                    kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);  
-                    kt.FilePdf = this.FilePath.Value;
-                    kt.ModifyDate = DateTime.Now;
-                    kt.ModifyBy = Session["login"].ToString();
-                   
-                    C_KyThuat.Update();
 
-                    string sql = "UPDATE TTKH_TiepNhan SET NgayXuLy=" + DateTime.Parse(this.dateTNden.Text) + ",KetQuaXuLy=N'Hoàn Tất Sửa Bể',NhanVienXuLy=N'" + Session["login"].ToString() + "'  WHERE SoHoSo='" + kt.SoHoSo + "'";
-                    if (C_TrungTamKhachHang.ExecuteCommand_(sql) > 0)
+                    try
+                    {
+                        kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
+                    }
+                    catch (Exception) { }
 
+                    try
+                    {
+                        kt.FilePdf = this.FilePath.Value;
+                    }
+                    catch (Exception) { }
+                }
+
+
+                kt.ModifyDate = DateTime.Now;
+                kt.ModifyBy = Session["login"].ToString();
+               
+                if (C_KyThuat.Update())
+                {
                     lbThanhCong.ForeColor = Color.Blue;
                     this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thành Công.";
+
+                    try
+                    {
+                        string sql = "UPDATE TTKH_TiepNhan SET NgayXuLy='" + DateTime.Parse(this.dateTNden.Text) + "',KetQuaXuLy=N'Hoàn Tất Sửa Bể',NhanVienXuLy=N'" + Session["login"].ToString() + "'  WHERE SoHoSo='" + kt.SoHoSo + "'";
+                        C_TrungTamKhachHang.ExecuteCommand_(sql);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
+                else
+                {
+                    lbThanhCong.ForeColor = Color.Red;
+                    this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thất Bại.";
+                }
+
                 //kt.TinhTrang = 1;
                 //kt.Lat = lat;
                 //kt.Lng = lng;
@@ -144,12 +179,12 @@ namespace QuanLyKhachHang.View
                 //kt.Quan = quan;
                 //kt.NgayBao = DateTime.Now;
                 //kt.GhiChu = ghichu;
-               
+
             }
             catch (Exception)
             {
                 lbThanhCong.ForeColor = Color.Red;
-                this.lbThanhCong.Text = "Thêm Mới Địa Điểm Thất Bại.";
+                this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thất Bại.";
 
             }
         }
@@ -239,7 +274,7 @@ namespace QuanLyKhachHang.View
                 catch (Exception ex)
                 {
                     this.uploadfile.BackColor = Color.Red;
-                    this.uploadfile.Text = "Lỗi Không Upload Về Server";
+                    this.uploadfile.Text = "Lỗi Không Upload Về Server" + ex.ToString(); ;
                 }
 
         }

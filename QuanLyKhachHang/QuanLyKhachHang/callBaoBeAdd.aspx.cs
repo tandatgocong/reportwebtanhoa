@@ -51,7 +51,7 @@ namespace QuanLyKhachHang
                 tn.DienThoai = dienthoai;
                 tn.TenKH = tenkh;
                 tn.SoNha = sonha;
-                tn.TenDuong = diachi;
+                tn.TenDuong = diachi.Replace(@"/",@"\/");
                 tn.Phuong = phuong;
                 tn.Quan = quan;
                 tn.LoaiHs = "10";
