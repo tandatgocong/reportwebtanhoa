@@ -44,6 +44,19 @@
                     </tr>
                     <tr>
                         <td class="style1">
+                            LOẠI&nbsp;</td>
+                        <td class="style2" colspan="3"> 
+                              <asp:DropDownList ID="cbLoai" runat="server" Height="19px" Width="142px">
+                                  <asp:ListItem Value="True">ĐÓNG NƯỚC</asp:ListItem>
+                                  <asp:ListItem Value="False">GIẢM ÁP</asp:ListItem>
+                              </asp:DropDownList>
+                            
+                         
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style1">
                             ĐỊA CHỈ&nbsp;</td>
                         <td class="style2" colspan="3"> 
                               <asp:TextBox ID="txtDiachi" runat="server"  Height="20px" 

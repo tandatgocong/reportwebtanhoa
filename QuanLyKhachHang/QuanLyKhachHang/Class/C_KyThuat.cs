@@ -176,6 +176,34 @@ namespace QuanLyKhachHang.Class
             db.SubmitChanges();
         }
 
+        public static DataTable ExecuteStoredProcedure(string storedNam )
+        {
+            KyThuatDataContext db = new KyThuatDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand(storedNam, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand = cmd;
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+
+        }
+
 
     }
 }

@@ -162,12 +162,19 @@
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
                                                             
-                          
+                             var col='#FF0000';
+                              <% if("False".Equals(table.Rows[i]["Loai"].ToString()))
+                                {
+                                 %> 
+                                  col='#FFFF00';  
+                                 <%
+                                }           
+                                %>
                              var cityCircle = new google.maps.Circle({
                                 strokeColor: '#FF0000',
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
-                                fillColor: '#FF0000',
+                                fillColor: col,
                                 fillOpacity: 0.35,
                                 map: map,
                                 center: latlng2,
@@ -183,7 +190,7 @@
 
                             google.maps.event.addListener(marker<%=i%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                              var iwContent="<div class='title_page'>Thông Tin Đóng Nước </div> <br/> " ;
+                              var iwContent="<div class='title_page'>Thông Tin  <%=table.Rows[i]["F"]%> </div> <br/> " ;
                               iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
                           iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";

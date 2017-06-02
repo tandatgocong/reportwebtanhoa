@@ -12,15 +12,14 @@ namespace QuanLyKhachHang
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //for logging to file
-            Session["login"] = "teste";
-            Response.Redirect(@"View\QuanLyVan.aspx");
-           log4net.ILog logger = log4net.LogManager.GetLogger("File");
-           if (Session["login"] == null)
-           {
-               Response.Redirect(@"View\Login.aspx");
-           }
+            ////for logging to file
+            ////Session["login"] = "teste";
+            //if( Request.QueryString["login"] != null)
+            //    Session["login"] = Request.QueryString["login"].ToString();
+            ////Response.Redirect(@"View\QuanLyVan.aspx");
+            log4net.ILog logger = log4net.LogManager.GetLogger("File");
 
+            Response.Redirect(@"View\Home.aspx");
           
            
 

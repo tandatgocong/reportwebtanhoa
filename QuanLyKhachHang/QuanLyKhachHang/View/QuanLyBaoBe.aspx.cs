@@ -13,6 +13,10 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"Login.aspx");
+            }
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;

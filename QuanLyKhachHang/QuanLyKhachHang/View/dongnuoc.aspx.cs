@@ -13,6 +13,10 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"Login.aspx");
+            }
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -25,7 +29,7 @@ namespace QuanLyKhachHang.View
             //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
             //string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
-            string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where  DongMo='True' ";
+            string sql = " SELECT CASE WHEN Loai ='True' THEN N'ĐÓNG NƯỚC ' ELSE  N'GIẢM ÁP' END AS F, Loai, ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where  DongMo='True' ";
             Session["dsDongnuoc"] = C_KyThuat.getDataTable(sql);
 
         }

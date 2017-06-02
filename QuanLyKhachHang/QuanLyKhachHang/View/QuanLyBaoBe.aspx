@@ -8,8 +8,7 @@
  <script language="javascript" type="text/javascript">
      window.document.getElementById("HOME").className = "top_link";
      window.document.getElementById("GANMOI").className = "top_link";
-     window.document.getElementById("KHACHHANG").className = "top_link";
-     window.document.getElementById("APLUC").className = "top_link";
+     window.document.getElementById("KHACHHANG").className = "top_link";      
      window.document.getElementById("BAOBE").className = "current_link";
     </script>
 <style>

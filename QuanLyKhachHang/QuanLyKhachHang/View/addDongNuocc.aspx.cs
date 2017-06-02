@@ -34,6 +34,7 @@ namespace QuanLyKhachHang.View
                 string lng = Request.QueryString["lng"];
                 //=(10.7523028428119,106.5858256816864)
                 KT_DongNuoc xv = new KT_DongNuoc();
+                xv.Loai = bool.Parse(cbLoai.SelectedValue);
                 xv.DongMo = true;
                 xv.DiaChi = this.txtDiachi.Text;
                 xv.lat = lat;
