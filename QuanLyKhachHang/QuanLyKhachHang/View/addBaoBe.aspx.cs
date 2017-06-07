@@ -29,6 +29,9 @@ namespace QuanLyKhachHang.View
                 string lng = Request.QueryString["lng"].ToString();
                 string phuong = Request.QueryString["phuong"].ToString();
                 string quan = Request.QueryString["quan"].ToString();
+                string dma = Request.QueryString["dma"].ToString();
+
+                
 
                 string sohoso = Class.C_TrungTamKhachHang.IdentityBienNhan();
                 KT_BaoBe kt = new KT_BaoBe();
@@ -37,6 +40,7 @@ namespace QuanLyKhachHang.View
                 kt.Lat = lat;
                 kt.Lng = lng;
                 kt.SoDT = dienthoai;
+                kt.MaDMA = dma;
                 kt.LoaiBao = type;
                 kt.SoNha = sonha;
                 kt.TenDuong = diachi;
@@ -48,34 +52,34 @@ namespace QuanLyKhachHang.View
                 kt.CreateBy = Session["login"].ToString();
                 Class.C_KyThuat.Insert(kt);
 
-                TTKH_TiepNhan tn = new TTKH_TiepNhan();
-                tn.LoaiTN = "KH";
-                tn.SoHoSo = sohoso;
-                tn.DanhBo = "";
-                tn.DienThoai = dienthoai;
-                tn.TenKH = tenkh;
-                tn.SoNha = sonha;
-                tn.TenDuong = diachi;
-                tn.Phuong = phuong;
-                tn.Quan = quan;
-                tn.LoaiHs = "10";
-                tn.NgayNhan = DateTime.Now;
-                tn.ChuyenHS = true;
-                tn.NgayChuyen = DateTime.Now;
-                tn.MaDVChuyen = 1;
-                tn.DonViChuyen = "Đội TCTB";
-                tn.Mess = true;
-                tn.GhiChu = ghichu;
-                tn.CreateBy = Session["login"].ToString();
-                tn.CreateDate = DateTime.Now;
-                Class.C_TrungTamKhachHang.Insert(tn);
+                //TTKH_TiepNhan tn = new TTKH_TiepNhan();
+                //tn.LoaiTN = "KH";
+                //tn.SoHoSo = sohoso;
+                //tn.DanhBo = "";
+                //tn.DienThoai = dienthoai;
+                //tn.TenKH = tenkh;
+                //tn.SoNha = sonha;
+                //tn.TenDuong = diachi;
+                //tn.Phuong = phuong;
+                //tn.Quan = quan;
+                //tn.LoaiHs = "10";
+                //tn.NgayNhan = DateTime.Now;
+                //tn.ChuyenHS = true;
+                //tn.NgayChuyen = DateTime.Now;
+                //tn.MaDVChuyen = 1;
+                //tn.DonViChuyen = "Đội TCTB";
+                //tn.Mess = true;
+                //tn.GhiChu = ghichu;
+                //tn.CreateBy = Session["login"].ToString();
+                //tn.CreateDate = DateTime.Now;
+                //Class.C_TrungTamKhachHang.Insert(tn);
 
 
 
 
                 //  Class.C_CallCenter.ExecuteCommand("UPDATE KT_DongNuoc SET DongMo='False' WHERE ID='" + Request.QueryString["id"].ToString() + "' ");
-               
-                    Response.Redirect(@"QuanLyBaoBe.aspx");
+
+                Response.Redirect(@"bbNhapThongTinBe.aspx");
             }
              
 

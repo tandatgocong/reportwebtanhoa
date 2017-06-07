@@ -448,6 +448,7 @@
     <Content Include="View\addDongNuocc.aspx" />
     <Content Include="View\addVan.aspx" />
     <Content Include="View\bbDanhSach.aspx" />
+    <Content Include="View\bbNhapThongTinBe.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\Print.aspx" />
@@ -593,6 +594,13 @@
     </Compile>
     <Compile Include="View\bbDanhSach.aspx.designer.cs">
       <DependentUpon>bbDanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\bbNhapThongTinBe.aspx.cs">
+      <DependentUpon>bbNhapThongTinBe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\bbNhapThongTinBe.aspx.designer.cs">
+      <DependentUpon>bbNhapThongTinBe.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\dmaApLuc.aspx.cs">
       <DependentUpon>dmaApLuc.aspx</DependentUpon>

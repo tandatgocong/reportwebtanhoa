@@ -812,6 +812,10 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _GhiChu;
 		
+		private string _DonViSuaBe;
+		
+		private System.Nullable<System.DateTime> _NgayChuyenSuaBe;
+		
 		private System.Nullable<System.DateTime> _NgayTiepNhan;
 		
 		private System.Nullable<System.DateTime> _NgayThucHien;
@@ -842,6 +846,8 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _SoHoSo;
 		
+		private string _MaDMA;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -870,6 +876,10 @@ namespace QuanLyKhachHang.DataBase
     partial void OnNgayBaoChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnDonViSuaBeChanging(string value);
+    partial void OnDonViSuaBeChanged();
+    partial void OnNgayChuyenSuaBeChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayChuyenSuaBeChanged();
     partial void OnNgayTiepNhanChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayTiepNhanChanged();
     partial void OnNgayThucHienChanging(System.Nullable<System.DateTime> value);
@@ -900,6 +910,8 @@ namespace QuanLyKhachHang.DataBase
     partial void OnModifyByChanged();
     partial void OnSoHoSoChanging(string value);
     partial void OnSoHoSoChanged();
+    partial void OnMaDMAChanging(string value);
+    partial void OnMaDMAChanged();
     #endregion
 		
 		public KT_BaoBe()
@@ -1143,6 +1155,46 @@ namespace QuanLyKhachHang.DataBase
 					this._GhiChu = value;
 					this.SendPropertyChanged("GhiChu");
 					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonViSuaBe", DbType="NVarChar(50)")]
+		public string DonViSuaBe
+		{
+			get
+			{
+				return this._DonViSuaBe;
+			}
+			set
+			{
+				if ((this._DonViSuaBe != value))
+				{
+					this.OnDonViSuaBeChanging(value);
+					this.SendPropertyChanging();
+					this._DonViSuaBe = value;
+					this.SendPropertyChanged("DonViSuaBe");
+					this.OnDonViSuaBeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayChuyenSuaBe", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayChuyenSuaBe
+		{
+			get
+			{
+				return this._NgayChuyenSuaBe;
+			}
+			set
+			{
+				if ((this._NgayChuyenSuaBe != value))
+				{
+					this.OnNgayChuyenSuaBeChanging(value);
+					this.SendPropertyChanging();
+					this._NgayChuyenSuaBe = value;
+					this.SendPropertyChanged("NgayChuyenSuaBe");
+					this.OnNgayChuyenSuaBeChanged();
 				}
 			}
 		}
@@ -1443,6 +1495,26 @@ namespace QuanLyKhachHang.DataBase
 					this._SoHoSo = value;
 					this.SendPropertyChanged("SoHoSo");
 					this.OnSoHoSoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDMA", DbType="NVarChar(50)")]
+		public string MaDMA
+		{
+			get
+			{
+				return this._MaDMA;
+			}
+			set
+			{
+				if ((this._MaDMA != value))
+				{
+					this.OnMaDMAChanging(value);
+					this.SendPropertyChanging();
+					this._MaDMA = value;
+					this.SendPropertyChanged("MaDMA");
+					this.OnMaDMAChanged();
 				}
 			}
 		}

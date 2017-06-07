@@ -335,8 +335,9 @@
                    var tenkh = document.getElementById("tenkh").value;  
                    var sonha = document.getElementById("sonha").value;  
                    
+                   
                                                 
-                   var newUrl="callBaoBeAdd.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan+ "&tenkh=" + tenkh+ "&sonha=" + sonha;
+                   var newUrl="callBaoBeAdd.aspx?lat="+lagx+ "&lng=" + lagy+ "&dienthoai=" + dienthoai + "&ghichu=" + ghichu+ "&diachi=" + diachi+ "&type=" + type+ "&phuong=" + phuong+ "&quan=" + quan+ "&tenkh=" + tenkh+ "&sonha=" + sonha ; 
                    // alert(latlng);
                    document.location.href = newUrl;
                                     
