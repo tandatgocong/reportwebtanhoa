@@ -31,6 +31,25 @@
       <Column Name="ModifyBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KT_DongNuoc" Member="KT_DongNuocs">
+    <Type Name="KT_DongNuoc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Loai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DongMo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="lat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="lng" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TuNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DenNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TuGio" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DenGio" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.KT_BaoBe" Member="KT_BaoBes">
     <Type Name="KT_BaoBe">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -63,25 +82,7 @@
       <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="SoHoSo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaDMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.KT_DongNuoc" Member="KT_DongNuocs">
-    <Type Name="KT_DongNuoc">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Loai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DongMo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="lat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="lng" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TuNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DenNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TuGio" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="DenGio" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SoBangKe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

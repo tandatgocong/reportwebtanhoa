@@ -449,6 +449,8 @@
     <Content Include="View\addVan.aspx" />
     <Content Include="View\bbDanhSach.aspx" />
     <Content Include="View\bbNhapThongTinBe.aspx" />
+    <Content Include="View\bbNhapHoanCong.aspx" />
+    <Content Include="View\LogOut.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\Print.aspx" />
@@ -459,6 +461,7 @@
     <Content Include="View\QuanLyDMA_Chart.aspx" />
     <Content Include="View\QuanLyDMA_ChartLL.aspx" />
     <Content Include="View\QuanLyVan.aspx" />
+    <Content Include="View\zphanquyen.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -602,6 +605,20 @@
     <Compile Include="View\bbNhapThongTinBe.aspx.designer.cs">
       <DependentUpon>bbNhapThongTinBe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\bbNhapHoanCong.aspx.cs">
+      <DependentUpon>bbNhapHoanCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\bbNhapHoanCong.aspx.designer.cs">
+      <DependentUpon>bbNhapHoanCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\dmaApLuc.aspx.cs">
       <DependentUpon>dmaApLuc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -671,6 +688,13 @@
     </Compile>
     <Compile Include="View\QuanLyVan.aspx.designer.cs">
       <DependentUpon>QuanLyVan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\zphanquyen.aspx.cs">
+      <DependentUpon>zphanquyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\zphanquyen.aspx.designer.cs">
+      <DependentUpon>zphanquyen.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

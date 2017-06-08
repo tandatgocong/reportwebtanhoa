@@ -39,6 +39,8 @@ namespace QuanLyKhachHang
                 kt.Phuong = phuong;
                 kt.Quan = quan;
                 kt.NgayBao = DateTime.Now;
+                kt.DonViSuaBe = "DTCTB";
+                kt.NgayChuyenSuaBe = DateTime.Now;
                 kt.GhiChu = ghichu;
                 kt.CreateDate = DateTime.Now;
                 kt.CreateBy = Session["login"].ToString();
@@ -51,7 +53,7 @@ namespace QuanLyKhachHang
                 tn.DienThoai = dienthoai;
                 tn.TenKH = tenkh;
                 tn.SoNha = sonha;
-                tn.TenDuong = diachi.Replace(@"/",@"\/");
+                tn.TenDuong = diachi;
                 tn.Phuong = phuong;
                 tn.Quan = quan;
                 tn.LoaiHs = "10";

@@ -13,6 +13,16 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["page"] = "bbNhapThongTinBe.aspx";
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"Login.aspx");
+            }
+            else if (!Session["phong"].ToString().Equals("GNKDT"))
+            {
+                 Response.Redirect(@"zphanquyen.aspx");
+            }
+
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -25,15 +35,9 @@ namespace QuanLyKhachHang.View
 
         public void pagLoad()
         {
-            if (Request.QueryString["u"] != null)
-                Session["login"] = Request.QueryString["u"].ToString();
-            else if (Session["login"] == null)
-                Session["login"] = "callcenter";
-
             //DateTime tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //DateTime dNgay = DateTime.ParseExact(denngay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-            string sql = " SELECT ROW_NUMBER() OVER (ORDER BY NgayBao  ASC) [STT],* FROM KT_BaoBe  ";
+            string sql = " SELECT * FROM W_BAOBE  ";
             sql += " WHERE CONVERT(DATE,NgayBao,103) BETWEEN CONVERT(DATE,'" + tungay.Text + "',103) AND CONVERT(DATE,'" + denngay.Text + "',103) ";
             //string sql = " SELECT * from KT_BaoBe  where CAST(GETDATE() as date) =  CAST(NgayBao as date)  ";
             
@@ -44,6 +48,11 @@ namespace QuanLyKhachHang.View
                 gChuyen.DataSource = tb;
                 gChuyen.DataBind();
             }
+
+            cbDonViSuaBe.DataSource = C_KyThuat.getDataTable("SELECT * FROM KT_DonViSuaBe");
+            cbDonViSuaBe.DataValueField = "MaDonVi";
+            cbDonViSuaBe.DataTextField = "TenDonVi";
+            cbDonViSuaBe.DataBind();
         }
 
         protected void btXemBangKe_Click(object sender, EventArgs e)
@@ -79,7 +88,11 @@ namespace QuanLyKhachHang.View
                     }
                 }
             }
-            Label1.Text = listID.Remove(listID.Length - 1, 1);
+           // Label1.Text = listID.Remove(listID.Length - 1, 1);
+
+            string sql = "UPDATE KT_BaoBe SET SoBangKe='" + this.TextBox1.Text + "', DonViSuaBe='" + cbDonViSuaBe.SelectedValue.ToString() + "',NgayChuyenSuaBe=GETDATE() WHERE ID IN (" + listID.Remove(listID.Length - 1, 1) + ")";
+            C_KyThuat.ExecuteCommand(sql);
+            pagLoad();
         }
 
         

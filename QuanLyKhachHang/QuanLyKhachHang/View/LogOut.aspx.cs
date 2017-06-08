@@ -10,10 +10,13 @@ using QuanLyKhachHang.DataBase;
 
 namespace QuanLyKhachHang.View
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class LogOut : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["login"] = null;
+            Session["phong"] = null;
+            Response.Redirect("Home.aspx");
 
         }
         private const string cryptoKey = "tanhoa";

@@ -43,7 +43,7 @@
                       <a href="bbNhapThongTinBe.aspx" class="">BÁO BỂ </a>
                  </li>    
                  <li >
-                      <a href="bbNhapThongTinBe.aspx" class="">HOÀN CÔNG</a>
+                      <a href="bbNhapHoanCong.aspx" class="">HOÀN CÔNG</a>
                  </li>
                       
                </ul> 
@@ -61,7 +61,7 @@
                  </li>    
                </ul>-->
             </li>
- 			<!--<li id="mnGioithieu" class="top"><a href="pKiemPhieuDHCD.aspx" id="KIEMPHIEU" class="top_link" ><span>BIỂU QUYẾT</span></a></li> -->
+ 			<li id="mnGioithieu" class="top"><a href="LogOut.aspx" id="KIEMPHIEU" class="top_link" ><span>LOG OUT</span></a></li> 
            <!--<li id="mnGioithieu" class="top"><a href="dmaApLuc.aspx" id="APLUC" class="top_link" ><span>ÁP LỰC NƯỚC</span></a></li>  -->
             <!--<li id="mnBieuQuyet" class="top"><a href="pBauCuBanKS.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ</span></a>
              <ul class="sub_gioithieu">

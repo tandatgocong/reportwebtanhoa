@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript">
     window.document.getElementById("HOME").className = "top_link";
     window.document.getElementById("GANMOI").className = "top_link";
     window.document.getElementById("KHACHHANG").className = "top_link";
@@ -195,7 +195,7 @@
                                           SỬA BỂ</td>
                                       <td class="style26" 
                                           style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
-                                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="148px">
+                                          <asp:DropDownList ID="cbDonViSuaBe" runat="server" Height="23px" Width="188px">
                                           </asp:DropDownList>
                                       </td>
                                       <td class="style26" 
@@ -212,7 +212,7 @@
                           <td class="style1" align=center >
                               <asp:GridView ID="gChuyen" runat="server" AutoGenerateColumns="False" 
                                   BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
-                                  CellPadding="4" Width="803px">
+                                  CellPadding="4" Width="902px">
                                   <Columns>
                                       <asp:TemplateField>
                                           <ItemTemplate>
@@ -230,6 +230,9 @@
                                       <asp:BoundField DataField="STT" HeaderText="STT" >
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" />
                                       </asp:BoundField>
+                                      <asp:BoundField DataField="LoaiBao" HeaderText="Loại Bể">
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="150px" />
+                                      </asp:BoundField>
                                       <asp:BoundField DataField="MaDMA" HeaderText="Mã DMA" >
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
                                       </asp:BoundField>
@@ -239,14 +242,14 @@
                                       <asp:BoundField DataField="TenDuong" HeaderText="Tên Đường" >
                                       <ItemStyle VerticalAlign="Middle" Width="250px" />
                                       </asp:BoundField>
-                                      <asp:BoundField DataField="Phuong" HeaderText="Phường" >
+                                      <asp:BoundField DataField="TenPhuong" HeaderText="Phường" >
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
                                       </asp:BoundField>
-                                      <asp:BoundField DataField="Quan" HeaderText="Quận" >
+                                      <asp:BoundField DataField="TenQuan" HeaderText="Quận" >
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
                                       </asp:BoundField>
-                                      <asp:BoundField DataField="DonViSuaBe" HeaderText="Đơn Vị Sửa Bể" >
-                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
+                                      <asp:BoundField DataField="TenDonVi" HeaderText="Đơn Vị Sửa Bể" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="250px" />
                                       </asp:BoundField>
                                       <asp:BoundField />
                                   </Columns>
@@ -331,12 +334,12 @@
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Quận:</td> <td><select id='quan'>" +
                          "<option value='22' SELECTED>Phú Nhuận</option>" +
                          "<option value='23'>Tân Bình</option>" +
-                         "<option value='33'>Tân Phú</option>" +
+                         "<option value='31'>Tân Phú</option>" +
                          "</select> </td></tr>" +
 
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Loại:</td> <td><select id='type'>" +
-                         "<option value='Bể Nổi' SELECTED>Bể Nổi</option>" +
-                         "<option value='Bể Ngầm'>Bể Ngầm</option>" +
+                         "<option value='Bể Nổi' >Bể Nổi</option>" +
+                         "<option value='Bể Ngầm' SELECTED>Bể Ngầm</option>" +
                          "</select> </td></tr>" +
                            "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Mã DMA:</td> <td><input type='text' id='dma'/></td> </tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>Ghi Chú:</td> <td><input type='text' id='ghichu'/></td> </tr>" +
