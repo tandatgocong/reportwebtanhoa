@@ -93,50 +93,181 @@
       #target {
         width: 345px;
       }
+    .style1
+    {
+        width: 95px;
+        height: 49px;
+    }
+    .style5
+    {
+        height: 30px;
+    }
+    .style6
+    {
+        height: 27px;
+    }
+    .style7
+    {
+        width: 140px;
+    }
     </style>
 <body>
  <asp:Panel ID="Panel1" runat="server"    >  
        <ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
             EnableScriptLocalization="true" ID="ScriptManager1"  />     
  
-        <table style="font-size:14px; font-family: Times New Roman;">
-            <tr>
-                <td class="style6"> <asp:Label ID="Label1" runat="server" Text="Từ Ngày : " CssClass="label"></asp:Label></td>
-                <td class="style1"><asp:TextBox runat="server" ID="tungay" autocomplete="off" /></td>
-                <td class="style6"> <asp:Label ID="Label2" runat="server" Text="Đến Ngày : " CssClass="label"></asp:Label></td>
-                <td class="style2"><asp:TextBox runat="server" ID="denngay" autocomplete="off" /></td>
-                <td class="style6">&nbsp;<asp:Button ID="btXemBangKe" runat="server" Text="XEM THÔNG TIN" 
-                        CssClass="button" onclick="btXemBangKe_Click" /></td>
-            </tr>
-           
-        </table>   
-     
+ <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman;  margin-left:20px;margin-top:10px;" class="table_list" >
+        <tbody>
+           <tr class="head2">
+               <td class="style11" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp; TỪ NGÀY : </td>
+               <td class="style11" style="border-right:2px #99cc99 solid; border-bottom: 1px solid;">
+                                            &nbsp;
+                                            <asp:TextBox ID="tungay" runat="server" autocomplete="off" Height="20px" 
+                                                Width="87px" />
+               </td>
+                <td class="style10" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp; ĐẾN NGÀY&nbsp;: </td>
+                <td class="style10" style=" font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
+                                       
+                    &nbsp;</td>
+               <td class="style10" 
+                   style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
+                   <asp:TextBox ID="denngay" runat="server" autocomplete="off" Height="21px" 
+                       Width="86px" />
+               </td>
+               <td class="style10" 
+                   style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
+                   <asp:Button ID="btXemBangKe" runat="server" CssClass="button1" Height="27px" 
+                       onclick="btXemBangKe_Click" Text="XEM THÔNG TIN" />
+               </td>
+               <td class="style7" 
+                   style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
+                   <asp:CheckBox ID="chekHien" runat="server" AutoPostBack="True" Font-Bold="True" 
+                       Font-Size="Small" oncheckedchanged="chekHien_CheckedChanged" 
+                       Text="Chuyển Sửa Bể" />
+               </td>
+             </tr>
+             
+          </tbody>
+    </table>
+
        <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tungay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
          <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="denngay" Format="dd/MM/yyyy" >
     </ajaxToolkit:CalendarExtender>
+<asp:Panel ID="Panel2" runat="server"  Width="1248px">    
+  
+    <table cellpadding="0" cellspacing="0" class="table_list_1"  style="font-family:Times New Roman; margin-left:50px; font-size:15px; width: 500px;">
+                     <tr class="head1">
+                          <td class="style5" 
+                              style="border-right:1px #FF0000 solid; background-color:#CCFFFF; font-size:large; border-bottom: 2px #FF0000 solid">
+                              <center>
+                                        DANH SÁCH THÔNG TIN ĐIỂM BỂ
+                                        
+                              </center>
+                           </td>
+                      </tr>
+                     <tr >
+                          <td  style="border-right:1px #FF0000 solid; font-size:large; border-bottom: 2px #FF0000 solid" 
+                              class="style6">
+                              <table cellpadding="0" cellspacing="0" class="table_list" 
+                                  style="font-family:Times New Roman; font-size:15px; margin-left:20px;">
+                                  <tr class="head1">
+                                      <td class="style26" 
+                                          style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                          SỐ CÔNG VĂN :</td>
+                                      <td class="style26" 
+                                          style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                          <asp:TextBox ID="TextBox1" runat="server" Width="139px"></asp:TextBox>
+                                      </td>
+                                      <td class="style26" 
+                                          style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                          <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                      </td>
+                                  </tr>
+                                  <tr class="head1">
+                                      <td class="style26" 
+                                          
+                                          style="border-right:2px #FF0000 solid; text-align: center; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: 1px;">
+                                          ĐƠN VỊ NHẬN
+                                          <br />
+                                          SỬA BỂ</td>
+                                      <td class="style26" 
+                                          style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="148px">
+                                          </asp:DropDownList>
+                                      </td>
+                                      <td class="style26" 
+                                          style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
+                                          <asp:Button ID="btChuyen" runat="server" CssClass="button1" Height="27px" 
+                                              onclick="btChuyen_Click" Text="CHUYỂN" />
+                                      </td>
+                                  </tr>
+                              </table>
+                           
+                          </td>
+                      </tr>
+                     <tr >
+                          <td class="style1" align=center >
+                              <asp:GridView ID="gChuyen" runat="server" AutoGenerateColumns="False" 
+                                  BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
+                                  CellPadding="4" Width="803px">
+                                  <Columns>
+                                      <asp:TemplateField>
+                                          <ItemTemplate>
+                                              <asp:CheckBox ID="chkRow" runat="server" />
+                                          </ItemTemplate>
+                                      </asp:TemplateField>
+                                      <asp:TemplateField HeaderText="ID" Visible="False">
+                                          <EditItemTemplate>
+                                              <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("ID") %>'></asp:TextBox>
+                                          </EditItemTemplate>
+                                          <ItemTemplate>
+                                              <asp:Label ID="lbID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
+                                          </ItemTemplate>
+                                      </asp:TemplateField>
+                                      <asp:BoundField DataField="STT" HeaderText="STT" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="MaDMA" HeaderText="Mã DMA" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="SoNha" HeaderText="Số Nhà" >
+                                      <ItemStyle VerticalAlign="Middle" Width="150px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="TenDuong" HeaderText="Tên Đường" >
+                                      <ItemStyle VerticalAlign="Middle" Width="250px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="Phuong" HeaderText="Phường" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="Quan" HeaderText="Quận" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="DonViSuaBe" HeaderText="Đơn Vị Sửa Bể" >
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField />
+                                  </Columns>
+                                  <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                  <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                  <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                  <RowStyle BackColor="White" ForeColor="#330099" />
+                                  <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                  <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                  <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                  <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                  <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                              </asp:GridView>
+                          </td>
+                      </tr>
+                 </table>
 
-     <table style="font-size:14px; font-family: Times New Roman;">
-            <tr>
-                <td>
-                    <asp:CheckBox ID="chekHien" runat="server" AutoPostBack="True" 
-                        oncheckedchanged="chekHien_CheckedChanged" Text="Chuyển Sửa Bể" />
-                </td>
-                <td>
-                <asp:Panel ID="Panel2" runat="server" Visible="false">
-                    dsa<br />
-                     dsa<br />
-                      <br />
- dsa dsa<br />
- dsa dsa<br />
 
-                </asp:Panel>
-                </td>
-            </tr>
-         
-        </table> 
+</asp:Panel>
+</asp:Panel>
 
- </asp:Panel>
  
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
      <div id="map" style="width: 100%; height: 800px"></div>
@@ -158,7 +289,7 @@
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 13,
+                zoom: 14,
                 mapTypeId: 'roadmap'
             });
  
@@ -243,8 +374,10 @@
                         for(int i=0;i<table.Rows.Count;i++)
                         {
                         %>
-                           var x = parseFloat(<%=table.Rows[i]["lat"]%>);
-                           var y = parseFloat(<%=table.Rows[i]["lng"]%>);
+                            var x= parseFloat(<%=table.Rows[i]["lat"]%>);
+                            lagx= parseFloat(<%=table.Rows[i]["lat"]%>);
+                            var y = parseFloat(<%=table.Rows[i]["lng"]%>);
+                            lagy= parseFloat(<%=table.Rows[i]["lng"]%>);
                           // var latlng2 = new google.maps.LatLng(x, y);
 
                              var latlng2 = new google.maps.LatLng(x, y);
@@ -292,14 +425,23 @@
                         }
                        }
                     %>
+            ////////////////////
+            var infoWindow = new google.maps.InfoWindow({map: map});
+                 var pos = {
+                      lat: lagx,
+                      lng: lagy
+                    };
+                    
+                    map.setCenter(pos);
 
 
-
+                   
 
 
 
 
             ////////////////////
+           
 
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
@@ -321,6 +463,8 @@
                 if (places.length == 0) {
                     return;
                 }
+
+               
 
                 /* Clear out the old markers.
                 markers.forEach(function (marker) {
