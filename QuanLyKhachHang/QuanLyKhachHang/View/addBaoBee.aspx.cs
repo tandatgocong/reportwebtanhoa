@@ -281,7 +281,7 @@ namespace QuanLyKhachHang.View
 
         protected void btTrolai(object sender, EventArgs e)
         {
-            Response.Redirect(@"QuanLyBaoBe.aspx");
+            Response.Redirect(@"bbNhapHoanCong.aspx");
         }
 
 

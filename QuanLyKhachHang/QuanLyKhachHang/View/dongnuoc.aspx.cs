@@ -13,10 +13,20 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["page"] = "dongnuoc.aspx";
             if (Session["login"] == null)
             {
                 Response.Redirect(@"Login.aspx");
             }
+            else if (("TOCNTT".Contains(Session["phong"].ToString())))
+            {
+
+            }
+            else if (!("KTCN".Contains(Session["phong"].ToString())))
+            {
+                Response.Redirect(@"zphanquyen.aspx");
+            }
+
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;

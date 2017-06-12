@@ -18,6 +18,10 @@ namespace QuanLyKhachHang.View
             {
                 Response.Redirect(@"Login.aspx");
             }
+            else if (("TOCNTT".Contains(Session["phong"].ToString())))
+            {
+
+            }
             else if (!("DTCTB,DTCXL".Contains(Session["phong"].ToString())))
             {
                  Response.Redirect(@"zphanquyen.aspx");

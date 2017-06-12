@@ -161,12 +161,12 @@
 
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
-                                                            
                              var col='#FF0000';
                               <% if("False".Equals(table.Rows[i]["Loai"].ToString()))
                                 {
                                  %> 
-                                  col='#FFFF00';  
+                                    col='#FFFF00';  
+                                  	
                                  <%
                                 }           
                                 %>
@@ -181,9 +181,11 @@
                                 radius: 200
                               });
 
+                               
+
                               var marker<%=i%> = new google.maps.Marker({
 				              position: latlng2,
-				              map: map,
+				              map: map,                           
 				              title: name<%=i%>
 				              });
 

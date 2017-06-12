@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="CallCenter">
   <DataContextMoniker Name="/KyThuatDataContext" />
   <nestedChildShapes>
-    <classShape Id="f397e080-c322-4bf1-8a23-81f0fcf8c536" absoluteBounds="8.375, 1.375, 2, 6.0015283203125">
-      <DataClassMoniker Name="/KyThuatDataContext/KT_Van" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c264feaf-fa17-4616-b9ea-740bfd0f5224" absoluteBounds="8.39, 1.835, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="958ea04a-37dc-40a6-850e-433ad9c0e840" absoluteBounds="7.5, 8.5, 2, 3.6939111328124996">
       <DataClassMoniker Name="/KyThuatDataContext/KT_DongNuoc" />
       <nestedChildShapes>
@@ -18,6 +12,12 @@
       <DataClassMoniker Name="/KyThuatDataContext/KT_BaoBe" />
       <nestedChildShapes>
         <elementListCompartment Id="04539c7e-20c6-4b26-957c-9c6e8970d98d" absoluteBounds="4.89, 3.96, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0814359a-1d8d-4bd2-acab-a481843feb88" absoluteBounds="1.25, 3.125, 2, 6.1938297526041657">
+      <DataClassMoniker Name="/KyThuatDataContext/KT_Van" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73ef9e5b-15b6-433d-a2c4-11d496d601d7" absoluteBounds="1.2650000000000001, 3.585, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
