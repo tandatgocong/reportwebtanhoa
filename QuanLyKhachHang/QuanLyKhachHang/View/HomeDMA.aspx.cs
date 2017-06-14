@@ -9,14 +9,14 @@ using QuanLyKhachHang.Class;
 
 namespace QuanLyKhachHang.View
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class HomeDMA : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            //pagLoad();
+            pagLoad();
         }
         public void pagLoad()
         {

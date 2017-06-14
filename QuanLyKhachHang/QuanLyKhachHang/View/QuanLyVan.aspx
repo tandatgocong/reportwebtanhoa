@@ -238,7 +238,7 @@
                                 }                                 
                                 else if("Xã Cặn".Equals(table.Rows[i]["TenLoai"].ToString())) 
                                 {
-                                  %>  icon_='/Image/xacan.png';
+                                  %>  icon_='/Image/l11.gif';
                                      lb='XC';   
                                  <%
                                 }
@@ -256,6 +256,7 @@
                                 }
                              %>
                           
+                       
                              var cityCircle = new google.maps.Circle({
                                 strokeColor: '#FF0000',
                                 strokeOpacity: 0.8,

@@ -110,10 +110,11 @@ namespace QuanLyKhachHang.Class
         public static DataTable getListHoaDonReport(string danhba)
         {
 
+
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
 
-            string query = " SELECT top(1)  CAST(hd.KY as int ) as KyHD, CAST(hd.NAM as int ) as NamHD , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CodeMoi, hd.CSCU, hd.CSMOI, hd.TieuThuMoi as TIEUTHU, 0  as PBVMT, 0 as TGTGT,0  as TNuoc, 0.0 as ThanhTien ";
+            string query = " SELECT top(1)  ( CASE WHEN hd.KY<10 THEN CONVERT(VARCHAR(20),hd.KY) ELSE CONVERT(VARCHAR(20),hd.KY) END+'/' + CONVERT(VARCHAR(20),hd.NAM)) as  NAM , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CodeMoi, hd.CSCU, hd.CSMOI, hd.TieuThuMoi as TIEUTHU,  0.0 as ThanhTien ";
             query += "  ,N'Đọc số' AS ThanhToan   ";
             query += " FROM dbo.DocSo  hd ";
             query += " WHERE DANHBA=  '" + danhba + "' ";
@@ -122,14 +123,14 @@ namespace QuanLyKhachHang.Class
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = " SELECT top(12)  CAST(hd.KY as int ) as KyHD, CAST(hd.NAM as int ) as NamHD , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CODE as CodeMoi, cast(hd.CSCU as int) as CSCU, cast(hd.CSMOI as int) as CSMOI,cast(hd.TIEUTHU as int) AS TIEUTHU , CAST( hd.PHI as int)  as PBVMT, CAST( hd.THUE as int) as TGTGT,  CAST( hd.GIABAN as int) as TNuoc, (hd.PHI + hd.THUE +hd.GIABAN) as ThanhTien ";
+            query = " SELECT top(" + 12 + ")  ( CASE WHEN hd.KY<10 THEN '0'+ CONVERT(VARCHAR(20),hd.KY) ELSE CONVERT(VARCHAR(20),hd.KY) END+'/' + CONVERT(VARCHAR(20),hd.NAM)) as  NAM , CONVERT(NCHAR(10), hd.DenNgay, 103) AS NGAYDOC, CODE as CodeMoi, cast(hd.CSCU as int) as CSCU, cast(hd.CSMOI as int) as CSMOI,cast(hd.TIEUTHU as int) AS TIEUTHU , (hd.PHI + hd.THUE +hd.GIABAN) as ThanhTien ";
             query += " ,CASE WHEN NGAYGIAITRACH IS NULL OR NGAYGIAITRACH ='' THEN '' ELSE 'x'  END AS ThanhToan   ";
             query += " FROM dbo.HOADON  hd ";
             query += " WHERE DANHBA= '" + danhba + "'  ";
             query += " ORDER BY hd.Nam desc,CAST(hd.KY as int) DESC ";
 
 
-            DataTable TB_HD = Class.LinQConnection.getDataTableHoaDon(query);
+            DataTable TB_HD = LinQConnection.getDataTableHoaDon(query);
 
             ds.Tables["TIEUTHU"].Merge(TB_HD);
 

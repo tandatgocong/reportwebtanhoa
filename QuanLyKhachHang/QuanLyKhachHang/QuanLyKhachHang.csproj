@@ -317,6 +317,7 @@
     <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
     <Content Include="Image\icon2.png" />
+    <Content Include="Image\l11.gif" />
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\Marker.png" />
@@ -358,16 +359,20 @@
     <Content Include="View\bbDanhSach.aspx" />
     <Content Include="View\bbNhapThongTinBe.aspx" />
     <Content Include="View\bbNhapHoanCong.aspx" />
+    <Content Include="View\Home.aspx" />
+    <Content Include="View\HTMLPage1.htm" />
     <Content Include="View\LogOut.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
     <Content Include="View\Print.aspx" />
-    <Content Include="View\Home.aspx" />
+    <Content Include="View\HomeDMA.aspx" />
     <Content Include="View\HomePage.Master" />
     <Content Include="View\Login.aspx" />
+    <Content Include="View\pThongTinKhachHang.aspx" />
     <Content Include="View\QuanLyBaoBe.aspx" />
     <Content Include="View\QuanLyDMA_Chart.aspx" />
     <Content Include="View\QuanLyDMA_ChartLL.aspx" />
+    <Content Include="View\QuanLyMangLuoi.aspx" />
     <Content Include="View\QuanLyVan.aspx" />
     <Content Include="View\zphanquyen.aspx" />
     <Content Include="Web.config">
@@ -520,6 +525,13 @@
     <Compile Include="View\bbNhapHoanCong.aspx.designer.cs">
       <DependentUpon>bbNhapHoanCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\LogOut.aspx.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -548,12 +560,12 @@
     <Compile Include="View\Print.aspx.designer.cs">
       <DependentUpon>Print.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="View\HomeDMA.aspx.cs">
+      <DependentUpon>HomeDMA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="View\HomeDMA.aspx.designer.cs">
+      <DependentUpon>HomeDMA.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.Master.cs">
       <DependentUpon>HomePage.Master</DependentUpon>
@@ -568,6 +580,13 @@
     </Compile>
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pThongTinKhachHang.aspx.cs">
+      <DependentUpon>pThongTinKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pThongTinKhachHang.aspx.designer.cs">
+      <DependentUpon>pThongTinKhachHang.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyBaoBe.aspx.cs">
       <DependentUpon>QuanLyBaoBe.aspx</DependentUpon>
@@ -589,6 +608,13 @@
     </Compile>
     <Compile Include="View\QuanLyDMA_ChartLL.aspx.designer.cs">
       <DependentUpon>QuanLyDMA_ChartLL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyMangLuoi.aspx.cs">
+      <DependentUpon>QuanLyMangLuoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyMangLuoi.aspx.designer.cs">
+      <DependentUpon>QuanLyMangLuoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyVan.aspx.cs">
       <DependentUpon>QuanLyVan.aspx</DependentUpon>
