@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+ 
 
 <script language="javascript" type="text/javascript">
     window.document.getElementById("HOME").className = "top_link";
@@ -11,14 +11,7 @@
     window.document.getElementById("APLUC").className = "top_link";
     window.document.getElementById("BAOBE").className = "top_link";
 
-    function kk() {
-        var input = document.getElementById('pac-input');
-        var newUrl = "QuanLyMangLuoi.aspx?db=" + input.value;
-        location.href = newUrl;
-      //  alert(newUrl);
-    }
-
-
+    
     </script> 
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -100,9 +93,40 @@
       #target {
         width: 345px;
       }
+        .style1
+        {
+            width: 114px;
+        }
+        .style2
+        {
+            width: 105px;
+        }
+        .style3
+        {
+            width: 117px;
+        }
     </style>
 
   <body>
+  <table class='table_list' style="width:100%;" border=1>   
+  <tr><td class="style1">
+          <asp:CheckBox ID="ckThuaDat" runat="server" Text="Thửa Đất" 
+          oncheckedchanged="ckThuaDat_CheckedChanged" AutoPostBack="True" />
+      </td><td class="style3">
+      <asp:CheckBox ID="ckTuyenDuong" runat="server" Text="Tuyến Đường" 
+              AutoPostBack="True" oncheckedchanged="ckTuyenDuong_CheckedChanged" />
+      </td><td class="style3">
+          <asp:CheckBox ID="ckTuyenOng" runat="server" Text="Tuyến Ống" 
+              AutoPostBack="True" oncheckedchanged="ckTuyenOng_CheckedChanged" />
+      </td><td class="style2">
+          <asp:CheckBox ID="ckDongHo" runat="server" Text="Đồng Hồ" 
+              oncheckedchanged="ckDongHo_CheckedChanged" AutoPostBack="True" />
+      </td><td>
+          <asp:DropDownList ID="MaDMA" runat="server" 
+              onselectedindexchanged="MaDMA_SelectedIndexChanged" AutoPostBack="True">
+          </asp:DropDownList>
+      </td><td>fdsads</td><td>fdsads</td></tr>
+  </table>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">   
      <div id="map" style="width: 100%; height: 100vh">
     </div>
@@ -118,17 +142,31 @@
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
         function initAutocomplete() {
-            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+
+            
+            var latlng = new google.maps.LatLng(<%=Session["lat"]%>, <%=Session["lng"]%>); 
             var marker;
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 18,
+                zoom: 16,
                 mapTypeId: 'roadmap'
             });
 
+            /*
+            google.maps.visualRefresh = true;
+            var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+              (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+            if (isMobile) {
+              var viewport = document.querySelector("meta[name=viewport]");
+              viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+            }
+            var mapDiv = document.getElementById('map');
+            mapDiv.style.width = isMobile ? '100%' : '100%';
+            mapDiv.style.height = isMobile ? '100%' : '100vh';
+            */
 
-            /* Try HTML5 geolocation.*/
+            /* Try HTML5 geolocation.
             var infoWindow = new google.maps.InfoWindow({ map: map });
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -148,55 +186,193 @@
                 handleLocationError(false, infoWindow, map.getCenter());
             }
 
+            */
 
+            /// DMA
+             <% if(Session["dma"]=="0") { %>
+                /*var layer1 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1gosPIEZPWjr_sBAEGwWzTB7ZU5BQuR7q91oLbRy5'
+                    },
+                    options: {
+                        styleId: 3,
+                        templateId: 4
+                    },
+                    styles: [{
+                        polygonOptions: { 
+                            fillOpacity: 9
+                        }
+                    }]
+                });
+                layer1.setMap(map);  */
+             <% }else{ %>
 
-            var layer3 = new google.maps.FusionTablesLayer({
-                query: {
-                    select: 'col7',
-                    from: '1ShMQTJf2bG3A09NsMyO3i7RWECWr0RFD7L_YsZya'
-                },
-                options: {
-                    styleId: 2,
-                    templateId: 2
-                }
-            });
-
-            layer3.setMap(map);
-          
-
-            /////////////
-            var layer = new google.maps.FusionTablesLayer({
-                query: {
-                    select: 'col2',
-                    from: '1mR0wrH3Apk_UbdCB6umqwJmTR7gwSZHUvn3T83s7'
-                },
-                styles: [{
-                    polygonOptions: {
-                        fillColor: '#FFFF99',
-                        fillOpacity: 0.0
+                 var layer1 = new google.maps.FusionTablesLayer({
+                        query: {
+                            select: 'col2',
+                            from: '1gosPIEZPWjr_sBAEGwWzTB7ZU5BQuR7q91oLbRy5',
+                            where: 'name=\'<%=Session["dma"] %>\''
+                        },
+                        options: {
+                            styleId: 3,
+                            templateId: 4
+                        }
+                    });
+                    layer1.setMap(map);
+                     
+                     // dhn
+                      var layer4 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col3',
+                        from: '1OhVqP2doaHq7b1uG0T_nMtkHu3Yu2hzuzekFnyd4',
+                        where: 'dma = <%=Session["iddma"] %>'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
                     }
-                }]
-            });
-            layer.setMap(map);
+                });
+                layer4.setMap(map);
 
-            var layer2 = new google.maps.FusionTablesLayer({
-                query: {
-                    select: 'col1',
-                    from: '1UVqvl4d6mTfYuqPiAtzfqVmKWKlZ-o-Ja98wsRTX'
-                },
-                options: {
-                    styleId: 4,
-                    templateId: 4
-                }
-            });
 
-            layer2.setMap(map);
+              <% } %>
+
+            /// THUA DAT
+            <% if(Session["thuadat"]=="1") { %>
+                var layer2 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col7',
+                        from: '1ShMQTJf2bG3A09NsMyO3i7RWECWr0RFD7L_YsZya'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer2.setMap(map);
+                <% } %>
+          
+            ///////// TUYEN DUONG ////
+             <% if(Session["tuyenduong"]=="1") { %>
+                var layer3 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1mR0wrH3Apk_UbdCB6umqwJmTR7gwSZHUvn3T83s7'
+                    },
+                    styles: [{
+                        polygonOptions: {
+                            fillColor: '#FFFF00',
+                            fillOpacity: 0.0
+                        }
+                    }]
+                });
+                layer3.setMap(map);
+             <% } %>
+
+            ///// DONG HO KHACH HANG //////
+            <% if(Session["dongho"]=="1") { %>
+                var layer4 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col3',
+                        from: '1OhVqP2doaHq7b1uG0T_nMtkHu3Yu2hzuzekFnyd4'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer4.setMap(map);
+
+           <% } %>
             
-            //////////////
+            <% if(Session["tuyenong"]=="1") { %>
+                            
+                ////// ONG CAI/ ///////
+                   var layer5 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col7',
+                        from: '1IaexZr3GNIRkUkyEyvAnPhYMHOFy1CGNPZ_tqNzv'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer5.setMap(map); 
+              
+                //
+                /*
+                /// ong nghanh ///
+             var layer6 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1r04MVRg1lS2lu6TZXEoaqA5M0WmrvFxdUngaFXYN'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer6.setMap(map);
+                
+                */
+                 /// TAN PHU 03
+                 var layer6 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1SDAI0y50XMdQX7oVyT-rN84uC7SMWz1PSOvUIe2J'
+                    }
+                });
+                layer6.setMap(map);
+
+                /// TAN BINH 01
+                 var layer6 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1SWckvNe0HGLV2I2_GKCS3mZb8Grp6coUB9EnQhsd'
+                    }
+                });
+                layer6.setMap(map);
 
 
-            ////////////////////
+                 /// TAN BINH 02
+                 var layer7 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1AZPx3Qmus-KGHMoDGgjHkG_xPuHd8E1Sk-NiOXGI'
+                    }
+                });
+                layer7.setMap(map); 
 
+                /// TAN PHU 01
+                 var layer8 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1ypQgJNX5V4-pDQEEOVTlMK9XRPbyOnEwwJsLWscm'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer8.setMap(map);
+
+                 /// TAN PHU 02
+                 var layer9 = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: 'col2',
+                        from: '1dLDjbhR-Pik_V4V0teOk1OBJw52xhxPowZDGMRpF'
+                    },
+                    options: {
+                        styleId: 2,
+                        templateId: 2
+                    }
+                });
+                layer9.setMap(map);
+
+
+              <% } %>
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
@@ -263,8 +439,6 @@
          
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
-
-
   </body>
 
               

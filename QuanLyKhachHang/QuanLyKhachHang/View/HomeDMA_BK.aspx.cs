@@ -9,7 +9,7 @@ using QuanLyKhachHang.Class;
 
 namespace QuanLyKhachHang.View
 {
-    public partial class HomeDMA : System.Web.UI.Page
+    public partial class HomeDMA_BK : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace QuanLyKhachHang.View
             //
 
             Session["dsDHTong"] = null;
-            string sql2 = " SELECT *,CASE WHEN ApLuc IS NULL THEN '1' ELSE CASE WHEN ApLuc ='0' or ApLuc like '-%'  THEN  '0' ELSE '2'  END END AS F from THONGTINDMA where  Lat is not null ";
+            string sql2 = " SELECT *,CASE WHEN ApLuc IS NULL THEN '1' ELSE '0' END AS F from THONGTINDMA where  Lat is not null ";
             DataTable dhTong = C_KyThuat.getDataTable(sql2);
             Session["dsDHTong"] = dhTong;
 
@@ -48,14 +48,8 @@ namespace QuanLyKhachHang.View
             //    DataTable t2 = QuanLyKhachHang.Class.LinQConnectionGis.getDataTable(sqTB);
 
             //}
-            
-
-            // xả nước
-
-
-            Session["dsXaNuoc"] = null;
-            string sql3 = " SELECT * from KT_Van   where  XaCan='True' AND NgayXaCan= " + DateTime.Now.Date.Day;
-            Session["dsXaNuoc"] = C_KyThuat.getDataTable(sql3); ;
+           
+           
 
         }
     }

@@ -311,6 +311,7 @@
     <Content Include="Image\button_bg.png" />
     <Content Include="Image\Capture.JPG" />
     <Content Include="Image\delete2.ico" />
+    <Content Include="Image\dot.png" />
     <Content Include="Image\down.png" />
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
@@ -359,11 +360,13 @@
     <Content Include="View\bbDanhSach.aspx" />
     <Content Include="View\bbNhapThongTinBe.aspx" />
     <Content Include="View\bbNhapHoanCong.aspx" />
+    <Content Include="View\KT_SOIEU.aspx" />
+    <Content Include="View\HomeDMA_BK.aspx" />
     <Content Include="View\Home.aspx" />
-    <Content Include="View\HTMLPage1.htm" />
     <Content Include="View\LogOut.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
+    <Content Include="View\mobile.aspx" />
     <Content Include="View\Print.aspx" />
     <Content Include="View\HomeDMA.aspx" />
     <Content Include="View\HomePage.Master" />
@@ -525,6 +528,20 @@
     <Compile Include="View\bbNhapHoanCong.aspx.designer.cs">
       <DependentUpon>bbNhapHoanCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\KT_SOIEU.aspx.cs">
+      <DependentUpon>KT_SOIEU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\KT_SOIEU.aspx.designer.cs">
+      <DependentUpon>KT_SOIEU.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomeDMA_BK.aspx.cs">
+      <DependentUpon>HomeDMA_BK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HomeDMA_BK.aspx.designer.cs">
+      <DependentUpon>HomeDMA_BK.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -552,6 +569,13 @@
     </Compile>
     <Compile Include="View\dongnuoc.aspx.designer.cs">
       <DependentUpon>dongnuoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\mobile.aspx.cs">
+      <DependentUpon>mobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\mobile.aspx.designer.cs">
+      <DependentUpon>mobile.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>

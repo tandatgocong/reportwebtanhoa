@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="HomeDMA.aspx.cs" Inherits="QuanLyKhachHang.View.HomeDMA" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="HomeDMA_BK.aspx.cs" Inherits="QuanLyKhachHang.View.HomeDMA_BK" %>
 
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
@@ -172,9 +172,9 @@
                                  <% 
                                     if((string)table.Rows[j]["F"]=="1")
                                     {%>
-                                        iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;'><img width='50px' height='24px'  src='../Image/error.gif' /></td> ";
+                                        iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;'><img width='82px' height='24px'  src='../Image/error.gif' /></td> ";
                                      <%}
-                                     else  if((string)table.Rows[j]["F"]=="0")
+                                     else  if((string)table.Rows[j]["ApLuc"]=="0")
                                      {%>
                                          iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;background-color:Yellow;font-size:x-large;color:Blue;font-weight:bold'><b><a target='_blank'  href='QuanLyDMA_Chart.aspx?value=<%=table.Rows[j]["IDApLuc"]%>'><%=table.Rows[j]["ApLuc"]%> </a></b></td> ";
                                      <%}
@@ -185,15 +185,15 @@
                                  
                                  %>
                                  
-                                // iwContent+=" <td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMin"]%></td> ";
-                               //  iwContent+="</tr> ";
-                              //   iwContent+="<tr><td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMax"]%></td> ";
+                                 iwContent+=" <td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMin"]%></td> ";
+                                 iwContent+="</tr> ";
+                                 iwContent+="<tr><td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMax"]%></td> ";
                                  iwContent+=" </tr> ";
-                           //      iwContent+=" <tr> ";
+                                 iwContent+=" <tr> ";
                            //      iwContent+="   <td style='width:88px;height: 30px;'>Lưu Lượng</td><td colspan=2 ";
                             //     iwContent+="        style='text-align: center'></td> ";
                             //     iwContent+="  </tr> ";
-                                iwContent+="</table>";
+                            //     iwContent+="</table>";
                               infowindow3.setContent(iwContent);
 
 				
@@ -316,54 +316,10 @@
 			      options: {
 				    styleId: 3,
 				    templateId: 4
-			    },
-                styles: [{
-                        polygonOptions: { 
-                            fillOpacity: 0.1
-                        }
-                    }]
+			    }
             });
             layer.setMap(map);
 
-
-
-            ///////// xa can
-
-
-                     <% 
-                        table = new DataTable();                       
-                       if(Session["dsXaNuoc"]!=null)
-                       {
-                        table = (DataTable)Session["dsXaNuoc"];
-                        for(int i=0;i<table.Rows.Count;i++)
-                        {
-                          f++;
-                        %>
-                           var x = parseFloat(<%=table.Rows[i]["lat"]%>);
-                           var y = parseFloat(<%=table.Rows[i]["lng"]%>);
-                          // var latlng2 = new google.maps.LatLng(x, y);
-
-                             var latlng2 = new google.maps.LatLng(x, y);
-                             var name<%=f%> =<%=table.Rows[i]["ID"]%>;
-                            
-
-                              var marker<%=f%> = new google.maps.Marker({
-				              position: latlng2,
-                              icon: '/Image/xacan.gif', 
-				              map: map,
-				              title: name<%=f%>
-				              });
-
-                           
-                           
-                        <%
-                        }
-                       }
-                    %>
-
-
-
-            /////////
 
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
@@ -400,7 +356,7 @@
                         return;
                     }
                     var icon = {
-                        url: '/Image/icon2.png',
+                        url: 'Image/icon2.png',
                         size: new google.maps.Size(100, 100),
                         origin: new google.maps.Point(0, 0),
                         anchor: new google.maps.Point(17, 34),

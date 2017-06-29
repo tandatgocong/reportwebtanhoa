@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>       
@@ -62,7 +62,18 @@
                </ul>-->
             </li>
  			<li id="mnGioithieu" class="top"><a href="LogOut.aspx" id="KIEMPHIEU" class="top_link" ><span>LOG OUT</span></a></li> 
-            <li id="Li3" class="top"><a href="QuanLyMangLuoi.aspx?db=1" id="MANGLUOI" class="top_link" ><span>MẠNG LƯỚI</span></a></li>
+            <li id="Li3" class="top"><a href="QuanLyMangLuoi.aspx?db=1" id="MANGLUOI" class="top_link" ><span>MẠNG LƯỚI</span></a>
+                 <ul class="sub_gioithieu">
+                     <li >
+                          <a href="KT_SOIEU.aspx" class="">LỘ TRÌNH </a>
+                     </li>    
+                     <li >
+                          <a href="bbNhapHoanCong.aspx" class="">HOÀN CÔNG</a>
+                     </li>
+                      
+                   </ul> 
+
+            </li>
             <li id="Li4" class="top"><a href="HomeDMA.aspx" id="APLUC" class="top_link" ><span>ÁP LỰC</span></a></li> 
            <!--<li id="mnGioithieu" class="top"><a href="dmaApLuc.aspx" id="APLUC" class="top_link" ><span>ÁP LỰC NƯỚC</span></a></li>  -->
             <!--<li id="mnBieuQuyet" class="top"><a href="pBauCuBanKS.aspx" id="BIEUQUYET" class="top_link" ><span>BẦU CỬ</span></a>

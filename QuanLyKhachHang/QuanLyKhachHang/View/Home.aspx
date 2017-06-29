@@ -3,10 +3,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <script type="text/javascript">
-    function reFresh() {
-        window.open(location.reload(true))
-    }
-    window.setInterval("reFresh()", 300000);
+//    var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+//      (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+//    if (isMobile) {
+//        var viewport = document.querySelector("meta[name=viewport]");
+//        viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+//        document.location.href = "moblie.aspx";
+//    }
+
+//    function reFresh() {
+//        window.open(location.reload(true))
+//    }
+//    window.setInterval("reFresh()", 300000);
 </script>
 
 <script language="javascript" type="text/javascript">

@@ -44,7 +44,15 @@ namespace QuanLyKhachHang
             Session["imgfile"] = "";
             Session["phong"] = "";
             Session["page"] = null;
-           
+
+            Session["thuadat"] = "0";
+            Session["tuyenduong"] = "0";
+            Session["tuyenong"] = "0";
+            Session["dongho"] = "0";
+            Session["iddma"] = "0";
+            Session["dma"] = "0";
+            Session["poy"] = null;
+            
             // khóa website
             Application.Lock();
 
