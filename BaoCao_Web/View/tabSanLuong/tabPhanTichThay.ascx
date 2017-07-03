@@ -25,7 +25,11 @@
         <table style="font-size:14px; font-family: Times New Roman;">
             <tr>
                 <td class="style2"> 
-                    &nbsp;</td>
+                    Hiệu&nbsp; </td>
+                <td class="style2"> 
+                    <asp:DropDownList ID="cbHieu" runat="server" Height="20px" Width="84px">
+                    </asp:DropDownList>
+                </td>
                 <td class="style2"> 
                     &nbsp;&nbsp; Code&nbsp;</td>
                 <td class="style2"> &nbsp;</td>

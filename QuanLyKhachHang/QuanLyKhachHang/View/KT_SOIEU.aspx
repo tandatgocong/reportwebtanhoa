@@ -152,7 +152,7 @@
                    style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
                    <asp:CheckBox ID="chekHien" runat="server" AutoPostBack="True" Font-Bold="True" 
                        Font-Size="Small" oncheckedchanged="chekHien_CheckedChanged" 
-                       Text="Chuyển Sửa Bể" />
+                       Text="Sổ Đọc Số" />
                </td>
              </tr>
              
@@ -199,7 +199,7 @@
 
  
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height: 500px"></div>
+     <div id="map" style="width: 100%; height: 100vh"></div>
 
     <script>
         var lagx;
@@ -223,19 +223,15 @@
             });
  
                    
-                var  infoWindow2 = new google.maps.InfoWindow();
-
-                       // Event that closes the Info Window with a click on the map
-                       google.maps.event.addListener(map, 'click', function() {
-                          infoWindow2.close();
-                       });
+                var  infoWindow2 = new google.maps.InfoWindow();  
 
                      <% 
                        DataTable table = new DataTable();                      
                        if(Session["dsBaoBe"]!=null)
                        {
                         table = (DataTable)Session["dsBaoBe"];
-                        for(int i=0;i<table.Rows.Count;i++)
+                        int tong=table.Rows.Count;
+                        for(int i=0;i<tong;i++)
                         {
                          
                         %>
@@ -245,12 +241,43 @@
                             lagy= parseFloat(<%=table.Rows[i]["lng"]%>);
                           // var latlng2 = new google.maps.LatLng(x, y);
 
+                           var icon_='/Image/dot.png';
+                          <% if(i==0)
+                                {
+                                 %>  icon_='/Image/s.png';
+                                 <%
+                                }                                 
+                                else if(i==(tong-1)) 
+                                {
+                                  %>  icon_='/Image/e.png';
+                                 <%
+                                }
+                                 
+                             %>
+
                              var latlng2 = new google.maps.LatLng(x, y);
                               var marker<%=i%> = new google.maps.Marker({
 				              position: latlng2,
-                               icon: '/Image/dot.png',
+                               icon: icon_,
 				               map: map
 				              });
+
+                                google.maps.event.addListener(marker<%=i%>, 'click', function() {
+                              // Creating the content to be inserted in the infowindow
+                              var iwContent="<table ><tr><td colspan='2' align='center'> </td></tr>";
+                          iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Danh Bộ :<b> <%=table.Rows[i]["DANHBO"]%> &nbsp; </td></tr>";
+                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Lộ Trình :<b>  <%=table.Rows[i]["LOTRINH"]%> </b></> &nbsp;  </td></tr>";
+                          iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Địa Chỉ :<b>  <%=table.Rows[i]["DIACHI"]%> </b></> &nbsp;  </td></tr>";                          
+                          iwContent+="</table>";
+      
+                              // including content to the Info Window.
+                              infoWindow2.setContent(iwContent);
+
+                              // opening the Info Window in the current map and at the current marker location.
+                              infoWindow2.open(map, marker<%=i%>);
+                           });
+
+                              
 
                         <%
                         }

@@ -45,7 +45,7 @@
     <file relUrl="ckeditor/lang/fr-ca.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="ckeditor/skins/office2003/images/noimage.png" publishTime="03/18/2015 10:12:21" />
     <file relUrl="View/tabDHN/tabBienDocCS.ascx" publishTime="03/18/2015 10:11:42" />
-    <file relUrl="bin/BaoCao_Web.dll" publishTime="05/27/2016 16:33:57" />
+    <file relUrl="bin/BaoCao_Web.dll" publishTime="06/23/2017 10:25:53" />
     <file relUrl="ckeditor/plugins/bbcode/plugin.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="ckeditor/plugins/docprops/plugin.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="ckeditor/plugins/uicolor/yui/assets/hue_thumb.png" publishTime="03/18/2015 10:12:20" />
@@ -72,7 +72,7 @@
     <file relUrl="Image/DMA/TH-12-05.PNG" publishTime="08/18/2015 09:13:33" />
     <file relUrl="Image/edit.ico" publishTime="03/18/2015 10:10:15" />
     <file relUrl="View/BaoKinhDoanh/SoSanhSoLieuKD.ascx" publishTime="03/18/2015 10:11:38" />
-    <file relUrl="View/QuanLyDMA.aspx" publishTime="05/27/2016 08:33:54" />
+    <file relUrl="View/QuanLyDMA.aspx" publishTime="02/24/2017 09:05:49" />
     <file relUrl="Image/DMA/TH-12-04.PNG" publishTime="08/18/2015 09:13:33" />
     <file relUrl="ckeditor/plugins/smiley/images/envelope.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="ckeditor/plugins/placeholder/dialogs/placeholder.js" publishTime="03/18/2015 10:12:17" />
@@ -83,6 +83,7 @@
     <file relUrl="ckeditor/plugins/a11yhelp/lang/en.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="Image/DMA/TH-11-09.PNG" publishTime="08/18/2015 09:13:32" />
     <file relUrl="Image/DMA/TH-11-11.PNG" publishTime="08/18/2015 09:13:32" />
+    <file relUrl="addDongNuocc.aspx" publishTime="02/17/2017 08:15:13" />
     <file relUrl="Image/DMA/TH-07-07.png" publishTime="08/18/2015 09:13:32" />
     <file relUrl="ckeditor/plugins/forms/dialogs/button.js" publishTime="03/18/2015 10:12:17" />
     <file relUrl="View/Login.aspx" publishTime="03/18/2015 10:11:41" />
@@ -175,7 +176,7 @@
     <file relUrl="Image/Untitled.png" publishTime="03/18/2015 10:10:15" />
     <file relUrl="ckeditor/plugins/smiley/images/sad_smile.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="Image/nochange.png" publishTime="03/18/2015 10:10:15" />
-    <file relUrl="View/hc_CapNhatGiayXP.aspx" publishTime="04/01/2016 10:07:52" />
+    <file relUrl="View/hc_CapNhatGiayXP.aspx" publishTime="02/16/2017 15:07:25" />
     <file relUrl="Image/DMA/TH-07-03.png" publishTime="08/18/2015 09:13:32" />
     <file relUrl="ckeditor/plugins/smiley/images/angry_smile.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="Image/DMA/TH-11-14.PNG" publishTime="08/18/2015 09:13:32" />
@@ -258,7 +259,7 @@
     <file relUrl="ckeditor/plugins/smiley/images/wink_smile.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="Image/DMA/TH-09-01.PNG" publishTime="08/18/2015 09:13:32" />
     <file relUrl="ckeditor/skins/v2/images/sprites_ie6.png" publishTime="03/18/2015 10:12:21" />
-    <file relUrl="View/HomePage.Master" publishTime="06/02/2016 13:01:59" />
+    <file relUrl="View/HomePage.Master" publishTime="02/16/2017 15:05:26" />
     <file relUrl="ckeditor/plugins/smiley/images/thumbs_up.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="ckeditor/lang/_translationstatus.txt" publishTime="03/18/2015 10:12:16" />
     <file relUrl="View/tabBieuDo/tab_BieuDoDoanhThu.ascx" publishTime="03/18/2015 10:11:41" />
@@ -322,17 +323,18 @@
     <file relUrl="ckeditor/plugins/adobeair/plugin.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="ckeditor/plugins/smiley/images/kiss.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="Image/block_bg.gif" publishTime="03/18/2015 10:10:15" />
-    <file relUrl="count_visit.txt" publishTime="07/06/2016 16:39:48" />
+    <file relUrl="count_visit.txt" publishTime="06/23/2017 10:41:17" />
     <file relUrl="ckeditor/plugins/uicolor/dialogs/uicolor.js" publishTime="03/18/2015 10:12:18" />
     <file relUrl="Image/DMA/TH-02-01.png" publishTime="08/18/2015 09:13:31" />
     <file relUrl="View/BaoKinhDoanh/UpdateKinhDoanh.ascx" publishTime="03/18/2015 10:11:38" />
     <file relUrl="ckeditor/lang/tr.js" publishTime="03/18/2015 10:12:16" />
-    <file relUrl="bin/BaoCao_Web.pdb" publishTime="05/27/2016 16:33:57" />
+    <file relUrl="bin/BaoCao_Web.pdb" publishTime="06/23/2017 10:25:52" />
+    <file relUrl="dongnuoc.aspx" publishTime="02/17/2017 08:15:53" />
     <file relUrl="ckeditor/plugins/uicolor/yui/yui.js" publishTime="03/18/2015 10:12:20" />
     <file relUrl="App_Browsers/BrowserFile1.browser" publishTime="08/13/2015 13:46:41" />
     <file relUrl="Image/DMA/TH-12-02.png" publishTime="08/18/2015 09:13:33" />
     <file relUrl="Image/down.png" publishTime="03/18/2015 10:10:15" />
-    <file relUrl="View/tabSanLuong/tabPhanTichThay.ascx" publishTime="08/06/2015 13:17:36" />
+    <file relUrl="View/tabSanLuong/tabPhanTichThay.ascx" publishTime="06/20/2017 15:35:43" />
     <file relUrl="ckeditor/lang/da.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif" publishTime="03/18/2015 10:12:18" />
     <file relUrl="ckeditor/skins/v2/images/toolbar_start.gif" publishTime="03/18/2015 10:12:21" />
@@ -376,7 +378,7 @@
     <file relUrl="ckeditor/plugins/showblocks/images/block_h2.png" publishTime="03/18/2015 10:12:18" />
     <file relUrl="ckeditor/lang/ka.js" publishTime="03/18/2015 10:12:16" />
     <file relUrl="View/QuanLyDMA_ChartLL.aspx" publishTime="05/26/2016 16:09:12" />
-    <file relUrl="Web.config" publishTime="05/27/2016 13:07:22" />
+    <file relUrl="Web.config" publishTime="06/23/2017 10:46:14" />
     <file relUrl="Image/1up.png" publishTime="03/18/2015 10:10:15" />
     <file relUrl="ckeditor/plugins/uicolor/lang/he.js" publishTime="03/18/2015 10:12:18" />
     <file relUrl="ckeditor/plugins/smiley/images/teeth_smile.gif" publishTime="03/18/2015 10:12:18" />

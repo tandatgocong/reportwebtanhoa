@@ -73,6 +73,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addDB.aspx" />
     <Content Include="callBaoBe.aspx" />
     <Content Include="callBaoBeAdd.aspx" />
     <Content Include="callcenter.aspx" />
@@ -302,6 +303,7 @@
     <Content Include="Image\1down.png" />
     <Content Include="Image\1up.png" />
     <Content Include="Image\add.ico" />
+    <Content Include="Image\airport_runway.png" />
     <Content Include="Image\bg.gif" />
     <Content Include="Image\bg_head.jpg" />
     <Content Include="Image\block_bg.gif" />
@@ -310,9 +312,14 @@
     <Content Include="Image\bullet0_over.png" />
     <Content Include="Image\button_bg.png" />
     <Content Include="Image\Capture.JPG" />
+    <Content Include="Image\chiropractor.png" />
     <Content Include="Image\delete2.ico" />
+    <Content Include="Image\dhTong.png" />
+    <Content Include="Image\dhTong2.png" />
+    <Content Include="Image\dhTong22.png" />
     <Content Include="Image\dot.png" />
     <Content Include="Image\down.png" />
+    <Content Include="Image\e.png" />
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\error.gif" />
@@ -322,6 +329,8 @@
     <Content Include="Image\Logo Tan Hoa.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\Marker.png" />
+    <Content Include="Image\Marker2.png" />
+    <Content Include="Image\MarkerSuaTam-.png" />
     <Content Include="Image\MarkerSuaTam.png" />
     <Content Include="Image\Markerxong.png" />
     <Content Include="Image\menu_bg.png" />
@@ -329,6 +338,7 @@
     <Content Include="Image\news_list_bg.gif" />
     <Content Include="Image\nochange.png" />
     <Content Include="Image\print_icon.gif" />
+    <Content Include="Image\s.png" />
     <Content Include="Image\ss-GIAM.PNG" />
     <Content Include="Image\ss-TANG.PNG" />
     <Content Include="Image\table_list_bghead.png" />
@@ -339,8 +349,12 @@
     <Content Include="Image\vanchan.png" />
     <Content Include="Image\warning.gif" />
     <Content Include="Image\warning.png" />
+    <Content Include="Image\warning2.png" />
+    <Content Include="Image\workshop.png" />
+    <Content Include="Image\xacan.gif" />
     <Content Include="Image\xacan.png" />
     <Content Include="Image\XOA.png" />
+    <Content Include="Image\ydot.png" />
     <Content Include="JavaScript\headmenu.css" />
     <Content Include="JavaScript\headmenu.js" />
     <Content Include="JavaScript\jquery-1.2.6.js" />
@@ -387,8 +401,16 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addDB.aspx.cs">
+      <DependentUpon>addDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addDB.aspx.designer.cs">
+      <DependentUpon>addDB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="callBaoBe.aspx.cs">
       <DependentUpon>callBaoBe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -653,6 +675,13 @@
     </Compile>
     <Compile Include="View\zphanquyen.aspx.designer.cs">
       <DependentUpon>zphanquyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

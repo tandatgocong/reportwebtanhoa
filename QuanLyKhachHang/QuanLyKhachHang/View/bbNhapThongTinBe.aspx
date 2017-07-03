@@ -139,7 +139,7 @@
                <td class="style10" 
                    style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">
                    <asp:Button ID="btXemBangKe" runat="server" CssClass="button1" Height="27px" 
-                       onclick="btXemBangKe_Click" Text="XEM THÔNG TIN" />
+                       onclick="btXemBangKe_Click" Text="XEM THÔNG TIN" Visible="False" />
                </td>
                <td class="style7" 
                    style="border-right:2px #99cc99 solid; font-size:10px; font-weight:normal;   border-bottom: 1px solid;">

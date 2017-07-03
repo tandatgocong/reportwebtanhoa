@@ -51,7 +51,7 @@ namespace QuanLyKhachHang.View
 
         protected void btXemBangKe_Click(object sender, EventArgs e)
         {
-            string sql = " SELECT  DongHo.Lat as lat,DongHo.Long as lng, DANHBO,HOTEN,SONHA,TENDUONG FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
+            string sql = " SELECT  DongHo.Lat as lat,DongHo.Long as lng, DANHBO,LOTRINH,HOTEN,(SONHA + ' ' +TENDUONG ) as DIACHI FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
             sql += " LEFt JOIN DongHo   ";
             sql += " ON kh.DANHBO= DongHo.DBDONGHONUOC ";
             sql += " WHERE  SUBSTRING(LOTRINH,1,2)='" + cbDot.SelectedValue + "' AND SUBSTRING(LOTRINH,3,2)='" + cbMay.SelectedValue + "' ORDER BY LOTRINH ASC ";
@@ -62,7 +62,8 @@ namespace QuanLyKhachHang.View
             string triangleCoords = "  [ ";
             for (int i = 0; i < tb.Rows.Count; i++)
             {
-                triangleCoords += "{lat: " + tb.Rows[i]["lat"].ToString() + ", lng: " + tb.Rows[i]["lng"].ToString() + "},";
+                if(!"".Equals(tb.Rows[i]["lat"].ToString()))
+                       triangleCoords += "{lat: " + tb.Rows[i]["lat"].ToString() + ", lng: " + tb.Rows[i]["lng"].ToString() + "},";
             }
 
             triangleCoords = triangleCoords.Remove(triangleCoords.Length - 1, 1) + " ]; ";            

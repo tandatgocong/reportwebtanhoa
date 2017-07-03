@@ -13,6 +13,15 @@ namespace BaoCao_Web.View.tabSanLuong {
     public partial class tabPhanTichThay {
         
         /// <summary>
+        /// cbHieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbHieu;
+        
+        /// <summary>
         /// code control.
         /// </summary>
         /// <remarks>

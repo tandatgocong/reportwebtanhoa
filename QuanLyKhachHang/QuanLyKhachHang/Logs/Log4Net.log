@@ -21,3 +21,6 @@
 2017-06-29 08:57:58,036 [7360] ERROR File LinQConnection getDataTableInvalid column name 'True'.
 2017-06-29 08:59:37,446 [4256] ERROR File LinQConnection getDataTableInvalid column name 'True'.
 2017-06-29 09:00:30,231 [4256] ERROR File LinQConnection getDataTableInvalid column name 'True'.
+2017-07-03 16:17:27,478 [10152] ERROR File LinQConnection getDataTableInvalid object name 'DANHBO'.
+2017-07-03 16:17:52,874 [10152] ERROR File LinQConnection getDataTableInvalid object name 'DANHBO'.
+2017-07-03 16:19:34,363 [10152] ERROR File LinQConnection getDataTableInvalid object name 'DANHBO'.

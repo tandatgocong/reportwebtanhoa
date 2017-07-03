@@ -316,7 +316,7 @@
                 });
                 layer6.setMap(map);
                 
-                */
+                *
                  /// TAN PHU 03
                  var layer6 = new google.maps.FusionTablesLayer({
                     query: {
@@ -369,7 +369,7 @@
                         templateId: 2
                     }
                 });
-                layer9.setMap(map);
+                layer9.setMap(map);*/
 
 
               <% } %>
