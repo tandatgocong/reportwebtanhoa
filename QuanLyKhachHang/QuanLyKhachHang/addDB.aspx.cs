@@ -38,9 +38,9 @@ namespace QuanLyKhachHang
 
             string sql = " INSERT INTO DANHBO VALUES ('" + db + "','" + lat + "','" + lng + "')";
             if (C_KyThuat.ExecuteCommand_(sql) > 0)
-                Label1.Text = "Thành Công";
+                Label2.Text = "Thành Công";
             else
-                Label1.Text = "Thất Bại";
+                Label2.Text = "Thất Bại";
 
         }
     }

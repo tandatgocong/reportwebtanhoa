@@ -1,46 +1,55 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addDB.aspx.cs" Inherits="QuanLyKhachHang.addDB" %>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-        <script>
+
+ <!DOCTYPE html>
+<html lang="en-us">
+<head>
+<style>
+.city {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   max-width: 300px;
+   height: 300px;
+   border: 1px solid black;
+}   
+</style>
+       <script>
 
 
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                alert('Khong Tim Dia Chi');
-            }
-        }
+           function getLocation() {
+               if (navigator.geolocation) {
+                   navigator.geolocation.getCurrentPosition(showPosition);
+               } else {
+                   alert('Khong Tim Dia Chi');
+               }
+           }
 
-        function showPosition(position) {
-            document.getElementById("Lat").value = position.coords.latitude;
-            document.getElementById("Long").value = position.coords.longitude;
+           function showPosition(position) {
+               document.getElementById("Lat").value = position.coords.latitude;
+               document.getElementById("Long").value = position.coords.longitude;
 
-        }
+           }
 
 
-        function save() {
-             var _db = document.getElementById("db").value;
-             var _Lat = document.getElementById("Lat").value;
-             var _Long = document.getElementById("Long").value;
-            var newUrl = "addDB.aspx?lat=" + _Lat + "&lng=" + _Long + "&db=" + _db;
-            document.location.href = newUrl;
-           
+           function save() {
+               var _db = document.getElementById("db").value;
+               var _Lat = document.getElementById("Lat").value;
+               var _Long = document.getElementById("Long").value;
+               var newUrl = "addDB.aspx?lat=" + _Lat + "&lng=" + _Long + "&db=" + _db;
+               document.location.href = newUrl;
 
-        }
+
+           }
 
 </script>
-    <style type="text/css">
-        .style1
-        {
-            width: 61px;
-        }
-    </style>
 </head>
 <body>
-<button onclick="getLocation()">Tim</button>
- <form  runat=server >  <p id="demo">
+
+<h1>Demo Vị Trí ĐHN</h1>
+
+<div class="city">
+  <button onclick="getLocation()">Tim</button>
+  <p><form id="Form1"  runat=server >  <p id="demo">
     <table style="width:100%;">
         <tr>
             <td class="style1">
@@ -70,7 +79,7 @@
             <td class="style1">
                 &nbsp;</td>
             <td>
-                <asp:Button ID="Button1" runat="server" onclick="Button1_Click1" 
+                <asp:Button ID="Button2" runat="server" onclick="Button1_Click1" 
                     Text="Thêm" />
                </td>  
             <td>
@@ -80,7 +89,7 @@
             <td class="style1">
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                </td>  
             <td>
                 &nbsp;</td>
@@ -88,6 +97,10 @@
     </table>
     </p>
  
-    </form>
+    </form></p>
+ 
+</div>
+
+
 </body>
 </html>
