@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Shrinath Nayak</title>
+      <title>Vi Tri</title>
       <link rel="stylesheet" type="text/css" href="StyleSheet/style.css"/>
       <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
       <link rel="stylesheet" type="text/css" href="css/animate.css"/>
-      <!--<link rel="shortcut icon" href="img/fav.ico" type="image/x-icon"> --->
+      <!--<link rel="shortcut icon" href="img/fav.ico" type="image/x-icon"/> --->
       <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet"/>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,8 @@
        </style>
 
    </head>
-   <body>
+   <body style="background-image=bg.jpg" >
+   
       <!--Card-->
       <div class="card animated fadeIn">
          <center>Kiem Tra DHN</center>
@@ -77,19 +78,19 @@
             <td class="style2">
                 Danh Bộ :</td>
             <td class="style2">
-                <input id="db" name="db" type="text" /></td>
+                <input id="db" name="db" type="text" style="width:150px;" /></td>
         </tr>
         <tr>
             <td class="style3">
                 Latitude</td>
             <td class="style3">
-                <input id="Lat" name="Lat" type="text" /></td>
+                <input id="Lat" name="Lat" type="text" style="width:150px;"  /></td>
         </tr>
         <tr>
             <td class="style4">
                 Longitude</td>
             <td class="style4">
-                <input id="Long" name="Long"  type="text" /></td>
+                <input id="Long" name="Long"  type="text" style="width:150px;"  /></td>
         </tr>
         <tr>
             <td class="style3">

@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addDB.aspx" />
+    <Content Include="bg.jpg" />
     <Content Include="callBaoBe.aspx" />
     <Content Include="callBaoBeAdd.aspx" />
     <Content Include="callcenter.aspx" />
