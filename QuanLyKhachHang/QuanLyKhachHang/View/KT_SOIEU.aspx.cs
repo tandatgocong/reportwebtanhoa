@@ -31,7 +31,13 @@ namespace QuanLyKhachHang.View
             if (IsPostBack)
                 return;
 
-            
+            for (int i = 0; i < 70; i++)
+            {
+                if(i<10)
+                    cbMay.Items.Add("0"+(i + 1).ToString());
+                else
+                    cbMay.Items.Add((i+1).ToString());
+            }
             pagLoad();
             Panel2.Visible = false;
             
@@ -39,19 +45,19 @@ namespace QuanLyKhachHang.View
 
         public void pagLoad()//DM.ID,REPLACE(REPLACE(KH.MADMA,'TH-',''),'-','.')
         {
-            string sql = "SELECT KH.MADMA AS DMA FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA GROUP BY DM.ID,KH.MADMA ";
-            DataTable tb2 = Class.C_KyThuat.getDataTable(sql);
-            MaDMA.DataSource = tb2;
-            MaDMA.DataValueField = "DMA";
-            MaDMA.DataTextField = "DMA";
-            MaDMA.DataBind();
+            //string sql = "SELECT KH.MADMA AS DMA FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA GROUP BY DM.ID,KH.MADMA ";
+            //DataTable tb2 = Class.C_KyThuat.getDataTable(sql);
+            //MaDMA.DataSource = tb2;
+            //MaDMA.DataValueField = "DMA";
+            //MaDMA.DataTextField = "DMA";
+            //MaDMA.DataBind();
              
              
         }
 
         protected void btXemBangKe_Click(object sender, EventArgs e)
         {
-            string sql = " SELECT  DongHo.Lat as lat,DongHo.Long as lng, DANHBO,LOTRINH,HOTEN,(SONHA + ' ' +TENDUONG ) as DIACHI FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
+            string sql = " SELECT  DongHo.Lat as lat,DongHo.Long as lng, DANHBO,LOTRINH,HOTEN,(SONHA + ' ' +TENDUONG ) as DIACHI,kh.HIEUDH FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
             sql += " LEFt JOIN DongHo   ";
             sql += " ON kh.DANHBO= DongHo.DBDONGHONUOC ";
             sql += " WHERE  SUBSTRING(LOTRINH,1,2)='" + cbDot.SelectedValue + "' AND SUBSTRING(LOTRINH,3,2)='" + cbMay.SelectedValue + "' ORDER BY LOTRINH ASC ";
@@ -90,22 +96,22 @@ namespace QuanLyKhachHang.View
         protected void MaDMA_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string dot = "SELECT  SUBSTRING(LOTRINH,1,2) as DOT FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA AND  DM.MADMA='" + MaDMA.SelectedValue + "' GROUP BY SUBSTRING(LOTRINH,1,2)";
-            cbDot.DataSource = Class.C_KyThuat.getDataTable(dot);
-            cbDot.DataValueField = "DOT";
-            cbDot.DataTextField = "DOT";
-            cbDot.DataBind();
-            cbDot_SelectedIndexChanged(sender, e);
+            //string dot = "SELECT  SUBSTRING(LOTRINH,1,2) as DOT FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA AND  DM.MADMA='" + MaDMA.SelectedValue + "' GROUP BY SUBSTRING(LOTRINH,1,2)";
+            //cbDot.DataSource = Class.C_KyThuat.getDataTable(dot);
+            //cbDot.DataValueField = "DOT";
+            //cbDot.DataTextField = "DOT";
+            //cbDot.DataBind();
+            //cbDot_SelectedIndexChanged(sender, e);
 
         }
 
         protected void cbDot_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string may = "SELECT  SUBSTRING(LOTRINH,3,2) as MAY FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA AND  DM.MADMA='" + MaDMA.SelectedValue + "' AND SUBSTRING(LOTRINH,1,2)= '" + cbDot.SelectedValue + "' GROUP BY SUBSTRING(LOTRINH,3,2) ";
-            cbMay.DataSource = Class.C_KyThuat.getDataTable(may);
-            cbMay.DataValueField = "MAY";
-            cbMay.DataTextField = "MAY";
-            cbMay.DataBind();
+            //string may = "SELECT  SUBSTRING(LOTRINH,3,2) as MAY FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG KH, CAPNUOCTANHOA.dbo.GNKDT_THONGTINDMA DM WHERE KH.MADMA=DM.MADMA AND  DM.MADMA='" + MaDMA.SelectedValue + "' AND SUBSTRING(LOTRINH,1,2)= '" + cbDot.SelectedValue + "' GROUP BY SUBSTRING(LOTRINH,3,2) ";
+            //cbMay.DataSource = Class.C_KyThuat.getDataTable(may);
+            //cbMay.DataValueField = "MAY";
+            //cbMay.DataTextField = "MAY";
+            //cbMay.DataBind();
         }
 
         

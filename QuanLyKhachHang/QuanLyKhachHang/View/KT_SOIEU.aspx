@@ -118,11 +118,11 @@
         <tbody>
            <tr class="head2">
                <td class="style11" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;DMA : </td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
                <td class="style11" style="border-right:2px #99cc99 solid; border-bottom: 1px solid;">
                                             &nbsp;
                                             <asp:DropDownList ID="MaDMA" runat="server" AutoPostBack="True" 
-                                                onselectedindexchanged="MaDMA_SelectedIndexChanged">
+                                                onselectedindexchanged="MaDMA_SelectedIndexChanged" Visible="False">
                                             </asp:DropDownList>
                </td>
                 <td class="style10" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">
@@ -130,6 +130,26 @@
                 <td>
                     <asp:DropDownList ID="cbDot" runat="server" AutoPostBack="True" 
                         onselectedindexchanged="cbDot_SelectedIndexChanged">
+                        <asp:ListItem>01</asp:ListItem>
+                        <asp:ListItem>02</asp:ListItem>
+                        <asp:ListItem>03</asp:ListItem>
+                        <asp:ListItem>04</asp:ListItem>
+                        <asp:ListItem>05</asp:ListItem>
+                        <asp:ListItem>06</asp:ListItem>
+                        <asp:ListItem>07</asp:ListItem>
+                        <asp:ListItem>08</asp:ListItem>
+                        <asp:ListItem>09</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                        <asp:ListItem>11</asp:ListItem>
+                        <asp:ListItem>12</asp:ListItem>
+                        <asp:ListItem>13</asp:ListItem>
+                        <asp:ListItem>14</asp:ListItem>
+                        <asp:ListItem>15</asp:ListItem>
+                        <asp:ListItem>16</asp:ListItem>
+                        <asp:ListItem>17</asp:ListItem>
+                        <asp:ListItem>18</asp:ListItem>
+                        <asp:ListItem>19</asp:ListItem>
+                        <asp:ListItem>20</asp:ListItem>
                     </asp:DropDownList>
                </td>
                <td>
@@ -159,7 +179,8 @@
           </tbody>
     </table>
 
-<asp:Panel ID="Panel2" runat="server"  Width="1000px" Height="200px" ScrollBars="Both">    
+<asp:Panel ID="Panel2" runat="server"  Width="1000px" Height="359px" 
+         ScrollBars="Both">    
   
     <table cellpadding="0" cellspacing="0" class="table_list_1"  style="font-family:Times New Roman; margin-left:50px; font-size:15px; width: 500px;">
                      <tr class="head1">
@@ -178,7 +199,22 @@
                           <td class="style1" align=center >
                               <asp:GridView ID="gChuyen" runat="server" 
                                   BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
-                                  CellPadding="4" Width="902px">
+                                  CellPadding="4" Width="902px" AutoGenerateColumns="False">
+                                  <Columns>
+                                      <asp:BoundField DataField="LOTRINH" HeaderText="LOTRINH">
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="DANHBO" HeaderText="DANHBO">
+                                      <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                      <ItemStyle Width="110px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="DIACHI" HeaderText="DIACHI">
+                                      <ItemStyle Width="220px" />
+                                      </asp:BoundField>
+                                      <asp:BoundField DataField="HIEUDH" HeaderText="HIEUDH">
+                                      <ItemStyle Width="150px" />
+                                      </asp:BoundField>
+                                  </Columns>
                                   <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
                                   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
                                   <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />

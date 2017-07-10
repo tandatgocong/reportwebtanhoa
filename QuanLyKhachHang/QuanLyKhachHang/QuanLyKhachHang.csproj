@@ -360,7 +360,7 @@
     <Content Include="Image\xacan.png" />
     <Content Include="Image\XOA.png" />
     <Content Include="Image\ydot.png" />
-    <Content Include="index.html" />
+    <Content Include="11index11.html" />
     <Content Include="JavaScript\headmenu.css" />
     <Content Include="JavaScript\headmenu.js" />
     <Content Include="JavaScript\jquery-1.2.6.js" />
@@ -371,6 +371,7 @@
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
+    <Content Include="mHome.aspx" />
     <Content Include="StyleSheet\style.css" />
     <Content Include="StyleSheet\Menu.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
@@ -384,10 +385,10 @@
     <Content Include="View\KT_SOIEU.aspx" />
     <Content Include="View\HomeDMA_BK.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\KT_ToaDo.aspx" />
     <Content Include="View\LogOut.aspx" />
     <Content Include="View\dmaApLuc.aspx" />
     <Content Include="View\dongnuoc.aspx" />
-    <Content Include="View\mobile.aspx" />
     <Content Include="View\Print.aspx" />
     <Content Include="View\HomeDMA.aspx" />
     <Content Include="View\HomePage.Master" />
@@ -506,6 +507,13 @@
     <Compile Include="iisstart.aspx.designer.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="mHome.aspx.cs">
+      <DependentUpon>mHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mHome.aspx.designer.cs">
+      <DependentUpon>mHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\addBaoBe.aspx.cs">
       <DependentUpon>addBaoBe.aspx</DependentUpon>
@@ -577,6 +585,13 @@
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\KT_ToaDo.aspx.cs">
+      <DependentUpon>KT_ToaDo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\KT_ToaDo.aspx.designer.cs">
+      <DependentUpon>KT_ToaDo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\LogOut.aspx.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -597,13 +612,6 @@
     </Compile>
     <Compile Include="View\dongnuoc.aspx.designer.cs">
       <DependentUpon>dongnuoc.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\mobile.aspx.cs">
-      <DependentUpon>mobile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\mobile.aspx.designer.cs">
-      <DependentUpon>mobile.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>
@@ -791,7 +799,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>11565</DevelopmentServerPort>
+          <DevelopmentServerPort>4235</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

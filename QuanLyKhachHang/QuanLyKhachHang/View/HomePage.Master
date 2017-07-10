@@ -67,6 +67,9 @@
                      <li >
                           <a href="KT_SOIEU.aspx" class="">LỘ TRÌNH </a>
                      </li>    
+                      <li >
+                          <a href="KT_ToaDo.aspx" class="">TỌA ĐỘ </a>
+                     </li>    
                     
                    </ul> 
 
