@@ -42,6 +42,9 @@ namespace QuanLyKhachHang.DataBase
     partial void InsertTB_DULIEUKHACHHANG_HUYDB(TB_DULIEUKHACHHANG_HUYDB instance);
     partial void UpdateTB_DULIEUKHACHHANG_HUYDB(TB_DULIEUKHACHHANG_HUYDB instance);
     partial void DeleteTB_DULIEUKHACHHANG_HUYDB(TB_DULIEUKHACHHANG_HUYDB instance);
+    partial void InsertTB_DULIEUKHACHHANG_IMG(TB_DULIEUKHACHHANG_IMG instance);
+    partial void UpdateTB_DULIEUKHACHHANG_IMG(TB_DULIEUKHACHHANG_IMG instance);
+    partial void DeleteTB_DULIEUKHACHHANG_IMG(TB_DULIEUKHACHHANG_IMG instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -103,6 +106,14 @@ namespace QuanLyKhachHang.DataBase
 			get
 			{
 				return this.GetTable<TB_DULIEUKHACHHANG_HUYDB>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TB_DULIEUKHACHHANG_IMG> TB_DULIEUKHACHHANG_IMGs
+		{
+			get
+			{
+				return this.GetTable<TB_DULIEUKHACHHANG_IMG>();
 			}
 		}
 		
@@ -3293,6 +3304,140 @@ namespace QuanLyKhachHang.DataBase
 					this._CHUKYDS = value;
 					this.SendPropertyChanged("CHUKYDS");
 					this.OnCHUKYDSChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TB_DULIEUKHACHHANG_IMG")]
+	public partial class TB_DULIEUKHACHHANG_IMG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<System.DateTime> _NGAYUP;
+		
+		private string _DANHBO;
+		
+		private System.Data.Linq.Binary _IMG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNGAYUPChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYUPChanged();
+    partial void OnDANHBOChanging(string value);
+    partial void OnDANHBOChanged();
+    partial void OnIMGChanging(System.Data.Linq.Binary value);
+    partial void OnIMGChanged();
+    #endregion
+		
+		public TB_DULIEUKHACHHANG_IMG()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYUP", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYUP
+		{
+			get
+			{
+				return this._NGAYUP;
+			}
+			set
+			{
+				if ((this._NGAYUP != value))
+				{
+					this.OnNGAYUPChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYUP = value;
+					this.SendPropertyChanged("NGAYUP");
+					this.OnNGAYUPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="NVarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this.OnDANHBOChanging(value);
+					this.SendPropertyChanging();
+					this._DANHBO = value;
+					this.SendPropertyChanged("DANHBO");
+					this.OnDANHBOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary IMG
+		{
+			get
+			{
+				return this._IMG;
+			}
+			set
+			{
+				if ((this._IMG != value))
+				{
+					this.OnIMGChanging(value);
+					this.SendPropertyChanging();
+					this._IMG = value;
+					this.SendPropertyChanged("IMG");
+					this.OnIMGChanged();
 				}
 			}
 		}

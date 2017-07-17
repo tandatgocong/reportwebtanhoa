@@ -72,6 +72,19 @@ namespace QuanLyKhachHang.Class
             }
         }
 
+        public static void InsertImg(TB_DULIEUKHACHHANG_IMG tb)
+        {
+            try
+            {
+                db.TB_DULIEUKHACHHANG_IMGs.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
         public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
         {
             var query = from q in db.TB_DULIEUKHACHHANGs select q;
@@ -93,7 +106,7 @@ namespace QuanLyKhachHang.Class
 
         public static DataTable lisGhiChu(string danhbo)
         {
-            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
+            string sql = "SELECT ID,NOIDUNG,DONVI,CONVERT(varchar(50),CREATEDATE,103) as 'CREATEDATE' FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
             return LinQConnection.getDataTable(sql);
         }
 

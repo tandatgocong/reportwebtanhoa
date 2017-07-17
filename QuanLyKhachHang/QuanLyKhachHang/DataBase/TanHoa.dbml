@@ -142,6 +142,14 @@
       <Column Name="CHUKYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TB_DULIEUKHACHHANG_IMG" Member="TB_DULIEUKHACHHANG_IMGs">
+    <Type Name="TB_DULIEUKHACHHANG_IMG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NGAYUP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMG" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Function Name="dbo.BC_TONGKET" Method="BC_TONGKET">
     <Parameter Name="TUNGAY" Parameter="tUNGAY" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="DENNGAY" Parameter="dENNGAY" Type="System.String" DbType="VarChar(50)" />
