@@ -118,7 +118,18 @@
                 zoom: 15,
                 mapTypeId: 'roadmap'
             });
- 
+
+             var layer = new google.maps.FusionTablesLayer({
+              query: {
+                select: 'col2',
+                from: '1eXgHvhPw8I3YbH3oGi0Z58qcjHnIOJZ5X0KOt358'
+			    },
+			      options: {
+				    styleId: 2,
+				    templateId: 2
+			    }
+            });
+            layer.setMap(map);
                    
                 var  infoWindow2 = new google.maps.InfoWindow();
 

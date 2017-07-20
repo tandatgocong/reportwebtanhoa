@@ -42,9 +42,9 @@
                  <li >
                       <a href="bbNhapThongTinBe.aspx" class="">BÁO BỂ </a>
                  </li>    
-                <!-- <li >
+                  <li >
                       <a href="bbNhapHoanCong.aspx" class="">HOÀN CÔNG</a>
-                 </li> -->
+                 </li>  
                       
                </ul> 
             </li>

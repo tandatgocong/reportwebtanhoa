@@ -329,6 +329,8 @@
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
+    <Content Include="Image\Van2.png" />
+    <Content Include="Image\tch2.png" />
     <Content Include="Image\icon2.png" />
     <Content Include="Image\l11.gif" />
     <Content Include="Image\Logo Tan Hoa.png" />
@@ -347,7 +349,6 @@
     <Content Include="Image\ss-GIAM.PNG" />
     <Content Include="Image\ss-TANG.PNG" />
     <Content Include="Image\table_list_bghead.png" />
-    <Content Include="Image\tch.png" />
     <Content Include="Image\Untitled.png" />
     <Content Include="Image\up.png" />
     <Content Include="Image\vanbien.png" />

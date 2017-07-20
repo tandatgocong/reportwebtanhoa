@@ -57,6 +57,14 @@ namespace QuanLyKhachHang.View
             string sql3 = " SELECT * from KT_Van   where  XaCan='True' AND NgayXaCan= " + DateTime.Now.Date.Day;
             Session["dsXaNuoc"] = C_KyThuat.getDataTable(sql3); ;
 
+
+            // HỆ THỐNG VAN
+
+
+            Session["dsVAN"] = null;
+            sql3 = " SELECT * from HeThongVan   where  LoaiVan=1";
+            Session["dsVAN"] = C_KyThuat.getDataTable(sql3); ;
+
         }
     }
 }

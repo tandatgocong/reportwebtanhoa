@@ -211,26 +211,6 @@
 
             ////////////////////
 
-            /*
-                infowindow = new google.maps.InfoWindow();
-                    var html = "<table><tr><td> <input type='button' value='Thêm Mới Đóng Nước' onclick='save()'/> </td></tr></table>";
-                    infowindow = new google.maps.InfoWindow({
-                        content: html 
-                    });
-
-                    google.maps.event.addListener(map, "click", function (event) {
-                        marker = new google.maps.Marker({
-                            position: event.latLng,
-                            map: map
-                        });
-                        google.maps.event.addListener(marker, "click", function () {
-                            infowindow.open(map, marker),
-                            lagx=marker.getPosition().lat(),
-                            lagy=marker.getPosition().lng()
-                        });
-                    });
-                 
-                    */
                 var  infoWindow2 = new google.maps.InfoWindow();
 
                        // Event that closes the Info Window with a click on the map
@@ -279,22 +259,16 @@
 				              title: name<%=f%>
 				              });
 
-                           
- 
-
-                            google.maps.event.addListener(marker<%=f%>, 'click', function() {
+                          google.maps.event.addListener(marker<%=f%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                              var iwContent="<div class='title_page'>Thông Tin  <%=table.Rows[i]["F"]%> </div> <br/> " ;
-                              iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
+                          var iwContent="<div class='title_page'>Thông Tin  <%=table.Rows[i]["F"]%> </div> <br/> " ;
+                          iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
                           iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Mở Nước' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
                           iwContent+="</table>";
-      
-
-
                               // including content to the Info Window.
                               infoWindow2.setContent(iwContent);
 
@@ -326,11 +300,8 @@
             layer.setMap(map);
 
 
-
             ///////// xa can
-
-
-                     <% 
+                   <% 
                         table = new DataTable();                       
                        if(Session["dsXaNuoc"]!=null)
                        {
@@ -353,18 +324,13 @@
 				              map: map,
 				              title: name<%=f%>
 				              });
-
-                           
-                           
                         <%
                         }
                        }
                     %>
 
-
-
             /////////
-
+             
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);

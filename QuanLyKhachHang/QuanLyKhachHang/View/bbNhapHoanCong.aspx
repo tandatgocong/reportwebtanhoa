@@ -119,6 +119,7 @@
                 mapTypeId: 'roadmap'
             });
  
+            
                 infowindow = new google.maps.InfoWindow();
                 var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  Báo Bể</div> <br/> <table  >" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>NV Báo Bể:</td> <td style='hight:100px; width:200px;'><input type='text' value='<%=Session["login"]%>' id='dienthoai'/> </td> </tr>" +
@@ -302,7 +303,19 @@
                     
                     map.setCenter(pos);
 
-             
+              var layer = new google.maps.FusionTablesLayer({
+              query: {
+                select: 'col2',
+                from: '1eXgHvhPw8I3YbH3oGi0Z58qcjHnIOJZ5X0KOt358'
+			    },
+			      options: {
+				    styleId: 2,
+				    templateId: 2
+			    }
+            });
+            layer.setMap(map);
+
+
              /*
                 // Try HTML5 geolocation.
                 if (navigator.geolocation) {
