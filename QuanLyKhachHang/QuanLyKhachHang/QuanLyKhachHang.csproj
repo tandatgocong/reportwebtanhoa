@@ -306,6 +306,7 @@
     <Content Include="iisstart.aspx" />
     <Content Include="Image\1down.png" />
     <Content Include="Image\1up.png" />
+    <Content Include="Image\3.jpg" />
     <Content Include="Image\add.ico" />
     <Content Include="Image\airport_runway.png" />
     <Content Include="Image\bg.gif" />
@@ -329,6 +330,8 @@
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\error.gif" />
     <Content Include="Image\foot.png" />
+    <Content Include="Image\db.png" />
+    <Content Include="Image\reddot.png" />
     <Content Include="Image\Van2.png" />
     <Content Include="Image\tch2.png" />
     <Content Include="Image\icon2.png" />
@@ -400,6 +403,7 @@
     <Content Include="View\QuanLyDMA_ChartLL.aspx" />
     <Content Include="View\QuanLyMangLuoi.aspx" />
     <Content Include="View\QuanLyVan.aspx" />
+    <Content Include="View\vDongMoVan.aspx" />
     <Content Include="View\zphanquyen.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -683,6 +687,13 @@
     </Compile>
     <Compile Include="View\QuanLyVan.aspx.designer.cs">
       <DependentUpon>QuanLyVan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\vDongMoVan.aspx.cs">
+      <DependentUpon>vDongMoVan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\vDongMoVan.aspx.designer.cs">
+      <DependentUpon>vDongMoVan.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\zphanquyen.aspx.cs">
       <DependentUpon>zphanquyen.aspx</DependentUpon>

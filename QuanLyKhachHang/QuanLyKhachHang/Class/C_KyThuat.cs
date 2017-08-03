@@ -48,6 +48,20 @@ namespace QuanLyKhachHang.Class
             return null;
         }
 
+        public static DongHo finByToDo(string id)
+        {
+            try
+            {
+                var query = from q in db.DongHos where q.DBDONGHONUOC == id select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         public static KT_BaoBe finByIdB(int id)
         {
             try

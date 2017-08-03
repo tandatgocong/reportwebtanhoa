@@ -61,9 +61,9 @@ namespace QuanLyKhachHang.View
             // HỆ THỐNG VAN
 
 
-            Session["dsVAN"] = null;
-            sql3 = " SELECT * from HeThongVan   where  LoaiVan=1";
-            Session["dsVAN"] = C_KyThuat.getDataTable(sql3); ;
+            //Session["dsVAN"] = null;
+            //sql3 = " SELECT * from HeThongVan   where  LoaiVan=1";
+            //Session["dsVAN"] = C_KyThuat.getDataTable(sql3); ;
 
         }
     }

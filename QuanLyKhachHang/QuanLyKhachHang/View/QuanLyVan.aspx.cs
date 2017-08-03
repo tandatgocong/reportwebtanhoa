@@ -36,7 +36,7 @@ namespace QuanLyKhachHang.View
         public void pagLoad()
         {
             Session["dsVan"] = null;
-            string sql = " SELECT   * FROM HeThongVan ";
+            string sql = " SELECT   * FROM HeThongVan Where ID=3";
             Session["dsVan"] = C_KyThuat.getDataTable(sql);
 
         }

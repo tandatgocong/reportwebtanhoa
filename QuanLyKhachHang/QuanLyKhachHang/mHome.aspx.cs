@@ -8,6 +8,7 @@ using QuanLyKhachHang.Class;
 using QuanLyKhachHang.DataBase;
 using System.Drawing;
 using System.IO;
+using System.Data;
 
 namespace QuanLyKhachHang
 {
@@ -23,11 +24,12 @@ namespace QuanLyKhachHang
             if (sodanhbo.Length == 11)
             {
                 khachhang = C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+                Session["db"] = C_KyThuat.getDataTable("SELECT * FROM DongHo where DBDONGHONUOC='" + sodanhbo + "'");
                 if (khachhang != null)
                 {
                     lbDanhBo.Text = khachhang.DANHBO;
                     lotrinh.Text = khachhang.LOTRINH;
-                    ////   DOT.Text = khachhang.LOTRINH.Substring(1, 2);
+                    //DOT.Text = khachhang.LOTRINH.Substring(1, 2);
                     //HOPDONG.Text = khachhang.HOPDONG;
                     lbTenKh.Text = khachhang.HOTEN;
                     diachi.Text = khachhang.SONHA + ' ' + khachhang.TENDUONG;
@@ -45,6 +47,9 @@ namespace QuanLyKhachHang
                     nvtt.Text = C_DuLieuKhachHang.getNVThuTien(khachhang.DANHBO);
                     loadHoaDon(khachhang.DANHBO);
                     loadGhiChu(khachhang.DANHBO);
+                    LoadHInh(khachhang.DANHBO);
+
+                    
                 }
                 else
                 {
@@ -72,6 +77,7 @@ namespace QuanLyKhachHang
 
                             loadHoaDon(khachhanghuy.DANHBO);
                             loadGhiChu(khachhanghuy.DANHBO);
+                            LoadHInh(khachhanghuy.DANHBO);
                         }
                         catch (Exception)
                         {
@@ -99,13 +105,80 @@ namespace QuanLyKhachHang
         {
             GridView2.DataSource = Class.C_DuLieuKhachHang.lisGhiChu(db);
             GridView2.DataBind();
+
+           
+
+        }
+        public void LoadHInh(string db)
+        {
+            List<TB_DULIEUKHACHHANG_IMG> lis = C_DuLieuKhachHang.getListImg(db);
+            foreach (TB_DULIEUKHACHHANG_IMG value in lis)
+            {
+                byte[] _byteArr =value.IMG.ToArray();
+                string strBase64 = Convert.ToBase64String(_byteArr);
+                
+                int i=1;
+
+                System.Web.UI.WebControls.Image img = new System.Web.UI.WebControls.Image();
+                img.ID = "image" + i.ToString();
+                img.ImageUrl = "data:Image/png;base64," + strBase64;
+                img.Width = 300;
+                img.Height = 300;
+                img.Visible = true;
+                i++;
+                PanelImg.Controls.Add(img);
+
+            }
+        
         }
         protected void txtDB_TextChanged(object sender, EventArgs e)
         {
-            LoadThongTinDB(this.txtDB.Text);
+            string s = dot.SelectedValue + "";
+            string search = txtDB.Text;
+            if ("0".Equals(s))
+                LoadThongTinDB(this.txtDB.Text);
+            else if ("1".Equals(s))
+            {
+                string query = "";
+                query = "SELECT DANHBO, LOTRINH,HOTEN, (SONHA+ ' ' + TENDUONG ) AS DCHI,HOPDONG,GIABIEU,DINHMUC,CODH, HIEUDH,SOTHANDH,YEAR(NGAYTHAY) AS NAMGAN, VITRIDHN,CHISOKYTRUOC ";
+                query += "FROM TB_DULIEUKHACHHANG KH ";
+                query += "WHERE (SONHA+' '+ TENDUONG) LIKE '%" + this.txtDB.Text + "%' ";
+                DataTable tb = LinQConnection.getDataTable(query);
+                GridView3.DataSource = tb;
+                GridView3.DataBind();
+                Panel3.Visible = true;
+
+            }
+            //Session["sds"] = Class.C_QuanLyDHN.getDiaChi(search);
+
+           
 
         }
- 
+
+        public static byte[] Resize2Max50Kbytes(byte[] byteImageIn)
+        {
+            byte[] currentByteImageArray = byteImageIn;
+            double scale = 1f;   
+            MemoryStream inputMemoryStream = new MemoryStream(byteImageIn);
+            System.Drawing.Image fullsizeImage = System.Drawing.Image.FromStream(inputMemoryStream);
+
+            while (currentByteImageArray.Length > 50000)
+            {
+                Bitmap fullSizeBitmap = new Bitmap(fullsizeImage, new Size((int)(fullsizeImage.Width * scale), (int)(fullsizeImage.Height * scale)));
+                MemoryStream resultStream = new MemoryStream();
+
+                fullSizeBitmap.Save(resultStream, fullsizeImage.RawFormat);
+
+                currentByteImageArray = resultStream.ToArray();
+                resultStream.Dispose();
+                resultStream.Close();
+
+                scale -= 0.05f;
+            }
+
+            return currentByteImageArray;
+        }
+
 
         protected void btUploag_Click(object sender, EventArgs e)
         {
@@ -120,16 +193,15 @@ namespace QuanLyKhachHang
                     TB_DULIEUKHACHHANG_IMG img = new TB_DULIEUKHACHHANG_IMG();
                     img.DANHBO = lbDanhBo.Text;
                     img.NGAYUP = DateTime.Now;
-                    img.IMG = _byteArr;
+                    img.IMG = Resize2Max50Kbytes(_byteArr);
                     C_DuLieuKhachHang.InsertImg(img);
-                    //MemoryStream f = new MemoryStream(_byteArr);
-                    //System.Drawing.Image _img = System.Drawing.Image.FromStream(f);
-                    //Image1.ImageUrl =  Path.GetFileName(FileUpload2.FileName);
 
-
+                    //string strBase64 = Convert.ToBase64String(_byteArr);
+                    //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
 
                     this.upload.Text = "OK";
                     this.upload.BackColor = Color.Blue;
+                    LoadHInh(this.txtDB.Text);
                 }
                 catch (Exception ex)
                 {
@@ -137,16 +209,18 @@ namespace QuanLyKhachHang
                     this.upload.Text = "Lỗi" + ex.ToString(); ;
                 }
         }
-        public void loadAnh()
+         
+
+        protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            try
+            if ("Select".Equals(e.CommandName))
             {
+                this.txtDB.Text = e.CommandArgument.ToString();
+                LoadThongTinDB(e.CommandArgument.ToString());
+                Panel3.Visible = false;
 
             }
-            catch (Exception)
-            {
-                
-            }
+            
         }
     }
 }

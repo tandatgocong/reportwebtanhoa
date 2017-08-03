@@ -42,7 +42,7 @@ namespace QuanLyKhachHang.DataBase
     #endregion
 		
 		public KyThuatDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CallCenterConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["KYTHUATConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -92,6 +92,14 @@ namespace QuanLyKhachHang.DataBase
 			get
 			{
 				return this.GetTable<KT_Van>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DongHo> DongHos
+		{
+			get
+			{
+				return this.GetTable<DongHo>();
 			}
 		}
 	}
@@ -1982,6 +1990,105 @@ namespace QuanLyKhachHang.DataBase
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DongHo")]
+	public partial class DongHo
+	{
+		
+		private string _DBDONGHONUOC;
+		
+		private string _URL;
+		
+		private System.Nullable<double> _Lat;
+		
+		private System.Nullable<double> _Long;
+		
+		private System.Nullable<int> _DMA;
+		
+		public DongHo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DBDONGHONUOC", DbType="NVarChar(255)")]
+		public string DBDONGHONUOC
+		{
+			get
+			{
+				return this._DBDONGHONUOC;
+			}
+			set
+			{
+				if ((this._DBDONGHONUOC != value))
+				{
+					this._DBDONGHONUOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_URL", DbType="NVarChar(255)")]
+		public string URL
+		{
+			get
+			{
+				return this._URL;
+			}
+			set
+			{
+				if ((this._URL != value))
+				{
+					this._URL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float")]
+		public System.Nullable<double> Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this._Lat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Long", DbType="Float")]
+		public System.Nullable<double> Long
+		{
+			get
+			{
+				return this._Long;
+			}
+			set
+			{
+				if ((this._Long != value))
+				{
+					this._Long = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DMA", DbType="Int")]
+		public System.Nullable<int> DMA
+		{
+			get
+			{
+				return this._DMA;
+			}
+			set
+			{
+				if ((this._DMA != value))
+				{
+					this._DMA = value;
+				}
 			}
 		}
 	}

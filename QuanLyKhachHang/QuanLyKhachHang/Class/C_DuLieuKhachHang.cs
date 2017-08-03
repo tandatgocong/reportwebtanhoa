@@ -85,6 +85,13 @@ namespace QuanLyKhachHang.Class
             }
         }
 
+        public static List<TB_DULIEUKHACHHANG_IMG> getListImg(string db)
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var quan = (from p in data.TB_DULIEUKHACHHANG_IMGs where p.DANHBO == db orderby p.NGAYUP descending select p).Take(3);
+            return quan.ToList();
+        }
+
         public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
         {
             var query = from q in db.TB_DULIEUKHACHHANGs select q;

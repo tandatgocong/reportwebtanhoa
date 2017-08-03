@@ -119,28 +119,26 @@
                 mapTypeId: 'roadmap'
             });
 
-          
-
-            google.maps.event.addListener(map, "click", function (event) {
-                marker = new google.maps.Marker({
-                    position: event.latLng,
-                    map: map
-                });
-                google.maps.event.addListener(marker, "click", function () {
-                    infowindow.open(map, marker),
-                     lagx=marker.getPosition().lat(),
-                     lagy=marker.getPosition().lng()
-                });
-            });
-             
-             var infoWindow2 = new google.maps.InfoWindow();
-
-             // Event that closes the Info Window with a click on the map
-               google.maps.event.addListener(map, 'click', function() {
-                     infoWindow2.close();
+             var layer = new google.maps.FusionTablesLayer({
+              query: {
+                select: 'col1',
+                from: '1hISjNL0pcj13jK3hiCJ-RSBsQC1mB2wFgGT6HoWT'
+			    },
+			      options: {
+				    styleId: 2,
+				    templateId: 2
+				},
+                styles: [{
+                  markerOptions: {
+                    iconName: 'large_blue'
+                  }
+                }]
                });
-
-            <% 
+            layer.setMap(map);
+            
+           var  infoWindow2 = new google.maps.InfoWindow();
+          
+                     <% 
                        DataTable table = new DataTable();
                        if(Session["dsVan"]!=null)
                        {
@@ -154,35 +152,10 @@
 
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
-
-                             var icon_='';/*'/Image/Van2.png'; */
-
-                             var lb='';
-                             <% if("1".Equals(table.Rows[i]["LoaiVan"].ToString()))
-                                {
-                                 %>  icon_='/Image/Van2.png';
-                                     
-                                 <%
-                                }                                 
-                                else if("2".Equals(table.Rows[i]["LoaiVan"].ToString())) 
-                                {
-                                  %>  icon_='/Image/xacan.png';
-                                     
-                                 <%
-                                }
-                                 else if("3".Equals(table.Rows[i]["LoaiVan"].ToString())) 
-                                {
-                                 %>  icon_='/Image/tch.png';
-                                     lb='TCH';   
-                                 <%
-                                }
-                                
-                             %>
-
+                                                            
                               var marker<%=i%> = new google.maps.Marker({
 				              position: latlng2,
-                              icon: icon_,
-                              label: lb,
+                              icon: '/Image/reddot.png',
 				              map: map,
 				              title: name<%=i%>
 				              });
@@ -190,9 +163,7 @@
 
                             google.maps.event.addListener(marker<%=i%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                            var iwContent= " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Thông Tin Van  </div> <br/> <table class='table_list'  >" +                         
-                         "<tr  class='head11' ><td style='width:120px;text-align:left;' >MÃ VAN :  </td> <td> <b> <%=table.Rows[i]["MaVan"]%>  </b> </td> </tr> </table>" ;
-                          
+                              var iwContent="<div class='title_page'>Thông Tin  Báo Bể</div> <br/> " ;
       
                               // including content to the Info Window.
                               infoWindow2.setContent(iwContent);
@@ -208,10 +179,14 @@
                     %>
 
 
-             
-             var infoWindow = new google.maps.InfoWindow({map: map});
 
-        /*        // Try HTML5 geolocation.
+
+
+
+
+         /*        var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {

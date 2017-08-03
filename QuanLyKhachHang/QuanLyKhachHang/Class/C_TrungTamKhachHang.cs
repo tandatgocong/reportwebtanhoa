@@ -13,6 +13,8 @@ namespace QuanLyKhachHang.Class
         static log4net.ILog log = log4net.LogManager.GetLogger("File");
         static KinhDoanhDataContext db = new KinhDoanhDataContext();
 
+      
+
         public static int ExecuteCommand_(string sql)
         {
             KinhDoanhDataContext db = new KinhDoanhDataContext();
