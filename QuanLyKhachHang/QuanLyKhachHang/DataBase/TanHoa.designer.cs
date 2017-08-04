@@ -3341,7 +3341,11 @@ namespace QuanLyKhachHang.DataBase
 		
 		private string _DANHBO;
 		
+		private string _Loai;
+		
 		private System.Data.Linq.Binary _IMG;
+		
+		private System.Data.Linq.Binary _Video;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3353,8 +3357,12 @@ namespace QuanLyKhachHang.DataBase
     partial void OnNGAYUPChanged();
     partial void OnDANHBOChanging(string value);
     partial void OnDANHBOChanged();
+    partial void OnLoaiChanging(string value);
+    partial void OnLoaiChanged();
     partial void OnIMGChanging(System.Data.Linq.Binary value);
     partial void OnIMGChanged();
+    partial void OnVideoChanging(System.Data.Linq.Binary value);
+    partial void OnVideoChanged();
     #endregion
 		
 		public TB_DULIEUKHACHHANG_IMG()
@@ -3422,6 +3430,26 @@ namespace QuanLyKhachHang.DataBase
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Loai", DbType="NVarChar(50)")]
+		public string Loai
+		{
+			get
+			{
+				return this._Loai;
+			}
+			set
+			{
+				if ((this._Loai != value))
+				{
+					this.OnLoaiChanging(value);
+					this.SendPropertyChanging();
+					this._Loai = value;
+					this.SendPropertyChanged("Loai");
+					this.OnLoaiChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary IMG
 		{
@@ -3438,6 +3466,26 @@ namespace QuanLyKhachHang.DataBase
 					this._IMG = value;
 					this.SendPropertyChanged("IMG");
 					this.OnIMGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Video", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Video
+		{
+			get
+			{
+				return this._Video;
+			}
+			set
+			{
+				if ((this._Video != value))
+				{
+					this.OnVideoChanging(value);
+					this.SendPropertyChanging();
+					this._Video = value;
+					this.SendPropertyChanged("Video");
+					this.OnVideoChanged();
 				}
 			}
 		}

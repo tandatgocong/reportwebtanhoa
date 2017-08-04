@@ -22,9 +22,17 @@
       <meta name="robots" content="index, follow" />
 
        <style type="text/css">
-           .style2
-           {
-           }
+          .title_mobile
+          {
+        border-bottom: 2px solid #663300;
+        color: #006600;
+        font-family: Tahoma,Arial,Helvetica,sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0 10px;
+        padding: 5px 0;
+        text-transform: uppercase;
+    }
             
            .style3
            {
@@ -37,13 +45,13 @@
             
            </style>
    </head>
-   <body style="background-image=bg.jpg" >
+   <body style="background-image="bg.jpg" >
      <form id="Form1"  runat="server" > 
       <!--Card-->
       <div class="card animated fadeIn">
          <div class="location"> THÔNG TIN DANH BỘ </div> 
-      <div class="text" style="margin-left:10px; margin-top:5px;"> 
-      <table >
+      <div class="text"> 
+      <table   >
       <tr><td style="width:80px;"><asp:DropDownList ID="dot" runat="server" Height="19px" Width="85px">
           <asp:ListItem Value="0">Danh Bộ</asp:ListItem>
           <asp:ListItem Value="1">Địa Chỉ</asp:ListItem>
@@ -51,9 +59,11 @@
           <asp:TextBox ID="txtDB" runat="server" ontextchanged="txtDB_TextChanged" 
                   style="margin-left: 0px"></asp:TextBox>
           </td></tr>
-      <tr><td colspan="2" style="text-align: left">
-       <asp:Panel ID="Panel3" Visible="false" runat="server" ScrollBars="Both" Width="90%" Height="100px">
-          <asp:GridView ID="GridView3" runat="server" Width="800px" AutoGenerateColumns="False" 
+      <tr><td colspan="2" >
+       <asp:Panel ID="Panel3" Visible="false" runat="server" ScrollBars="Both" 
+              Width="320px" Height="100px">
+         <asp:Panel ID="Panel4"   runat="server"  Width="800px" Height="100%">
+          <asp:GridView ID="GridView3" runat="server" Width="100%" AutoGenerateColumns="False" 
               CellPadding="4" ForeColor="#333333" GridLines="None" 
                onrowcommand="GridView3_RowCommand">
               <AlternatingRowStyle BackColor="White" />
@@ -64,20 +74,20 @@
                               CommandArgument='<%# Bind("DANHBO") %>' CommandName="Select" 
                               Text='<%# Bind("DANHBO") %>'></asp:LinkButton>
                       </ItemTemplate>
-                      <ItemStyle Width="100px" />
+                      <ItemStyle Width="80px" />
                   </asp:TemplateField>
-                  <asp:BoundField DataField="DANHBO" HeaderText="DANHBO" Visible="False" />
-                  <asp:BoundField DataField="LOTRINH" HeaderText="LOTRINH" >
-                  <ItemStyle Width="100px" />
-                  </asp:BoundField>
-                  <asp:BoundField DataField="DCHI" HeaderText="DCHI">
+                  <asp:BoundField DataField="DCHI" HeaderText="DCHI" >
                   <ItemStyle Width="200px" />
                   </asp:BoundField>
-                  <asp:BoundField DataField="HOTEN" HeaderText="HOTEN" />
+                  <asp:BoundField DataField="HOTEN" HeaderText="HOTEN">
+                  </asp:BoundField>
                   <asp:BoundField DataField="HIEUDH" HeaderText="HIEUDH" />
                   <asp:BoundField DataField="SOTHANDH" HeaderText="SOTHANDH" />
                   <asp:BoundField DataField="NAMGAN" HeaderText="NAMGAN" />
                   <asp:BoundField DataField="CHISOKYTRUOC" HeaderText="CSCU" />
+                  <asp:BoundField DataField="LOTRINH" HeaderText="LOTRINH" >
+                  <ItemStyle Width="70px" />
+                  </asp:BoundField>
               </Columns>
               <EditRowStyle BackColor="#7C6F57" />
               <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -91,11 +101,11 @@
               <SortedDescendingHeaderStyle BackColor="#15524A" />
           </asp:GridView>
           </asp:Panel>
+          </asp:Panel>
           </td></tr>
-      </table>
-      <hr />
-
-       <table>
+      </table>   
+      <hr /> 
+       <table> 
       <tr><td class="style1" colspan="2">Khách Hàng:&nbsp;<asp:Label ID="lbTenKh" runat="server" Font-Bold="True"/>
           <asp:Label ID="lbDanhBo" runat="server" Font-Bold="True" Visible="False"/></td></tr>
       <tr><td class="style1" colspan="2">Địa Chỉ:&nbsp;<asp:Label ID="diachi" runat="server" Font-Bold="True"/></td></tr>
@@ -105,12 +115,13 @@
       <tr><td class="style1" colspan="2">Hiệu ĐHN:&nbsp;<asp:Label ID="hieudhn" runat="server" Font-Bold="True"/></td></tr>
       <tr><td class="style1" colspan="2">NV Đọc Số :&nbsp;<asp:Label ID="nvds" runat="server" Font-Bold="True"/></td></tr>
       <tr><td class="style1" colspan="2">NV Thu Tiền :&nbsp;<asp:Label ID="nvtt" runat="server" Font-Bold="True"/></td></tr>
+      <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Phiếu Tiêu Thụ </td></tr>
       <tr><td class="style1" colspan="2">
       <asp:Panel ID="Panel1" runat="server" ScrollBars="Both" Width="100%" Height="150px">
           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
                         CellPadding="3" Font-Names="Times New Roman" Font-Size="12px" 
-                        GridLines="Vertical" style="margin-right: 5px" Width="100%">
+                        GridLines="Vertical" Width="100%">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
                             <asp:BoundField DataField="NAM" HeaderText="Kỳ">
@@ -157,12 +168,12 @@
                     </asp:GridView>
        </asp:Panel>
       </td></tr>
-
+      <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Lịch sử điều chỉnh</td></tr>
       <tr><td class="style1" colspan="2">
       <asp:Panel ID="Panel2" runat="server" ScrollBars="Both" Width="100%" Height="150px">
          <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
                         CellPadding="4" Font-Names="Times New Roman" Font-Size="12px" 
-                        GridLines="None" style="margin-right: 5px" Width="100%" 
+                        GridLines="None" Width="100%" 
               ForeColor="#333333">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
@@ -188,21 +199,14 @@
                     </asp:GridView>
       </asp:Panel>
       </td></tr>
+      <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2">tọa độ vị trí</td></tr>
       <tr>
+      
       <td colspan="2">
     <div id="map" style="width: 100%; height: 300px;"></div>
     <script> 
         function initAutocomplete() {
-            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
-            var marker;
-            var infowindow;
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: latlng,
-                zoom: 19,
-                mapTypeId: 'roadmap'
-            });
- 
-             <% 
+         <% 
                     
                        DataTable table = new DataTable();                      
                        if(Session["db"]!=null)
@@ -212,8 +216,18 @@
                         for(int i=0;i<tong;i++)
                         {
                         %>
-                            var x= parseFloat(<%=table.Rows[i]["Lat"]%>);                           
-                            var y = parseFloat(<%=table.Rows[i]["Long"]%>); 
+                        var x= parseFloat(<%=table.Rows[i]["Lat"]%>);                           
+                        var y = parseFloat(<%=table.Rows[i]["Long"]%>); 
+                        var latlng = new google.maps.LatLng(x, y);
+                        var marker;
+                        var infowindow;
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: latlng,
+                            zoom: 18,
+                            mapTypeId: 'roadmap'
+                        });
+            
+                           
                             var icon_='Image/db.png';
                             var latlng2 = new google.maps.LatLng(x, y);
                             var marker= new google.maps.Marker({
@@ -246,17 +260,18 @@
       </td>
       </tr>
 
-
+      <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Hình ảnh lưu trữ</td></tr>
      <tr><td class="style4"><asp:FileUpload ID="FileUpload2" runat="server" /> 
          <td class="style4">  <asp:Button ID="btUploag" runat="server" Text="Upload" onclick="btUploag_Click"  /> 
          <td class="style4"> <asp:Label ID="upload" runat="server" ForeColor="Red" /></td></tr>
      <tr><td class="style3" colspan="2">
-     <marquee behavior='scroll' SCROLLAMOUNT='15' direction='left' onmouseover='this.stop();' onmouseout='this.start();'>  <asp:Panel ID="PanelImg" runat="server"></asp:Panel></marquee>
+        <marquee behavior='scroll' SCROLLAMOUNT='20' direction='left' onmouseover='this.stop();' onmouseout='this.start();'>  <asp:Panel ID="PanelImg" runat="server"></asp:Panel></marquee>
         </td>
         </tr>
       </table>
       </div>
       </div>
+    
    </form>
       
    </body>

@@ -147,7 +147,9 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NGAYUP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DANHBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="IMG" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Video" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Function Name="dbo.BC_TONGKET" Method="BC_TONGKET">

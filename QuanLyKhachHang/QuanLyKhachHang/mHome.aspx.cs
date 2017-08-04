@@ -48,7 +48,7 @@ namespace QuanLyKhachHang
                     loadHoaDon(khachhang.DANHBO);
                     loadGhiChu(khachhang.DANHBO);
                     LoadHInh(khachhang.DANHBO);
-
+                    LoadVideos(this.txtDB.Text);
                     
                 }
                 else
@@ -78,6 +78,7 @@ namespace QuanLyKhachHang
                             loadHoaDon(khachhanghuy.DANHBO);
                             loadGhiChu(khachhanghuy.DANHBO);
                             LoadHInh(khachhanghuy.DANHBO);
+                            LoadVideos(this.txtDB.Text);
                         }
                         catch (Exception)
                         {
@@ -126,11 +127,43 @@ namespace QuanLyKhachHang
                 img.Height = 300;
                 img.Visible = true;
                 i++;
+               
                 PanelImg.Controls.Add(img);
+                Label t = new Label();
+                t.Text = "   ";
+                PanelImg.Controls.Add(t);
 
             }
         
         }
+
+        public void LoadVideos(string db)
+        {
+            //List<TB_DULIEUKHACHHANG_IMG> lis = C_DuLieuKhachHang.getListImg(db);
+            //foreach (TB_DULIEUKHACHHANG_IMG value in lis)
+            //{
+            //    byte[] _byteArr = value.IMG.ToArray();
+            //    string strBase64 = Convert.ToBase64String(_byteArr);
+
+            //    int i = 1;
+
+            //    System.Web.UI.WebControls.Image img = new System.Web.UI.WebControls.Image();
+            //    img.ID = "image" + i.ToString();
+            //    img.ImageUrl = "data:Image/png;base64," + strBase64;
+            //    img.Width = 300;
+            //    img.Height = 300;
+            //    img.Visible = true;
+            //    i++;
+
+            //    PanelImg.Controls.Add(img);
+            //    Label t = new Label();
+            //    t.Text = "   ";
+            //    PanelImg.Controls.Add(t);
+
+            //}
+
+        }
+   
         protected void txtDB_TextChanged(object sender, EventArgs e)
         {
             string s = dot.SelectedValue + "";
@@ -182,6 +215,39 @@ namespace QuanLyKhachHang
 
         protected void btUploag_Click(object sender, EventArgs e)
         {
+           if("mp4".Contains(FileUpload2.FileName))
+           {
+               try
+               {
+                   if (Request.Files[0].InputStream.Length > Int32.MaxValue)
+                       return;
+                   int dataLen = (int)Request.Files[0].InputStream.Length;
+                   byte[] _byteArr = new byte[dataLen];
+                   Request.Files[0].InputStream.Read(_byteArr, 0, dataLen);
+                   TB_DULIEUKHACHHANG_IMG img = new TB_DULIEUKHACHHANG_IMG();
+                   img.DANHBO = lbDanhBo.Text;
+                   img.NGAYUP = DateTime.Now;
+                   img.Loai = "mp4";
+                   img.IMG = _byteArr;
+                   C_DuLieuKhachHang.InsertImg(img);
+
+                   //string strBase64 = Convert.ToBase64String(_byteArr);
+                   //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
+
+                   this.upload.Text = "OK";
+                   this.upload.BackColor = Color.Blue;
+                   
+                   LoadVideos(this.txtDB.Text);
+               }
+               catch (Exception ex)
+               {
+                   this.upload.BackColor = Color.Red;
+                   this.upload.Text = "Lỗi" + ex.ToString(); ;
+               }
+           }
+           else
+           {
+
             if (FileUpload2.HasFile)
                 try
                 {
@@ -194,6 +260,7 @@ namespace QuanLyKhachHang
                     img.DANHBO = lbDanhBo.Text;
                     img.NGAYUP = DateTime.Now;
                     img.IMG = Resize2Max50Kbytes(_byteArr);
+                    img.Loai = "img";
                     C_DuLieuKhachHang.InsertImg(img);
 
                     //string strBase64 = Convert.ToBase64String(_byteArr);
@@ -202,12 +269,14 @@ namespace QuanLyKhachHang
                     this.upload.Text = "OK";
                     this.upload.BackColor = Color.Blue;
                     LoadHInh(this.txtDB.Text);
+                     
                 }
                 catch (Exception ex)
                 {
                     this.upload.BackColor = Color.Red;
                     this.upload.Text = "Lỗi" + ex.ToString(); ;
                 }
+           }
         }
          
 
