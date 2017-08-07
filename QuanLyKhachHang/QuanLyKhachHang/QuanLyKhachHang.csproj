@@ -302,6 +302,10 @@
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="FlowPlayer\flowplayer-3.2.12.min.js" />
+    <Content Include="FlowPlayer\flowplayer-3.2.16.swf" />
+    <Content Include="FlowPlayer\flowplayer.controls-3.2.15.swf" />
+    <Content Include="FlowPlayer\flowplayer.pseudostreaming-3.2.12.swf" />
     <Content Include="Global.asax" />
     <Content Include="iisstart.aspx" />
     <Content Include="Image\1down.png" />
@@ -756,6 +760,7 @@
       <LastGenOutput>ThuTien.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <Content Include="FileCS.ashx" />
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.svg" />
     <None Include="fonts\fontawesome-webfont.ttf" />

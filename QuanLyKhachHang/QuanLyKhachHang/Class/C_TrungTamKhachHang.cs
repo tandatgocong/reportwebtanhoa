@@ -206,6 +206,40 @@ namespace QuanLyKhachHang.Class
         }
 
 
+        public static DataTable getKiemTraXM(string danhbo)
+        {
+            DataTable dt = new DataTable();
+            KinhDoanhDataContext db = new KinhDoanhDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            try
+            {
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("pDieuChinh", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter _ky = cmd.Parameters.Add("@DanhBo", SqlDbType.VarChar);
+                _ky.Direction = ParameterDirection.Input;
+                _ky.Value = danhbo; 
+                
+                dt.Load(cmd.ExecuteReader());
+               dt.DefaultView.Sort = "NgayXuLy DESC";
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
 
     }
 }

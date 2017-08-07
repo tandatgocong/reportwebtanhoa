@@ -9,6 +9,8 @@ using QuanLyKhachHang.DataBase;
 using System.Drawing;
 using System.IO;
 using System.Data;
+using System.ComponentModel;
+
 
 namespace QuanLyKhachHang
 {
@@ -16,7 +18,11 @@ namespace QuanLyKhachHang
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+             MaintainScrollPositionOnPostBack = true;
+             if (IsPostBack)
+                 return;
 
+        
         }
         TB_DULIEUKHACHHANG khachhang = null;
         void LoadThongTinDB(string sodanhbo)
@@ -28,6 +34,7 @@ namespace QuanLyKhachHang
                 if (khachhang != null)
                 {
                     lbDanhBo.Text = khachhang.DANHBO;
+                    hopdong.Text = khachhang.HOPDONG;
                     lotrinh.Text = khachhang.LOTRINH;
                     //DOT.Text = khachhang.LOTRINH.Substring(1, 2);
                     //HOPDONG.Text = khachhang.HOPDONG;
@@ -63,6 +70,7 @@ namespace QuanLyKhachHang
                             lotrinh.Text = khachhang.LOTRINH;
                             ////    DOT.Text = khachhanghuy.DOT;
                             //HOPDONG.Text = khachhanghuy.HOPDONG;
+                            hopdong.Text = khachhanghuy.HOPDONG;
                             lbTenKh.Text = khachhang.HOTEN;
                             diachi.Text = khachhang.SONHA + ' ' + khachhang.TENDUONG;
                             //QUAN.Text = khachhanghuy.QUAN + "  " + khachhanghuy.PHUONG;
@@ -107,7 +115,10 @@ namespace QuanLyKhachHang
             GridView2.DataSource = Class.C_DuLieuKhachHang.lisGhiChu(db);
             GridView2.DataBind();
 
-           
+
+            GridView4.DataSource = Class.C_TrungTamKhachHang.getKiemTraXM(db);
+            GridView4.DataBind();
+         
 
         }
         public void LoadHInh(string db)
@@ -139,37 +150,22 @@ namespace QuanLyKhachHang
 
         public void LoadVideos(string db)
         {
-            //List<TB_DULIEUKHACHHANG_IMG> lis = C_DuLieuKhachHang.getListImg(db);
-            //foreach (TB_DULIEUKHACHHANG_IMG value in lis)
-            //{
-            //    byte[] _byteArr = value.IMG.ToArray();
-            //    string strBase64 = Convert.ToBase64String(_byteArr);
-
-            //    int i = 1;
-
-            //    System.Web.UI.WebControls.Image img = new System.Web.UI.WebControls.Image();
-            //    img.ID = "image" + i.ToString();
-            //    img.ImageUrl = "data:Image/png;base64," + strBase64;
-            //    img.Width = 300;
-            //    img.Height = 300;
-            //    img.Visible = true;
-            //    i++;
-
-            //    PanelImg.Controls.Add(img);
-            //    Label t = new Label();
-            //    t.Text = "   ";
-            //    PanelImg.Controls.Add(t);
-
-            //}
+            List<TB_DULIEUKHACHHANG_IMG> lis = C_DuLieuKhachHang.getListVideo(db);
+            DataList1.DataSource = lis;
+            DataList1.DataBind();
 
         }
    
         protected void txtDB_TextChanged(object sender, EventArgs e)
         {
+          
             string s = dot.SelectedValue + "";
             string search = txtDB.Text;
             if ("0".Equals(s))
+            {
                 LoadThongTinDB(this.txtDB.Text);
+                Panel3.Visible = false;
+            }
             else if ("1".Equals(s))
             {
                 string query = "";
@@ -215,40 +211,12 @@ namespace QuanLyKhachHang
 
         protected void btUploag_Click(object sender, EventArgs e)
         {
-           if("mp4".Contains(FileUpload2.FileName))
-           {
-               try
-               {
-                   if (Request.Files[0].InputStream.Length > Int32.MaxValue)
-                       return;
-                   int dataLen = (int)Request.Files[0].InputStream.Length;
-                   byte[] _byteArr = new byte[dataLen];
-                   Request.Files[0].InputStream.Read(_byteArr, 0, dataLen);
-                   TB_DULIEUKHACHHANG_IMG img = new TB_DULIEUKHACHHANG_IMG();
-                   img.DANHBO = lbDanhBo.Text;
-                   img.NGAYUP = DateTime.Now;
-                   img.Loai = "mp4";
-                   img.IMG = _byteArr;
-                   C_DuLieuKhachHang.InsertImg(img);
-
-                   //string strBase64 = Convert.ToBase64String(_byteArr);
-                   //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
-
-                   this.upload.Text = "OK";
-                   this.upload.BackColor = Color.Blue;
-                   
-                   LoadVideos(this.txtDB.Text);
-               }
-               catch (Exception ex)
-               {
-                   this.upload.BackColor = Color.Red;
-                   this.upload.Text = "Lỗi" + ex.ToString(); ;
-               }
-           }
-           else
-           {
-
-            if (FileUpload2.HasFile)
+            if ("".Contains(FileUpload2.FileName))
+            {
+                return;
+            }
+            else if (FileUpload2.FileName.Contains("mp4"))
+            {
                 try
                 {
                     if (Request.Files[0].InputStream.Length > Int32.MaxValue)
@@ -259,8 +227,8 @@ namespace QuanLyKhachHang
                     TB_DULIEUKHACHHANG_IMG img = new TB_DULIEUKHACHHANG_IMG();
                     img.DANHBO = lbDanhBo.Text;
                     img.NGAYUP = DateTime.Now;
-                    img.IMG = Resize2Max50Kbytes(_byteArr);
-                    img.Loai = "img";
+                    img.Loai = "mp4";
+                    img.Video = _byteArr;
                     C_DuLieuKhachHang.InsertImg(img);
 
                     //string strBase64 = Convert.ToBase64String(_byteArr);
@@ -268,17 +236,48 @@ namespace QuanLyKhachHang
 
                     this.upload.Text = "OK";
                     this.upload.BackColor = Color.Blue;
-                    LoadHInh(this.txtDB.Text);
-                     
+
+                    LoadVideos(this.txtDB.Text);
                 }
                 catch (Exception ex)
                 {
                     this.upload.BackColor = Color.Red;
                     this.upload.Text = "Lỗi" + ex.ToString(); ;
                 }
-           }
+            }
+            else
+            {
+
+                if (FileUpload2.HasFile)
+                    try
+                    {
+                        if (Request.Files[0].InputStream.Length > Int32.MaxValue)
+                            return;
+                        int dataLen = (int)Request.Files[0].InputStream.Length;
+                        byte[] _byteArr = new byte[dataLen];
+                        Request.Files[0].InputStream.Read(_byteArr, 0, dataLen);
+                        TB_DULIEUKHACHHANG_IMG img = new TB_DULIEUKHACHHANG_IMG();
+                        img.DANHBO = lbDanhBo.Text;
+                        img.NGAYUP = DateTime.Now;
+                        img.IMG = Resize2Max50Kbytes(_byteArr);
+                        img.Loai = "img";
+                        C_DuLieuKhachHang.InsertImg(img);
+
+                        //string strBase64 = Convert.ToBase64String(_byteArr);
+                        //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
+
+                        this.upload.Text = "OK";
+                        this.upload.BackColor = Color.Blue;
+                        LoadHInh(this.txtDB.Text);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        this.upload.BackColor = Color.Red;
+                        this.upload.Text = "Lỗi" + ex.ToString(); ;
+                    }
+            }
         }
-         
 
         protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
         {

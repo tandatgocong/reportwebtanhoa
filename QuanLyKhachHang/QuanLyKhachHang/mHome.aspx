@@ -51,7 +51,7 @@
       <div class="card animated fadeIn">
          <div class="location"> THÔNG TIN DANH BỘ </div> 
       <div class="text"> 
-      <table   >
+      <table>
       <tr><td style="width:80px;"><asp:DropDownList ID="dot" runat="server" Height="19px" Width="85px">
           <asp:ListItem Value="0">Danh Bộ</asp:ListItem>
           <asp:ListItem Value="1">Địa Chỉ</asp:ListItem>
@@ -60,8 +60,8 @@
                   style="margin-left: 0px"></asp:TextBox>
           </td></tr>
       <tr><td colspan="2" >
-       <asp:Panel ID="Panel3" Visible="false" runat="server" ScrollBars="Both" 
-              Width="320px" Height="100px">
+       <asp:Panel ID="Panel3"  runat="server" ScrollBars="Both" 
+              Width="331px" Height="100px" BorderWidth="0px" Visible="False">
          <asp:Panel ID="Panel4"   runat="server"  Width="800px" Height="100%">
           <asp:GridView ID="GridView3" runat="server" Width="100%" AutoGenerateColumns="False" 
               CellPadding="4" ForeColor="#333333" GridLines="None" 
@@ -105,12 +105,12 @@
           </td></tr>
       </table>   
       <hr /> 
-       <table> 
+       <table > 
       <tr><td class="style1" colspan="2">Khách Hàng:&nbsp;<asp:Label ID="lbTenKh" runat="server" Font-Bold="True"/>
           <asp:Label ID="lbDanhBo" runat="server" Font-Bold="True" Visible="False"/></td></tr>
       <tr><td class="style1" colspan="2">Địa Chỉ:&nbsp;<asp:Label ID="diachi" runat="server" Font-Bold="True"/></td></tr>
-      <tr><td class="style2" colspan="2">Lộ Trình:&nbsp;<asp:Label ID="lotrinh" runat="server" Font-Bold="True"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hiệu Lực :  <asp:Label ID="hieuluc" runat="server" Font-Bold="True"/></td> </tr>
-      <tr><td class="style2" colspan="2">Giá Biểu:&nbsp;<asp:Label ID="giabieu" runat="server" Font-Bold="True" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Định Mức :  <asp:Label ID="dinhmuc" runat="server" Font-Bold="True"/> </td> </tr>
+      <tr><td class="style2" colspan="2">Hợp Đồng : <asp:Label ID="hopdong" runat="server" Font-Bold="True"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lộ Trình:&nbsp;<asp:Label ID="lotrinh" runat="server" Font-Bold="True"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td> </tr>
+      <tr><td class="style2" colspan="2">Hiệu Lực : <asp:Label ID="hieuluc" runat="server" Font-Bold="True"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GB:&nbsp;<asp:Label ID="giabieu" runat="server" Font-Bold="True" /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ĐM :  <asp:Label ID="dinhmuc" runat="server" Font-Bold="True"/> </td> </tr>
       <tr><td class="style2" colspan="2">Ngày Gắn:&nbsp;<asp:Label ID="ngaygan" runat="server" Font-Bold="True" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ngày KĐ:  <asp:Label ID="ngaykiemdinh" runat="server" Font-Bold="True"/> </td> </tr>
       <tr><td class="style1" colspan="2">Hiệu ĐHN:&nbsp;<asp:Label ID="hieudhn" runat="server" Font-Bold="True"/></td></tr>
       <tr><td class="style1" colspan="2">NV Đọc Số :&nbsp;<asp:Label ID="nvds" runat="server" Font-Bold="True"/></td></tr>
@@ -199,6 +199,47 @@
                     </asp:GridView>
       </asp:Panel>
       </td></tr>
+      
+      
+       <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Lịch sử kiểm tra </td></tr>
+       <tr> <td colspan="2">
+       <asp:Panel ID="Panel5" runat="server" ScrollBars="Both" 
+              Width="330px" Height="150px">
+         <asp:Panel ID="Panel6"   runat="server"  Width="800px" Height="100%">
+             <asp:GridView ID="GridView4" Width="100%" runat="server" AutoGenerateColumns="False" 
+                 BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
+                 CellPadding="3">
+                 <Columns>
+                     <asp:BoundField DataField="Loai" HeaderText="Loại KT">
+                     <ItemStyle Width="110px" />
+                     </asp:BoundField>
+                     <asp:BoundField DataField="NgayXuLy" HeaderText="NgayXuLy">
+                     <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+                     </asp:BoundField>
+                     <asp:BoundField DataField="noidung" HeaderText="Nội Dung">
+                     <ItemStyle Width="150px" />
+                     </asp:BoundField>
+                     <asp:BoundField HeaderText="Kết Quả" DataField="ketqua">
+                     <ItemStyle Width="200px" />
+                     </asp:BoundField>
+                 </Columns>
+                 <FooterStyle BackColor="White" ForeColor="#000066" />
+                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                 <RowStyle ForeColor="#000066" />
+                 <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                 <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                 <SortedDescendingHeaderStyle BackColor="#00547E" />
+             </asp:GridView>
+
+          </asp:Panel>
+          </asp:Panel>
+          </td>
+          </tr>
+
+
       <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2">tọa độ vị trí</td></tr>
       <tr>
       
@@ -261,13 +302,35 @@
       </tr>
 
       <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Hình ảnh lưu trữ</td></tr>
-     <tr><td class="style4"><asp:FileUpload ID="FileUpload2" runat="server" /> 
-         <td class="style4">  <asp:Button ID="btUploag" runat="server" Text="Upload" onclick="btUploag_Click"  /> 
-         <td class="style4"> <asp:Label ID="upload" runat="server" ForeColor="Red" /></td></tr>
-     <tr><td class="style3" colspan="2">
+     <tr><td class="style4"><asp:FileUpload ID="FileUpload2" runat="server" />  </td>
+         <td class="style4">  <asp:Button ID="btUploag" runat="server" Text="Upload" onclick="btUploag_Click"  /> <asp:Label ID="upload" runat="server" ForeColor="Red" />
+         </td>
+         </tr>
+     <tr><td  colspan="2">
         <marquee behavior='scroll' SCROLLAMOUNT='20' direction='left' onmouseover='this.stop();' onmouseout='this.start();'>  <asp:Panel ID="PanelImg" runat="server"></asp:Panel></marquee>
         </td>
         </tr>
+         <tr><td  colspan="2">
+             <asp:DataList ID="DataList1" Visible="true" runat="server" AutoGenerateColumns="false"
+                RepeatColumns="2" CellSpacing="5">
+                <ItemTemplate>
+                    <a class="player" style="height: 300px; width: 300px; display: block" href='<%# Eval("ID", "FileCS.ashx?id={0}") %>'>
+                    </a>
+                </ItemTemplate>
+            </asp:DataList>
+            <script src="FlowPlayer/flowplayer-3.2.12.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                flowplayer("a.player", "FlowPlayer/flowplayer-3.2.16.swf", {
+                    plugins: {
+                        pseudo: { url: "FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" }
+                    },
+                    clip: { provider: 'pseudo', autoPlay: false},
+                });
+            </script>
+
+        
+         </td>
+         </tr>
       </table>
       </div>
       </div>
