@@ -20,7 +20,7 @@ namespace QuanLyKhachHang.View
                 GridView1.DataSource = Class.C_DuLieuKhachHang.getListHoaDonReport(db);
                 GridView1.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                  
             }

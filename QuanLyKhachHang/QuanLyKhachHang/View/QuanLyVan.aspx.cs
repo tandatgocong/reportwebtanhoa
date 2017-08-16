@@ -13,19 +13,19 @@ namespace QuanLyKhachHang.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["page"] = "QuanLyVan.aspx";
-            if (Session["login"] == null)
-            {
-                Response.Redirect(@"Login.aspx");
-            }
-            else if (("TOCNTT".Contains(Session["phong"].ToString())))
-            {
+            //Session["page"] = "QuanLyVan.aspx";
+            //if (Session["login"] == null)
+            //{
+            //    Response.Redirect(@"Login.aspx");
+            //}
+            //else if (("TOCNTT".Contains(Session["phong"].ToString())))
+            //{
 
-            }
-            else if (!("DTCTB,DTCXL".Contains(Session["phong"].ToString())))
-            {
-                Response.Redirect(@"zphanquyen.aspx");
-            }
+            //}
+            //else if (!("DTCTB,DTCXL".Contains(Session["phong"].ToString())))
+            //{
+            //    Response.Redirect(@"zphanquyen.aspx");
+            //}
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
@@ -39,10 +39,21 @@ namespace QuanLyKhachHang.View
             string sql = " SELECT   * FROM HeThongVan Where ID=3";
             Session["dsVan"] = C_KyThuat.getDataTable(sql);
 
+            try
+            {
+                Session["ConfigPath"] = null;
+                sql = " SELECT   * FROM ConfigPath Where ID=1";
+                Session["ConfigPath"] = C_KyThuat.getDataTable(sql).Rows[0][1].ToString();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+
         }
         void search()
         {
-            string dc = "";
             //string URLString = "https://maps.googleapis.com/maps/api/geocode/xml?address= " + dc + ", Ho Chi Minh City, Ho Chi Minh, Vietnam&key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU";
             string URLString = " http://maps.google.com/maps/api/geocode/xml?latlng=10.7684380,106.6306070&sensor=false ";
             XmlTextReader reader = new XmlTextReader(URLString);

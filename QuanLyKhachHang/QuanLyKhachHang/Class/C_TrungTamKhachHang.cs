@@ -34,7 +34,7 @@ namespace QuanLyKhachHang.Class
                 db.SubmitChanges();
                 return result;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
 

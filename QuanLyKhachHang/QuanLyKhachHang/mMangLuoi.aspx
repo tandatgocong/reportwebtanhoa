@@ -1,19 +1,57 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HomePage.Master" AutoEventWireup="true" CodeBehind="QuanLyVan.aspx.cs" Inherits="QuanLyKhachHang.View.QuanLyVan" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="mMangLuoi.aspx.cs" Inherits="QuanLyKhachHang.mMangLuoi" %>
+
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <script language="javascript" type="text/javascript">
-     window.document.getElementById("HOME").className = "top_link";
-     window.document.getElementById("GANMOI").className = "current_link";
-     window.document.getElementById("KHACHHANG").className = "top_link";
-     window.document.getElementById("APLUC").className = "top_link";
-     window.document.getElementById("BAOBE").className = "top_link";
-    </script> 
-    <style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    
+   <head>
+      <LINK REL="SHORTCUT ICON"  HREF="Image/th.png">
+      <title>.:.QLML.:.</title>
+      <link rel="stylesheet" type="text/css" href="StyleSheet/style.css"/>
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+      <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+      <!-- <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon"/> --->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet"/>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="" />
+      <meta name="keywords" content=" "/>
+      <meta name="author" content="Shrinath Nayak">
+      <meta name="robots" content="index, follow" />
+
+       <style type="text/css">
+          .title_mobile
+          {
+        border-bottom: 2px solid #663300;
+        color: #006600;
+        font-family: Tahoma,Arial,Helvetica,sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0 10px;
+        padding: 5px 0;
+        text-transform: uppercase;
+    }
+            
+           .style3
+           {
+               height: 32px;
+           }
+           .style4
+           {
+               height: 52px;
+           }
+            
+           </style>
+   </head>
+   <body style="background-image="bg.jpg" >
+     <form id="Form1"  runat="server" > 
+      <!--Card-->
+      <div class="card animated fadeIn">
+<style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -71,12 +109,12 @@
         font-family: Roboto;
         font-size: 15px;
         font-weight: 300;
-        margin-left: 12px;
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
-        width: 400px;
+        width: 250px;
         height:25px;
-        margin-top:11px;
+        margin-top:20px;
+        margin-left: 0px;
       }
 
       #pac-input:focus {
@@ -95,7 +133,6 @@
       }
     </style>
   
-  <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
      <div id="map" style="width: 100%; height: 100vh"></div>
     <script>
@@ -199,7 +236,7 @@
 
 
 
-         /*        var infoWindow = new google.maps.InfoWindow({map: map});
+                var infoWindow = new google.maps.InfoWindow({map: map});
 
             // Try HTML5 geolocation.
                 if (navigator.geolocation) {
@@ -220,7 +257,7 @@
                   handleLocationError(false, infoWindow, map.getCenter());
                 }
 
-                */
+                
 
             ////////////////////
 
@@ -287,15 +324,16 @@
              
         }
          function monuoc(id) {                
-                 var newUrl="addVan.aspx?id="+id ;
+                 var newUrl="mMangLuoi.aspx?id="+id ;
                    // alert(latlng);
                   document.location.href = newUrl;
                }
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
-  </body>
-
-              
-</asp:Content>
- 
+  </div>
+    
+   </form>
+      
+   </body>
+</html>

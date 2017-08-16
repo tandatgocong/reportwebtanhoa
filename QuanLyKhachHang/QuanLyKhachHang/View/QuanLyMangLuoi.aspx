@@ -291,8 +291,8 @@
                 ////// ONG CAI/ ///////
                    var layer5 = new google.maps.FusionTablesLayer({
                     query: {
-                        select: 'col7',
-                        from: '1IaexZr3GNIRkUkyEyvAnPhYMHOFy1CGNPZ_tqNzv'
+                        select: 'col2',
+                        from: '1vBx-orvk3EmpzawLGKNGgyOKQUTMiq7qEeflsz88'
                     },
                     options: {
                         styleId: 2,

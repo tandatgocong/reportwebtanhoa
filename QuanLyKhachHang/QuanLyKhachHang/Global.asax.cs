@@ -40,8 +40,7 @@ namespace QuanLyKhachHang
             Session["lat"] = "10.801433295748337" ;
             Session["lng"] = "106.65252816547981";
             Session["dsDongnuoc"] = null;
-            int count_visit = 0;
-            Session["imgfile"] = "";
+                      Session["imgfile"] = "";
             Session["phong"] = "";
             Session["page"] = null;
 

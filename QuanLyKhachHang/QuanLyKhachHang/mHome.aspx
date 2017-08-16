@@ -6,8 +6,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
+    
    <head>
-      <title>..: Thông Tin :..</title>
+      <LINK REL="SHORTCUT ICON"  HREF="Image/th.png">
+      <title>.:.CSKH.:.</title>
       <link rel="stylesheet" type="text/css" href="StyleSheet/style.css"/>
       <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
       <link rel="stylesheet" type="text/css" href="css/animate.css"/>
@@ -302,7 +304,8 @@
       </tr>
 
       <tr><td class="title_mobile"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; text-align: center;" colspan="2"> Hình ảnh lưu trữ</td></tr>
-     <tr><td class="style4"><asp:FileUpload ID="FileUpload2" runat="server" />  </td>
+     <tr><td class="style4"><asp:FileUpload ID="FileUpload2" runat="server" />
+     </td>
          <td class="style4">  <asp:Button ID="btUploag" runat="server" Text="Upload" onclick="btUploag_Click"  /> <asp:Label ID="upload" runat="server" ForeColor="Red" />
          </td>
          </tr>

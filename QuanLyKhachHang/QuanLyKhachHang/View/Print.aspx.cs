@@ -18,7 +18,6 @@ namespace QuanLyKhachHang.View
         {
 
             string sql = "";
-            string title = "";
 
             if ("BQ".Equals(Request.Params["page"] + ""))
             {

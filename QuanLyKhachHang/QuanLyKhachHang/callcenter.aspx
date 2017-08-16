@@ -139,7 +139,7 @@
                     });
                  
                     */
-                var  infoWindow2 = new google.maps.InfoWindow();
+                 var  infoWindow2 = new google.maps.InfoWindow();
 
                        // Event that closes the Info Window with a click on the map
                        google.maps.event.addListener(map, 'click', function() {
@@ -147,65 +147,68 @@
                        });
 
                      <% 
-                       DataTable table = new DataTable();
+                        int f=1;
+                    DataTable   table = new DataTable();                    
                        if(Session["dsDongnuoc"]!=null)
                        {
                         table = (DataTable)Session["dsDongnuoc"];
                         for(int i=0;i<table.Rows.Count;i++)
                         {
+                          f++;
                         %>
                            var x = parseFloat(<%=table.Rows[i]["lat"]%>);
                            var y = parseFloat(<%=table.Rows[i]["lng"]%>);
                           // var latlng2 = new google.maps.LatLng(x, y);
 
                              var latlng2 = new google.maps.LatLng(x, y);
-                             var name<%=i%> =<%=table.Rows[i]["ID"]%>;
-                                                            
-                          
+                             var name<%=f%> =<%=table.Rows[i]["ID"]%>;
+                              var col='#FF0000';                            
+                             <% if("False".Equals(table.Rows[i]["Loai"].ToString()))
+                                {
+                                 %> 
+                                  col='#FFFF00';  
+                                 <%
+                                }           
+                                %>
+
                              var cityCircle = new google.maps.Circle({
                                 strokeColor: '#FF0000',
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
-                                fillColor: '#FF0000',
+                                fillColor: col,
                                 fillOpacity: 0.35,
                                 map: map,
                                 center: latlng2,
                                 radius: 200
                               });
 
-                              var marker<%=i%> = new google.maps.Marker({
+                              var marker<%=f%> = new google.maps.Marker({
 				              position: latlng2,
 				              map: map,
-				              title: name<%=i%>
+				              title: name<%=f%>
 				              });
 
-
-                            google.maps.event.addListener(marker<%=i%>, 'click', function() {
+                          google.maps.event.addListener(marker<%=f%>, 'click', function() {
                               // Creating the content to be inserted in the infowindow
-                              var iwContent="<div class='title_page'>Thông Tin Đóng Nước </div> <br/> " ;
-                              iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
+                          var iwContent="<div class='title_page'>Thông Tin  <%=table.Rows[i]["F"]%> </div> <br/> " ;
+                          iwContent+="<table  style='height:100px; colspan='2' align='center'><tr><td colspan='2' align='center'> </td></tr>";
                           iwContent+="<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:400px;'>&nbsp;Địa chỉ :<b>  <%=table.Rows[i]["DiaChi"]%> </b></> &nbsp; </b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Đóng nước Từ Ngày :<b>  <%=table.Rows[i]["TuNgay"]%> </b></> &nbsp;   Đến Ngày : <b><%=table.Rows[i]["DenNgay"]%></b> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Từ Giờ : <b><%=table.Rows[i]["TuGio"]%></b> &nbsp;  Đến Giờ : <b><%=table.Rows[i]["DenGio"]%></b>    &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Nội Dung : <%=table.Rows[i]["NoiDung"]%> &nbsp;</td></tr>";
                           iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Mở Nước' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
                           iwContent+="</table>";
-      
                               // including content to the Info Window.
                               infoWindow2.setContent(iwContent);
 
                               // opening the Info Window in the current map and at the current marker location.
-                              infoWindow2.open(map, marker<%=i%>);
-                           });
-
-
+                              infoWindow2.open(map, marker<%=f%>);
+                           }); 
+                           
                         <%
                         }
                        }
                     %>
-
-
-
 
 
 

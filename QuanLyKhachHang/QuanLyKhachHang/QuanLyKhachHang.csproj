@@ -298,6 +298,7 @@
     <Content Include="ckeditor\skins\v2\skin.js" />
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="mMangLuoi.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -333,6 +334,7 @@
     <Content Include="Image\edit.ico" />
     <Content Include="Image\EDIT.png" />
     <Content Include="Image\error.gif" />
+    <Content Include="Image\favicon.ico" />
     <Content Include="Image\foot.png" />
     <Content Include="Image\db.png" />
     <Content Include="Image\reddot.png" />
@@ -458,6 +460,13 @@
     <Compile Include="Class\LinQConnectionGis.cs" />
     <Compile Include="Class\LinQConnectionGM.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="mMangLuoi.aspx.cs">
+      <DependentUpon>mMangLuoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mMangLuoi.aspx.designer.cs">
+      <DependentUpon>mMangLuoi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\KyThuat.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
