@@ -18,11 +18,11 @@ namespace QuanLyKhachHang
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-             MaintainScrollPositionOnPostBack = true;
-             if (IsPostBack)
-                 return;
+            MaintainScrollPositionOnPostBack = true;
+            if (IsPostBack)
+                return;
 
-        
+
         }
         TB_DULIEUKHACHHANG khachhang = null;
         void LoadThongTinDB(string sodanhbo)
@@ -45,9 +45,17 @@ namespace QuanLyKhachHang
                     hieuluc.Text = String.Format("{0:00}", khachhang.KY) + "/" + khachhang.NAM;
                     giabieu.Text = khachhang.GIABIEU;
                     dinhmuc.Text = khachhang.DINHMUC;
-                    ngaygan.Text = Format.NgayVNVN(khachhang.NGAYTHAY.Value);
-                    ngaykiemdinh.Text = Format.NgayVNVN(khachhang.NGAYKIEMDINH.Value);
-                    hieudhn.Text = khachhang.HIEUDH + "  - " + khachhang.CODH + "  - " + khachhang.SOTHANDH + " - " +  khachhang.VITRIDHN;
+                    try
+                    {
+                        ngaygan.Text = Format.NgayVNVN(khachhang.NGAYTHAY.Value);
+                        ngaykiemdinh.Text = Format.NgayVNVN(khachhang.NGAYKIEMDINH.Value);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                    hieudhn.Text = khachhang.HIEUDH + "  - " + khachhang.CODH + "  - " + khachhang.SOTHANDH + " - " + khachhang.VITRIDHN;
                     //txtDMA.Text = khachhang.MADMA;
                     //txtApluc.Text = CKhachHang.getApLuc(khachhang.MADMA.Replace("TH-", ""));
                     nvds.Text = C_DuLieuKhachHang.getNVDS(khachhang.LOTRINH.Substring(2, 2));
@@ -56,7 +64,7 @@ namespace QuanLyKhachHang
                     loadGhiChu(khachhang.DANHBO);
                     LoadHInh(khachhang.DANHBO);
                     LoadVideos(this.txtDB.Text);
-                    
+
                 }
                 else
                 {
@@ -77,8 +85,15 @@ namespace QuanLyKhachHang
                             hieuluc.Text = "Hết HL " + khachhanghuy.HIEULUCHUY;
                             giabieu.Text = khachhanghuy.GIABIEU;
                             dinhmuc.Text = khachhanghuy.DINHMUC;
-                            ngaygan.Text = Format.NgayVNVN(khachhanghuy.NGAYTHAY.Value);
-                            ngaykiemdinh.Text = Format.NgayVNVN(khachhanghuy.NGAYKIEMDINH.Value);
+                            try
+                            {
+                                ngaygan.Text = Format.NgayVNVN(khachhanghuy.NGAYTHAY.Value);
+                                ngaykiemdinh.Text = Format.NgayVNVN(khachhanghuy.NGAYKIEMDINH.Value);
+                            }
+                            catch (Exception)
+                            {
+
+                            }
                             hieudhn.Text = khachhanghuy.HIEUDH + "  - " + khachhanghuy.CODH + "  - " + khachhanghuy.SOTHANDH + " - " + khachhanghuy.VITRIDHN;
                             nvds.Text = C_DuLieuKhachHang.getNVDS(khachhanghuy.LOTRINH.Substring(2, 2));
                             nvtt.Text = C_DuLieuKhachHang.getNVThuTien(khachhanghuy.DANHBO);
@@ -90,9 +105,9 @@ namespace QuanLyKhachHang
                         }
                         catch (Exception)
                         {
-                            
+
                         }
-                        
+
                     }
                     else
                     {
@@ -118,7 +133,7 @@ namespace QuanLyKhachHang
 
             GridView4.DataSource = Class.C_TrungTamKhachHang.getKiemTraXM(db);
             GridView4.DataBind();
-         
+
 
         }
         public void LoadHInh(string db)
@@ -126,10 +141,10 @@ namespace QuanLyKhachHang
             List<TB_DULIEUKHACHHANG_IMG> lis = C_DuLieuKhachHang.getListImg(db);
             foreach (TB_DULIEUKHACHHANG_IMG value in lis)
             {
-                byte[] _byteArr =value.IMG.ToArray();
+                byte[] _byteArr = value.IMG.ToArray();
                 string strBase64 = Convert.ToBase64String(_byteArr);
-                
-                int i=1;
+
+                int i = 1;
 
                 System.Web.UI.WebControls.Image img = new System.Web.UI.WebControls.Image();
                 img.ID = "image" + i.ToString();
@@ -138,14 +153,14 @@ namespace QuanLyKhachHang
                 img.Height = 300;
                 img.Visible = true;
                 i++;
-               
+
                 PanelImg.Controls.Add(img);
                 Label t = new Label();
                 t.Text = "   ";
                 PanelImg.Controls.Add(t);
 
             }
-        
+
         }
 
         public void LoadVideos(string db)
@@ -155,10 +170,10 @@ namespace QuanLyKhachHang
             DataList1.DataBind();
 
         }
-   
+
         protected void txtDB_TextChanged(object sender, EventArgs e)
         {
-          
+
             string s = dot.SelectedValue + "";
             string search = txtDB.Text;
             if ("0".Equals(s))
@@ -180,14 +195,14 @@ namespace QuanLyKhachHang
             }
             //Session["sds"] = Class.C_QuanLyDHN.getDiaChi(search);
 
-           
+
 
         }
 
         public static byte[] Resize2Max50Kbytes(byte[] byteImageIn)
         {
             byte[] currentByteImageArray = byteImageIn;
-            double scale = 1f;   
+            double scale = 1f;
             MemoryStream inputMemoryStream = new MemoryStream(byteImageIn);
             System.Drawing.Image fullsizeImage = System.Drawing.Image.FromStream(inputMemoryStream);
 
@@ -288,7 +303,6 @@ namespace QuanLyKhachHang
                 Panel3.Visible = false;
 
             }
-            
         }
     }
 }

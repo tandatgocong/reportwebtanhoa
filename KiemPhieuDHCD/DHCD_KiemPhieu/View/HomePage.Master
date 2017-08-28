@@ -21,7 +21,7 @@
        &nbsp;
        <div style="vertical-align:middle;"><asp:Label ID="Label1"  runat="server" 
                Font-Bold="True" Font-Size="X-Large" 
-             ForeColor="Yellow" Text="HỘI NGHỊ NGƯỜI LAO ĐỘNG - CÔNG TY CỔ PHẦN CN TÂN HÒA NĂM 2017"></asp:Label></div>
+             ForeColor="Yellow" Text=" ĐẠI HỘI CHI BỘ KHỐI KINH DOANH LẦN III, NHIỆM KỲ 2017 - 2020"></asp:Label></div>
      </div>
      <div class="Menu">
  	 <div style="width:100%">

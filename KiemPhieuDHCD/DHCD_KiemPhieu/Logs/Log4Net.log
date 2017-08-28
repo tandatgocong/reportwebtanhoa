@@ -947,3 +947,80 @@ The statement has been terminated.
 2017-04-27 15:17:43,342 [6868] ERROR File LinQConnection getDataTableDivide by zero error encountered.
 2017-04-27 15:23:53,551 [3536] ERROR File LinQConnection getDataTableDivide by zero error encountered.
 2017-04-27 15:26:54,942 [7476] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-23 14:50:54,246 [9644] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='23/08/2017' 
+2017-08-23 14:50:54,265 [9644] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-24 10:18:33,201 [14256] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='24/08/2017' 
+2017-08-24 10:18:33,218 [14256] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-24 10:19:30,657 [8520] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 3 AND CONVERT(VARCHAR(50),NGAYBC,103)='24/08/2017' 
+2017-08-24 10:19:30,657 [8520] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:22:54,365 [2136] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:22:54,387 [2136] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:22:58,367 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:22:58,367 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:23:00,185 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:23:00,185 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:23:03,453 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:23:03,453 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:23:06,193 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:23:06,193 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:23:56,717 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:23:56,717 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:24:09,986 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:24:09,986 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:24:11,601 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:24:11,601 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:24:29,558 [13304] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:24:29,558 [13304] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:24:33,997 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:24:33,997 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:24:38,315 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 3 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:24:38,315 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:26:30,275 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:26:30,279 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:26:33,076 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:26:33,076 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:26:35,461 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:26:35,461 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:26:39,357 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:26:39,357 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:27:42,587 [11548] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:27:42,587 [11548] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:27:45,710 [7512] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:27:45,710 [7512] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:27:47,945 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:27:47,945 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:29:54,046 [3788] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:29:54,046 [3788] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:30:08,413 [2452] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:30:08,413 [2452] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:30:29,826 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:30:29,826 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:30:51,459 [4500] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:30:51,495 [4500] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:30:51,495 [4500] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:30:55,753 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:30:55,786 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:30:55,786 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:32:32,623 [10852] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:32:32,662 [10852] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:32:32,662 [10852] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:32:37,622 [12508] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:32:37,660 [12508] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:32:37,660 [12508] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:32:53,496 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:32:53,537 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:32:53,537 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:33:25,936 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:33:25,970 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:33:25,970 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:38:45,204 [4700] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:40:51,212 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 0 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:40:51,212 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:41:13,641 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:41:38,867 [2820] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 09:41:38,867 [2820] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-08-25 09:41:57,276 [12008] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:42:30,979 [4072] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 09:49:58,915 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-08-25 11:57:58,814 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
+2017-08-25 11:57:58,814 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.

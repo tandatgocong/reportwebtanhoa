@@ -35,6 +35,10 @@
          {
              width: 184px;
          }
+         .style7
+         {
+             width: 429px;
+         }
      </style>
 
     
@@ -299,28 +303,11 @@
                         
                     </td>
             <td align="left" valign=top>
-                <asp:DropDownList ID="DropDownList2" runat="server" 
-                                Height="24px" Width="58px" 
-                                                AutoPostBack="True" 
-                    onselectedindexchanged="DropDownList2_SelectedIndexChanged">
-                                                <asp:ListItem>0</asp:ListItem>
-                                                <asp:ListItem>1</asp:ListItem>
-                                                <asp:ListItem>2</asp:ListItem>
-                                                <asp:ListItem Value="3">3</asp:ListItem>
-                                                <asp:ListItem>4</asp:ListItem>
-                                                <asp:ListItem>5</asp:ListItem>
-                                                <asp:ListItem>6</asp:ListItem>
-                                                <asp:ListItem>7</asp:ListItem>
-                                                <asp:ListItem>8</asp:ListItem>
-                                                <asp:ListItem>9</asp:ListItem>
-                                                <asp:ListItem>10</asp:ListItem>
-                                                <asp:ListItem>11</asp:ListItem>
-                                            </asp:DropDownList>
-                                            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style5">
-                        
+                      <table> <tr><td>
                 <br />
                         
                 <asp:Button ID="btKetQua" runat="server"  Text="Kết Quả" Width="103px" 
@@ -348,37 +335,25 @@
                     style="text-align: left"></asp:Label>
                 </a></b>
                 
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    </td><td class="style7" style="text-align: right"> 
+                <asp:DropDownList ID="DropDownList2" runat="server" 
+                                Height="24px" Width="58px" 
+                                                AutoPostBack="True" 
+                    onselectedindexchanged="DropDownList2_SelectedIndexChanged">
+                                                <asp:ListItem>0</asp:ListItem>
+                                                <asp:ListItem>1</asp:ListItem>
+                                                <asp:ListItem>2</asp:ListItem>
+                                                <asp:ListItem Value="3">3</asp:ListItem>
+                                                <asp:ListItem>4</asp:ListItem>
+                                                <asp:ListItem>5</asp:ListItem>
+                                                <asp:ListItem>6</asp:ListItem>
+                                                <asp:ListItem>7</asp:ListItem>
+                                                <asp:ListItem>8</asp:ListItem>
+                                                <asp:ListItem>9</asp:ListItem>
+                                                <asp:ListItem>10</asp:ListItem>
+                                                <asp:ListItem>11</asp:ListItem>
+                                            </asp:DropDownList>
+                          </td></tr></table>  
             </td>
             
         </tr>

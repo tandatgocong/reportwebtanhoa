@@ -37,8 +37,8 @@ namespace DHCD_KiemPhieu.View
             Binddata();
             if (DropDownList1.SelectedIndex == 1)
             {
-                title.Text  = "..: KIỂM PHIẾU BẦU CỬ BAN THANH TRA NHÂN DÂN NĂM 2017 :..";
-                lbKetqua.Text = "KẾT QUẢ BẦU CỬ BAN THANH TRA NHÂN DÂN NĂM 2017";
+                title.Text  = "..: KIỂM PHIẾU BẦU CỬ CẤP ỦY CHI BỘ KHỐI KINH DOANH :..";
+                lbKetqua.Text = "KẾT QUẢ BẦU CỬ CẤP ỦY CHI BỘ KHỐI KINH DOANH";
             }
             else if (DropDownList1.SelectedIndex == 2)
             {
