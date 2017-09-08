@@ -67,6 +67,15 @@ namespace WebMobile {
         protected global::System.Web.UI.WebControls.CheckBox chekHien;
         
         /// <summary>
+        /// lbTong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTong;
+        
+        /// <summary>
         /// CalendarExtender1 control.
         /// </summary>
         /// <remarks>
@@ -101,15 +110,6 @@ namespace WebMobile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// cbDonViSuaBe control.

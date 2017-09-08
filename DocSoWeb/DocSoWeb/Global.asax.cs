@@ -40,8 +40,9 @@ namespace WebMobile
             Session["lat"] = "10.801433295748337" ;
             Session["lng"] = "106.65252816547981";
             Session["dsDongnuoc"] = null;
-                      Session["imgfile"] = "";
+            Session["imgfile"] = "";
             Session["phong"] = "";
+            Session["cap"] = "";
             Session["page"] = null;
 
             Session["thuadat"] = "0";

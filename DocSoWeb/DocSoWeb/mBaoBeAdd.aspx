@@ -4,7 +4,7 @@
 <%@ Import Namespace="WebMobile.Class" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript">
       window.document.getElementById("HOME").className = "";
       window.document.getElementById("BAOBE").className = "active";
       window.document.getElementById("HOANCONG").className = "";
@@ -182,12 +182,12 @@
                   <td class="style2" colspan="2">
                       <br />
                       <asp:Button ID="btThen" runat="server" CssClass="button" Height="25px" 
-                          onclick="btThen_Click" Text="&nbsp;Đăng Nhập&nbsp;" Width="103px" />
+                          onclick="btThen_Click" Text="Thêm Mới" Width="103px" />
                       <asp:Button ID="btBack" runat="server" CssClass="button" Height="25px" 
                           onclick="btBack_Click" Text="Trở Lại" Width="103px" />
                       <br />
                       <asp:Label ID="lbThanhCong" runat="server" ForeColor="Blue"></asp:Label>
-                      <asp:Label ID="uploadfile" runat="server" ForeColor="Black"></asp:Label>
+                      <asp:Label ID="uploadfile" runat="server" ForeColor="Blue"></asp:Label>
                       </td>
               </tr>
         </table>

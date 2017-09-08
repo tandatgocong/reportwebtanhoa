@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using WebMobile.DataBase;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace WebMobile
 {
@@ -19,19 +20,19 @@ namespace WebMobile
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["page"] = "bbNhapThongTinBe.aspx";
-            //if (Session["login"] == null)
-            //{
-            //    Response.Redirect(@"Login.aspx");
-            //}
-            //else if (("TOCNTT".Contains(Session["phong"].ToString())))
-            //{
+            Session["page"] = "mBaoBe.aspx";
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"LogIn.aspx");
+            }
+            else if (("TOCNTT".Contains(Session["phong"].ToString())))
+            {
 
-            //}
-            //else if (!Session["phong"].ToString().Equals("GNKDT"))
-            //{
-            //    Response.Redirect(@"zphanquyen.aspx");
-            //}
+            }
+            else if (!Session["phong"].ToString().Equals("GNKDT"))
+            {
+                Response.Redirect(@"zphanquyen.aspx");
+            }
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
@@ -111,74 +112,111 @@ namespace WebMobile
         {
             Response.Redirect(@"mBaoBe.aspx");
         }
+
         string imgpath = "";
+
+        public System.Drawing.Image ResizeByWidth(System.Drawing.Image img, int width)
+        {
+            // lấy chiều rộng và chiều cao ban đầu của ảnh
+            int originalW = img.Width;
+            int originalH = img.Height;
+
+            // lấy chiều rộng và chiều cao mới tương ứng với chiều rộng truyền vào của ảnh (nó sẽ giúp ảnh của chúng ta sau khi resize vần giứ được độ cân đối của tấm ảnh
+            int resizedW = width;
+            int resizedH = (originalH * resizedW) / originalW;
+
+            // tạo một Bitmap có kích thước tương ứng với chiều rộng và chiều cao mới
+            Bitmap bmp = new Bitmap(resizedW, resizedH);
+
+            // tạo mới một đối tượng từ Bitmap
+            Graphics graphic = Graphics.FromImage((System.Drawing.Image)bmp);
+            graphic.InterpolationMode = InterpolationMode.High;
+
+            // vẽ lại ảnh với kích thước mới
+            graphic.DrawImage(img, 0, 0, resizedW, resizedH);
+
+            // gải phóng resource cho đối tượng graphic
+            graphic.Dispose();
+
+            // trả về anh sau khi đã resize
+            return (System.Drawing.Image)bmp;
+        }
+
         public void UploadImg(KT_BaoBe kt)
         {
-            if (FileUpload1.HasFile)
-                try
-                {
-                    string fileName = DateTime.Now.ToString("ddMMyyyyhhmmss") + FileUpload1.FileName.Substring(FileUpload1.FileName.LastIndexOf("."));
+            if (kt != null)
+            {
+                if (FileUpload1.HasFile)
+                    try
+                    {
+                        string fileName = DateTime.Now.ToString("ddMMyyyyhhmmss") + FileUpload1.FileName.Substring(FileUpload1.FileName.LastIndexOf("."));
 
-                    string SaveLocation = Server.MapPath("~/FileUpload/");
+                        string SaveLocation = Server.MapPath("~/FileUpload/");
 
-                    System.IO.Directory.CreateDirectory(SaveLocation + @"/" + kt.ID);
+                        System.IO.Directory.CreateDirectory(SaveLocation + @"/" + kt.ID);
 
-                    SaveLocation = SaveLocation + @"/" + kt.ID + @"/" + fileName;
+                        SaveLocation = SaveLocation + @"/" + kt.ID + @"/" + fileName;
 
-                    FileUpload1.SaveAs(SaveLocation);
-                   // upload.Visible = true;
+                        //FileUpload1.SaveAs(SaveLocation);
+                        // upload.Visible = true;
 
-                    imgpath = @"/FileUpload" + @"/" + kt.ID + @"/" + fileName;
+                        imgpath = @"/FileUpload" + @"/" + kt.ID + @"/" + fileName;
 
-                    //this.FilePath.Value = imgpath;
+                       // this.imagePath.Value = this.imagePath.Value + imgpath + ",";
+                        System.Drawing.Image imag = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
+                        ResizeByWidth(imag, 500).Save(SaveLocation);
+                        this.uploadfile.Text = "Upload Thành Công";
+                        this.uploadfile.ForeColor = Color.Blue;
+                        Class.C_KyThuat.ExecuteCommand("UPDATE KT_BaoBe SET Img='" + imgpath + "' WHERE ID='" + kt.ID + "'");
 
-                    this.uploadfile.Text = "Upload Thành Công";
-                    this.uploadfile.BackColor = Color.Blue;
-                }
-                catch (Exception ex)
-                {
-                    this.uploadfile.BackColor = Color.Red;
-                    this.uploadfile.Text = "Lỗi Không Upload Về Server" + ex.ToString(); ;
-                }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        this.uploadfile.ForeColor = System.Drawing.Color.Red;
+                        this.uploadfile.Text = "Lỗi Không Upload Về Server" + ex.ToString(); ;
+                    }
+            }
         }
 
         protected void btThen_Click(object sender, EventArgs e)
         {
-           // string sohoso = Class.C_TrungTamKhachHang.IdentityBienNhan();
+            // string sohoso = Class.C_TrungTamKhachHang.IdentityBienNhan();
             KT_BaoBe kt = new KT_BaoBe();
+         
             kt.SoHoSo = null;
             kt.TinhTrang = 1;
             kt.Lat = txtLat.Value;
             kt.Lng = txtLng.Value;
             kt.SoDT = txtSoDT.Text; ;
-            kt.MaDMA = cbMaDMA.SelectedValue+"";
+            kt.MaDMA = cbMaDMA.SelectedValue + "";
             kt.LoaiBao = cbLoaiBe.SelectedValue + "";
             kt.SoNha = txtSoNha.Text;
             kt.TenDuong = txtDuong.Text;
             kt.Phuong = cbPhuong.SelectedValue;
             kt.Quan = cbQuan.SelectedValue;
             kt.NgayBao = DateTime.Now;
-            kt.GhiChu = this.txtGhiChu.Text ;
+            kt.GhiChu = this.txtGhiChu.Text;
             kt.CreateDate = DateTime.Now;
             kt.CreateBy = Session["login"].ToString();
-            kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
+            //if(this.imagePath.Value!="")
+            //    kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
 
             //  Response.Redirect(@"mBaoBe.aspx");
             if (Class.C_KyThuat.Insert(kt))
             {
-                lbThanhCong.ForeColor = Color.Blue;
+                lbThanhCong.ForeColor = System.Drawing.Color.Blue;
                 this.lbThanhCong.Text = "Thêm mới điểm bể thành công.";
+
                 UploadImg(kt);
 
-               
+
             }
             else
             {
-                lbThanhCong.ForeColor = Color.Red;
+                lbThanhCong.ForeColor = System.Drawing.Color.Red;
                 this.lbThanhCong.Text = "Thêm mới điểm bể thất bại.";
             }
         }
-
-        
     }
 }

@@ -94,10 +94,11 @@ body {margin:0;}
       <!--Card-->
       <div class="card animated fadeIn">
         <div class="topnav" id="myTopnav">
-              <a id="HOME"  href="mHome.aspx">Home</a>
+              <a id="HOME"  href="mHome.aspx">HOME</a>
               <a id="BAOBE" href="mBaoBe.aspx">BÁO BỂ</a>
               <a id="HOANCONG" href="mHoanCong.aspx">HOÀNG CÔNG</a>
               <a id="BAOCAO" href="mBaoCao.aspx">BÁO CÁO</a>
+              <a id="A1" href="LogOut2.aspx">THOÁT</a>
               <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
             </div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

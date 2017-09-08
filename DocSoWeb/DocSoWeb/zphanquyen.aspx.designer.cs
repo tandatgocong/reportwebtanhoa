@@ -11,7 +11,7 @@ namespace WebMobile
 {
 
 
-    public partial class mHome
+    public partial class zphanquyen
     {
     }
 }

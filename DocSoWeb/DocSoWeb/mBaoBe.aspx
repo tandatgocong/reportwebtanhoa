@@ -9,13 +9,20 @@
       window.document.getElementById("BAOBE").className = "active";
       window.document.getElementById("HOANCONG").className = "";
       window.document.getElementById("BAOCAO").className = "";
-
-      $('a#HOME').text('BÁO BỂ');
+ 
 
   </script>
   <style>
             div.title_page {
         border-bottom: 2px solid #663300;
+        color: #006600;
+        font-family: Tahoma,Arial,Helvetica,sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+}
+div.title_page2 {
+      
         color: #006600;
         font-family: Tahoma,Arial,Helvetica,sans-serif;
         font-size: 14px;
@@ -142,12 +149,19 @@
                        onclick="btXemBangKe_Click" Text="XEM" Width="52px" />
                </td>
                <td class="style7" 
-                   style="border-bottom:2px #99cc99 solid; font-size:10px; font-weight:normal; ">
+                   
+                   style="border-bottom:2px #99cc99 solid; font-size:10px; font-weight:normal; margin-left: 160px;">
                    <asp:CheckBox ID="chekHien" runat="server" AutoPostBack="True" Font-Bold="True" 
                        Font-Size="Small" oncheckedchanged="chekHien_CheckedChanged" 
                        Text="Chuyển" />
                </td>
              </tr>
+             
+            <tr>
+                <td colspan="6" style="height:25px;"><center><div class="title_page2">
+                    <asp:Label ID="lbTong" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label></div></center>
+                </td>
+            </tr>
              
           </tbody>
     </table>
@@ -180,8 +194,7 @@
                                       </td>
                                       <td class="style26" 
                                           style="border-right:2px #FF0000 solid; border-bottom: 1px solid;">
-                                          <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                      </td>
+                                          &nbsp;</td>
                                   </tr>
                                   <tr class="head1">
                                       <td class="style26" 
@@ -209,7 +222,7 @@
                      <tr >
                           <td class="style1" align="center" >
                           <asp:Panel ID="Panel3"  runat="server" ScrollBars="Both" Width="320px"  >
-                                <asp:Panel ID="Panel4"   runat="server"  Width="800px">
+                                <asp:Panel ID="Panel4"   runat="server"  Width="900px">
                               <asp:GridView ID="gChuyen" runat="server" AutoGenerateColumns="False" 
                                   BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
                                   CellPadding="4" Width="100%">
@@ -246,12 +259,12 @@
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
                                       </asp:BoundField>
                                       <asp:BoundField DataField="TenQuan" HeaderText="Quận" >
-                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px" />
+                                      <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px" />
                                       </asp:BoundField>
                                       <asp:BoundField DataField="TenDonVi" HeaderText="Đơn Vị Sửa Bể" >
                                       <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="250px" />
                                       </asp:BoundField>
-                                      <asp:BoundField />
+                                      <asp:BoundField DataField="SoBangKe" HeaderText="Số CV" />
                                   </Columns>
                                   <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
                                   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
@@ -348,30 +361,57 @@
                         table = (DataTable)Session["dsBaoBe"];
                         for(int i=0;i<table.Rows.Count;i++)
                         {
+                          string filelis ="";
+                            string[] words = Regex.Split(table.Rows[i]["Img"].ToString(), ",");
+                            for (int j= 0; j < words.Length; j++)
+                            {
+                                 if (!words[j].Equals("")) {
+                                         filelis+=" <a target='_blank' href='" + words[j] + "'> <img  src='" + words[j] + "' width='200' height='150' /> </a> ";
+                                 }
+                         
+                           }
                         %>
-                            var x= parseFloat(<%=table.Rows[i]["lat"]%>);
-                            lagx= parseFloat(<%=table.Rows[i]["lat"]%>);
-                            var y = parseFloat(<%=table.Rows[i]["lng"]%>);
-                            lagy= parseFloat(<%=table.Rows[i]["lng"]%>);
-                          // var latlng2 = new google.maps.LatLng(x, y);
+                              var x= parseFloat(<%=table.Rows[i]["lat"]%>);
+                              lagx= parseFloat(<%=table.Rows[i]["lat"]%>);
+                              var y = parseFloat(<%=table.Rows[i]["lng"]%>);
+                              lagy= parseFloat(<%=table.Rows[i]["lng"]%>);
+                          
+                            var tinhtrang= parseInt(<%=table.Rows[i]["THUCHIEN"]%>);
+                             var icon_='/Image/Marker.png';
+                             var mau="#FF0000";
+                             
+                             /*if(tinhtrang==2)
+                               { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';} */
+                            
+                             if(tinhtrang==2)
+                                { mau="#00FFFF"; icon_='/Image/MarkerSuaTam.png';}
+                       
+                            if(tinhtrang==3)
+                                { mau="##0000FF"; icon_='/Image/chuagiao.png';}
+                             
+                              var beton= parseInt(<%=table.Rows[i]["BETON"]%>);                             
+                             if (beton==1)
+                                { mau="#FFCC00"; icon_='/Image/warning.png';}
+
 
                              var latlng2 = new google.maps.LatLng(x, y);
                              var name<%=i%> =<%=table.Rows[i]["ID"]%>;
                                                             
                           
-                             var cityCircle = new google.maps.Circle({
-                                strokeColor: '#FF0000',
+                            var cityCircle = new google.maps.Circle({
+                                strokeColor: mau,
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
-                                fillColor: '#FF0000',
+                                fillColor: mau,
                                 fillOpacity: 0.35,
                                 map: map,
                                 center: latlng2,
-                                radius: 50
+                                radius: 20
                               });
 
                               var marker<%=i%> = new google.maps.Marker({
 				              position: latlng2,
+                              icon: icon_,
 				              map: map,
 				              title: name<%=i%>
 				              });
@@ -385,7 +425,8 @@
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;Báo Bể Ngày :<b>  <%=table.Rows[i]["NgayBao"]%> </b></> &nbsp;  </td></tr>";
                           
                           iwContent+="<tr  style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp; Ghi Chú : <%=table.Rows[i]["GhiChu"]%> &nbsp;</td></tr>";
-                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'>&nbsp;<input type='button' class='button'  value='Xóa' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </td></tr>";
+                         iwContent+=" <tr><td colspan='2' align='center' style='border-bottom:1px; border-bottom-style:dotted; height:120px; width:100px;'> <marquee behavior='scroll' SCROLLAMOUNT='20' direction='left' onmouseover='this.stop();' onmouseout='this.start();'> <%=filelis%> </marquee></td></tr>";
+                          iwContent+="<tr  style=' height: 35px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:400px;'> <center><input type='button' class='button'  value='Xóa Điểm Bể' onclick='monuoc(<%=table.Rows[i]["ID"]%>);'/> </center></td></tr>";
                           iwContent+="</table>";
       
                               // including content to the Info Window.
@@ -402,15 +443,32 @@
                     %>
             ////////////////////
             
-                 var pos = {
+                 /*var pos = {
                       lat: lagx,
                       lng: lagy
                     };
                     
                     map.setCenter(pos);
 
+                    */
+                     if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
 
-                   
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location');
+                    map.setCenter(pos);
+                  }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                  });
+                } else {
+                  // Browser doesn't support Geolocation
+                  handleLocationError(false, infoWindow, map.getCenter());
+                }
+
 
 
 
@@ -482,11 +540,11 @@
             });
             
  }
-//            function monuoc(id) {                
-//                var newUrl="callBaoBeAdd.aspx?id="+id ;
-//                   // alert(latlng);
-//                  document.location.href = newUrl;
-//               }
+            function monuoc(id) {                
+                var newUrl="mBaoBeAdd.aspx?id="+id ;
+                   // alert(latlng);
+                  document.location.href = newUrl;
+               }
 
                 function save() {                                                
                    var newUrl="mBaoBeAdd.aspx?lat="+lagx+ "&lng=" + lagy;

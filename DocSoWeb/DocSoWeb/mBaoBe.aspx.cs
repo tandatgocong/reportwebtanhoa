@@ -14,19 +14,19 @@ namespace WebMobile
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["page"] = "bbNhapThongTinBe.aspx";
-            //if (Session["login"] == null)
-            //{
-            //    Response.Redirect(@"Login.aspx");
-            //}
-            //else if (("TOCNTT".Contains(Session["phong"].ToString())))
-            //{
+            Session["page"] = "mBaoBe.aspx";
+            if (Session["login"] == null)
+            {
+                Response.Redirect(@"LogIn.aspx");
+            }
+            else if (("TOCNTT".Contains(Session["phong"].ToString())))
+            {
 
-            //}
-            //else if (!Session["phong"].ToString().Equals("GNKDT"))
-            //{
-            //    Response.Redirect(@"zphanquyen.aspx");
-            //}
+            }
+            else if (!Session["phong"].ToString().Equals("GNKDT"))
+            {
+                Response.Redirect(@"zphanquyen.aspx");
+            }
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
@@ -42,11 +42,18 @@ namespace WebMobile
         {
             //DateTime tNgay = DateTime.ParseExact(tungay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //DateTime dNgay = DateTime.ParseExact(denngay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            string sql = " SELECT * FROM W_BAOBE  ";
+             string sql = " SELECT v.*,CASE WHEN v.LoaiThucHien  = 1 THEN N'Hoàn Thiện' ELSE N'' END  AS TenLoai, (CAST( (DATEDIFF(mi,TuGio,DenGio)/60) AS VARCHAR)) AS GIO,   CAST(  (DATEDIFF(mi,TuGio,DenGio)%60) AS VARCHAR) as PHUT, ";
+            sql += " (CAST((DATEDIFF(mi,NgayBao,DenGio)/60) AS VARCHAR)) AS HGIO,   CAST((DATEDIFF(mi,NgayBao,DenGio)%60) AS VARCHAR) as HPHUT, ";
+            sql += "   CASE WHEN DATEDIFF(DD,NgayBao,GETDATE())>3  AND NgayThucHien IS NULL THEN 1 ELSE 0 END  AS BETON,CASE WHEN NgayChuyenSuaBe IS NULL  THEN 3 ELSE CASE WHEN NgayTiepNhan IS NULL THEN 1 ELSE 2  END END AS THUCHIEN  from W_BAOBE v ";
             sql += " WHERE CONVERT(DATE,NgayBao,103) BETWEEN CONVERT(DATE,'" + tungay.Text + "',103) AND CONVERT(DATE,'" + denngay.Text + "',103) ";
+            if (Session["cap"].ToString() == "1")
+            {
+                sql += " AND  CreateBy='" + Session["login"] + "'"; ;
+            }
             //string sql = " SELECT * from KT_BaoBe  where CAST(GETDATE() as date) =  CAST(NgayBao as date)  ";
 
             DataTable tb = C_KyThuat.getDataTable(sql);
+            lbTong.Text = "Tổng số " + tb .Rows.Count + " điểm  bể !";
             Session["dsBaoBe"] = tb;
             if (chekHien.Checked == true)
             {
@@ -97,7 +104,7 @@ namespace WebMobile
             }
             // Label1.Text = listID.Remove(listID.Length - 1, 1);
 
-            string sql = "UPDATE KT_BaoBe SET SoBangKe='" + this.TextBox1.Text + "', DonViSuaBe='" + cbDonViSuaBe.SelectedValue.ToString() + "',NgayChuyenSuaBe=GETDATE() WHERE ID IN (" + listID.Remove(listID.Length - 1, 1) + ")";
+            string sql = "UPDATE KT_BaoBe SET NguoiGiaoSB='" + Session["login"] + "', SoBangKe='" + this.TextBox1.Text + "', DonViSuaBe='" + cbDonViSuaBe.SelectedValue.ToString() + "',NgayChuyenSuaBe=GETDATE() WHERE ID IN (" + listID.Remove(listID.Length - 1, 1) + ")";
             C_KyThuat.ExecuteCommand(sql);
             pagLoad();
         }

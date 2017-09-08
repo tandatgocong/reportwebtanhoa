@@ -10,10 +10,10 @@ namespace WebMobile.Class
 {
     public class C_TrungTamKhachHang
     {
-      /*  static log4net.ILog log = log4net.LogManager.GetLogger("File");
+        static log4net.ILog log = log4net.LogManager.GetLogger("File");
         static KinhDoanhDataContext db = new KinhDoanhDataContext();
 
-      
+
 
         public static int ExecuteCommand_(string sql)
         {
@@ -34,7 +34,7 @@ namespace WebMobile.Class
                 db.SubmitChanges();
                 return result;
             }
-            catch (Exception )
+            catch (Exception)
             {
 
 
@@ -224,10 +224,10 @@ namespace WebMobile.Class
 
                 SqlParameter _ky = cmd.Parameters.Add("@DanhBo", SqlDbType.VarChar);
                 _ky.Direction = ParameterDirection.Input;
-                _ky.Value = danhbo; 
-                
+                _ky.Value = danhbo;
+
                 dt.Load(cmd.ExecuteReader());
-               dt.DefaultView.Sort = "NgayXuLy DESC";
+                dt.DefaultView.Sort = "NgayXuLy DESC";
                 return dt;
             }
             catch (Exception ex)
@@ -239,7 +239,6 @@ namespace WebMobile.Class
                 conn.Close();
             }
             return dt;
-        */
-
+        }
     }
 }

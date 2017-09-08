@@ -4,89 +4,35 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using WebMobile.DataBase;
-using System.Security.Cryptography;
-using System.Text;
+using WebMobile.Class;
 
 namespace WebMobile
 {
-    public partial class Default1 : System.Web.UI.Page
+    public partial class mHome : System.Web.UI.Page
     {
-        static log4net.ILog log = log4net.LogManager.GetLogger("File");
-        static dbKyThuatDataContext db = new dbKyThuatDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            log4net.ILog logger = log4net.LogManager.GetLogger("File");
+
+
+            MaintainScrollPositionOnPostBack = true;
+            if (IsPostBack)
+                return;
+            pagLoad();
+
         }
-        
-        private const string cryptoKey = "tanhoa";
-        private static readonly byte[] IV = new byte[8] { 240, 3, 45, 29, 0, 76, 173, 59 };
 
-        public string Encrypt(string s)
+        public void pagLoad()
         {
-            if (s == null || s.Length == 0) return string.Empty;
-            string result = string.Empty;
-            try
-            {
-                byte[] buffer = Encoding.ASCII.GetBytes(s);
-                TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider();
-                MD5CryptoServiceProvider MD5 = new MD5CryptoServiceProvider();
-                des.Key = MD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(cryptoKey));
-                des.IV = IV;
-                result = Convert.ToBase64String(des.CreateEncryptor().TransformFinalBlock(buffer, 0, buffer.Length));
-            }
-            catch
-            {
-            }
+            Session["dsBaoBe"] = null;
+            //DateTime tNgay = DateTime.ParseExact(tNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            //DateTime dNgay = DateTime.ParseExact(dN.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            return result;
-        }
-        public string Decrypt(string s)
-        {
-            if (s == null || s.Length == 0) return string.Empty;
-            string result = string.Empty;
-            try
-            {
-                byte[] buffer = Convert.FromBase64String(s);
-                TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider();
-                MD5CryptoServiceProvider MD5 = new MD5CryptoServiceProvider();
-                des.Key = MD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(cryptoKey));
-                des.IV = IV;
-                result = Encoding.ASCII.GetString(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length));
-            }
-            catch
-            {
+            //string sql = " SELECT ID, lat, lng,DiaChi, CONVERT(VARCHAR(20),TuNgay,103) AS TuNgay,CONVERT(VARCHAR(20),DenNgay,103) AS DenNgay , TuGio, DenGio, NoiDung, CreateDate, CreateBy, ModifyDate, ModifyBy from KT_DongNuoc where CAST(GETDATE()as date) between TuNgay and DenNgay ";
+            string sql = " SELECT v.*,CASE WHEN v.LoaiThucHien  = 1 THEN N'Hoàn Thiện' ELSE N'' END  AS TenLoai, (CAST( (DATEDIFF(mi,TuGio,DenGio)/60) AS VARCHAR)) AS GIO,   CAST(  (DATEDIFF(mi,TuGio,DenGio)%60) AS VARCHAR) as PHUT, ";
+            sql += " (CAST((DATEDIFF(mi,NgayBao,DenGio)/60) AS VARCHAR)) AS HGIO,   CAST((DATEDIFF(mi,NgayBao,DenGio)%60) AS VARCHAR) as HPHUT, ";
+            sql += "   CASE WHEN DATEDIFF(DD,NgayBao,GETDATE())>3  AND NgayThucHien IS NULL THEN 1 ELSE 0 END  AS BETON,CASE WHEN NgayChuyenSuaBe IS NULL  THEN 3 ELSE CASE WHEN NgayTiepNhan IS NULL THEN 1 ELSE 2  END END AS THUCHIEN  from W_BAOBE v ";
+            Session["dsBaoBe"] = C_KyThuat.getDataTable(sql);
 
-            }
-
-            return result;
-        }
-        public bool UserLogin(string userName, string passWord)
-        {
-
-            var data = from user in db.sys_Users where user.USERNAME == userName && user.PASSWORD == passWord  select user;
-            sys_User userLogin = data.SingleOrDefault();
-            if (userLogin != null)
-            {
-                sys_User userlogin = (sys_User)data.SingleOrDefault();
-                Session["login"] = userlogin.USERNAME;
-                Session["phong"] = userlogin.MAPHONG;
-                return true;
-            }
-            return false;
-        }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            if (UserLogin(this.txtusername.Text, Encrypt(this.txtpassword.Text)) == true)
-            {
-                if(Session["page"]==null)
-                    Response.Redirect("mHome.aspx");
-                else
-                    Response.Redirect(Session["page"].ToString());
-            }
-            else
-                this.mess.Visible = true;
         }
     }
 }
