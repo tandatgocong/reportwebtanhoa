@@ -298,6 +298,7 @@
     <Content Include="ckeditor\skins\v2\skin.js" />
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="mDHNLoTrinh.aspx" />
     <Content Include="mMangLuoi.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\font-awesome.css" />
@@ -450,6 +451,7 @@
     <Compile Include="callcenter.aspx.designer.cs">
       <DependentUpon>callcenter.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Class\LinQConnectionDS.cs" />
     <Compile Include="Class\C_KyThuat.cs" />
     <Compile Include="Class\C_DhCoDong.cs" />
     <Compile Include="Class\C_DuLieuKhachHang.cs" />
@@ -460,6 +462,20 @@
     <Compile Include="Class\LinQConnectionGis.cs" />
     <Compile Include="Class\LinQConnectionGM.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="mDHNLoTrinh.aspx.cs">
+      <DependentUpon>mDHNLoTrinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mDHNLoTrinh.aspx.designer.cs">
+      <DependentUpon>mDHNLoTrinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mHome.Master.cs">
+      <DependentUpon>mHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mHome.Master.designer.cs">
+      <DependentUpon>mHome.Master</DependentUpon>
+    </Compile>
     <Compile Include="mMangLuoi.aspx.cs">
       <DependentUpon>mMangLuoi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -777,6 +793,7 @@
     <None Include="fonts\fontawesome-webfont.woff2" />
     <None Include="fonts\FontAwesome.otf" />
     <None Include="Logs\Log4Net.log" />
+    <Content Include="mHome.Master" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

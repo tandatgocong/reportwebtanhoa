@@ -1,28 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="mHome.aspx.cs" Inherits="QuanLyKhachHang.mHome" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/mHome.Master"  AutoEventWireup="true" CodeBehind="mHome.aspx.cs" Inherits="QuanLyKhachHang.mHome" %>
 
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="QuanLyKhachHang.Class" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html>
-    
-   <head>
-      <LINK REL="SHORTCUT ICON"  HREF="Image/th.png">
-      <title>.:.CSKH.:.</title>
-      <link rel="stylesheet" type="text/css" href="StyleSheet/style.css"/>
-      <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-      <link rel="stylesheet" type="text/css" href="css/animate.css"/>
-      <!-- <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon"/> --->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet"/>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="" />
-      <meta name="keywords" content=" "/>
-      <meta name="author" content="Shrinath Nayak">
-      <meta name="robots" content="index, follow" />
-
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  <script language="javascript" type="text/javascript">
+      window.document.getElementById("HOME").className = "active";
+      window.document.getElementById("LOTRINH").className = "";
+      window.document.getElementById("HOANCONG").className = "";
+      window.document.getElementById("BAOCAO").className = "";
+  </script>
        <style type="text/css">
           .title_mobile
           {
@@ -46,12 +34,11 @@
            }
             
            </style>
-   </head>
-   <body style="background-image="bg.jpg" >
-     <form id="Form1"  runat="server" > 
+
+   
+ 
       <!--Card-->
-      <div class="card animated fadeIn">
-         <div class="location"> THÔNG TIN DANH BỘ </div> 
+
       <div class="text"> 
       <table>
       <tr><td style="width:80px;"><asp:DropDownList ID="dot" runat="server" Height="19px" Width="85px">
@@ -336,9 +323,7 @@
          </tr>
       </table>
       </div>
-      </div>
-    
-   </form>
+
+
       
-   </body>
-</html>
+   </asp:Content>
