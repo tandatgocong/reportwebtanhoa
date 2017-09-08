@@ -1,16 +1,80 @@
-
-
-.text {
-	margin:  auto;
-	padding: 0;
-
-	font-family: Arial, Tahoma, Helvetica, sans-serif;
+ 
+.text 
+{
+   margin-left:10px;
+   margin-right:10px;
+   margin-top:5px;
 	font-size: 13px;
-	font-style:normal;	
 }
+
+.button{
+	background-color:#02579D;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: #FFF;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-size: 14px;
+    font-family: "Times New Roman";
+    margin-left:30px;
+    }
+    .button1 {
+	background-color:#02579D;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: #FFF;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-size: 14px;
+    font-family: "Times New Roman";
+    }
+
+.button:hover
+{
+    background: white;
+    border: solid 1px grey;
+    font-family: "Times New Roman";
+    font-size: 14px;
+    font-weight: bold;
+    color: Red;   
+    height: 25px;
+
+}
+
+.button1{
+	background-color:#02579D;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: #FFF;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-size: 14px;
+    font-family: "Times New Roman";
+    margin-left: 20px;
+}
+
+.button1:hover
+{
+    background: white;
+    border: solid 1px grey;
+    font-family: "Times New Roman";
+    font-size: 14px;
+    font-weight: bold;
+    color: Red;   
+    height: 25px;
+
+}
+
+
+
+/*--------------------------------------------------------*/
 body {
 	width: 100%;
 	margin: 0px;
+	font-size: 14px;
 	background-image: url(../Image/bg.jpg);
 	background-repeat: repeat-y no-repeat;
 	background-size: cover;
@@ -38,7 +102,7 @@ body {
 @media screen and (min-width: 1001px) {
 	.card {
 		margin-left: 32%;
-		margin-top: 2%;
+	/*	margin-top: 2%;*/
 		padding: 0px;
 		background-color: white;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -60,7 +124,7 @@ body {
 		text-align: center;
 		font-size: 2.8em;
 		color: gainsboro;
-		margin-top: 15%;
+		/*margin-top: 15%;*/
 		margin-bottom: auto;
 		text-transform: capitalize;
 	}
@@ -110,7 +174,7 @@ body {
 		border: 0px;
 	}
 	.card {
-		margin-top: 10%;
+		/*margin-top: 10%;*/
 		margin-left: 2%;
 		margin-right: 0px;
 		background-color: white;
@@ -135,7 +199,7 @@ body {
 		text-align: center;
 		font-size: 2.5em;
 		color: gainsboro;
-		margin-top: 16%;
+		/*margin-top: 16%;*/
 		margin-bottom: auto;
 		text-transform: capitalize;
 	}
@@ -179,7 +243,7 @@ body {
 		border: 0px;
 	}
 	.card {
-		margin-top: 6%;
+		/*margin-top: 6%;*/
 		margin-left: 9%;
 		margin-right: 0px;
 		background-color: white;
@@ -203,7 +267,7 @@ body {
 		text-align: center;
 		font-size: 2.8em;
 		color: gainsboro;
-		margin-top: 16%;
+		/*margin-top: 16%;*/
 		margin-bottom: auto;
 		text-transform: capitalize;
 	}
@@ -247,7 +311,7 @@ body {
 		border: 0px;
 	}
 	.card {
-		margin-top: 4%;
+		/*margin-top: 4%;*/
 		margin-left: 13%;
 		align-content: center;
 		background-color: white;
@@ -269,7 +333,7 @@ body {
 		text-align: center;
 		font-size: 2.5em;
 		color: gainsboro;
-		margin-top: 16%;
+		/*margin-top: 16%;*/
 		margin-bottom: auto;
 		text-transform: capitalize;
 	}

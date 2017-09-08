@@ -111,16 +111,14 @@
         font-size: 15px;
         font-weight: 300;
         margin-right: 0px;
-        padding: 0 11px 0 13px;
+        
         text-overflow: ellipsis;
-        width: 280px;
+        width: 270px;
         height:50px;
-        margin-top:11px;
+        margin-top:40px;
       }
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+     
 
       #title {
         color: #fff;
@@ -129,34 +127,15 @@
         font-weight: 500;
         padding: 6px 12px;
       }
-      #target {
-        width: 345px;
-      }
-    .style1
-    {
-        width: 95px;
-        height: 49px;
-    }
-    .style5
-    {
-        height: 30px;
-    }
-    .style6
-    {
-        height: 27px;
-    }
-    .style7
-    {
-        width: 140px;
-    }
+
     </style>
 <div id="pac-input">
 
-     <table cellpadding="0" cellspacing="0" style="font-family:Times New Roman;"class="table_list" width="100%" >
+     <table border=1 cellpadding="0" cellspacing="0" style="font-family:Times New Roman;"class="table_list"  >
         <tbody>
            <tr class="head2">
-           <td  style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">NĂM:<asp:TextBox ID="txtNam" Width="40px" runat="server"> </asp:TextBox></td>
-           <td style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">KỲ:
+           <td  style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">Năm:<asp:TextBox ID="txtNam" Width="35px" runat="server"> </asp:TextBox></td>
+           <td style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">Kỳ:
                     <asp:DropDownList ID="cbKy" runat="server" >
                         <asp:ListItem>01</asp:ListItem>
                         <asp:ListItem>02</asp:ListItem>
@@ -173,7 +152,7 @@
                     </asp:DropDownList>
            </td>
           
-                <td  style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">ĐỢT:
+                <td  style="border-right:0px #99cc99 solid; border-bottom: 1px solid;">Đợt:
                     <asp:DropDownList ID="cbDot" runat="server" >
                         <asp:ListItem>01</asp:ListItem>
                         <asp:ListItem>02</asp:ListItem>
@@ -205,7 +184,7 @@
                </td>
                <td colspan="2" style="border-right:0px #99cc99 solid; border-bottom: 1px solid;" >
                <asp:Button ID="btXemBangKe" runat="server" CssClass="button1"  Height="27px" 
-                        Text="XEM THÔNG TIN" onclick="btXemBangKe_Click" />
+                        Text="XEM" onclick="btXemBangKe_Click" />
              </tr>
              
           </tbody>
