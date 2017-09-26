@@ -5,8 +5,7 @@
 <head id="Head1" runat="server">
       <LINK REL="SHORTCUT ICON"  HREF="Image/th.png">
       <title>.:.BÁO BỂ.:.</title>
-       <link href="StyleSheet/style.css" rel="stylesheet" type="text/css" />
-     
+      <link href="StyleSheet/style.css" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
       <link rel="stylesheet" type="text/css" href="css/animate.css"/>
       <!-- <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon"/> --->

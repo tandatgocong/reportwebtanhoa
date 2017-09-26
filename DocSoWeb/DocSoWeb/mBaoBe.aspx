@@ -309,7 +309,7 @@ div.title_page2 {
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 14,
+                zoom: 18,
                 mapTypeId: 'roadmap'
             });
  
@@ -442,16 +442,18 @@ div.title_page2 {
                        }
                     %>
             ////////////////////
-            
-                 /*var pos = {
+          var infoWindow = new google.maps.InfoWindow({map: map});
+                 var pos = {
                       lat: lagx,
                       lng: lagy
                     };
                     
                     map.setCenter(pos);
 
-                    */
-                     if (navigator.geolocation) {
+             
+            
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {
                       lat: position.coords.latitude,
@@ -465,11 +467,11 @@ div.title_page2 {
                     handleLocationError(true, infoWindow, map.getCenter());
                   });
                 } else {
-                  // Browser doesn't support Geolocation
+                                  // Browser doesn't support Geolocation
+                 
                   handleLocationError(false, infoWindow, map.getCenter());
                 }
-
-
+                 
 
 
 
