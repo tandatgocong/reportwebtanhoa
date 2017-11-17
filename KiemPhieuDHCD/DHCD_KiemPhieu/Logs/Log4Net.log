@@ -1024,3 +1024,15 @@ The statement has been terminated.
 2017-08-25 09:49:58,915 [11076] ERROR File LinQConnection getDataTableDivide by zero error encountered.
 2017-08-25 11:57:58,814 [11076] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='25/08/2017' 
 2017-08-25 11:57:58,814 [11076] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-10-23 08:44:23,385 [7656] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='23/10/2017' 
+2017-10-23 08:44:23,402 [7656] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-10-24 08:56:46,643 [11392] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='24/10/2017' 
+2017-10-24 08:56:46,659 [11392] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-10-24 08:56:58,630 [6984] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='23/10/2017' 
+2017-10-24 08:56:58,630 [6984] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-10-24 08:57:01,092 [11392] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-10-24 08:57:04,424 [12164] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 2 AND CONVERT(VARCHAR(50),NGAYBC,103)='23/10/2017' 
+2017-10-24 08:57:04,424 [12164] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.
+2017-10-24 08:57:07,282 [6984] ERROR File LinQConnection getDataTableDivide by zero error encountered.
+2017-10-26 10:24:29,802 [9132] ERROR File LinQConnection ExecuteCommand : SELECT SUM(SLKDY)  FROM BAUCU WHERE STT= 0 AND LANBC= 1 AND CONVERT(VARCHAR(50),NGAYBC,103)='26/10/2017' 
+2017-10-26 10:24:29,828 [9132] ERROR File LinQConnection ExecuteCommand : Object cannot be cast from DBNull to other types.

@@ -37,13 +37,13 @@ namespace DHCD_KiemPhieu.View
             Binddata();
             if (DropDownList1.SelectedIndex == 1)
             {
-                title.Text  = "..: KIỂM PHIẾU BẦU CỬ CẤP ỦY CHI BỘ KHỐI KINH DOANH :..";
-                lbKetqua.Text = "KẾT QUẢ BẦU CỬ CẤP ỦY CHI BỘ KHỐI KINH DOANH";
+                title.Text  = "..: KIỂM PHIẾU BẦU ĐẠI BIỂU THAM DỰ HỘI NGHỊ CÔNG ĐOÀN TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN GIỮA NHIỆM KỲ 2015-2020 :..";
+                lbKetqua.Text = "KẾT QUẢ BẦU ĐẠI BIỂU THAM DỰ HỘI NGHỊ CÔNG ĐOÀN TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN";
             }
             else if (DropDownList1.SelectedIndex == 2)
             {
-                title.Text = lbKetqua.Text = "..: KIỂM PHIẾU BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017 :..";
-                lbKetqua.Text = "KẾT QUẢ BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017";
+                //title.Text = lbKetqua.Text = "..: KIỂM PHIẾU BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017 :..";
+                //lbKetqua.Text = "KẾT QUẢ BẦU CỬ TỔ ĐỐI THOẠI NĂM 2017";
             }
         }
 
